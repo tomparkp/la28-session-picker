@@ -1,13 +1,13 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* -- Theme tokens -- */
 :root {
-  --bg: #111318;
-  --surface: #1a1d25;
-  --surface2: #21242e;
-  --surface3: #2a2e3a;
-  --border: #2e3340;
-  --border2: #383d4d;
+  --bg: #141518;
+  --surface: #141518;
+  --surface2: #1e2028;
+  --surface3: #1e2028;
+  --border: #2a2d36;
+  --border2: #2a2d36;
   --ink: #f4f3ee;
   --ink2: #c4c2b9;
   --ink3: #9e9b91;
@@ -25,14 +25,14 @@
   color-scheme: dark;
 }
 
-[data-theme="light"],
+[data-theme='light'],
 :root.light {
-  --bg: #f5f4f0;
-  --surface: #ffffff;
-  --surface2: #f9f8f5;
-  --surface3: #efeee9;
-  --border: #e0ddd6;
-  --border2: #d4d1c9;
+  --bg: #f6f5f2;
+  --surface: #f6f5f2;
+  --surface2: #eceae6;
+  --surface3: #eceae6;
+  --border: #dad8d2;
+  --border2: #dad8d2;
   --ink: #1a1d27;
   --ink2: #5a584f;
   --ink3: #8a877e;
@@ -47,13 +47,13 @@
 }
 
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]):not(.dark) {
-    --bg: #f5f4f0;
-    --surface: #ffffff;
-    --surface2: #f9f8f5;
-    --surface3: #efeee9;
-    --border: #e0ddd6;
-    --border2: #d4d1c9;
+  :root:not([data-theme='dark']):not(.dark) {
+    --bg: #f6f5f2;
+    --surface: #f6f5f2;
+    --surface2: #eceae6;
+    --surface3: #eceae6;
+    --border: #dad8d2;
+    --border2: #dad8d2;
     --ink: #1a1d27;
     --ink2: #5a584f;
     --ink3: #8a877e;
@@ -77,12 +77,14 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   background: var(--bg);
   color: var(--ink);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 
 /* -- Hero -- */
@@ -91,13 +93,6 @@ body {
   padding: 48px 24px 24px;
   text-align: center;
   overflow: hidden;
-  border-bottom: 1px solid var(--border);
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(212, 168, 67, 0.08) 0%, transparent 60%);
 }
 .rings {
   display: flex;
@@ -113,13 +108,23 @@ body {
   border: 2px solid;
   opacity: 0.6;
 }
-.ring:nth-child(1) { border-color: var(--ring-blue); }
-.ring:nth-child(2) { border-color: var(--ring-yellow); }
-.ring:nth-child(3) { border-color: var(--ring-black); }
-.ring:nth-child(4) { border-color: var(--ring-green); }
-.ring:nth-child(5) { border-color: var(--ring-red); }
+.ring:nth-child(1) {
+  border-color: var(--ring-blue);
+}
+.ring:nth-child(2) {
+  border-color: var(--ring-yellow);
+}
+.ring:nth-child(3) {
+  border-color: var(--ring-black);
+}
+.ring:nth-child(4) {
+  border-color: var(--ring-green);
+}
+.ring:nth-child(5) {
+  border-color: var(--ring-red);
+}
 .hero h1 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 2.2rem;
   font-weight: 400;
   letter-spacing: -0.03em;
@@ -206,11 +211,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: background 0.3s, box-shadow 0.2s;
+  background: var(--bg);
 }
 .filters {
   display: flex;
@@ -227,10 +228,10 @@ body {
   padding: 6px 10px;
   background: var(--surface2);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 6px;
   color: var(--ink);
   font-size: 0.78rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   outline: none;
   transition: border-color 0.15s;
 }
@@ -265,7 +266,6 @@ body {
   background: var(--gold-dim);
 }
 
-
 /* -- Layout -- */
 .wrap {
   max-width: 1400px;
@@ -277,7 +277,7 @@ body {
 .tbl-wrap {
   overflow-x: auto;
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 8px;
   background: var(--surface);
 }
 table {
@@ -309,12 +309,12 @@ th:hover {
   color: var(--gold);
 }
 th.sa::after {
-  content: " \25B2";
+  content: ' \25B2';
   font-size: 0.55rem;
   color: var(--gold);
 }
 th.sd::after {
-  content: " \25BC";
+  content: ' \25BC';
   font-size: 0.55rem;
   color: var(--gold);
 }
@@ -389,19 +389,19 @@ tr:hover td {
   background: var(--surface3);
   color: var(--ink3);
 }
-[data-theme="light"] .rt-Final,
-[data-theme="light"] .rt-Ceremony,
+[data-theme='light'] .rt-Final,
+[data-theme='light'] .rt-Ceremony,
 .light .rt-Final,
 .light .rt-Ceremony {
   background: rgba(160, 120, 32, 0.12);
   color: var(--gold);
 }
-[data-theme="light"] .rt-Semi,
+[data-theme='light'] .rt-Semi,
 .light .rt-Semi {
   background: rgba(0, 102, 204, 0.1);
   color: var(--accent);
 }
-[data-theme="light"] .rt-QF,
+[data-theme='light'] .rt-QF,
 .light .rt-QF {
   background: rgba(0, 102, 204, 0.06);
   color: var(--accent);
@@ -442,7 +442,7 @@ tr:hover td {
   margin-bottom: 8px;
 }
 .bm-section-head h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.05rem;
   font-weight: 400;
   color: var(--ink);
@@ -453,7 +453,7 @@ tr:hover td {
 .bm-section-head .count {
   background: var(--gold);
   color: var(--bg);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   font-size: 0.6rem;
   font-weight: 700;
   min-width: 20px;
@@ -476,7 +476,8 @@ tr:hover td {
   white-space: nowrap;
 }
 .bm-section .tbl-wrap {
-  border-color: rgba(212, 168, 67, 0.3);
+  border-color: rgba(212, 168, 67, 0.25);
+  border-radius: 8px;
 }
 .bm-section table tr td {
   background: rgba(212, 168, 67, 0.03);
@@ -552,19 +553,19 @@ tr:hover td {
   background: rgba(220, 70, 50, 0.1);
   color: #c84a3a;
 }
-[data-theme="light"] .rating-great,
+[data-theme='light'] .rating-great,
 .light .rating-great {
   color: #2d9055;
 }
-[data-theme="light"] .rating-good,
+[data-theme='light'] .rating-good,
 .light .rating-good {
   color: #8a7a18;
 }
-[data-theme="light"] .rating-fair,
+[data-theme='light'] .rating-fair,
 .light .rating-fair {
   color: #b07828;
 }
-[data-theme="light"] .rating-low,
+[data-theme='light'] .rating-low,
 .light .rating-low {
   color: #b03a2a;
 }
@@ -614,7 +615,7 @@ tr:hover td {
   margin-bottom: 16px;
 }
 .page-header h1 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--ink);
@@ -635,7 +636,7 @@ tr:hover td {
   color: var(--ink2);
 }
 .about-content h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.1rem;
   font-weight: 400;
   color: var(--ink);
@@ -668,10 +669,18 @@ tr:hover td {
   font-weight: 400;
   color: var(--ink3);
 }
-.rating-great-text { color: #3dba6f; }
-.rating-good-text { color: #b8a832; }
-.rating-fair-text { color: #d49633; }
-.rating-low-text { color: #c84a3a; }
+.rating-great-text {
+  color: #3dba6f;
+}
+.rating-good-text {
+  color: #b8a832;
+}
+.rating-fair-text {
+  color: #d49633;
+}
+.rating-low-text {
+  color: #c84a3a;
+}
 
 /* -- Agenda view -- */
 .agenda-day {
