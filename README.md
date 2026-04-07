@@ -2,7 +2,7 @@
 
 A personal side project I quickly put together to help myself decide on LA28 Olympic sessions. It lets you browse and filter event sessions based on data scraped from publicly available schedules and other materials.
 
-> **Disclaimer:** This is an unofficial, community project and is not affiliated with, endorsed by, or connected to the International Olympic Committee (IOC), LA28 Organizing Committee, or any official Olympic body. Session data is scraped from publicly available schedules and materials and may be inaccurate, incomplete, or outdated. Always verify details against official sources before making any plans or purchasing decisions. Use at your own risk.
+> **Disclaimer:** This is an unofficial, open-source project and is not affiliated with, endorsed by, or connected to the International Olympic Committee (IOC), LA28 Organizing Committee, or any official Olympic body. Session data is scraped from publicly available schedules and materials and may be inaccurate, incomplete, or outdated. Always verify details against official sources before making any plans or purchasing decisions. Use at your own risk.
 
 ## Built With
 
