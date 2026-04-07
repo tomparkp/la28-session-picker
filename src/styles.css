@@ -154,7 +154,7 @@ body {
 .nav-tabs {
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
   margin-top: 20px;
   position: relative;
 }

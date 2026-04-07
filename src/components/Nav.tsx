@@ -23,7 +23,7 @@ export function Nav() {
         <div className="ring" />
       </div>
       <h1><em>LA28</em> Session Picker</h1>
-      <p className="disclaimer">This is an <strong><u>unofficial</u></strong>, open-source project not affiliated with or endorsed by the IOC or LA28 Organizing Committee. Session data is scraped from publicly available materials and may be inaccurate, incomplete, or outdated. AI ratings are subjective and should not be used as a sole basis for decisions. Always verify against official sources.</p>
+      <p className="disclaimer">This is an <strong><u>unofficial</u></strong>, open-source project not affiliated with the IOC or LA28. Session data is scraped from public materials and may be inaccurate or outdated. AI ratings are subjective and should not be used as a sole basis for decisions. Always verify against official sources.</p>
       <nav className="nav-tabs">
         {tabs.map((tab) => (
           <Link
