@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
 import { Sun, Moon } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 const STORAGE_KEY = 'la28_unofficial_session_picker_theme'
 

@@ -1,8 +1,10 @@
-import type { Session } from '@/types/session'
-import { ScorePill } from './ScorePill'
-import { fmtPrice } from '@/lib/format'
-import { exportBookmarksCSV } from '@/lib/csv'
 import { Bookmark } from 'lucide-react'
+
+import { exportBookmarksCSV } from '@/lib/csv'
+import { fmtPrice } from '@/lib/format'
+import type { Session } from '@/types/session'
+
+import { ScorePill } from './ScorePill'
 
 interface BookmarkSectionProps {
   sessions: Session[]
@@ -11,7 +13,12 @@ interface BookmarkSectionProps {
   onClearAll: () => void
 }
 
-export function BookmarkSection({ sessions, bookmarks, onToggleBookmark, onClearAll }: BookmarkSectionProps) {
+export function BookmarkSection({
+  sessions,
+  bookmarks,
+  onToggleBookmark,
+  onClearAll,
+}: BookmarkSectionProps) {
   const items = sessions
     .filter((e) => bookmarks.has(e.id))
     .sort((a, b) => a.dk.localeCompare(b.dk) || a.name.localeCompare(b.name))
@@ -43,15 +50,21 @@ export function BookmarkSection({ sessions, bookmarks, onToggleBookmark, onClear
         </h2>
         <div className="bm-stats">
           <span>{fmtPrice(totLo, totHi)} est.</span>
-          <span>{days.size} day{days.size !== 1 ? 's' : ''}</span>
+          <span>
+            {days.size} day{days.size !== 1 ? 's' : ''}
+          </span>
           <span>{ns} non-soccer</span>
           <span>{sc} soccer</span>
           <span>Avg rating: {(totAgg / items.length).toFixed(1)}</span>
         </div>
       </div>
       <div className="bm-actions">
-        <button className="bm-action-btn" onClick={() => exportBookmarksCSV(items)}>Export CSV</button>
-        <button className="bm-action-btn bm-action-clear" onClick={onClearAll}>Clear All</button>
+        <button className="bm-action-btn" onClick={() => exportBookmarksCSV(items)}>
+          Export CSV
+        </button>
+        <button className="bm-action-btn bm-action-clear" onClick={onClearAll}>
+          Clear All
+        </button>
       </div>
       <div className="tbl-wrap">
         <table>
@@ -72,18 +85,32 @@ export function BookmarkSection({ sessions, bookmarks, onToggleBookmark, onClear
               <tr key={e.id}>
                 <td>
                   <div className="en">{e.name}</div>
-                  <div className="ed" title={e.desc}>{e.desc}</div>
+                  <div className="ed" title={e.desc}>
+                    {e.desc}
+                  </div>
                 </td>
                 <td className="nw">
-                  {e.date}<br />
+                  {e.date}
+                  <br />
                   <span className="ts">{e.time}</span>
                 </td>
                 <td>{e.venue}</td>
-                <td><span className="badge-zone">{e.zone}</span></td>
+                <td>
+                  <span className="badge-zone">{e.zone}</span>
+                </td>
                 <td className="cp">{fmtPrice(e.pLo, e.pHi)}</td>
-                <td><span className={`rt rt-${e.rt}`}>{e.rt}</span></td>
+                <td>
+                  <span className={`rt rt-${e.rt}`}>{e.rt}</span>
+                </td>
                 <td className="ctr">
-                  <ScorePill agg={e.agg} rSig={e.rSig} rExp={e.rExp} rStar={e.rStar} rUniq={e.rUniq} rDem={e.rDem} />
+                  <ScorePill
+                    agg={e.agg}
+                    rSig={e.rSig}
+                    rExp={e.rExp}
+                    rStar={e.rStar}
+                    rUniq={e.rUniq}
+                    rDem={e.rDem}
+                  />
                 </td>
                 <td className="ctr">
                   <button

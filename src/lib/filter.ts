@@ -12,7 +12,17 @@ export function filterSessions(sessions: Session[], filters: Filters): Session[]
 
   return sessions.filter((e) => {
     if (search) {
-      const txt = (e.name + ' ' + e.desc + ' ' + e.venue + ' ' + e.zone + ' ' + e.sport).toLowerCase()
+      const txt = (
+        e.name +
+        ' ' +
+        e.desc +
+        ' ' +
+        e.venue +
+        ' ' +
+        e.zone +
+        ' ' +
+        e.sport
+      ).toLowerCase()
       if (!txt.includes(search)) return false
     }
     if (filters.sport && e.sport !== filters.sport) return false

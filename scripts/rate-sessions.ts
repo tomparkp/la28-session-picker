@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+
 import { rateEvent } from '../src/lib/ratings.js'
 import type { Session } from '../src/types/session.js'
 
@@ -31,8 +32,8 @@ function main() {
   const sorted = [...aggs].sort((a, b) => a - b)
   console.log(
     `Aggregate ratings: min=${Math.min(...aggs)}, ` +
-    `median=${sorted[Math.floor(sorted.length / 2)]}, ` +
-    `max=${Math.max(...aggs)}`
+      `median=${sorted[Math.floor(sorted.length / 2)]}, ` +
+      `max=${Math.max(...aggs)}`,
   )
 
   writeFileSync(dataPath, JSON.stringify(sessions, null, 2))
@@ -43,8 +44,8 @@ function main() {
   for (const s of sessions.slice(0, 10)) {
     console.log(
       `  ${s.id.padEnd(10)} ${String(s.agg).padStart(2)}  ` +
-      `Sig${s.rSig} Exp${s.rExp} Star${s.rStar} Uniq${s.rUniq} Dem${s.rDem}  ` +
-      `| ${s.name} — ${s.desc.slice(0, 50)}`
+        `Sig${s.rSig} Exp${s.rExp} Star${s.rStar} Uniq${s.rUniq} Dem${s.rDem}  ` +
+        `| ${s.name} — ${s.desc.slice(0, 50)}`,
     )
   }
 }

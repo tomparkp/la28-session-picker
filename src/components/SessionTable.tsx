@@ -1,7 +1,9 @@
-import type { Session, SortColumn, SortState, GroupBy } from '@/types/session'
-import { ScorePill } from './ScorePill'
-import { fmtPrice } from '@/lib/format'
 import { Bookmark } from 'lucide-react'
+
+import { fmtPrice } from '@/lib/format'
+import type { Session, SortColumn, SortState, GroupBy } from '@/types/session'
+
+import { ScorePill } from './ScorePill'
 
 interface SessionTableProps {
   sessions: Session[]
@@ -53,7 +55,10 @@ function getGroupValue(session: Session, key: GroupBy): string {
   return ''
 }
 
-function groupSessions(sessions: Session[], key: GroupBy): { label: string; sessions: Session[] }[] {
+function groupSessions(
+  sessions: Session[],
+  key: GroupBy,
+): { label: string; sessions: Session[] }[] {
   if (!key) return [{ label: '', sessions }]
 
   const groups = new Map<string, Session[]>()
@@ -67,23 +72,45 @@ function groupSessions(sessions: Session[], key: GroupBy): { label: string; sess
   return Array.from(groups.entries()).map(([label, items]) => ({ label, sessions: items }))
 }
 
-function SessionRow({ e, on, onToggleBookmark }: { e: Session; on: boolean; onToggleBookmark: (id: string) => void }) {
+function SessionRow({
+  e,
+  on,
+  onToggleBookmark,
+}: {
+  e: Session
+  on: boolean
+  onToggleBookmark: (id: string) => void
+}) {
   return (
     <tr>
       <td>
         <div className="en">{e.name}</div>
-        <div className="ed" title={e.desc}>{e.desc}</div>
+        <div className="ed" title={e.desc}>
+          {e.desc}
+        </div>
       </td>
       <td className="nw">
-        {e.date}<br />
+        {e.date}
+        <br />
         <span className="ts">{e.time}</span>
       </td>
       <td>{e.venue}</td>
-      <td><span className="badge-zone">{e.zone}</span></td>
+      <td>
+        <span className="badge-zone">{e.zone}</span>
+      </td>
       <td className="cp">{fmtPrice(e.pLo, e.pHi)}</td>
-      <td><span className={`rt rt-${e.rt}`}>{e.rt}</span></td>
+      <td>
+        <span className={`rt rt-${e.rt}`}>{e.rt}</span>
+      </td>
       <td className="ctr">
-        <ScorePill agg={e.agg} rSig={e.rSig} rExp={e.rExp} rStar={e.rStar} rUniq={e.rUniq} rDem={e.rDem} />
+        <ScorePill
+          agg={e.agg}
+          rSig={e.rSig}
+          rExp={e.rExp}
+          rStar={e.rStar}
+          rUniq={e.rUniq}
+          rDem={e.rDem}
+        />
       </td>
       <td className="ctr">
         <button
@@ -93,7 +120,6 @@ function SessionRow({ e, on, onToggleBookmark }: { e: Session; on: boolean; onTo
         >
           <Bookmark
             size={20}
-
             className={on ? 'bm-on' : 'bm-off'}
             fill={on ? 'var(--gold)' : 'none'}
             stroke={on ? 'var(--gold)' : 'var(--ink3)'}
@@ -104,7 +130,14 @@ function SessionRow({ e, on, onToggleBookmark }: { e: Session; on: boolean; onTo
   )
 }
 
-export function SessionTable({ sessions, sort, onSort, isBookmarked, onToggleBookmark, groupBy }: SessionTableProps) {
+export function SessionTable({
+  sessions,
+  sort,
+  onSort,
+  isBookmarked,
+  onToggleBookmark,
+  groupBy,
+}: SessionTableProps) {
   const groups = groupSessions(sessions, groupBy)
 
   return (
@@ -147,7 +180,12 @@ export function SessionTable({ sessions, sort, onSort, isBookmarked, onToggleBoo
                 </tr>
               )}
               {group.sessions.map((e) => (
-                <SessionRow key={e.id} e={e} on={isBookmarked(e.id)} onToggleBookmark={onToggleBookmark} />
+                <SessionRow
+                  key={e.id}
+                  e={e}
+                  on={isBookmarked(e.id)}
+                  onToggleBookmark={onToggleBookmark}
+                />
               ))}
             </>
           ))}

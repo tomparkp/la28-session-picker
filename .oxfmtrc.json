@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "insertFinalNewline": true,
+  "sortImports": true,
+  "sortTailwindcss": true,
+  "overrides": [
+    {
+      "files": ["*.test.ts", "*.test.tsx"],
+      "options": {
+        "printWidth": 120
+      }
+    }
+  ]
+}

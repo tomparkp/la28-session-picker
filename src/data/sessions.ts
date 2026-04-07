@@ -1,4 +1,5 @@
 import type { Session } from '@/types/session'
+
 import rawSessions from './sessions.json'
 
 export const sessions: Session[] = rawSessions as Session[]

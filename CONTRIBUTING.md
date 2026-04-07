@@ -23,9 +23,9 @@ This project uses [TanStack Router](https://tanstack.com/router) with file-based
 To add a new route, create a file in `src/routes/` — TanStack will automatically generate the route entry. Use the `Link` component from `@tanstack/react-router` for SPA navigation:
 
 ```tsx
-import { Link } from "@tanstack/react-router";
+import { Link } from '@tanstack/react-router'
 
-<Link to="/about">About</Link>
+;<Link to="/about">About</Link>
 ```
 
 The root layout lives in `src/routes/__root.tsx`. More info in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).

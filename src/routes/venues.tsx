@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+
 import { sessions } from '@/data/sessions'
 
 export const Route = createFileRoute('/venues')({ component: Venues })
@@ -60,7 +61,9 @@ function Venues() {
             {venues.map((v) => (
               <tr key={v.name}>
                 <td className="en">{v.name}</td>
-                <td><span className="badge-zone">{v.zone}</span></td>
+                <td>
+                  <span className="badge-zone">{v.zone}</span>
+                </td>
                 <td className="ctr">{v.sessionCount}</td>
                 <td>
                   <div className="ed" title={v.sports.join(', ')} style={{ maxWidth: 400 }}>

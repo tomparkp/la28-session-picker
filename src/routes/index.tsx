@@ -1,12 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState, useMemo } from 'react'
-import { sessions } from '@/data/sessions'
-import { useBookmarks } from '@/hooks/useBookmarks'
+
+import { BookmarkSection } from '@/components/BookmarkSection'
 import { FilterBar } from '@/components/FilterBar'
 import { SessionTable } from '@/components/SessionTable'
-import { BookmarkSection } from '@/components/BookmarkSection'
-import type { Filters, SortColumn, SortState, GroupBy } from '@/types/session'
+import { sessions } from '@/data/sessions'
+import { useBookmarks } from '@/hooks/useBookmarks'
 import { filterSessions, sortSessions } from '@/lib/filter'
+import type { Filters, SortColumn, SortState, GroupBy } from '@/types/session'
 
 export const Route = createFileRoute('/')({ component: SessionPicker })
 
@@ -37,7 +38,12 @@ function SessionPicker() {
 
   return (
     <>
-      <FilterBar filters={filters} onChange={setFilters} groupBy={groupBy} onGroupByChange={setGroupBy} />
+      <FilterBar
+        filters={filters}
+        onChange={setFilters}
+        groupBy={groupBy}
+        onGroupByChange={setGroupBy}
+      />
 
       <div className="wrap">
         <BookmarkSection

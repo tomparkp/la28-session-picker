@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["import", "typescript", "unicorn", "react"],
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "react": {
+      "version": "19.0"
+    }
+  },
+  "rules": {
+    "eqeqeq": "warn",
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "import/no-cycle": "error",
+    "unicorn/no-null": "off"
+  },
+  "overrides": [
+    {
+      "files": ["scripts/**"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ],
+  "ignorePatterns": ["src/routeTree.gen.ts", "dist", ".output", "node_modules"]
+}
