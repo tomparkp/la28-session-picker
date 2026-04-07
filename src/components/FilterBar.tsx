@@ -45,9 +45,8 @@ export function FilterBar({ filters, onChange, groupBy, onGroupByChange }: Filte
         <select className={filters.score ? 'active' : ''} value={filters.score} onChange={(e) => update('score', e.target.value)}>
           <option value="">Any Rating</option>
           <option value="8">8+ (Great)</option>
-          <option value="7">7+ (Good)</option>
-          <option value="6">6+ (Decent)</option>
-          <option value="5">5+ (Fair)</option>
+          <option value="6">6+ (Good)</option>
+          <option value="4">4+ (Decent)</option>
         </select>
         <select className={filters.price ? 'active' : ''} value={filters.price} onChange={(e) => update('price', e.target.value)}>
           <option value="">Any Price</option>

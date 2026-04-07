@@ -83,7 +83,7 @@ export function BookmarkSection({ sessions, bookmarks, onToggleBookmark, onClear
                 <td className="cp">{fmtPrice(e.pLo, e.pHi)}</td>
                 <td><span className={`rt rt-${e.rt}`}>{e.rt}</span></td>
                 <td className="ctr">
-                  <ScorePill agg={e.agg} rP={e.rP} rV={e.rV} rA={e.rA} rU={e.rU} rS={e.rS} rVn={e.rVn} />
+                  <ScorePill agg={e.agg} rSig={e.rSig} rExp={e.rExp} rStar={e.rStar} rUniq={e.rUniq} rDem={e.rDem} />
                 </td>
                 <td className="ctr">
                   <button
