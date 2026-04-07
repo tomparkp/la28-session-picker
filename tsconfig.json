@@ -6,7 +6,6 @@
     "module": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "#/*": ["./src/*"],
       "@/*": ["./src/*"]
     },
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
@@ -14,6 +13,7 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,

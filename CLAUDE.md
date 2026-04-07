@@ -24,7 +24,7 @@ Routes live in `src/routes/` and are auto-generated into `src/routeTree.gen.ts` 
 
 ### Path Aliases
 
-Both `#/*` and `@/*` resolve to `./src/*` (configured in tsconfig.json).
+`@/*` resolves to `./src/*` (configured in tsconfig.json).
 
 ### Styling
 
