@@ -4,7 +4,7 @@ import { ThemeToggle } from './ThemeToggle'
 const tabs = [
   { to: '/', label: 'Sessions' },
   { to: '/venues', label: 'Venues' },
-  { to: '/calendar', label: 'Calendar' },
+  { to: '/calendar', label: 'Agenda' },
   { to: '/ai-rating', label: 'AI Ratings' },
   { to: '/about', label: 'About' },
 ] as const
