@@ -19,7 +19,12 @@
     "rU": 10,
     "rS": 10,
     "rVn": 9,
-    "agg": 8.7
+    "agg": 10,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 10,
+    "rDem": 10
   },
   {
     "id": "CER02",
@@ -41,7 +46,12 @@
     "rU": 10,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.8
+    "agg": 10,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 10,
+    "rDem": 10
   },
   {
     "id": "BK301",
@@ -63,7 +73,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK302",
@@ -85,7 +100,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK303",
@@ -107,7 +127,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK304",
@@ -129,7 +154,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK305",
@@ -151,7 +181,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK306",
@@ -173,7 +208,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK307",
@@ -195,7 +235,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK308",
@@ -217,7 +262,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK309",
@@ -239,7 +289,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK310",
@@ -261,7 +316,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK311",
@@ -283,7 +343,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK312",
@@ -305,7 +370,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK313",
@@ -327,7 +397,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK314",
@@ -349,7 +424,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK315",
@@ -371,7 +451,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK316",
@@ -393,7 +478,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "BK317",
@@ -415,7 +505,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5
+    "agg": 3.7,
+    "rSig": 4,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "BK318",
@@ -437,7 +532,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5
+    "agg": 3.7,
+    "rSig": 4,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "BK319",
@@ -459,7 +559,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.1,
+    "rSig": 5,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "BK320",
@@ -481,7 +586,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 6.3,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "ARC01",
@@ -503,7 +613,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ARC02",
@@ -525,7 +640,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ARC03",
@@ -547,7 +667,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.9,
+    "rSig": 5,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "ARC04",
@@ -569,7 +694,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 6,
-    "agg": 3.6
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ARC05",
@@ -591,7 +721,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 6,
-    "agg": 3.8
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ARC06",
@@ -613,7 +748,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 6,
-    "agg": 3.6
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ARC07",
@@ -635,7 +775,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 6,
-    "agg": 3.8
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ARC08",
@@ -657,7 +802,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 6,
-    "agg": 3.6
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ARC09",
@@ -679,7 +829,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 6,
-    "agg": 6.9
+    "agg": 5.8,
+    "rSig": 9,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "ARC10",
@@ -701,7 +856,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 6,
-    "agg": 3.6
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ARC11",
@@ -723,7 +883,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 6,
-    "agg": 6.9
+    "agg": 5.8,
+    "rSig": 9,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "ARC12",
@@ -745,7 +910,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 6,
-    "agg": 3.6
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ARC13",
@@ -767,7 +937,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 6,
-    "agg": 6.9
+    "agg": 5.8,
+    "rSig": 9,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "ARC14",
@@ -789,7 +964,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 6,
-    "agg": 3.6
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ARC15",
@@ -811,7 +991,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 6,
-    "agg": 6.9
+    "agg": 5.8,
+    "rSig": 9,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "ARC16",
@@ -833,7 +1018,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 6,
-    "agg": 3.6
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ARC17",
@@ -855,7 +1045,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 6,
-    "agg": 6.9
+    "agg": 5.8,
+    "rSig": 9,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "GAR01",
@@ -877,7 +1072,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "GAR02",
@@ -899,7 +1099,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "GAR03",
@@ -921,7 +1126,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 6,
-    "agg": 4.9
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "GAR04",
@@ -943,7 +1153,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "GAR05",
@@ -965,7 +1180,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "GAR06",
@@ -987,7 +1207,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 6,
-    "agg": 4.9
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "GAR07",
@@ -1009,7 +1234,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 6,
-    "agg": 4.9
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "GAR08",
@@ -1031,7 +1261,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 6,
-    "agg": 7.6
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "GAR09",
@@ -1053,7 +1288,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 6,
-    "agg": 7.6
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "GAR10",
@@ -1075,7 +1315,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 6,
-    "agg": 7.6
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "GAR11",
@@ -1097,7 +1342,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 6,
-    "agg": 7.6
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "GAR12",
@@ -1119,7 +1369,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 6,
-    "agg": 7.6
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "GAR13",
@@ -1141,7 +1396,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 6,
-    "agg": 7.6
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "GAR14",
@@ -1163,7 +1423,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 6,
-    "agg": 7.6
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "GAR15",
@@ -1185,7 +1450,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 6,
-    "agg": 7.6
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "SWA01",
@@ -1207,7 +1477,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4.4
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "SWA02",
@@ -1229,7 +1504,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 3.6
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "SWA03",
@@ -1251,7 +1531,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4.4
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "SWA04",
@@ -1273,7 +1558,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4.4
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "SWA05",
@@ -1295,7 +1585,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 3.6
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "ATH01",
@@ -1317,7 +1612,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 10,
-    "agg": 5.2
+    "agg": 4.9,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "ATH02",
@@ -1339,7 +1639,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH03",
@@ -1361,7 +1666,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 10,
-    "agg": 5.2
+    "agg": 4.9,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "ATH04",
@@ -1383,7 +1693,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH05",
@@ -1405,7 +1720,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH06",
@@ -1427,7 +1747,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH07",
@@ -1449,7 +1774,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 10,
-    "agg": 5.2
+    "agg": 4.9,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "ATH08",
@@ -1471,7 +1801,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH09",
@@ -1493,7 +1828,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH10",
@@ -1515,7 +1855,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH11",
@@ -1537,7 +1882,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH12",
@@ -1559,7 +1909,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH13",
@@ -1581,7 +1936,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH14",
@@ -1603,7 +1963,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH15",
@@ -1625,7 +1990,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH16",
@@ -1647,7 +2017,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH17",
@@ -1669,7 +2044,12 @@
     "rU": 6,
     "rS": 10,
     "rVn": 10,
-    "agg": 8.6
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 10,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "ATH18",
@@ -1691,7 +2071,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.7,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "ATH19",
@@ -1713,7 +2098,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.7,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "ATH20",
@@ -1735,7 +2125,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.7,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BDM01",
@@ -1757,7 +2152,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM02",
@@ -1779,7 +2179,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM03",
@@ -1801,7 +2206,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM04",
@@ -1823,7 +2233,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM05",
@@ -1845,7 +2260,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM06",
@@ -1867,7 +2287,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM07",
@@ -1889,7 +2314,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM08",
@@ -1911,7 +2341,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM09",
@@ -1933,7 +2368,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM10",
@@ -1955,7 +2395,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM11",
@@ -1977,7 +2422,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM12",
@@ -1999,7 +2449,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM13",
@@ -2021,7 +2476,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 4.4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BDM14",
@@ -2043,7 +2503,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM15",
@@ -2065,7 +2530,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM16",
@@ -2087,7 +2557,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 5,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BDM17",
@@ -2109,7 +2584,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BDM18",
@@ -2131,7 +2611,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 5.9
+    "agg": 4.4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BDM19",
@@ -2153,7 +2638,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 5.8
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "BDM20",
@@ -2175,7 +2665,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 5,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BDM21",
@@ -2197,7 +2692,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 5.8
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "BDM22",
@@ -2219,7 +2719,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 5.9
+    "agg": 4.4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BDM23",
@@ -2241,7 +2746,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.2
+    "agg": 7.3,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BDM24",
@@ -2263,7 +2773,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 6.4
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "BDM25",
@@ -2285,7 +2800,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 5.8
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "BDM26",
@@ -2307,7 +2827,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 5.9
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "BSB01",
@@ -2329,7 +2854,12 @@
     "rU": 10,
     "rS": 5,
     "rVn": 10,
-    "agg": 5.5
+    "agg": 4.7,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB02",
@@ -2351,7 +2881,12 @@
     "rU": 10,
     "rS": 5,
     "rVn": 10,
-    "agg": 5.7
+    "agg": 4.9,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB03",
@@ -2373,7 +2908,12 @@
     "rU": 10,
     "rS": 5,
     "rVn": 10,
-    "agg": 5.5
+    "agg": 4.7,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB04",
@@ -2395,7 +2935,12 @@
     "rU": 10,
     "rS": 5,
     "rVn": 10,
-    "agg": 5.7
+    "agg": 4.9,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB05",
@@ -2417,7 +2962,12 @@
     "rU": 10,
     "rS": 5,
     "rVn": 10,
-    "agg": 5.5
+    "agg": 4.7,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB06",
@@ -2439,7 +2989,12 @@
     "rU": 10,
     "rS": 5,
     "rVn": 10,
-    "agg": 5.7
+    "agg": 4.9,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB07",
@@ -2461,7 +3016,12 @@
     "rU": 10,
     "rS": 7,
     "rVn": 10,
-    "agg": 6.7
+    "agg": 6.3,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 7,
+    "rDem": 9
   },
   {
     "id": "BSB08",
@@ -2483,7 +3043,12 @@
     "rU": 10,
     "rS": 7,
     "rVn": 10,
-    "agg": 6.9
+    "agg": 6.3,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 7,
+    "rDem": 9
   },
   {
     "id": "BSB09",
@@ -2505,7 +3070,12 @@
     "rU": 10,
     "rS": 7,
     "rVn": 10,
-    "agg": 7.4
+    "agg": 8,
+    "rSig": 7,
+    "rExp": 8,
+    "rStar": 7,
+    "rUniq": 10,
+    "rDem": 9
   },
   {
     "id": "BSB10",
@@ -2527,7 +3097,12 @@
     "rU": 10,
     "rS": 7,
     "rVn": 10,
-    "agg": 7.6
+    "agg": 8,
+    "rSig": 7,
+    "rExp": 8,
+    "rStar": 7,
+    "rUniq": 10,
+    "rDem": 9
   },
   {
     "id": "BSB11",
@@ -2549,7 +3124,12 @@
     "rU": 10,
     "rS": 7,
     "rVn": 10,
-    "agg": 7.6
+    "agg": 8.7,
+    "rSig": 8,
+    "rExp": 9,
+    "rStar": 7,
+    "rUniq": 10,
+    "rDem": 10
   },
   {
     "id": "BSB12",
@@ -2571,7 +3151,12 @@
     "rU": 10,
     "rS": 8,
     "rVn": 10,
-    "agg": 9
+    "agg": 9.7,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 8,
+    "rUniq": 10,
+    "rDem": 10
   },
   {
     "id": "BSB13",
@@ -2593,7 +3178,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB14",
@@ -2615,7 +3205,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB15",
@@ -2637,7 +3232,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB16",
@@ -2659,7 +3259,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB17",
@@ -2681,7 +3286,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB18",
@@ -2703,7 +3313,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB19",
@@ -2725,7 +3340,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB20",
@@ -2747,7 +3367,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB21",
@@ -2769,7 +3394,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB22",
@@ -2791,7 +3421,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB23",
@@ -2813,7 +3448,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB24",
@@ -2835,7 +3475,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB25",
@@ -2857,7 +3502,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB26",
@@ -2879,7 +3529,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB27",
@@ -2901,7 +3556,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 4.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "BSB28",
@@ -2923,7 +3583,12 @@
     "rU": 8,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 8.1,
+    "rSig": 8,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 9,
+    "rDem": 10
   },
   {
     "id": "BSB29",
@@ -2945,7 +3610,12 @@
     "rU": 9,
     "rS": 8,
     "rVn": 5,
-    "agg": 8.1
+    "agg": 8.8,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 9,
+    "rDem": 10
   },
   {
     "id": "BKB01",
@@ -2967,7 +3637,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.8
+    "agg": 5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB02",
@@ -2989,7 +3664,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 6
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB03",
@@ -3011,7 +3691,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 6
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB04",
@@ -3033,7 +3718,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5
+    "agg": 5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB05",
@@ -3055,7 +3745,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 6
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB06",
@@ -3077,7 +3772,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 6
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB07",
@@ -3099,7 +3799,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5
+    "agg": 5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB08",
@@ -3121,7 +3826,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB09",
@@ -3143,7 +3853,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB10",
@@ -3165,7 +3880,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.8
+    "agg": 5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB11",
@@ -3187,7 +3907,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 6
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB12",
@@ -3209,7 +3934,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 6
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB13",
@@ -3231,7 +3961,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.8
+    "agg": 5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB14",
@@ -3253,7 +3988,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB15",
@@ -3275,7 +4015,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB16",
@@ -3297,7 +4042,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5
+    "agg": 5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB17",
@@ -3319,7 +4069,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB18",
@@ -3341,7 +4096,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB19",
@@ -3363,7 +4123,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.8
+    "agg": 5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB20",
@@ -3385,7 +4150,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 6
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB21",
@@ -3407,7 +4177,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 6
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB22",
@@ -3429,7 +4204,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.8
+    "agg": 5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB23",
@@ -3451,7 +4231,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB24",
@@ -3473,7 +4258,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB25",
@@ -3495,7 +4285,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5
+    "agg": 5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB26",
@@ -3517,7 +4312,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB27",
@@ -3539,7 +4339,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 5.2,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "BKB28",
@@ -3561,7 +4366,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 6.6
+    "agg": 6.3,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB29",
@@ -3583,7 +4393,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 6.8
+    "agg": 6.5,
+    "rSig": 4,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB30",
@@ -3605,7 +4420,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 6.6
+    "agg": 6.3,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB31",
@@ -3627,7 +4447,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 6.8
+    "agg": 6.5,
+    "rSig": 4,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB32",
@@ -3649,7 +4474,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 5.8
+    "agg": 6.3,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB33",
@@ -3671,7 +4501,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 6
+    "agg": 6.5,
+    "rSig": 4,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB34",
@@ -3693,7 +4528,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 5.8
+    "agg": 6.3,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB35",
@@ -3715,7 +4555,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 6
+    "agg": 6.5,
+    "rSig": 4,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB36",
@@ -3737,7 +4582,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 6.9
+    "agg": 7.9,
+    "rSig": 8,
+    "rExp": 8,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB37",
@@ -3759,7 +4609,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 7.1
+    "agg": 7.9,
+    "rSig": 8,
+    "rExp": 8,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB38",
@@ -3781,7 +4636,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 6.5
+    "agg": 7.9,
+    "rSig": 8,
+    "rExp": 8,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB39",
@@ -3803,7 +4663,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 6.7
+    "agg": 7.9,
+    "rSig": 8,
+    "rExp": 8,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB40",
@@ -3825,7 +4690,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 6.7
+    "agg": 8.1,
+    "rSig": 9,
+    "rExp": 8,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB41",
@@ -3847,7 +4717,12 @@
     "rU": 4,
     "rS": 9,
     "rVn": 8,
-    "agg": 6.7
+    "agg": 8.1,
+    "rSig": 9,
+    "rExp": 8,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB42",
@@ -3869,7 +4744,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 8,
-    "agg": 8.1
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BKB43",
@@ -3891,7 +4771,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 8,
-    "agg": 8.1
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "VBV01",
@@ -3913,7 +4798,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV02",
@@ -3935,7 +4825,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV03",
@@ -3957,7 +4852,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.7
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV04",
@@ -3979,7 +4879,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV05",
@@ -4001,7 +4906,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV06",
@@ -4023,7 +4933,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.7
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV07",
@@ -4045,7 +4960,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV08",
@@ -4067,7 +4987,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV09",
@@ -4089,7 +5014,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.7
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV10",
@@ -4111,7 +5041,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV11",
@@ -4133,7 +5068,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV12",
@@ -4155,7 +5095,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.7
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV13",
@@ -4177,7 +5122,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV14",
@@ -4199,7 +5149,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV15",
@@ -4221,7 +5176,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.7
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV16",
@@ -4243,7 +5203,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV17",
@@ -4265,7 +5230,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV18",
@@ -4287,7 +5257,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.7
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV19",
@@ -4309,7 +5284,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV20",
@@ -4331,7 +5311,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV21",
@@ -4353,7 +5338,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.7
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV22",
@@ -4375,7 +5365,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV23",
@@ -4397,7 +5392,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.7
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV24",
@@ -4419,7 +5419,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV25",
@@ -4441,7 +5446,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV26",
@@ -4463,7 +5473,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 5.1
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV27",
@@ -4485,7 +5500,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.7
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV28",
@@ -4507,7 +5527,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV29",
@@ -4529,7 +5554,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.9
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV30",
@@ -4551,7 +5581,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 5.1
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV31",
@@ -4573,7 +5608,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 8,
-    "agg": 4.7
+    "agg": 4.3,
+    "rSig": 2,
+    "rExp": 7,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VBV32",
@@ -4595,7 +5635,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 8,
-    "agg": 5.6
+    "agg": 5.4,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "VBV33",
@@ -4617,7 +5662,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 8,
-    "agg": 5.9
+    "agg": 5.6,
+    "rSig": 4,
+    "rExp": 8,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "VBV34",
@@ -4639,7 +5689,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 8,
-    "agg": 5.6
+    "agg": 5.4,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "VBV35",
@@ -4661,7 +5716,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 8,
-    "agg": 5.9
+    "agg": 5.6,
+    "rSig": 4,
+    "rExp": 8,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "VBV36",
@@ -4683,7 +5743,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 8,
-    "agg": 6.3
+    "agg": 6.7,
+    "rSig": 7,
+    "rExp": 8,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "VBV37",
@@ -4705,7 +5770,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 8,
-    "agg": 6.6
+    "agg": 6.7,
+    "rSig": 7,
+    "rExp": 8,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "VBV38",
@@ -4727,7 +5797,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 8,
-    "agg": 8
+    "agg": 8.3,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "VBV39",
@@ -4749,7 +5824,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 8,
-    "agg": 8
+    "agg": 8.5,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "BMF01",
@@ -4771,7 +5851,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 4.6
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "BMF02",
@@ -4793,7 +5878,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 5,
-    "agg": 7.2
+    "agg": 7,
+    "rSig": 9,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BMX01",
@@ -4815,7 +5905,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.3,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BMX02",
@@ -4837,7 +5932,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.1
+    "agg": 6.9,
+    "rSig": 9,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX01",
@@ -4859,7 +5959,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 4.6
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BOX02",
@@ -4881,7 +5986,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 4.8
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BOX03",
@@ -4903,7 +6013,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 4.6
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BOX04",
@@ -4925,7 +6040,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 4.8
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BOX05",
@@ -4947,7 +6067,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 4.6
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BOX06",
@@ -4969,7 +6094,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 4.8
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "BOX07",
@@ -4991,7 +6121,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 6,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX08",
@@ -5013,7 +6148,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 6,
-    "agg": 5.9
+    "agg": 5.4,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX09",
@@ -5035,7 +6175,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 6,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX10",
@@ -5057,7 +6202,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 6,
-    "agg": 5.9
+    "agg": 5.4,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX11",
@@ -5079,7 +6229,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 6,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX12",
@@ -5101,7 +6256,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 6,
-    "agg": 5.9
+    "agg": 5.4,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX13",
@@ -5123,7 +6283,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 6,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX14",
@@ -5145,7 +6310,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 6,
-    "agg": 5.9
+    "agg": 5.4,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX15",
@@ -5167,7 +6337,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 6,
-    "agg": 6.1
+    "agg": 6.2,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX16",
@@ -5189,7 +6364,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 6,
-    "agg": 6.3
+    "agg": 6.4,
+    "rSig": 7,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX17",
@@ -5211,7 +6391,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 6,
-    "agg": 6.1
+    "agg": 6.2,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "BOX18",
@@ -5233,7 +6418,12 @@
     "rU": 5,
     "rS": 8,
     "rVn": 6,
-    "agg": 7.2
+    "agg": 8,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "BOX19",
@@ -5255,7 +6445,12 @@
     "rU": 5,
     "rS": 8,
     "rVn": 6,
-    "agg": 7.4
+    "agg": 8,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "BOX20",
@@ -5277,7 +6472,12 @@
     "rU": 5,
     "rS": 8,
     "rVn": 6,
-    "agg": 7.2
+    "agg": 8,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "BOX21",
@@ -5299,7 +6499,12 @@
     "rU": 5,
     "rS": 8,
     "rVn": 6,
-    "agg": 7.4
+    "agg": 8,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "BOX22",
@@ -5321,7 +6526,12 @@
     "rU": 5,
     "rS": 8,
     "rVn": 6,
-    "agg": 7.7
+    "agg": 8,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "BOX23",
@@ -5343,7 +6553,12 @@
     "rU": 5,
     "rS": 8,
     "rVn": 6,
-    "agg": 7.9
+    "agg": 8,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "BOX24",
@@ -5365,7 +6580,12 @@
     "rU": 5,
     "rS": 8,
     "rVn": 6,
-    "agg": 7.7
+    "agg": 8,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "CSL01",
@@ -5387,7 +6607,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "CSL02",
@@ -5409,7 +6634,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CSL03",
@@ -5431,7 +6661,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CSL04",
@@ -5453,7 +6688,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "CSL05",
@@ -5475,7 +6715,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CSL06",
@@ -5497,7 +6742,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CSL07",
@@ -5519,7 +6769,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "CSL08",
@@ -5541,7 +6796,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.2
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "CSL09",
@@ -5563,7 +6823,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CSP01",
@@ -5585,7 +6850,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5.4
+    "agg": 4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "CSP02",
@@ -5607,7 +6877,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 5,
-    "agg": 7.3
+    "agg": 6.3,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CSP03",
@@ -5629,7 +6904,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5.4
+    "agg": 4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "CSP04",
@@ -5651,7 +6931,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CSP05",
@@ -5673,7 +6958,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CLB01",
@@ -5695,7 +6985,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 6.5
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CLB02",
@@ -5717,7 +7012,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.1
+    "agg": 3.5,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "CLB03",
@@ -5739,7 +7039,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 6.5
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CLB04",
@@ -5761,7 +7066,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 6.8
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CLB05",
@@ -5783,7 +7093,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.3
+    "agg": 7.5,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "CLB06",
@@ -5805,7 +7120,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 6.8
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "CLB07",
@@ -5827,7 +7147,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.3
+    "agg": 7.5,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "CLB08",
@@ -5849,7 +7174,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.3
+    "agg": 7.5,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "CLB09",
@@ -5871,7 +7201,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.3
+    "agg": 7.5,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "CLB10",
@@ -5893,7 +7228,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.3
+    "agg": 7.5,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "CKT01",
@@ -5915,7 +7255,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT02",
@@ -5937,7 +7282,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT03",
@@ -5959,7 +7309,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT04",
@@ -5981,7 +7336,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT05",
@@ -6003,7 +7363,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT06",
@@ -6025,7 +7390,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT07",
@@ -6047,7 +7417,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT08",
@@ -6069,7 +7444,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT09",
@@ -6091,7 +7471,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT10",
@@ -6113,7 +7498,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT11",
@@ -6135,7 +7525,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT12",
@@ -6157,7 +7552,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT13",
@@ -6179,7 +7579,12 @@
     "rU": 8,
     "rS": 6,
     "rVn": 6,
-    "agg": 7.2
+    "agg": 6.8,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 9,
+    "rDem": 6
   },
   {
     "id": "CKT14",
@@ -6201,7 +7606,12 @@
     "rU": 9,
     "rS": 7,
     "rVn": 6,
-    "agg": 8.2
+    "agg": 8.2,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 9,
+    "rDem": 7
   },
   {
     "id": "CKT15",
@@ -6223,7 +7633,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT16",
@@ -6245,7 +7660,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT17",
@@ -6267,7 +7687,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT18",
@@ -6289,7 +7714,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT19",
@@ -6311,7 +7741,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT20",
@@ -6333,7 +7768,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT21",
@@ -6355,7 +7795,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT22",
@@ -6377,7 +7822,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT23",
@@ -6399,7 +7849,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT24",
@@ -6421,7 +7876,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT25",
@@ -6443,7 +7903,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT26",
@@ -6465,7 +7930,12 @@
     "rU": 8,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 5,
+    "rDem": 3
   },
   {
     "id": "CKT27",
@@ -6487,7 +7957,12 @@
     "rU": 8,
     "rS": 6,
     "rVn": 6,
-    "agg": 7.2
+    "agg": 6.8,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 9,
+    "rDem": 6
   },
   {
     "id": "CKT28",
@@ -6509,7 +7984,12 @@
     "rU": 9,
     "rS": 7,
     "rVn": 6,
-    "agg": 8.2
+    "agg": 8.2,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 9,
+    "rDem": 7
   },
   {
     "id": "CRD01",
@@ -6531,7 +8011,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 4.8
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "CRD02",
@@ -6553,7 +8038,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 4.8
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "CRD03",
@@ -6575,7 +8065,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 4.8
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "CTR01",
@@ -6597,7 +8092,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "CTR02",
@@ -6619,7 +8119,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.3
+    "agg": 7,
+    "rSig": 9,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "CTR03",
@@ -6641,7 +8146,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "CTR04",
@@ -6663,7 +8173,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.3
+    "agg": 7,
+    "rSig": 9,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "CTR05",
@@ -6685,7 +8200,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.8
+    "agg": 7.3,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "CTR06",
@@ -6707,7 +8227,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 6.5
+    "agg": 5.4,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "CTR07",
@@ -6729,7 +8254,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.8
+    "agg": 7.3,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "CTR08",
@@ -6751,7 +8281,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.3
+    "agg": 7,
+    "rSig": 9,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "CTR09",
@@ -6773,7 +8308,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.8
+    "agg": 7.3,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "DIV01",
@@ -6795,7 +8335,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 8,
-    "agg": 5
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "DIV02",
@@ -6817,7 +8362,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 8,
-    "agg": 6.8
+    "agg": 6.6,
+    "rSig": 7,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 4,
+    "rDem": 7
   },
   {
     "id": "DIV03",
@@ -6839,7 +8389,12 @@
     "rU": 6,
     "rS": 8,
     "rVn": 8,
-    "agg": 7.5
+    "agg": 8.4,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 9
   },
   {
     "id": "DIV04",
@@ -6861,7 +8416,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 8,
-    "agg": 5
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "DIV05",
@@ -6883,7 +8443,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 8,
-    "agg": 6.8
+    "agg": 6.6,
+    "rSig": 7,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 4,
+    "rDem": 7
   },
   {
     "id": "DIV06",
@@ -6905,7 +8470,12 @@
     "rU": 6,
     "rS": 8,
     "rVn": 8,
-    "agg": 7.5
+    "agg": 8.4,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 9
   },
   {
     "id": "DIV07",
@@ -6927,7 +8497,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 8,
-    "agg": 5
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "DIV08",
@@ -6949,7 +8524,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 8,
-    "agg": 6.8
+    "agg": 6.6,
+    "rSig": 7,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 4,
+    "rDem": 7
   },
   {
     "id": "DIV09",
@@ -6971,7 +8551,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 8,
-    "agg": 5
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "DIV10",
@@ -6993,7 +8578,12 @@
     "rU": 6,
     "rS": 8,
     "rVn": 8,
-    "agg": 7.5
+    "agg": 8.4,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 9
   },
   {
     "id": "DIV11",
@@ -7015,7 +8605,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 8,
-    "agg": 6.8
+    "agg": 6.6,
+    "rSig": 7,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 4,
+    "rDem": 7
   },
   {
     "id": "DIV12",
@@ -7037,7 +8632,12 @@
     "rU": 6,
     "rS": 8,
     "rVn": 8,
-    "agg": 7.5
+    "agg": 8.4,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 9
   },
   {
     "id": "DIV13",
@@ -7059,7 +8659,12 @@
     "rU": 6,
     "rS": 8,
     "rVn": 8,
-    "agg": 7.5
+    "agg": 8.4,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 9
   },
   {
     "id": "DIV14",
@@ -7081,7 +8686,12 @@
     "rU": 6,
     "rS": 8,
     "rVn": 8,
-    "agg": 7.5
+    "agg": 8.4,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 9
   },
   {
     "id": "DIV15",
@@ -7103,7 +8713,12 @@
     "rU": 6,
     "rS": 8,
     "rVn": 8,
-    "agg": 7.5
+    "agg": 8.4,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 9
   },
   {
     "id": "DIV16",
@@ -7125,7 +8740,12 @@
     "rU": 6,
     "rS": 8,
     "rVn": 8,
-    "agg": 7.5
+    "agg": 8.4,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 9
   },
   {
     "id": "EQU01",
@@ -7147,7 +8767,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "EQU02",
@@ -7169,7 +8794,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "EQU03",
@@ -7191,7 +8821,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "EQU04",
@@ -7213,7 +8848,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "EQU05",
@@ -7235,7 +8875,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 6.3,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "EQU06",
@@ -7257,7 +8902,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "EQU07",
@@ -7279,7 +8929,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "EQU08",
@@ -7301,7 +8956,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "EQU09",
@@ -7323,7 +8983,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "EQU10",
@@ -7345,7 +9010,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 6.3,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "EQU11",
@@ -7367,7 +9037,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 6.3,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "EQU12",
@@ -7389,7 +9064,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 6.3,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "EQU13",
@@ -7411,7 +9091,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "EQU14",
@@ -7433,7 +9118,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 6.3,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "EQU15",
@@ -7455,7 +9145,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "EQU16",
@@ -7477,7 +9172,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 6.3,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "FEN01",
@@ -7499,7 +9199,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "FEN02",
@@ -7521,7 +9226,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "FEN03",
@@ -7543,7 +9253,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "FEN04",
@@ -7565,7 +9280,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "FEN05",
@@ -7587,7 +9307,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "FEN06",
@@ -7609,7 +9334,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "FEN07",
@@ -7631,7 +9361,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "FEN08",
@@ -7653,7 +9388,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.4
+    "agg": 7,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FEN09",
@@ -7675,7 +9415,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "FEN10",
@@ -7697,7 +9442,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.4
+    "agg": 7,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FEN11",
@@ -7719,7 +9469,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "FEN12",
@@ -7741,7 +9496,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.4
+    "agg": 7,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FEN13",
@@ -7763,7 +9523,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "FEN14",
@@ -7785,7 +9550,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.4
+    "agg": 7,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FEN15",
@@ -7807,7 +9577,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "FEN16",
@@ -7829,7 +9604,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.4
+    "agg": 7,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FEN17",
@@ -7851,7 +9631,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "FEN18",
@@ -7873,7 +9658,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.4
+    "agg": 7,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FFB01",
@@ -7895,7 +9685,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 7,
-    "agg": 6.1
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 6
   },
   {
     "id": "FFB02",
@@ -7917,7 +9712,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 7,
-    "agg": 6.3
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 6
   },
   {
     "id": "FFB03",
@@ -7939,7 +9739,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 7,
-    "agg": 6.1
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 6
   },
   {
     "id": "FFB04",
@@ -7961,7 +9766,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 7,
-    "agg": 6.3
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 6
   },
   {
     "id": "FFB05",
@@ -7983,7 +9793,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 7,
-    "agg": 6.1
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 6
   },
   {
     "id": "FFB06",
@@ -8005,7 +9820,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 7,
-    "agg": 6.3
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 6
   },
   {
     "id": "FFB07",
@@ -8027,7 +9847,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 7,
-    "agg": 6.1
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 6
   },
   {
     "id": "FFB08",
@@ -8049,7 +9874,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 7,
-    "agg": 6.3
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 6
   },
   {
     "id": "FFB09",
@@ -8071,7 +9901,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 7,
-    "agg": 6.1
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 6
   },
   {
     "id": "FFB10",
@@ -8093,7 +9928,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 7,
-    "agg": 6.3
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 5,
+    "rDem": 6
   },
   {
     "id": "FFB11",
@@ -8115,7 +9955,12 @@
     "rU": 8,
     "rS": 7,
     "rVn": 7,
-    "agg": 7.6
+    "agg": 7.2,
+    "rSig": 7,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 7,
+    "rDem": 8
   },
   {
     "id": "FFB12",
@@ -8137,7 +9982,12 @@
     "rU": 8,
     "rS": 7,
     "rVn": 7,
-    "agg": 7.6
+    "agg": 7.2,
+    "rSig": 7,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 7,
+    "rDem": 8
   },
   {
     "id": "FFB13",
@@ -8159,7 +10009,12 @@
     "rU": 9,
     "rS": 8,
     "rVn": 7,
-    "agg": 9
+    "agg": 9.3,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 8,
+    "rUniq": 9,
+    "rDem": 10
   },
   {
     "id": "FFB14",
@@ -8181,7 +10036,12 @@
     "rU": 9,
     "rS": 8,
     "rVn": 7,
-    "agg": 8.7
+    "agg": 9.1,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 8,
+    "rUniq": 9,
+    "rDem": 10
   },
   {
     "id": "FBL01",
@@ -8203,7 +10063,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL02",
@@ -8225,7 +10090,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL10",
@@ -8247,7 +10117,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL15",
@@ -8269,7 +10144,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL16",
@@ -8291,7 +10171,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL24",
@@ -8313,7 +10198,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL29",
@@ -8335,7 +10225,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL38",
@@ -8357,7 +10252,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL46",
@@ -8379,7 +10279,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 5.3,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "FBL03",
@@ -8401,7 +10306,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL04",
@@ -8423,7 +10333,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL09",
@@ -8445,7 +10360,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL17",
@@ -8467,7 +10387,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL18",
@@ -8489,7 +10414,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL23",
@@ -8511,7 +10441,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL30",
@@ -8533,7 +10468,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL31",
@@ -8555,7 +10495,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL43",
@@ -8577,7 +10522,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.1
+    "agg": 5.3,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "FBL05",
@@ -8599,7 +10549,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL07",
@@ -8621,7 +10576,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL20",
@@ -8643,7 +10603,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL21",
@@ -8665,7 +10630,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL32",
@@ -8687,7 +10657,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL36",
@@ -8709,7 +10684,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL37",
@@ -8731,7 +10711,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL44",
@@ -8753,7 +10738,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 5.3,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "FBL48",
@@ -8775,7 +10765,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 5.3,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "FBL06",
@@ -8797,7 +10792,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL08",
@@ -8819,7 +10819,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL19",
@@ -8841,7 +10846,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL22",
@@ -8863,7 +10873,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL33",
@@ -8885,7 +10900,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL34",
@@ -8907,7 +10927,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL35",
@@ -8929,7 +10954,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL45",
@@ -8951,7 +10981,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 5.3,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "FBL13",
@@ -8973,7 +11008,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL14",
@@ -8995,7 +11035,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL25",
@@ -9017,7 +11062,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL26",
@@ -9039,7 +11089,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL39",
@@ -9061,7 +11116,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL40",
@@ -9083,7 +11143,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL50",
@@ -9105,7 +11170,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.1
+    "agg": 5.3,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "FBL11",
@@ -9127,7 +11197,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL12",
@@ -9149,7 +11224,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL27",
@@ -9171,7 +11251,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL28",
@@ -9193,7 +11278,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL41",
@@ -9215,7 +11305,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL42",
@@ -9237,7 +11332,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "FBL49",
@@ -9259,7 +11359,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.1
+    "agg": 5.3,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "FBL51",
@@ -9281,7 +11386,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6
+    "agg": 6.6,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "FBL53",
@@ -9303,7 +11413,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.1
+    "agg": 6.9,
+    "rSig": 8,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "FBL55",
@@ -9325,7 +11440,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 7.3,
+    "rSig": 9,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "FBL56",
@@ -9347,7 +11467,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.1
+    "agg": 7.3,
+    "rSig": 9,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "FBL47",
@@ -9369,7 +11494,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 10,
-    "agg": 6.7
+    "agg": 5.5,
+    "rSig": 4,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "FBL52",
@@ -9391,7 +11521,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 10,
-    "agg": 6.8
+    "agg": 7.4,
+    "rSig": 8,
+    "rExp": 8,
+    "rStar": 7,
+    "rUniq": 5,
+    "rDem": 8
   },
   {
     "id": "FBL54",
@@ -9413,7 +11548,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 10,
-    "agg": 6.8
+    "agg": 7.4,
+    "rSig": 8,
+    "rExp": 8,
+    "rStar": 7,
+    "rUniq": 5,
+    "rDem": 8
   },
   {
     "id": "FBL57",
@@ -9435,7 +11575,12 @@
     "rU": 6,
     "rS": 8,
     "rVn": 10,
-    "agg": 8.4
+    "agg": 9,
+    "rSig": 10,
+    "rExp": 10,
+    "rStar": 8,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "FBL58",
@@ -9457,7 +11602,12 @@
     "rU": 6,
     "rS": 8,
     "rVn": 10,
-    "agg": 8.2
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 8,
+    "rUniq": 5,
+    "rDem": 10
   },
   {
     "id": "GLF01",
@@ -9479,7 +11629,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 8,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "GLF02",
@@ -9501,7 +11656,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 8,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "GLF03",
@@ -9523,7 +11683,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 8,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "GLF04",
@@ -9545,7 +11710,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 8,
-    "agg": 4.2
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "GLF05",
@@ -9567,7 +11737,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 8,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "GLF06",
@@ -9589,7 +11764,12 @@
     "rU": 5,
     "rS": 8,
     "rVn": 8,
-    "agg": 7.2
+    "agg": 7,
+    "rSig": 8,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "GLF07",
@@ -9611,7 +11791,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 8,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "GLF08",
@@ -9633,7 +11818,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 8,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "GLF09",
@@ -9655,7 +11845,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 8,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "GLF10",
@@ -9677,7 +11872,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 8,
-    "agg": 4.2
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "HBL01",
@@ -9699,7 +11899,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL02",
@@ -9721,7 +11926,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL03",
@@ -9743,7 +11953,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL04",
@@ -9765,7 +11980,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL05",
@@ -9787,7 +12007,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL06",
@@ -9809,7 +12034,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL07",
@@ -9831,7 +12061,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL08",
@@ -9853,7 +12088,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL09",
@@ -9875,7 +12115,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL10",
@@ -9897,7 +12142,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL11",
@@ -9919,7 +12169,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL12",
@@ -9941,7 +12196,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL13",
@@ -9963,7 +12223,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL14",
@@ -9985,7 +12250,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL15",
@@ -10007,7 +12277,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL16",
@@ -10029,7 +12304,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL17",
@@ -10051,7 +12331,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL18",
@@ -10073,7 +12358,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL19",
@@ -10095,7 +12385,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL20",
@@ -10117,7 +12412,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL21",
@@ -10139,7 +12439,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL22",
@@ -10161,7 +12466,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL23",
@@ -10183,7 +12493,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL24",
@@ -10205,7 +12520,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL25",
@@ -10227,7 +12547,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL26",
@@ -10249,7 +12574,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL27",
@@ -10271,7 +12601,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL28",
@@ -10293,7 +12628,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL29",
@@ -10315,7 +12655,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL30",
@@ -10337,7 +12682,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HBL31",
@@ -10359,7 +12709,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.2
+    "agg": 4.3,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL32",
@@ -10381,7 +12736,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.2
+    "agg": 4.3,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL33",
@@ -10403,7 +12763,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.2
+    "agg": 4.3,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL34",
@@ -10425,7 +12790,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.4
+    "agg": 4.5,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL35",
@@ -10447,7 +12817,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.2
+    "agg": 4.3,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL36",
@@ -10469,7 +12844,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.2
+    "agg": 4.3,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL37",
@@ -10491,7 +12871,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.2
+    "agg": 4.3,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL38",
@@ -10513,7 +12898,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.4
+    "agg": 4.5,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL39",
@@ -10535,7 +12925,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.5
+    "agg": 5.3,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL40",
@@ -10557,7 +12952,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.5
+    "agg": 5.3,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL41",
@@ -10579,7 +12979,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.5
+    "agg": 5.3,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL42",
@@ -10601,7 +13006,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.5
+    "agg": 5.3,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HBL43",
@@ -10623,7 +13033,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.7
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 7,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "HBL44",
@@ -10645,7 +13060,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 6,
-    "agg": 7.6
+    "agg": 7.2,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "HBL45",
@@ -10667,7 +13087,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 6,
-    "agg": 6.7
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 7,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "HBL46",
@@ -10689,7 +13114,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 6,
-    "agg": 7.6
+    "agg": 7.2,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "HOC01",
@@ -10711,7 +13141,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC02",
@@ -10733,7 +13168,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC03",
@@ -10755,7 +13195,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC04",
@@ -10777,7 +13222,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC05",
@@ -10799,7 +13249,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC06",
@@ -10821,7 +13276,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC07",
@@ -10843,7 +13303,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC08",
@@ -10865,7 +13330,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC09",
@@ -10887,7 +13357,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC10",
@@ -10909,7 +13384,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC11",
@@ -10931,7 +13411,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC12",
@@ -10953,7 +13438,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC13",
@@ -10975,7 +13465,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC14",
@@ -10997,7 +13492,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC15",
@@ -11019,7 +13519,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC16",
@@ -11041,7 +13546,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC17",
@@ -11063,7 +13573,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC18",
@@ -11085,7 +13600,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC19",
@@ -11107,7 +13627,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC20",
@@ -11129,7 +13654,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC21",
@@ -11151,7 +13681,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC22",
@@ -11173,7 +13708,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "HOC23",
@@ -11195,7 +13735,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.3,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HOC24",
@@ -11217,7 +13762,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.9
+    "agg": 4.5,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HOC25",
@@ -11239,7 +13789,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.3,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HOC26",
@@ -11261,7 +13816,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.9
+    "agg": 4.5,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HOC27",
@@ -11283,7 +13843,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.3,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HOC28",
@@ -11305,7 +13870,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.6
+    "agg": 5.3,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HOC29",
@@ -11327,7 +13897,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.3,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HOC30",
@@ -11349,7 +13924,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.6
+    "agg": 5.3,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "HOC31",
@@ -11371,7 +13951,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.6
+    "agg": 5.7,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "HOC32",
@@ -11393,7 +13978,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 8.2
+    "agg": 7.2,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "HOC33",
@@ -11415,7 +14005,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.2
+    "agg": 5.7,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "HOC34",
@@ -11437,7 +14032,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.8
+    "agg": 7.2,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "JUD01",
@@ -11459,7 +14059,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "JUD02",
@@ -11481,7 +14086,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6.6,
+    "rSig": 8,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "JUD03",
@@ -11503,7 +14113,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "JUD04",
@@ -11525,7 +14140,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6.6,
+    "rSig": 8,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "JUD05",
@@ -11547,7 +14167,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "JUD06",
@@ -11569,7 +14194,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6.6,
+    "rSig": 8,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "JUD07",
@@ -11591,7 +14221,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "JUD08",
@@ -11613,7 +14248,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6.6,
+    "rSig": 8,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "JUD09",
@@ -11635,7 +14275,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "JUD10",
@@ -11657,7 +14302,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6.6,
+    "rSig": 8,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "JUD11",
@@ -11679,7 +14329,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "JUD12",
@@ -11701,7 +14356,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6.6,
+    "rSig": 8,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "JUD13",
@@ -11723,7 +14383,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 5
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "JUD14",
@@ -11745,7 +14410,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 6.6,
+    "rSig": 8,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "JUD15",
@@ -11767,7 +14437,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 6.5
+    "agg": 5.4,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "JUD16",
@@ -11789,7 +14464,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 5,
-    "agg": 7.7
+    "agg": 7.3,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "LAC01",
@@ -11811,7 +14491,12 @@
     "rU": 8,
     "rS": 2,
     "rVn": 7,
-    "agg": 5.6
+    "agg": 3.5,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 2,
+    "rUniq": 5,
+    "rDem": 4
   },
   {
     "id": "LAC02",
@@ -11833,7 +14518,12 @@
     "rU": 8,
     "rS": 2,
     "rVn": 7,
-    "agg": 5.8
+    "agg": 3.8,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 2,
+    "rUniq": 5,
+    "rDem": 4
   },
   {
     "id": "LAC03",
@@ -11855,7 +14545,12 @@
     "rU": 8,
     "rS": 2,
     "rVn": 7,
-    "agg": 5.6
+    "agg": 3.5,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 2,
+    "rUniq": 5,
+    "rDem": 4
   },
   {
     "id": "LAC04",
@@ -11877,7 +14572,12 @@
     "rU": 8,
     "rS": 2,
     "rVn": 7,
-    "agg": 5.8
+    "agg": 3.8,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 2,
+    "rUniq": 5,
+    "rDem": 4
   },
   {
     "id": "LAC05",
@@ -11899,7 +14599,12 @@
     "rU": 8,
     "rS": 2,
     "rVn": 7,
-    "agg": 5.6
+    "agg": 3.5,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 2,
+    "rUniq": 5,
+    "rDem": 4
   },
   {
     "id": "LAC06",
@@ -11921,7 +14626,12 @@
     "rU": 8,
     "rS": 2,
     "rVn": 7,
-    "agg": 5.8
+    "agg": 3.8,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 2,
+    "rUniq": 5,
+    "rDem": 4
   },
   {
     "id": "LAC07",
@@ -11943,7 +14653,12 @@
     "rU": 8,
     "rS": 2,
     "rVn": 7,
-    "agg": 5.6
+    "agg": 3.5,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 2,
+    "rUniq": 5,
+    "rDem": 4
   },
   {
     "id": "LAC08",
@@ -11965,7 +14680,12 @@
     "rU": 8,
     "rS": 2,
     "rVn": 7,
-    "agg": 5.8
+    "agg": 3.8,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 2,
+    "rUniq": 5,
+    "rDem": 4
   },
   {
     "id": "LAC09",
@@ -11987,7 +14707,12 @@
     "rU": 8,
     "rS": 2,
     "rVn": 7,
-    "agg": 5.6
+    "agg": 3.5,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 2,
+    "rUniq": 5,
+    "rDem": 4
   },
   {
     "id": "LAC10",
@@ -12009,7 +14734,12 @@
     "rU": 8,
     "rS": 2,
     "rVn": 7,
-    "agg": 5.8
+    "agg": 3.8,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 2,
+    "rUniq": 5,
+    "rDem": 4
   },
   {
     "id": "LAC11",
@@ -12031,7 +14761,12 @@
     "rU": 9,
     "rS": 5,
     "rVn": 7,
-    "agg": 8.2
+    "agg": 8.3,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 5,
+    "rUniq": 9,
+    "rDem": 8
   },
   {
     "id": "LAC12",
@@ -12053,7 +14788,12 @@
     "rU": 9,
     "rS": 5,
     "rVn": 7,
-    "agg": 8.5
+    "agg": 8.3,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 5,
+    "rUniq": 9,
+    "rDem": 8
   },
   {
     "id": "MPN01",
@@ -12075,7 +14815,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 3.9,
+    "rSig": 5,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "MPN02",
@@ -12097,7 +14842,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 3.9,
+    "rSig": 5,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "MPN03",
@@ -12119,7 +14869,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.5
+    "agg": 5.7,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "MPN04",
@@ -12141,7 +14896,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.5
+    "agg": 5.7,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "MTB01",
@@ -12163,7 +14923,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.7
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "MTB02",
@@ -12185,7 +14950,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.7
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "OWS01",
@@ -12207,7 +14977,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 7,
-    "agg": 4.8
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "OWS02",
@@ -12229,7 +15004,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 7,
-    "agg": 4.8
+    "agg": 3,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "GRY01",
@@ -12251,7 +15031,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.3
+    "agg": 3.5,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "GRY02",
@@ -12273,7 +15058,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 3.5,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "GRY03",
@@ -12295,7 +15085,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 4.3
+    "agg": 3.5,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "GRY04",
@@ -12317,7 +15112,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 7.1
+    "agg": 7.7,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "GRY05",
@@ -12339,7 +15139,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 6,
-    "agg": 6.9
+    "agg": 7.5,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "ROW01",
@@ -12361,7 +15166,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 5,
-    "agg": 4.4
+    "agg": 2.5,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "ROW02",
@@ -12383,7 +15193,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.3
+    "agg": 4,
+    "rSig": 5,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "ROW03",
@@ -12405,7 +15220,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 5,
-    "agg": 7.2
+    "agg": 5.9,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "ROW04",
@@ -12427,7 +15247,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.8
+    "agg": 5.1,
+    "rSig": 7,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "ROW05",
@@ -12449,7 +15274,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 7.1
+    "agg": 5.5,
+    "rSig": 8,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "ROW06",
@@ -12471,7 +15301,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 7.1
+    "agg": 5.5,
+    "rSig": 8,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "ROW07",
@@ -12493,7 +15328,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 7.1
+    "agg": 5.5,
+    "rSig": 8,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "ROW08",
@@ -12515,7 +15355,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 5,
-    "agg": 7.5
+    "agg": 6.1,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "RCB01",
@@ -12537,7 +15382,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 7,
-    "agg": 4.5
+    "agg": 2.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "RCB02",
@@ -12559,7 +15409,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 7,
-    "agg": 7.6
+    "agg": 6,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "RCB03",
@@ -12581,7 +15436,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 7,
-    "agg": 4.5
+    "agg": 2.4,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "RCB04",
@@ -12603,7 +15463,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 7,
-    "agg": 7.3
+    "agg": 5.7,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "RU701",
@@ -12625,7 +15490,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "RU702",
@@ -12647,7 +15517,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "RU703",
@@ -12669,7 +15544,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "RU704",
@@ -12691,7 +15571,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.7,
+    "rSig": 4,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "RU705",
@@ -12713,7 +15598,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.9
+    "agg": 4.4,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "RU706",
@@ -12735,7 +15625,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 6,
-    "agg": 7.4
+    "agg": 6.3,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "RU707",
@@ -12757,7 +15652,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "RU708",
@@ -12779,7 +15679,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "RU709",
@@ -12801,7 +15706,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.5
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "RU710",
@@ -12823,7 +15733,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.7
+    "agg": 3.7,
+    "rSig": 4,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "RU711",
@@ -12845,7 +15760,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.9
+    "agg": 4.4,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "RU712",
@@ -12867,7 +15787,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 6,
-    "agg": 7.4
+    "agg": 6.3,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "SAL01",
@@ -12889,7 +15814,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 7,
-    "agg": 4.3
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "SAL02",
@@ -12911,7 +15841,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 7,
-    "agg": 4.3
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "SAL03",
@@ -12933,7 +15868,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 7,
-    "agg": 4.3
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "SAL04",
@@ -12955,7 +15895,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 7,
-    "agg": 7.1
+    "agg": 5.7,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SAL05",
@@ -12977,7 +15922,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 7,
-    "agg": 7.1
+    "agg": 5.7,
+    "rSig": 8,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SAL06",
@@ -12999,7 +15949,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "SAL07",
@@ -13021,7 +15976,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "SAL08",
@@ -13043,7 +16003,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 2.1,
+    "rSig": 2,
+    "rExp": 3,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "SAL09",
@@ -13065,7 +16030,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 5.5,
+    "rSig": 8,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SAL10",
@@ -13087,7 +16057,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 5.5,
+    "rSig": 8,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SAL11",
@@ -13109,7 +16084,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 5,
-    "agg": 7.2
+    "agg": 5.8,
+    "rSig": 9,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SHO01",
@@ -13131,7 +16111,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.5
+    "agg": 4.8,
+    "rSig": 7,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "SHO02",
@@ -13153,7 +16138,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.5
+    "agg": 4.8,
+    "rSig": 7,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "SHO03",
@@ -13175,7 +16165,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 1.9,
+    "rSig": 2,
+    "rExp": 2,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "SHO06",
@@ -13197,7 +16192,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.5
+    "agg": 4.8,
+    "rSig": 7,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "SHO07",
@@ -13219,7 +16219,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.5
+    "agg": 4.8,
+    "rSig": 7,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "SHO09",
@@ -13241,7 +16246,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 1.9,
+    "rSig": 2,
+    "rExp": 2,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "SHO11",
@@ -13263,7 +16273,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 5.2,
+    "rSig": 8,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SHO04",
@@ -13285,7 +16300,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.5
+    "agg": 4.8,
+    "rSig": 7,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "SHO05",
@@ -13307,7 +16327,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 5.2,
+    "rSig": 8,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SHO08",
@@ -13329,7 +16354,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 1.9,
+    "rSig": 2,
+    "rExp": 2,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "SHO10",
@@ -13351,7 +16381,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 5.2,
+    "rSig": 8,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SHO12",
@@ -13373,7 +16408,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.5
+    "agg": 4.8,
+    "rSig": 7,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "SHO13",
@@ -13395,7 +16435,12 @@
     "rU": 4,
     "rS": 1,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 1.9,
+    "rSig": 2,
+    "rExp": 2,
+    "rStar": 1,
+    "rUniq": 3,
+    "rDem": 1
   },
   {
     "id": "SHO14",
@@ -13417,7 +16462,12 @@
     "rU": 5,
     "rS": 4,
     "rVn": 5,
-    "agg": 6.9
+    "agg": 5.2,
+    "rSig": 8,
+    "rExp": 4,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SKB01",
@@ -13439,7 +16489,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.8
+    "agg": 4.2,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SKB02",
@@ -13461,7 +16516,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.6
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SKB03",
@@ -13483,7 +16543,12 @@
     "rU": 5,
     "rS": 9,
     "rVn": 5,
-    "agg": 7.4
+    "agg": 8.2,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "SKB04",
@@ -13505,7 +16570,12 @@
     "rU": 5,
     "rS": 9,
     "rVn": 5,
-    "agg": 7.4
+    "agg": 8.2,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "SKB05",
@@ -13527,7 +16597,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.6
+    "agg": 4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SKB06",
@@ -13549,7 +16624,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.8
+    "agg": 4.2,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SKB07",
@@ -13571,7 +16651,12 @@
     "rU": 5,
     "rS": 9,
     "rVn": 5,
-    "agg": 7.4
+    "agg": 8.2,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "SKB08",
@@ -13593,7 +16678,12 @@
     "rU": 5,
     "rS": 9,
     "rVn": 5,
-    "agg": 7.4
+    "agg": 8.2,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "SQU01",
@@ -13615,7 +16705,12 @@
     "rU": 8,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 5,
+    "rDem": 2
   },
   {
     "id": "SQU02",
@@ -13637,7 +16732,12 @@
     "rU": 8,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 5,
+    "rDem": 2
   },
   {
     "id": "SQU03",
@@ -13659,7 +16759,12 @@
     "rU": 8,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 5,
+    "rDem": 2
   },
   {
     "id": "SQU04",
@@ -13681,7 +16786,12 @@
     "rU": 8,
     "rS": 3,
     "rVn": 5,
-    "agg": 5.1
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 5,
+    "rDem": 2
   },
   {
     "id": "SQU05",
@@ -13703,7 +16813,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.3
+    "agg": 4.7,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 7,
+    "rDem": 4
   },
   {
     "id": "SQU06",
@@ -13725,7 +16840,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.3
+    "agg": 4.7,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 7,
+    "rDem": 4
   },
   {
     "id": "SQU07",
@@ -13747,7 +16867,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 7
+    "agg": 5.4,
+    "rSig": 6,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 7,
+    "rDem": 4
   },
   {
     "id": "SQU08",
@@ -13769,7 +16894,12 @@
     "rU": 8,
     "rS": 5,
     "rVn": 5,
-    "agg": 7
+    "agg": 5.4,
+    "rSig": 6,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 7,
+    "rDem": 4
   },
   {
     "id": "SQU09",
@@ -13791,7 +16921,12 @@
     "rU": 9,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.8
+    "agg": 7.7,
+    "rSig": 10,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 9,
+    "rDem": 6
   },
   {
     "id": "SQU10",
@@ -13813,7 +16948,12 @@
     "rU": 9,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.8
+    "agg": 7.7,
+    "rSig": 10,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 9,
+    "rDem": 6
   },
   {
     "id": "SRF01",
@@ -13835,7 +16975,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 8,
-    "agg": 5.8
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SRF02",
@@ -13857,7 +17002,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 8,
-    "agg": 5.8
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SRF03",
@@ -13879,7 +17029,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 8,
-    "agg": 5.8
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "SRF04",
@@ -13901,7 +17056,12 @@
     "rU": 5,
     "rS": 7,
     "rVn": 8,
-    "agg": 7.6
+    "agg": 6.7,
+    "rSig": 7,
+    "rExp": 7,
+    "rStar": 7,
+    "rUniq": 5,
+    "rDem": 7
   },
   {
     "id": "SWM01",
@@ -13923,7 +17083,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 9,
-    "agg": 4.9
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "SWM02",
@@ -13945,7 +17110,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 9,
-    "agg": 8.4
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "SWM03",
@@ -13967,7 +17137,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 9,
-    "agg": 4.9
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "SWM04",
@@ -13989,7 +17164,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 9,
-    "agg": 8.4
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "SWM05",
@@ -14011,7 +17191,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 9,
-    "agg": 4.9
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "SWM06",
@@ -14033,7 +17218,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 9,
-    "agg": 8.4
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "SWM07",
@@ -14055,7 +17245,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 9,
-    "agg": 4.9
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "SWM08",
@@ -14077,7 +17272,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 9,
-    "agg": 8.4
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "SWM09",
@@ -14099,7 +17299,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 9,
-    "agg": 4.9
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "SWM10",
@@ -14121,7 +17326,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 9,
-    "agg": 8.4
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "SWM11",
@@ -14143,7 +17353,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 9,
-    "agg": 4.9
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "SWM12",
@@ -14165,7 +17380,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 9,
-    "agg": 8.4
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "SWM13",
@@ -14187,7 +17407,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 9,
-    "agg": 4.9
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "SWM14",
@@ -14209,7 +17434,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 9,
-    "agg": 8.4
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "SWM15",
@@ -14231,7 +17461,12 @@
     "rU": 4,
     "rS": 7,
     "rVn": 9,
-    "agg": 4.9
+    "agg": 4.5,
+    "rSig": 2,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "SWM16",
@@ -14253,7 +17488,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 9,
-    "agg": 8.4
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "SWM17",
@@ -14275,7 +17515,12 @@
     "rU": 5,
     "rS": 10,
     "rVn": 9,
-    "agg": 8.4
+    "agg": 8.7,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 10
   },
   {
     "id": "TTE01",
@@ -14297,7 +17542,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE02",
@@ -14319,7 +17569,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE03",
@@ -14341,7 +17596,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE04",
@@ -14363,7 +17623,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.5
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE05",
@@ -14385,7 +17650,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE06",
@@ -14407,7 +17677,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 4.6,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE07",
@@ -14429,7 +17704,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.5
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE08",
@@ -14451,7 +17731,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE09",
@@ -14473,7 +17758,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.2
+    "agg": 6.5,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "TTE10",
@@ -14495,7 +17785,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.2
+    "agg": 4.6,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE11",
@@ -14517,7 +17812,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE12",
@@ -14539,7 +17839,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.2
+    "agg": 6.5,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "TTE13",
@@ -14561,7 +17866,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.2
+    "agg": 4.6,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE14",
@@ -14583,7 +17893,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE15",
@@ -14605,7 +17920,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.2
+    "agg": 6.5,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "TTE16",
@@ -14627,7 +17947,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE17",
@@ -14649,7 +17974,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE18",
@@ -14671,7 +18001,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE19",
@@ -14693,7 +18028,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.5
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE20",
@@ -14715,7 +18055,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.5
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE21",
@@ -14737,7 +18082,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE22",
@@ -14759,7 +18109,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.2
+    "agg": 4.6,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE23",
@@ -14781,7 +18136,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.2
+    "agg": 6.5,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "TTE24",
@@ -14803,7 +18163,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.2
+    "agg": 4.6,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE25",
@@ -14825,7 +18190,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.2
+    "agg": 6.5,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "TTE26",
@@ -14847,7 +18217,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE27",
@@ -14869,7 +18244,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE28",
@@ -14891,7 +18271,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE29",
@@ -14913,7 +18298,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE30",
@@ -14935,7 +18325,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE31",
@@ -14957,7 +18352,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.5
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TTE32",
@@ -14979,7 +18379,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.5
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE33",
@@ -15001,7 +18406,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE34",
@@ -15023,7 +18433,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.2
+    "agg": 4.6,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE35",
@@ -15045,7 +18460,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 4.6,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TTE36",
@@ -15067,7 +18487,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6
+    "agg": 5.3,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TTE37",
@@ -15089,7 +18514,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.2
+    "agg": 6.5,
+    "rSig": 9,
+    "rExp": 6,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "TKW01",
@@ -15111,7 +18541,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TKW02",
@@ -15133,7 +18568,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TKW03",
@@ -15155,7 +18595,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.8
+    "agg": 7,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "TKW04",
@@ -15177,7 +18622,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TKW05",
@@ -15199,7 +18649,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TKW06",
@@ -15221,7 +18676,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.8
+    "agg": 7,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "TKW07",
@@ -15243,7 +18703,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TKW08",
@@ -15265,7 +18730,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TKW09",
@@ -15287,7 +18757,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.8
+    "agg": 7,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "TKW10",
@@ -15309,7 +18784,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.9
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "TKW11",
@@ -15331,7 +18811,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "TKW12",
@@ -15353,7 +18838,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.8
+    "agg": 7,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "TEN01",
@@ -15375,7 +18865,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.4
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN02",
@@ -15397,7 +18892,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.8
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN03",
@@ -15419,7 +18919,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 5.2
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN04",
@@ -15441,7 +18946,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.4,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN05",
@@ -15463,7 +18973,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.4,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN06",
@@ -15485,7 +19000,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 5.9
+    "agg": 6.5,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN07",
@@ -15507,7 +19027,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.8
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN08",
@@ -15529,7 +19054,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 5.2
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN09",
@@ -15551,7 +19081,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 5.2
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN10",
@@ -15573,7 +19108,12 @@
     "rU": 5,
     "rS": 9,
     "rVn": 5,
-    "agg": 7.7
+    "agg": 8.1,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "TEN11",
@@ -15595,7 +19135,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.4
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN12",
@@ -15617,7 +19162,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.8
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN13",
@@ -15639,7 +19189,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 5.2
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN14",
@@ -15661,7 +19216,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 5.2
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN15",
@@ -15683,7 +19243,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.6
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN16",
@@ -15705,7 +19270,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.4
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN17",
@@ -15727,7 +19297,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.8
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN18",
@@ -15749,7 +19324,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 5.2
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN19",
@@ -15771,7 +19351,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 5.2
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN20",
@@ -15793,7 +19378,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.6
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN21",
@@ -15815,7 +19405,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.4
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN22",
@@ -15837,7 +19432,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.8
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN23",
@@ -15859,7 +19459,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 5.2
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN24",
@@ -15881,7 +19486,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 5.2
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN25",
@@ -15903,7 +19513,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 5,
-    "agg": 4.6
+    "agg": 4.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "TEN26",
@@ -15925,7 +19540,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 5.6
+    "agg": 5.2,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN27",
@@ -15947,7 +19567,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 5.6
+    "agg": 5.2,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN28",
@@ -15969,7 +19594,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.2,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN29",
@@ -15991,7 +19621,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.2,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN30",
@@ -16013,7 +19648,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.4,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN31",
@@ -16035,7 +19675,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 5.9
+    "agg": 6.5,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN32",
@@ -16057,7 +19702,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 6.3
+    "agg": 6.5,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN33",
@@ -16079,7 +19729,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 7.1
+    "agg": 6.5,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN34",
@@ -16101,7 +19756,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 6.4
+    "agg": 5.2,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 8,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN35",
@@ -16123,7 +19783,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 6.1
+    "agg": 6.5,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN36",
@@ -16145,7 +19810,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 5.9
+    "agg": 6.5,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN37",
@@ -16167,7 +19837,12 @@
     "rU": 4,
     "rS": 8,
     "rVn": 5,
-    "agg": 6.1
+    "agg": 6.5,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 9,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "TEN38",
@@ -16189,7 +19864,12 @@
     "rU": 5,
     "rS": 9,
     "rVn": 5,
-    "agg": 7.5
+    "agg": 8.1,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "TEN39",
@@ -16211,7 +19891,12 @@
     "rU": 5,
     "rS": 9,
     "rVn": 5,
-    "agg": 7.7
+    "agg": 8.1,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "TEN40",
@@ -16233,7 +19918,12 @@
     "rU": 5,
     "rS": 9,
     "rVn": 5,
-    "agg": 7.5
+    "agg": 8.1,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "TEN41",
@@ -16255,7 +19945,12 @@
     "rU": 5,
     "rS": 9,
     "rVn": 5,
-    "agg": 7.7
+    "agg": 8.1,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 10,
+    "rUniq": 3,
+    "rDem": 9
   },
   {
     "id": "GTR01",
@@ -16277,7 +19972,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 6.4
+    "agg": 6.7,
+    "rSig": 9,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "GTR02",
@@ -16299,7 +19999,12 @@
     "rU": 4,
     "rS": 6,
     "rVn": 6,
-    "agg": 6.6
+    "agg": 6.7,
+    "rSig": 9,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "TRI01",
@@ -16321,7 +20026,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "TRI02",
@@ -16343,7 +20053,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "TRI03",
@@ -16365,7 +20080,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 8,
-    "agg": 5.2
+    "agg": 3.2,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 3
   },
   {
     "id": "VVO01",
@@ -16387,7 +20107,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO02",
@@ -16409,7 +20134,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO03",
@@ -16431,7 +20161,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO04",
@@ -16453,7 +20188,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO05",
@@ -16475,7 +20215,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO06",
@@ -16497,7 +20242,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO07",
@@ -16519,7 +20269,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO08",
@@ -16541,7 +20296,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO09",
@@ -16563,7 +20323,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO10",
@@ -16585,7 +20350,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO11",
@@ -16607,7 +20377,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO12",
@@ -16629,7 +20404,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO13",
@@ -16651,7 +20431,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO14",
@@ -16673,7 +20458,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO15",
@@ -16695,7 +20485,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO16",
@@ -16717,7 +20512,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO17",
@@ -16739,7 +20539,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO18",
@@ -16761,7 +20566,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO19",
@@ -16783,7 +20593,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO20",
@@ -16805,7 +20620,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO21",
@@ -16827,7 +20647,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO22",
@@ -16849,7 +20674,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO23",
@@ -16871,7 +20701,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO24",
@@ -16893,7 +20728,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO25",
@@ -16915,7 +20755,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO26",
@@ -16937,7 +20782,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO27",
@@ -16959,7 +20809,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO28",
@@ -16981,7 +20836,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO29",
@@ -17003,7 +20863,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO30",
@@ -17025,7 +20890,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO31",
@@ -17047,7 +20917,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO32",
@@ -17069,7 +20944,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO33",
@@ -17091,7 +20971,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO34",
@@ -17113,7 +20998,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.1
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO35",
@@ -17135,7 +21025,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO36",
@@ -17157,7 +21052,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 4.3
+    "agg": 3.4,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "VVO37",
@@ -17179,7 +21079,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4.4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO38",
@@ -17201,7 +21106,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4.4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO39",
@@ -17223,7 +21133,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.5
+    "agg": 4.7,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO40",
@@ -17245,7 +21160,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.5
+    "agg": 4.7,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO41",
@@ -17267,7 +21187,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4.4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO42",
@@ -17289,7 +21214,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.3
+    "agg": 4.4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO43",
@@ -17311,7 +21241,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.5
+    "agg": 4.7,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO44",
@@ -17333,7 +21268,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.5
+    "agg": 4.7,
+    "rSig": 4,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO45",
@@ -17355,7 +21295,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.6
+    "agg": 5.4,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO46",
@@ -17377,7 +21322,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.6
+    "agg": 5.4,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO47",
@@ -17399,7 +21349,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.6
+    "agg": 5.4,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO48",
@@ -17421,7 +21376,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.6
+    "agg": 5.4,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "VVO49",
@@ -17443,7 +21403,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.9
+    "agg": 6.1,
+    "rSig": 7,
+    "rExp": 7,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "VVO50",
@@ -17465,7 +21430,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.2
+    "agg": 7.3,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "VVO51",
@@ -17487,7 +21457,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.9,
+    "rSig": 7,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 7
   },
   {
     "id": "VVO52",
@@ -17509,7 +21484,12 @@
     "rU": 5,
     "rS": 6,
     "rVn": 5,
-    "agg": 7.2
+    "agg": 7.3,
+    "rSig": 10,
+    "rExp": 7,
+    "rStar": 6,
+    "rUniq": 3,
+    "rDem": 8
   },
   {
     "id": "WPO01",
@@ -17531,7 +21511,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO02",
@@ -17553,7 +21538,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO03",
@@ -17575,7 +21565,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.9
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO04",
@@ -17597,7 +21592,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO05",
@@ -17619,7 +21619,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO06",
@@ -17641,7 +21646,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.9
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO07",
@@ -17663,7 +21673,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO08",
@@ -17685,7 +21700,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO09",
@@ -17707,7 +21727,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.9
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO10",
@@ -17729,7 +21754,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO11",
@@ -17751,7 +21781,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO12",
@@ -17773,7 +21808,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.9
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO13",
@@ -17795,7 +21835,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO14",
@@ -17817,7 +21862,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO15",
@@ -17839,7 +21889,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.9
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO16",
@@ -17861,7 +21916,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO17",
@@ -17883,7 +21943,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.7
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO18",
@@ -17905,7 +21970,12 @@
     "rU": 4,
     "rS": 2,
     "rVn": 6,
-    "agg": 4.9
+    "agg": 2.7,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 2,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WPO19",
@@ -17927,7 +21997,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.9
+    "agg": 4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WPO20",
@@ -17949,7 +22024,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 6.1
+    "agg": 4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WPO21",
@@ -17971,7 +22051,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 5.9
+    "agg": 4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WPO22",
@@ -17993,7 +22078,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 6.1
+    "agg": 4,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WPO23",
@@ -18015,7 +22105,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 6.2
+    "agg": 4.4,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WPO24",
@@ -18037,7 +22132,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 6.4
+    "agg": 4.4,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WPO25",
@@ -18059,7 +22159,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "WPO26",
@@ -18081,7 +22186,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 6,
-    "agg": 7.4
+    "agg": 6.5,
+    "rSig": 9,
+    "rExp": 7,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "WPO27",
@@ -18103,7 +22213,12 @@
     "rU": 4,
     "rS": 4,
     "rVn": 6,
-    "agg": 6.4
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 5
   },
   {
     "id": "WPO28",
@@ -18125,7 +22240,12 @@
     "rU": 5,
     "rS": 5,
     "rVn": 6,
-    "agg": 7.4
+    "agg": 6.5,
+    "rSig": 9,
+    "rExp": 7,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 6
   },
   {
     "id": "WLF01",
@@ -18147,7 +22267,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WLF02",
@@ -18169,7 +22294,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4.2
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WLF03",
@@ -18191,7 +22321,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WLF04",
@@ -18213,7 +22348,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4.2
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WLF05",
@@ -18235,7 +22375,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WLF06",
@@ -18257,7 +22402,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4.2
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WLF07",
@@ -18279,7 +22429,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WLF08",
@@ -18301,7 +22456,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4.2
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WLF09",
@@ -18323,7 +22483,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WLF10",
@@ -18345,7 +22510,12 @@
     "rU": 4,
     "rS": 3,
     "rVn": 6,
-    "agg": 4.2
+    "agg": 2.8,
+    "rSig": 2,
+    "rExp": 4,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   },
   {
     "id": "WRE01",
@@ -18367,7 +22537,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE02",
@@ -18389,7 +22564,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 6.2
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE03",
@@ -18411,7 +22591,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE04",
@@ -18433,7 +22618,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE05",
@@ -18455,7 +22645,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE06",
@@ -18477,7 +22672,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE07",
@@ -18499,7 +22699,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE08",
@@ -18521,7 +22726,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE09",
@@ -18543,7 +22753,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE10",
@@ -18565,7 +22780,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE11",
@@ -18587,7 +22807,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.7
+    "agg": 4.1,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 4,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE12",
@@ -18609,7 +22834,12 @@
     "rU": 4,
     "rS": 5,
     "rVn": 5,
-    "agg": 5.8
+    "agg": 5.1,
+    "rSig": 6,
+    "rExp": 6,
+    "rStar": 5,
+    "rUniq": 3,
+    "rDem": 4
   },
   {
     "id": "WRE13",
@@ -18631,6 +22861,11 @@
     "rU": 4,
     "rS": 3,
     "rVn": 5,
-    "agg": 3.7
+    "agg": 3.1,
+    "rSig": 2,
+    "rExp": 5,
+    "rStar": 3,
+    "rUniq": 3,
+    "rDem": 2
   }
 ]
