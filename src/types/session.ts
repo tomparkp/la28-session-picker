@@ -12,12 +12,11 @@ export interface Session {
   pLo: number
   pHi: number
   soccer: boolean
-  rP: number
-  rV: number
-  rA: number
-  rU: number
-  rS: number
-  rVn: number
+  rSig: number
+  rExp: number
+  rStar: number
+  rUniq: number
+  rDem: number
   agg: number
 }
 
