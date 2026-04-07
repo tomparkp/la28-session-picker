@@ -9,6 +9,8 @@ A personal side project I quickly put together to help myself decide on LA28 Oly
 - [TanStack Start](https://tanstack.com/start) (React 19)
 - [Tailwind CSS](https://tailwindcss.com/) v4
 - [Vitest](https://vitest.dev/)
+- [Zed](https://zed.dev/)
+- [Claude Code](https://claude.ai/code)
 
 ## Contributing
 
