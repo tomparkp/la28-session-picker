@@ -56,7 +56,7 @@ function SessionPicker() {
         zones={zones}
       />
 
-      <div className="wrap">
+      <div className="max-w-[1400px] mx-auto px-4 pt-4 pb-15">
         <BookmarkSection
           sessions={sessions}
           bookmarks={bookmarks}
@@ -73,7 +73,7 @@ function SessionPicker() {
           groupBy={groupBy}
         />
 
-        <div className="footer-note">
+        <div className="text-center p-6 text-[0.72rem] text-ink3 font-light">
           Data sourced from LA 2028 Session Table &middot; Los Angeles 2028
         </div>
       </div>

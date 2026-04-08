@@ -2,7 +2,9 @@ import { useWindowVirtualizer } from '@tanstack/react-virtual'
 import { Bookmark } from 'lucide-react'
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
+import { cn } from '@/lib/cn'
 import { fmtPrice } from '@/lib/format'
+import { roundTagClasses } from '@/lib/tw'
 import type { Session, SortColumn, SortState, GroupBy } from '@/types/session'
 
 import { ScorePill } from './ScorePill'
@@ -15,6 +17,9 @@ interface SessionTableProps {
   onToggleBookmark: (id: string) => void
   groupBy: GroupBy
 }
+
+const thBase =
+  'text-left px-2.5 py-2 bg-surface2 font-semibold text-[0.62rem] uppercase tracking-[0.08em] text-ink3 border-b border-border whitespace-nowrap cursor-pointer select-none transition-colors duration-100 hover:text-gold'
 
 function SortHeader({
   label,
@@ -31,13 +36,13 @@ function SortHeader({
 }) {
   const active = sort.col === col
   return (
-    <th
-      data-col={col}
-      onClick={() => onSort(col)}
-      title={title}
-      className={active ? (sort.dir === 'asc' ? 'sa' : 'sd') : ''}
-    >
+    <th data-col={col} onClick={() => onSort(col)} title={title} className={thBase}>
       {label}
+      {active && (
+        <span className="text-[0.55rem] text-gold ml-0.5">
+          {sort.dir === 'asc' ? '\u25B2' : '\u25BC'}
+        </span>
+      )}
     </th>
   )
 }
@@ -84,27 +89,31 @@ function SessionRow({
   onToggleBookmark: (id: string) => void
 }) {
   return (
-    <tr>
-      <td>
-        <div className="en">{e.name}</div>
-        <div className="ed" title={e.desc}>
+    <tr className="group">
+      <td className="px-2.5 py-[7px] border-b border-border align-top group-hover:bg-surface2">
+        <div className="font-semibold text-ink whitespace-nowrap text-[0.78rem]">{e.name}</div>
+        <div className="text-[0.65rem] text-ink3 max-w-[280px] overflow-hidden text-ellipsis whitespace-nowrap" title={e.desc}>
           {e.desc}
         </div>
       </td>
-      <td className="nw">
+      <td className="px-2.5 py-[7px] border-b border-border align-top whitespace-nowrap group-hover:bg-surface2">
         {e.date}
         <br />
-        <span className="ts">{e.time}</span>
+        <span className="text-[0.68rem] text-ink3">{e.time}</span>
       </td>
-      <td>{e.venue}</td>
-      <td>
-        <span className="badge-zone">{e.zone}</span>
+      <td className="px-2.5 py-[7px] border-b border-border align-top group-hover:bg-surface2">{e.venue}</td>
+      <td className="px-2.5 py-[7px] border-b border-border align-top group-hover:bg-surface2">
+        <span className="inline-block px-1.5 py-0.5 rounded-md text-[0.6rem] font-semibold bg-surface3 text-ink2 whitespace-nowrap tracking-[0.02em]">
+          {e.zone}
+        </span>
       </td>
-      <td className="cp">{fmtPrice(e.pLo, e.pHi)}</td>
-      <td>
-        <span className={`rt rt-${e.rt}`}>{e.rt}</span>
+      <td className="px-2.5 py-[7px] border-b border-border align-top font-semibold whitespace-nowrap tabular-nums group-hover:bg-surface2">
+        {fmtPrice(e.pLo, e.pHi)}
       </td>
-      <td className="ctr">
+      <td className="px-2.5 py-[7px] border-b border-border align-top group-hover:bg-surface2">
+        <span className={roundTagClasses(e.rt)}>{e.rt}</span>
+      </td>
+      <td className="px-2.5 py-[7px] border-b border-border align-top text-center group-hover:bg-surface2">
         <ScorePill
           agg={e.agg}
           rSig={e.rSig}
@@ -114,15 +123,15 @@ function SessionRow({
           rDem={e.rDem}
         />
       </td>
-      <td className="ctr">
+      <td className="px-2.5 py-[7px] border-b border-border align-top text-center group-hover:bg-surface2">
         <button
-          className="bm"
+          className="size-7 border-none bg-transparent cursor-pointer p-0.5 rounded-md transition-all duration-100 flex items-center justify-center hover:bg-gold-dim [&:hover_.bm-off]:stroke-gold"
           onClick={() => onToggleBookmark(e.id)}
           title={on ? 'Remove bookmark' : 'Bookmark'}
         >
           <Bookmark
             size={20}
-            className={on ? 'bm-on' : 'bm-off'}
+            className={cn('transition-all duration-100', on ? 'bm-on' : 'bm-off')}
             fill={on ? 'var(--gold)' : 'none'}
             stroke={on ? 'var(--gold)' : 'var(--ink3)'}
           />
@@ -182,24 +191,22 @@ export function SessionTable({
 
   const virtualRows = rowVirtualizer.getVirtualItems()
   const totalSize = rowVirtualizer.getTotalSize()
-  // Virtual item `start`/`end` include `scrollMargin` (document-style coords). Spacer rows in
-  // <tbody> are laid out from the table top, so subtract `scrollMargin` to avoid a gap under thead.
   const paddingTop = virtualRows.length > 0 ? Math.max(0, virtualRows[0].start - scrollMargin) : 0
   const lastVirtual = virtualRows[virtualRows.length - 1]
   const paddingBottom =
     virtualRows.length > 0 ? Math.max(0, totalSize - (lastVirtual.end - scrollMargin)) : 0
 
   return (
-    <div className="tbl-wrap">
-      <table>
-        <thead>
+    <div className="overflow-x-auto border border-border rounded-lg bg-surface">
+      <table className="w-full border-collapse text-[0.78rem]">
+        <thead className="sticky top-0 z-2">
           <tr>
             <SortHeader label="Event" col="name" sort={sort} onSort={onSort} />
             <SortHeader label="Date" col="date" sort={sort} onSort={onSort} />
             <SortHeader label="Venue" col="venue" sort={sort} onSort={onSort} />
-            <th>Zone</th>
+            <th className={thBase}>Zone</th>
             <SortHeader label="Price" col="pLo" sort={sort} onSort={onSort} />
-            <th>Round</th>
+            <th className={thBase}>Round</th>
             <SortHeader
               label="AI Rating"
               col="agg"
@@ -207,13 +214,13 @@ export function SessionTable({
               onSort={onSort}
               title="AI-generated aggregate rating (prestige, value, atmosphere, uniqueness, star power, venue)"
             />
-            <th style={{ width: 36 }}></th>
+            <th className={cn(thBase, 'w-9')}></th>
           </tr>
         </thead>
         <tbody>
           {sessions.length === 0 && (
             <tr>
-              <td colSpan={8} className="empty-state">
+              <td colSpan={8} className="text-center py-12 px-4 text-ink3 text-[0.85rem] font-light">
                 No sessions match your filters
               </td>
             </tr>
@@ -232,10 +239,18 @@ export function SessionTable({
                 const item = items[vRow.index]
                 if (item.type === 'group') {
                   return (
-                    <tr key={`group-${item.label}-${vRow.key}`} className="group-header">
-                      <td colSpan={8}>
-                        <span className="group-label">{groupLabel(groupBy)}:</span> {item.label}
-                        <span className="group-count">{item.count}</span>
+                    <tr key={`group-${item.label}-${vRow.key}`}>
+                      <td
+                        colSpan={8}
+                        className="bg-surface2 text-[0.72rem] font-semibold text-ink2 px-2.5 py-1.5 border-b border-border sticky top-[33px] z-1"
+                      >
+                        <span className="text-ink3 font-normal uppercase text-[0.6rem] tracking-[0.06em] mr-1">
+                          {groupLabel(groupBy)}:
+                        </span>{' '}
+                        {item.label}
+                        <span className="ml-1.5 text-[0.58rem] font-bold text-bg bg-ink3 px-[5px] py-px rounded-lg align-middle">
+                          {item.count}
+                        </span>
                       </td>
                     </tr>
                   )

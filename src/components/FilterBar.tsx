@@ -1,3 +1,4 @@
+import { cn } from '@/lib/cn'
 import { roundTypes } from '@/data/sessions'
 import { useStickyFilterBorder } from '@/hooks/useStickyFilterBorder'
 import type { Filters, GroupBy } from '@/types/session'
@@ -10,6 +11,13 @@ interface FilterBarProps {
   sports: string[]
   zones: string[]
 }
+
+const inputBase =
+  'bg-surface2 border border-border rounded-md text-ink text-[0.78rem] font-[system-ui] outline-none transition-[border-color] duration-150 px-2.5 py-1.5 focus:border-gold'
+
+const selectCls = `${inputBase} filter-select`
+
+const activeCls = 'border-gold bg-gold-dim'
 
 export function FilterBar({
   filters,
@@ -27,82 +35,82 @@ export function FilterBar({
 
   return (
     <>
-      <div ref={sentinelRef} className="filter-stick-sentinel" aria-hidden />
-      <div className={`filter-bar${stuck ? ' filter-bar--stuck' : ''}`}>
-        <div className="filters">
+      <div ref={sentinelRef} className="h-px m-0 pointer-events-none" aria-hidden />
+      <div className={cn('sticky top-0 z-10 bg-bg', stuck && 'border-b border-border')}>
+        <div className="flex flex-wrap justify-center items-center gap-1.5 px-4 py-2.5 mx-auto max-w-[1400px] max-md:gap-1 max-md:px-2.5 max-md:py-2">
           <input
             type="text"
             placeholder="Search events..."
             value={filters.search}
-            className={filters.search ? 'active' : ''}
+            className={cn(inputBase, 'w-[220px] max-md:w-[140px] placeholder:text-ink3', filters.search && activeCls)}
             onChange={(e) => update('search', e.target.value)}
           />
-          <span className="filter-spacer" />
+          <span className="flex-1" />
           <select
-            className={filters.sport ? 'active' : ''}
+            className={cn(selectCls, filters.sport && activeCls)}
             value={filters.sport}
             onChange={(e) => update('sport', e.target.value)}
           >
-            <option value="">All Sports</option>
+            <option value="" className="text-ink bg-surface">All Sports</option>
             {sports.map((s) => (
-              <option key={s} value={s}>
+              <option key={s} value={s} className="text-ink bg-surface">
                 {s}
               </option>
             ))}
           </select>
           <select
-            className={filters.round ? 'active' : ''}
+            className={cn(selectCls, filters.round && activeCls)}
             value={filters.round}
             onChange={(e) => update('round', e.target.value)}
           >
-            <option value="">All Rounds</option>
+            <option value="" className="text-ink bg-surface">All Rounds</option>
             {roundTypes.map((r) => (
-              <option key={r} value={r}>
+              <option key={r} value={r} className="text-ink bg-surface">
                 {r}
               </option>
             ))}
           </select>
           <select
-            className={filters.zone ? 'active' : ''}
+            className={cn(selectCls, filters.zone && activeCls)}
             value={filters.zone}
             onChange={(e) => update('zone', e.target.value)}
           >
-            <option value="">All Zones</option>
+            <option value="" className="text-ink bg-surface">All Zones</option>
             {zones.map((z) => (
-              <option key={z} value={z}>
+              <option key={z} value={z} className="text-ink bg-surface">
                 {z}
               </option>
             ))}
           </select>
           <select
-            className={filters.score ? 'active' : ''}
+            className={cn(selectCls, filters.score && activeCls)}
             value={filters.score}
             onChange={(e) => update('score', e.target.value)}
           >
-            <option value="">Any Rating</option>
+            <option value="" className="text-ink bg-surface">Any Rating</option>
             <option value="8">8+ (Great)</option>
             <option value="6">6+ (Good)</option>
             <option value="4">4+ (Decent)</option>
           </select>
           <select
-            className={filters.price ? 'active' : ''}
+            className={cn(selectCls, filters.price && activeCls)}
             value={filters.price}
             onChange={(e) => update('price', e.target.value)}
           >
-            <option value="">Any Price</option>
+            <option value="" className="text-ink bg-surface">Any Price</option>
             <option value="0-50">Under $50</option>
             <option value="0-100">Under $100</option>
             <option value="0-200">Under $200</option>
             <option value="0-500">Under $500</option>
             <option value="500-99999">$500+</option>
           </select>
-          <span className="filter-spacer" />
+          <span className="flex-1" />
           <select
-            className={groupBy ? 'active' : ''}
+            className={cn(selectCls, groupBy && activeCls)}
             value={groupBy}
             onChange={(e) => onGroupByChange(e.target.value as GroupBy)}
           >
-            <option value="">No Grouping</option>
+            <option value="" className="text-ink bg-surface">No Grouping</option>
             <option value="sport">Group by Sport</option>
             <option value="rt">Group by Round</option>
             <option value="zone">Group by Zone</option>

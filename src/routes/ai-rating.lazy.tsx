@@ -4,12 +4,16 @@ export const Route = createLazyFileRoute('/ai-rating')({ component: AIRating })
 
 function AIRating() {
   return (
-    <div className="wrap">
-      <div className="page-header">
-        <h1>AI Rating System</h1>
-        <p className="page-sub">How sessions are scored and what the numbers mean</p>
+    <div className="max-w-[1400px] mx-auto px-4 pt-4 pb-15">
+      <div className="mb-4">
+        <h1 className="font-display text-2xl font-normal text-ink -tracking-[0.02em]">
+          AI Rating System
+        </h1>
+        <p className="text-[0.78rem] text-ink3 font-light mt-0.5">
+          How sessions are scored and what the numbers mean
+        </p>
       </div>
-      <div className="about-content">
+      <div className="max-w-[680px] text-[0.85rem] leading-[1.7] text-ink2 [&_h2]:font-display [&_h2]:text-[1.1rem] [&_h2]:font-normal [&_h2]:text-ink [&_h2]:mt-6 [&_h2]:mb-2 [&_p]:mb-3 [&_ul]:pl-5 [&_ul]:mb-3 [&_li]:mb-1.5">
         <p>
           Every session is rated by an AI model across five dimensions, each scored 1&ndash;10.
           These are combined using a weighted average to produce an aggregate rating (rounded to a
@@ -24,9 +28,9 @@ function AIRating() {
 
         <h2>Dimensions &amp; Weights</h2>
 
-        <div className="rating-dimension">
-          <h3>
-            Significance <span className="rating-weight">30%</span>
+        <div className="mb-4">
+          <h3 className="text-[0.9rem] font-semibold text-ink mb-1">
+            Significance <span className="text-[0.7rem] font-normal text-ink3">30%</span>
           </h3>
           <p>
             How important is this session in the context of Olympic competition? Gold medal finals
@@ -37,9 +41,9 @@ function AIRating() {
           </p>
         </div>
 
-        <div className="rating-dimension">
-          <h3>
-            Experience <span className="rating-weight">25%</span>
+        <div className="mb-4">
+          <h3 className="text-[0.9rem] font-semibold text-ink mb-1">
+            Experience <span className="text-[0.7rem] font-normal text-ink3">25%</span>
           </h3>
           <p>
             How good will it be to watch live? This combines sport watchability with venue quality,
@@ -50,9 +54,9 @@ function AIRating() {
           </p>
         </div>
 
-        <div className="rating-dimension">
-          <h3>
-            Star Power <span className="rating-weight">15%</span>
+        <div className="mb-4">
+          <h3 className="text-[0.9rem] font-semibold text-ink mb-1">
+            Star Power <span className="text-[0.7rem] font-normal text-ink3">15%</span>
           </h3>
           <p>
             How likely are you to see globally recognized athletes? Sports like basketball,
@@ -62,9 +66,9 @@ function AIRating() {
           </p>
         </div>
 
-        <div className="rating-dimension">
-          <h3>
-            Uniqueness <span className="rating-weight">15%</span>
+        <div className="mb-4">
+          <h3 className="text-[0.9rem] font-semibold text-ink mb-1">
+            Uniqueness <span className="text-[0.7rem] font-normal text-ink3">15%</span>
           </h3>
           <p>
             How rare or special is this opportunity? New and returning Olympic sports (flag
@@ -75,9 +79,9 @@ function AIRating() {
           </p>
         </div>
 
-        <div className="rating-dimension">
-          <h3>
-            Demand <span className="rating-weight">15%</span>
+        <div className="mb-4">
+          <h3 className="text-[0.9rem] font-semibold text-ink mb-1">
+            Demand <span className="text-[0.7rem] font-normal text-ink3">15%</span>
           </h3>
           <p>
             How sought-after will this session be? This estimates how hard tickets will be to get
@@ -91,19 +95,19 @@ function AIRating() {
         <h2>Reading the Scores</h2>
         <ul>
           <li>
-            <strong className="rating-great-text">8&ndash;10</strong> &mdash; Exceptional sessions
+            <strong className="text-[#3dba6f]">8&ndash;10</strong> &mdash; Exceptional sessions
             you should strongly consider
           </li>
           <li>
-            <strong className="rating-good-text">6&ndash;7</strong> &mdash; Strong sessions with
+            <strong className="text-[#b8a832]">6&ndash;7</strong> &mdash; Strong sessions with
             good overall appeal
           </li>
           <li>
-            <strong className="rating-fair-text">4&ndash;5</strong> &mdash; Decent sessions, solid
+            <strong className="text-[#d49633]">4&ndash;5</strong> &mdash; Decent sessions, solid
             if you&rsquo;re interested in the sport
           </li>
           <li>
-            <strong className="rating-low-text">1&ndash;3</strong> &mdash; Early rounds or niche
+            <strong className="text-[#c84a3a]">1&ndash;3</strong> &mdash; Early rounds or niche
             sports, still Olympic experiences
           </li>
         </ul>
@@ -116,7 +120,7 @@ function AIRating() {
           Use them as a starting point, not a definitive guide.
         </p>
       </div>
-      <div className="footer-note">
+      <div className="text-center p-6 text-[0.72rem] text-ink3 font-light">
         Ratings generated with Claude &middot; Methodology designed for LA28 2028
       </div>
     </div>

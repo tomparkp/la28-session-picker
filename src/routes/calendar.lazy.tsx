@@ -78,10 +78,10 @@ function Calendar() {
   })
 
   return (
-    <div className="wrap">
-      <div className="page-header">
-        <h1>Agenda</h1>
-        <p className="page-sub">
+    <div className="max-w-[1400px] mx-auto px-4 pt-4 pb-15">
+      <div className="mb-4">
+        <h1 className="font-display text-2xl font-normal text-ink -tracking-[0.02em]">Agenda</h1>
+        <p className="text-[0.78rem] text-ink3 font-light mt-0.5">
           {totalSessions} sessions across {days.length} competition days
         </p>
       </div>
@@ -110,31 +110,37 @@ function Calendar() {
                 transform: `translateY(${vDay.start}px)`,
               }}
             >
-              <div className="agenda-day">
-                <div className="agenda-day-header">
-                  <h2>{date}</h2>
-                  <span className="agenda-day-meta">
+              <div className="mb-6 [content-visibility:auto] [contain-intrinsic-size:800px]">
+                <div className="flex items-baseline gap-3 py-2.5 pb-2 border-b-2 border-accent mb-0 sticky top-0 bg-bg z-10">
+                  <h2 className="font-display text-[1.1rem] font-semibold text-ink">{date}</h2>
+                  <span className="text-[0.72rem] text-ink3 font-light">
                     {daySessions.length} sessions &middot; {sports.length} sports
                   </span>
                 </div>
 
-                <div className="agenda-timeline">
+                <div className="pl-0">
                   {Array.from(timeSlots.entries()).map(([time, slotSessions]) => (
-                    <div key={time} className="agenda-slot">
-                      <div className="agenda-time">{time}</div>
-                      <div className="agenda-slot-sessions">
+                    <div key={time} className="grid grid-cols-[72px_1fr] gap-x-3 pt-3 max-[480px]:grid-cols-[56px_1fr] max-[480px]:gap-x-2">
+                      <div className="text-[0.78rem] font-semibold text-accent pt-2.5 text-right whitespace-nowrap max-[480px]:text-[0.7rem]">
+                        {time}
+                      </div>
+                      <div className="flex flex-col gap-1.5 border-l-2 border-border pl-3">
                         {slotSessions.map((s) => (
-                          <div key={s.id} className="agenda-session">
-                            <div className="agenda-session-top">
-                              <span className="agenda-session-sport">{s.sport}</span>
+                          <div key={s.id} className="bg-surface border border-border rounded-lg px-3 py-2 transition-[border-color] duration-150 hover:border-accent">
+                            <div className="flex items-center gap-1.5 mb-0.5">
+                              <span className="text-[0.72rem] font-bold uppercase tracking-[0.04em] text-accent">
+                                {s.sport}
+                              </span>
                               {s.rt !== 'N/A' && s.rt !== 'Prelim' && (
-                                <span className="agenda-session-round">{s.rt}</span>
+                                <span className="text-[0.62rem] font-semibold px-[5px] py-px rounded bg-accent text-bg">
+                                  {s.rt}
+                                </span>
                               )}
                             </div>
-                            <div className="agenda-session-desc">{s.desc}</div>
-                            <div className="agenda-session-bottom">
-                              <span className="agenda-session-venue">{s.venue}</span>
-                              <span className="agenda-session-price">{fmtPrice(s.pLo, s.pHi)}</span>
+                            <div className="text-[0.88rem] text-ink leading-[1.3]">{s.desc}</div>
+                            <div className="flex justify-between items-center mt-1 text-[0.68rem] text-ink3">
+                              <span className="font-normal">{s.venue}</span>
+                              <span className="font-semibold text-ink2">{fmtPrice(s.pLo, s.pHi)}</span>
                             </div>
                           </div>
                         ))}
@@ -148,7 +154,7 @@ function Calendar() {
         })}
       </div>
 
-      <div className="footer-note">
+      <div className="text-center p-6 text-[0.72rem] text-ink3 font-light">
         Data sourced from LA 2028 Session Table &middot; Los Angeles 2028
       </div>
     </div>
