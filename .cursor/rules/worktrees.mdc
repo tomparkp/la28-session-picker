@@ -1,5 +1,5 @@
 ---
-description: Git worktrees live under .worktrees/ in this repo (not ~/.cursor/worktrees).
+description: Git worktrees under .worktrees/; after create, MCP move_agent_to_root to that path.
 alwaysApply: true
 ---
 
@@ -10,5 +10,6 @@ When creating a **git worktree** for this project (including Glass / parallel-ag
 1. **Path**: Put it under **`.worktrees/`** at the **repository root** (same level as `package.json`), e.g. `.worktrees/my-feature-abc`.
 2. **Command shape**: From the main checkout, e.g. `git worktree add .worktrees/<folder-name> [-b <branch>] [<commit-ish>]` (adjust flags to match the task).
 3. **Do not** default to `~/.cursor/worktrees/...` for this repo unless the user explicitly asks for that layout.
+4. **After creating the worktree**: Use the **Cursor MCP** server **cursor-app-control** and call **`move_agent_to_root`** with **`rootPath`** set to the **absolute filesystem path** of the new worktree directory (the folder you passed to `git worktree add`, resolved to a full path). Do this so the agent’s workspace root, default cwd for new terminals, and file operations target that checkout unless the user says to stay on the main tree.
 
-Rationale: keeps worktrees inside the workspace so agent sandboxes and project tools see the checkout, and avoids relying on a global Cursor-only path.
+Rationale: keeps worktrees inside the workspace so agent sandboxes and project tools see the checkout, avoids relying on a global Cursor-only path, and switches the active agent context to the worktree automatically.
