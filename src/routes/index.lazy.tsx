@@ -1,7 +1,7 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
 import { useCallback, useDeferredValue, useMemo, useState } from 'react'
 
-import { BookmarkSection } from '@/components/BookmarkSection'
+import { BookmarkPanel } from '@/components/BookmarkPanel'
 import { FilterBar } from '@/components/FilterBar'
 import { SessionDetail } from '@/components/SessionDetail'
 import { SessionTable } from '@/components/SessionTable'
@@ -26,10 +26,17 @@ function SessionPicker() {
   const [sort, setSort] = useState<SortState>({ col: 'agg', dir: 'desc' })
   const [groupBy, setGroupBy] = useState<GroupBy>('')
   const [selectedSession, setSelectedSession] = useState<Session | null>(null)
+  const [bookmarkPanelOpen, setBookmarkPanelOpen] = useState(false)
   const { bookmarks, toggle, clearAll, isBookmarked } = useBookmarks()
 
   const handleSelectSession = useCallback((session: Session) => {
+    setBookmarkPanelOpen(false)
     setSelectedSession((current) => (current?.id === session.id ? null : session))
+  }, [])
+
+  const handleOpenBookmarks = useCallback(() => {
+    setSelectedSession(null)
+    setBookmarkPanelOpen(true)
   }, [])
 
   const deferredSearch = useDeferredValue(filters.search)
@@ -60,16 +67,11 @@ function SessionPicker() {
         onGroupByChange={setGroupBy}
         sports={sports}
         zones={zones}
+        bookmarkCount={bookmarks.size}
+        onOpenBookmarks={handleOpenBookmarks}
       />
 
-      <div className="max-w-[1400px] mx-auto px-4 pt-4 pb-15">
-        <BookmarkSection
-          sessions={sessions}
-          bookmarks={bookmarks}
-          onToggleBookmark={toggle}
-          onClearAll={clearAll}
-        />
-
+      <div className="max-w-[1400px] mx-auto px-4 pt-2 pb-15">
         <SessionTable
           sessions={sorted}
           sort={sort}
@@ -84,6 +86,16 @@ function SessionPicker() {
         <SessionDetail
           session={selectedSession}
           onClose={() => setSelectedSession(null)}
+        />
+
+        <BookmarkPanel
+          open={bookmarkPanelOpen}
+          onClose={() => setBookmarkPanelOpen(false)}
+          sessions={sessions}
+          bookmarks={bookmarks}
+          onToggleBookmark={toggle}
+          onClearAll={clearAll}
+          onSelectSession={handleSelectSession}
         />
 
         <div className="text-center p-6 text-[0.72rem] text-ink3 font-light">
