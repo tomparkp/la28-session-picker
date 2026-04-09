@@ -2,10 +2,10 @@ const ROUND_BASE = 'inline-block rounded-[10px] px-[7px] py-[2px] text-[0.6rem] 
 
 const roundMap: Record<string, string> = {
   Final: `${ROUND_BASE} bg-[rgba(212,168,67,0.15)] text-gold2`,
-  Ceremony: `${ROUND_BASE} bg-[rgba(160,100,220,0.15)] text-[#b082e0]`,
+  Ceremony: `${ROUND_BASE} bg-[rgba(0,133,199,0.15)] text-[#0085c7]`,
   Bronze: `${ROUND_BASE} bg-[rgba(205,127,50,0.15)] text-[#cd7f32]`,
-  Semi: `${ROUND_BASE} bg-accent/12 text-accent`,
-  QF: `${ROUND_BASE} bg-accent/8 text-accent`,
+  Semi: `${ROUND_BASE} bg-[rgba(160,100,220,0.15)] text-[#b082e0]`,
+  QF: `${ROUND_BASE} bg-[rgba(160,100,220,0.10)] text-[#b082e0]`,
   Prelim: `${ROUND_BASE} bg-surface3 text-ink3`,
   'N/A': `${ROUND_BASE} bg-surface3 text-ink3`,
 }
