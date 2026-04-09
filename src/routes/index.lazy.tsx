@@ -1,12 +1,13 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
-import { useDeferredValue, useMemo, useState } from 'react'
+import { useCallback, useDeferredValue, useMemo, useState } from 'react'
 
 import { BookmarkSection } from '@/components/BookmarkSection'
 import { FilterBar } from '@/components/FilterBar'
+import { SessionDetail } from '@/components/SessionDetail'
 import { SessionTable } from '@/components/SessionTable'
 import { useBookmarks } from '@/hooks/useBookmarks'
 import { filterSessions, sortSessions } from '@/lib/filter'
-import type { Filters, GroupBy, SortColumn, SortState } from '@/types/session'
+import type { Filters, GroupBy, Session, SortColumn, SortState } from '@/types/session'
 
 export const Route = createLazyFileRoute('/')({ component: SessionPicker })
 
@@ -24,7 +25,12 @@ function SessionPicker() {
   const [filters, setFilters] = useState<Filters>(defaultFilters)
   const [sort, setSort] = useState<SortState>({ col: 'agg', dir: 'desc' })
   const [groupBy, setGroupBy] = useState<GroupBy>('')
+  const [selectedSession, setSelectedSession] = useState<Session | null>(null)
   const { bookmarks, toggle, clearAll, isBookmarked } = useBookmarks()
+
+  const handleSelectSession = useCallback((session: Session) => {
+    setSelectedSession((current) => (current?.id === session.id ? null : session))
+  }, [])
 
   const deferredSearch = useDeferredValue(filters.search)
   const effectiveFilters = useMemo<Filters>(
@@ -71,6 +77,13 @@ function SessionPicker() {
           isBookmarked={isBookmarked}
           onToggleBookmark={toggle}
           groupBy={groupBy}
+          selectedSessionId={selectedSession?.id ?? null}
+          onSelectSession={handleSelectSession}
+        />
+
+        <SessionDetail
+          session={selectedSession}
+          onClose={() => setSelectedSession(null)}
         />
 
         <div className="text-center p-6 text-[0.72rem] text-ink3 font-light">

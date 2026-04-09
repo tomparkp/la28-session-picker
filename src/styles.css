@@ -17,6 +17,7 @@
   --color-red: var(--red);
   --color-green: var(--green);
   --font-display: Georgia, 'Times New Roman', serif;
+  --ease-panel: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 :root {
