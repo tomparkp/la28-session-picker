@@ -152,6 +152,7 @@ export function SessionDetail({
       <div
         ref={panelRef}
         role="dialog"
+        data-session-detail-panel
         aria-label={displayed?.name}
         aria-hidden={!isOpen}
         style={isMobile ? undefined : { width }}

@@ -103,6 +103,7 @@ function SessionCard({
       role="button"
       tabIndex={0}
       aria-pressed={selected}
+      data-session-item
       onClick={() => onSelect(session)}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -205,6 +206,7 @@ function SessionRow({
         'group cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-gold',
         selected && 'bg-gold-dim',
       )}
+      data-session-item
       onClick={() => onSelect(session)}
       onKeyDown={handleRowKeyDown}
       tabIndex={0}
