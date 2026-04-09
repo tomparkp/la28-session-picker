@@ -31,7 +31,8 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: deploy
       - name: Warm CDN cache
+        continue-on-error: true
         run: |
           sleep 5
-          curl -sf -o /dev/null -w "CDN warm: HTTP %{http_code} in %{time_total}s\n" \
+          curl -s -o /dev/null -w "CDN warm: HTTP %{http_code} in %{time_total}s\n" \
             https://la28.sugarworks.dev/
