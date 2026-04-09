@@ -14,7 +14,7 @@ export interface SessionInsights {
   summary: string
   overallExplanation: string
   dimensions: ScorecardDimension[]
-  contenders: Contender[]
+  potentialContenders: Contender[]
 }
 
 const MARQUEE_SPORTS = new Set([
@@ -117,12 +117,12 @@ function getStarPowerExplanation(session: Session) {
   if (session.rt === 'Ceremony') {
     return 'Ceremonies concentrate the biggest names from every sport — flag-bearers, performers, and global icons all in one place.'
   }
-  if (k && k.contenders.length > 0 && isMedalStage(session)) {
-    const names = k.contenders.slice(0, 3).map((c) => c.name)
+  if (k && k.potentialContenders.length > 0 && isMedalStage(session)) {
+    const names = k.potentialContenders.slice(0, 3).map((c) => c.name)
     return `Medal-stage ${session.sport} means the biggest names are in the building. Watch for ${names.join(', ')}.`
   }
-  if (k && k.contenders.length > 0) {
-    const topName = k.contenders[0]
+  if (k && k.potentialContenders.length > 0) {
+    const topName = k.potentialContenders[0]
     return `Athletes like ${topName.name} (${topName.country}) could be competing, though early rounds spread star power across multiple sessions.`
   }
   if (MARQUEE_SPORTS.has(session.sport)) {
@@ -181,8 +181,8 @@ function buildFallbackSummary(session: Session): string {
 
   if (isMedalStage(session) && k) {
     const context = k.la28Context.split('.').slice(0, 2).join('.') + '.'
-    if (k.contenders.length > 0) {
-      const top = k.contenders.slice(0, 2)
+    if (k.potentialContenders.length > 0) {
+      const top = k.potentialContenders.slice(0, 2)
       return `${context} Watch for ${top.map((c) => `${c.name} (${c.country})`).join(' and ')} as gold medals are decided.`
     }
     return context
@@ -190,8 +190,8 @@ function buildFallbackSummary(session: Session): string {
 
   if (session.rt === 'Semi' || session.rt === 'QF') {
     const round = session.rt === 'Semi' ? 'semifinal' : 'quarterfinal'
-    if (k && k.contenders.length > 0) {
-      return `A ${round} session where the field narrows. ${k.contenders[0].name} and company are fighting to stay alive in the bracket.`
+    if (k && k.potentialContenders.length > 0) {
+      return `A ${round} session where the field narrows. ${k.potentialContenders[0].name} and company are fighting to stay alive in the bracket.`
     }
     return `A ${round} session in ${session.sport} at ${session.venue}. Win-or-go-home competition — this is where the drama lives.`
   }
@@ -207,17 +207,17 @@ function buildFallbackSummary(session: Session): string {
   return `${session.sport} at ${session.venue}. Every session at the Olympics is a live, world-class competition — even the early rounds deliver moments you won't forget.`
 }
 
-function getFallbackContenders(session: Session): Contender[] {
+function getFallbackPotentialContenders(session: Session): Contender[] {
   const k = getKnowledge(session.sport)
-  if (!k || k.contenders.length === 0) return []
+  if (!k || k.potentialContenders.length === 0) return []
 
   if (isMedalStage(session)) {
-    return k.contenders.slice(0, 5)
+    return k.potentialContenders.slice(0, 5)
   }
   if (session.rt === 'Semi' || session.rt === 'QF') {
-    return k.contenders.slice(0, 4)
+    return k.potentialContenders.slice(0, 4)
   }
-  return k.contenders.slice(0, 3)
+  return k.potentialContenders.slice(0, 3)
 }
 
 export function getSessionInsights(session: Session): SessionInsights {
@@ -255,7 +255,7 @@ export function getSessionInsights(session: Session): SessionInsights {
   ]
 
   const summary = session.blurb ?? buildFallbackSummary(session)
-  const contenders = session.contenders ?? getFallbackContenders(session)
+  const potentialContenders = session.potentialContenders ?? getFallbackPotentialContenders(session)
 
   const sortedDimensions = [...dimensions].sort((a, b) => b.score - a.score)
   const topLabel = sortedDimensions[0]?.label ?? 'The session'
@@ -276,6 +276,6 @@ export function getSessionInsights(session: Session): SessionInsights {
     summary,
     overallExplanation,
     dimensions,
-    contenders,
+    potentialContenders,
   }
 }

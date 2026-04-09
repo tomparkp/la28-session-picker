@@ -25,7 +25,7 @@ export interface Session {
   rDem: number
   agg: number
   blurb?: string
-  contenders?: Contender[]
+  potentialContenders?: Contender[]
 }
 
 export type RoundType = 'Final' | 'Semi' | 'QF' | 'Prelim' | 'Bronze' | 'Ceremony' | 'N/A'
