@@ -3,7 +3,7 @@ import { Bookmark } from 'lucide-react'
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 import { cn } from '@/lib/cn'
-import { fmtPrice } from '@/lib/format'
+import { fmtPrice, fmtTime } from '@/lib/format'
 import { roundTagClasses } from '@/lib/tw'
 import type { Session, SortColumn, SortState, GroupBy } from '@/types/session'
 
@@ -99,7 +99,7 @@ function SessionRow({
       <td className="px-2.5 py-[7px] border-b border-border align-top whitespace-nowrap group-hover:bg-surface2">
         {e.date}
         <br />
-        <span className="text-[0.68rem] text-ink3">{e.time}</span>
+        <span className="text-[0.68rem] text-ink3">{fmtTime(e.time)}</span>
       </td>
       <td className="px-2.5 py-[7px] border-b border-border align-top group-hover:bg-surface2">{e.venue}</td>
       <td className="px-2.5 py-[7px] border-b border-border align-top group-hover:bg-surface2">
