@@ -19,3 +19,4 @@ export const getSessionsPayload = createServerFn({ method: 'GET' }).handler(asyn
   const { computeSessionsPayload } = await import('./sessions.data.server')
   return computeSessionsPayload()
 })
+
