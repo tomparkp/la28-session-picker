@@ -100,9 +100,6 @@ function SessionPicker() {
           onSelectSession={handleSelectSession}
         />
 
-        <div className="text-center p-6 text-[0.72rem] text-ink3 font-light">
-          Data sourced from LA 2028 Session Table &middot; Los Angeles 2028
-        </div>
       </div>
     </>
   )
