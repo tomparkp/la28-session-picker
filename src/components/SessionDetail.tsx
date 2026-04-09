@@ -7,7 +7,7 @@ import { fmtPrice, fmtTime } from '@/lib/format'
 import { ratingClasses, roundTagClasses } from '@/lib/tw'
 import type { Contender, Session } from '@/types/session'
 
-const DEFAULT_WIDTH = 576
+const DEFAULT_WIDTH = 480
 const MIN_WIDTH = 360
 const MAX_WIDTH = 900
 const MD_BREAKPOINT = 768
@@ -193,10 +193,15 @@ export function SessionDetail({
                   )}
                 </div>
 
-                {/* Title */}
-                <h2 className="mt-3 font-display text-[1.35rem] font-semibold leading-tight text-ink">
-                  {displayed.name}
-                </h2>
+                {/* Title + rating */}
+                <div className="mt-3 flex items-start justify-between gap-3">
+                  <h2 className="font-display text-[1.35rem] font-semibold leading-tight text-ink">
+                    {displayed.name}
+                  </h2>
+                  <span className={cn(ratingClasses(displayed.agg), 'shrink-0 text-[1rem] px-2.5 py-1 min-w-[42px] rounded-xl')}>
+                    {displayed.agg.toFixed(1)}
+                  </span>
+                </div>
                 <p className="mt-1 text-[0.82rem] leading-relaxed text-ink2">{displayed.desc}</p>
 
                 {/* Metadata row */}
@@ -217,26 +222,12 @@ export function SessionDetail({
                 </div>
               </div>
 
-              {/* ── Score overview ── */}
-              <div className="border-t border-border px-5 py-5 max-md:px-4">
-                <div className="flex items-start gap-3">
-                  <span className={cn(ratingClasses(displayed.agg), 'shrink-0 text-[1rem] px-2.5 py-1 min-w-[42px] rounded-xl')}>
-                    {displayed.agg.toFixed(1)}
-                  </span>
-                  <div className="min-w-0">
-                    <p className="text-[0.86rem] font-medium leading-snug text-ink">
-                      {insights.summary.split('.').slice(0, 2).join('.').trim()}.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* ── Full blurb ── */}
-              <div className="border-t border-border px-5 py-5 max-md:px-4">
+              {/* ── Blurb ── */}
+              <div className="px-5 pt-2 pb-5 max-md:px-4">
                 <h3 className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-ink3">
-                  Why This Session
+                  Summary
                 </h3>
-                <div className="mt-2 space-y-3 text-[0.86rem] leading-relaxed text-ink2">
+                <div className="mt-2 space-y-3 text-[0.86rem] font-medium leading-snug text-ink">
                   {insights.summary.split('\n\n').map((para, i) => (
                     <p key={i}>{para}</p>
                   ))}
@@ -244,15 +235,12 @@ export function SessionDetail({
               </div>
 
               {/* ── Scorecard dimensions ── */}
-              <div className="border-t border-border px-5 py-5 max-md:px-4">
+              <div className="px-5 pt-2 pb-5 max-md:px-4">
                 <h3 className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-ink3">
                   Scorecard
                 </h3>
-                <p className="mt-1.5 text-[0.78rem] leading-relaxed text-ink3">
-                  {insights.overallExplanation}
-                </p>
 
-                <div className="mt-4 grid grid-cols-2 gap-2.5 max-sm:grid-cols-1">
+                <div className="mt-3 grid grid-cols-2 gap-2.5 max-sm:grid-cols-1">
                   {insights.dimensions.map((dim) => {
                     const colors = ringColors[dim.key as ScoreKey]
                     return (
@@ -276,11 +264,15 @@ export function SessionDetail({
                     )
                   })}
                 </div>
+
+                <p className="mt-3 text-[0.78rem] leading-relaxed text-ink3">
+                  {insights.overallExplanation}
+                </p>
               </div>
 
               {/* ── Contenders ── */}
               {insights.contenders.length > 0 && (
-                <div className="border-t border-border px-5 py-5 max-md:px-4">
+                <div className="px-5 pt-2 pb-5 max-md:px-4">
                   <h3 className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-ink3">
                     Contenders to Watch
                   </h3>
