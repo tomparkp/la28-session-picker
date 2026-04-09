@@ -1,16 +1,38 @@
-# LA28 Unofficial Session Picker
-
-A personal side project I quickly put together to help myself decide on LA28 Olympic sessions. It lets you browse and filter event sessions based on data scraped from publicly available schedules and other materials.
-
 > **Disclaimer:** This is an unofficial, open-source project and is not affiliated with, endorsed by, or connected to the International Olympic Committee (IOC), LA28 Organizing Committee, or any official Olympic body. Session data is scraped from publicly available schedules and materials and may be inaccurate, incomplete, or outdated. Always verify details against official sources before making any plans or purchasing decisions. Use at your own risk.
 
-## Built With
+# LA28 Unofficial Session Picker
 
-- [TanStack Start](https://tanstack.com/start) (React 19)
-- [Tailwind CSS](https://tailwindcss.com/) v4
-- [Vitest](https://vitest.dev/)
-- [Zed](https://zed.dev/)
-- [Claude Code](https://claude.ai/code)
+I built this session picker after being selected for one of the LA28 local presale drops. Given you only get 12 slots to purchase tickets, I needed help not just with browsing but also deciding which sessions to buy. I used AI to generate ratings and summaries for every session, which helped me tremendously narrow down my selections.
+
+After seeing this [interactive schedule explorer](https://www.reddit.com/r/olympics/comments/1scjk1s/interactive_la28_schedule_explorer/), I realized I should share the picker so others can use it.
+
+## Resources Used
+
+- [LA 2028 Session Table](https://docs.google.com/spreadsheets/d/1bJJc__Bt_VgBkZw3jZAMHKmoP3Q5Wdq5I9sA4vzLsws/htmlview?gid=798256147&pru=AAABnY8tXA0*s67VGSR_thwjEPBNJ8734g#gid=798256147) (Google Sheets) — primary source of session data.
+- [Official competition schedule](https://la28.org/content/dam/latwentyeight/competition-schedule-imagery/uploaded-nov-12-2025/LA28OlympicGamesCompetitionScheduleByEventV2.pdf) (PDF) — used to cross-reference and verify session data against LA28's published schedule.
+
+## Special Thanks
+
+- [u/type_rex_](https://www.reddit.com/r/olympics/comments/1sc3a21/la28_google_doc_session_codes_current_prices_and/) — for the session table Google Sheet.
+- [u/polygon06](https://www.reddit.com/r/olympics/comments/1scjk1s/interactive_la28_schedule_explorer/) — whose schedule explorer inspired me to share this project.
+
+## AI Ratings Methodology
+
+Each session carries **precomputed scores** from a rule-based system in `[src/lib/ratings.ts](src/lib/ratings.ts)`. The methodology is opinionated: it is meant to surface interesting sessions, not to be official or authoritative. **Ticket price is not part of the rating**; it stays in the table so you can judge value yourself.
+
+### Dimensions and weights
+
+Every dimension is scored on a 1–10 scale. The **aggregate** is a weighted average of the five (shown in the UI to one decimal place).
+
+
+| Dimension        | Weight | What it reflects                                                                                                                                                                  |
+| ---------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Significance** | 30%    | How much the session matters in an Olympic context: round type (e.g. gold medal vs preliminary), sport popularity tier, and whether multiple finals/medals happen in one session. |
+| **Experience**   | 25%    | How strong the live-watch experience is likely to be: per-sport watchability blended with venue quality, scaled by round importance; small evening boost for high-energy sports.  |
+| **Star power**   | 15%    | Base draw of the sport for globally recognized athletes, adjusted by round (later rounds score higher; early rounds lower).                                                       |
+| **Uniqueness**   | 15%    | Rarity of the opportunity: bonuses for new/returning sports on the program, iconic venue pairings (for meaningful rounds), ceremonies.                                            |
+| **Demand**       | 15%    | How hot tickets are likely to be: sport-level demand, round, published price ceiling as a signal, plus boosts for standout “cultural moment” combinations.                        |
+
 
 ## Contributing
 

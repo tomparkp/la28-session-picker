@@ -15,6 +15,17 @@ The dev server runs on port 3000.
 - `pnpm build` — Production build
 - `pnpm preview` — Preview production build
 - `pnpm test` — Run tests with Vitest
+- `pnpm rate-sessions` — Recompute rating fields in `src/data/sessions.json` (see below)
+
+## Regenerating session ratings
+
+After changing rating logic in `src/lib/ratings.ts` or session data in `src/data/sessions.json`, recompute stored ratings with:
+
+```bash
+pnpm rate-sessions
+```
+
+That script runs `rateEvent()` over `src/data/sessions.json` and writes the dimension fields and aggregate back into the same file.
 
 ## Routing
 
