@@ -50,6 +50,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         <Nav />
         {children}
+        <footer className="py-6 text-center text-xs text-ink3">
+          Made with love and electricity in Los Angeles. ☀️
+        </footer>
         <Scripts />
       </body>
     </html>
