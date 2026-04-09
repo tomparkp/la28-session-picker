@@ -1,3 +1,4 @@
+import { cloudflare } from '@cloudflare/vite-plugin'
 import tailwindcss from '@tailwindcss/vite'
 import { devtools } from '@tanstack/devtools-vite'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
@@ -13,21 +14,17 @@ export default defineConfig(({ command }) => {
       ...(isDev ? [devtools()] : []),
       tsconfigPaths({ projects: ['./tsconfig.json'] }),
       tailwindcss(),
-      tanstackStart(),
+      cloudflare({ viteEnvironment: { name: 'ssr' } }),
+      tanstackStart({
+        prerender: {
+          enabled: true,
+          crawlLinks: true,
+        },
+      }),
       viteReact(),
     ],
     build: {
       target: 'esnext',
-      rollupOptions: {
-        output: {
-          manualChunks(id) {
-            if (!id.includes('node_modules')) return
-            if (id.includes('/@tanstack/')) return 'tanstack'
-            if (id.includes('/react-dom/') || id.includes('/react/')) return 'react'
-            return
-          },
-        },
-      },
     },
   }
 })

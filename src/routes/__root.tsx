@@ -1,4 +1,10 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import {
+  HeadContent,
+  Link,
+  Scripts,
+  createRootRoute,
+  type ErrorComponentProps,
+} from '@tanstack/react-router'
 
 import { Nav } from '../components/Nav'
 
@@ -21,7 +27,14 @@ export const Route = createRootRoute({
       { rel: 'manifest', href: '/manifest.json' },
     ],
   }),
+  headers: () => ({
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'DENY',
+    'Referrer-Policy': 'strict-origin-when-cross-origin',
+  }),
   shellComponent: RootDocument,
+  errorComponent: RootError,
+  notFoundComponent: NotFound,
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -37,5 +50,41 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
+  )
+}
+
+function ErrorMessage({ heading, body }: { heading: string; body: string }) {
+  return (
+    <div className="flex flex-col items-center justify-center px-6 py-24 text-center">
+      <h2 className="font-display text-[2rem] font-normal -tracking-[0.03em] leading-[1.1] mb-3">
+        {heading}
+      </h2>
+      <p className="text-ink3 text-sm mb-6 max-w-[420px]">{body}</p>
+      <Link
+        to="/"
+        className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface2 px-4 py-2 text-sm text-ink2 transition-colors hover:border-gold hover:text-gold"
+      >
+        Back to home
+      </Link>
+    </div>
+  )
+}
+
+function RootError({ error }: ErrorComponentProps) {
+  console.error(error)
+  return (
+    <ErrorMessage
+      heading="Something went wrong"
+      body="An unexpected error occurred. Please try refreshing the page."
+    />
+  )
+}
+
+function NotFound() {
+  return (
+    <ErrorMessage
+      heading="Page not found"
+      body="The page you're looking for doesn't exist or has been moved."
+    />
   )
 }

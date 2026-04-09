@@ -8,6 +8,7 @@ export type SessionsPayload = {
   zones: string[]
 }
 
+// Workers isolates may be evicted between requests, so this is best-effort.
 let cached: SessionsPayload | null = null
 
 export function computeSessionsPayload(): SessionsPayload {
