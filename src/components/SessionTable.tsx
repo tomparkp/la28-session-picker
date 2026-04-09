@@ -359,7 +359,7 @@ export function SessionTable({
       </div>
 
       {/* ─── Desktop table ─── */}
-      <div className="hidden min-[540px]:block border border-border rounded-lg bg-surface">
+      <div className="hidden min-[540px]:block overflow-hidden border border-border rounded-lg bg-surface">
         <table className="w-full border-collapse text-[0.78rem]">
           <thead>
             {tableHeader}
