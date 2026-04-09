@@ -314,7 +314,7 @@ export function SessionTable({
   return (
     <>
       {/* ─── Mobile card list ─── */}
-      <div className="md:hidden space-y-2">
+      <div className="min-[540px]:hidden space-y-2">
         {sessions.length === 0 && (
           <div className="text-center py-12 px-4 text-ink3 text-[0.85rem] font-light">
             No sessions match your filters
@@ -346,7 +346,7 @@ export function SessionTable({
       </div>
 
       {/* ─── Desktop table ─── */}
-      <div className="hidden md:block overflow-x-auto border border-border rounded-lg bg-surface">
+      <div className="hidden min-[540px]:block overflow-x-auto border border-border rounded-lg bg-surface">
         <table className="w-full border-collapse text-[0.78rem]">
           <thead className="sticky top-0 z-2">
             <tr>

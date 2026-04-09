@@ -18,11 +18,19 @@ interface FilterBarProps {
 }
 
 const inputBase =
-  'bg-surface2 border border-border rounded-md text-ink text-[0.78rem] font-[system-ui] outline-none transition-[border-color] duration-150 px-2.5 py-1.5 focus:border-gold'
+  'bg-surface2 border border-border rounded-md text-ink text-[0.74rem] font-[system-ui] outline-none transition-[border-color] duration-150 px-2 py-1.5 focus:border-gold'
 
 const selectCls = `${inputBase} filter-select`
 
 const activeCls = 'border-gold bg-gold-dim'
+
+const actionBtnCls =
+  'flex items-center gap-1.5 shrink-0 rounded-md border border-border bg-surface2 px-2.5 py-1.5 text-[0.74rem] font-medium text-ink2 cursor-pointer transition-colors duration-150'
+
+const actionActiveCls = 'border-gold text-gold'
+
+const badgeCls =
+  'flex size-[18px] items-center justify-center rounded-full bg-gold text-bg text-[0.6rem] font-bold'
 
 function activeFilterCount(filters: Filters, groupBy: GroupBy): number {
   let count = 0
@@ -56,7 +64,7 @@ export function FilterBar({
   const filterSelects = (
     <>
       <select
-        className={cn(selectCls, 'max-md:w-full max-md:py-2.5', filters.sport && activeCls)}
+        className={cn(selectCls, filters.sport && activeCls)}
         value={filters.sport}
         onChange={(e) => update('sport', e.target.value)}
       >
@@ -68,7 +76,7 @@ export function FilterBar({
         ))}
       </select>
       <select
-        className={cn(selectCls, 'max-md:w-full max-md:py-2.5', filters.round && activeCls)}
+        className={cn(selectCls, filters.round && activeCls)}
         value={filters.round}
         onChange={(e) => update('round', e.target.value)}
       >
@@ -80,7 +88,7 @@ export function FilterBar({
         ))}
       </select>
       <select
-        className={cn(selectCls, 'max-md:w-full max-md:py-2.5', filters.zone && activeCls)}
+        className={cn(selectCls, filters.zone && activeCls)}
         value={filters.zone}
         onChange={(e) => update('zone', e.target.value)}
       >
@@ -92,7 +100,7 @@ export function FilterBar({
         ))}
       </select>
       <select
-        className={cn(selectCls, 'max-md:w-full max-md:py-2.5', filters.score && activeCls)}
+        className={cn(selectCls, filters.score && activeCls)}
         value={filters.score}
         onChange={(e) => update('score', e.target.value)}
       >
@@ -102,7 +110,7 @@ export function FilterBar({
         <option value="4">4+ (Decent)</option>
       </select>
       <select
-        className={cn(selectCls, 'max-md:w-full max-md:py-2.5', filters.price && activeCls)}
+        className={cn(selectCls, filters.price && activeCls)}
         value={filters.price}
         onChange={(e) => update('price', e.target.value)}
       >
@@ -114,7 +122,7 @@ export function FilterBar({
         <option value="500-99999">$500+</option>
       </select>
       <select
-        className={cn(selectCls, 'max-md:w-full max-md:py-2.5', groupBy && activeCls)}
+        className={cn(selectCls, groupBy && activeCls)}
         value={groupBy}
         onChange={(e) => onGroupByChange(e.target.value as GroupBy)}
       >
@@ -131,22 +139,16 @@ export function FilterBar({
     <button
       type="button"
       onClick={onOpenBookmarks}
-      className={cn(
-        inputBase,
-        'flex items-center gap-1.5 cursor-pointer font-semibold max-md:py-2.5',
-        bookmarkCount > 0 && activeCls,
-      )}
+      className={cn(actionBtnCls, bookmarkCount > 0 && actionActiveCls)}
     >
       <Bookmark
         size={14}
         fill={bookmarkCount > 0 ? 'var(--gold)' : 'none'}
         stroke={bookmarkCount > 0 ? 'var(--gold)' : 'currentColor'}
       />
-      Saved
+      <span>Saved</span>
       {bookmarkCount > 0 && (
-        <span className="bg-gold text-bg text-[0.55rem] font-bold min-w-[17px] h-[17px] rounded-full inline-flex items-center justify-center px-1">
-          {bookmarkCount}
-        </span>
+        <span className={badgeCls}>{bookmarkCount}</span>
       )}
     </button>
   )
@@ -155,47 +157,58 @@ export function FilterBar({
     <>
       <div ref={sentinelRef} className="h-px m-0 pointer-events-none" aria-hidden />
       <div className={cn('sticky top-0 z-10 bg-bg', stuck && 'border-b border-border')}>
-        {/* ─── Desktop: horizontal flex row ─── */}
-        <div className="hidden md:flex flex-wrap justify-center items-center gap-1.5 px-4 py-2.5 mx-auto max-w-[1400px]">
+        {/* ─── Wide desktop: single row ─── */}
+        <div className="hidden min-[1080px]:flex items-center gap-1 px-4 py-2.5 mx-auto max-w-[1400px]">
           <input
             type="text"
             placeholder="Search events..."
             value={filters.search}
-            className={cn(inputBase, 'w-[220px] placeholder:text-ink3', filters.search && activeCls)}
+            className={cn(inputBase, 'w-[150px] placeholder:text-ink3', filters.search && activeCls)}
             onChange={(e) => update('search', e.target.value)}
           />
+          {savedButton}
           <span className="flex-1" />
           {filterSelects}
-          <span className="flex-1" />
-          {savedButton}
         </div>
 
-        {/* ─── Mobile: search + collapsible filters ─── */}
-        <div className="md:hidden px-3 py-3 mx-auto max-w-[1400px] space-y-2">
-          <div className="flex gap-2">
+        {/* ─── Tablet: search+saved on top, filters wrap below ─── */}
+        <div className="hidden min-[540px]:block min-[1080px]:hidden px-4 py-2 mx-auto max-w-[1400px] space-y-1.5">
+          <div className="flex items-center gap-1.5">
             <input
               type="text"
               placeholder="Search events..."
               value={filters.search}
-              className={cn(inputBase, 'flex-1 min-w-0 py-2.5 placeholder:text-ink3', filters.search && activeCls)}
+              className={cn(inputBase, 'w-[150px] placeholder:text-ink3', filters.search && activeCls)}
+              onChange={(e) => update('search', e.target.value)}
+            />
+            {savedButton}
+          </div>
+          <div className="flex flex-wrap items-center gap-1">
+            {filterSelects}
+          </div>
+        </div>
+
+        {/* ─── Mobile: collapsible filters ─── */}
+        <div className="min-[540px]:hidden px-3 py-2 mx-auto max-w-[1400px] space-y-1.5">
+          <div className="flex gap-1.5">
+            <input
+              type="text"
+              placeholder="Search events..."
+              value={filters.search}
+              className={cn(inputBase, 'flex-1 min-w-0 placeholder:text-ink3', filters.search && activeCls)}
               onChange={(e) => update('search', e.target.value)}
             />
             {savedButton}
             <button
               type="button"
               onClick={() => setFiltersOpen((o) => !o)}
-              className={cn(
-                'flex items-center gap-1.5 shrink-0 rounded-md border border-border bg-surface2 px-3 py-2.5 text-[0.78rem] font-medium text-ink2 transition-colors duration-150',
-                (filtersOpen || activeCount > 0) && 'border-gold text-gold',
-              )}
+              className={cn(actionBtnCls, (filtersOpen || activeCount > 0) && actionActiveCls)}
               aria-expanded={filtersOpen}
             >
               <SlidersHorizontal size={14} />
               <span>Filters</span>
               {activeCount > 0 && (
-                <span className="flex size-[18px] items-center justify-center rounded-full bg-gold text-bg text-[0.6rem] font-bold">
-                  {activeCount}
-                </span>
+                <span className={badgeCls}>{activeCount}</span>
               )}
               <ChevronDown
                 size={14}

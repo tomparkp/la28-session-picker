@@ -174,9 +174,9 @@ export function SessionDetail({
                   type="button"
                   onClick={onClose}
                   aria-label="Close panel"
-                  className="flex size-10 items-center justify-center rounded-md text-ink3 transition-colors hover:bg-surface2 hover:text-ink md:size-7"
+                  className="flex size-10 items-center justify-center rounded-md text-ink3 transition-colors hover:bg-surface2 hover:text-ink md:size-9"
                 >
-                  <ChevronsRight size={16} className="hidden md:block" />
+                  <ChevronsRight size={18} className="hidden md:block" />
                   <X size={20} className="md:hidden" />
                 </button>
               </div>

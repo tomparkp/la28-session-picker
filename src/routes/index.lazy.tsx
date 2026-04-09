@@ -71,7 +71,7 @@ function SessionPicker() {
         onOpenBookmarks={handleOpenBookmarks}
       />
 
-      <div className="max-w-[1400px] mx-auto px-4 pt-4 pb-15">
+      <div className="max-w-[1400px] mx-auto px-4 pt-2 pb-15">
         <SessionTable
           sessions={sorted}
           sort={sort}
