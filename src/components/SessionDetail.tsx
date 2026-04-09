@@ -36,10 +36,10 @@ const ringColors: Record<ScoreKey, { border: string; score: string }> = {
   rDem:  { border: 'border-l-[#df0024]', score: 'text-[#df0024]' },
 }
 
-function ContendersSection({ contenders }: { contenders: Contender[] }) {
+function PotentialContendersSection({ potentialContenders }: { potentialContenders: Contender[] }) {
   return (
     <div className="grid gap-2.5">
-      {contenders.map((c) => (
+      {potentialContenders.map((c) => (
         <div key={`${c.name}-${c.country}`} className="flex items-start gap-3">
           <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-surface3 text-ink3">
             <UserRound size={14} />
@@ -293,14 +293,14 @@ export function SessionDetail({
                 </div>
               </div>
 
-              {/* ── Contenders ── */}
-              {insights.contenders.length > 0 && (
+              {/* ── Potential Contenders ── */}
+              {insights.potentialContenders.length > 0 && (
                 <div className="px-5 pt-2 pb-5 max-md:px-4">
                   <h3 className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-ink3">
-                    Contenders to Watch
+                    Potential Contenders
                   </h3>
                   <div className="mt-3">
-                    <ContendersSection contenders={insights.contenders} />
+                    <PotentialContendersSection potentialContenders={insights.potentialContenders} />
                   </div>
                 </div>
               )}

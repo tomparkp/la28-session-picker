@@ -1,4 +1,8 @@
 {
+  "_meta": {
+    "lastVerified": "2026-04-09",
+    "notes": "Contender lists are projections based on Paris 2024 results and current form. Official LA28 rosters have not been announced. Athlete availability is subject to change due to retirement, injury, or qualifying results."
+  },
   "Ceremony": {
     "la28Context": "The opening ceremony at 2028 Stadium and closing ceremony at the LA Memorial Coliseum bookend two weeks of competition. LA28 is the third time Los Angeles has hosted, after 1932 and 1984.",
     "venueNotes": {
@@ -6,10 +10,10 @@
       "LA Memorial Coliseum": "Hosted the 1932 and 1984 Olympic ceremonies. The only venue to host three Olympic Games. The cauldron from 1984 still stands."
     },
     "eventHighlights": {
-      "Opening Ceremony": "The parade of nations, artistic performances, lighting of the cauldron, and the oath — the moment the Games officially begin.",
-      "Closing Ceremony": "The final medal ceremonies, the extinguishing of the flame, and the handover to Brisbane 2032."
+      "Opening Ceremony": "The parade of nations, artistic performances, and lighting of the cauldron mark the official start of the Games.",
+      "Closing Ceremony": "Features the final medal ceremonies, the extinguishing of the flame, and the handover to Brisbane 2032."
     },
-    "contenders": []
+    "potentialContenders": []
   },
   "Athletics (Track & Field)": {
     "la28Context": "Track & field returns to the LA Memorial Coliseum — the same track where Carl Lewis won four golds in 1984. The Coliseum is the spiritual home of American Olympic athletics and will host the signature sessions of the entire Games.",
@@ -17,32 +21,32 @@
       "LA Memorial Coliseum": "The Coliseum has hosted two Olympics (1932, 1984) and will become the first venue ever to host three. Carl Lewis, Jesse Owens’s legacy, and Flo-Jo all echo through this place. 78,000+ capacity."
     },
     "eventHighlights": {
-      "Men's 100m Final": "The single most iconic event at any Olympics — 9.5 seconds that crown the fastest human alive.",
-      "Women's 100m Final": "The women’s sprint final has become just as electric, especially with a loaded American field on home soil.",
-      "Men's 200m Final": "The 200m rewards bend-running power. Historically produces staggering times under the lights.",
-      "Women's 200m Final": "The 200m has been an American showcase for decades, from Flo-Jo to Gabby Thomas.",
-      "Men's 110m Hurdles Final": "The hurdles final is pure drama — one clip and you’re done.",
+      "Men's 100m Final": "The flagship sprint event at any Olympics. The final typically lasts under 10 seconds.",
+      "Women's 100m Final": "The women's 100m has grown into one of the highest-profile events, especially with strong American sprinters on the roster.",
+      "Men's 200m Final": "The 200m requires bend-running skill and raw speed. It often produces the fastest times under evening conditions.",
+      "Women's 200m Final": "The women's 200m has been a strong event for American sprinters, including recent champion Gabby Thomas.",
+      "Men's 110m Hurdles Final": "A technically demanding sprint where one clipped hurdle can end a medal bid.",
       "Women's 100m Hurdles Final": "Consistently one of the most competitive and unpredictable sprint events.",
       "Men's 400m Final": "A grueling single-lap race that rewards both speed and pain tolerance.",
-      "Women's 400m Final": "Sydney McLaughlin-Levrone could attempt a 400m flat / 400m hurdles double.",
+      "Women's 400m Final": "Sydney McLaughlin-Levrone may attempt a 400m flat and 400m hurdles double.",
       "Men's 800m Final": "The 800m is chaos — tactical racing that explodes in the final 200m.",
       "Men's 1500m Final": "The metric mile. Tactical, dramatic, and historically one of the greatest Olympic races.",
-      "Women's 1500m Final": "Faith Kipyegon has owned this event. Can she three-peat?",
+      "Women's 1500m Final": "Faith Kipyegon has owned this event. She has won the last two — a third would be historic.",
       "Men's 5000m Final": "Long-distance racing that builds to a ferocious kick finish.",
       "Men's 10000m Final": "Twenty-five laps of attrition. The 10K final is an endurance chess match.",
       "Women's 10000m Final": "Sifan Hassan pulled off a legendary triple in Tokyo/Paris. She could return for more.",
       "Mixed 4×400m Relay Final": "A brand-new Olympic relay format making its third appearance — fast, unpredictable, and electric.",
       "Men's 4×100m Relay Final": "The relay final is pure adrenaline — four legs of sub-10 speed and handoff drama.",
       "Women's 4×100m Relay Final": "USA women have owned this relay. A home crowd with a loaded team could be deafening.",
-      "Men's Shot Put Final": "Ryan Crouser is the greatest shot putter in history. Can he win a third straight Olympic gold?",
+      "Men's Shot Put Final": "Ryan Crouser won back-to-back Olympic golds in Tokyo and Paris. He could attempt a third in LA.",
       "Women's High Jump Final": "High jump finals are riveting — the bar keeps going up until one person remains.",
       "Men's Decathlon": "Two days, ten events. The decathlon winner earns the title of World’s Greatest Athlete.",
       "Women's Heptathlon": "The ultimate all-round test. Seven events over two days determine the best female athlete on earth.",
-      "Men's Long Jump Final": "Tentoglou vs. the world. Long jump finals deliver jaw-dropping single efforts.",
-      "Men's Pole Vault Final": "Mondo Duplantis has turned pole vault into appointment television. He keeps breaking his own world record.",
+      "Men's Long Jump Final": "Miltiadis Tentoglou is the two-time defending champion. The long jump final comes down to a handful of big jumps.",
+      "Men's Pole Vault Final": "Mondo Duplantis has won the last two Olympic golds and continues to push the world record higher.",
       "Women's Hammer Throw Final": "Power event with the biggest arm circles in sport. Hammer finals are a spectacle."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Noah Lyles",
         "country": "USA",
@@ -56,17 +60,17 @@
       {
         "name": "Letsile Tebogo",
         "country": "BOT",
-        "note": "Paris 200m gold medalist; 19-year-old Botswanan phenom with 100m range"
+        "note": "Paris 200m gold medalist from Botswana; beat Lyles for gold and is still just 22"
       },
       {
         "name": "Sha’Carri Richardson",
         "country": "USA",
-        "note": "Paris 100m silver and relay gold; the crowd favorite on American soil"
+        "note": "Paris 100m silver medalist and relay gold; a strong sprint contender"
       },
       {
         "name": "Julien Alfred",
         "country": "LCA",
-        "note": "Paris 100m champion from tiny Saint Lucia — could defend as the fastest woman alive"
+        "note": "Defending Paris 100m champion from Saint Lucia; first Olympic gold medalist in her country's history"
       },
       {
         "name": "Sydney McLaughlin-Levrone",
@@ -121,12 +125,7 @@
       {
         "name": "Kelsey-Lee Barber",
         "country": "AUS",
-        "note": "World champion javelin thrower with a knack for peaking at majors"
-      },
-      {
-        "name": "Kevin Mayer",
-        "country": "FRA",
-        "note": "Former decathlon world record holder; veteran who could make one last run"
+        "note": "Former world champion javelin thrower; dealt with an elbow injury in 2024 but remains active"
       }
     ]
   },
@@ -140,31 +139,21 @@
       "Women's Marathon": "The women’s marathon final is one of the most watched events of any Olympics.",
       "Marathon Race Walk Mixed Relay": "New combined relay format — a marathon-distance race walk with mixed teams."
     },
-    "contenders": [
-      {
-        "name": "Eliud Kipchoge",
-        "country": "KEN",
-        "note": "The greatest marathoner in history; LA could be his farewell Games"
-      },
+    "potentialContenders": [
       {
         "name": "Tamirat Tola",
         "country": "ETH",
-        "note": "Paris gold medalist in the marathon; ran away from the field in blistering heat"
+        "note": "Paris men's marathon gold medalist; ran a dominant front-splitting race in the heat"
       },
       {
         "name": "Sifan Hassan",
         "country": "NED",
-        "note": "Won the Paris marathon after already racing the 5K and 10K on the track"
+        "note": "Won the Paris women's marathon after also racing the 5,000m and 10,000m on the track"
       },
       {
         "name": "Tigst Assefa",
         "country": "ETH",
-        "note": "World record holder in the marathon; the fastest female distance runner on the planet"
-      },
-      {
-        "name": "Kelvin Kiptum’s Legacy",
-        "country": "KEN",
-        "note": "The late Kiptum’s 2:00:35 record looms over every championship marathon"
+        "note": "Women's marathon world record holder (2:11:53, Berlin 2023); among the favorites if she competes"
       }
     ]
   },
@@ -177,16 +166,16 @@
       "Men's 20km Race Walk": "The 20km race walk is a tactical battle disguised as endurance — one warning too many and you’re disqualified.",
       "Women's 20km Race Walk": "Peru’s Kimberly García and China’s Yang Jiayu have been trading world titles."
     },
-    "contenders": [
-      {
-        "name": "Alvaro Martin",
-        "country": "ESP",
-        "note": "Paris 20km champion; Spain’s race walk factory keeps producing gold medalists"
-      },
+    "potentialContenders": [
       {
         "name": "Brian Daniel Pintado",
         "country": "ECU",
-        "note": "Ecuadorian who took Paris gold in the 20km — the country’s first Olympic walking champion"
+        "note": "Paris 20km gold medalist; Ecuador's first Olympic race walk champion since Jefferson Perez"
+      },
+      {
+        "name": "Alvaro Martin",
+        "country": "ESP",
+        "note": "Paris 20km bronze medalist; Spain's race walk program remains a consistent medal contender"
       },
       {
         "name": "Yang Jiayu",
@@ -196,7 +185,7 @@
       {
         "name": "Maria Perez",
         "country": "ESP",
-        "note": "Spanish race walk star; world champion and perennial podium contender"
+        "note": "Spanish race walk star; world champion and consistent podium contender"
       }
     ]
   },
@@ -206,17 +195,17 @@
       "Rose Bowl Aquatics Center": "Brand-new outdoor aquatics venue built for LA28, adjacent to the Rose Bowl. Every seat is close to the water. Night finals under the Pasadena sky."
     },
     "eventHighlights": {
-      "Men's 100m Freestyle Final": "The blue-ribbon sprint in the pool — the fastest 100 meters of swimming on earth.",
+      "Men's 100m Freestyle Final": "The premier sprint event in the pool. Pan Zhanle set a world record winning this in Paris.",
       "Women's 100m Freestyle Final": "Fifty seconds of pure speed. The women’s 100 free is stacked with talent.",
       "Men's 200m Freestyle Final": "The 200 free demands both speed and endurance — historically one of the deepest fields in the pool.",
       "Women's 200m IM Final": "The IM forces swimmers to master all four strokes. It’s the decathlon of swimming.",
       "Men's 100m Backstroke Final": "Backstroke sprinting is one of the purest speed events in the pool.",
-      "Women's 800m Freestyle Final": "Katie Ledecky’s signature event. She’s been lapping the field for a decade.",
-      "Women's 1500m Freestyle Final": "The longest race in the pool. Ledecky dominates here like no one else in any Olympic event.",
-      "Men's 200m Butterfly Final": "Michael Phelps’s old event — the 200 fly is a sufferfest with a dramatic finish.",
+      "Women's 800m Freestyle Final": "Katie Ledecky's signature event; she has dominated the distance races for over a decade.",
+      "Women's 1500m Freestyle Final": "The longest individual race in the pool. Ledecky has been the dominant force in this event since its Olympic introduction.",
+      "Men's 200m Butterfly Final": "A grueling race that has produced memorable Olympic moments, including several involving Michael Phelps.",
       "Men's 4×100m Medley Relay Final": "The final event of the swimming program — four strokes, four swimmers, maximum chaos."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Katie Ledecky",
         "country": "USA",
@@ -240,7 +229,7 @@
       {
         "name": "Summer McIntosh",
         "country": "CAN",
-        "note": "Canadian teenager who won three Paris golds; could dominate the 200 fly and 400 IM"
+        "note": "Canadian star who won three individual golds in Paris (400 IM, 200 fly, 200 IM); will be 21 in LA"
       },
       {
         "name": "Mollie O’Callaghan",
@@ -250,7 +239,7 @@
       {
         "name": "Regan Smith",
         "country": "USA",
-        "note": "American backstroke specialist; Paris 100m back gold and 200m back silver on home soil"
+        "note": "American backstroke star; won three silver medals individually in Paris plus two relay golds"
       },
       {
         "name": "Kaylee McKeown",
@@ -260,7 +249,7 @@
       {
         "name": "Caeleb Dressel",
         "country": "USA",
-        "note": "If healthy, the most explosive sprint freestyler the US has ever produced"
+        "note": "Plans to race the 50m free in LA as his competitive farewell; won relay medals in Paris"
       },
       {
         "name": "Kristof Milak",
@@ -280,22 +269,22 @@
       "Intuit Dome": "The LA Clippers’ brand-new arena (opened 2024) becomes the gymnastics venue. Its Halo Board wrapping the arena will create a unique atmosphere. 18,000 seats."
     },
     "eventHighlights": {
-      "Women's All-Around Final": "The most-watched event in gymnastics — two hours that crown the best all-around female gymnast on earth.",
+      "Women's All-Around Final": "The highest-profile event in gymnastics, crowning the best all-around female gymnast.",
       "Men's All-Around Final": "The men’s AA is six apparatus of precision. Japan and China have dominated recently.",
-      "Women's Team Final": "The US women haven’t lost an Olympic team final since 2008. A home Games makes them even more dangerous.",
+      "Women's Team Final": "The US women have won every Olympic team final since 2012.",
       "Men's Team Final": "Japan won gold in Paris; China and the US will be pushing to take it back in LA.",
-      "Women's Vault Final": "Simone Biles popularized the Yurchenko double pike. Vault finals are pure power and airtime.",
-      "Women's Floor Exercise Final": "Floor combines tumbling, dance, and personality — it’s the event that goes viral.",
-      "Women's Beam Final": "Four inches wide, four feet off the ground. Beam finals are the most nerve-wracking events in the Games.",
+      "Women's Vault Final": "Vault finals showcase explosive power and aerial skill.",
+      "Women's Floor Exercise Final": "Combines tumbling, choreography, and personality — it frequently generates the most attention.",
+      "Women's Beam Final": "Balance beam finals are decided by millimeters on a 10cm-wide apparatus.",
       "Men's Floor Exercise Final": "Men’s floor is all power — massive tumbling passes without music.",
-      "Men's Pommel Horse Final": "The pommel horse separates the great from the good. Stephen Nedoroscik became a meme and a medalist.",
+      "Men's Pommel Horse Final": "A specialist event where technical execution is everything. Stephen Nedoroscik won bronze here in Paris.",
       "Men's High Bar Final": "The high bar final features the most spectacular release moves in gymnastics."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Simone Biles",
         "country": "USA",
-        "note": "Greatest gymnast ever. Won gold in Paris at 27. A home Games could be her coronation"
+        "note": "Greatest gymnast ever; won three golds and a silver in Paris at 27. Has not committed to LA — remains undecided"
       },
       {
         "name": "Rebeca Andrade",
@@ -310,7 +299,7 @@
       {
         "name": "Jordan Chiles",
         "country": "USA",
-        "note": "Paris floor bronze (awarded, controversially returned). Huge personality, elite talent"
+        "note": "Paris team gold medalist; her individual floor bronze was controversially overturned by CAS"
       },
       {
         "name": "Daiki Hashimoto",
@@ -345,27 +334,22 @@
       "Intuit Dome": "Brand-new NBA arena opened in 2024 for the Clippers. The Halo Board, steep seating, and intimate sightlines make it the most modern basketball venue anywhere."
     },
     "eventHighlights": {
-      "Men's Gold Medal Game": "The biggest basketball game on earth. USA vs. the world for Olympic gold.",
-      "Women's Gold Medal Game": "The US women are going for an eighth consecutive gold medal — a streak that started in 1996.",
+      "Men's Gold Medal Game": "The culmination of the men's basketball tournament. Team USA won gold in Paris.",
+      "Women's Gold Medal Game": "The US women are pursuing their eighth consecutive gold medal, a streak dating to 1996.",
       "Men's Semifinal": "Win-or-go-home with a gold medal game berth on the line.",
       "Women's Semifinal": "The path to gold runs through here. Semifinal atmospheres in basketball are electric.",
       "Men's Preliminary Round": "Group stage games where NBA superstars represent their countries. Even early games draw massive crowds."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Victor Wembanyama",
         "country": "FRA",
         "note": "The 7’4 generational talent. France’s centerpiece and the most hyped young player in the sport"
       },
       {
-        "name": "LeBron James",
+        "name": "Anthony Edwards",
         "country": "USA",
-        "note": "Led Team USA to gold in Paris at 39. A home Games in LA — his city — could be the perfect farewell"
-      },
-      {
-        "name": "Kevin Durant",
-        "country": "USA",
-        "note": "The all-time leading Olympic scorer. Virtually automatic when he puts on a Team USA jersey"
+        "note": "Young American star who played on the Paris gold medal team; will be 26 in LA"
       },
       {
         "name": "Nikola Jokic",
@@ -412,7 +396,7 @@
       "Women's Semifinal": "Win-or-go-home. If the USWNT makes it, the Rose Bowl will be deafening.",
       "Men's Semifinal": "The knockout stage is where the drama lives. Upsets are common in Olympic soccer."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "USWNT",
         "country": "USA",
@@ -460,7 +444,7 @@
       "Women's Singles Gold Medal Match": "The women’s gold has been won by a different player at every recent Olympics.",
       "Mixed Doubles Gold Medal Match": "Mixed doubles adds a fun, unpredictable wrinkle to the tennis bracket."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Carlos Alcaraz",
         "country": "ESP",
@@ -474,12 +458,12 @@
       {
         "name": "Novak Djokovic",
         "country": "SRB",
-        "note": "Defending Olympic champion. If he’s still competing at 41, he’s still a threat"
+        "note": "Defending Olympic champion; would be 41 in LA. Has not confirmed plans to compete"
       },
       {
         "name": "Iga Swiatek",
         "country": "POL",
-        "note": "Paris bronze. Multiple French Open titles. Relentless on clay but adapts everywhere"
+        "note": "Paris bronze medalist in singles. Multiple Grand Slam champion; strong on all surfaces"
       },
       {
         "name": "Coco Gauff",
@@ -510,7 +494,7 @@
       "Women's 3m Springboard Final": "The springboard is where the crowd gets closest to the action.",
       "Men's Synchronized 10m Platform Final": "Two divers must match each other perfectly from 33 feet up."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Quan Hongchan",
         "country": "CHN",
@@ -520,11 +504,6 @@
         "name": "Chen Yuxi",
         "country": "CHN",
         "note": "Quan’s training partner and fierce rival — their duels define the event"
-      },
-      {
-        "name": "Tom Daley",
-        "country": "GBR",
-        "note": "If he comes back for a sixth Olympics, the crowd will be electric. Britain’s most beloved diver"
       },
       {
         "name": "Xie Siyi",
@@ -547,7 +526,7 @@
       "Men's Gold Medal Match": "The volleyball final is one of the great spectacles at any Olympics — five sets of absolute chaos.",
       "Women's Gold Medal Match": "Italy won a dramatic Paris gold. The women’s game has never been deeper."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Italy Women",
         "country": "ITA",
@@ -584,7 +563,7 @@
       "Men's Gold Medal Match": "Beach volleyball finals at sunset on LA sand. Peak Olympics.",
       "Women's Gold Medal Match": "Brazil and the US have historically dominated. The atmosphere at a beach volleyball final is unmatched."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Sara Hughes / Kelly Cheng",
         "country": "USA",
@@ -608,25 +587,25 @@
     ]
   },
   "Baseball": {
-    "la28Context": "Baseball returns to the Olympics for the first time since 2008 — and for the first time ever, MLB may release its players. The gold medal game at Dodger Stadium could feature the best players on earth playing for their countries at the sport’s most iconic active venue.",
+    "la28Context": "Baseball returns to the Olympics for the first time since 2008. MLB and the Players Association are in discussions about releasing active players for the Games, but no agreement has been finalized. If a deal is reached, Dodger Stadium could host the sport's biggest names.",
     "venueNotes": {
-      "Dodger Stadium": "The third-oldest MLB ballpark. Hosted Olympic baseball as a demonstration sport in 1984, averaging 48,000 fans per game. If Ohtani plays for Japan at his home park, it’s a generational moment."
+      "Dodger Stadium": "The third-oldest MLB ballpark. Hosted Olympic baseball as a demonstration sport in 1984. If an MLB player release deal is reached, it becomes one of the marquee Olympic venues."
     },
     "eventHighlights": {
       "Gold Medal Game": "If MLB releases players: Ohtani, Judge, Soto, Acuna — the best players on earth, at Dodger Stadium, for a gold medal.",
       "Bronze Medal Game": "Even the bronze medal game at Dodger Stadium with MLB-caliber rosters would be a bucket-list event.",
       "Pool Round": "Six-team round-robin pool play. USA auto-qualified as host. Dominican Republic, Venezuela, and Japan likely qualifiers."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Shohei Ohtani",
         "country": "JPN",
-        "note": "The two-way unicorn. Playing for Japan at his home park — Dodger Stadium — would be mythic"
+        "note": "The two-way star; if MLB reaches an agreement, playing for Japan at Dodger Stadium would be a defining LA28 moment"
       },
       {
         "name": "Aaron Judge",
         "country": "USA",
-        "note": "The most feared power hitter in baseball. 6’7, 280 lbs of Olympic-caliber danger"
+        "note": "One of the most feared power hitters in baseball; participation depends on an MLB–MLBPA agreement"
       },
       {
         "name": "Juan Soto",
@@ -668,7 +647,7 @@
     "eventHighlights": {
       "Gold Medal Game": "Japan upset the US for gold in Tokyo. The Americans will be out for revenge on home soil."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "USA Women",
         "country": "USA",
@@ -683,11 +662,6 @@
         "name": "Jocelyn Alo",
         "country": "USA",
         "note": "NCAA all-time home run leader. The most feared power hitter in women’s softball"
-      },
-      {
-        "name": "Cat Osterman legacy",
-        "country": "USA",
-        "note": "The next generation of American pitchers carrying on a dominant tradition"
       }
     ]
   },
@@ -701,7 +675,7 @@
       "Gold Medal Game (Women)": "The US women’s flag football team is loaded with multi-sport athletes.",
       "Pool Round": "Group stage games where the sport introduces itself to a global audience."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "USA Men",
         "country": "USA",
@@ -733,7 +707,7 @@
       "Gold Medal Match (Men)": "The first Olympic cricket gold medal in 128 years. India, Australia, and England will be desperate to win it.",
       "Gold Medal Match (Women)": "Women’s cricket is experiencing explosive growth. This event could be transformative for the sport."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "India Men",
         "country": "IND",
@@ -742,7 +716,7 @@
       {
         "name": "Virat Kohli",
         "country": "IND",
-        "note": "The most famous cricketer alive. An Olympic gold is the one trophy missing from his cabinet"
+        "note": "Retired from T20 internationals after the 2024 World Cup; participation in Olympics is uncertain"
       },
       {
         "name": "Jasprit Bumrah",
@@ -780,7 +754,7 @@
       "Gold Medal Match (Men)": "The first Olympic lacrosse gold medal in 120 years. USA and Canada are overwhelming favorites.",
       "Gold Medal Match (Women)": "Women’s lacrosse is dominated by the US, but the field is growing fast."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "USA Men",
         "country": "USA",
@@ -812,7 +786,7 @@
       "Men's Singles Gold Medal Match": "The first Olympic squash gold medal ever. History.",
       "Women's Singles Gold Medal Match": "Egypt and the US have been producing world-class women’s players."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Ali Farag",
         "country": "EGY",
@@ -820,8 +794,8 @@
       },
       {
         "name": "Mohamed ElShorbagy",
-        "country": "EGY",
-        "note": "Multiple world No. 1 who now represents England — but Egypt’s depth is unmatched"
+        "country": "ENG",
+        "note": "Multiple world No. 1; born in Egypt but switched allegiance to England in 2022"
       },
       {
         "name": "Nour El Sherbini",
@@ -849,7 +823,7 @@
       "Men's Gold Medal Game": "3x3 gold medal game. Ten minutes of non-stop action.",
       "Women's Gold Medal Game": "Germany won a shocking women’s gold in Paris. The event is wide open."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Latvia Men",
         "country": "LAT",
@@ -880,16 +854,11 @@
     "eventHighlights": {
       "Gold Medal Finals Session": "Multiple gold medal bouts in one session. The compressed energy of a tiny room with Olympic gold on the line."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Imane Khelif",
         "country": "ALG",
         "note": "Paris gold medalist who became the most talked-about boxer of the Games"
-      },
-      {
-        "name": "Kellie Harrington",
-        "country": "IRL",
-        "note": "Back-to-back Olympic lightweight champion. Ireland’s boxing hero"
       },
       {
         "name": "Bakhodir Jalolov",
@@ -899,7 +868,7 @@
       {
         "name": "Keyshawn Davis",
         "country": "USA",
-        "note": "American lightweight medal contender. Pro experience makes him dangerous in the Olympic format"
+        "note": "American medal contender; competed at Tokyo as a professional. Eligibility rules may allow pros"
       }
     ]
   },
@@ -909,7 +878,7 @@
       "DTLA Arena": "The 3,600-seat venue makes even preliminary rounds feel intimate. Every punch echoes."
     },
     "eventHighlights": {},
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Imane Khelif",
         "country": "ALG",
@@ -923,7 +892,7 @@
       {
         "name": "Keyshawn Davis",
         "country": "USA",
-        "note": "American medal contender fighting on home soil"
+        "note": "American medal contender; competed at Tokyo as a professional"
       }
     ]
   },
@@ -936,7 +905,7 @@
       "Men's Gold Medal Match": "Surfing gold at Trestles. The best surfers on earth on one of the best waves on earth.",
       "Women's Gold Medal Match": "Caroline Marks won gold in Tahiti. A California native defending at Trestles would be storybook."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Caroline Marks",
         "country": "USA",
@@ -955,7 +924,7 @@
       {
         "name": "Filipe Toledo",
         "country": "BRA",
-        "note": "World No. 1 who thrives in high-performance waves like Trestles"
+        "note": "Former world No. 1; took a mental health break in 2024 but returned to competition in 2025"
       },
       {
         "name": "Caitlin Simmers",
@@ -970,7 +939,7 @@
       "Venice Beach": "The spiritual home of skateboarding. Z-Boys, Dogtown, Venice Beach — this is where the sport was born. Olympic skateboarding here is a homecoming."
     },
     "eventHighlights": {},
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Nyjah Huston",
         "country": "USA",
@@ -984,12 +953,12 @@
       {
         "name": "Coco Yoshizawa",
         "country": "JPN",
-        "note": "Paris street gold medalist at 14. Will be 18 in LA — scary trajectory"
+        "note": "Paris street gold medalist; was 14 in Paris, will be 18 in LA"
       },
       {
         "name": "Sky Brown",
         "country": "GBR",
-        "note": "British-Japanese prodigy. Paris park bronze at 16. Massive social media presence"
+        "note": "British-Japanese park skater; won bronze at both Tokyo and Paris. Will be 20 in LA"
       }
     ]
   },
@@ -1002,7 +971,7 @@
       "Men's Street Final": "Technical trickery on a purpose-built street course at Venice Beach. Peak California.",
       "Women's Street Final": "The women’s field is incredibly young — multiple teenagers are medal favorites."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Nyjah Huston",
         "country": "USA",
@@ -1034,7 +1003,7 @@
       "Men's Park Final": "Park skating is all about flow and amplitude. The runs are artistic and athletic.",
       "Women's Park Final": "Arisa Trew won Paris gold at 14. The women’s park field is dominated by teenagers."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Arisa Trew",
         "country": "AUS",
@@ -1053,7 +1022,7 @@
       {
         "name": "Keegan Palmer",
         "country": "AUS",
-        "note": "Tokyo park gold medalist. Australian who competes at the highest level"
+        "note": "Back-to-back Olympic park gold medalist (Tokyo and Paris). Australian who will be the defending champion"
       }
     ]
   },
@@ -1068,7 +1037,7 @@
       "Men's Speed Final": "Fifteen meters. Five seconds. The fastest vertical sprint in sport.",
       "Women's Speed Final": "Speed climbing is the 100m dash of the wall — pure explosive power."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Janja Garnbret",
         "country": "SLO",
@@ -1082,7 +1051,7 @@
       {
         "name": "Adam Ondra",
         "country": "CZE",
-        "note": "The greatest rock climber in history, period. Still chasing an elusive Olympic medal"
+        "note": "Retired from bouldering in 2025 but continues in lead climbing; aiming for the LA28 lead event"
       },
       {
         "name": "Sam Watson",
@@ -1100,7 +1069,7 @@
       "Men's Individual Final Round": "The final 18 holes for Olympic golf gold at Riviera. Major-championship pressure with Olympic stakes.",
       "Women's Individual Final Round": "Lydia Ko won gold in Paris. The women’s game is loaded with talent."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Scottie Scheffler",
         "country": "USA",
@@ -1137,7 +1106,7 @@
       "Men's Gold Medal Match": "France won a dramatic men’s gold in Paris. Fiji has won two of three Olympic golds in the sport.",
       "Women's Gold Medal Match": "New Zealand’s women are the benchmark — their sevens team is ferocious."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Fiji Men",
         "country": "FIJ",
@@ -1170,7 +1139,7 @@
       "Women's Singles Gold Medal Match": "An Se-young broke Korean hearts with gold in Paris. She’ll be the defending champion.",
       "Mixed Doubles Gold Medal Match": "Mixed doubles produces the wildest rallies and the most creative shot-making."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Viktor Axelsen",
         "country": "DEN",
@@ -1203,16 +1172,16 @@
       "Women's 52kg Final": "Uta Abe won gold in Tokyo at this weight. Japan dominates the lighter classes.",
       "Mixed Team Event Final": "The team event is pure drama — win-or-go-home individual bouts deciding the team medal."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Teddy Riner",
         "country": "FRA",
-        "note": "The GOAT of judo. If he competes in LA at 39, it’s a farewell to the greatest ever"
+        "note": "Four-time Olympic champion; has confirmed LA28 will be his final Games before retirement"
       },
       {
         "name": "Uta Abe",
         "country": "JPN",
-        "note": "Japanese judoka who won Tokyo gold with her brother on the same day"
+        "note": "Tokyo gold medalist but was upset in the second round at Paris; will look to bounce back"
       },
       {
         "name": "Lasha Bekauri",
@@ -1231,7 +1200,7 @@
       "Women's Epee Individual Final": "Epee’s any-target rules make it the most unpredictable fencing discipline.",
       "Men's Sabre Individual Final": "Sabre is the fastest fencing discipline. Bouts can end in seconds."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Lee Kiefer",
         "country": "USA",
@@ -1260,7 +1229,7 @@
       "LA Convention Center Hall 2": "Convention center mat setup with intimate seating. Head kicks echo through the venue."
     },
     "eventHighlights": {},
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Ilia Smetanin",
         "country": "KGZ",
@@ -1288,11 +1257,11 @@
       "Men's Freestyle 97kg Final": "Big-man wrestling. Power, speed, and leverage at the highest level.",
       "Women's Freestyle 76kg Final": "Women’s wrestling has grown dramatically in depth and popularity."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Jordan Burroughs",
         "country": "USA",
-        "note": "If the 37-year-old legend makes one more run, it’s the ultimate farewell on home soil"
+        "note": "American wrestling legend; has not retired but took 2024-25 off. Would be 39 in LA — participation is uncertain"
       },
       {
         "name": "Yui Susaki",
@@ -1303,11 +1272,6 @@
         "name": "Abdulrashid Sadulaev",
         "country": "UZB",
         "note": "The Russian Tank — now competing for Uzbekistan. Two Olympic golds in freestyle"
-      },
-      {
-        "name": "Mijain Lopez legacy",
-        "country": "CUB",
-        "note": "The greatest Greco-Roman wrestler ever retired with five Olympic golds in Paris"
       }
     ]
   },
@@ -1320,7 +1284,7 @@
       "Men's Gold Medal Match": "Denmark has won two of the last three Olympic golds. Handball finals are electric.",
       "Women's Gold Medal Match": "Norway’s women are the all-time greats. France won in Paris."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Denmark Men",
         "country": "DEN",
@@ -1352,11 +1316,11 @@
       "Men's Gold Medal Match": "The Netherlands and India are perennial contenders. India’s hockey renaissance has been one of the great Olympic stories.",
       "Women's Gold Medal Match": "The Netherlands women are the benchmark — they’ve won the last two Olympic golds."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Netherlands Women",
         "country": "NED",
-        "note": "Two-time defending Olympic champions. The most dominant team in women’s hockey"
+        "note": "Three-time consecutive Olympic champions (Tokyo, Paris); won five of twelve Olympic women's hockey tournaments"
       },
       {
         "name": "India Men",
@@ -1384,7 +1348,7 @@
       "Men's Gold Medal Match": "Water polo finals are some of the most physical events at the Olympics.",
       "Women's Gold Medal Match": "Spain won women’s gold in Paris. The US women are always contenders."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Serbia Men",
         "country": "SRB",
@@ -1416,7 +1380,7 @@
       "Men's Singles Gold Medal Match": "China has won nearly every Olympic gold in table tennis. Breaking through is the holy grail for every other country.",
       "Women's Singles Gold Medal Match": "Chen Meng, Sun Yingsha — Chinese women’s table tennis is breathtakingly deep."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Fan Zhendong",
         "country": "CHN",
@@ -1453,11 +1417,11 @@
       "Men's +102kg Final": "The super heavyweight final. The strongest humans on the planet lifting weights that defy belief.",
       "Women's 59kg Final": "Mid-weight categories produce the most dramatic snatch-to-clean-and-jerk swings."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Lasha Talakhadze",
         "country": "GEO",
-        "note": "Georgian super heavyweight. Three-time Olympic champion. The strongest man in Olympic history"
+        "note": "Georgian super heavyweight; won a third consecutive Olympic gold in Paris. The strongest lifter in Olympic history"
       },
       {
         "name": "Li Fabin",
@@ -1481,11 +1445,11 @@
       "Women's Individual Final": "South Korea’s An San is the face of Olympic archery after her Tokyo triple gold.",
       "Mixed Team Final": "The mixed team format adds strategic complexity — two archers, alternating shots."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "An San",
         "country": "KOR",
-        "note": "Triple Tokyo gold medalist. The most famous archer in the world"
+        "note": "Triple Tokyo gold medalist, but failed to qualify for the Paris team through Korea's strict selection trials"
       },
       {
         "name": "Lim Si-hyeon",
@@ -1513,7 +1477,7 @@
       "Men's Kayak Cross Final": "The new head-to-head format — four paddlers racing simultaneously through whitewater gates. Chaos in the best way.",
       "Women's Kayak Cross Final": "Kayak cross debuted in Paris and instantly became one of the most exciting events at the Games."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Jessica Fox",
         "country": "AUS",
@@ -1535,7 +1499,7 @@
       "Men's K1 1000m Final": "The blue-ribbon flat-water sprint. One kilometer of all-out paddling.",
       "Women's C2 500m Final": "Women’s canoe sprint was only added to the Olympics in Tokyo 2020."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Lisa Carrington",
         "country": "NZL",
@@ -1557,7 +1521,7 @@
       "Men's Road Race": "A one-day classic through LA. The men’s road race is unpredictable and always dramatic.",
       "Women's Road Race": "Kristen Faulkner’s shock Paris gold showed that anything can happen on race day."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Remco Evenepoel",
         "country": "BEL",
@@ -1589,7 +1553,7 @@
       "Men's Time Trial": "The race of truth. Alone against the clock, aero positions, maximum watts.",
       "Women's Time Trial": "Grace Brown’s Paris gold was a masterclass in time trialing."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Remco Evenepoel",
         "country": "BEL",
@@ -1617,7 +1581,7 @@
       "Women's Team Pursuit Final": "Four riders in a paceline, chasing down the opposing team on the other side of the track.",
       "Men’s Keirin Final": "Six riders, a motorbike pacer, and three laps of absolute chaos. The keirin is the most exciting event on the track."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Harrie Lavreysen",
         "country": "NED",
@@ -1644,7 +1608,7 @@
       "Men's Freestyle Park Final": "Sixty seconds to throw your biggest tricks on a BMX in front of an Olympic crowd.",
       "Women's Freestyle Park Final": "The women’s field has exploded in depth since the sport debuted in Tokyo."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Jose “Maligno” Torres Gil",
         "country": "ARG",
@@ -1671,7 +1635,7 @@
       "Men's BMX Racing Final": "Eight riders, one gate drop, 40 seconds. The final is pure adrenaline.",
       "Women's BMX Racing Final": "Contact, crashes, and split-second decisions at 40 mph."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Saya Sakakibara",
         "country": "AUS",
@@ -1698,11 +1662,11 @@
       "Individual Show Jumping Final": "The show jumping final is the most dramatic equestrian event — one rail down can cost you gold.",
       "Individual Dressage Final": "Dressage is the artistic side of equestrian — precision movements set to music."
     },
-    "contenders": [
+    "potentialContenders": [
       {
-        "name": "Charlotte Dujardin’s successors",
+        "name": "British Dressage Team",
         "country": "GBR",
-        "note": "British dressage program remains strong even after Dujardin’s departure"
+        "note": "Strong program that will field new riders after Charlotte Dujardin's suspension and departure from competition"
       },
       {
         "name": "Jessica von Bredow-Werndl",
@@ -1730,7 +1694,7 @@
       "Men's Eight Final": "The eights final is rowing’s showcase event — eight rowers plus a cox in perfect synchronization.",
       "Women's Eight Final": "The women’s eight is a display of power, endurance, and timing."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "New Zealand Pair",
         "country": "NZL",
@@ -1756,7 +1720,7 @@
     "eventHighlights": {
       "Beach Sprint Final": "Athletes sprint across the beach, jump in their boats, row a course, and sprint back. It’s bonkers."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Mediterranean nations",
         "country": "Various",
@@ -1773,7 +1737,7 @@
       "Men's 10m Air Rifle Final": "Standing perfectly still, controlling your heartbeat, and putting a pellet through a dot the size of a period.",
       "Women's 10m Air Pistol Final": "Air pistol requires extraordinary hand stability. Korea and China dominate."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "William Shaner",
         "country": "USA",
@@ -1795,7 +1759,7 @@
       "Men's Trap Final": "Trap shooting — targets launch at randomized angles. One miss can cost you gold.",
       "Women's Skeet Final": "Skeet shooting — targets cross at high speed. Reflexes and consistency are everything."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Nathan Hales",
         "country": "GBR",
@@ -1816,7 +1780,7 @@
     "eventHighlights": {
       "Medal Races": "The final medal race compresses the entire regatta into one dramatic fleet race."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Great Britain Team",
         "country": "GBR",
@@ -1837,7 +1801,7 @@
     "eventHighlights": {
       "Kite Final": "Formula kite racing — foiling above the water at 40+ knots. One of the most visually spectacular Olympic sports."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Valentin Bontus",
         "country": "AUT",
@@ -1859,7 +1823,7 @@
       "Men's Trampoline Final": "Ten bounces, maximum height, maximum difficulty. The crowd gasps with every flip.",
       "Women's Trampoline Final": "Bryony Page won gold in Paris for Britain. The sport rewards both technical precision and fearlessness."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Ivan Litvinovich",
         "country": "BLR",
@@ -1881,7 +1845,7 @@
       "Individual All-Around Final": "Four apparatus routines scored for artistry and difficulty. It’s where ballet meets circus.",
       "Group All-Around Final": "Five gymnasts moving in perfect synchronization with multiple apparatus."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Darja Varfolomeev",
         "country": "GER",
@@ -1908,7 +1872,7 @@
       "Team Free Routine Final": "Eight swimmers performing a choreographed routine in perfect sync. Four minutes of holding your breath.",
       "Duet Free Routine Final": "Two swimmers, one routine. The chemistry must be flawless."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "China Team",
         "country": "CHN",
@@ -1931,7 +1895,7 @@
       "Women's Individual Triathlon": "Flora Duffy won gold in Tokyo for Bermuda. The women’s field is incredibly deep.",
       "Mixed Relay": "Four athletes, alternating genders. The relay format is frantic and unpredictable."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Alex Yee",
         "country": "GBR",
@@ -1958,7 +1922,7 @@
       "Men's Individual Final": "Five disciplines, one day, one champion. Modern pentathlon is the ultimate all-rounder test.",
       "Women's Individual Final": "The laser-run finish — fencing-like shooting mixed with a 3.2km run — decides the gold."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Ahmed Elgendy",
         "country": "EGY",
@@ -1980,7 +1944,7 @@
       "Men's Cross-Country": "An hour-plus of full-gas mountain biking on technical terrain. Fitness meets bike handling.",
       "Women's Cross-Country": "Pauline Ferrand-Prevot dominated in Paris. The women’s field is incredibly strong."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Tom Pidcock",
         "country": "GBR",
@@ -1990,11 +1954,6 @@
         "name": "Pauline Ferrand-Prevot",
         "country": "FRA",
         "note": "Paris gold medalist on home soil. The most versatile cyclist in history"
-      },
-      {
-        "name": "Nino Schurter",
-        "country": "SUI",
-        "note": "Swiss MTB legend. Nine-time world champion and Olympic gold medalist"
       }
     ]
   },
@@ -2007,7 +1966,7 @@
       "Men's 10km Marathon Swim": "Nearly two hours of ocean swimming. Navigation, drafting, and endurance.",
       "Women's 10km Marathon Swim": "Open water produces dramatic finishes — swimmers sprint-finish after swimming for 90+ minutes."
     },
-    "contenders": [
+    "potentialContenders": [
       {
         "name": "Sharon van Rouwendaal",
         "country": "NED",

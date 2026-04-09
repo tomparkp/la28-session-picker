@@ -6,7 +6,16 @@ export interface SportKnowledge {
   la28Context: string
   venueNotes: Record<string, string>
   eventHighlights: Record<string, string>
-  contenders: Contender[]
+  potentialContenders: Contender[]
 }
 
-export const SPORT_KNOWLEDGE = data as Record<string, SportKnowledge>
+export interface SportKnowledgeMeta {
+  lastVerified: string
+  notes: string
+}
+
+const raw = data as Record<string, unknown>
+const { _meta, ...sports } = raw
+
+export const SPORT_KNOWLEDGE_META = _meta as SportKnowledgeMeta
+export const SPORT_KNOWLEDGE = sports as Record<string, SportKnowledge>
