@@ -1,4 +1,4 @@
-import { ChevronsRight, MapPin, UserRound, X } from 'lucide-react'
+import { Bookmark, ChevronsRight, MapPin, UserRound, X } from 'lucide-react'
 import { type PointerEvent as ReactPointerEvent, useEffect, useMemo, useRef, useState } from 'react'
 
 import { cn } from '@/lib/cn'
@@ -62,9 +62,13 @@ function ContendersSection({ contenders }: { contenders: Contender[] }) {
 export function SessionDetail({
   session,
   onClose,
+  isBookmarked,
+  onToggleBookmark,
 }: {
   session: Session | null
   onClose: () => void
+  isBookmarked?: (id: string) => boolean
+  onToggleBookmark?: (id: string) => void
 }) {
   const panelRef = useRef<HTMLDivElement>(null)
   const widthRef = useRef(DEFAULT_WIDTH)
@@ -172,16 +176,39 @@ export function SessionDetail({
             <>
               {/* ── Header zone ── */}
               <div className="shrink-0 px-5 pt-3 pb-5 max-md:px-4">
-                {/* Close button */}
-                <button
-                  type="button"
-                  onClick={onClose}
-                  aria-label="Close panel"
-                  className="mb-3 flex size-10 items-center justify-center rounded-md text-ink3 transition-colors hover:bg-surface2 hover:text-ink md:size-9"
-                >
-                  <ChevronsRight size={18} className="hidden md:block" />
-                  <X size={20} className="md:hidden" />
-                </button>
+                {/* Toolbar row */}
+                <div className="mb-3 flex items-center justify-between">
+                  <button
+                    type="button"
+                    onClick={onClose}
+                    aria-label="Close panel"
+                    className="flex size-10 items-center justify-center rounded-md text-ink3 transition-colors hover:bg-surface2 hover:text-ink md:size-9"
+                  >
+                    <ChevronsRight size={18} className="hidden md:block" />
+                    <X size={20} className="md:hidden" />
+                  </button>
+
+                  {onToggleBookmark && isBookmarked && (
+                    <button
+                      type="button"
+                      onClick={() => onToggleBookmark(displayed.id)}
+                      title={isBookmarked(displayed.id) ? 'Remove from saved' : 'Save session'}
+                      aria-label={
+                        isBookmarked(displayed.id)
+                          ? `Remove ${displayed.name} from saved`
+                          : `Save ${displayed.name}`
+                      }
+                      className="flex size-10 items-center justify-center rounded-md transition-all duration-100 hover:bg-gold-dim md:size-9"
+                    >
+                      <Bookmark
+                        size={20}
+                        className="transition-all duration-100"
+                        fill={isBookmarked(displayed.id) ? 'var(--gold)' : 'none'}
+                        stroke={isBookmarked(displayed.id) ? 'var(--gold)' : 'var(--ink3)'}
+                      />
+                    </button>
+                  )}
+                </div>
 
                 {/* Tags row */}
                 <div className="flex flex-wrap items-center gap-1.5">

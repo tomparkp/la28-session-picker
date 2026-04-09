@@ -86,6 +86,8 @@ function SessionPicker() {
         <SessionDetail
           session={selectedSession}
           onClose={() => setSelectedSession(null)}
+          isBookmarked={isBookmarked}
+          onToggleBookmark={toggle}
         />
 
         <BookmarkPanel
