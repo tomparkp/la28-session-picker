@@ -1,6 +1,5 @@
-import { useWindowVirtualizer } from '@tanstack/react-virtual'
 import { Bookmark } from 'lucide-react'
-import { type KeyboardEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { type KeyboardEvent, useMemo } from 'react'
 
 import { cn } from '@/lib/cn'
 import { fmtPrice, fmtTime } from '@/lib/format'
@@ -23,11 +22,6 @@ export interface SessionTableProps {
 type SessionItem =
   | { type: 'group'; label: string; count: number }
   | { type: 'session'; session: Session }
-
-const DESKTOP_ROW_HEIGHT = 50
-const DESKTOP_GROUP_HEIGHT = 33
-const MOBILE_CARD_HEIGHT = 140
-const MOBILE_GROUP_HEIGHT = 36
 
 const thBase =
   'text-left px-2.5 py-2 bg-surface2 font-semibold text-[0.62rem] uppercase tracking-[0.08em] text-ink3 border-b border-border whitespace-nowrap cursor-pointer select-none transition-colors duration-100 hover:text-gold'
@@ -308,42 +302,6 @@ export function SessionTable({
   selectedSessionId,
   onSelectSession,
 }: SessionTableProps) {
-  const desktopContainerRef = useRef<HTMLDivElement>(null)
-  const mobileContainerRef = useRef<HTMLDivElement>(null)
-  const theadRef = useRef<HTMLTableSectionElement>(null)
-
-  const [isClient, setIsClient] = useState(false)
-  const [desktopScrollMargin, setDesktopScrollMargin] = useState(0)
-  const [mobileScrollMargin, setMobileScrollMargin] = useState(0)
-  const [stickyOffset, setStickyOffset] = useState(0)
-  const [theadHeight, setTheadHeight] = useState(33)
-
-  useEffect(() => setIsClient(true), [])
-
-  useEffect(() => {
-    function measure() {
-      if (desktopContainerRef.current) {
-        const rect = desktopContainerRef.current.getBoundingClientRect()
-        setDesktopScrollMargin(rect.top + window.scrollY)
-      }
-      if (mobileContainerRef.current) {
-        const rect = mobileContainerRef.current.getBoundingClientRect()
-        setMobileScrollMargin(rect.top + window.scrollY)
-      }
-      const bar = document.querySelector('[data-sticky-bar]')
-      if (bar) setStickyOffset(bar.getBoundingClientRect().height)
-      if (theadRef.current) setTheadHeight(theadRef.current.getBoundingClientRect().height)
-    }
-    measure()
-
-    const ro = new ResizeObserver(measure)
-    const bar = document.querySelector('[data-sticky-bar]')
-    if (bar) ro.observe(bar)
-    if (desktopContainerRef.current) ro.observe(desktopContainerRef.current)
-    if (mobileContainerRef.current) ro.observe(mobileContainerRef.current)
-    return () => ro.disconnect()
-  }, [])
-
   const items = useMemo<SessionItem[]>(() => {
     const groups = groupSessions(sessions, groupBy)
     return groups.flatMap((group) => {
@@ -354,44 +312,6 @@ export function SessionTable({
       ]
     })
   }, [sessions, groupBy])
-
-  const desktopEstimateSize = useCallback(
-    (index: number) => (items[index].type === 'group' ? DESKTOP_GROUP_HEIGHT : DESKTOP_ROW_HEIGHT),
-    [items],
-  )
-
-  const mobileEstimateSize = useCallback(
-    (index: number) => (items[index].type === 'group' ? MOBILE_GROUP_HEIGHT : MOBILE_CARD_HEIGHT),
-    [items],
-  )
-
-  const desktopVirtualizer = useWindowVirtualizer({
-    count: items.length,
-    estimateSize: desktopEstimateSize,
-    overscan: 20,
-    scrollMargin: desktopScrollMargin,
-    enabled: isClient,
-  })
-
-  const mobileVirtualizer = useWindowVirtualizer({
-    count: items.length,
-    estimateSize: mobileEstimateSize,
-    overscan: 8,
-    scrollMargin: mobileScrollMargin,
-    enabled: isClient,
-  })
-
-  const desktopVirtualItems = desktopVirtualizer.getVirtualItems()
-  const mobileVirtualItems = mobileVirtualizer.getVirtualItems()
-
-  const desktopPaddingTop =
-    desktopVirtualItems.length > 0
-      ? desktopVirtualItems[0].start - desktopVirtualizer.options.scrollMargin
-      : 0
-  const desktopPaddingBottom =
-    desktopVirtualItems.length > 0
-      ? desktopVirtualizer.getTotalSize() - (desktopVirtualItems.at(-1)?.end ?? 0)
-      : 0
 
   const tableHeader = (
     <tr>
@@ -414,69 +334,34 @@ export function SessionTable({
 
   return (
     <>
-      {/* ─── Mobile card list (window-virtualized) ─── */}
-      <div ref={mobileContainerRef} className="min-[540px]:hidden">
+      {/* ─── Mobile card list ─── */}
+      <div className="min-[540px]:hidden space-y-2">
         {sessions.length === 0 ? (
           <div className="text-center py-12 px-4 text-ink3 text-[0.85rem] font-light">
             No sessions match your filters
           </div>
         ) : (
-          <div style={{ height: mobileVirtualizer.getTotalSize(), position: 'relative' }}>
-            {mobileVirtualItems.map((virtualRow) => {
-              const item = items[virtualRow.index]
-              if (item.type === 'group') {
-                return (
-                  <div
-                    key={`group-${item.label}`}
-                    data-index={virtualRow.index}
-                    ref={mobileVirtualizer.measureElement}
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      transform: `translateY(${virtualRow.start - mobileVirtualizer.options.scrollMargin}px)`,
-                    }}
-                  >
-                    <GroupBanner groupBy={groupBy} label={item.label} count={item.count} />
-                  </div>
-                )
-              }
-              return (
-                <div
-                  key={item.session.id}
-                  data-index={virtualRow.index}
-                  ref={mobileVirtualizer.measureElement}
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    transform: `translateY(${virtualRow.start - mobileVirtualizer.options.scrollMargin}px)`,
-                    paddingBottom: 8,
-                  }}
-                >
-                  <SessionCard
-                    session={item.session}
-                    selected={selectedSessionId === item.session.id}
-                    onSelect={onSelectSession}
-                    bookmarked={isBookmarked(item.session.id)}
-                    onToggleBookmark={onToggleBookmark}
-                  />
-                </div>
-              )
-            })}
-          </div>
+          items.map((item) =>
+            item.type === 'group' ? (
+              <GroupBanner key={`group-${item.label}`} groupBy={groupBy} label={item.label} count={item.count} />
+            ) : (
+              <SessionCard
+                key={item.session.id}
+                session={item.session}
+                selected={selectedSessionId === item.session.id}
+                onSelect={onSelectSession}
+                bookmarked={isBookmarked(item.session.id)}
+                onToggleBookmark={onToggleBookmark}
+              />
+            ),
+          )
         )}
       </div>
 
-      {/* ─── Desktop table (window-virtualized) ─── */}
-      <div
-        ref={desktopContainerRef}
-        className="hidden min-[540px]:block border border-border rounded-lg bg-surface"
-      >
+      {/* ─── Desktop table ─── */}
+      <div className="hidden min-[540px]:block border border-border rounded-lg bg-surface">
         <table className="w-full border-collapse text-[0.78rem]">
-          <thead ref={theadRef} className="sticky z-2" style={{ top: stickyOffset }}>
+          <thead className="sticky top-[var(--sticky-bar-h,0px)] z-2">
             {tableHeader}
           </thead>
           <tbody>
@@ -487,47 +372,36 @@ export function SessionTable({
                 </td>
               </tr>
             ) : (
-              <>
-                {desktopPaddingTop > 0 && (
-                  <tr><td colSpan={8} style={{ height: desktopPaddingTop }} /></tr>
-                )}
-                {desktopVirtualItems.map((virtualRow) => {
-                  const item = items[virtualRow.index]
-                  if (item.type === 'group') {
-                    return (
-                      <tr key={`group-${item.label}`} ref={desktopVirtualizer.measureElement} data-index={virtualRow.index}>
-                        <td
-                          colSpan={8}
-                          className="bg-surface2 text-[0.72rem] font-semibold text-ink2 px-2.5 py-1.5 border-b border-border sticky z-1"
-                          style={{ top: stickyOffset + theadHeight }}
-                        >
-                          <span className="text-ink3 font-normal uppercase text-[0.6rem] tracking-[0.06em] mr-1">
-                            {groupLabel(groupBy)}:
-                          </span>{' '}
-                          {item.label}
-                          <span className="ml-1.5 text-[0.58rem] font-bold text-bg bg-ink3 px-[5px] py-px rounded-lg align-middle">
-                            {item.count}
-                          </span>
-                        </td>
-                      </tr>
-                    )
-                  }
-
+              items.map((item) => {
+                if (item.type === 'group') {
                   return (
-                    <SessionRow
-                      key={item.session.id}
-                      session={item.session}
-                      selected={selectedSessionId === item.session.id}
-                      onSelect={onSelectSession}
-                      bookmarked={isBookmarked(item.session.id)}
-                      onToggleBookmark={onToggleBookmark}
-                    />
+                    <tr key={`group-${item.label}`}>
+                      <td
+                        colSpan={8}
+                        className="bg-surface2 text-[0.72rem] font-semibold text-ink2 px-2.5 py-1.5 border-b border-border sticky top-[calc(var(--sticky-bar-h,0px)+var(--thead-h,33px))] z-1"
+                      >
+                        <span className="text-ink3 font-normal uppercase text-[0.6rem] tracking-[0.06em] mr-1">
+                          {groupLabel(groupBy)}:
+                        </span>{' '}
+                        {item.label}
+                        <span className="ml-1.5 text-[0.58rem] font-bold text-bg bg-ink3 px-[5px] py-px rounded-lg align-middle">
+                          {item.count}
+                        </span>
+                      </td>
+                    </tr>
                   )
-                })}
-                {desktopPaddingBottom > 0 && (
-                  <tr><td colSpan={8} style={{ height: desktopPaddingBottom }} /></tr>
-                )}
-              </>
+                }
+                return (
+                  <SessionRow
+                    key={item.session.id}
+                    session={item.session}
+                    selected={selectedSessionId === item.session.id}
+                    onSelect={onSelectSession}
+                    bookmarked={isBookmarked(item.session.id)}
+                    onToggleBookmark={onToggleBookmark}
+                  />
+                )
+              })
             )}
           </tbody>
         </table>

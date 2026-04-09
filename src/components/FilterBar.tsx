@@ -1,5 +1,5 @@
 import { Bookmark, ChevronDown, SlidersHorizontal } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { cn } from '@/lib/cn'
 import { roundTypes } from '@/data/sessions'
@@ -54,7 +54,18 @@ export function FilterBar({
   onOpenBookmarks,
 }: FilterBarProps) {
   const { sentinelRef, stuck } = useStickyFilterBorder()
+  const barRef = useRef<HTMLDivElement>(null)
   const [filtersOpen, setFiltersOpen] = useState(false)
+
+  useEffect(() => {
+    const el = barRef.current
+    if (!el) return
+    const update = () => document.documentElement.style.setProperty('--sticky-bar-h', `${el.offsetHeight}px`)
+    update()
+    const ro = new ResizeObserver(update)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
   const activeCount = activeFilterCount(filters, groupBy)
 
   function update(key: keyof Filters, value: string) {
@@ -156,7 +167,7 @@ export function FilterBar({
   return (
     <>
       <div ref={sentinelRef} className="h-px m-0 pointer-events-none" aria-hidden />
-      <div data-sticky-bar className={cn('sticky top-0 z-10 bg-bg', stuck && 'border-b border-border')}>
+      <div ref={barRef} className={cn('sticky top-0 z-10 bg-bg', stuck && 'border-b border-border')}>
         {/* ─── Wide desktop: single row ─── */}
         <div className="hidden min-[1080px]:flex items-center gap-1 px-4 py-2.5 mx-auto max-w-[1400px]">
           <input
