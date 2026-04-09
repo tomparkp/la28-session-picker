@@ -1,3 +1,4 @@
+import { parseStartMinutes } from '@/lib/format'
 import type { Session, Filters, SortState } from '@/types/session'
 
 export function filterSessions(sessions: Session[], filters: Filters): Session[] {
@@ -51,9 +52,9 @@ export function sortSessions(sessions: Session[], sort: SortState): Session[] {
       return sort.dir === 'asc' ? va - vb : vb - va
     }
     if (sort.col === 'date') {
-      va = a.dk
-      vb = b.dk
-      return sort.dir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va)
+      const cmp = a.dk.localeCompare(b.dk)
+      const result = cmp !== 0 ? cmp : parseStartMinutes(a.time) - parseStartMinutes(b.time)
+      return sort.dir === 'asc' ? result : -result
     }
     va = (a[sort.col] || '').toLowerCase()
     vb = (b[sort.col] || '').toLowerCase()

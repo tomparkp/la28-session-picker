@@ -1,3 +1,4 @@
+import { parseStartMinutes } from '@/lib/format'
 import type { RoundType } from '@/types/session'
 
 /**
@@ -315,13 +316,7 @@ function countFinalsInSession(desc: string): number {
 }
 
 function parseStartHour(timeStr: string): number {
-  const m = timeStr.match(/(\d+):(\d+)\s*(AM|PM)/)
-  if (!m) return 12
-  let hour = parseInt(m[1])
-  const ampm = m[3]
-  if (ampm === 'PM' && hour !== 12) hour += 12
-  else if (ampm === 'AM' && hour === 12) hour = 0
-  return hour
+  return Math.floor(parseStartMinutes(timeStr) / 60)
 }
 
 function clamp(val: number, min = 1, max = 10): number {

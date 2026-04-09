@@ -70,15 +70,17 @@ function getGroupValue(session: Session, key: GroupBy): string {
 function groupSessions(sessions: Session[], key: GroupBy): { label: string; sessions: Session[] }[] {
   if (!key) return [{ label: '', sessions }]
 
-  const groups = new Map<string, Session[]>()
+  const groups = new Map<string, { sortKey: string; sessions: Session[] }>()
   for (const session of sessions) {
     const value = getGroupValue(session, key)
-    const list = groups.get(value)
-    if (list) list.push(session)
-    else groups.set(value, [session])
+    const entry = groups.get(value)
+    if (entry) entry.sessions.push(session)
+    else groups.set(value, { sortKey: key === 'date' ? session.dk : value, sessions: [session] })
   }
 
-  return Array.from(groups.entries()).map(([label, items]) => ({ label, sessions: items }))
+  return Array.from(groups.entries())
+    .sort((a, b) => a[1].sortKey.localeCompare(b[1].sortKey))
+    .map(([label, { sessions: items }]) => ({ label, sessions: items }))
 }
 
 /* ─── Mobile card ─── */
