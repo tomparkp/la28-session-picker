@@ -14,7 +14,9 @@
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
-    "format:check": "oxfmt --check"
+    "format:check": "oxfmt --check",
+    "deploy": "pnpm build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
@@ -33,6 +35,7 @@
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.86.1",
+    "@cloudflare/vite-plugin": "^1.31.1",
     "@tailwindcss/typography": "^0.5.16",
     "@tanstack/devtools-vite": "0.6.0",
     "@tanstack/react-devtools": "0.10.1",
@@ -52,13 +55,15 @@
     "typescript": "^5.7.2",
     "vite": "^7.3.1",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.0.5"
+    "vitest": "^3.0.5",
+    "wrangler": "^4.81.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
       "lightningcss",
-      "sharp"
+      "sharp",
+      "workerd"
     ],
     "overrides": {
       "h3-v2": "npm:h3@2.0.1-rc.20"
