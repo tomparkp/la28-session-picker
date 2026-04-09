@@ -1,3 +1,5 @@
+![LA28 Session Picker screenshot](screenshot.png)
+
 > **Disclaimer:** This is an unofficial, open-source project and is not affiliated with, endorsed by, or connected to the International Olympic Committee (IOC), LA28 Organizing Committee, or any official Olympic body. Session data is scraped from publicly available schedules and materials and may be inaccurate, incomplete, or outdated. Always verify details against official sources before making any plans or purchasing decisions. Use at your own risk.
 
 # LA28 Unofficial Session Picker
@@ -7,8 +9,6 @@ After being selected for the LA28 Olympics local presale, I found myself overwhe
 I vibe-coded a better session browser, but I still needed help deciding where to allocate my precious 12 slots. I had Claude come up with a multidimensional system to rank the events (see [AI Ratings Methodology](#ai-ratings-methodology)) and then populate them with easy-to-understand summaries/rating explanations.
 
 This ended up being hugely helpful for me when buying tickets, so I hope it helps you too!
-
-![LA28 Session Picker screenshot](screenshot.png)
 
 ## Resources Used
 
