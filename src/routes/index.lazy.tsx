@@ -1,4 +1,4 @@
-import { createLazyFileRoute } from '@tanstack/react-router'
+import { createLazyFileRoute, useNavigate } from '@tanstack/react-router'
 import { Bookmark } from 'lucide-react'
 import { useCallback, useDeferredValue, useMemo, useState } from 'react'
 
@@ -24,22 +24,40 @@ const defaultFilters: Filters = {
 
 function SessionPicker() {
   const { sessions, sports, zones } = Route.useLoaderData()
+  const { session: selectedSessionId } = Route.useSearch()
+  const navigate = useNavigate({ from: '/' })
   const [filters, setFilters] = useState<Filters>(defaultFilters)
   const [sort, setSort] = useState<SortState>({ col: 'agg', dir: 'desc' })
   const [groupBy, setGroupBy] = useState<GroupBy>('')
-  const [selectedSession, setSelectedSession] = useState<Session | null>(null)
   const [bookmarkPanelOpen, setBookmarkPanelOpen] = useState(false)
   const { bookmarks, toggle, clearAll, isBookmarked } = useBookmarks()
 
-  const handleSelectSession = useCallback((session: Session) => {
-    setBookmarkPanelOpen(false)
-    setSelectedSession((current) => (current?.id === session.id ? null : session))
-  }, [])
+  const selectedSession = useMemo(
+    () => sessions.find((s) => s.id === selectedSessionId) ?? null,
+    [sessions, selectedSessionId],
+  )
+
+  const handleSelectSession = useCallback(
+    (session: Session) => {
+      setBookmarkPanelOpen(false)
+      void navigate({
+        search: (prev) => ({
+          ...prev,
+          session: prev.session === session.id ? undefined : session.id,
+        }),
+      })
+    },
+    [navigate],
+  )
+
+  const handleCloseSession = useCallback(() => {
+    void navigate({ search: (prev) => ({ ...prev, session: undefined }) })
+  }, [navigate])
 
   const handleOpenBookmarks = useCallback(() => {
-    setSelectedSession(null)
+    void navigate({ search: (prev) => ({ ...prev, session: undefined }) })
     setBookmarkPanelOpen(true)
-  }, [])
+  }, [navigate])
 
   const deferredSearch = useDeferredValue(filters.search)
   const effectiveFilters = useMemo<Filters>(
@@ -106,7 +124,7 @@ function SessionPicker() {
 
         <SessionDetail
           session={selectedSession}
-          onClose={() => setSelectedSession(null)}
+          onClose={handleCloseSession}
           isBookmarked={isBookmarked}
           onToggleBookmark={toggle}
         />
