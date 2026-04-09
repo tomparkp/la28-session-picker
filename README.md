@@ -2,9 +2,13 @@
 
 # LA28 Unofficial Session Picker
 
-I built this session picker after being selected for one of the LA28 local presale drops. Given you only get 12 slots to purchase tickets, I needed help not just with browsing but also deciding which sessions to buy. I used AI to generate ratings and summaries for every session, which helped me tremendously narrow down my selections.
+After being selected for the LA28 Olympics local presale, I found myself overwhelmed with the options. 800+ sessions! 40+ venues!
 
-After seeing this [interactive schedule explorer](https://www.reddit.com/r/olympics/comments/1scjk1s/interactive_la28_schedule_explorer/), I realized I should share the picker so others can use it.
+I vibe-coded a better session browser, but I still needed help deciding where to allocate my precious 12 slots. I had Claude come up with a multidimensional system to rank the events (see [AI Ratings Methodology](#ai-ratings-methodology)) and then populate them with easy-to-understand summaries/rating explanations.
+
+This ended up being hugely helpful for me when buying tickets, so I hope it helps you too!
+
+![LA28 Session Picker screenshot](screenshot.png)
 
 ## Resources Used
 
