@@ -9,26 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as VenuesRouteImport } from './routes/venues'
-import { Route as ScheduleRouteImport } from './routes/schedule'
-import { Route as AiRatingRouteImport } from './routes/ai-rating'
 import { Route as IndexRouteImport } from './routes/index'
 
-const VenuesRoute = VenuesRouteImport.update({
-  id: '/venues',
-  path: '/venues',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() => import('./routes/venues.lazy').then((d) => d.Route))
-const ScheduleRoute = ScheduleRouteImport.update({
-  id: '/schedule',
-  path: '/schedule',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() => import('./routes/schedule.lazy').then((d) => d.Route))
-const AiRatingRoute = AiRatingRouteImport.update({
-  id: '/ai-rating',
-  path: '/ai-rating',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() => import('./routes/ai-rating.lazy').then((d) => d.Route))
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,61 +19,28 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/ai-rating': typeof AiRatingRoute
-  '/schedule': typeof ScheduleRoute
-  '/venues': typeof VenuesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/ai-rating': typeof AiRatingRoute
-  '/schedule': typeof ScheduleRoute
-  '/venues': typeof VenuesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/ai-rating': typeof AiRatingRoute
-  '/schedule': typeof ScheduleRoute
-  '/venues': typeof VenuesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ai-rating' | '/schedule' | '/venues'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ai-rating' | '/schedule' | '/venues'
-  id: '__root__' | '/' | '/ai-rating' | '/schedule' | '/venues'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AiRatingRoute: typeof AiRatingRoute
-  ScheduleRoute: typeof ScheduleRoute
-  VenuesRoute: typeof VenuesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/venues': {
-      id: '/venues'
-      path: '/venues'
-      fullPath: '/venues'
-      preLoaderRoute: typeof VenuesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/schedule': {
-      id: '/schedule'
-      path: '/schedule'
-      fullPath: '/schedule'
-      preLoaderRoute: typeof ScheduleRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ai-rating': {
-      id: '/ai-rating'
-      path: '/ai-rating'
-      fullPath: '/ai-rating'
-      preLoaderRoute: typeof AiRatingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -104,9 +53,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AiRatingRoute: AiRatingRoute,
-  ScheduleRoute: ScheduleRoute,
-  VenuesRoute: VenuesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
