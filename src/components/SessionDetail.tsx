@@ -1,13 +1,11 @@
-import { ChevronsRight, UserRound, X } from 'lucide-react'
+import { ChevronsRight, MapPin, UserRound, X } from 'lucide-react'
 import { type PointerEvent as ReactPointerEvent, useEffect, useMemo, useRef, useState } from 'react'
 
 import { cn } from '@/lib/cn'
 import { getSessionInsights } from '@/lib/ai-scorecard'
-import { fmtPrice } from '@/lib/format'
-import { ratingClasses } from '@/lib/tw'
+import { fmtPrice, fmtTime } from '@/lib/format'
+import { ratingClasses, roundTagClasses } from '@/lib/tw'
 import type { Contender, Session } from '@/types/session'
-
-const labelClass = 'text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-ink3'
 
 const DEFAULT_WIDTH = 576
 const MIN_WIDTH = 360
@@ -28,32 +26,36 @@ function useIsMobile() {
   return mobile
 }
 
+type ScoreKey = 'rSig' | 'rExp' | 'rStar' | 'rUniq' | 'rDem'
+
+const ringColors: Record<ScoreKey, { border: string; score: string }> = {
+  rSig:  { border: 'border-l-[#0085c7]', score: 'text-[#0085c7]' },
+  rExp:  { border: 'border-l-[#f4c300]', score: 'text-[#dab200]' },
+  rStar: { border: 'border-l-[#97928a]', score: 'text-ink2' },
+  rUniq: { border: 'border-l-[#009f3d]', score: 'text-[#009f3d]' },
+  rDem:  { border: 'border-l-[#df0024]', score: 'text-[#df0024]' },
+}
+
 function ContendersSection({ contenders }: { contenders: Contender[] }) {
   return (
-    <section className="rounded-xl border border-border bg-surface2 px-4 py-3">
-      <div className={labelClass}>Contenders to Watch</div>
-      <div className="mt-3 grid gap-2">
-        {contenders.map((c) => (
-          <div
-            key={`${c.name}-${c.country}`}
-            className="flex items-start gap-3 rounded-lg border border-border bg-surface px-3 py-2.5"
-          >
-            <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-surface3 text-ink3">
-              <UserRound size={14} />
-            </span>
-            <div className="min-w-0">
-              <div className="flex items-baseline gap-2">
-                <span className="text-[0.84rem] font-semibold text-ink">{c.name}</span>
-                <span className="text-[0.62rem] font-bold uppercase tracking-[0.06em] text-accent">
-                  {c.country}
-                </span>
-              </div>
-              <p className="mt-0.5 text-[0.76rem] leading-snug text-ink2">{c.note}</p>
+    <div className="grid gap-2.5">
+      {contenders.map((c) => (
+        <div key={`${c.name}-${c.country}`} className="flex items-start gap-3">
+          <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-surface3 text-ink3">
+            <UserRound size={14} />
+          </span>
+          <div className="min-w-0">
+            <div className="flex items-baseline gap-2">
+              <span className="text-[0.84rem] font-semibold text-ink">{c.name}</span>
+              <span className="text-[0.6rem] font-bold uppercase tracking-[0.06em] text-accent">
+                {c.country}
+              </span>
             </div>
+            <p className="mt-0.5 text-[0.76rem] leading-snug text-ink3">{c.note}</p>
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      ))}
+    </div>
   )
 }
 
@@ -165,94 +167,121 @@ export function SessionDetail({
         </div>
 
         {/* Scrollable content */}
-        <div className="h-full overflow-y-auto overscroll-contain">
+        <div className="flex h-full flex-col overflow-y-auto overscroll-contain">
           {displayed && insights && (
-            <div className="px-5 py-3 max-md:px-4">
-              {/* Toolbar */}
-              <div className="flex items-center gap-1 mb-4">
+            <>
+              {/* ── Header zone ── */}
+              <div className="shrink-0 px-5 pt-3 pb-5 max-md:px-4">
+                {/* Close button */}
                 <button
                   type="button"
                   onClick={onClose}
                   aria-label="Close panel"
-                  className="flex size-10 items-center justify-center rounded-md text-ink3 transition-colors hover:bg-surface2 hover:text-ink md:size-7"
+                  className="mb-3 flex size-8 items-center justify-center rounded-md text-ink3 transition-colors hover:bg-surface2 hover:text-ink md:size-7"
                 >
                   <ChevronsRight size={16} className="hidden md:block" />
                   <X size={20} className="md:hidden" />
                 </button>
+
+                {/* Tags row */}
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className={roundTagClasses(displayed.rt)}>{displayed.rt}</span>
+                  <span className="rounded-lg bg-surface2 px-2 py-0.5 text-[0.62rem] font-semibold uppercase tracking-[0.06em] text-ink3">
+                    {displayed.sport}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h2 className="mt-3 font-display text-[1.35rem] font-semibold leading-tight text-ink">
+                  {displayed.name}
+                </h2>
+                <p className="mt-1 text-[0.82rem] leading-relaxed text-ink2">{displayed.desc}</p>
+
+                {/* Metadata row */}
+                <div className="mt-3 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[0.76rem] text-ink3">
+                  <span>{displayed.date}</span>
+                  <span className="text-border2">·</span>
+                  <span>{fmtTime(displayed.time)}</span>
+                  <span className="text-border2">·</span>
+                  <span className="inline-flex items-center gap-1">
+                    <MapPin size={12} className="shrink-0" />
+                    {displayed.venue}
+                  </span>
+                </div>
+
+                {/* Price */}
+                <div className="mt-2 text-[0.9rem] font-semibold tabular-nums text-ink">
+                  {fmtPrice(displayed.pLo, displayed.pHi)}
+                </div>
               </div>
 
-            {/* Title */}
-            <h2 className="text-[1.25rem] font-semibold text-ink leading-tight">
-              {displayed.name}
-            </h2>
-            <p className="mt-1 text-[0.78rem] text-ink3">{displayed.desc}</p>
-
-            <div className="mt-5 space-y-4">
-              <section className="rounded-xl border border-border bg-surface2 px-4 py-3">
-                <div className={labelClass}>Event Details</div>
-                <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  <div>
-                    <div className={labelClass}>Sport</div>
-                    <div className="mt-1 text-[0.84rem] text-ink">{displayed.sport}</div>
-                  </div>
-                  <div>
-                    <div className={labelClass}>Session</div>
-                    <div className="mt-1 text-[0.84rem] text-ink">{displayed.desc}</div>
-                  </div>
-                  <div>
-                    <div className={labelClass}>Price Band</div>
-                    <div className="mt-1 text-[0.84rem] text-ink">
-                      {fmtPrice(displayed.pLo, displayed.pHi)}
-                    </div>
+              {/* ── Score overview ── */}
+              <div className="border-t border-border px-5 py-5 max-md:px-4">
+                <div className="flex items-start gap-3">
+                  <span className={cn(ratingClasses(displayed.agg), 'shrink-0 text-[1rem] px-2.5 py-1 min-w-[42px] rounded-xl')}>
+                    {displayed.agg.toFixed(1)}
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-[0.86rem] font-medium leading-snug text-ink">
+                      {insights.summary.split('.').slice(0, 2).join('.').trim()}.
+                    </p>
                   </div>
                 </div>
-              </section>
+              </div>
 
-              <section className="rounded-xl border border-border bg-surface2 px-4 py-3">
-                <div className={labelClass}>Why This Session</div>
-                <p className="mt-2 text-[0.9rem] text-ink leading-6">{insights.summary}</p>
-                <p className="mt-3 text-[0.82rem] text-ink2 leading-6">
+              {/* ── Scorecard dimensions ── */}
+              <div className="border-t border-border px-5 py-5 max-md:px-4">
+                <h3 className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-ink3">
+                  Scorecard
+                </h3>
+                <p className="mt-1.5 text-[0.78rem] leading-relaxed text-ink3">
                   {insights.overallExplanation}
                 </p>
-              </section>
 
+                <div className="mt-4 grid grid-cols-2 gap-2.5 max-sm:grid-cols-1">
+                  {insights.dimensions.map((dim) => {
+                    const colors = ringColors[dim.key as ScoreKey]
+                    return (
+                      <div
+                        key={dim.key}
+                        className={cn(
+                          'rounded-lg border border-border bg-surface2 border-l-[3px] px-3.5 py-3',
+                          colors?.border,
+                        )}
+                      >
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-[0.78rem] font-semibold text-ink">{dim.label}</span>
+                          <span className={cn('text-[0.9rem] font-bold tabular-nums', colors?.score)}>
+                            {dim.score.toFixed(1)}
+                          </span>
+                        </div>
+                        <p className="mt-1.5 text-[0.72rem] leading-snug text-ink3">
+                          {dim.explanation}
+                        </p>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* ── Contenders ── */}
               {insights.contenders.length > 0 && (
-                <ContendersSection contenders={insights.contenders} />
+                <div className="border-t border-border px-5 py-5 max-md:px-4">
+                  <h3 className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-ink3">
+                    Contenders to Watch
+                  </h3>
+                  <div className="mt-3">
+                    <ContendersSection contenders={insights.contenders} />
+                  </div>
+                </div>
               )}
 
-              <section className="rounded-xl border border-border bg-surface2 px-4 py-3">
-                <div className="flex items-center justify-between gap-3">
-                  <div>
-                    <div className={labelClass}>AI Scorecard</div>
-                    <div className="mt-1 text-[0.74rem] text-ink3">
-                      Aggregate rating plus per-category rationale
-                    </div>
-                  </div>
-                  <span className={ratingClasses(displayed.agg)}>{displayed.agg.toFixed(1)}</span>
-                </div>
-
-                <div className="mt-4 grid gap-3">
-                  {insights.dimensions.map((dim) => (
-                    <article
-                      key={dim.key}
-                      className="rounded-lg border border-border bg-surface px-3 py-3"
-                    >
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="text-[0.82rem] font-semibold text-ink">{dim.label}</div>
-                        <span className={ratingClasses(dim.score)}>{dim.score.toFixed(1)}</span>
-                      </div>
-                      <p className="mt-2 text-[0.78rem] leading-5 text-ink2">
-                        {dim.explanation}
-                      </p>
-                    </article>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </div>
-        )}
+              {/* Bottom breathing room */}
+              <div className="shrink-0 h-6" />
+            </>
+          )}
+        </div>
       </div>
-    </div>
     </>
   )
 }
