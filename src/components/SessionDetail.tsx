@@ -1,11 +1,11 @@
-import { ChevronsRight, X } from 'lucide-react'
+import { ChevronsRight, UserRound, X } from 'lucide-react'
 import { type PointerEvent as ReactPointerEvent, useEffect, useMemo, useRef, useState } from 'react'
 
 import { cn } from '@/lib/cn'
 import { getSessionInsights } from '@/lib/ai-scorecard'
 import { fmtPrice } from '@/lib/format'
 import { ratingClasses } from '@/lib/tw'
-import type { Session } from '@/types/session'
+import type { Contender, Session } from '@/types/session'
 
 const labelClass = 'text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-ink3'
 
@@ -26,6 +26,35 @@ function useIsMobile() {
     return () => mql.removeEventListener('change', onChange)
   }, [])
   return mobile
+}
+
+function ContendersSection({ contenders }: { contenders: Contender[] }) {
+  return (
+    <section className="rounded-xl border border-border bg-surface2 px-4 py-3">
+      <div className={labelClass}>Contenders to Watch</div>
+      <div className="mt-3 grid gap-2">
+        {contenders.map((c) => (
+          <div
+            key={`${c.name}-${c.country}`}
+            className="flex items-start gap-3 rounded-lg border border-border bg-surface px-3 py-2.5"
+          >
+            <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-surface3 text-ink3">
+              <UserRound size={14} />
+            </span>
+            <div className="min-w-0">
+              <div className="flex items-baseline gap-2">
+                <span className="text-[0.84rem] font-semibold text-ink">{c.name}</span>
+                <span className="text-[0.62rem] font-bold uppercase tracking-[0.06em] text-accent">
+                  {c.country}
+                </span>
+              </div>
+              <p className="mt-0.5 text-[0.76rem] leading-snug text-ink2">{c.note}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
 }
 
 export function SessionDetail({
@@ -180,12 +209,16 @@ export function SessionDetail({
               </section>
 
               <section className="rounded-xl border border-border bg-surface2 px-4 py-3">
-                <div className={labelClass}>AI Summary</div>
+                <div className={labelClass}>Why This Session</div>
                 <p className="mt-2 text-[0.9rem] text-ink leading-6">{insights.summary}</p>
                 <p className="mt-3 text-[0.82rem] text-ink2 leading-6">
                   {insights.overallExplanation}
                 </p>
               </section>
+
+              {insights.contenders.length > 0 && (
+                <ContendersSection contenders={insights.contenders} />
+              )}
 
               <section className="rounded-xl border border-border bg-surface2 px-4 py-3">
                 <div className="flex items-center justify-between gap-3">
