@@ -15,7 +15,7 @@ export function computeSessionsPayload(): SessionsPayload {
   if (cached) return cached
 
   const sessions = rawSessions as Session[]
-  const sports = [...new Set(sessions.map((s) => s.sport))].sort()
+  const sports = [...new Set(sessions.map((s) => s.sport))].filter(Boolean).sort()
   const zones = [...new Set(sessions.map((s) => s.zone))].sort()
 
   cached = { sessions, sports, zones }

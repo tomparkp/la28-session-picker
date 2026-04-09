@@ -186,9 +186,11 @@ export function SessionDetail({
                 {/* Tags row */}
                 <div className="flex flex-wrap items-center gap-1.5">
                   <span className={roundTagClasses(displayed.rt)}>{displayed.rt}</span>
-                  <span className="rounded-lg bg-surface2 px-2 py-0.5 text-[0.62rem] font-semibold uppercase tracking-[0.06em] text-ink3">
-                    {displayed.sport}
-                  </span>
+                  {displayed.sport && (
+                    <span className="rounded-lg bg-surface2 px-2 py-0.5 text-[0.62rem] font-semibold uppercase tracking-[0.06em] text-ink3">
+                      {displayed.sport}
+                    </span>
+                  )}
                 </div>
 
                 {/* Title */}

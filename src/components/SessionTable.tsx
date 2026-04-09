@@ -60,7 +60,7 @@ function groupLabel(key: GroupBy): string {
 }
 
 function getGroupValue(session: Session, key: GroupBy): string {
-  if (key === 'sport') return session.sport
+  if (key === 'sport') return session.sport || 'Other'
   if (key === 'rt') return session.rt
   if (key === 'zone') return session.zone
   if (key === 'date') return session.date

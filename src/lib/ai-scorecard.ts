@@ -21,7 +21,6 @@ const MARQUEE_SPORTS = new Set([
   'Athletics (Track & Field)',
   'Athletics (Marathon)',
   'Basketball',
-  'Ceremony',
   'Diving',
   'Football (Soccer)',
   'Artistic Gymnastics',
