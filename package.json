@@ -59,6 +59,9 @@
       "esbuild",
       "lightningcss",
       "sharp"
-    ]
+    ],
+    "overrides": {
+      "h3-v2": "npm:h3@2.0.1-rc.20"
+    }
   }
 }

@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  h3-v2: npm:h3@2.0.1-rc.20
+
 importers:
 
   .:
@@ -1872,8 +1875,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  h3@2.0.1-rc.16:
-    resolution: {integrity: sha512-h+pjvyujdo9way8qj6FUbhaQcHlR8FEq65EhTX9ViT5pK8aLj68uFl4hBkF+hsTJAH+H1END2Yv6hTIsabGfag==}
+  h3@2.0.1-rc.20:
+    resolution: {integrity: sha512-28ljodXuUp0fZovdiSRq4G9OgrxCztrJe5VdYzXAB7ueRvI7pIUqLU14Xi3XqdYJ/khXjfpUOOD2EQa6CmBgsg==}
     engines: {node: '>=20.11.1'}
     hasBin: true
     peerDependencies:
@@ -3772,7 +3775,7 @@ snapshots:
       '@tanstack/router-core': 1.168.9
       '@tanstack/start-client-core': 1.167.9
       '@tanstack/start-storage-context': 1.166.23
-      h3-v2: h3@2.0.1-rc.16
+      h3-v2: h3@2.0.1-rc.20
       seroval: 1.5.2
     transitivePeerDependencies:
       - crossws
@@ -4287,7 +4290,7 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  h3@2.0.1-rc.16:
+  h3@2.0.1-rc.20:
     dependencies:
       rou3: 0.8.1
       srvx: 0.11.15
