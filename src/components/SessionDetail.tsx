@@ -229,6 +229,18 @@ export function SessionDetail({
                 </div>
               </div>
 
+              {/* ── Full blurb ── */}
+              <div className="border-t border-border px-5 py-5 max-md:px-4">
+                <h3 className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-ink3">
+                  Why This Session
+                </h3>
+                <div className="mt-2 space-y-3 text-[0.86rem] leading-relaxed text-ink2">
+                  {insights.summary.split('\n\n').map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
+              </div>
+
               {/* ── Scorecard dimensions ── */}
               <div className="border-t border-border px-5 py-5 max-md:px-4">
                 <h3 className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-ink3">
