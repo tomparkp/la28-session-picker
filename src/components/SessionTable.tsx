@@ -166,8 +166,8 @@ function SessionRow({
             event.stopPropagation()
             onToggleBookmark(session.id)
           }}
-          title={bookmarked ? 'Remove bookmark' : 'Bookmark'}
-          aria-label={bookmarked ? `Remove ${session.name} bookmark` : `Bookmark ${session.name}`}
+          title={bookmarked ? 'Remove from saved' : 'Save'}
+          aria-label={bookmarked ? `Remove ${session.name} from saved` : `Save ${session.name}`}
         >
           <Bookmark
             size={20}

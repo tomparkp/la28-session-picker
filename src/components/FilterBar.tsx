@@ -1,3 +1,5 @@
+import { Bookmark } from 'lucide-react'
+
 import { cn } from '@/lib/cn'
 import { roundTypes } from '@/data/sessions'
 import { useStickyFilterBorder } from '@/hooks/useStickyFilterBorder'
@@ -10,6 +12,8 @@ interface FilterBarProps {
   onGroupByChange: (groupBy: GroupBy) => void
   sports: string[]
   zones: string[]
+  bookmarkCount: number
+  onOpenBookmarks: () => void
 }
 
 const inputBase =
@@ -26,6 +30,8 @@ export function FilterBar({
   onGroupByChange,
   sports,
   zones,
+  bookmarkCount,
+  onOpenBookmarks,
 }: FilterBarProps) {
   const { sentinelRef, stuck } = useStickyFilterBorder()
 
@@ -116,6 +122,27 @@ export function FilterBar({
             <option value="zone">Group by Zone</option>
             <option value="date">Group by Date</option>
           </select>
+          <button
+            type="button"
+            onClick={onOpenBookmarks}
+            className={cn(
+              inputBase,
+              'flex items-center gap-1.5 cursor-pointer font-semibold',
+              bookmarkCount > 0 && activeCls,
+            )}
+          >
+            <Bookmark
+              size={14}
+              fill={bookmarkCount > 0 ? 'var(--gold)' : 'none'}
+              stroke={bookmarkCount > 0 ? 'var(--gold)' : 'currentColor'}
+            />
+            Saved
+            {bookmarkCount > 0 && (
+              <span className="bg-gold text-bg text-[0.55rem] font-bold min-w-[17px] h-[17px] rounded-full inline-flex items-center justify-center px-1">
+                {bookmarkCount}
+              </span>
+            )}
+          </button>
         </div>
       </div>
     </>
