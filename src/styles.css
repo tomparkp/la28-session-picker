@@ -100,26 +100,6 @@ html[data-theme-transitioning] body {
     color 0.22s;
 }
 
-/* Virtual-table spacers: must override table cell defaults with !important */
-.vt-anchor {
-  height: 0;
-  line-height: 0;
-}
-.vt-anchor-cell {
-  padding: 0 !important;
-  border: none !important;
-  height: 0 !important;
-  line-height: 0;
-  font-size: 0;
-}
-.vt-spacer td.vt-spacer-cell {
-  padding: 0 !important;
-  border: none !important;
-  vertical-align: top;
-  line-height: 0;
-  font-size: 0;
-}
-
 /* Custom select arrow (SVG background can't be a utility) */
 .filter-select {
   padding-right: 24px;
