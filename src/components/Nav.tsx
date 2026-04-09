@@ -1,15 +1,6 @@
-import { Link, useRouterState } from '@tanstack/react-router'
-
-import { cn } from '@/lib/cn'
+import { Github } from 'lucide-react'
 
 import { ThemeToggle } from './ThemeToggle'
-
-const tabs = [
-  { to: '/', label: 'Sessions' },
-  { to: '/venues', label: 'Venues' },
-  { to: '/schedule', label: 'Schedule' },
-  { to: '/ai-rating', label: 'AI Ratings' },
-] as const
 
 const ringColors = [
   'var(--ring-blue)',
@@ -20,10 +11,18 @@ const ringColors = [
 ]
 
 export function Nav() {
-  const { location } = useRouterState()
-
   return (
     <div className="relative overflow-hidden pt-12 px-6 pb-6 text-center">
+      <a
+        href="https://github.com/tomparkp/la28-session-picker"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute top-4 right-16 flex size-9 items-center justify-center rounded-lg border border-border bg-surface text-ink2 transition-all duration-150 z-5 hover:border-gold hover:bg-surface2 hover:text-gold"
+        title="View on GitHub"
+        aria-label="View on GitHub"
+      >
+        <Github size={18} />
+      </a>
       <ThemeToggle />
       <div className="relative flex justify-center gap-[3px] mb-3.5">
         {ringColors.map((color, i) => (
@@ -46,30 +45,6 @@ export function Nav() {
         public materials and may be inaccurate or outdated. AI ratings are subjective and should not
         be used as a sole basis for decisions. Always verify against official sources.
       </p>
-      <nav className="relative flex justify-center gap-1.5 mt-5">
-        {tabs.map((tab) => (
-          <Link
-            key={tab.to}
-            to={tab.to}
-            className={cn(
-              'px-4 py-[7px] text-[0.82rem] font-medium no-underline rounded-md transition-all duration-150',
-              location.pathname === tab.to
-                ? 'text-ink bg-surface2 font-semibold'
-                : 'text-ink3 hover:text-ink hover:bg-surface2',
-            )}
-          >
-            {tab.label}
-          </Link>
-        ))}
-        <a
-          href="https://github.com/tomparkp/la28-session-picker"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-[7px] text-[0.82rem] font-medium text-ink3 no-underline rounded-md transition-all duration-150 hover:text-ink hover:bg-surface2"
-        >
-          GitHub ↗
-        </a>
-      </nav>
     </div>
   )
 }
