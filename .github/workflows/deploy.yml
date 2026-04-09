@@ -8,6 +8,9 @@ concurrency:
   group: deploy-production
   cancel-in-progress: true
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -27,3 +30,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: deploy
+      - name: Warm CDN cache
+        run: |
+          sleep 5
+          curl -sf -o /dev/null -w "CDN warm: HTTP %{http_code} in %{time_total}s\n" \
+            https://la28.sugarworks.dev/
