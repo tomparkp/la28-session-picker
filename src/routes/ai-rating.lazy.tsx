@@ -120,9 +120,6 @@ function AIRating() {
           Use them as a starting point, not a definitive guide.
         </p>
       </div>
-      <div className="text-center p-6 text-[0.72rem] text-ink3 font-light">
-        Ratings generated with Claude &middot; Methodology designed for LA28 2028
-      </div>
     </div>
   )
 }

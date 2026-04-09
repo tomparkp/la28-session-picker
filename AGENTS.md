@@ -1,9 +1,13 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Codex when working with code in this repository. It is the
+canonical AI agent instructions file for this repo; remove or avoid duplicating these
+instructions in tool-specific files such as `CLAUDE.md` or Cursor-only config.
 
 ## Commands
 
+- Use `pnpm` for package management in this repo. Do not use `npm` or `yarn` unless the user explicitly asks.
+- Prefer existing `package.json` scripts over ad-hoc shell commands when a matching script exists.
 - `pnpm dev` — Start dev server on port 3000
 - `pnpm build` — Production build
 - `pnpm preview` — Preview production build
@@ -50,10 +54,15 @@ Routes live in `src/routes/` and are auto-generated into `src/routeTree.gen.ts` 
 - PR titles follow the same conventional commit format (this becomes the squash commit message)
 - PR descriptions should include a summary and test plan
 - Squash merge all PRs — the PR title is the final commit message, so get it right
+- Keep `main` history linear: prefer rebasing topic branches onto `main` instead of merge commits
 - Releases are managed by Release Please — it reads conventional commits to auto-generate changelogs and version bumps
   - `feat` → minor version bump
   - `fix` → patch version bump
   - `feat!` / `fix!` / breaking change footer → major version bump
+
+### Worktrees
+
+- Store repo worktrees under `.worktrees/` at the repository root when creating additional checkouts for this project
 
 ### Key Conventions
 
