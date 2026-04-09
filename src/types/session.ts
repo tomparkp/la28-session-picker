@@ -1,3 +1,9 @@
+export interface Contender {
+  name: string
+  country: string
+  note: string
+}
+
 export interface Session {
   id: string
   sport: string
@@ -18,6 +24,8 @@ export interface Session {
   rUniq: number
   rDem: number
   agg: number
+  blurb?: string
+  contenders?: Contender[]
 }
 
 export type RoundType = 'Final' | 'Semi' | 'QF' | 'Prelim' | 'Bronze' | 'Ceremony' | 'N/A'

@@ -1,4 +1,5 @@
-import type { Session } from '@/types/session'
+import { SPORT_KNOWLEDGE } from '@/data/sport-knowledge'
+import type { Contender, Session } from '@/types/session'
 
 type ScoreKey = 'rSig' | 'rExp' | 'rStar' | 'rUniq' | 'rDem'
 
@@ -9,19 +10,21 @@ interface ScorecardDimension {
   explanation: string
 }
 
-interface SessionInsights {
+export interface SessionInsights {
   summary: string
   overallExplanation: string
   dimensions: ScorecardDimension[]
+  contenders: Contender[]
 }
 
 const MARQUEE_SPORTS = new Set([
-  'Athletics',
+  'Athletics (Track & Field)',
+  'Athletics (Marathon)',
   'Basketball',
   'Ceremony',
   'Diving',
-  'Football',
-  'Gymnastics Artistic',
+  'Football (Soccer)',
+  'Artistic Gymnastics',
   'Swimming',
   'Tennis',
   'Volleyball',
@@ -57,85 +60,165 @@ function isMedalStage(session: Session) {
   return session.rt === 'Final' || session.rt === 'Bronze' || /\bfinal\b|\bmedal\b/i.test(session.desc)
 }
 
-function scoreBand(score: number) {
-  if (score >= 8) return 'elite'
-  if (score >= 6) return 'strong'
-  if (score >= 4) return 'solid'
-  return 'limited'
+function getKnowledge(sport: string) {
+  return SPORT_KNOWLEDGE[sport]
+}
+
+function getVenueNote(sport: string, venue: string): string | undefined {
+  const k = getKnowledge(sport)
+  return k?.venueNotes[venue]
 }
 
 function getSignificanceExplanation(session: Session) {
   if (session.rt === 'Ceremony') {
-    return 'Ceremonies sit at the center of the Games, so the significance score is effectively maxed out.'
+    return 'Opening and closing ceremonies are the emotional bookends of the entire Games — there is no bigger stage.'
   }
+  const k = getKnowledge(session.sport)
   if (isMedalStage(session)) {
-    return `This is a ${session.rt.toLowerCase()}-stage session, which pushes the stakes well above an early-round ticket.`
+    const context = k?.la28Context
+    if (context && MARQUEE_SPORTS.has(session.sport)) {
+      return `Gold medals are on the line in one of the marquee sports of the Games. ${context.split('.')[0]}.`
+    }
+    return `This is a medal-deciding session — the stakes don't get higher than this in ${session.sport}.`
   }
   if (session.rt === 'Semi' || session.rt === 'QF') {
-    return `A ${session.rt.toLowerCase()} session matters competitively, but it still sits a tier below medal-deciding events.`
+    return `A ${session.rt === 'Semi' ? 'semifinal' : 'quarterfinal'} where the field narrows and the pressure ratchets up. Win or go home.`
   }
-  return 'This looks more like an early-round or qualification session, so the significance score stays modest.'
+  if (NOVELTY_SPORTS.has(session.sport)) {
+    return `Early-round ${session.sport} — a new or returning Olympic sport that's worth seeing up close while tickets are still accessible.`
+  }
+  return `An early-round session — lower stakes, but a chance to see world-class ${session.sport} athletes compete before the field thins out.`
 }
 
 function getExperienceExplanation(session: Session) {
+  const venueNote = getVenueNote(session.sport, session.venue)
   const parts: string[] = []
-  if (hasMultipleEvents(session.desc)) parts.push('bundles multiple competitions into one ticket')
-  if (ICONIC_VENUES.has(session.venue)) parts.push(`lands in a marquee venue (${session.venue})`)
-  if (isPrimeTime(session.time)) parts.push('gets a boost from an evening time slot')
 
-  if (parts.length === 0) {
-    return 'The live-viewing score is driven mostly by the sport itself rather than a special venue or time-slot advantage.'
+  if (hasMultipleEvents(session.desc)) {
+    parts.push('packs multiple events into a single ticket')
+  }
+  if (venueNote) {
+    const shortNote = venueNote.split('.')[0]
+    parts.push(`takes place at ${session.venue} — ${shortNote.toLowerCase()}`)
+  } else if (ICONIC_VENUES.has(session.venue)) {
+    parts.push(`lands in ${session.venue}, one of the iconic venues of these Games`)
+  }
+  if (isPrimeTime(session.time)) {
+    parts.push('hits the prime-time evening window')
   }
 
-  return `The live experience rates well because it ${parts.join(', ')}.`
+  if (parts.length === 0) {
+    return `The in-person experience is driven by the sport itself — ${session.sport} is a spectator-friendly event regardless of venue.`
+  }
+  return `This session ${parts.join(', ')}.`
 }
 
 function getStarPowerExplanation(session: Session) {
+  const k = getKnowledge(session.sport)
   if (session.rt === 'Ceremony') {
-    return 'The ceremony format concentrates recognizable performers, athletes, and flag-bearers, which drives star power up.'
+    return 'Ceremonies concentrate the biggest names from every sport — flag-bearers, performers, and global icons all in one place.'
   }
-  if (MARQUEE_SPORTS.has(session.sport) && isMedalStage(session)) {
-    return 'Marquee sport plus late-stage competition creates a strong chance of seeing headline athletes in person.'
+  if (k && k.contenders.length > 0 && isMedalStage(session)) {
+    const names = k.contenders.slice(0, 3).map((c) => c.name)
+    return `Medal-stage ${session.sport} means the biggest names are in the building. Watch for ${names.join(', ')}.`
+  }
+  if (k && k.contenders.length > 0) {
+    const topName = k.contenders[0]
+    return `Athletes like ${topName.name} (${topName.country}) could be competing, though early rounds spread star power across multiple sessions.`
   }
   if (MARQUEE_SPORTS.has(session.sport)) {
-    return 'The sport has broad name recognition, but the round lowers the odds that the biggest stars are all concentrated here.'
+    return 'A marquee Olympic sport that attracts globally recognized athletes even in the earlier rounds.'
   }
-  return 'This sport can still be fun live, but it is less likely to cluster globally famous names in one session.'
+  return `${session.sport} may not have household-name star power, but Olympic-level athletes in any sport are impressive to see in person.`
 }
 
 function getUniquenessExplanation(session: Session) {
   if (session.rt === 'Ceremony') {
-    return 'There is only one opening ceremony and one closing ceremony, so uniqueness is naturally off the charts.'
+    return 'There is exactly one opening ceremony and one closing ceremony per Olympics. You literally cannot replicate this experience.'
   }
+  const k = getKnowledge(session.sport)
   if (NOVELTY_SPORTS.has(session.sport)) {
-    return `The score gets help from ${session.sport} being a rarer Olympic ticket in the LA28 mix.`
+    const context = k?.la28Context?.split('.')[0]
+    return context
+      ? `${context} — that alone makes this a one-of-a-kind Olympic ticket.`
+      : `${session.sport} is a new or returning Olympic sport, making any session a piece of history.`
   }
-  if (ICONIC_VENUES.has(session.venue)) {
-    return `The setting helps here: ${session.venue} adds a sense of occasion that a generic venue would not.`
+  const venueNote = getVenueNote(session.sport, session.venue)
+  if (venueNote && ICONIC_VENUES.has(session.venue)) {
+    return `${session.venue} adds a layer of once-in-a-lifetime atmosphere. ${venueNote.split('.')[0]}.`
   }
-  return 'This is a more standard session format, so uniqueness depends less on one-of-one factors and more on the sport itself.'
+  if (isMedalStage(session) && k?.la28Context) {
+    return `A medal session in ${session.sport} at LA28 — ${k.la28Context.split('.')[0].toLowerCase()}.`
+  }
+  return 'A standard-format session without a unique venue or sport-novelty hook — but every Olympic event is a once-every-four-years opportunity.'
 }
 
 function getDemandExplanation(session: Session) {
   if (session.rt === 'Ceremony') {
-    return 'Ceremony tickets are usually among the hardest to get, so demand stays extremely high.'
+    return 'Ceremony tickets are the hardest to get at any Olympics. Expect intense demand and premium pricing.'
+  }
+  if (session.pHi >= 3000) {
+    return `Tickets top out at $${Math.round(session.pHi)} — a clear signal that this is one of the most sought-after sessions of the Games.`
   }
   if (isMedalStage(session) && MARQUEE_SPORTS.has(session.sport)) {
-    return 'High-interest sport plus medal-stage stakes makes this one of the more competitive tickets.'
+    return `A medal session in a marquee sport — expect heavy demand and early sellouts. These tickets won't be easy to get.`
+  }
+  if (session.pLo <= 50) {
+    return `Starting at just $${Math.round(session.pLo)}, this is one of the more accessible tickets at the Games — solid value for a live Olympic experience.`
   }
   if (MARQUEE_SPORTS.has(session.sport) || ICONIC_VENUES.has(session.venue)) {
-    return 'This should draw steady interest, helped by either the sport profile or the venue name.'
+    return 'Steady demand driven by the sport profile or the venue name. Not the hardest ticket, but plan ahead.'
   }
-  return 'Demand looks more moderate here, which can make it a better value pick than the headline sessions.'
+  return 'Moderate demand makes this a potential value pick — a live Olympic experience without the fight for top-tier seats.'
 }
 
-function buildSummary(session: Session, topLabels: string[]) {
-  const headline = `${session.name} at ${session.venue} is an ${scoreBand(session.agg)} overall pick.`
-  if (topLabels.length === 0) {
-    return `${headline} It reads as a balanced session without one rating category dominating the profile.`
+function buildFallbackSummary(session: Session): string {
+  const k = getKnowledge(session.sport)
+
+  if (session.rt === 'Ceremony') {
+    const venueNote = getVenueNote(session.sport, session.venue)
+    return `${session.desc} at ${session.venue}. ${venueNote ?? 'The defining moment of the LA28 Games.'}`
   }
 
-  return `${headline} The strongest signals are ${topLabels.join(' and ').toLowerCase()}, which is why the AI score leans ${session.agg >= 6 ? 'positive' : 'cautious'}.`
+  if (isMedalStage(session) && k) {
+    const context = k.la28Context.split('.').slice(0, 2).join('.') + '.'
+    if (k.contenders.length > 0) {
+      const top = k.contenders.slice(0, 2)
+      return `${context} Watch for ${top.map((c) => `${c.name} (${c.country})`).join(' and ')} as gold medals are decided.`
+    }
+    return context
+  }
+
+  if (session.rt === 'Semi' || session.rt === 'QF') {
+    const round = session.rt === 'Semi' ? 'semifinal' : 'quarterfinal'
+    if (k && k.contenders.length > 0) {
+      return `A ${round} session where the field narrows. ${k.contenders[0].name} and company are fighting to stay alive in the bracket.`
+    }
+    return `A ${round} session in ${session.sport} at ${session.venue}. Win-or-go-home competition — this is where the drama lives.`
+  }
+
+  if (k) {
+    const venueNote = getVenueNote(session.sport, session.venue)
+    if (venueNote) {
+      return `Early-round ${session.sport} at ${session.venue} — ${venueNote.split('.')[0].toLowerCase()}. A chance to see world-class competition before the headline sessions.`
+    }
+    return `${session.sport} at ${session.venue}. ${k.la28Context.split('.')[0]}. Preliminary rounds are where you discover the stories that define the rest of the tournament.`
+  }
+
+  return `${session.sport} at ${session.venue}. Every session at the Olympics is a live, world-class competition — even the early rounds deliver moments you won't forget.`
+}
+
+function getFallbackContenders(session: Session): Contender[] {
+  const k = getKnowledge(session.sport)
+  if (!k || k.contenders.length === 0) return []
+
+  if (isMedalStage(session)) {
+    return k.contenders.slice(0, 5)
+  }
+  if (session.rt === 'Semi' || session.rt === 'QF') {
+    return k.contenders.slice(0, 4)
+  }
+  return k.contenders.slice(0, 3)
 }
 
 export function getSessionInsights(session: Session): SessionInsights {
@@ -172,17 +255,28 @@ export function getSessionInsights(session: Session): SessionInsights {
     },
   ]
 
+  const summary = session.blurb ?? buildFallbackSummary(session)
+  const contenders = session.contenders ?? getFallbackContenders(session)
+
   const sortedDimensions = [...dimensions].sort((a, b) => b.score - a.score)
-  const topLabels = sortedDimensions.filter((d) => d.score === sortedDimensions[0]?.score).map((d) => d.label)
+  const topLabel = sortedDimensions[0]?.label ?? 'The session'
   const weakest = sortedDimensions[sortedDimensions.length - 1]
-  const overallExplanation =
-    weakest && weakest.score < 6
-      ? `${topLabels[0] ?? 'The session'} does most of the work here, but ${weakest.label.toLowerCase()} keeps the rating from pushing higher.`
-      : 'The category scores are fairly aligned, so the aggregate rating reflects a consistently strong profile rather than one inflated dimension.'
+
+  let overallExplanation: string
+  if (session.agg >= 8) {
+    overallExplanation = `This is one of the premium sessions at LA28. ${topLabel} leads the way, but the overall profile is strong across the board.`
+  } else if (weakest && weakest.score < 5) {
+    overallExplanation = `${topLabel} carries the rating, but ${weakest.label.toLowerCase()} holds it back — worth knowing if you're weighing this against other sessions.`
+  } else if (session.agg >= 6) {
+    overallExplanation = `A solid session with ${topLabel.toLowerCase()} as the standout category. The aggregate reflects a genuinely good ticket.`
+  } else {
+    overallExplanation = `Not a headline session, but still a live Olympic experience. ${topLabel} is the strongest dimension here.`
+  }
 
   return {
-    summary: buildSummary(session, topLabels),
+    summary,
     overallExplanation,
     dimensions,
+    contenders,
   }
 }
