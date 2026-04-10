@@ -1,4 +1,3 @@
-import { Drawer } from '@base-ui/react/drawer'
 import {
   Bookmark,
   ChevronsRight,
@@ -8,7 +7,7 @@ import {
   UserRound,
   X,
 } from 'lucide-react'
-import { type PointerEvent as ReactPointerEvent, useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useRef } from 'react'
 
 import { getSessionInsights } from '@/lib/ai-scorecard'
 import { cn } from '@/lib/cn'
@@ -16,24 +15,9 @@ import { fmtPrice, fmtTime } from '@/lib/format'
 import { ratingClasses, roundTagClasses } from '@/lib/tw'
 import type { Contender, RelatedNews, Session } from '@/types/session'
 
-const DEFAULT_WIDTH = 480
-const MIN_WIDTH = 360
-const MAX_WIDTH = 900
-const MD_BREAKPOINT = 768
+import { SideDrawer } from './SideDrawer'
 
-function useIsMobile() {
-  const [mobile, setMobile] = useState(false)
-  useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${MD_BREAKPOINT - 1}px)`)
-    setMobile(mql.matches)
-    function onChange(e: MediaQueryListEvent) {
-      setMobile(e.matches)
-    }
-    mql.addEventListener('change', onChange)
-    return () => mql.removeEventListener('change', onChange)
-  }, [])
-  return mobile
-}
+const DEFAULT_WIDTH = 480
 
 type ScoreKey = 'rSig' | 'rExp' | 'rStar' | 'rUniq' | 'rDem'
 
@@ -181,11 +165,6 @@ export function SessionDetail({
   isBookmarked?: (id: string) => boolean
   onToggleBookmark?: (id: string) => void
 }) {
-  const panelRef = useRef<HTMLDivElement>(null)
-  const widthRef = useRef(DEFAULT_WIDTH)
-  const [width, setWidth] = useState(DEFAULT_WIDTH)
-  const isMobile = useIsMobile()
-
   const lastSessionRef = useRef<Session | null>(null)
   if (session) lastSessionRef.current = session
   const displayed = session ?? lastSessionRef.current
@@ -197,49 +176,6 @@ export function SessionDetail({
     if (!insights) return []
     return insights.relatedNews.map(fromCuratedNews)
   }, [insights])
-
-  // Escape key dismissal (desktop only — Drawer handles it natively on mobile)
-  useEffect(() => {
-    if (!isOpen || isMobile) return
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose()
-    }
-    document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [isOpen, isMobile, onClose])
-
-  function handleResizeStart(e: ReactPointerEvent) {
-    e.preventDefault()
-    const startX = e.clientX
-    const startWidth = widthRef.current
-
-    document.body.style.cursor = 'col-resize'
-    document.body.style.userSelect = 'none'
-    if (panelRef.current) panelRef.current.style.transition = 'none'
-
-    function onMove(e: globalThis.PointerEvent) {
-      const next = Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, startWidth + (startX - e.clientX)))
-      widthRef.current = next
-      if (panelRef.current) panelRef.current.style.width = `${next}px`
-    }
-
-    function onUp() {
-      document.body.style.cursor = ''
-      document.body.style.userSelect = ''
-      if (panelRef.current) panelRef.current.style.transition = ''
-      setWidth(widthRef.current)
-      document.removeEventListener('pointermove', onMove)
-      document.removeEventListener('pointerup', onUp)
-    }
-
-    document.addEventListener('pointermove', onMove)
-    document.addEventListener('pointerup', onUp)
-  }
-
-  function handleResizeDoubleClick() {
-    widthRef.current = DEFAULT_WIDTH
-    setWidth(DEFAULT_WIDTH)
-  }
 
   const panelContent =
     displayed && insights ? (
@@ -400,68 +336,14 @@ export function SessionDetail({
       </>
     ) : null
 
-  // Mobile: delegate entirely to Base UI Drawer — swipe, scroll reset, body lock,
-  // and backdrop are all handled by the primitive.
-  if (isMobile) {
-    return (
-      <Drawer.Root
-        open={isOpen}
-        onOpenChange={(open) => {
-          if (!open) onClose()
-        }}
-        swipeDirection="right"
-      >
-        <Drawer.Portal>
-          <Drawer.Backdrop className="fixed inset-0 z-40 bg-black/50 transition-opacity duration-200 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 data-[swiping]:transition-none" />
-          <Drawer.Viewport className="fixed inset-0 z-50 flex items-stretch justify-end">
-            <Drawer.Popup
-              data-session-detail-panel
-              className={cn(
-                'h-full w-full bg-surface shadow-2xl',
-                'overflow-y-auto overscroll-contain touch-auto',
-                '[transform:translateX(var(--drawer-swipe-movement-x))]',
-                'transition-transform duration-200 ease-panel data-[swiping]:transition-none',
-                'data-[starting-style]:[transform:translateX(100%)] data-[ending-style]:[transform:translateX(100%)]',
-              )}
-            >
-              {/* Drag handle pill */}
-              <div className="flex justify-center pt-2.5 pb-1" aria-hidden>
-                <div className="bg-border2 h-1 w-10 rounded-full" />
-              </div>
-              {panelContent}
-            </Drawer.Popup>
-          </Drawer.Viewport>
-        </Drawer.Portal>
-      </Drawer.Root>
-    )
-  }
-
-  // Desktop: resizable fixed side panel
   return (
-    <div
-      ref={panelRef}
-      role="dialog"
-      data-session-detail-panel
-      aria-label={displayed?.name}
-      aria-hidden={!isOpen}
-      style={{ width }}
-      className={cn(
-        'fixed inset-y-0 right-0 z-50 border-l border-border bg-surface shadow-2xl transition-transform duration-200 ease-panel',
-        'max-w-full',
-        isOpen ? 'translate-x-0' : 'translate-x-full',
-      )}
+    <SideDrawer
+      open={isOpen}
+      onClose={onClose}
+      aria-label={displayed?.name ?? 'Session details'}
+      defaultWidth={DEFAULT_WIDTH}
     >
-      {/* Resize handle */}
-      <div
-        className="group/edge absolute inset-y-0 -left-1 z-20 w-2 cursor-col-resize"
-        onPointerDown={handleResizeStart}
-        onDoubleClick={handleResizeDoubleClick}
-      >
-        <div className="group-hover/edge:bg-gold/40 group-active/edge:bg-gold/60 absolute inset-y-0 left-1/2 w-0.5 -translate-x-1/2 bg-transparent transition-colors" />
-      </div>
-
-      {/* Scrollable content */}
-      <div className="flex h-full flex-col overflow-y-auto overscroll-contain">{panelContent}</div>
-    </div>
+      {panelContent}
+    </SideDrawer>
   )
 }

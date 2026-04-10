@@ -1,6 +1,6 @@
 import { createLazyFileRoute, useNavigate } from '@tanstack/react-router'
 import { Bookmark } from 'lucide-react'
-import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react'
+import { useCallback, useDeferredValue, useMemo, useState } from 'react'
 
 import { BookmarkPanel } from '@/components/BookmarkPanel'
 import { FilterBar } from '@/components/FilterBar'
@@ -60,18 +60,6 @@ function SessionPicker() {
     setBookmarkPanelOpen(true)
   }, [navigate])
 
-  useEffect(() => {
-    if (!selectedSession) return
-    function handleMouseDown(e: MouseEvent) {
-      const target = e.target as HTMLElement
-      if (target.closest('[data-session-detail-panel]')) return
-      if (target.closest('[data-session-item]')) return
-      setSelectedSession(null)
-    }
-    document.addEventListener('mousedown', handleMouseDown)
-    return () => document.removeEventListener('mousedown', handleMouseDown)
-  }, [selectedSession])
-
   const deferredSearch = useDeferredValue(filters.search)
   const effectiveFilters = useMemo<Filters>(
     () => ({ ...filters, search: deferredSearch }),
@@ -108,7 +96,7 @@ function SessionPicker() {
         />
         Saved
         {bookmarks.size > 0 && (
-          <span className="flex size-[18px] items-center justify-center rounded-full bg-gold text-bg text-[0.6rem] font-bold">
+          <span className="bg-gold text-bg flex size-[18px] items-center justify-center rounded-full text-[0.6rem] font-bold">
             {bookmarks.size}
           </span>
         )}
@@ -123,7 +111,7 @@ function SessionPicker() {
         zones={zones}
       />
 
-      <div className="max-w-[1400px] mx-auto px-4 pt-2 pb-15">
+      <div className="mx-auto max-w-[1400px] px-4 pt-2 pb-15">
         <SessionTable
           sessions={sorted}
           sort={sort}
@@ -151,7 +139,6 @@ function SessionPicker() {
           onClearAll={clearAll}
           onSelectSession={handleSelectSession}
         />
-
       </div>
     </>
   )
