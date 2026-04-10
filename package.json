@@ -4,6 +4,7 @@
   "packageManager": "pnpm@10.33.0",
   "type": "module",
   "scripts": {
+    "clean": "rm -rf node_modules dist dist-ssr .nitro .tanstack .wrangler .output .vinxi .vite coverage .turbo __unconfig*",
     "generate:favicon": "node scripts/generate-favicon-ico.mjs",
     "prebuild": "node scripts/generate-favicon-ico.mjs",
     "dev": "vite dev --port 3000",
