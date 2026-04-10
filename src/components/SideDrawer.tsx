@@ -2,11 +2,11 @@ import { Drawer } from '@base-ui/react/drawer'
 import {
   type PointerEvent as ReactPointerEvent,
   type ReactNode,
-  useEffect,
   useRef,
   useState,
 } from 'react'
 
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { cn } from '@/lib/cn'
 
 const MD_BREAKPOINT = 768
@@ -23,24 +23,6 @@ interface SideDrawerProps {
   contentClassName?: string
 }
 
-function useIsMobile() {
-  const [mobile, setMobile] = useState(false)
-
-  useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${MD_BREAKPOINT - 1}px)`)
-    setMobile(mql.matches)
-
-    function onChange(e: MediaQueryListEvent) {
-      setMobile(e.matches)
-    }
-
-    mql.addEventListener('change', onChange)
-    return () => mql.removeEventListener('change', onChange)
-  }, [])
-
-  return mobile
-}
-
 export function SideDrawer({
   open,
   onClose,
@@ -55,7 +37,7 @@ export function SideDrawer({
   const panelRef = useRef<HTMLDivElement>(null)
   const widthRef = useRef(defaultWidth)
   const [width, setWidth] = useState(defaultWidth)
-  const isMobile = useIsMobile()
+  const isMobile = useMediaQuery(`(max-width: ${MD_BREAKPOINT - 1}px)`)
 
   function handleResizeStart(e: ReactPointerEvent) {
     if (isMobile) return

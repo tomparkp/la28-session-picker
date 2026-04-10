@@ -1,12 +1,21 @@
 import { createLazyFileRoute, useNavigate } from '@tanstack/react-router'
 import { Bookmark } from 'lucide-react'
-import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react'
+import {
+  startTransition,
+  useCallback,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 
 import { BookmarkPanel } from '@/components/BookmarkPanel'
 import { FilterBar } from '@/components/FilterBar'
 import { SessionDetail } from '@/components/SessionDetail'
 import { SessionTable } from '@/components/SessionTable'
 import { useBookmarks } from '@/hooks/useBookmarks'
+import { getSessionInsights, type SessionInsights } from '@/lib/ai-scorecard'
 import { cn } from '@/lib/cn'
 import { filterSessions, sortSessions } from '@/lib/filter'
 import type { Filters, GroupBy, Session, SortColumn, SortState } from '@/types/session'
@@ -31,32 +40,53 @@ function SessionPicker() {
   const [groupBy, setGroupBy] = useState<GroupBy>('')
   const [bookmarkPanelOpen, setBookmarkPanelOpen] = useState(false)
   const { bookmarks, toggle, clearAll, isBookmarked } = useBookmarks()
+  const insightsCacheRef = useRef<Map<string, SessionInsights>>(new Map())
 
-  const selectedSession = useMemo(
-    () => sessions.find((s) => s.id === selectedSessionId) ?? null,
-    [sessions, selectedSessionId],
+  const sessionById = useMemo(() => new Map(sessions.map((session) => [session.id, session])), [sessions])
+  const selectedSession = selectedSessionId ? sessionById.get(selectedSessionId) ?? null : null
+
+  const getCachedInsights = useCallback((session: Session | null) => {
+    if (!session) return null
+
+    const cached = insightsCacheRef.current.get(session.id)
+    if (cached) return cached
+
+    const next = getSessionInsights(session)
+    insightsCacheRef.current.set(session.id, next)
+    return next
+  }, [])
+
+  const selectedInsights = useMemo(
+    () => getCachedInsights(selectedSession),
+    [getCachedInsights, selectedSession],
   )
 
-  const handleSelectSession = useCallback(
-    (session: Session) => {
+  const handleSelectSessionId = useCallback(
+    (sessionId: string) => {
       setBookmarkPanelOpen(false)
-      void navigate({
-        search: (prev) => ({
-          ...prev,
-          session: prev.session === session.id ? undefined : session.id,
-        }),
-        resetScroll: false,
+      startTransition(() => {
+        void navigate({
+          search: (prev) => ({
+            ...prev,
+            session: prev.session === sessionId ? undefined : sessionId,
+          }),
+          resetScroll: false,
+        })
       })
     },
     [navigate],
   )
 
   const handleCloseSession = useCallback(() => {
-    void navigate({ search: (prev) => ({ ...prev, session: undefined }), resetScroll: false })
+    startTransition(() => {
+      void navigate({ search: (prev) => ({ ...prev, session: undefined }), resetScroll: false })
+    })
   }, [navigate])
 
   const handleOpenBookmarks = useCallback(() => {
-    void navigate({ search: (prev) => ({ ...prev, session: undefined }), resetScroll: false })
+    startTransition(() => {
+      void navigate({ search: (prev) => ({ ...prev, session: undefined }), resetScroll: false })
+    })
     setBookmarkPanelOpen(true)
   }, [navigate])
 
@@ -145,11 +175,12 @@ function SessionPicker() {
           onToggleBookmark={toggle}
           groupBy={groupBy}
           selectedSessionId={selectedSession?.id ?? null}
-          onSelectSession={handleSelectSession}
+          onSelectSessionId={handleSelectSessionId}
         />
 
         <SessionDetail
           session={selectedSession}
+          insights={selectedInsights}
           onClose={handleCloseSession}
           isBookmarked={isBookmarked}
           onToggleBookmark={toggle}
@@ -162,7 +193,7 @@ function SessionPicker() {
           bookmarks={bookmarks}
           onToggleBookmark={toggle}
           onClearAll={clearAll}
-          onSelectSession={handleSelectSession}
+          onSelectSessionId={handleSelectSessionId}
         />
       </div>
     </>

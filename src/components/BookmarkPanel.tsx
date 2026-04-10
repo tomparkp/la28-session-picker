@@ -1,5 +1,5 @@
 import { Bookmark, ChevronsRight, Download, Trash2, X } from 'lucide-react'
-import { useMemo } from 'react'
+import { memo, type KeyboardEvent, useMemo } from 'react'
 
 import { exportBookmarksCSV } from '@/lib/csv'
 import { fmtPrice } from '@/lib/format'
@@ -17,30 +17,32 @@ interface BookmarkPanelProps {
   bookmarks: Set<string>
   onToggleBookmark: (id: string) => void
   onClearAll: () => void
-  onSelectSession: (session: Session) => void
+  onSelectSessionId: (sessionId: string) => void
 }
 
-function BookmarkCard({
+const BookmarkCard = memo(function BookmarkCard({
   session,
   onRemove,
-  onSelect,
+  onSelectId,
 }: {
   session: Session
   onRemove: (id: string) => void
-  onSelect: (session: Session) => void
+  onSelectId: (id: string) => void
 }) {
+  function handleKeyDown(event: KeyboardEvent<HTMLElement>) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      onSelectId(session.id)
+    }
+  }
+
   return (
     <article
       className="group border-border bg-surface2 hover:border-gold/30 cursor-pointer rounded-lg border px-3.5 py-3 transition-colors"
-      onClick={() => onSelect(session)}
+      onClick={() => onSelectId(session.id)}
       role="button"
       tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault()
-          onSelect(session)
-        }
-      }}
+      onKeyDown={handleKeyDown}
     >
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
@@ -83,16 +85,16 @@ function BookmarkCard({
       </div>
     </article>
   )
-}
+})
 
-export function BookmarkPanel({
+export const BookmarkPanel = memo(function BookmarkPanel({
   open,
   onClose,
   sessions,
   bookmarks,
   onToggleBookmark,
   onClearAll,
-  onSelectSession,
+  onSelectSessionId,
 }: BookmarkPanelProps) {
   const items = useMemo(
     () =>
@@ -169,7 +171,7 @@ export function BookmarkPanel({
                 key={session.id}
                 session={session}
                 onRemove={onToggleBookmark}
-                onSelect={onSelectSession}
+                onSelectId={onSelectSessionId}
               />
             ))}
           </div>
@@ -177,4 +179,4 @@ export function BookmarkPanel({
       </div>
     </SideDrawer>
   )
-}
+})

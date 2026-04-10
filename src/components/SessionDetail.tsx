@@ -7,12 +7,12 @@ import {
   UserRound,
   X,
 } from 'lucide-react'
-import { useMemo, useRef } from 'react'
+import { startTransition, useEffect, useMemo, useRef, useState } from 'react'
 
-import { getSessionInsights } from '@/lib/ai-scorecard'
 import { cn } from '@/lib/cn'
 import { fmtPrice, fmtTime } from '@/lib/format'
 import { ratingClasses, roundTagClasses } from '@/lib/tw'
+import type { SessionInsights } from '@/lib/ai-scorecard'
 import type { Contender, RelatedNews, Session } from '@/types/session'
 
 import { SideDrawer } from './SideDrawer'
@@ -156,29 +156,51 @@ function RelatedNewsSection({ items }: { items: RelatedNewsItem[] }) {
 
 export function SessionDetail({
   session,
+  insights,
   onClose,
   isBookmarked,
   onToggleBookmark,
 }: {
   session: Session | null
+  insights: SessionInsights | null
   onClose: () => void
   isBookmarked?: (id: string) => boolean
   onToggleBookmark?: (id: string) => void
 }) {
   const lastSessionRef = useRef<Session | null>(null)
+  const lastInsightsRef = useRef<SessionInsights | null>(null)
   if (session) lastSessionRef.current = session
-  const displayed = session ?? lastSessionRef.current
+  if (insights) lastInsightsRef.current = insights
+
+  const displayedSession = session ?? lastSessionRef.current
+  const displayedInsights = insights ?? lastInsightsRef.current
 
   const isOpen = !!session
+  const [showSecondarySections, setShowSecondarySections] = useState(false)
 
-  const insights = useMemo(() => (displayed ? getSessionInsights(displayed) : null), [displayed])
+  useEffect(() => {
+    if (!session) {
+      setShowSecondarySections(false)
+      return
+    }
+
+    setShowSecondarySections(false)
+    startTransition(() => {
+      setShowSecondarySections(true)
+    })
+  }, [session?.id])
+
+  const summaryParagraphs = useMemo(
+    () => (displayedInsights ? displayedInsights.summary.split('\n\n') : []),
+    [displayedInsights],
+  )
   const relatedNewsItems = useMemo(() => {
-    if (!insights) return []
-    return insights.relatedNews.map(fromCuratedNews)
-  }, [insights])
+    if (!showSecondarySections || !displayedInsights) return []
+    return displayedInsights.relatedNews.map(fromCuratedNews)
+  }, [displayedInsights, showSecondarySections])
 
   const panelContent =
-    displayed && insights ? (
+    displayedSession && displayedInsights ? (
       <>
         {/* ── Header zone ── */}
         <div className="shrink-0 px-5 pt-3 pb-5 max-md:px-4">
@@ -197,20 +219,20 @@ export function SessionDetail({
             {onToggleBookmark && isBookmarked && (
               <button
                 type="button"
-                onClick={() => onToggleBookmark(displayed.id)}
-                title={isBookmarked(displayed.id) ? 'Remove from saved' : 'Save session'}
+                onClick={() => onToggleBookmark(displayedSession.id)}
+                title={isBookmarked(displayedSession.id) ? 'Remove from saved' : 'Save session'}
                 aria-label={
-                  isBookmarked(displayed.id)
-                    ? `Remove ${displayed.name} from saved`
-                    : `Save ${displayed.name}`
+                  isBookmarked(displayedSession.id)
+                    ? `Remove ${displayedSession.name} from saved`
+                    : `Save ${displayedSession.name}`
                 }
                 className="hover:bg-gold-dim flex size-10 items-center justify-center rounded-md transition-all duration-100 md:size-9"
               >
                 <Bookmark
                   size={20}
                   className="transition-all duration-100"
-                  fill={isBookmarked(displayed.id) ? 'var(--gold)' : 'none'}
-                  stroke={isBookmarked(displayed.id) ? 'var(--gold)' : 'var(--ink3)'}
+                  fill={isBookmarked(displayedSession.id) ? 'var(--gold)' : 'none'}
+                  stroke={isBookmarked(displayedSession.id) ? 'var(--gold)' : 'var(--ink3)'}
                 />
               </button>
             )}
@@ -218,10 +240,10 @@ export function SessionDetail({
 
           {/* Tags row */}
           <div className="flex flex-wrap items-center gap-1.5">
-            <span className={roundTagClasses(displayed.rt)}>{displayed.rt}</span>
-            {displayed.sport && (
+            <span className={roundTagClasses(displayedSession.rt)}>{displayedSession.rt}</span>
+            {displayedSession.sport && (
               <span className="bg-surface2 text-ink3 rounded-lg px-2 py-0.5 text-[0.62rem] font-semibold tracking-[0.06em] uppercase">
-                {displayed.sport}
+                {displayedSession.sport}
               </span>
             )}
           </div>
@@ -229,34 +251,34 @@ export function SessionDetail({
           {/* Title + rating */}
           <div className="mt-3 flex items-start justify-between gap-3">
             <h2 className="font-display text-ink text-[1.35rem] leading-tight font-semibold">
-              {displayed.name}
+              {displayedSession.name}
             </h2>
             <span
               className={cn(
-                ratingClasses(displayed.agg),
+                ratingClasses(displayedSession.agg),
                 'shrink-0 text-[1rem] px-2.5 py-1 min-w-[42px] rounded-xl',
               )}
             >
-              {displayed.agg.toFixed(1)}
+              {displayedSession.agg.toFixed(1)}
             </span>
           </div>
-          <p className="text-ink2 mt-1 text-[0.82rem] leading-relaxed">{displayed.desc}</p>
+          <p className="text-ink2 mt-1 text-[0.82rem] leading-relaxed">{displayedSession.desc}</p>
 
           {/* Metadata row */}
           <div className="text-ink3 mt-3 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[0.76rem]">
-            <span>{displayed.date}</span>
+            <span>{displayedSession.date}</span>
             <span className="text-border2">·</span>
-            <span>{fmtTime(displayed.time)}</span>
+            <span>{fmtTime(displayedSession.time)}</span>
             <span className="text-border2">·</span>
             <span className="inline-flex items-center gap-1">
               <MapPin size={12} className="shrink-0" />
-              {displayed.venue}
+              {displayedSession.venue}
             </span>
           </div>
 
           {/* Price */}
           <div className="text-ink mt-2 text-[0.9rem] font-semibold tabular-nums">
-            {fmtPrice(displayed.pLo, displayed.pHi)}
+            {fmtPrice(displayedSession.pLo, displayedSession.pHi)}
           </div>
         </div>
 
@@ -266,67 +288,77 @@ export function SessionDetail({
             Summary
           </h3>
           <div className="text-ink mt-2 space-y-3 text-[0.86rem] leading-relaxed font-medium">
-            {insights.summary.split('\n\n').map((para, i) => (
+            {summaryParagraphs.map((para, i) => (
               <p key={i}>{para}</p>
             ))}
           </div>
         </div>
 
-        {/* ── Scorecard dimensions ── */}
-        <div className="px-5 pt-2 pb-5 max-md:px-4">
-          <h3 className="text-ink3 text-[0.68rem] font-semibold tracking-[0.08em] uppercase">
-            Scorecard
-          </h3>
+        {showSecondarySections ? (
+          <>
+            {/* ── Scorecard dimensions ── */}
+            <div className="px-5 pt-2 pb-5 max-md:px-4">
+              <h3 className="text-ink3 text-[0.68rem] font-semibold tracking-[0.08em] uppercase">
+                Scorecard
+              </h3>
 
-          <div className="mt-3 grid grid-cols-2 gap-2.5 max-sm:grid-cols-1">
-            {insights.dimensions.map((dim) => {
-              const colors = ringColors[dim.key as ScoreKey]
-              return (
-                <div
-                  key={dim.key}
-                  className={cn(
-                    'rounded-lg border border-border bg-surface2 border-l-[3px] px-3.5 py-3',
-                    colors?.border,
-                  )}
-                >
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-ink text-[0.78rem] font-semibold">{dim.label}</span>
-                    <span className={cn('text-[0.9rem] font-bold tabular-nums', colors?.score)}>
-                      {dim.score.toFixed(1)}
-                    </span>
-                  </div>
-                  <p className="text-ink3 mt-1.5 text-[0.72rem] leading-normal">
-                    {dim.explanation}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* ── Potential Contenders ── */}
-        {insights.potentialContenders.length > 0 && (
-          <div className="px-5 pt-2 pb-5 max-md:px-4">
-            <h3 className="text-ink3 text-[0.68rem] font-semibold tracking-[0.08em] uppercase">
-              Potential Contenders
-            </h3>
-            <div className="mt-3">
-              <PotentialContendersSection
-                potentialContenders={insights.potentialContenders}
-                potentialContendersIntro={insights.potentialContendersIntro}
-              />
+              <div className="mt-3 grid grid-cols-2 gap-2.5 max-sm:grid-cols-1">
+                {displayedInsights.dimensions.map((dim) => {
+                  const colors = ringColors[dim.key as ScoreKey]
+                  return (
+                    <div
+                      key={dim.key}
+                      className={cn(
+                        'rounded-lg border border-border bg-surface2 border-l-[3px] px-3.5 py-3',
+                        colors?.border,
+                      )}
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-ink text-[0.78rem] font-semibold">{dim.label}</span>
+                        <span className={cn('text-[0.9rem] font-bold tabular-nums', colors?.score)}>
+                          {dim.score.toFixed(1)}
+                        </span>
+                      </div>
+                      <p className="text-ink3 mt-1.5 text-[0.72rem] leading-normal">
+                        {dim.explanation}
+                      </p>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
-          </div>
-        )}
 
-        {/* ── Related News ── */}
-        {relatedNewsItems.length > 0 && (
-          <div className="px-5 pt-2 pb-5 max-md:px-4">
-            <h3 className="text-ink3 text-[0.68rem] font-semibold tracking-[0.08em] uppercase">
-              Related News
-            </h3>
-            <div className="mt-3">
-              <RelatedNewsSection items={relatedNewsItems} />
+            {/* ── Potential Contenders ── */}
+            {displayedInsights.potentialContenders.length > 0 && (
+              <div className="px-5 pt-2 pb-5 max-md:px-4">
+                <h3 className="text-ink3 text-[0.68rem] font-semibold tracking-[0.08em] uppercase">
+                  Potential Contenders
+                </h3>
+                <div className="mt-3">
+                  <PotentialContendersSection
+                    potentialContenders={displayedInsights.potentialContenders}
+                    potentialContendersIntro={displayedInsights.potentialContendersIntro}
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* ── Related News ── */}
+            {relatedNewsItems.length > 0 && (
+              <div className="px-5 pt-2 pb-5 max-md:px-4">
+                <h3 className="text-ink3 text-[0.68rem] font-semibold tracking-[0.08em] uppercase">
+                  Related News
+                </h3>
+                <div className="mt-3">
+                  <RelatedNewsSection items={relatedNewsItems} />
+                </div>
+              </div>
+            )}
+          </>
+        ) : (
+          <div className="px-5 pt-2 pb-5 max-md:px-4" aria-hidden>
+            <div className="bg-surface2 border-border rounded-lg border px-3.5 py-3 text-[0.74rem] text-ink3">
+              Loading analysis...
             </div>
           </div>
         )}
@@ -340,7 +372,7 @@ export function SessionDetail({
     <SideDrawer
       open={isOpen}
       onClose={onClose}
-      aria-label={displayed?.name ?? 'Session details'}
+      aria-label={displayedSession?.name ?? 'Session details'}
       defaultWidth={DEFAULT_WIDTH}
     >
       {panelContent}
