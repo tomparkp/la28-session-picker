@@ -6,7 +6,13 @@ import { fileURLToPath } from 'node:url'
 import Anthropic from '@anthropic-ai/sdk'
 
 import type { SportKnowledge } from '../src/data/sport-knowledge.js'
-import type { Contender, ContentProvider, ContentSource, Session } from '../src/types/session.js'
+import type {
+  Contender,
+  ContentProvider,
+  ContentSource,
+  Session,
+  SessionContent,
+} from '../src/types/session.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(__dirname, '..')
@@ -16,12 +22,13 @@ const rawKnowledge = JSON.parse(
 )
 const { _meta: _, ...sportEntries } = rawKnowledge
 const SPORT_KNOWLEDGE = sportEntries as Record<string, SportKnowledge>
-const DATA_PATH = resolve(ROOT, 'src/data/sessions.json')
+const SESSIONS_PATH = resolve(ROOT, 'src/data/sessions.json')
+const CONTENT_PATH = resolve(ROOT, 'src/data/session-content.json')
 
 const BATCH_SIZE = 15
 const ANTHROPIC_DEFAULT_MODEL = 'claude-sonnet-4-20250514'
 const PERPLEXITY_DEFAULT_MODEL = 'sonar-pro'
-const PROMPT_VERSION = 2
+const PROMPT_VERSION = 3
 const MAX_RETRIES = 3
 const RETRY_DELAY_MS = 5000
 
@@ -98,6 +105,7 @@ const PERPLEXITY_RESPONSE_SCHEMA = {
 const SYSTEM_PROMPT = `You are a sports journalist writing for an informational LA 2028 Olympics session guide. Your tone is:
 - Factual and informative — lead with what the session contains, which events or rounds, and what's at stake
 - Specific — reference event formats, venue details, and relevant Olympic history where accurate
+- Engaging — use clear sports-writing energy, vivid but factual phrasing, and a sense of why the session could be fun to watch live
 - Balanced — describe the event and likely fields without over-promising outcomes; use "projected" or "likely contender" when uncertain
 - Concise — 2-4 clear sentences per blurb, no filler or excessive superlatives
 
@@ -106,7 +114,7 @@ IMPORTANT CONTEXT: The LA 2028 Games are still over two years away. Official ros
 You will receive a batch of Olympic sessions grouped by sport, along with background knowledge about the sport, venue, and athletes.
 
 For each session, produce:
-1. A "blurb" — an informative paragraph (2-4 sentences) explaining what this session covers, how the event works, what's at stake, and what the live experience may feel like. Focus on the nature of the competition itself: e.g. "The 100m dash is a marquee event to crown the fastest man alive." Vary the framing based on the round type:
+1. A "blurb" — two short paragraphs separated by a blank line. Use 2-4 total sentences across both paragraphs. The first paragraph should explain what this session covers, how the event works, and what's at stake. The second paragraph should describe the live experience or why the session could be compelling to watch. Focus on the nature of the competition itself: e.g. "The 100m dash is a marquee event to crown the fastest man alive." Vary the framing based on the round type:
    - Finals/medal sessions: explain which medals are decided, why the event matters, and the competitive format
    - Semifinals/QFs: note the elimination stakes, bracket/qualification pressure, and how the session narrows the field
    - Prelims: describe the format, note that it's an opportunity to see the sport at an accessible price point, and highlight the breadth of competition
@@ -122,6 +130,8 @@ CRITICAL RULES:
 - Do not mention current or prospective athlete names or countries in the blurb. Keep athlete/country discussion in "potentialContendersIntro" and "potentialContenders".
 - Historical athlete references are allowed in the blurb only when they explain the event's history or nature, not future LA28 participation.
 - Every blurb must mention something SPECIFIC — event format, a venue fact, a round/stakes detail, or a competition detail
+- Avoid wall-of-text blurbs. Prefer two compact paragraphs over one dense paragraph, especially for sessions with many events.
+- Do not make the writing clinical or flat. Add personality through concrete sports language and live-experience details, while staying factual.
 - Vary your sentence structures across sessions — don't start every blurb the same way
 - For preliminary rounds, don't be dismissive — find a genuine angle (format, price, emerging athletes)
 - "potentialContendersIntro" must use projected/likely language and must not imply confirmed rosters
@@ -474,10 +484,19 @@ async function main() {
 
   const anthropicClient = provider === 'anthropic' && apiKey ? new Anthropic({ apiKey }) : null
 
-  console.log(`Reading ${DATA_PATH}`)
+  console.log(`Reading ${SESSIONS_PATH}`)
+  console.log(`Reading ${CONTENT_PATH}`)
   console.log(`Provider: ${provider} (${model})`)
   if (!dryRun) console.log(`Checkpoint: ${checkpointPath}`)
-  const sessions = JSON.parse(readFileSync(DATA_PATH, 'utf8')) as Session[]
+  const rawSessions = JSON.parse(readFileSync(SESSIONS_PATH, 'utf8')) as Session[]
+  const sessionContent = JSON.parse(readFileSync(CONTENT_PATH, 'utf8')) as Record<
+    string,
+    SessionContent
+  >
+  const sessions = rawSessions.map((session) => ({
+    ...session,
+    ...sessionContent[session.id],
+  }))
   console.log(`Loaded ${sessions.length} sessions`)
   const checkpoint = loadCheckpoint(checkpointPath, provider, model, sportFilter, forceAll)
   const totalCheckpointedCount = Object.keys(checkpoint.results).length
@@ -561,22 +580,28 @@ async function main() {
   }
 
   if (!dryRun) {
+    const nextSessionContent = { ...sessionContent }
+
     for (const result of Object.values(checkpoint.results)) {
       const session = sessionMap.get(result.id)
       if (!session) continue
-      session.blurb = result.blurb
-      session.potentialContendersIntro = result.potentialContendersIntro
-      session.potentialContenders = result.potentialContenders
-      session.contentMeta = result.contentMeta ?? {
-        provider,
-        model,
-        generatedAt: new Date().toISOString(),
+      nextSessionContent[result.id] = {
+        blurb: result.blurb,
+        potentialContendersIntro: result.potentialContendersIntro,
+        potentialContenders: result.potentialContenders,
+        contentMeta: result.contentMeta ?? {
+          provider,
+          model,
+          generatedAt: new Date().toISOString(),
+        },
       }
     }
 
-    const output = JSON.stringify(sessions, null, 2)
-    writeFileSync(DATA_PATH, output)
-    console.log(`\nWrote ${sessions.length} sessions to ${DATA_PATH}`)
+    const output = JSON.stringify(nextSessionContent, null, 2)
+    writeFileSync(CONTENT_PATH, `${output}\n`)
+    console.log(
+      `\nWrote ${Object.keys(nextSessionContent).length} content entries to ${CONTENT_PATH}`,
+    )
   }
 
   console.log(`\nDone: ${totalGenerated} generated, ${totalFailed} failed`)

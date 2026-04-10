@@ -1,10 +1,10 @@
 import { createServerFn } from '@tanstack/react-start'
 import { setResponseHeaders } from '@tanstack/react-start/server'
 
-import type { Session } from '@/types/session'
+import type { SessionWithContent } from '@/types/session'
 
 export type SessionsPayload = {
-  sessions: Session[]
+  sessions: SessionWithContent[]
   sports: string[]
   zones: string[]
 }
@@ -19,4 +19,3 @@ export const getSessionsPayload = createServerFn({ method: 'GET' }).handler(asyn
   const { computeSessionsPayload } = await import('./sessions.data.server')
   return computeSessionsPayload()
 })
-

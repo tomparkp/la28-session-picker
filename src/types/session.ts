@@ -22,7 +22,14 @@ export interface ContentMeta {
   sources?: ContentSource[]
 }
 
-export interface Session {
+export interface SessionContent {
+  blurb?: string
+  potentialContendersIntro?: string
+  potentialContenders?: Contender[]
+  contentMeta?: ContentMeta
+}
+
+export interface Session extends SessionContent {
   id: string
   sport: string
   name: string
@@ -42,11 +49,9 @@ export interface Session {
   rUniq: number
   rDem: number
   agg: number
-  blurb?: string
-  potentialContendersIntro?: string
-  potentialContenders?: Contender[]
-  contentMeta?: ContentMeta
 }
+
+export type SessionWithContent = Session & SessionContent
 
 export type RoundType = 'Final' | 'Semi' | 'QF' | 'Prelim' | 'Bronze' | 'Ceremony' | 'N/A'
 

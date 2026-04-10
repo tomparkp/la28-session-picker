@@ -1,9 +1,10 @@
-import type { Session } from '@/types/session'
+import type { SessionContent, SessionWithContent } from '@/types/session'
 
+import rawSessionContent from './session-content.json'
 import rawSessions from './sessions.json'
 
 export type SessionsPayload = {
-  sessions: Session[]
+  sessions: SessionWithContent[]
   sports: string[]
   zones: string[]
 }
@@ -14,7 +15,11 @@ let cached: SessionsPayload | null = null
 export function computeSessionsPayload(): SessionsPayload {
   if (cached) return cached
 
-  const sessions = rawSessions as Session[]
+  const contentBySessionId = rawSessionContent as Record<string, SessionContent>
+  const sessions = (rawSessions as SessionWithContent[]).map((session) => ({
+    ...session,
+    ...contentBySessionId[session.id],
+  }))
   const sports = [...new Set(sessions.map((s) => s.sport))].filter(Boolean).sort()
   const zones = [...new Set(sessions.map((s) => s.zone))].sort()
 
