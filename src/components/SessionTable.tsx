@@ -1,6 +1,7 @@
 import { Bookmark } from 'lucide-react'
-import { type KeyboardEvent, useMemo } from 'react'
+import { memo, type KeyboardEvent, useMemo } from 'react'
 
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { cn } from '@/lib/cn'
 import { fmtPrice, fmtTime } from '@/lib/format'
 import { roundTagClasses } from '@/lib/tw'
@@ -16,7 +17,7 @@ export interface SessionTableProps {
   onToggleBookmark: (id: string) => void
   groupBy: GroupBy
   selectedSessionId: string | null
-  onSelectSession: (session: Session) => void
+  onSelectSessionId: (sessionId: string) => void
 }
 
 type SessionItem =
@@ -26,7 +27,7 @@ type SessionItem =
 const thBase =
   'text-left px-2.5 py-2 bg-surface2 font-semibold text-[0.62rem] uppercase tracking-[0.08em] text-ink3 border-b border-border whitespace-nowrap cursor-pointer select-none transition-colors duration-100 hover:text-gold'
 
-function SortHeader({
+const SortHeader = memo(function SortHeader({
   label,
   col,
   sort,
@@ -50,7 +51,7 @@ function SortHeader({
       )}
     </th>
   )
-}
+})
 
 function groupLabel(key: GroupBy): string {
   if (key === 'sport') return 'Sport'
@@ -85,32 +86,34 @@ function groupSessions(sessions: Session[], key: GroupBy): { label: string; sess
 
 /* ─── Mobile card ─── */
 
-function SessionCard({
+const SessionCard = memo(function SessionCard({
   session,
   selected,
-  onSelect,
+  onSelectId,
   bookmarked,
   onToggleBookmark,
 }: {
   session: Session
   selected: boolean
-  onSelect: (session: Session) => void
+  onSelectId: (id: string) => void
   bookmarked: boolean
   onToggleBookmark: (id: string) => void
 }) {
+  function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      onSelectId(session.id)
+    }
+  }
+
   return (
     <div
       role="button"
       tabIndex={0}
       aria-pressed={selected}
       data-session-item
-      onClick={() => onSelect(session)}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault()
-          onSelect(session)
-        }
-      }}
+      onClick={() => onSelectId(session.id)}
+      onKeyDown={handleKeyDown}
       className={cn(
         'rounded-lg border border-border bg-surface p-3 transition-colors duration-100 active:bg-surface2',
         selected && 'border-gold bg-gold-dim',
@@ -171,27 +174,27 @@ function SessionCard({
       </div>
     </div>
   )
-}
+}, areSessionEntryPropsEqual)
 
 /* ─── Desktop table row ─── */
 
-function SessionRow({
+const SessionRow = memo(function SessionRow({
   session,
   selected,
-  onSelect,
+  onSelectId,
   bookmarked,
   onToggleBookmark,
 }: {
   session: Session
   selected: boolean
-  onSelect: (session: Session) => void
+  onSelectId: (id: string) => void
   bookmarked: boolean
   onToggleBookmark: (id: string) => void
 }) {
   function handleRowKeyDown(event: KeyboardEvent<HTMLTableRowElement>) {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault()
-      onSelect(session)
+      onSelectId(session.id)
     }
   }
 
@@ -207,7 +210,7 @@ function SessionRow({
         selected && 'bg-gold-dim',
       )}
       data-session-item
-      onClick={() => onSelect(session)}
+      onClick={() => onSelectId(session.id)}
       onKeyDown={handleRowKeyDown}
       tabIndex={0}
       role="button"
@@ -274,11 +277,19 @@ function SessionRow({
       </td>
     </tr>
   )
-}
+}, areSessionEntryPropsEqual)
 
 /* ─── Group divider (shared) ─── */
 
-function GroupBanner({ groupBy, label, count }: { groupBy: GroupBy; label: string; count: number }) {
+const GroupBanner = memo(function GroupBanner({
+  groupBy,
+  label,
+  count,
+}: {
+  groupBy: GroupBy
+  label: string
+  count: number
+}) {
   return (
     <div className="bg-surface2 text-[0.72rem] font-semibold text-ink2 px-2.5 py-1.5 border-b border-border">
       <span className="text-ink3 font-normal uppercase text-[0.6rem] tracking-[0.06em] mr-1">
@@ -289,6 +300,25 @@ function GroupBanner({ groupBy, label, count }: { groupBy: GroupBy; label: strin
         {count}
       </span>
     </div>
+  )
+})
+
+function areSessionEntryPropsEqual(
+  prev: {
+    session: Session
+    selected: boolean
+    bookmarked: boolean
+  },
+  next: {
+    session: Session
+    selected: boolean
+    bookmarked: boolean
+  },
+) {
+  return (
+    prev.session === next.session &&
+    prev.selected === next.selected &&
+    prev.bookmarked === next.bookmarked
   )
 }
 
@@ -302,8 +332,9 @@ export function SessionTable({
   onToggleBookmark,
   groupBy,
   selectedSessionId,
-  onSelectSession,
+  onSelectSessionId,
 }: SessionTableProps) {
+  const isMobile = useMediaQuery('(max-width: 539px)')
   const items = useMemo<SessionItem[]>(() => {
     const groups = groupSessions(sessions, groupBy)
     return groups.flatMap((group) => {
@@ -335,9 +366,8 @@ export function SessionTable({
   )
 
   return (
-    <>
-      {/* ─── Mobile card list ─── */}
-      <div className="min-[540px]:hidden space-y-2">
+    isMobile ? (
+      <div className="space-y-2">
         {sessions.length === 0 ? (
           <div className="text-center py-12 px-4 text-ink3 text-[0.85rem] font-light">
             No sessions match your filters
@@ -351,7 +381,7 @@ export function SessionTable({
                 key={item.session.id}
                 session={item.session}
                 selected={selectedSessionId === item.session.id}
-                onSelect={onSelectSession}
+                onSelectId={onSelectSessionId}
                 bookmarked={isBookmarked(item.session.id)}
                 onToggleBookmark={onToggleBookmark}
               />
@@ -359,13 +389,10 @@ export function SessionTable({
           )
         )}
       </div>
-
-      {/* ─── Desktop table ─── */}
-      <div className="hidden min-[540px]:block overflow-x-auto overflow-y-hidden border border-border rounded-lg bg-surface">
+    ) : (
+      <div className="overflow-x-auto overflow-y-hidden rounded-lg border border-border bg-surface">
         <table className="w-full border-collapse text-[0.78rem]">
-          <thead>
-            {tableHeader}
-          </thead>
+          <thead>{tableHeader}</thead>
           <tbody>
             {sessions.length === 0 ? (
               <tr>
@@ -398,7 +425,7 @@ export function SessionTable({
                     key={item.session.id}
                     session={item.session}
                     selected={selectedSessionId === item.session.id}
-                    onSelect={onSelectSession}
+                    onSelectId={onSelectSessionId}
                     bookmarked={isBookmarked(item.session.id)}
                     onToggleBookmark={onToggleBookmark}
                   />
@@ -408,6 +435,6 @@ export function SessionTable({
           </tbody>
         </table>
       </div>
-    </>
+    )
   )
 }

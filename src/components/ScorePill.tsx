@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 import { ratingClasses } from '@/lib/tw'
 
 interface ScorePillProps {
@@ -9,7 +11,14 @@ interface ScorePillProps {
   rDem: number
 }
 
-export function ScorePill({ agg, rSig, rExp, rStar, rUniq, rDem }: ScorePillProps) {
+export const ScorePill = memo(function ScorePill({
+  agg,
+  rSig,
+  rExp,
+  rStar,
+  rUniq,
+  rDem,
+}: ScorePillProps) {
   return (
     <span
       className={ratingClasses(agg)}
@@ -18,4 +27,4 @@ export function ScorePill({ agg, rSig, rExp, rStar, rUniq, rDem }: ScorePillProp
       {agg.toFixed(1)}
     </span>
   )
-}
+})
