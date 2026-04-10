@@ -4,6 +4,24 @@ export interface Contender {
   note: string
 }
 
+export interface ContentSource {
+  title: string
+  url: string
+  date?: string
+  lastUpdated?: string
+  snippet?: string
+  source?: string
+}
+
+export type ContentProvider = 'anthropic' | 'perplexity'
+
+export interface ContentMeta {
+  provider: ContentProvider
+  model: string
+  generatedAt: string
+  sources?: ContentSource[]
+}
+
 export interface Session {
   id: string
   sport: string
@@ -26,6 +44,7 @@ export interface Session {
   agg: number
   blurb?: string
   potentialContenders?: Contender[]
+  contentMeta?: ContentMeta
 }
 
 export type RoundType = 'Final' | 'Semi' | 'QF' | 'Prelim' | 'Bronze' | 'Ceremony' | 'N/A'
