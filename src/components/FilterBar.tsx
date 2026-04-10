@@ -1,9 +1,11 @@
+import { Collapsible } from '@base-ui/react/collapsible'
+import { Select } from '@base-ui/react/select'
 import { ChevronDown, SlidersHorizontal, X } from 'lucide-react'
 import { useState } from 'react'
 
-import { cn } from '@/lib/cn'
 import { roundTypes } from '@/data/sessions'
 import { useStickyFilterBorder } from '@/hooks/useStickyFilterBorder'
+import { cn } from '@/lib/cn'
 import type { Filters, GroupBy } from '@/types/session'
 
 interface FilterBarProps {
@@ -30,6 +32,20 @@ const actionActiveCls = 'border-gold text-gold'
 const badgeCls =
   'flex size-[18px] items-center justify-center rounded-full bg-gold text-bg text-[0.6rem] font-bold'
 
+const selectPopupCls =
+  'z-50 max-h-[min(22rem,var(--available-height))] min-w-36 overflow-y-auto rounded-md border border-border bg-surface py-1 shadow-2xl outline-none'
+
+const selectItemCls =
+  'flex cursor-default items-center justify-between gap-2 px-2.5 py-1.5 text-[0.74rem] text-ink outline-none data-[highlighted]:bg-surface2 data-[selected]:text-gold'
+
+interface FilterSelectProps {
+  value: string
+  placeholder: string
+  options: readonly { value: string; label: string }[]
+  active: boolean
+  onChange: (value: string) => void
+}
+
 function activeFilterCount(filters: Filters, groupBy: GroupBy): number {
   let count = 0
   if (filters.sport) count++
@@ -39,6 +55,46 @@ function activeFilterCount(filters: Filters, groupBy: GroupBy): number {
   if (filters.price) count++
   if (groupBy) count++
   return count
+}
+
+function FilterSelect({ value, placeholder, options, active, onChange }: FilterSelectProps) {
+  const items = [{ value: '', label: placeholder }, ...options]
+
+  return (
+    <Select.Root
+      items={items}
+      modal={false}
+      value={value}
+      onValueChange={(nextValue) => onChange(String(nextValue ?? ''))}
+    >
+      <Select.Trigger
+        className={cn(selectCls, active && activeCls, 'flex items-center justify-between gap-2')}
+      >
+        <Select.Value />
+        <Select.Icon className="text-ink3">
+          <ChevronDown size={14} />
+        </Select.Icon>
+      </Select.Trigger>
+      <Select.Portal>
+        <Select.Positioner alignItemWithTrigger={false} sideOffset={4}>
+          <Select.Popup className={selectPopupCls}>
+            <Select.List>
+              {items.map((item) => (
+                <Select.Item
+                  key={item.value || placeholder}
+                  value={item.value}
+                  className={selectItemCls}
+                >
+                  <Select.ItemText>{item.label}</Select.ItemText>
+                  <Select.ItemIndicator className="text-gold">✓</Select.ItemIndicator>
+                </Select.Item>
+              ))}
+            </Select.List>
+          </Select.Popup>
+        </Select.Positioner>
+      </Select.Portal>
+    </Select.Root>
+  )
 }
 
 export function FilterBar({
@@ -76,7 +132,7 @@ export function FilterBar({
         <button
           type="button"
           onClick={() => update('search', '')}
-          className="absolute right-1.5 top-1/2 -translate-y-1/2 text-ink3 hover:text-ink transition-colors cursor-pointer"
+          className="text-ink3 hover:text-ink absolute top-1/2 right-1.5 -translate-y-1/2 cursor-pointer transition-colors"
           aria-label="Clear search"
         >
           <X size={14} />
@@ -87,87 +143,75 @@ export function FilterBar({
 
   const filterSelects = (
     <>
-      <select
-        className={cn(selectCls, filters.sport && activeCls)}
+      <FilterSelect
+        placeholder="Sport"
         value={filters.sport}
-        onChange={(e) => update('sport', e.target.value)}
-      >
-        <option value="" className="text-ink bg-surface">Sport</option>
-        {sports.map((s) => (
-          <option key={s} value={s} className="text-ink bg-surface">
-            {s}
-          </option>
-        ))}
-      </select>
-      <select
-        className={cn(selectCls, filters.round && activeCls)}
+        options={sports.map((s) => ({ value: s, label: s }))}
+        active={!!filters.sport}
+        onChange={(value) => update('sport', value)}
+      />
+      <FilterSelect
+        placeholder="Round"
         value={filters.round}
-        onChange={(e) => update('round', e.target.value)}
-      >
-        <option value="" className="text-ink bg-surface">Round</option>
-        {roundTypes.map((r) => (
-          <option key={r} value={r} className="text-ink bg-surface">
-            {r}
-          </option>
-        ))}
-      </select>
-      <select
-        className={cn(selectCls, filters.zone && activeCls)}
+        options={roundTypes.map((r) => ({ value: r, label: r }))}
+        active={!!filters.round}
+        onChange={(value) => update('round', value)}
+      />
+      <FilterSelect
+        placeholder="Zone"
         value={filters.zone}
-        onChange={(e) => update('zone', e.target.value)}
-      >
-        <option value="" className="text-ink bg-surface">Zone</option>
-        {zones.map((z) => (
-          <option key={z} value={z} className="text-ink bg-surface">
-            {z}
-          </option>
-        ))}
-      </select>
-      <select
-        className={cn(selectCls, filters.score && activeCls)}
+        options={zones.map((z) => ({ value: z, label: z }))}
+        active={!!filters.zone}
+        onChange={(value) => update('zone', value)}
+      />
+      <FilterSelect
+        placeholder="Rating"
         value={filters.score}
-        onChange={(e) => update('score', e.target.value)}
-      >
-        <option value="" className="text-ink bg-surface">Rating</option>
-        <option value="8">8+</option>
-        <option value="6">6+</option>
-        <option value="4">4+</option>
-      </select>
-      <select
-        className={cn(selectCls, filters.price && activeCls)}
+        options={[
+          { value: '8', label: '8+' },
+          { value: '6', label: '6+' },
+          { value: '4', label: '4+' },
+        ]}
+        active={!!filters.score}
+        onChange={(value) => update('score', value)}
+      />
+      <FilterSelect
+        placeholder="Price"
         value={filters.price}
-        onChange={(e) => update('price', e.target.value)}
-      >
-        <option value="" className="text-ink bg-surface">Price</option>
-        <option value="0-50">&lt;$50</option>
-        <option value="0-100">&lt;$100</option>
-        <option value="0-200">&lt;$200</option>
-        <option value="0-500">&lt;$500</option>
-        <option value="500-99999">$500+</option>
-      </select>
+        options={[
+          { value: '0-50', label: '<$50' },
+          { value: '0-100', label: '<$100' },
+          { value: '0-200', label: '<$200' },
+          { value: '0-500', label: '<$500' },
+          { value: '500-99999', label: '$500+' },
+        ]}
+        active={!!filters.price}
+        onChange={(value) => update('price', value)}
+      />
     </>
   )
 
   const groupBySelect = (
-    <select
-      className={cn(selectCls, groupBy && activeCls)}
+    <FilterSelect
+      placeholder="Group By"
       value={groupBy}
-      onChange={(e) => onGroupByChange(e.target.value as GroupBy)}
-    >
-      <option value="" className="text-ink bg-surface">Group By</option>
-      <option value="sport">Sport</option>
-      <option value="rt">Round</option>
-      <option value="zone">Zone</option>
-      <option value="date">Date</option>
-    </select>
+      options={[
+        { value: 'sport', label: 'Sport' },
+        { value: 'rt', label: 'Round' },
+        { value: 'zone', label: 'Zone' },
+        { value: 'date', label: 'Date' },
+      ]}
+      active={!!groupBy}
+      onChange={(value) => onGroupByChange(value as GroupBy)}
+    />
   )
 
   return (
     <>
-      <div ref={sentinelRef} className="h-px m-0 pointer-events-none" aria-hidden />
+      <div ref={sentinelRef} className="pointer-events-none m-0 h-px" aria-hidden />
       <div className={cn('sticky top-0 z-10 bg-bg', stuck && 'border-b border-border')}>
         {/* ─── Desktop: single row ─── */}
-        <div className="hidden min-[880px]:flex items-center gap-1.5 px-4 py-2.5 mx-auto max-w-[1400px]">
+        <div className="mx-auto hidden max-w-[1400px] items-center gap-1.5 px-4 py-2.5 min-[880px]:flex">
           {searchInput(true)}
           <span className="flex-1" />
           {filterSelects}
@@ -176,41 +220,36 @@ export function FilterBar({
         </div>
 
         {/* ─── Mobile / narrow: collapsible filters ─── */}
-        <div className="min-[880px]:hidden px-3 py-2 mx-auto max-w-[1400px] space-y-1.5">
+        <Collapsible.Root
+          open={filtersOpen}
+          onOpenChange={setFiltersOpen}
+          className="mx-auto max-w-[1400px] space-y-1.5 px-3 py-2 min-[880px]:hidden"
+        >
           <div className="flex gap-1.5">
             {searchInput(false)}
-            <button
-              type="button"
-              onClick={() => setFiltersOpen((o) => !o)}
+            <Collapsible.Trigger
               className={cn(actionBtnCls, (filtersOpen || activeCount > 0) && actionActiveCls)}
-              aria-expanded={filtersOpen}
             >
               <SlidersHorizontal size={14} />
               <span>Filters</span>
-              {activeCount > 0 && (
-                <span className={badgeCls}>{activeCount}</span>
-              )}
+              {activeCount > 0 && <span className={badgeCls}>{activeCount}</span>}
               <ChevronDown
                 size={14}
                 className={cn('transition-transform duration-150', filtersOpen && 'rotate-180')}
               />
-            </button>
+            </Collapsible.Trigger>
           </div>
 
-          <div
-            className={cn(
-              'grid transition-[grid-template-rows] duration-200 ease-panel',
-              filtersOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
-            )}
+          <Collapsible.Panel
+            keepMounted
+            className="ease-panel h-[var(--collapsible-panel-height)] overflow-hidden transition-[height] duration-200 data-[closed]:h-0"
           >
-            <div className="overflow-hidden">
-              <div className="grid grid-cols-2 max-[400px]:grid-cols-1 gap-2 pt-1 pb-0.5">
-                {filterSelects}
-                {groupBySelect}
-              </div>
+            <div className="grid grid-cols-2 gap-2 pt-1 pb-0.5 max-[400px]:grid-cols-1">
+              {filterSelects}
+              {groupBySelect}
             </div>
-          </div>
-        </div>
+          </Collapsible.Panel>
+        </Collapsible.Root>
       </div>
     </>
   )

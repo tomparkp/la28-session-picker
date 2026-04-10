@@ -60,17 +60,30 @@ function SessionPicker() {
     setBookmarkPanelOpen(true)
   }, [navigate])
 
+  const handleCloseBookmarks = useCallback(() => {
+    setBookmarkPanelOpen(false)
+  }, [])
+
   useEffect(() => {
-    if (!selectedSession) return
+    if (!selectedSession && !bookmarkPanelOpen) return
+
     function handleMouseDown(e: MouseEvent) {
       const target = e.target as HTMLElement
-      if (target.closest('[data-session-detail-panel]')) return
+      if (target.closest('[data-side-drawer]')) return
       if (target.closest('[data-session-item]')) return
-      setSelectedSession(null)
+
+      if (selectedSession) {
+        handleCloseSession()
+      }
+
+      if (bookmarkPanelOpen) {
+        handleCloseBookmarks()
+      }
     }
+
     document.addEventListener('mousedown', handleMouseDown)
     return () => document.removeEventListener('mousedown', handleMouseDown)
-  }, [selectedSession])
+  }, [bookmarkPanelOpen, handleCloseBookmarks, handleCloseSession, selectedSession])
 
   const deferredSearch = useDeferredValue(filters.search)
   const effectiveFilters = useMemo<Filters>(
@@ -108,7 +121,7 @@ function SessionPicker() {
         />
         Saved
         {bookmarks.size > 0 && (
-          <span className="flex size-[18px] items-center justify-center rounded-full bg-gold text-bg text-[0.6rem] font-bold">
+          <span className="bg-gold text-bg flex size-[18px] items-center justify-center rounded-full text-[0.6rem] font-bold">
             {bookmarks.size}
           </span>
         )}
@@ -123,7 +136,7 @@ function SessionPicker() {
         zones={zones}
       />
 
-      <div className="max-w-[1400px] mx-auto px-4 pt-2 pb-15">
+      <div className="mx-auto max-w-[1400px] px-4 pt-2 pb-15">
         <SessionTable
           sessions={sorted}
           sort={sort}
@@ -144,14 +157,13 @@ function SessionPicker() {
 
         <BookmarkPanel
           open={bookmarkPanelOpen}
-          onClose={() => setBookmarkPanelOpen(false)}
+          onClose={handleCloseBookmarks}
           sessions={sessions}
           bookmarks={bookmarks}
           onToggleBookmark={toggle}
           onClearAll={clearAll}
           onSelectSession={handleSelectSession}
         />
-
       </div>
     </>
   )
