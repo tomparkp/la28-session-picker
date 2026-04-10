@@ -43,6 +43,7 @@ export interface Session {
   rDem: number
   agg: number
   blurb?: string
+  potentialContendersIntro?: string
   potentialContenders?: Contender[]
   contentMeta?: ContentMeta
 }

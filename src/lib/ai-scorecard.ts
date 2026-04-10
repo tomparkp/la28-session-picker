@@ -14,6 +14,7 @@ export interface SessionInsights {
   summary: string
   overallExplanation: string
   dimensions: ScorecardDimension[]
+  potentialContendersIntro?: string
   potentialContenders: Contender[]
 }
 
@@ -56,7 +57,9 @@ function hasMultipleEvents(desc: string) {
 }
 
 function isMedalStage(session: Session) {
-  return session.rt === 'Final' || session.rt === 'Bronze' || /\bfinal\b|\bmedal\b/i.test(session.desc)
+  return (
+    session.rt === 'Final' || session.rt === 'Bronze' || /\bfinal\b|\bmedal\b/i.test(session.desc)
+  )
 }
 
 function getKnowledge(sport: string) {
@@ -255,6 +258,7 @@ export function getSessionInsights(session: Session): SessionInsights {
   ]
 
   const summary = session.blurb ?? buildFallbackSummary(session)
+  const potentialContendersIntro = session.potentialContendersIntro
   const potentialContenders = session.potentialContenders ?? getFallbackPotentialContenders(session)
 
   const sortedDimensions = [...dimensions].sort((a, b) => b.score - a.score)
@@ -276,6 +280,7 @@ export function getSessionInsights(session: Session): SessionInsights {
     summary,
     overallExplanation,
     dimensions,
+    potentialContendersIntro,
     potentialContenders,
   }
 }

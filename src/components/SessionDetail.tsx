@@ -37,25 +37,38 @@ const ringColors: Record<ScoreKey, { border: string; score: string }> = {
   rDem: { border: 'border-l-[#df0024]', score: 'text-[#df0024]' },
 }
 
-function PotentialContendersSection({ potentialContenders }: { potentialContenders: Contender[] }) {
+function PotentialContendersSection({
+  potentialContenders,
+  potentialContendersIntro,
+}: {
+  potentialContenders: Contender[]
+  potentialContendersIntro?: string
+}) {
   return (
-    <div className="grid gap-2.5">
-      {potentialContenders.map((c) => (
-        <div key={`${c.name}-${c.country}`} className="flex items-start gap-3">
-          <span className="bg-surface3 text-ink3 mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full">
-            <UserRound size={14} />
-          </span>
-          <div className="min-w-0">
-            <div className="flex items-baseline gap-2">
-              <span className="text-ink text-[0.84rem] font-semibold">{c.name}</span>
-              <span className="text-accent text-[0.6rem] font-bold tracking-[0.06em] uppercase">
-                {c.country}
-              </span>
+    <div className="grid gap-3">
+      {potentialContendersIntro && (
+        <p className="text-ink2 text-[0.8rem] leading-relaxed font-medium">
+          {potentialContendersIntro}
+        </p>
+      )}
+      <div className="grid gap-2.5">
+        {potentialContenders.map((c) => (
+          <div key={`${c.name}-${c.country}`} className="flex items-start gap-3">
+            <span className="bg-surface3 text-ink3 mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full">
+              <UserRound size={14} />
+            </span>
+            <div className="min-w-0">
+              <div className="flex items-baseline gap-2">
+                <span className="text-ink text-[0.84rem] font-semibold">{c.name}</span>
+                <span className="text-accent text-[0.6rem] font-bold tracking-[0.06em] uppercase">
+                  {c.country}
+                </span>
+              </div>
+              <p className="text-ink3 mt-0.5 text-[0.76rem] leading-snug">{c.note}</p>
             </div>
-            <p className="text-ink3 mt-0.5 text-[0.76rem] leading-snug">{c.note}</p>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }
@@ -322,7 +335,10 @@ export function SessionDetail({
               Potential Contenders
             </h3>
             <div className="mt-3">
-              <PotentialContendersSection potentialContenders={insights.potentialContenders} />
+              <PotentialContendersSection
+                potentialContenders={insights.potentialContenders}
+                potentialContendersIntro={insights.potentialContendersIntro}
+              />
             </div>
           </div>
         )}

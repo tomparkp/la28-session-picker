@@ -29,6 +29,7 @@ type Provider = ContentProvider
 interface GeneratedContent {
   id: string
   blurb: string
+  potentialContendersIntro?: string
   potentialContenders: Contender[]
   contentMeta?: {
     provider: Provider
@@ -59,10 +60,11 @@ interface PerplexityResponse {
 const PERPLEXITY_RESPONSE_SCHEMA = {
   type: 'object',
   additionalProperties: false,
-  required: ['id', 'blurb', 'potentialContenders'],
+  required: ['id', 'blurb', 'potentialContendersIntro', 'potentialContenders'],
   properties: {
     id: { type: 'string' },
     blurb: { type: 'string' },
+    potentialContendersIntro: { type: 'string' },
     potentialContenders: {
       type: 'array',
       items: {
@@ -81,34 +83,39 @@ const PERPLEXITY_RESPONSE_SCHEMA = {
 
 const SYSTEM_PROMPT = `You are a sports journalist writing for an informational LA 2028 Olympics session guide. Your tone is:
 - Factual and informative — lead with what the session contains, which events or rounds, and what's at stake
-- Specific — reference athlete names, venue details, and relevant Olympic history where accurate
-- Balanced — acknowledge favorites without over-promising outcomes; use "projected" or "likely contender" when uncertain
+- Specific — reference event formats, venue details, and relevant Olympic history where accurate
+- Balanced — describe the event and likely fields without over-promising outcomes; use "projected" or "likely contender" when uncertain
 - Concise — 2-4 clear sentences per blurb, no filler or excessive superlatives
 
-IMPORTANT CONTEXT: The LA 2028 Games are still over two years away. Official rosters have NOT been announced for any country. Athletes listed as potential contenders are projections based on recent results (primarily Paris 2024). Always frame potential contenders as "projected" or "likely" rather than confirmed participants.
+IMPORTANT CONTEXT: The LA 2028 Games are still over two years away. Official rosters have NOT been announced for any country. Athletes listed as potential contenders are projections based on recent results (primarily Paris 2024). Always frame potential contenders as "projected" or "likely" rather than confirmed participants. If an athlete has not confirmed whether they will compete in LA28, say so plainly in the athlete-focused fields; for example, "Simone Biles has not confirmed whether she will compete in LA28."
 
 You will receive a batch of Olympic sessions grouped by sport, along with background knowledge about the sport, venue, and athletes.
 
 For each session, produce:
-1. A "blurb" — an informative paragraph (2-4 sentences) explaining what this session covers and why it may be worth attending. Vary the framing based on the round type:
-   - Finals/medal sessions: explain which medals are decided, name key potential contenders, and note the competitive context
-   - Semifinals/QFs: note the stakes (elimination rounds) and which potential contenders may be involved
-   - Prelims: describe the format, note that it's an opportunity to see the sport at an accessible price point, and highlight any interesting storylines
+1. A "blurb" — an informative paragraph (2-4 sentences) explaining what this session covers, how the event works, what's at stake, and what the live experience may feel like. Focus on the nature of the competition itself: e.g. "The 100m dash is a marquee event to crown the fastest man alive." Vary the framing based on the round type:
+   - Finals/medal sessions: explain which medals are decided, why the event matters, and the competitive format
+   - Semifinals/QFs: note the elimination stakes, bracket/qualification pressure, and how the session narrows the field
+   - Prelims: describe the format, note that it's an opportunity to see the sport at an accessible price point, and highlight the breadth of competition
    - Ceremonies: describe the event (opening/closing) and what attendees can expect
 
-2. "potentialContenders" — an array of 2-5 athletes/teams projected to appear in THIS specific session, with a one-line factual note (e.g., their Paris result, world ranking, or key achievement). For prelim rounds, pick a mix of established names and emerging competitors. For finals, focus on likely medal contenders. If the session doesn't lend itself to specific potential contenders (e.g., ceremonies), return an empty array.
+2. A "potentialContendersIntro" — 1-2 athlete/country-focused sentences to display above the contenders list. Discuss the projected athlete/team/country field, but be explicit that LA28 participation is not confirmed. If there are no useful contenders for this session, return an empty string.
+
+3. "potentialContenders" — an array of 2-5 athletes/teams projected to appear in THIS specific session, with a one-line factual note (e.g., their Paris result, world ranking, or key achievement). For prelim rounds, pick a mix of established names and emerging competitors. For finals, focus on likely medal contenders. If the session doesn't lend itself to specific potential contenders (e.g., ceremonies), return an empty array.
 
 CRITICAL RULES:
 - Never use generic phrases like "high significance rating" or "the AI score leans positive"
 - Never reference ratings, scores, or algorithmic analysis
-- Every blurb must mention something SPECIFIC — an athlete name, a venue fact, or a relevant detail
+- Do not mention current or prospective athlete names or countries in the blurb. Keep athlete/country discussion in "potentialContendersIntro" and "potentialContenders".
+- Historical athlete references are allowed in the blurb only when they explain the event's history or nature, not future LA28 participation.
+- Every blurb must mention something SPECIFIC — event format, a venue fact, a round/stakes detail, or a competition detail
 - Vary your sentence structures across sessions — don't start every blurb the same way
 - For preliminary rounds, don't be dismissive — find a genuine angle (format, price, emerging athletes)
+- "potentialContendersIntro" must use projected/likely language and must not imply confirmed rosters
 - Potential contender "note" should be a single factual sentence — focus on their most relevant recent achievement, not hype
 - Do NOT overuse superlatives (e.g., "the greatest," "the most iconic," "pure drama"). State facts and let readers draw their own conclusions
 - Do NOT speculate about athletes competing if there's known doubt about their participation (injury, retirement, age)
 
-Return valid JSON matching the requested response shape with "id", "blurb", and "potentialContenders" fields.`
+Return valid JSON matching the requested response shape with "id", "blurb", "potentialContendersIntro", and "potentialContenders" fields.`
 
 function buildBatchPrompt(sessions: Session[], sport: string): string {
   const knowledge = SPORT_KNOWLEDGE[sport]
@@ -159,7 +166,7 @@ function buildBatchPrompt(sessions: Session[], sport: string): string {
 
   prompt += `Return a JSON array of ${sessions.length} objects, one for each session ID above. Format:\n`
   prompt +=
-    '```json\n[\n  {\n    "id": "...",\n    "blurb": "...",\n    "potentialContenders": [{"name": "...", "country": "...", "note": "..."}]\n  }\n]\n```'
+    '```json\n[\n  {\n    "id": "...",\n    "blurb": "...",\n    "potentialContendersIntro": "...",\n    "potentialContenders": [{"name": "...", "country": "...", "note": "..."}]\n  }\n]\n```'
 
   return prompt
 }
@@ -189,6 +196,9 @@ function parseProvider(value: string | undefined): Provider {
 function validateGeneratedContent(item: GeneratedContent): GeneratedContent {
   if (!item.id || !item.blurb) {
     throw new Error(`Invalid item: missing id or blurb in ${JSON.stringify(item).slice(0, 100)}`)
+  }
+  if (typeof item.potentialContendersIntro !== 'string') {
+    throw new Error(`Invalid item: potentialContendersIntro must be a string for ${item.id}`)
   }
   if (!Array.isArray(item.potentialContenders)) {
     throw new Error(`Invalid item: potentialContenders must be an array for ${item.id}`)
@@ -419,6 +429,7 @@ async function main() {
         const session = sessionMap.get(result.id)
         if (session) {
           session.blurb = result.blurb
+          session.potentialContendersIntro = result.potentialContendersIntro
           session.potentialContenders = result.potentialContenders
           session.contentMeta = result.contentMeta ?? {
             provider,
