@@ -106,6 +106,7 @@ export function SideDrawer({
         <Drawer.Viewport className="pointer-events-none fixed inset-0 z-50">
           <Drawer.Popup
             ref={panelRef}
+            data-side-drawer
             aria-label={ariaLabel}
             style={isMobile ? undefined : { width }}
             className={cn(

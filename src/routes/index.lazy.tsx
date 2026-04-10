@@ -1,6 +1,6 @@
 import { createLazyFileRoute, useNavigate } from '@tanstack/react-router'
 import { Bookmark } from 'lucide-react'
-import { useCallback, useDeferredValue, useMemo, useState } from 'react'
+import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react'
 
 import { BookmarkPanel } from '@/components/BookmarkPanel'
 import { FilterBar } from '@/components/FilterBar'
@@ -59,6 +59,31 @@ function SessionPicker() {
     void navigate({ search: (prev) => ({ ...prev, session: undefined }), resetScroll: false })
     setBookmarkPanelOpen(true)
   }, [navigate])
+
+  const handleCloseBookmarks = useCallback(() => {
+    setBookmarkPanelOpen(false)
+  }, [])
+
+  useEffect(() => {
+    if (!selectedSession && !bookmarkPanelOpen) return
+
+    function handleMouseDown(e: MouseEvent) {
+      const target = e.target as HTMLElement
+      if (target.closest('[data-side-drawer]')) return
+      if (target.closest('[data-session-item]')) return
+
+      if (selectedSession) {
+        handleCloseSession()
+      }
+
+      if (bookmarkPanelOpen) {
+        handleCloseBookmarks()
+      }
+    }
+
+    document.addEventListener('mousedown', handleMouseDown)
+    return () => document.removeEventListener('mousedown', handleMouseDown)
+  }, [bookmarkPanelOpen, handleCloseBookmarks, handleCloseSession, selectedSession])
 
   const deferredSearch = useDeferredValue(filters.search)
   const effectiveFilters = useMemo<Filters>(
@@ -132,7 +157,7 @@ function SessionPicker() {
 
         <BookmarkPanel
           open={bookmarkPanelOpen}
-          onClose={() => setBookmarkPanelOpen(false)}
+          onClose={handleCloseBookmarks}
           sessions={sessions}
           bookmarks={bookmarks}
           onToggleBookmark={toggle}
