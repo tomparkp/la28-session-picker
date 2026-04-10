@@ -35,4 +35,4 @@ jobs:
         run: |
           sleep 5
           curl -s -o /dev/null -w "CDN warm: HTTP %{http_code} in %{time_total}s\n" \
-            https://la28.sugarworks.dev/
+            https://la28.tompark.dev/
