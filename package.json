@@ -8,7 +8,7 @@
     "generate:favicon": "node scripts/generate-favicon-ico.mjs",
     "prebuild": "node scripts/generate-favicon-ico.mjs",
     "dev": "vite dev --port 3000",
-    "build": "vite build",
+    "build": "WRANGLER_LOG_PATH=.wrangler/logs vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "rate-sessions": "tsx scripts/rate-sessions.ts",

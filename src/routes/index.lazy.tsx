@@ -1,14 +1,5 @@
 import { createLazyFileRoute, useNavigate } from '@tanstack/react-router'
-import { Bookmark } from 'lucide-react'
-import {
-  startTransition,
-  useCallback,
-  useDeferredValue,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
+import { startTransition, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { BookmarkPanel } from '@/components/BookmarkPanel'
 import { FilterBar } from '@/components/FilterBar'
@@ -16,17 +7,15 @@ import { SessionDetail } from '@/components/SessionDetail'
 import { SessionTable } from '@/components/SessionTable'
 import { useBookmarks } from '@/hooks/useBookmarks'
 import { getSessionInsights, type SessionInsights } from '@/lib/ai-scorecard'
-import { cn } from '@/lib/cn'
 import { filterSessions, sortSessions } from '@/lib/filter'
 import type { Filters, GroupBy, Session, SortColumn, SortState } from '@/types/session'
 
 export const Route = createLazyFileRoute('/')({ component: SessionPicker })
 
 const defaultFilters: Filters = {
-  search: '',
-  sport: '',
-  round: '',
-  zone: '',
+  sport: [],
+  round: [],
+  zone: [],
   score: '',
   price: '',
 }
@@ -125,16 +114,7 @@ function SessionPicker() {
     return () => document.removeEventListener('mousedown', handleMouseDown)
   }, [bookmarkPanelOpen, handleCloseBookmarks, handleCloseSession, selectedSession])
 
-  const deferredSearch = useDeferredValue(filters.search)
-  const effectiveFilters = useMemo<Filters>(
-    () => ({ ...filters, search: deferredSearch }),
-    [filters, deferredSearch],
-  )
-
-  const filtered = useMemo(
-    () => filterSessions(sessions, effectiveFilters),
-    [sessions, effectiveFilters],
-  )
+  const filtered = useMemo(() => filterSessions(sessions, filters), [sessions, filters])
   const sorted = useMemo(() => sortSessions(filtered, sort), [filtered, sort])
 
   function handleSort(col: SortColumn) {
@@ -146,27 +126,6 @@ function SessionPicker() {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={handleOpenBookmarks}
-        className={cn(
-          'absolute top-4 left-5 z-20 flex h-9 items-center gap-1.5 rounded-lg border border-border bg-surface px-2.5 text-[0.8rem] font-medium text-ink2 transition-all duration-150 hover:border-gold hover:bg-surface2 hover:text-gold max-md:top-3 max-md:left-3',
-          bookmarks.size > 0 && 'border-gold text-gold',
-        )}
-      >
-        <Bookmark
-          size={15}
-          fill={bookmarks.size > 0 ? 'var(--gold)' : 'none'}
-          stroke={bookmarks.size > 0 ? 'var(--gold)' : 'currentColor'}
-        />
-        Saved
-        {bookmarks.size > 0 && (
-          <span className="bg-gold text-bg flex size-[18px] items-center justify-center rounded-full text-[0.6rem] font-bold">
-            {bookmarks.size}
-          </span>
-        )}
-      </button>
-
       <FilterBar
         filters={filters}
         onChange={setFilters}
@@ -174,6 +133,8 @@ function SessionPicker() {
         onGroupByChange={setGroupBy}
         sports={sports}
         zones={zones}
+        bookmarkCount={bookmarks.size}
+        onOpenBookmarks={handleOpenBookmarks}
       />
 
       <div className="mx-auto max-w-[1400px] px-4 pt-2 pb-15">
