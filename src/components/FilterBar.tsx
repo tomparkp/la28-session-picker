@@ -7,13 +7,11 @@ import { useState } from 'react'
 import { roundTypes } from '@/data/sessions'
 import { useStickyFilterBorder } from '@/hooks/useStickyFilterBorder'
 import { cn } from '@/lib/cn'
-import type { Filters, GroupBy } from '@/types/session'
+import type { Filters } from '@/types/session'
 
 interface FilterBarProps {
   filters: Filters
   onChange: (filters: Filters) => void
-  groupBy: GroupBy
-  onGroupByChange: (groupBy: GroupBy) => void
   sports: string[]
   zones: string[]
   bookmarkCount: number
@@ -76,14 +74,13 @@ interface FilterSelectProps {
   onChange: (value: string) => void
 }
 
-function activeFilterCount(filters: Filters, groupBy: GroupBy): number {
+function activeFilterCount(filters: Filters): number {
   let count = 0
   if (filters.sport.length > 0) count++
   if (filters.round.length > 0) count++
   if (filters.zone.length > 0) count++
   if (filters.score) count++
   if (filters.price) count++
-  if (groupBy) count++
   return count
 }
 
@@ -218,8 +215,6 @@ function FilterSelect({ value, label, placeholder, options, active, onChange }: 
 export function FilterBar({
   filters,
   onChange,
-  groupBy,
-  onGroupByChange,
   sports,
   zones,
   bookmarkCount,
@@ -227,7 +222,7 @@ export function FilterBar({
 }: FilterBarProps) {
   const { sentinelRef, stuck } = useStickyFilterBorder()
   const [filtersOpen, setFiltersOpen] = useState(false)
-  const activeCount = activeFilterCount(filters, groupBy)
+  const activeCount = activeFilterCount(filters)
 
   function update<K extends keyof Filters>(key: K, value: Filters[K]) {
     onChange({ ...filters, [key]: value })
@@ -304,22 +299,6 @@ export function FilterBar({
     </>
   )
 
-  const groupBySelect = (
-    <FilterSelect
-      label="Grouping"
-      placeholder="No Grouping"
-      value={groupBy}
-      options={[
-        { value: 'sport', label: 'Sport' },
-        { value: 'rt', label: 'Round' },
-        { value: 'zone', label: 'Venue' },
-        { value: 'date', label: 'Date' },
-      ]}
-      active={!!groupBy}
-      onChange={(value) => onGroupByChange(value as GroupBy)}
-    />
-  )
-
   return (
     <>
       <div ref={sentinelRef} className="pointer-events-none m-0 h-px" aria-hidden />
@@ -329,8 +308,6 @@ export function FilterBar({
           {savedButton}
           <span className="flex-1" />
           {filterSelects}
-          <span className="flex-1" />
-          {groupBySelect}
         </div>
 
         {/* ─── Mobile: collapsible ─── */}
@@ -360,7 +337,6 @@ export function FilterBar({
           >
             <div className="grid grid-cols-2 gap-2 pt-1 pb-0.5 max-[400px]:grid-cols-1">
               {filterSelects}
-              {groupBySelect}
             </div>
           </Collapsible.Panel>
         </Collapsible.Root>

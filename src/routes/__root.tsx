@@ -70,7 +70,7 @@ function ErrorMessage({ heading, body }: { heading: string; body: string }) {
       <p className="text-ink3 mb-6 max-w-[420px] text-sm">{body}</p>
       <Link
         to="/"
-        search={{ ...DEFAULT_FILTERS, sortCol: 'agg', sortDir: 'desc', groupBy: '' }}
+        search={{ ...DEFAULT_FILTERS, sortCol: 'agg', sortDir: 'desc' }}
         className="border-border bg-surface2 text-ink2 hover:border-gold hover:text-gold inline-flex items-center gap-1.5 rounded-lg border px-4 py-2 text-sm transition-colors"
       >
         Back to home

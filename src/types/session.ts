@@ -75,8 +75,6 @@ export interface SortState {
   dir: SortDirection
 }
 
-export type GroupBy = '' | 'sport' | 'rt' | 'zone' | 'date'
-
 export interface Filters {
   sport: string[]
   round: string[]

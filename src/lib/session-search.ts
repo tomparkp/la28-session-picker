@@ -1,9 +1,8 @@
-import type { Filters, GroupBy, SortColumn, SortDirection, SortState } from '@/types/session'
+import type { Filters, SortColumn, SortDirection, SortState } from '@/types/session'
 
 export interface SessionRouteSearch extends Filters {
   sortCol: SortColumn
   sortDir: SortDirection
-  groupBy: GroupBy
   session?: string
 }
 
@@ -18,11 +17,6 @@ export const DEFAULT_FILTERS: Filters = {
 export const DEFAULT_SORT: SortState = {
   col: 'agg',
   dir: 'desc',
-}
-
-function validateGroupBy(value: unknown): GroupBy {
-  if (value === 'sport' || value === 'rt' || value === 'zone' || value === 'date') return value
-  return ''
 }
 
 function parseStringArray(value: unknown): string[] {
@@ -50,7 +44,6 @@ export function validateSessionSearch(search: Record<string, unknown>): SessionR
         ? sortCol
         : DEFAULT_SORT.col,
     sortDir: sortDir === 'asc' || sortDir === 'desc' ? sortDir : DEFAULT_SORT.dir,
-    groupBy: validateGroupBy(search.groupBy),
     session: typeof search.session === 'string' ? search.session : undefined,
   }
 }

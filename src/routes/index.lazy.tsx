@@ -14,7 +14,7 @@ import {
   routeSearchToSort,
   type SessionRouteSearch,
 } from '@/lib/session-search'
-import type { Filters, GroupBy, SortColumn } from '@/types/session'
+import type { Filters, SortColumn } from '@/types/session'
 
 export const Route = createLazyFileRoute('/')({ component: SessionPicker })
 
@@ -31,7 +31,6 @@ function SessionPicker() {
   const sessions = useMemo(() => pages.flatMap((page) => page.items), [pages])
   const filters = useMemo(() => routeSearchToFilters(search), [search])
   const sort = useMemo(() => routeSearchToSort(search), [search])
-  const groupBy = search.groupBy
   const selectedSessionId = search.session ?? null
   const sessionById = useMemo(
     () => new Map(sessions.map((session) => [session.id, session])),
@@ -111,13 +110,6 @@ function SessionPicker() {
     })
   }
 
-  function handleGroupByChange(nextGroupBy: GroupBy) {
-    updateSearch({
-      ...search,
-      groupBy: nextGroupBy,
-    })
-  }
-
   function handleSort(col: SortColumn) {
     updateSearch({
       ...search,
@@ -156,8 +148,6 @@ function SessionPicker() {
       <FilterBar
         filters={filters}
         onChange={handleFilterChange}
-        groupBy={groupBy}
-        onGroupByChange={handleGroupByChange}
         sports={firstPage.sports}
         zones={firstPage.zones}
         bookmarkCount={bookmarks.size}
