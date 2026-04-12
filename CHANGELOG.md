@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/tomparkp/la28-session-picker/compare/v1.1.1...v1.2.0) (2026-04-12)
+
+
+### Features
+
+* **filters:** add mobile sort dropdown ([#71](https://github.com/tomparkp/la28-session-picker/issues/71)) ([7f98e80](https://github.com/tomparkp/la28-session-picker/commit/7f98e809067721c0a16a325aee720d7bab9f611d))
+
 ## [1.1.1](https://github.com/tomparkp/la28-session-picker/compare/v1.1.0...v1.1.1) (2026-04-12)
 
 
