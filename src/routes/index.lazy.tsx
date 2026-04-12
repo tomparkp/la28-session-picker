@@ -5,6 +5,7 @@ import { startTransition, useEffect, useMemo, useRef, useState } from 'react'
 
 import { BookmarkPanel } from '@/components/BookmarkPanel'
 import { FilterBar } from '@/components/FilterBar'
+import { ScrollToTopButton } from '@/components/ScrollToTopButton'
 import { SessionDetail } from '@/components/SessionDetail'
 import { SessionTable } from '@/components/SessionTable'
 import { useBookmarks } from '@/hooks/useBookmarks'
@@ -210,6 +211,8 @@ function SessionPicker() {
           onSelectSessionId={handleSelectSessionId}
         />
       </div>
+
+      <ScrollToTopButton />
     </>
   )
 }
