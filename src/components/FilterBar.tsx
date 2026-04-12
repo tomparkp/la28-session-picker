@@ -33,8 +33,12 @@ const actionActiveCls = 'border-gold text-gold'
 const badgeCls =
   'flex size-[18px] items-center justify-center rounded-full bg-gold text-bg text-[0.6rem] font-bold'
 
+const selectPositionerCls = 'z-50'
+
 const selectPopupCls =
-  'z-50 max-h-[min(22rem,var(--available-height))] min-w-[var(--anchor-width)] overflow-y-auto rounded-md border border-border bg-surface py-1 shadow-2xl outline-none'
+  'flex max-h-[min(22rem,var(--available-height))] min-w-[var(--anchor-width)] flex-col overflow-hidden rounded-md border border-border bg-surface shadow-2xl outline-none'
+
+const selectListCls = 'flex-1 overflow-y-auto py-1'
 
 const selectItemCls =
   'grid cursor-default grid-cols-[0.75rem_1fr] items-center gap-2 px-2.5 py-1.5 text-[0.74rem] text-ink outline-none data-[highlighted]:bg-surface2 data-[selected]:text-gold'
@@ -57,12 +61,12 @@ interface FilterOption {
 }
 
 interface FilterComboboxProps {
-  value: string[]
+  value: string
   label: string
   placeholder: string
   options: readonly FilterOption[]
   active: boolean
-  onChange: (value: string[]) => void
+  onChange: (value: string) => void
 }
 
 interface FilterSelectProps {
@@ -76,24 +80,12 @@ interface FilterSelectProps {
 
 function activeFilterCount(filters: Filters): number {
   let count = 0
-  if (filters.sport.length > 0) count++
-  if (filters.round.length > 0) count++
-  if (filters.zone.length > 0) count++
+  if (filters.sport) count++
+  if (filters.round) count++
+  if (filters.zone) count++
   if (filters.score) count++
   if (filters.price) count++
   return count
-}
-
-function renderSelectedSummary(
-  value: string[],
-  placeholder: string,
-  options: readonly FilterOption[],
-): string {
-  if (value.length === 0) return placeholder
-
-  const firstLabel = options.find((option) => option.value === value[0])?.label ?? value[0]
-  const suffix = value.length > 1 ? ` (+${value.length - 1} more)` : ''
-  return `${firstLabel}${suffix}`
 }
 
 function FilterCombobox({
@@ -108,20 +100,17 @@ function FilterCombobox({
     <Combobox.Root
       items={options}
       modal={false}
-      multiple
-      value={value}
-      onValueChange={(nextValue) => onChange(Array.isArray(nextValue) ? nextValue.map(String) : [])}
+      itemToStringLabel={(item: FilterOption) => item.label}
+      value={value || null}
+      onValueChange={(nextValue) => onChange(typeof nextValue === 'string' ? nextValue : '')}
     >
       <Combobox.Trigger className={cn(selectCls, active && activeCls, selectTriggerCls)}>
         <span className={selectValueCls}>
           <Combobox.Value>
-            {(selectedValue: string[]) =>
-              renderSelectedSummary(
-                Array.isArray(selectedValue) ? selectedValue : [],
-                placeholder,
-                options,
-              )
-            }
+            {(selectedValue: string | null) => {
+              if (!selectedValue) return <span className="text-ink3">{placeholder}</span>
+              return options.find((o) => o.value === selectedValue)?.label ?? selectedValue
+            }}
           </Combobox.Value>
         </span>
         <span className="text-ink3 shrink-0">
@@ -129,7 +118,7 @@ function FilterCombobox({
         </span>
       </Combobox.Trigger>
       <Combobox.Portal>
-        <Combobox.Positioner sideOffset={4}>
+        <Combobox.Positioner sideOffset={4} className={selectPositionerCls}>
           <Combobox.Popup className={selectPopupCls}>
             <div className={popupSearchRowCls}>
               <Combobox.Input
@@ -144,18 +133,18 @@ function FilterCombobox({
                 <X size={12} />
               </Combobox.Clear>
             </div>
-            <Combobox.Empty className="px-2.5 py-2 text-[0.72rem] text-ink3">
+            <Combobox.Empty className="px-2.5 py-2 text-[0.72rem] text-ink3 empty:hidden">
               No matches.
             </Combobox.Empty>
-            <Combobox.List>
-              {options.map((item) => (
+            <Combobox.List className={selectListCls}>
+              {(item: FilterOption) => (
                 <Combobox.Item key={item.value} value={item.value} className={selectItemCls}>
                   <Combobox.ItemIndicator className="col-start-1 text-gold">
                     ✓
                   </Combobox.ItemIndicator>
                   <span className="col-start-2">{item.label}</span>
                 </Combobox.Item>
-              ))}
+              )}
             </Combobox.List>
           </Combobox.Popup>
         </Combobox.Positioner>
@@ -179,7 +168,7 @@ function FilterSelect({ value, label, placeholder, options, active, onChange }: 
         </Select.Icon>
       </Select.Trigger>
       <Select.Portal>
-        <Select.Positioner alignItemWithTrigger={false} sideOffset={4}>
+        <Select.Positioner alignItemWithTrigger={false} sideOffset={4} className={selectPositionerCls}>
           <Select.Popup className={selectPopupCls}>
             {active && (
               <div className="border-b border-border px-2.5 py-1.5">
@@ -193,7 +182,7 @@ function FilterSelect({ value, label, placeholder, options, active, onChange }: 
                 </button>
               </div>
             )}
-            <Select.List>
+            <Select.List className={selectListCls}>
               {options.map((item) => (
                 <Select.Item
                   key={item.value}
@@ -251,7 +240,7 @@ export function FilterBar({
         placeholder="All Sports"
         value={filters.sport}
         options={sports.map((s) => ({ value: s, label: s }))}
-        active={filters.sport.length > 0}
+        active={!!filters.sport}
         onChange={(value) => update('sport', value)}
       />
       <FilterCombobox
@@ -259,7 +248,7 @@ export function FilterBar({
         placeholder="All Rounds"
         value={filters.round}
         options={roundTypes.map((r) => ({ value: r, label: r }))}
-        active={filters.round.length > 0}
+        active={!!filters.round}
         onChange={(value) => update('round', value)}
       />
       <FilterCombobox
@@ -267,7 +256,7 @@ export function FilterBar({
         placeholder="All Venues"
         value={filters.zone}
         options={zones.map((z) => ({ value: z, label: z }))}
-        active={filters.zone.length > 0}
+        active={!!filters.zone}
         onChange={(value) => update('zone', value)}
       />
       <FilterSelect

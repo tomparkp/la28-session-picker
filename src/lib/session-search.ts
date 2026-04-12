@@ -7,9 +7,9 @@ export interface SessionRouteSearch extends Filters {
 }
 
 export const DEFAULT_FILTERS: Filters = {
-  sport: [],
-  round: [],
-  zone: [],
+  sport: '',
+  round: '',
+  zone: '',
   score: '',
   price: '',
 }
@@ -19,10 +19,8 @@ export const DEFAULT_SORT: SortState = {
   dir: 'desc',
 }
 
-function parseStringArray(value: unknown): string[] {
-  if (typeof value === 'string') return value ? value.split(',') : []
-  if (Array.isArray(value)) return value.filter((v): v is string => typeof v === 'string')
-  return []
+function parseString(value: unknown): string {
+  return typeof value === 'string' ? value : ''
 }
 
 export function validateSessionSearch(search: Record<string, unknown>): SessionRouteSearch {
@@ -30,9 +28,9 @@ export function validateSessionSearch(search: Record<string, unknown>): SessionR
   const sortDir = search.sortDir
 
   return {
-    sport: parseStringArray(search.sport),
-    round: parseStringArray(search.round),
-    zone: parseStringArray(search.zone),
+    sport: parseString(search.sport),
+    round: parseString(search.round),
+    zone: parseString(search.zone),
     score: typeof search.score === 'string' ? search.score : DEFAULT_FILTERS.score,
     price: typeof search.price === 'string' ? search.price : DEFAULT_FILTERS.price,
     sortCol:

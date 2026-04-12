@@ -1,10 +1,19 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, stripSearchParams } from '@tanstack/react-router'
 
 import { sessionDetailQueryOptions, sessionsInfiniteQueryOptions } from '@/lib/session-query'
-import { validateSessionSearch } from '@/lib/session-search'
+import { DEFAULT_FILTERS, DEFAULT_SORT, validateSessionSearch } from '@/lib/session-search'
 
 export const Route = createFileRoute('/')({
   validateSearch: validateSessionSearch,
+  search: {
+    middlewares: [
+      stripSearchParams({
+        ...DEFAULT_FILTERS,
+        sortCol: DEFAULT_SORT.col,
+        sortDir: DEFAULT_SORT.dir,
+      }),
+    ],
+  },
   loaderDeps: ({ search }) => search,
   loader: async ({ context, deps }) => {
     await context.queryClient.prefetchInfiniteQuery(sessionsInfiniteQueryOptions(deps))

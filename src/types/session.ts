@@ -76,9 +76,9 @@ export interface SortState {
 }
 
 export interface Filters {
-  sport: string[]
-  round: string[]
-  zone: string[]
+  sport: string
+  round: string
+  zone: string
   score: string
   price: string
 }

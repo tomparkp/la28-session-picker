@@ -11,9 +11,9 @@ export function filterSessions(sessions: Session[], filters: Filters): Session[]
   const scoreMin = filters.score ? Number(filters.score) : 0
 
   return sessions.filter((e) => {
-    if (filters.sport.length > 0 && !filters.sport.includes(e.sport)) return false
-    if (filters.round.length > 0 && !filters.round.includes(e.rt)) return false
-    if (filters.zone.length > 0 && !filters.zone.includes(e.zone)) return false
+    if (filters.sport && filters.sport !== e.sport) return false
+    if (filters.round && filters.round !== e.rt) return false
+    if (filters.zone && filters.zone !== e.zone) return false
     if (e.pLo < pn || e.pLo > px) return false
     if (scoreMin && e.agg < scoreMin) return false
     return true
