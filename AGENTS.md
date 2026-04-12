@@ -1,8 +1,6 @@
 # AGENTS.md
 
-This file provides guidance to Codex when working with code in this repository. It is the
-canonical AI agent instructions file for this repo; remove or avoid duplicating these
-instructions in tool-specific files such as `CLAUDE.md` or Cursor-only config.
+This file provides guidance to AI coding agents working with code in this repository.
 
 ## Commands
 
