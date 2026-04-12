@@ -13,11 +13,13 @@ export interface ContentSource {
   source?: string
 }
 
-export type ContentProvider = 'perplexity'
+export type ContentProvider = 'perplexity' | 'anthropic' | 'hybrid'
 
 export interface ContentMeta {
   provider: ContentProvider
-  model: string
+  writingModel?: string
+  groundingModel?: string
+  model?: string
   generatedAt: string
   sources?: ContentSource[]
 }
