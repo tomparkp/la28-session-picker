@@ -265,7 +265,7 @@ export function SessionTable({
   selectedSessionId,
   onSelectSessionId,
 }: SessionTableProps) {
-  const isMobile = useMediaQuery('(max-width: 539px)')
+  const isMobile = useMediaQuery('(max-width: 767px)')
 
   const tableHeader = (
     <tr>
