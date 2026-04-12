@@ -9,6 +9,7 @@
   "insertFinalNewline": true,
   "sortImports": true,
   "sortTailwindcss": true,
+  "ignorePatterns": [".agents/**", "src/routeTree.gen.ts"],
   "overrides": [
     {
       "files": ["*.test.ts", "*.test.tsx"],

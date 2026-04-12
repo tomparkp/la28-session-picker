@@ -58,9 +58,7 @@ export const reportIssue = createServerFn({ method: 'POST' })
     const resend = new Resend(apiKey)
 
     const replyFrom = data.email || 'anonymous'
-    const subject = data.sessionName
-      ? `[LA28] Issue: ${data.sessionName}`
-      : '[LA28] Issue report'
+    const subject = data.sessionName ? `[LA28] Issue: ${data.sessionName}` : '[LA28] Issue report'
 
     const metaLines: string[] = []
     if (data.sessionName) metaLines.push(`Session: ${data.sessionName}`)

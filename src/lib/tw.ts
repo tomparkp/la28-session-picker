@@ -1,4 +1,5 @@
-const ROUND_BASE = 'inline-block rounded-[10px] px-[7px] py-[2px] text-[0.6rem] font-semibold whitespace-nowrap tracking-[0.02em]'
+const ROUND_BASE =
+  'inline-block rounded-[10px] px-[7px] py-[2px] text-[0.6rem] font-semibold whitespace-nowrap tracking-[0.02em]'
 
 const roundMap: Record<string, string> = {
   Final: `${ROUND_BASE} bg-[rgba(212,168,67,0.15)] text-gold2`,
@@ -14,7 +15,8 @@ export function roundTagClasses(rt: string): string {
   return roundMap[rt] ?? `${ROUND_BASE} bg-surface3 text-ink3`
 }
 
-const PILL_BASE = 'inline-block min-w-[32px] rounded-lg px-1.5 py-0.5 text-center text-[0.72rem] font-bold tabular-nums -tracking-[0.02em]'
+const PILL_BASE =
+  'inline-block min-w-[32px] rounded-lg px-1.5 py-0.5 text-center text-[0.72rem] font-bold tabular-nums -tracking-[0.02em]'
 
 export function ratingClasses(agg: number): string {
   if (agg >= 8) return `${PILL_BASE} bg-[rgba(61,186,111,0.12)] text-[#3dba6f]`

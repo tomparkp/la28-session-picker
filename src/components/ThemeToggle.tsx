@@ -31,7 +31,7 @@ export function ThemeToggle() {
 
   return (
     <button
-      className="absolute top-4 right-5 size-9 border border-border bg-surface rounded-lg cursor-pointer flex items-center justify-center transition-all duration-150 z-5 text-ink2 hover:border-gold hover:bg-surface2 hover:text-gold max-md:top-3 max-md:right-3"
+      className="border-border bg-surface text-ink2 hover:border-gold hover:bg-surface2 hover:text-gold absolute top-4 right-5 z-5 flex size-9 cursor-pointer items-center justify-center rounded-lg border transition-all duration-150 max-md:top-3 max-md:right-3"
       onClick={toggle}
       title="Toggle light/dark mode"
     >

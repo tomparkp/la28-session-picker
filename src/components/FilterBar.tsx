@@ -133,13 +133,13 @@ function FilterCombobox({
                 <X size={12} />
               </Combobox.Clear>
             </div>
-            <Combobox.Empty className="px-2.5 py-2 text-[0.72rem] text-ink3 empty:hidden">
+            <Combobox.Empty className="text-ink3 px-2.5 py-2 text-[0.72rem] empty:hidden">
               No matches.
             </Combobox.Empty>
             <Combobox.List className={selectListCls}>
               {(item: FilterOption) => (
                 <Combobox.Item key={item.value} value={item.value} className={selectItemCls}>
-                  <Combobox.ItemIndicator className="col-start-1 text-gold">
+                  <Combobox.ItemIndicator className="text-gold col-start-1">
                     ✓
                   </Combobox.ItemIndicator>
                   <span className="col-start-2">{item.label}</span>
@@ -168,10 +168,14 @@ function FilterSelect({ value, label, placeholder, options, active, onChange }: 
         </Select.Icon>
       </Select.Trigger>
       <Select.Portal>
-        <Select.Positioner alignItemWithTrigger={false} sideOffset={4} className={selectPositionerCls}>
+        <Select.Positioner
+          alignItemWithTrigger={false}
+          sideOffset={4}
+          className={selectPositionerCls}
+        >
           <Select.Popup className={selectPopupCls}>
             {active && (
-              <div className="border-b border-border px-2.5 py-1.5">
+              <div className="border-border border-b px-2.5 py-1.5">
                 <button
                   type="button"
                   onClick={() => onChange('')}
@@ -184,12 +188,8 @@ function FilterSelect({ value, label, placeholder, options, active, onChange }: 
             )}
             <Select.List className={selectListCls}>
               {options.map((item) => (
-                <Select.Item
-                  key={item.value}
-                  value={item.value}
-                  className={selectItemCls}
-                >
-                  <Select.ItemIndicator className="col-start-1 text-gold">✓</Select.ItemIndicator>
+                <Select.Item key={item.value} value={item.value} className={selectItemCls}>
+                  <Select.ItemIndicator className="text-gold col-start-1">✓</Select.ItemIndicator>
                   <Select.ItemText className="col-start-2">{item.label}</Select.ItemText>
                 </Select.Item>
               ))}

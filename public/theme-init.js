@@ -1,4 +1,4 @@
-(function () {
+;(function () {
   try {
     var stored = window.localStorage.getItem('la28_unofficial_session_picker_theme')
     if (stored === 'light') {

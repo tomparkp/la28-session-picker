@@ -392,7 +392,11 @@ function buildGroundingPrompt(session: Session, sport: string): string {
   return prompt
 }
 
-function buildWritingPrompt(sessions: Session[], sport: string, grounding: Map<string, GroundingData>): string {
+function buildWritingPrompt(
+  sessions: Session[],
+  sport: string,
+  grounding: Map<string, GroundingData>,
+): string {
   let prompt = buildSportContext(sport)
   prompt += `### Sessions (${sessions.length}) — write for each\n\n`
   for (const s of sessions) {
@@ -449,9 +453,15 @@ async function fetchGrounding(
       const body = (await response.json()) as PerplexityResponse
       const text = body.choices?.[0]?.message?.content
       if (!text) throw new Error('No Perplexity message content')
-      const parsed = JSON.parse(text) as { id: string; groundingFacts?: unknown; relatedNews?: unknown }
+      const parsed = JSON.parse(text) as {
+        id: string
+        groundingFacts?: unknown
+        relatedNews?: unknown
+      }
       const facts = Array.isArray(parsed.groundingFacts)
-        ? parsed.groundingFacts.filter((f): f is string => typeof f === 'string' && f.trim().length > 0)
+        ? parsed.groundingFacts.filter(
+            (f): f is string => typeof f === 'string' && f.trim().length > 0,
+          )
         : []
       return {
         id: session.id,
@@ -461,7 +471,9 @@ async function fetchGrounding(
       }
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
-      console.error(`    Grounding attempt ${attempt}/${MAX_RETRIES} failed for ${session.id}: ${msg}`)
+      console.error(
+        `    Grounding attempt ${attempt}/${MAX_RETRIES} failed for ${session.id}: ${msg}`,
+      )
       if (attempt < MAX_RETRIES) await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * attempt))
     }
   }
@@ -615,7 +627,12 @@ async function main() {
     sportFilter,
     forceAll,
   )
-  const writingCheckpoint = loadWritingCheckpoint(writingPath, anthropicModel, sportFilter, forceAll)
+  const writingCheckpoint = loadWritingCheckpoint(
+    writingPath,
+    anthropicModel,
+    sportFilter,
+    forceAll,
+  )
   console.log(
     `Checkpoints: ${Object.keys(groundingCheckpoint.results).length} grounded, ${Object.keys(writingCheckpoint.results).length} written`,
   )

@@ -36,7 +36,7 @@ To add a new route, create a file in `src/routes/` — TanStack will automatical
 ```tsx
 import { Link } from '@tanstack/react-router'
 
-<Link to="/venues">Venues</Link>
+;<Link to="/venues">Venues</Link>
 ```
 
 The root layout lives in `src/routes/__root.tsx`. More info in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).

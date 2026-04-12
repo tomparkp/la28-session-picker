@@ -1,10 +1,5 @@
 import { Drawer } from '@base-ui/react/drawer'
-import {
-  type PointerEvent as ReactPointerEvent,
-  type ReactNode,
-  useRef,
-  useState,
-} from 'react'
+import { type PointerEvent as ReactPointerEvent, type ReactNode, useRef, useState } from 'react'
 
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { cn } from '@/lib/cn'

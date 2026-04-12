@@ -4,10 +4,8 @@
   "compatibility_date": "2026-04-09",
   "compatibility_flags": ["nodejs_compat"],
   "main": "@tanstack/react-start/server-entry",
-  "routes": [
-    { "pattern": "la28.tompark.dev", "custom_domain": true }
-  ],
+  "routes": [{ "pattern": "la28.tompark.dev", "custom_domain": true }],
   "observability": {
-    "enabled": true
-  }
+    "enabled": true,
+  },
 }

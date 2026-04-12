@@ -25,8 +25,7 @@ Object.defineProperty(window, 'scrollTo', {
   configurable: true,
   writable: true,
   value: (xOrOptions: number | ScrollToOptions, y?: number) => {
-    const top =
-      typeof xOrOptions === 'object' ? (xOrOptions.top ?? 0) : (y ?? 0)
+    const top = typeof xOrOptions === 'object' ? (xOrOptions.top ?? 0) : (y ?? 0)
 
     Object.defineProperty(window, 'scrollY', {
       configurable: true,

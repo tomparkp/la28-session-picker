@@ -1,10 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import {
-  getRelatedNewsForSession,
-  relatedNewsMatchesSession,
-  resolveRelatedNewsForSession,
-} from '@/lib/related-news'
+import { getRelatedNewsForSession, relatedNewsMatchesSession, resolveRelatedNewsForSession } from '@/lib/related-news'
 import type { RelatedNews, SessionWithContent } from '@/types/session'
 
 function makeSession(overrides: Partial<SessionWithContent> = {}): SessionWithContent {
@@ -52,9 +48,7 @@ describe('related news matching', () => {
       makeSession({ id: 'SWM01', sport: 'Swimming', name: 'SWM01 Swimming' }),
     )
 
-    expect(basketballNews.map((item) => item.id)).toContain(
-      'basketball-lebron-james-la28-2025-11-18',
-    )
+    expect(basketballNews.map((item) => item.id)).toContain('basketball-lebron-james-la28-2025-11-18')
     expect(swimmingNews).toEqual([])
   })
 
@@ -62,9 +56,7 @@ describe('related news matching', () => {
     const news = makeNews({ eventKeywords: ["Men's"] })
 
     expect(relatedNewsMatchesSession(news, makeSession())).toBe(true)
-    expect(relatedNewsMatchesSession(news, makeSession({ desc: "Women's Group Phase" }))).toBe(
-      false,
-    )
+    expect(relatedNewsMatchesSession(news, makeSession({ desc: "Women's Group Phase" }))).toBe(false)
   })
 
   it('restricts matches by round type when configured', () => {

@@ -114,7 +114,7 @@ export function ReportIssueDialog({
               <label className="block">
                 <span className="text-ink2 text-[0.76rem] font-semibold tracking-[0.04em] uppercase">
                   Email{' '}
-                  <span className="text-ink3 font-normal normal-case tracking-normal">
+                  <span className="text-ink3 font-normal tracking-normal normal-case">
                     (optional)
                   </span>
                 </span>
@@ -124,7 +124,7 @@ export function ReportIssueDialog({
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   autoComplete="email"
-                  className="border-border bg-surface2 text-ink placeholder:text-ink3 focus:border-gold focus:ring-gold/30 mt-1.5 w-full rounded-md border px-3 py-2 text-[0.88rem] outline-none transition-colors focus:ring-2"
+                  className="border-border bg-surface2 text-ink placeholder:text-ink3 focus:border-gold focus:ring-gold/30 mt-1.5 w-full rounded-md border px-3 py-2 text-[0.88rem] transition-colors outline-none focus:ring-2"
                 />
               </label>
 
@@ -139,7 +139,7 @@ export function ReportIssueDialog({
                   rows={5}
                   maxLength={5000}
                   placeholder="What did you notice?"
-                  className="border-border bg-surface2 text-ink placeholder:text-ink3 focus:border-gold focus:ring-gold/30 mt-1.5 w-full resize-y rounded-md border px-3 py-2 text-[0.88rem] outline-none transition-colors focus:ring-2"
+                  className="border-border bg-surface2 text-ink placeholder:text-ink3 focus:border-gold focus:ring-gold/30 mt-1.5 w-full resize-y rounded-md border px-3 py-2 text-[0.88rem] transition-colors outline-none focus:ring-2"
                 />
               </label>
 
