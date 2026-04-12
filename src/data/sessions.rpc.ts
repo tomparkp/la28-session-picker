@@ -34,9 +34,7 @@ function normalizeSort(input: unknown): SortState {
   const dir = value.dir
 
   const sortCol: SortColumn =
-    col === 'name' || col === 'date' || col === 'venue' || col === 'pLo' || col === 'agg'
-      ? col
-      : 'agg'
+    col === 'name' || col === 'date' || col === 'venue' || col === 'agg' ? col : 'agg'
   const sortDir: SortDirection = dir === 'asc' || dir === 'desc' ? dir : 'desc'
 
   return {

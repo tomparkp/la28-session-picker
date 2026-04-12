@@ -34,11 +34,7 @@ export function validateSessionSearch(search: Record<string, unknown>): SessionR
     score: typeof search.score === 'string' ? search.score : DEFAULT_FILTERS.score,
     price: typeof search.price === 'string' ? search.price : DEFAULT_FILTERS.price,
     sortCol:
-      sortCol === 'name' ||
-      sortCol === 'date' ||
-      sortCol === 'venue' ||
-      sortCol === 'pLo' ||
-      sortCol === 'agg'
+      sortCol === 'name' || sortCol === 'date' || sortCol === 'venue' || sortCol === 'agg'
         ? sortCol
         : DEFAULT_SORT.col,
     sortDir: sortDir === 'asc' || sortDir === 'desc' ? sortDir : DEFAULT_SORT.dir,

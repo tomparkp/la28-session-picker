@@ -70,7 +70,7 @@ export interface SessionWithContent extends Session, SessionContent {}
 
 export type RoundType = 'Final' | 'Semi' | 'QF' | 'Prelim' | 'Bronze' | 'Ceremony' | 'N/A'
 
-export type SortColumn = 'name' | 'date' | 'venue' | 'pLo' | 'agg'
+export type SortColumn = 'name' | 'date' | 'venue' | 'agg'
 export type SortDirection = 'asc' | 'desc'
 
 export interface SortState {
