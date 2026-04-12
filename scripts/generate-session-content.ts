@@ -36,10 +36,10 @@ const MAX_NEWS_ITEMS = 10
 const WRITING_BATCH_SIZE = 15
 // Conservative concurrency defaults. Perplexity sonar-pro is typically 50 req/min;
 // 5 in flight averaging ~12s/call ≈ 25 req/min, well under the limit.
-// Anthropic sonnet-4.5 lower-tier TPM is the binding constraint for batched writing;
-// 3 concurrent batches keeps us under typical 40k input TPM.
+// Anthropic tier-1 output TPM (8k/min on sonnet-4.5) is the binding constraint;
+// 2 concurrent writing batches (~2.5k output each) stays safely under the cap.
 const DEFAULT_GROUNDING_CONCURRENCY = 5
-const DEFAULT_WRITING_CONCURRENCY = 3
+const DEFAULT_WRITING_CONCURRENCY = 2
 
 interface GroundingData {
   id: string
