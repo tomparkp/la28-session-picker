@@ -309,11 +309,13 @@ function normalizeRelatedNews(items: unknown, sessionId: string): RelatedNews[] 
       : []
 
     if (!title || !sourceUrl || !publishedDate) continue
+    let parsedUrl: URL
     try {
-      new URL(sourceUrl)
+      parsedUrl = new URL(sourceUrl)
     } catch {
       continue
     }
+    if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') continue
 
     const key = sourceUrl.toLowerCase()
     if (seen.has(key)) continue
@@ -323,7 +325,7 @@ function normalizeRelatedNews(items: unknown, sessionId: string): RelatedNews[] 
       id: `${sessionId}-n${index}`,
       title,
       summary,
-      sourceName: sourceName || new URL(sourceUrl).hostname,
+      sourceName: sourceName || parsedUrl.hostname,
       sourceUrl,
       publishedDate,
       tags,

@@ -39,10 +39,20 @@ export function resolveRelatedNewsForSession(
     .slice(0, limit)
 }
 
+function hasSafeUrlScheme(sourceUrl: string): boolean {
+  try {
+    const { protocol } = new URL(sourceUrl)
+    return protocol === 'http:' || protocol === 'https:'
+  } catch {
+    return false
+  }
+}
+
 function dedupeByUrl(items: RelatedNews[]): RelatedNews[] {
   const seen = new Set<string>()
   const result: RelatedNews[] = []
   for (const item of items) {
+    if (!hasSafeUrlScheme(item.sourceUrl)) continue
     const key = item.sourceUrl.trim().toLowerCase()
     if (seen.has(key)) continue
     seen.add(key)

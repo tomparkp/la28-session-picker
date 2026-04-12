@@ -12,8 +12,6 @@ import { DEFAULT_FILTERS } from '../lib/session-search'
 
 import appCss from '../styles.css?url'
 
-const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('la28_unofficial_session_picker_theme');if(stored==='light'){document.documentElement.setAttribute('data-theme','light')}else if(stored==='dark'){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();`
-
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -46,7 +44,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        <script src="/theme-init.js" />
         <HeadContent />
       </head>
       <body>
@@ -80,7 +78,11 @@ function ErrorMessage({ heading, body }: { heading: string; body: string }) {
 }
 
 function RootError({ error }: ErrorComponentProps) {
-  console.error(error)
+  if (import.meta.env.DEV) {
+    console.error(error)
+  } else {
+    console.error('Root error:', error instanceof Error ? error.message : 'Unknown error')
+  }
   return (
     <ErrorMessage
       heading="Something went wrong"

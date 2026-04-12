@@ -61,16 +61,22 @@ function normalizePageInput(input: unknown): Required<SessionsPageInput> {
   }
 }
 
+const SESSION_ID_PATTERN = /^[a-zA-Z0-9_-]{1,64}$/
+
+function isValidSessionId(value: unknown): value is string {
+  return typeof value === 'string' && SESSION_ID_PATTERN.test(value)
+}
+
 function normalizeSessionId(input: unknown): string {
   const value = (input ?? {}) as Record<string, unknown>
-  return typeof value.sessionId === 'string' ? value.sessionId : ''
+  return isValidSessionId(value.sessionId) ? value.sessionId : ''
 }
 
 function normalizeSessionIds(input: unknown): string[] {
   const value = (input ?? {}) as Record<string, unknown>
   const ids = Array.isArray(value.ids) ? value.ids : []
 
-  return ids.filter((id): id is string => typeof id === 'string').slice(0, 200)
+  return ids.filter(isValidSessionId).slice(0, 200)
 }
 
 function applySessionCacheHeaders() {
