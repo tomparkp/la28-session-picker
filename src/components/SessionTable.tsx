@@ -273,7 +273,7 @@ export function SessionTable({
       <SortHeader label="Date" col="date" sort={sort} onSort={onSort} />
       <SortHeader label="Venue" col="venue" sort={sort} onSort={onSort} />
       <th className={thBase}>Zone</th>
-      <SortHeader label="Price" col="pLo" sort={sort} onSort={onSort} />
+      <th className={thBase}>Price</th>
       <th className={thBase}>Round</th>
       <SortHeader
         label="AI Rating"

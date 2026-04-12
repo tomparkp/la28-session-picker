@@ -1,12 +1,20 @@
 export function parseStartMinutes(timeStr: string): number {
-  const m = timeStr.match(/(\d+):(\d+)\s*(AM|PM)/)
-  if (!m) return 720
-  let hour = parseInt(m[1])
-  const min = parseInt(m[2])
-  const ampm = m[3]
-  if (ampm === 'PM' && hour !== 12) hour += 12
-  else if (ampm === 'AM' && hour === 12) hour = 0
-  return hour * 60 + min
+  const ampmMatch = timeStr.match(/(\d+):(\d+)\s*(AM|PM)/)
+  if (ampmMatch) {
+    let hour = parseInt(ampmMatch[1])
+    const min = parseInt(ampmMatch[2])
+    const ampm = ampmMatch[3]
+    if (ampm === 'PM' && hour !== 12) hour += 12
+    else if (ampm === 'AM' && hour === 12) hour = 0
+    return hour * 60 + min
+  }
+  const h24Match = timeStr.match(/(\d{1,2}):(\d{2})/)
+  if (h24Match) {
+    const hour = parseInt(h24Match[1])
+    const min = parseInt(h24Match[2])
+    return hour * 60 + min
+  }
+  return 720
 }
 
 export function fmtTime(time: string): string {

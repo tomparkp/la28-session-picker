@@ -31,11 +31,6 @@ export function sortSessions(sessions: Session[], sort: SortState): Session[] {
       vb = b.agg ?? 0
       return sort.dir === 'asc' ? va - vb : vb - va
     }
-    if (sort.col === 'pLo') {
-      va = a.pLo ?? 9999
-      vb = b.pLo ?? 9999
-      return sort.dir === 'asc' ? va - vb : vb - va
-    }
     if (sort.col === 'date') {
       const cmp = a.dk.localeCompare(b.dk)
       const result = cmp !== 0 ? cmp : parseStartMinutes(a.time) - parseStartMinutes(b.time)
