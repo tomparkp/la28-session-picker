@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/tomparkp/la28-session-picker/compare/v1.1.0...v1.1.1) (2026-04-12)
+
+
+### Bug Fixes
+
+* **sort:** include time in date sort and remove price sort ([#69](https://github.com/tomparkp/la28-session-picker/issues/69)) ([b8eecd9](https://github.com/tomparkp/la28-session-picker/commit/b8eecd969fcf6228a27f64a7c86fbe9018543033))
+
 ## [1.1.0](https://github.com/tomparkp/la28-session-picker/compare/v1.0.0...v1.1.0) (2026-04-12)
 
 
