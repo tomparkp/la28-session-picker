@@ -50,8 +50,17 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         <Nav />
         {children}
-        <footer className="text-ink3 py-6 text-center text-xs">
-          Made with love and electricity in Los Angeles. ☀️
+        <footer className="text-ink3 flex flex-col items-center gap-2 py-6 text-center text-xs">
+          <div>Made with love and electricity in Los Angeles. ☀️</div>
+          <div className="flex items-center gap-3">
+            <Link to="/privacy" className="hover:text-gold transition-colors">
+              Privacy
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link to="/terms" className="hover:text-gold transition-colors">
+              Terms
+            </Link>
+          </div>
         </footer>
         <Scripts />
       </body>
