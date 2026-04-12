@@ -1016,119 +1016,624 @@
     "potentialContenders": []
   },
   "SWA01": {
-    "blurb": "The technical routine is all precision and difficulty, where a single timing error between partners can shatter Olympic dreams. This is your chance to see artistic swimming up close before the crowds and prices explode for the finals.",
+    "blurb": "The duet technical routine is artistic swimming's precision exam — two swimmers executing required elements with no room for improvisation. Judges scrutinize every lift, spin, and vertical hold against exacting standards.\n\nChina swept Paris duet gold and arrives as the reigning World Cup champions. Spain and Japan have emerged as consistent podium threats since 2025, while the USA earned Paris medals and will lean into home crowd energy.\n\nThe Long Beach Aquatics Center puts you poolside in morning light, close enough to see the synchronization unfold. Prelims are your accessible entry point to a sport that rewards repeat viewing — the more you watch, the more you see.",
+    "potentialContendersIntro": "China's Wang Liuyi and Wang Qianyi won Paris 2024 duet technical gold. Qualification begins at the 2027 World Championships, so LA28 rosters remain unconfirmed, but recent form suggests likely contenders.",
     "potentialContenders": [
       {
-        "name": "Chen Yuxi / Shi Tingmao",
+        "name": "Wang Liuyi",
         "country": "CHN",
-        "note": "Paris champions bringing their flawless timing to LA's pool."
+        "note": "Paris 2024 duet technical gold medalist with 276.79 points"
       },
       {
-        "name": "Kate Shortman / Isabelle Thorpe",
-        "country": "GBR",
-        "note": "Britain's breakthrough duo looking to ride momentum from European success."
+        "name": "Wang Qianyi",
+        "country": "CHN",
+        "note": "Paris 2024 duet technical gold medalist, part of China's dominant run"
       },
       {
-        "name": "Jaime Czarkowski / Jacklyn Luu",
-        "country": "USA",
-        "note": "Home crowd darlings with technical precision that could surprise the field."
+        "name": "Spain Duet",
+        "country": "ESP",
+        "note": "Consistent podium finishes following 2025 World Cup"
+      },
+      {
+        "name": "Japan Duet",
+        "country": "JPN",
+        "note": "Rising program after strong 2025 World Cup showing"
       }
-    ]
+    ],
+    "relatedNews": [
+      {
+        "id": "SWA01-n0",
+        "title": "Artistic swimming at the 2028 Summer Olympics",
+        "summary": "Confirms SWA01 session details including date, time, venue for Women's Duet Technical prelim at Long Beach Aquatics Center.",
+        "sourceName": "Wikipedia",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Artistic_swimming_at_the_2028_Summer_Olympics",
+        "publishedDate": "2026-04-12",
+        "tags": [
+          "la28-schedule",
+          "venue",
+          "duet-technical"
+        ]
+      },
+      {
+        "id": "SWA01-n1",
+        "title": "Paris World Cup kicks off artistic swimming's journey to LA 2028",
+        "summary": "Announces 2025 Paris World Cup featuring Paris 2024 medallists from USA and Spain as key step toward LA28 qualification.",
+        "sourceName": "World Aquatics",
+        "sourceUrl": "https://www.worldaquatics.com/news/4223546/artistic-swimming-paris-world-cup-2025-los-angeles-2028-olympics",
+        "publishedDate": "2025-02-28",
+        "tags": [
+          "world-cup-2025",
+          "usa",
+          "spain",
+          "la28-path"
+        ]
+      },
+      {
+        "id": "SWA01-n2",
+        "title": "The Artistic Swimming Qualification Pathway for the LA 2028 Olympics",
+        "summary": "Details LA28 qualification system for duets, including top 5 at 2027 Worlds and final 3 at 2028 Super Final, with age eligibility born by 2014.",
+        "sourceName": "Inside Synchro",
+        "sourceUrl": "https://insidesynchro.org/2026/01/08/the-artistic-swimming-qualification-pathway-for-the-la-2028-olympics/",
+        "publishedDate": "2026-01-08",
+        "tags": [
+          "qualification",
+          "duet",
+          "la28"
+        ]
+      },
+      {
+        "id": "SWA01-n3",
+        "title": "Artistic Swimming Olympics - Rules, History & Road to LA 2028",
+        "summary": "Identifies China as 2025 World Cup champions, with Spain and Japan as strong contenders post-Paris 2024.",
+        "sourceName": "Top End Sports",
+        "sourceUrl": "https://www.topendsports.com/events/summer/sports/synchronized-swimming.htm",
+        "publishedDate": "2026-04-12",
+        "tags": [
+          "china",
+          "spain",
+          "japan",
+          "world-leaders"
+        ]
+      }
+    ],
+    "contentMeta": {
+      "provider": "hybrid",
+      "groundingModel": "sonar-pro",
+      "writingModel": "claude-sonnet-4-5-20250929",
+      "generatedAt": "2026-04-12T13:39:02.441Z",
+      "sources": [
+        {
+          "title": "Artistic swimming at the 2028 Summer Olympics - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Artistic_swimming_at_the_2028_Summer_Olympics",
+          "date": "2024-08-11",
+          "lastUpdated": "2026-01-22",
+          "snippet": "25–29 July 2028. No. of events, 2 (1 mixed, 1 women). Competitors, 96 from 18 nations. ← 2024 · 2032 →. Several significant changes were instituted in the ...",
+          "source": "web"
+        },
+        {
+          "title": "Paris World Cup kicks off artistic swimming's journey to LA 2028",
+          "url": "https://www.worldaquatics.com/news/4223546/artistic-swimming-paris-world-cup-2025-los-angeles-2028-olympics",
+          "date": "2025-02-25",
+          "lastUpdated": "2025-08-08",
+          "snippet": "A star-studded lineup will return to the water in Paris for the season-opening World Aquatics Artistic Swimming World Cup.",
+          "source": "web"
+        },
+        {
+          "title": "Artistic Swimming Olympics - Rules, History & Road to LA 2028",
+          "url": "https://www.topendsports.com/events/summer/sports/synchronized-swimming.htm",
+          "date": "2025-08-08",
+          "lastUpdated": "2026-03-19",
+          "snippet": "China won their first-ever Olympic gold medals in artistic swimming, ending Russia's dominance since Sydney 2000. The Wang twins' victory marked a new era in ...",
+          "source": "web"
+        },
+        {
+          "title": "The Artistic Swimming Qualification Pathway for the LA 2028 Olympics",
+          "url": "https://insidesynchro.org/2026/01/08/the-artistic-swimming-qualification-pathway-for-the-la-2028-olympics/",
+          "date": "2026-01-08",
+          "lastUpdated": "2026-02-15",
+          "snippet": "10 teams and 18 duets will make up the field in Los Angeles. Each team is composed of eight athletes, each duet of two, and for any country that ...",
+          "source": "web"
+        },
+        {
+          "title": "Artistic Swimming - LA28",
+          "url": "https://la28.org/en/games-plan/olympics/artistic-swimming.html",
+          "lastUpdated": "2026-03-30",
+          "snippet": "Artistic Swimming (formerly Synchronized Swimming) sees swimmers perform choreographed routines to music in sync with their performance partners.",
+          "source": "web"
+        },
+        {
+          "title": "On Path to LA28, a Look at the Leading 18-and-Under Swimmers",
+          "url": "https://www.swimmingworldmagazine.com/news/on-path-to-la28-an-event-by-event-look-at-the-leading-18-and-under-swimmers-womens-edition/",
+          "date": "2025-11-20",
+          "lastUpdated": "2025-12-03",
+          "snippet": "On the path to LA28, Swimming World takes an event-by-event look at the world's leading 18-and-under swimmers.",
+          "source": "web"
+        },
+        {
+          "title": "World Aquatics Outlines New Olympic Swimming Qualification ...",
+          "url": "https://swimswam.com/world-aquatics-outlines-new-olympic-swimming-qualification-systems-ahead-of-ioc-approval/",
+          "date": "2025-09-15",
+          "snippet": "Abbey Weitzeil · Blake Pieroni · Brooks Curry · Drew Kibler · Leon Marchand · Matt King · Ryan Held ...",
+          "source": "web"
+        }
+      ]
+    }
   },
   "SWA02": {
-    "blurb": "The duet free routine is where artistic swimming transforms into pure art — four minutes of underwater ballet where partners must breathe as one. Unlike the rigid technical format, here creativity rules, and teams can showcase signature moves that define their identity. Watch China's defending champions navigate the pressure while Team USA feeds off Long Beach's energy in what could be the sport's most emotionally charged preliminary round.",
+    "blurb": "Duet free routine is where artistic swimming sheds the technical rulebook and becomes pure performance art. Four minutes of choreography, music, and athleticism — two swimmers moving as one.\n\nMedals are on the line. China dominated Paris in the absence of Russia, the sport's historical powerhouse. The USA broke a 20-year medal drought at Paris and will carry that momentum onto home pool deck.\n\nLong Beach mid-morning: the sun overhead, the crowd leaning in. This is the session where you see the entire arc of a duet's story — technical precision meets creative risk.",
+    "potentialContendersIntro": "China's Wang Liuyi and Wang Qianyi are Paris 2024 duet champions. No LA28 rosters are confirmed, but recent Olympic and World Cup results point to likely finalists.",
     "potentialContenders": [
       {
-        "name": "China Duet",
+        "name": "Wang Liuyi",
         "country": "CHN",
-        "note": "The gold standard in free routine innovation and execution."
+        "note": "Paris 2024 duet gold medalist, 2025 World Cup champion"
       },
       {
-        "name": "Russia Duet",
-        "country": "ROC",
-        "note": "Masters of dramatic storytelling through synchronized movement."
+        "name": "Wang Qianyi",
+        "country": "CHN",
+        "note": "Paris 2024 duet gold medalist, part of China's sweep"
       },
       {
         "name": "USA Duet",
         "country": "USA",
-        "note": "California-trained athletes with home pool advantage."
+        "note": "Paris 2024 team silver medalists competing on home soil"
+      },
+      {
+        "name": "Spain Duet",
+        "country": "ESP",
+        "note": "Paris 2024 team bronze medalists, consistent podium threats"
       }
-    ]
+    ],
+    "relatedNews": [
+      {
+        "id": "SWA02-n0",
+        "title": "China continues Paris dominance in Duet Technical - Paris 2024 Olympic Games",
+        "summary": "Reports China's Wang Liuyi and Wang Qianyi winning the duet technical event, relevant to duet contenders for LA28.",
+        "sourceName": "World Aquatics",
+        "sourceUrl": "https://www.worldaquatics.com/news/4079422/china-continues-paris-dominance-in-duet-technical-paris-2024-olympic-games",
+        "publishedDate": "2024-08-01",
+        "tags": [
+          "china-duet",
+          "paris-2024",
+          "wang-liuyi",
+          "wang-qianyi"
+        ]
+      },
+      {
+        "id": "SWA02-n1",
+        "title": "China wins artistic swimming gold; U.S. takes silver",
+        "summary": "Details China gold and USA silver in team event at Paris 2024, indicating top contenders for LA28.",
+        "sourceName": "ESPN",
+        "sourceUrl": "https://www.espn.com/olympics/story/_/id/40767198/china-wins-artistic-swimming-gold-paris-olympics",
+        "publishedDate": "2024-08-07",
+        "tags": [
+          "china-team",
+          "usa-team",
+          "paris-2024"
+        ]
+      },
+      {
+        "id": "SWA02-n2",
+        "title": "China wins artistic swimming gold at Paris Olympics",
+        "summary": "Confirms China team gold, USA silver, Spain bronze at Paris 2024, key for projecting LA28 team and duet strength.",
+        "sourceName": "VOA",
+        "sourceUrl": "https://www.voanews.com/a/china-wins-artistic-swimming-gold-at-paris-olympics/7734474.html",
+        "publishedDate": "2024-08-07",
+        "tags": [
+          "china-team",
+          "paris-2024",
+          "usa-silver"
+        ]
+      },
+      {
+        "id": "SWA02-n3",
+        "title": "China dominate artistic swimming",
+        "summary": "Highlights China's team gold over USA and Spain at Paris 2024.",
+        "sourceName": "Taipei Times",
+        "sourceUrl": "https://www.taipeitimes.com/News/sport/archives/2024/08/09/2003821980",
+        "publishedDate": "2024-08-09",
+        "tags": [
+          "china-team",
+          "paris-2024"
+        ]
+      },
+      {
+        "id": "SWA02-n4",
+        "title": "China maintain lead in team event, US move second",
+        "summary": "Notes China leading and USA second in team artistic swimming at Paris 2024 preliminaries.",
+        "sourceName": "SuperSport",
+        "sourceUrl": "https://supersport.com/aquatics/news/b39c650f-21cc-467e-b6fa-2514602e6f45/china-maintain-lead-in-team-event-us-move-second",
+        "publishedDate": "2024-08-06",
+        "tags": [
+          "china-team",
+          "usa-team",
+          "paris-2024"
+        ]
+      }
+    ],
+    "contentMeta": {
+      "provider": "hybrid",
+      "groundingModel": "sonar-pro",
+      "writingModel": "claude-sonnet-4-5-20250929",
+      "generatedAt": "2026-04-12T13:39:02.441Z",
+      "sources": [
+        {
+          "title": "China wins artistic swimming gold; U.S. takes silver - ESPN",
+          "url": "https://www.espn.com/olympics/story/_/id/40767198/china-wins-artistic-swimming-gold-paris-olympics",
+          "date": "2024-08-07",
+          "lastUpdated": "2024-08-07",
+          "snippet": "China finished with 996.1389 points, ahead of the Americans' 914.3421 and Spain's 900.7319. It was the first U.S. medal in the sport since 2004.",
+          "source": "web"
+        },
+        {
+          "title": "China dominate artistic swimming - Taipei Times",
+          "url": "https://www.taipeitimes.com/News/sport/archives/2024/08/09/2003821980",
+          "date": "2024-08-09",
+          "lastUpdated": "2025-03-17",
+          "snippet": "China took gold in the artistic swimming team event on Wednesday night at the Paris Olympics, with the US getting silver and Spain taking bronze.",
+          "source": "web"
+        },
+        {
+          "title": "China wins artistic swimming gold at Paris Olympics - VOA",
+          "url": "https://www.voanews.com/a/china-wins-artistic-swimming-gold-at-paris-olympics/7734474.html",
+          "date": "2024-08-08",
+          "lastUpdated": "2025-08-19",
+          "snippet": "China finished with 996.1389 points, ahead of the Americans' 914.3421 and Spain's 900.7319. It was the first U.S. medal in the sport since 2004.",
+          "source": "web"
+        },
+        {
+          "title": "China's dominance at the Olympics, explained. - YouTube",
+          "url": "https://www.youtube.com/watch?v=ux8LmtDy--4",
+          "date": "2024-09-04",
+          "lastUpdated": "2025-11-29",
+          "snippet": "Go to https://piavpn.com/aini to get 83% off Private Internet Access with 4 months free! China is one of the best performing countries at ...",
+          "source": "web"
+        },
+        {
+          "title": "China maintain lead in team event, US move second | olympics",
+          "url": "https://supersport.com/aquatics/news/b39c650f-21cc-467e-b6fa-2514602e6f45/china-maintain-lead-in-team-event-us-move-second",
+          "date": "2024-08-06",
+          "snippet": "China stayed top of the leaderboard in team artistic swimming at the Paris Olympics on Tuesday, extending their advantage over their rivals ...",
+          "source": "web"
+        },
+        {
+          "title": "China wins artistic swimming gold at Paris Olympics, where the sport ...",
+          "url": "https://www.ksl.com/article/51093542/china-wins-artistic-swimming-gold-at-paris-olympics-where-the-sport-moved-forward-without-russia",
+          "date": "2024-08-07",
+          "snippet": "China took the gold Wednesday night in the team event of artistic swimming at the Paris Olympics with silver for the United States and bronze for Spain.",
+          "source": "web"
+        },
+        {
+          "title": "China continues Paris dominance in Duet Technical - World Aquatics",
+          "url": "https://www.worldaquatics.com/news/4079422/china-continues-paris-dominance-in-duet-technical-paris-2024-olympic-games",
+          "date": "2024-08-09",
+          "lastUpdated": "2025-03-08",
+          "snippet": "The Chinese pair of Wang Liuyi and Wang Qianyi scored 276.7867 points in the Duet Technical, top scoring in both Elements (174.6867) and ...",
+          "source": "web"
+        }
+      ]
+    }
   },
   "SWA03": {
-    "blurb": "Eight swimmers, one heartbeat — team technical is artistic swimming's ultimate test of collective precision. Every lift, every spin, every breath must happen in perfect unison, or the routine crumbles before 15,000 spectators.\n\nChina's powerhouse team enters as the squad to beat, and Team USA's deep talent pool will feed off the energy of performing in their backyard at Long Beach Aquatics Center.",
+    "blurb": "Eight swimmers, one collective breath. The team technical routine is artistic swimming's ultimate synchronization test — mandatory elements performed with balletic precision by a full squad.\n\nChina shattered expectations at Paris, winning gold in Russia's absence and resetting the sport's power balance. The USA claimed silver, their first medal since 2004, and Spain took bronze. All three could return to Southern California hungry.\n\nPrelims at Long Beach give you front-row access to the technical foundation — watch how the best teams in the world execute the required moves before the free routines unleash the creativity.",
+    "potentialContendersIntro": "China won Paris 2024 team gold with 996.14 points, USA silver with 914.34, and Spain bronze with 900.73. Teams qualify through 2027 Worlds, so LA28 rosters aren't set, but these nations are projected frontrunners.",
     "potentialContenders": [
       {
-        "name": "China Team",
+        "name": "China",
         "country": "CHN",
-        "note": "Paris gold medalists with unmatched technical difficulty scores."
+        "note": "Paris 2024 team gold medalists, 2025 World Cup champions"
       },
       {
-        "name": "USA Team",
+        "name": "USA",
         "country": "USA",
-        "note": "Home crowd favorites trained in these exact California waters."
+        "note": "Paris 2024 team silver medalists, first medal since 2004, home pool advantage"
       },
       {
-        "name": "Japan Team",
-        "country": "JPN",
-        "note": "Technical perfectionists with intricate choreography."
-      },
-      {
-        "name": "Spain Team",
+        "name": "Spain",
         "country": "ESP",
-        "note": "European champions known for their flawless synchronization."
+        "note": "Paris 2024 team bronze medalists, consistent post-2025 podium finisher"
+      },
+      {
+        "name": "Japan",
+        "country": "JPN",
+        "note": "Rising program after strong 2025 World Cup performance"
       }
-    ]
+    ],
+    "relatedNews": [],
+    "contentMeta": {
+      "provider": "hybrid",
+      "groundingModel": "sonar-pro",
+      "writingModel": "claude-sonnet-4-5-20250929",
+      "generatedAt": "2026-04-12T13:39:02.441Z",
+      "sources": [
+        {
+          "title": "China wins artistic swimming gold; U.S. takes silver - ESPN",
+          "url": "https://www.espn.com/olympics/story/_/id/40767198/china-wins-artistic-swimming-gold-paris-olympics",
+          "date": "2024-08-07",
+          "lastUpdated": "2024-08-07",
+          "snippet": "China finished with 996.1389 points, ahead of the Americans' 914.3421 and Spain's 900.7319. It was the first U.S. medal in the sport since 2004.",
+          "source": "web"
+        },
+        {
+          "title": "China dominate artistic swimming - Taipei Times",
+          "url": "https://www.taipeitimes.com/News/sport/archives/2024/08/09/2003821980",
+          "date": "2024-08-09",
+          "lastUpdated": "2025-03-17",
+          "snippet": "China took gold in the artistic swimming team event on Wednesday night at the Paris Olympics, with the US getting silver and Spain taking bronze.",
+          "source": "web"
+        },
+        {
+          "title": "China wins artistic swimming gold at Paris Olympics - VOA",
+          "url": "https://www.voanews.com/a/china-wins-artistic-swimming-gold-at-paris-olympics/7734474.html",
+          "date": "2024-08-08",
+          "lastUpdated": "2025-08-19",
+          "snippet": "China finished with 996.1389 points, ahead of the Americans' 914.3421 and Spain's 900.7319. It was the first U.S. medal in the sport since 2004.",
+          "source": "web"
+        },
+        {
+          "title": "China's dominance at the Olympics, explained. - YouTube",
+          "url": "https://www.youtube.com/watch?v=ux8LmtDy--4",
+          "date": "2024-09-04",
+          "lastUpdated": "2025-11-29",
+          "snippet": "Go to https://piavpn.com/aini to get 83% off Private Internet Access with 4 months free! China is one of the best performing countries at ...",
+          "source": "web"
+        },
+        {
+          "title": "China maintain lead in team event, US move second | olympics",
+          "url": "https://supersport.com/aquatics/news/b39c650f-21cc-467e-b6fa-2514602e6f45/china-maintain-lead-in-team-event-us-move-second",
+          "date": "2024-08-06",
+          "snippet": "China stayed top of the leaderboard in team artistic swimming at the Paris Olympics on Tuesday, extending their advantage over their rivals ...",
+          "source": "web"
+        },
+        {
+          "title": "China wins artistic swimming gold at Paris Olympics, where the sport ...",
+          "url": "https://www.ksl.com/article/51093542/china-wins-artistic-swimming-gold-at-paris-olympics-where-the-sport-moved-forward-without-russia",
+          "date": "2024-08-07",
+          "snippet": "China took the gold Wednesday night in the team event of artistic swimming at the Paris Olympics with silver for the United States and bronze for Spain.",
+          "source": "web"
+        },
+        {
+          "title": "China continues Paris dominance in Duet Technical - World Aquatics",
+          "url": "https://www.worldaquatics.com/news/4079422/china-continues-paris-dominance-in-duet-technical-paris-2024-olympic-games",
+          "date": "2024-08-09",
+          "lastUpdated": "2025-03-08",
+          "snippet": "The Chinese pair of Wang Liuyi and Wang Qianyi scored 276.7867 points in the Duet Technical, top scoring in both Elements (174.6867) and ...",
+          "source": "web"
+        }
+      ]
+    }
   },
   "SWA04": {
-    "blurb": "Team free routine preliminary — this is where artistic swimming becomes pure theater, eight athletes creating an underwater symphony that defies physics. The Chinese team will unveil their championship routine for the first time on American soil, while Team USA gets to perform their California-inspired choreography in front of family and friends. Witness aquatic artistry that took four years to perfect.",
+    "blurb": "Team free routine prelims are where the gloves come off. No required elements, just four minutes of choreographed ambition — teams throw their most daring concepts into the pool and hope the judges reward the vision.\n\nChina enters as the Paris gold medalist and 2025 World Cup champion. The USA, riding their Paris silver breakthrough, will have ten thousand voices behind them in Long Beach. Spain and Japan round out the expected field.\n\nMorning light on the pool, swimsuits flashing, music echoing off the venue. Prelims determine who advances to the final — this is where Olympic dreams either solidify or slip away.",
+    "potentialContendersIntro": "China dominated Paris 2024 team events with 996.14 points. USA's 914.34 earned silver on their medal comeback. No LA28 rosters confirmed, but these teams are likely to qualify.",
     "potentialContenders": [
       {
-        "name": "China Team",
+        "name": "China",
         "country": "CHN",
-        "note": "Defending champions with the sport's most innovative free routines."
+        "note": "Paris 2024 team gold medalists, maintained lead through preliminaries"
       },
       {
-        "name": "USA Team",
+        "name": "USA",
         "country": "USA",
-        "note": "LA-based training gives them intimate knowledge of this venue."
+        "note": "Paris 2024 team silver medalists, competing at Long Beach on home turf"
       },
       {
-        "name": "Italy Team",
-        "country": "ITA",
-        "note": "Artistic powerhouse blending Mediterranean flair with technical mastery."
+        "name": "Spain",
+        "country": "ESP",
+        "note": "Paris 2024 team bronze medalists, consistent podium finisher"
       },
       {
-        "name": "Australia Team",
-        "country": "AUS",
-        "note": "Southern Hemisphere's best with surprising acrobatic elements."
+        "name": "Japan",
+        "country": "JPN",
+        "note": "Emerging threat after strong 2025 World Cup showing"
       }
-    ]
+    ],
+    "relatedNews": [],
+    "contentMeta": {
+      "provider": "hybrid",
+      "groundingModel": "sonar-pro",
+      "writingModel": "claude-sonnet-4-5-20250929",
+      "generatedAt": "2026-04-12T13:39:02.441Z",
+      "sources": [
+        {
+          "title": "China wins artistic swimming gold; U.S. takes silver - ESPN",
+          "url": "https://www.espn.com/olympics/story/_/id/40767198/china-wins-artistic-swimming-gold-paris-olympics",
+          "date": "2024-08-07",
+          "lastUpdated": "2024-08-07",
+          "snippet": "China finished with 996.1389 points, ahead of the Americans' 914.3421 and Spain's 900.7319. It was the first U.S. medal in the sport since 2004.",
+          "source": "web"
+        },
+        {
+          "title": "China dominate artistic swimming - Taipei Times",
+          "url": "https://www.taipeitimes.com/News/sport/archives/2024/08/09/2003821980",
+          "date": "2024-08-09",
+          "lastUpdated": "2025-03-17",
+          "snippet": "China took gold in the artistic swimming team event on Wednesday night at the Paris Olympics, with the US getting silver and Spain taking bronze.",
+          "source": "web"
+        },
+        {
+          "title": "China wins artistic swimming gold at Paris Olympics - VOA",
+          "url": "https://www.voanews.com/a/china-wins-artistic-swimming-gold-at-paris-olympics/7734474.html",
+          "date": "2024-08-08",
+          "lastUpdated": "2025-08-19",
+          "snippet": "China finished with 996.1389 points, ahead of the Americans' 914.3421 and Spain's 900.7319. It was the first U.S. medal in the sport since 2004.",
+          "source": "web"
+        },
+        {
+          "title": "China's dominance at the Olympics, explained. - YouTube",
+          "url": "https://www.youtube.com/watch?v=ux8LmtDy--4",
+          "date": "2024-09-04",
+          "lastUpdated": "2025-11-29",
+          "snippet": "Go to https://piavpn.com/aini to get 83% off Private Internet Access with 4 months free! China is one of the best performing countries at ...",
+          "source": "web"
+        },
+        {
+          "title": "China maintain lead in team event, US move second | olympics",
+          "url": "https://supersport.com/aquatics/news/b39c650f-21cc-467e-b6fa-2514602e6f45/china-maintain-lead-in-team-event-us-move-second",
+          "date": "2024-08-06",
+          "snippet": "China stayed top of the leaderboard in team artistic swimming at the Paris Olympics on Tuesday, extending their advantage over their rivals ...",
+          "source": "web"
+        },
+        {
+          "title": "China wins artistic swimming gold at Paris Olympics, where the sport ...",
+          "url": "https://www.ksl.com/article/51093542/china-wins-artistic-swimming-gold-at-paris-olympics-where-the-sport-moved-forward-without-russia",
+          "date": "2024-08-07",
+          "snippet": "China took the gold Wednesday night in the team event of artistic swimming at the Paris Olympics with silver for the United States and bronze for Spain.",
+          "source": "web"
+        },
+        {
+          "title": "China continues Paris dominance in Duet Technical - World Aquatics",
+          "url": "https://www.worldaquatics.com/news/4079422/china-continues-paris-dominance-in-duet-technical-paris-2024-olympic-games",
+          "date": "2024-08-09",
+          "lastUpdated": "2025-03-08",
+          "snippet": "The Chinese pair of Wang Liuyi and Wang Qianyi scored 276.7867 points in the Duet Technical, top scoring in both Elements (174.6867) and ...",
+          "source": "web"
+        }
+      ]
+    }
   },
   "SWA05": {
-    "blurb": "The acrobatic routine is artistic swimming's newest and wildest event — think human pyramids and impossible throws, all performed while treading water. Teams launch swimmers skyward in formations that seem to defy both gravity and common sense, creating spectacular splashes and gasps from the crowd. This preliminary round offers your best chance to witness artistic swimming's most death-defying discipline without paying finals prices.",
+    "blurb": "The team acrobatic final is artistic swimming's gravity-defying crescendo — swimmers launch a flier two meters above the water into flips, twists, and dives, all while maintaining formation below. It's Cirque du Soleil on a liquid stage, and medals are decided here.\n\nChina threw down the gauntlet at Paris with routines that redefined what's possible. The USA matched them for creativity and earned silver in front of a home crowd at Long Beach. Spain's bronze-medal precision keeps them in the hunt.\n\nSaturday late morning, the sun high, the stakes higher. This is the session where four years of training compresses into one final performance — you'll leave the pool talking about what you just saw.",
+    "potentialContendersIntro": "China won Paris 2024 team gold with acrobatic routines that launched fliers 2m above water. USA took silver, Spain bronze. LA28 rosters aren't confirmed, but these teams are projected to contend.",
     "potentialContenders": [
       {
-        "name": "China Team",
+        "name": "China",
         "country": "CHN",
-        "note": "Acrobatic innovators pushing the boundaries of what's possible in water."
+        "note": "Paris 2024 team gold medalists, revolutionized acrobatic routines"
       },
       {
-        "name": "USA Team",
+        "name": "USA",
         "country": "USA",
-        "note": "American power and athleticism translates perfectly to explosive acrobatics."
+        "note": "Paris 2024 team silver medalists, home pool advantage at Long Beach"
       },
       {
-        "name": "Ukraine Team",
-        "country": "UKR",
-        "note": "Gymnastics background creates stunning aerial sequences."
+        "name": "Spain",
+        "country": "ESP",
+        "note": "Paris 2024 team bronze medalists, technical precision specialists"
       },
       {
-        "name": "Canada Team",
-        "country": "CAN",
-        "note": "North American rivals with surprisingly dynamic acrobatic skills."
+        "name": "Japan",
+        "country": "JPN",
+        "note": "Rising program, could challenge for podium if they qualify"
       }
-    ]
+    ],
+    "relatedNews": [
+      {
+        "id": "SWA05-n0",
+        "title": "China wins artistic swimming gold; U.S. takes silver",
+        "summary": "Reports China gold, USA silver, Spain bronze in Paris 2024 team event, establishing top contenders for LA28 team events.",
+        "sourceName": "ESPN",
+        "sourceUrl": "https://www.espn.com/olympics/story/_/id/40767198/china-wins-artistic-swimming-gold-paris-olympics",
+        "publishedDate": "2024-08-07",
+        "tags": [
+          "china-team",
+          "usa-team",
+          "paris-2024",
+          "team-event"
+        ]
+      },
+      {
+        "id": "SWA05-n1",
+        "title": "China dominate artistic swimming",
+        "summary": "Details China team gold in Paris 2024 with acrobatic highlights relevant to team acrobatic routines.",
+        "sourceName": "Taipei Times",
+        "sourceUrl": "https://www.taipeitimes.com/News/sport/archives/2024/08/09/2003821980",
+        "publishedDate": "2024-08-09",
+        "tags": [
+          "china-team",
+          "team-acrobatic",
+          "paris-2024"
+        ]
+      },
+      {
+        "id": "SWA05-n2",
+        "title": "China maintain lead in team event, US move second",
+        "summary": "Covers preliminary standings in Paris 2024 team event showing China and USA as leaders.",
+        "sourceName": "SuperSport",
+        "sourceUrl": "https://supersport.com/aquatics/news/b39c650f-21cc-467e-b6fa-2514602e6f45/china-maintain-lead-in-team-event-us-move-second",
+        "publishedDate": "2024-08-06",
+        "tags": [
+          "china-team",
+          "usa-team",
+          "team-event"
+        ]
+      },
+      {
+        "id": "SWA05-n3",
+        "title": "China continues Paris dominance in Duet Technical",
+        "summary": "Highlights ongoing Chinese strength in Paris 2024 artistic swimming events.",
+        "sourceName": "World Aquatics",
+        "sourceUrl": "https://www.worldaquatics.com/news/4079422/china-continues-paris-dominance-in-duet-technical-paris-2024-olympic-games",
+        "publishedDate": "2024-08-01",
+        "tags": [
+          "china-team",
+          "artistic-swimming",
+          "paris-2024"
+        ]
+      }
+    ],
+    "contentMeta": {
+      "provider": "hybrid",
+      "groundingModel": "sonar-pro",
+      "writingModel": "claude-sonnet-4-5-20250929",
+      "generatedAt": "2026-04-12T13:39:02.441Z",
+      "sources": [
+        {
+          "title": "China wins artistic swimming gold; U.S. takes silver - ESPN",
+          "url": "https://www.espn.com/olympics/story/_/id/40767198/china-wins-artistic-swimming-gold-paris-olympics",
+          "date": "2024-08-07",
+          "lastUpdated": "2024-08-07",
+          "snippet": "China finished with 996.1389 points, ahead of the Americans' 914.3421 and Spain's 900.7319. It was the first U.S. medal in the sport since 2004.",
+          "source": "web"
+        },
+        {
+          "title": "China dominate artistic swimming - Taipei Times",
+          "url": "https://www.taipeitimes.com/News/sport/archives/2024/08/09/2003821980",
+          "date": "2024-08-09",
+          "lastUpdated": "2025-03-17",
+          "snippet": "China took gold in the artistic swimming team event on Wednesday night at the Paris Olympics, with the US getting silver and Spain taking bronze.",
+          "source": "web"
+        },
+        {
+          "title": "China wins artistic swimming gold at Paris Olympics - VOA",
+          "url": "https://www.voanews.com/a/china-wins-artistic-swimming-gold-at-paris-olympics/7734474.html",
+          "date": "2024-08-08",
+          "lastUpdated": "2025-08-19",
+          "snippet": "China finished with 996.1389 points, ahead of the Americans' 914.3421 and Spain's 900.7319. It was the first U.S. medal in the sport since 2004.",
+          "source": "web"
+        },
+        {
+          "title": "China's dominance at the Olympics, explained. - YouTube",
+          "url": "https://www.youtube.com/watch?v=ux8LmtDy--4",
+          "date": "2024-09-04",
+          "lastUpdated": "2025-11-29",
+          "snippet": "Go to https://piavpn.com/aini to get 83% off Private Internet Access with 4 months free! China is one of the best performing countries at ...",
+          "source": "web"
+        },
+        {
+          "title": "China maintain lead in team event, US move second | olympics",
+          "url": "https://supersport.com/aquatics/news/b39c650f-21cc-467e-b6fa-2514602e6f45/china-maintain-lead-in-team-event-us-move-second",
+          "date": "2024-08-06",
+          "snippet": "China stayed top of the leaderboard in team artistic swimming at the Paris Olympics on Tuesday, extending their advantage over their rivals ...",
+          "source": "web"
+        },
+        {
+          "title": "China wins artistic swimming gold at Paris Olympics, where the sport ...",
+          "url": "https://www.ksl.com/article/51093542/china-wins-artistic-swimming-gold-at-paris-olympics-where-the-sport-moved-forward-without-russia",
+          "date": "2024-08-07",
+          "snippet": "China took the gold Wednesday night in the team event of artistic swimming at the Paris Olympics with silver for the United States and bronze for Spain.",
+          "source": "web"
+        },
+        {
+          "title": "China continues Paris dominance in Duet Technical - World Aquatics",
+          "url": "https://www.worldaquatics.com/news/4079422/china-continues-paris-dominance-in-duet-technical-paris-2024-olympic-games",
+          "date": "2024-08-09",
+          "lastUpdated": "2025-03-08",
+          "snippet": "The Chinese pair of Wang Liuyi and Wang Qianyi scored 276.7867 points in the Duet Technical, top scoring in both Elements (174.6867) and ...",
+          "source": "web"
+        }
+      ]
+    }
   },
   "ATH01": {
     "blurb": "The Games begin at the Coliseum with a morning of qualifying rounds across six events — sprinters open their campaigns in the 100m preliminaries, throwers stake early claims in shot put and hammer, and distance runners navigate the opening heats of the 5000m and 800m. The morning light will pour into the same stadium where Jesse Owens and Carl Lewis ran, and 68,000 fans will watch the track come alive for the first time in forty-four years.\n\nYou'll see pole vaulters clear heights in qualification — every clearance matters when three misses end your Olympics — and the raw speed of the world's fastest humans testing their lanes. Prelims are the accessible entry point to track and field: tickets are cheaper, the atmosphere is electric with first-day nerves, and you get more events in one session than any final will offer.",
