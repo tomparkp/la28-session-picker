@@ -79,8 +79,10 @@ function ErrorMessage({ heading, body }: { heading: string; body: string }) {
 
 function RootError({ error }: ErrorComponentProps) {
   if (import.meta.env.DEV) {
+    // eslint-disable-next-line no-console
     console.error(error)
   } else {
+    // eslint-disable-next-line no-console
     console.error('Root error:', error instanceof Error ? error.message : 'Unknown error')
   }
   return (

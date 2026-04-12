@@ -61,6 +61,7 @@ function SessionPicker() {
 
     observer.observe(element)
     return () => observer.disconnect()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     sessionsQuery.fetchNextPage,
     sessionsQuery.hasNextPage,

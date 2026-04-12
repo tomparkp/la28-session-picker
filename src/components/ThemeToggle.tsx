@@ -25,7 +25,7 @@ export function ThemeToggle() {
     const doc = document.documentElement
     doc.setAttribute('data-theme-switching', '')
     doc.setAttribute('data-theme', theme)
-    doc.offsetHeight
+    void doc.offsetHeight
     doc.removeAttribute('data-theme-switching')
   }
 

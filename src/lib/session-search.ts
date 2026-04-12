@@ -1,8 +1,8 @@
 import type { Filters, SortColumn, SortDirection, SortState } from '@/types/session'
 
 export interface SessionRouteSearch extends Filters {
-  sortCol: SortColumn
-  sortDir: SortDirection
+  sortCol?: SortColumn
+  sortDir?: SortDirection
   session?: string
 }
 
@@ -58,7 +58,7 @@ export function routeSearchToFilters(search: SessionRouteSearch): Filters {
 
 export function routeSearchToSort(search: SessionRouteSearch): SortState {
   return {
-    col: search.sortCol,
-    dir: search.sortDir,
+    col: search.sortCol ?? DEFAULT_SORT.col,
+    dir: search.sortDir ?? DEFAULT_SORT.dir,
   }
 }
