@@ -10,7 +10,7 @@ import type { Session } from '@/types/session'
 
 import { SideDrawer } from './SideDrawer'
 
-const DEFAULT_WIDTH = 520
+const DEFAULT_WIDTH = 560
 
 interface BookmarkPanelProps {
   open: boolean
