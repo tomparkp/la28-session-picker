@@ -35,7 +35,12 @@ function PrivacyPage() {
               address, user agent, timestamp) for abuse prevention and operational debugging.
             </li>
             <li>
-              <strong>No accounts, no analytics, no advertising cookies.</strong>
+              <strong>Aggregate analytics.</strong> We use Cloudflare Web Analytics to measure
+              page views and basic usage trends. It is cookieless and does not fingerprint or track
+              individuals across sites.
+            </li>
+            <li>
+              <strong>No accounts and no advertising cookies.</strong>
             </li>
           </ul>
         </section>
@@ -45,8 +50,8 @@ function PrivacyPage() {
           <p>We rely on the following services to operate the site:</p>
           <ul className="list-disc space-y-1 pl-5">
             <li>
-              <strong>Cloudflare</strong> — hosting, CDN, and edge compute (Workers). Cloudflare
-              processes all HTTP requests to the site.
+              <strong>Cloudflare</strong> — hosting, CDN, edge compute (Workers), and cookieless
+              Web Analytics. Cloudflare processes all HTTP requests to the site.
             </li>
             <li>
               <strong>Resend</strong> — email delivery for issue reports submitted through the
