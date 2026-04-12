@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/tomparkp/la28-session-picker/compare/v1.0.0...v1.1.0) (2026-04-12)
+
+
+### Features
+
+* **routes:** replace session count with clear filters action ([#65](https://github.com/tomparkp/la28-session-picker/issues/65)) ([785bf02](https://github.com/tomparkp/la28-session-picker/commit/785bf02016b6698a54a50e1c2ecfddfe3d52edb3))
+
 ## 1.0.0 (2026-04-12)
 
 ### Features
