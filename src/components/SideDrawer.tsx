@@ -81,7 +81,7 @@ export function SideDrawer({
         if (!nextOpen) onClose()
       }}
       modal={isMobile ? true : 'trap-focus'}
-      swipeDirection="right"
+      swipeDirection={isMobile ? 'right' : undefined}
     >
       <Drawer.Portal keepMounted>
         <Drawer.Backdrop className="fixed inset-0 z-40 bg-black/50 transition-opacity duration-200 data-[closed]:pointer-events-none data-[closed]:opacity-0 data-[open]:opacity-100 md:hidden" />
