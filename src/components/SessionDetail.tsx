@@ -19,7 +19,7 @@ import type { Contender, RelatedNews, Session } from '@/types/session'
 import { ReportIssueDialog } from './ReportIssueDialog'
 import { SideDrawer } from './SideDrawer'
 
-const DEFAULT_WIDTH = 580
+const DEFAULT_WIDTH = 560
 
 type ScoreKey = 'rSig' | 'rExp' | 'rStar' | 'rUniq' | 'rDem'
 
