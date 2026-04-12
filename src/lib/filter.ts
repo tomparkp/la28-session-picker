@@ -2,7 +2,6 @@ import { parseStartMinutes } from '@/lib/format'
 import type { Session, Filters, SortState } from '@/types/session'
 
 export function filterSessions(sessions: Session[], filters: Filters): Session[] {
-  const search = filters.search.toLowerCase()
   let [pn, px] = [0, Infinity]
   if (filters.price) {
     const parts = filters.price.split('-').map(Number)
@@ -12,23 +11,9 @@ export function filterSessions(sessions: Session[], filters: Filters): Session[]
   const scoreMin = filters.score ? Number(filters.score) : 0
 
   return sessions.filter((e) => {
-    if (search) {
-      const txt = (
-        e.name +
-        ' ' +
-        e.desc +
-        ' ' +
-        e.venue +
-        ' ' +
-        e.zone +
-        ' ' +
-        e.sport
-      ).toLowerCase()
-      if (!txt.includes(search)) return false
-    }
-    if (filters.sport && e.sport !== filters.sport) return false
-    if (filters.round && e.rt !== filters.round) return false
-    if (filters.zone && e.zone !== filters.zone) return false
+    if (filters.sport.length > 0 && !filters.sport.includes(e.sport)) return false
+    if (filters.round.length > 0 && !filters.round.includes(e.rt)) return false
+    if (filters.zone.length > 0 && !filters.zone.includes(e.zone)) return false
     if (e.pLo < pn || e.pLo > px) return false
     if (scoreMin && e.agg < scoreMin) return false
     return true

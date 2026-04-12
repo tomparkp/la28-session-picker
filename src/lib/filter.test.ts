@@ -29,10 +29,9 @@ function makeSession(overrides: Partial<Session> = {}): Session {
 }
 
 const defaultFilters: Filters = {
-  search: '',
-  sport: '',
-  round: '',
-  zone: '',
+  sport: [],
+  round: [],
+  zone: [],
   score: '',
   price: '',
 }
@@ -52,28 +51,35 @@ describe('filterSessions', () => {
 
     const filtered = filterSessions(sessions, {
       ...defaultFilters,
-      sport: 'Athletics',
+      sport: ['Athletics'],
     })
 
     expect(filtered.map((session) => session.id)).toEqual(['ATH01'])
   })
 
-  it('filters by search text', () => {
+  it('filters by multiple sports', () => {
     const sessions = [
       makeSession(),
       makeSession({
         id: 'SWM01',
         sport: 'Swimming',
         name: 'SWM01 Swimming',
+        zone: 'Beach',
+        rt: 'Semi',
+      }),
+      makeSession({
+        id: 'GYM01',
+        sport: 'Gymnastics',
+        name: 'GYM01 Gymnastics',
       }),
     ]
 
     const filtered = filterSessions(sessions, {
       ...defaultFilters,
-      search: 'swimming',
+      sport: ['Athletics', 'Swimming'],
     })
 
-    expect(filtered.map((session) => session.id)).toEqual(['SWM01'])
+    expect(filtered.map((session) => session.id)).toEqual(['ATH01', 'SWM01'])
   })
 
   it('keeps single-select price and rating filters working', () => {

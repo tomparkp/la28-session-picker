@@ -75,13 +75,10 @@ export interface SortState {
   dir: SortDirection
 }
 
-export type GroupBy = '' | 'sport' | 'rt' | 'zone' | 'date'
-
 export interface Filters {
-  search: string
-  sport: string
-  round: string
-  zone: string
+  sport: string[]
+  round: string[]
+  zone: string[]
   score: string
   price: string
 }

@@ -12,14 +12,18 @@ export interface SessionsPageInput {
   limit?: number
 }
 
+function normalizeStringArray(value: unknown): string[] {
+  if (Array.isArray(value)) return value.filter((v): v is string => typeof v === 'string')
+  return []
+}
+
 function normalizeFilters(input: unknown): Filters {
   const value = (input ?? {}) as Record<string, unknown>
 
   return {
-    search: typeof value.search === 'string' ? value.search : '',
-    sport: typeof value.sport === 'string' ? value.sport : '',
-    round: typeof value.round === 'string' ? value.round : '',
-    zone: typeof value.zone === 'string' ? value.zone : '',
+    sport: normalizeStringArray(value.sport),
+    round: normalizeStringArray(value.round),
+    zone: normalizeStringArray(value.zone),
     score: typeof value.score === 'string' ? value.score : '',
     price: typeof value.price === 'string' ? value.price : '',
   }
