@@ -38,6 +38,8 @@ export const CONTENT_PATH = resolve(ROOT, 'src/data/session-content.json')
 
 export const PERPLEXITY_DEFAULT_MODEL = 'sonar-pro'
 export const ANTHROPIC_DEFAULT_MODEL = 'claude-sonnet-4-5-20250929'
+export const ANTHROPIC_WRITING_DEFAULT_MODEL = 'claude-sonnet-4-5-20250929'
+export const ANTHROPIC_SCORING_DEFAULT_MODEL = 'claude-haiku-4-5-20251001'
 export const GROUNDING_VERSION = 2
 export const WRITING_VERSION = 3
 export const SCORING_VERSION = 3
@@ -440,6 +442,36 @@ export async function fetchGrounding(
   return null
 }
 
+function parseWritingResponse(text: string): WritingData[] {
+  const jsonMatch = text.match(/\[[\s\S]*\]/)
+  if (!jsonMatch) throw new Error('No JSON array in Anthropic response')
+  const parsed = JSON.parse(jsonMatch[0]) as unknown
+  if (!Array.isArray(parsed)) throw new Error('Expected array')
+  const results: WritingData[] = []
+  for (const raw of parsed) {
+    if (!raw || typeof raw !== 'object') continue
+    const item = raw as Record<string, unknown>
+    if (typeof item.id !== 'string' || typeof item.blurb !== 'string') continue
+    if (typeof item.potentialContendersIntro !== 'string') continue
+    if (!Array.isArray(item.potentialContenders)) continue
+    const contenders = item.potentialContenders.filter(
+      (c): c is Contender =>
+        !!c &&
+        typeof c === 'object' &&
+        typeof (c as Contender).name === 'string' &&
+        typeof (c as Contender).country === 'string' &&
+        typeof (c as Contender).note === 'string',
+    )
+    results.push({
+      id: item.id,
+      blurb: item.blurb,
+      potentialContendersIntro: item.potentialContendersIntro,
+      potentialContenders: contenders,
+    })
+  }
+  return results
+}
+
 export async function generateWriting(
   client: Anthropic,
   sessions: Session[],
@@ -458,33 +490,7 @@ export async function generateWriting(
         messages: [{ role: 'user', content: prompt }],
       })
       const text = response.content[0].type === 'text' ? response.content[0].text : ''
-      const jsonMatch = text.match(/\[[\s\S]*\]/)
-      if (!jsonMatch) throw new Error('No JSON array in Anthropic response')
-      const parsed = JSON.parse(jsonMatch[0]) as unknown
-      if (!Array.isArray(parsed)) throw new Error('Expected array')
-      const results: WritingData[] = []
-      for (const raw of parsed) {
-        if (!raw || typeof raw !== 'object') continue
-        const item = raw as Record<string, unknown>
-        if (typeof item.id !== 'string' || typeof item.blurb !== 'string') continue
-        if (typeof item.potentialContendersIntro !== 'string') continue
-        if (!Array.isArray(item.potentialContenders)) continue
-        const contenders = item.potentialContenders.filter(
-          (c): c is Contender =>
-            !!c &&
-            typeof c === 'object' &&
-            typeof (c as Contender).name === 'string' &&
-            typeof (c as Contender).country === 'string' &&
-            typeof (c as Contender).note === 'string',
-        )
-        results.push({
-          id: item.id,
-          blurb: item.blurb,
-          potentialContendersIntro: item.potentialContendersIntro,
-          potentialContenders: contenders,
-        })
-      }
-      return results
+      return parseWritingResponse(text)
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
       console.error(`    Writing attempt ${attempt}/${MAX_RETRIES} failed: ${msg}`)
@@ -493,6 +499,85 @@ export async function generateWriting(
   }
   console.error(`    Writing FAILED after ${MAX_RETRIES} attempts for ${sport} batch`)
   return []
+}
+
+export interface WritingJob {
+  sport: string
+  batch: Session[]
+  grounding: Map<string, GroundingData>
+}
+
+export interface WritingBatchOutcome {
+  job: WritingJob
+  results: WritingData[]
+  error?: string
+}
+
+// Submits every writing job as a single Anthropic Message Batch (50% off vs
+// synchronous calls), polls until processing ends, and parses each request's
+// response back into WritingData keyed to its originating job.
+export async function generateWritingViaBatches(
+  client: Anthropic,
+  jobs: WritingJob[],
+  model: string,
+  extraInstructions?: string,
+): Promise<WritingBatchOutcome[]> {
+  if (jobs.length === 0) return []
+
+  const requests = jobs.map((job, index) => ({
+    custom_id: `w-${index}`,
+    params: {
+      model,
+      max_tokens: 8192,
+      system: WRITING_SYSTEM_PROMPT,
+      messages: [
+        {
+          role: 'user' as const,
+          content: buildWritingPrompt(job.batch, job.sport, job.grounding, extraInstructions),
+        },
+      ],
+    },
+  }))
+
+  console.log(`  Submitting writing batch (${jobs.length} job(s))…`)
+  const created = await client.messages.batches.create({ requests })
+  console.log(`  Batch ${created.id} submitted; polling for completion…`)
+
+  let batch = created
+  const startedAt = Date.now()
+  let delayMs = 10_000
+  while (batch.processing_status !== 'ended') {
+    await new Promise((r) => setTimeout(r, delayMs))
+    batch = await client.messages.batches.retrieve(batch.id)
+    const counts = batch.request_counts
+    const elapsedSec = Math.round((Date.now() - startedAt) / 1000)
+    console.log(
+      `    [${elapsedSec}s] status=${batch.processing_status} processing=${counts.processing} succeeded=${counts.succeeded} errored=${counts.errored}`,
+    )
+    // Back off: 10s → 20s → 30s, cap at 60s.
+    delayMs = Math.min(delayMs + 10_000, 60_000)
+  }
+
+  const outcomes: WritingBatchOutcome[] = jobs.map((job) => ({ job, results: [] }))
+  const byId = new Map(outcomes.map((o, i) => [`w-${i}`, o]))
+  const results = await client.messages.batches.results(batch.id)
+  for await (const item of results) {
+    const outcome = byId.get(item.custom_id)
+    if (!outcome) continue
+    if (item.result.type !== 'succeeded') {
+      outcome.error = item.result.type
+      continue
+    }
+    const content = item.result.message.content
+    const textBlock = content.find((c) => c.type === 'text')
+    const text = textBlock && textBlock.type === 'text' ? textBlock.text : ''
+    try {
+      outcome.results = parseWritingResponse(text)
+    } catch (err) {
+      outcome.error = err instanceof Error ? err.message : String(err)
+    }
+  }
+  return outcomes
 }
 
 export const SCORING_SYSTEM_PROMPT = `You are scoring LA 2028 Olympics sessions for a ticket-buying guide. For each session you assign integer 1-10 scores across five dimensions and write a short, specific explanation that justifies the SCORE you gave (not the venue or sport in general).

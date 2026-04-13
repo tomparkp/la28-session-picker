@@ -7,7 +7,8 @@ import pLimit from 'p-limit'
 
 import type { Session, SessionContent } from '../src/types/session.js'
 import {
-  ANTHROPIC_DEFAULT_MODEL,
+  ANTHROPIC_SCORING_DEFAULT_MODEL,
+  ANTHROPIC_WRITING_DEFAULT_MODEL,
   CONTENT_PATH,
   GROUNDING_VERSION,
   type GroundingData,
@@ -20,9 +21,11 @@ import {
   WRITING_BATCH_SIZE,
   WRITING_VERSION,
   type WritingData,
+  type WritingJob,
   fetchGrounding,
   generateScoring,
   generateWriting,
+  generateWritingViaBatches,
   writeJson,
 } from './lib/session-content.js'
 
@@ -249,12 +252,22 @@ function groupBySport<T extends { sport: string }>(items: T[]): Map<string, T[]>
 
 async function main() {
   const perplexityModel = getArgValue('--perplexity-model') ?? PERPLEXITY_DEFAULT_MODEL
-  const anthropicModel = getArgValue('--anthropic-model') ?? ANTHROPIC_DEFAULT_MODEL
+  // --anthropic-model overrides both stages (back-compat); per-stage flags win if set.
+  const legacyAnthropicModel = getArgValue('--anthropic-model')
+  const writingModel =
+    getArgValue('--anthropic-writing-model') ??
+    legacyAnthropicModel ??
+    ANTHROPIC_WRITING_DEFAULT_MODEL
+  const scoringModel =
+    getArgValue('--anthropic-scoring-model') ??
+    legacyAnthropicModel ??
+    ANTHROPIC_SCORING_DEFAULT_MODEL
   const forceAll = process.argv.includes('--force')
   const dryRun = process.argv.includes('--dry-run')
   const skipGrounding = process.argv.includes('--skip-grounding')
   const skipWriting = process.argv.includes('--skip-writing')
   const skipScoring = process.argv.includes('--skip-scoring')
+  const noWritingBatch = process.argv.includes('--writing-no-batch')
   const sportFilter = getArgValue('--sport')
   const groundingConcurrency = parsePositiveInt(
     getArgValue('--grounding-concurrency'),
@@ -290,16 +303,17 @@ async function main() {
   const anthropicClient = anthropicKey ? new Anthropic({ apiKey: anthropicKey }) : null
 
   const groundingPath = getGroundingPath(perplexityModel, sportFilter, forceAll)
-  const writingPath = getWritingPath(anthropicModel, sportFilter, forceAll)
-  const scoringPath = getScoringPath(anthropicModel, sportFilter, forceAll)
+  const writingPath = getWritingPath(writingModel, sportFilter, forceAll)
+  const scoringPath = getScoringPath(scoringModel, sportFilter, forceAll)
 
   console.log(`Reading ${SESSIONS_PATH}`)
   console.log(`Reading ${CONTENT_PATH}`)
   console.log(`Grounding: perplexity ${perplexityModel}  concurrency=${groundingConcurrency}`)
   console.log(`  → ${groundingPath}`)
-  console.log(`Writing:   anthropic  ${anthropicModel}  concurrency=${writingConcurrency}`)
+  const writingMode = noWritingBatch ? `sync concurrency=${writingConcurrency}` : 'batches-api'
+  console.log(`Writing:   anthropic  ${writingModel}  ${writingMode}`)
   console.log(`  → ${writingPath}`)
-  console.log(`Scoring:   anthropic  ${anthropicModel}  concurrency=${scoringConcurrency}`)
+  console.log(`Scoring:   anthropic  ${scoringModel}  concurrency=${scoringConcurrency}`)
   console.log(`  → ${scoringPath}`)
 
   const rawSessions = JSON.parse(readFileSync(SESSIONS_PATH, 'utf8')) as Session[]
@@ -316,18 +330,8 @@ async function main() {
     sportFilter,
     forceAll,
   )
-  const writingCheckpoint = loadWritingCheckpoint(
-    writingPath,
-    anthropicModel,
-    sportFilter,
-    forceAll,
-  )
-  const scoringCheckpoint = loadScoringCheckpoint(
-    scoringPath,
-    anthropicModel,
-    sportFilter,
-    forceAll,
-  )
+  const writingCheckpoint = loadWritingCheckpoint(writingPath, writingModel, sportFilter, forceAll)
+  const scoringCheckpoint = loadScoringCheckpoint(scoringPath, scoringModel, sportFilter, forceAll)
   console.log(
     `Checkpoints: ${Object.keys(groundingCheckpoint.results).length} grounded, ${Object.keys(writingCheckpoint.results).length} written, ${Object.keys(scoringCheckpoint.results).length} scored`,
   )
@@ -383,7 +387,9 @@ async function main() {
     console.log('\n=== Stage 1: Grounding (skipped) ===')
   }
 
-  // Stage 2: Writing (batched per sport, batches run in parallel)
+  // Stage 2: Writing (batched per sport). Default submits via the Anthropic
+  // Batches API (50% off) and awaits completion; --writing-no-batch falls back
+  // to synchronous per-batch calls with pLimit.
   if (!skipWriting && anthropicClient) {
     const needsWriting = needsContent.filter((s) => {
       if (writingCheckpoint.results[s.id]) return false
@@ -393,38 +399,38 @@ async function main() {
     console.log(`${needsWriting.length} session(s) need writing`)
     const bySport = groupBySport(needsWriting)
     const sports = [...bySport.keys()].sort()
-    type Job = { sport: string; batch: Session[] }
-    const jobs: Job[] = []
+    const jobs: WritingJob[] = []
     for (const sport of sports) {
       const list = bySport.get(sport)!
-      for (const batch of chunk(list, WRITING_BATCH_SIZE)) jobs.push({ sport, batch })
+      for (const batch of chunk(list, WRITING_BATCH_SIZE)) {
+        const groundingForBatch = new Map<string, GroundingData>()
+        for (const s of batch) {
+          const g = groundingCheckpoint.results[s.id]
+          if (g) groundingForBatch.set(s.id, g)
+        }
+        jobs.push({ sport, batch, grounding: groundingForBatch })
+      }
     }
     console.log(`${jobs.length} batch(es) across ${sports.length} sport(s)`)
     if (dryRun) {
       for (const job of jobs)
         console.log(`  [dry-run] ${job.sport} batch (${job.batch.length} sessions)`)
-    } else if (jobs.length > 0) {
+    } else if (jobs.length > 0 && noWritingBatch) {
       const limit = pLimit(writingConcurrency)
       let done = 0
       await Promise.all(
         jobs.map((job) =>
           limit(async () => {
-            const groundingForBatch = new Map<string, GroundingData>()
-            for (const s of job.batch) {
-              const g = groundingCheckpoint.results[s.id]
-              if (g) groundingForBatch.set(s.id, g)
-            }
             const results = await generateWriting(
               anthropicClient,
               job.batch,
               job.sport,
-              groundingForBatch,
-              anthropicModel,
+              job.grounding,
+              writingModel,
             )
             const gotIds = new Set<string>()
             for (const r of results) {
-              if (!sessionMap.has(r.id)) continue
-              gotIds.add(r.id)
+              if (sessionMap.has(r.id)) gotIds.add(r.id)
             }
             await checkpointWriter(() => {
               for (const r of results) {
@@ -441,6 +447,29 @@ async function main() {
           }),
         ),
       )
+    } else if (jobs.length > 0) {
+      const batchResults = await generateWritingViaBatches(anthropicClient, jobs, writingModel)
+      for (const { job, results, error } of batchResults) {
+        if (error) {
+          console.error(`  ✗ ${job.sport} batch errored: ${error}`)
+          continue
+        }
+        const gotIds = new Set<string>()
+        for (const r of results) {
+          if (sessionMap.has(r.id)) gotIds.add(r.id)
+        }
+        await checkpointWriter(() => {
+          for (const r of results) {
+            if (sessionMap.has(r.id)) writingCheckpoint.results[r.id] = r
+          }
+          writingCheckpoint.updatedAt = new Date().toISOString()
+          writeJson(writingPath, writingCheckpoint)
+        })
+        const missing = job.batch.filter((s) => !gotIds.has(s.id))
+        console.log(
+          `  ${job.sport} (${job.batch.length}) ✓ wrote ${gotIds.size}${missing.length > 0 ? ` ✗ missing ${missing.map((s) => s.id).join(',')}` : ''}`,
+        )
+      }
     }
   } else {
     console.log('\n=== Stage 2: Writing (skipped) ===')
@@ -497,7 +526,7 @@ async function main() {
               job.sport,
               groundingForBatch,
               writingForBatch,
-              anthropicModel,
+              scoringModel,
             )
             const gotIds = new Set<string>()
             for (const r of results) {
@@ -542,7 +571,8 @@ async function main() {
         contentMeta: {
           provider: 'hybrid',
           groundingModel: grounding ? perplexityModel : existing.contentMeta?.groundingModel,
-          writingModel: writing || scoring ? anthropicModel : existing.contentMeta?.writingModel,
+          writingModel: writing ? writingModel : existing.contentMeta?.writingModel,
+          scoringModel: scoring ? scoringModel : existing.contentMeta?.scoringModel,
           generatedAt: new Date().toISOString(),
           sources: grounding?.sources ?? existing.contentMeta?.sources,
         },

@@ -18,6 +18,7 @@ export type ContentProvider = 'perplexity' | 'anthropic' | 'hybrid'
 export interface ContentMeta {
   provider: ContentProvider
   writingModel?: string
+  scoringModel?: string
   groundingModel?: string
   model?: string
   generatedAt: string
