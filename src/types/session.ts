@@ -25,11 +25,27 @@ export interface ContentMeta {
   promptAugmentation?: string
 }
 
+export interface ScorecardDimension {
+  score: number
+  explanation: string
+}
+
+export interface Scorecard {
+  significance: ScorecardDimension
+  experience: ScorecardDimension
+  starPower: ScorecardDimension
+  uniqueness: ScorecardDimension
+  demand: ScorecardDimension
+  aggregate: number
+  overall: string
+}
+
 export interface SessionContent {
   blurb?: string
   potentialContendersIntro?: string
   potentialContenders?: Contender[]
   relatedNews?: RelatedNews[]
+  scorecard?: Scorecard
   contentMeta?: ContentMeta
 }
 

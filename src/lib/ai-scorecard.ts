@@ -226,36 +226,37 @@ function getFallbackPotentialContenders(session: SessionWithContent): Contender[
 }
 
 export function getSessionInsights(session: SessionWithContent): SessionInsights {
+  const sc = session.scorecard
   const dimensions: ScorecardDimension[] = [
     {
       key: 'rSig',
       label: 'Significance',
-      score: session.rSig,
-      explanation: getSignificanceExplanation(session),
+      score: sc?.significance.score ?? session.rSig,
+      explanation: sc?.significance.explanation ?? getSignificanceExplanation(session),
     },
     {
       key: 'rExp',
       label: 'Experience',
-      score: session.rExp,
-      explanation: getExperienceExplanation(session),
+      score: sc?.experience.score ?? session.rExp,
+      explanation: sc?.experience.explanation ?? getExperienceExplanation(session),
     },
     {
       key: 'rStar',
       label: 'Star Power',
-      score: session.rStar,
-      explanation: getStarPowerExplanation(session),
+      score: sc?.starPower.score ?? session.rStar,
+      explanation: sc?.starPower.explanation ?? getStarPowerExplanation(session),
     },
     {
       key: 'rUniq',
       label: 'Uniqueness',
-      score: session.rUniq,
-      explanation: getUniquenessExplanation(session),
+      score: sc?.uniqueness.score ?? session.rUniq,
+      explanation: sc?.uniqueness.explanation ?? getUniquenessExplanation(session),
     },
     {
       key: 'rDem',
       label: 'Demand',
-      score: session.rDem,
-      explanation: getDemandExplanation(session),
+      score: sc?.demand.score ?? session.rDem,
+      explanation: sc?.demand.explanation ?? getDemandExplanation(session),
     },
   ]
 
@@ -264,19 +265,22 @@ export function getSessionInsights(session: SessionWithContent): SessionInsights
   const potentialContenders = session.potentialContenders ?? getFallbackPotentialContenders(session)
   const relatedNews = getRelatedNewsForSession(session)
 
-  const sortedDimensions = [...dimensions].sort((a, b) => b.score - a.score)
-  const topLabel = sortedDimensions[0]?.label ?? 'The session'
-  const weakest = sortedDimensions[sortedDimensions.length - 1]
-
   let overallExplanation: string
-  if (session.agg >= 8) {
-    overallExplanation = `This is one of the premium sessions at LA28. ${topLabel} leads the way, but the overall profile is strong across the board.`
-  } else if (weakest && weakest.score < 5) {
-    overallExplanation = `${topLabel} carries the rating, but ${weakest.label.toLowerCase()} holds it back — worth knowing if you're weighing this against other sessions.`
-  } else if (session.agg >= 6) {
-    overallExplanation = `A solid session with ${topLabel.toLowerCase()} as the standout category. The aggregate reflects a genuinely good ticket.`
+  if (sc?.overall) {
+    overallExplanation = sc.overall
   } else {
-    overallExplanation = `Not a headline session, but still a live Olympic experience. ${topLabel} is the strongest dimension here.`
+    const sortedDimensions = [...dimensions].sort((a, b) => b.score - a.score)
+    const topLabel = sortedDimensions[0]?.label ?? 'The session'
+    const weakest = sortedDimensions[sortedDimensions.length - 1]
+    if (session.agg >= 8) {
+      overallExplanation = `This is one of the premium sessions at LA28. ${topLabel} leads the way, but the overall profile is strong across the board.`
+    } else if (weakest && weakest.score < 5) {
+      overallExplanation = `${topLabel} carries the rating, but ${weakest.label.toLowerCase()} holds it back — worth knowing if you're weighing this against other sessions.`
+    } else if (session.agg >= 6) {
+      overallExplanation = `A solid session with ${topLabel.toLowerCase()} as the standout category. The aggregate reflects a genuinely good ticket.`
+    } else {
+      overallExplanation = `Not a headline session, but still a live Olympic experience. ${topLabel} is the strongest dimension here.`
+    }
   }
 
   return {

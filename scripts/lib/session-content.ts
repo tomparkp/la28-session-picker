@@ -5,7 +5,14 @@ import { fileURLToPath } from 'node:url'
 import type Anthropic from '@anthropic-ai/sdk'
 
 import type { SportKnowledge } from '../../src/data/sport-knowledge.js'
-import type { Contender, ContentSource, RelatedNews, Session } from '../../src/types/session.js'
+import type {
+  Contender,
+  ContentSource,
+  RelatedNews,
+  Scorecard,
+  ScorecardDimension,
+  Session,
+} from '../../src/types/session.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 export const ROOT = resolve(__dirname, '..', '..')
@@ -23,10 +30,36 @@ export const PERPLEXITY_DEFAULT_MODEL = 'sonar-pro'
 export const ANTHROPIC_DEFAULT_MODEL = 'claude-sonnet-4-5-20250929'
 export const GROUNDING_VERSION = 1
 export const WRITING_VERSION = 2
+export const SCORING_VERSION = 2
 export const MAX_RETRIES = 3
 export const RETRY_DELAY_MS = 5000
 export const MAX_NEWS_ITEMS = 10
 export const WRITING_BATCH_SIZE = 15
+export const SCORING_BATCH_SIZE = 15
+
+export const SCORE_WEIGHTS = {
+  significance: 0.3,
+  experience: 0.25,
+  starPower: 0.15,
+  uniqueness: 0.15,
+  demand: 0.15,
+} as const
+
+export function computeAggregate(
+  sig: number,
+  exp: number,
+  star: number,
+  uniq: number,
+  dem: number,
+): number {
+  const raw =
+    sig * SCORE_WEIGHTS.significance +
+    exp * SCORE_WEIGHTS.experience +
+    star * SCORE_WEIGHTS.starPower +
+    uniq * SCORE_WEIGHTS.uniqueness +
+    dem * SCORE_WEIGHTS.demand
+  return Math.round(raw * 10) / 10
+}
 
 export interface GroundingData {
   id: string
@@ -40,6 +73,11 @@ export interface WritingData {
   blurb: string
   potentialContendersIntro: string
   potentialContenders: Contender[]
+}
+
+export interface ScoringData {
+  id: string
+  scorecard: Scorecard
 }
 
 interface PerplexitySearchResult {
@@ -415,5 +453,200 @@ export async function generateWriting(
     }
   }
   console.error(`    Writing FAILED after ${MAX_RETRIES} attempts for ${sport} batch`)
+  return []
+}
+
+export const SCORING_SYSTEM_PROMPT = `You are scoring LA 2028 Olympics sessions for a ticket-buying guide. For each session you assign integer 1-10 scores across five dimensions and write a short, specific explanation that justifies the SCORE you gave (not the venue or sport in general).
+
+You will receive a batch of sessions for one sport, each with: basic facts, sport-level background, grounding facts from recent web searches, and the blurb already written for that session. Use the grounding facts and blurb as authoritative current context. Do not restate the blurb.
+
+BASELINE: This is the Olympics in Los Angeles. Every session is a world-class live event, and the Games are already well into presale with most sessions tracking toward sell-out. That context sets a floor on the scale — no Olympic session scores a 1 or 2, and sessions that would be "low interest" in a normal sporting context still land in the 4-5 range here because of global scarcity and Olympic prestige. Reserve 1-3 only for truly exceptional worst-case scenarios (none should occur in practice).
+
+Dimensions and rubric:
+
+1. significance — Olympic stakes of THIS session.
+   10 = gold-medal final in a marquee sport (Athletics, Swimming, Basketball, Football, Gymnastics) or an Opening/Closing Ceremony.
+   8-9 = gold-medal final in a non-marquee sport, or session containing 3+ medal events.
+   6-7 = bronze-medal match, semifinal in a marquee sport, or single non-marquee final.
+   5 = quarterfinal, or semifinal in a smaller sport.
+   4 = preliminary heat / round 1 / qualification — Olympic athletes competing for advancement; real stakes, just not medal-deciding.
+   Do not go below 4 — every Olympic competition round carries stakes for the athletes.
+
+2. experience — How good it'll be to attend live. Combines sport watchability + venue quality + round + time of day.
+   10 = ceremony at iconic venue, OR marquee final at LA Memorial Coliseum / Rose Bowl / Dodger Stadium / 2028 Stadium / Intuit Dome.
+   8-9 = high-energy sport (basketball, beach volleyball, athletics, surfing) at a strong venue, especially evening prime-time.
+   6-7 = solid spectator sport at a decent venue, or marquee sport in a quieter round.
+   5 = daytime/morning session, or mid-tier sport at a generic venue — still a live Olympic experience, just without prime-time energy.
+   4 = lowest the scale should go: an early-morning session of a hard-to-follow sport at a small venue.
+   Do not go below 4 — "It's the Olympics at LA Memorial Coliseum" sets a floor even for a 9:30am prelim session.
+
+3. starPower — Likelihood that globally-recognized athletes are competing.
+   10 = basketball final, ceremony, marquee tennis match, men's/women's 100m final.
+   8-9 = medal rounds in marquee sports with confirmed superstar contenders.
+   6-7 = mid-tier sport medal round, or early-round marquee sport (top athletes often compete in prelims).
+   5 = early-round sessions where top athletes may or may not appear — every Olympic field contains national champions and world-level competitors even if not household names.
+   4 = lowest typical score: a prelim of a sport without any globally-known names.
+
+4. uniqueness — How rare or special this specific session is. THIS IS THE DIMENSION MOST OFTEN MIS-RATED — be careful.
+   10 = Opening/Closing Ceremony, baseball final at Dodger Stadium, Athletics gold-medal final at LA Memorial Coliseum, soccer final at Rose Bowl. (Once-in-a-lifetime pairings of marquee sport + iconic venue + medal stakes.)
+   7-9 = medal round of a new/returning Olympic sport (Flag Football, Lacrosse, Cricket, Squash, Baseball, 3x3 Basketball), OR a marquee final at an iconic venue.
+   5-6 = early round of a new/returning Olympic sport, OR a non-medal session at an iconic venue with significant cultural pull.
+   4 = standard-format medal round in an established sport at a generic venue, OR a routine session at a famous venue (e.g. one of many Athletics prelims at the Coliseum — the venue is iconic but THIS session is one of dozens like it). Every Olympic session is once-every-four-years in some sense, which sets the floor.
+   Do not go below 4 — even the most "routine" Olympic session is still an Olympic session.
+   CRITICAL: An iconic venue alone does NOT justify a high uniqueness score if the session itself is routine. Many ATH prelims happen at the Coliseum across the Games — uniqueness for those should be modest (4-5). Reserve 8-10 for genuinely once-in-a-lifetime combinations.
+
+5. demand — How sought-after / hard to get tickets for.
+   IMPORTANT CONTEXT: Presale is active and the vast majority of Olympic sessions are tracking toward sell-out regardless of individual session profile — Olympic scarcity drives a high floor on demand.
+   10 = Opening/Closing Ceremony, basketball final, baseball final at Dodger, Athletics finals night, anything with a $3000+ price ceiling.
+   8-9 = marquee sport finals/semifinals; price ceiling $1500-$3000.
+   6-7 = mid-tier sport finals, marquee sport early rounds at iconic venues, or price ceiling $500-$1500.
+   5 = mid-tier sport non-medal rounds at decent venues, or early-round sessions of popular sports — still generally expected to sell but less competitive to book.
+   4 = lowest typical score: an early prelim of a niche sport at a generic venue with a low price ceiling. Even here, Olympic scarcity means "easier to get" does not mean "easy to get."
+   Do not go below 4 — Olympic ticket scarcity sets a floor; no LA28 session is genuinely low-demand.
+
+For each dimension produce:
+- "score": integer 1-10 (in practice 4-10; do not go below 4).
+- "explanation": one to two sentences (max ~40 words) that justify THIS specific score with nuanced, grounded language. The tone must match the score AND acknowledge the Olympic context:
+  - A 10 reads "exceptional because…"
+  - A 7-9 reads "strong because…"
+  - A 5-6 reads "solid — an Olympic session at [venue], though without [the prime-time slot / medal stakes / marquee-round matchup] that would push it higher"
+  - A 4 reads "Olympic-baseline — a [morning prelim] with [specific limiting factor], which is about as modest as Olympic sessions get, but still a live LA28 ticket"
+- Avoid harsh language. Do NOT write "low crowd energy", "sparse attendance", "weak demand", "tickets widely available", "forgettable", "minimal stakes", "lacking". Instead use nuanced framing like "crowds may be quieter than prime-time", "easier to book relative to marquee nights", "stakes are earned through advancement rather than medals".
+- Reference actual session/venue/round factors, but frame them as tradeoffs against the Olympic baseline, not flaws.
+
+Also produce:
+- "overall": one to two sentences summarizing where the session lands and what carries or limits it. Tone should be measured, not dismissive — even a low-aggregate session is still an Olympic ticket.
+
+Rules:
+- Scores are integers 1-10, effectively 4-10 given the Olympic baseline.
+- Explanations are plain text. No markdown, no bold, no italics, no lists.
+- Vary the opening of explanations across the batch — don't start every Uniqueness explanation with "While the venue is iconic…".
+- Use the full 4-10 range honestly. A marquee final in prime time at the Coliseum earns its 9s and 10s; an early prelim earns 4-5s. Don't compress everything to the middle.
+- If a "User correction / additional context" block is present in the user prompt, treat it as authoritative — it supersedes conflicting facts.
+- Return a JSON array of objects, one per session id, each with "id" and "scorecard" containing the five dimensions plus "overall". No markdown fences.
+
+Example object shape (do not copy values):
+{
+  "id": "ATH04",
+  "scorecard": {
+    "significance": { "score": 9, "explanation": "..." },
+    "experience": { "score": 10, "explanation": "..." },
+    "starPower": { "score": 9, "explanation": "..." },
+    "uniqueness": { "score": 10, "explanation": "..." },
+    "demand": { "score": 10, "explanation": "..." },
+    "overall": "..."
+  }
+}`
+
+export function buildScoringPrompt(
+  sessions: Session[],
+  sport: string,
+  grounding: Map<string, GroundingData>,
+  writing: Map<string, WritingData>,
+  extraInstructions?: string,
+): string {
+  let prompt = buildSportContext(sport)
+  prompt += `### Sessions (${sessions.length}) — score each\n\n`
+  for (const s of sessions) {
+    prompt += `#### ${s.id}: ${s.name}\n`
+    prompt += `- Description: ${s.desc}\n`
+    prompt += `- Round: ${s.rt}\n`
+    prompt += `- Venue: ${s.venue}\n`
+    prompt += `- Date/Time: ${s.date}, ${s.time}\n`
+    prompt += `- Price Range: $${s.pLo}–$${s.pHi}\n`
+    const w = writing.get(s.id)
+    if (w?.blurb) {
+      prompt += `- Blurb (already written for this session — for context, do not restate):\n`
+      for (const line of w.blurb.split('\n')) prompt += `  ${line}\n`
+    }
+    const g = grounding.get(s.id)
+    if (g && g.groundingFacts.length > 0) {
+      prompt += `- groundingFacts:\n`
+      for (const fact of g.groundingFacts) prompt += `  - ${fact}\n`
+    }
+    prompt += '\n'
+  }
+  prompt += augmentationBlock(extraInstructions)
+  prompt += `Return a JSON array with ${sessions.length} objects, one per session id above, each shaped { id, scorecard: { significance, experience, starPower, uniqueness, demand, overall } } where each dimension is { score, explanation }. No markdown fences.`
+  return prompt
+}
+
+function parseDimension(raw: unknown): ScorecardDimension | null {
+  if (!raw || typeof raw !== 'object') return null
+  const obj = raw as Record<string, unknown>
+  const score = typeof obj.score === 'number' ? Math.round(obj.score) : NaN
+  const explanation = typeof obj.explanation === 'string' ? obj.explanation.trim() : ''
+  if (!Number.isFinite(score) || score < 1 || score > 10) return null
+  if (!explanation) return null
+  return { score, explanation }
+}
+
+export async function generateScoring(
+  client: Anthropic,
+  sessions: Session[],
+  sport: string,
+  grounding: Map<string, GroundingData>,
+  writing: Map<string, WritingData>,
+  model: string,
+  extraInstructions?: string,
+): Promise<ScoringData[]> {
+  const prompt = buildScoringPrompt(sessions, sport, grounding, writing, extraInstructions)
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const response = await client.messages.create({
+        model,
+        max_tokens: 8192,
+        system: SCORING_SYSTEM_PROMPT,
+        messages: [{ role: 'user', content: prompt }],
+      })
+      const text = response.content[0].type === 'text' ? response.content[0].text : ''
+      const jsonMatch = text.match(/\[[\s\S]*\]/)
+      if (!jsonMatch) throw new Error('No JSON array in Anthropic response')
+      const parsed = JSON.parse(jsonMatch[0]) as unknown
+      if (!Array.isArray(parsed)) throw new Error('Expected array')
+      const results: ScoringData[] = []
+      for (const raw of parsed) {
+        if (!raw || typeof raw !== 'object') continue
+        const item = raw as Record<string, unknown>
+        if (typeof item.id !== 'string') continue
+        const sc = item.scorecard as Record<string, unknown> | undefined
+        if (!sc || typeof sc !== 'object') continue
+        const significance = parseDimension(sc.significance)
+        const experience = parseDimension(sc.experience)
+        const starPower = parseDimension(sc.starPower)
+        const uniqueness = parseDimension(sc.uniqueness)
+        const demand = parseDimension(sc.demand)
+        const overall = typeof sc.overall === 'string' ? sc.overall.trim() : ''
+        if (!significance || !experience || !starPower || !uniqueness || !demand || !overall) {
+          continue
+        }
+        const aggregate = computeAggregate(
+          significance.score,
+          experience.score,
+          starPower.score,
+          uniqueness.score,
+          demand.score,
+        )
+        results.push({
+          id: item.id,
+          scorecard: {
+            significance,
+            experience,
+            starPower,
+            uniqueness,
+            demand,
+            aggregate,
+            overall,
+          },
+        })
+      }
+      return results
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err)
+      console.error(`    Scoring attempt ${attempt}/${MAX_RETRIES} failed: ${msg}`)
+      if (attempt < MAX_RETRIES) await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * attempt))
+    }
+  }
+  console.error(`    Scoring FAILED after ${MAX_RETRIES} attempts for ${sport} batch`)
   return []
 }
