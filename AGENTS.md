@@ -10,6 +10,13 @@ This file provides guidance to AI coding agents working with code in this reposi
 - `pnpm build` — Production build
 - `pnpm preview` — Preview production build
 - `pnpm test` — Run tests with Vitest (`vitest run`)
+- `pnpm format:check` — Check formatting with oxfmt
+- `pnpm lint` — Lint with oxlint
+- `pnpm typecheck` — Type-check with `tsc --noEmit`
+
+### Pre-PR checks
+
+Before opening a pull request, run the CI-equivalent checks locally and fix any failures first: `pnpm format:check`, `pnpm lint`, `pnpm typecheck`, and `pnpm test`. Run them in parallel when possible. This avoids pushing commits that fail CI.
 
 ## Architecture
 
