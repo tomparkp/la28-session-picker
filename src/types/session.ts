@@ -22,6 +22,7 @@ export interface ContentMeta {
   model?: string
   generatedAt: string
   sources?: ContentSource[]
+  promptAugmentation?: string
 }
 
 export interface SessionContent {

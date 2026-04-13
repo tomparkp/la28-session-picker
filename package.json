@@ -14,6 +14,7 @@
     "typecheck": "tsc --noEmit",
     "rate-sessions": "tsx scripts/rate-sessions.ts",
     "generate-content": "tsx scripts/generate-session-content.ts",
+    "refresh": "tsx scripts/refresh-session.ts",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
