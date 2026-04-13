@@ -1,5 +1,11 @@
 import { Drawer } from '@base-ui/react/drawer'
-import { type PointerEvent as ReactPointerEvent, type ReactNode, useRef, useState } from 'react'
+import {
+  type PointerEvent as ReactPointerEvent,
+  type ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { cn } from '@/lib/cn'
@@ -16,6 +22,7 @@ interface SideDrawerProps {
   children: ReactNode
   popupClassName?: string
   contentClassName?: string
+  scrollResetKey?: string | number | null
 }
 
 export function SideDrawer({
@@ -28,10 +35,17 @@ export function SideDrawer({
   children,
   popupClassName,
   contentClassName,
+  scrollResetKey,
 }: SideDrawerProps) {
   const panelRef = useRef<HTMLDivElement>(null)
+  const scrollRef = useRef<HTMLDivElement>(null)
   const widthRef = useRef(defaultWidth)
   const [width, setWidth] = useState(defaultWidth)
+
+  useEffect(() => {
+    if (scrollResetKey === null || scrollResetKey === undefined) return
+    scrollRef.current?.scrollTo({ top: 0 })
+  }, [scrollResetKey])
   const isMobile = useMediaQuery(`(max-width: ${MD_BREAKPOINT - 1}px)`)
 
   function handleResizeStart(e: ReactPointerEvent) {
@@ -104,6 +118,7 @@ export function SideDrawer({
             </div>
 
             <div
+              ref={scrollRef}
               className={cn(
                 'flex h-full flex-col overflow-y-auto overscroll-contain',
                 contentClassName,

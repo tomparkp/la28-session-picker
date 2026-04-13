@@ -436,6 +436,7 @@ export function SessionDetail({
         onClose={onClose}
         aria-label={session?.name ?? 'Session details'}
         defaultWidth={DEFAULT_WIDTH}
+        scrollResetKey={session?.id ?? null}
       >
         {panelContent}
       </SideDrawer>
