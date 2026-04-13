@@ -43,7 +43,7 @@ export function SideDrawer({
   const [width, setWidth] = useState(defaultWidth)
 
   useEffect(() => {
-    if (scrollResetKey == null) return
+    if (scrollResetKey === null || scrollResetKey === undefined) return
     scrollRef.current?.scrollTo({ top: 0 })
   }, [scrollResetKey])
   const isMobile = useMediaQuery(`(max-width: ${MD_BREAKPOINT - 1}px)`)
