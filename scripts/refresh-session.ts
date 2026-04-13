@@ -10,9 +10,12 @@ import {
   type GroundingData,
   PERPLEXITY_DEFAULT_MODEL,
   SESSIONS_PATH,
+  type WritingData,
   buildGroundingPrompt,
+  buildScoringPrompt,
   buildWritingPrompt,
   fetchGrounding,
+  generateScoring,
   generateWriting,
 } from './lib/session-content.js'
 
@@ -21,6 +24,7 @@ interface ParsedArgs {
   prompt?: string
   skipGrounding: boolean
   skipWriting: boolean
+  skipScoring: boolean
   dryRun: boolean
   perplexityModel: string
   anthropicModel: string
@@ -30,6 +34,7 @@ function parseArgs(argv: string[]): ParsedArgs {
   const parsed: ParsedArgs = {
     skipGrounding: false,
     skipWriting: false,
+    skipScoring: false,
     dryRun: false,
     perplexityModel: PERPLEXITY_DEFAULT_MODEL,
     anthropicModel: ANTHROPIC_DEFAULT_MODEL,
@@ -45,6 +50,8 @@ function parseArgs(argv: string[]): ParsedArgs {
       parsed.skipGrounding = true
     } else if (arg === '--skip-writing') {
       parsed.skipWriting = true
+    } else if (arg === '--skip-scoring') {
+      parsed.skipScoring = true
     } else if (arg === '--dry-run') {
       parsed.dryRun = true
     } else if (arg === '--perplexity-model') {
@@ -75,7 +82,8 @@ Options:
   --prompt <text>          Extra instructions appended to both grounding and writing prompts
                            (e.g. "Athlete X has been ruled out"). Treated as authoritative.
   --skip-grounding         Skip Perplexity; reuse existing relatedNews/sources for this id.
-  --skip-writing           Skip Anthropic; only refresh grounding / relatedNews.
+  --skip-writing           Skip Anthropic writing; only refresh grounding / relatedNews.
+  --skip-scoring           Skip Anthropic scoring; leave the existing scorecard in place.
   --dry-run                Print resolved session and prompts, make no API calls.
   --perplexity-model <m>   Override grounding model (default: ${PERPLEXITY_DEFAULT_MODEL}).
   --anthropic-model <m>    Override writing model (default: ${ANTHROPIC_DEFAULT_MODEL}).
@@ -102,6 +110,10 @@ async function main() {
     }
     if (!args.skipWriting && !anthropicKey) {
       console.error('Error: ANTHROPIC_API_KEY is required (or use --skip-writing)')
+      process.exit(1)
+    }
+    if (!args.skipScoring && !anthropicKey) {
+      console.error('Error: ANTHROPIC_API_KEY is required (or use --skip-scoring)')
       process.exit(1)
     }
   }
@@ -132,6 +144,8 @@ async function main() {
     console.log(buildGroundingPrompt(session, session.sport, args.prompt))
     console.log('\n[dry-run] Writing prompt:')
     console.log(buildWritingPrompt([session], session.sport, new Map(), args.prompt))
+    console.log('\n[dry-run] Scoring prompt:')
+    console.log(buildScoringPrompt([session], session.sport, new Map(), new Map(), args.prompt))
     return
   }
 
@@ -157,11 +171,13 @@ async function main() {
     console.log('\n=== Stage 1: Grounding (skipped) ===')
   }
 
+  const anthropicClient =
+    !args.skipWriting || !args.skipScoring ? new Anthropic({ apiKey: anthropicKey! }) : null
+
   // Stage 2: Writing
   let writing: WritingResult | null = null
-  if (!args.skipWriting) {
+  if (!args.skipWriting && anthropicClient) {
     console.log(`\n=== Stage 2: Writing (${args.anthropicModel}) ===`)
-    const anthropicClient = new Anthropic({ apiKey: anthropicKey! })
     const groundingMap = new Map<string, GroundingData>()
     if (grounding) groundingMap.set(session.id, grounding)
     const results = await generateWriting(
@@ -184,17 +200,54 @@ async function main() {
     console.log('\n=== Stage 2: Writing (skipped) ===')
   }
 
-  // Merge back
+  // Stage 3: Scoring
+  let scoring: ScoringResult | null = null
+  if (!args.skipScoring && anthropicClient) {
+    console.log(`\n=== Stage 3: Scoring (${args.anthropicModel}) ===`)
+    const groundingMap = new Map<string, GroundingData>()
+    if (grounding) groundingMap.set(session.id, grounding)
+    const writingMap = new Map<string, WritingData>()
+    const writingForScoring: WritingData | null =
+      writing ?? buildWritingFromExisting(session.id, existing)
+    if (writingForScoring) writingMap.set(session.id, writingForScoring)
+    if (!writingForScoring) {
+      console.error('No blurb available for scoring (run without --skip-writing or seed content).')
+      process.exit(1)
+    }
+    const results = await generateScoring(
+      anthropicClient,
+      [session],
+      session.sport,
+      groundingMap,
+      writingMap,
+      args.anthropicModel,
+      args.prompt,
+    )
+    scoring = results.find((r) => r.id === session.id) ?? null
+    if (!scoring) {
+      console.error('Scoring failed; aborting.')
+      process.exit(1)
+    }
+    const sc = scoring.scorecard
+    console.log(
+      `  ✓ Sig${sc.significance.score} Exp${sc.experience.score} Star${sc.starPower.score} Uniq${sc.uniqueness.score} Dem${sc.demand.score} = ${sc.aggregate}`,
+    )
+  } else {
+    console.log('\n=== Stage 3: Scoring (skipped) ===')
+  }
+
+  // Merge back into session-content.json
   const next: SessionContent = {
     blurb: writing?.blurb ?? existing?.blurb,
     potentialContendersIntro:
       writing?.potentialContendersIntro ?? existing?.potentialContendersIntro,
     potentialContenders: writing?.potentialContenders ?? existing?.potentialContenders,
     relatedNews: grounding?.relatedNews ?? existing?.relatedNews ?? [],
+    scorecard: scoring?.scorecard ?? existing?.scorecard,
     contentMeta: {
       provider: 'hybrid',
       groundingModel: grounding ? args.perplexityModel : existing?.contentMeta?.groundingModel,
-      writingModel: writing ? args.anthropicModel : existing?.contentMeta?.writingModel,
+      writingModel: writing || scoring ? args.anthropicModel : existing?.contentMeta?.writingModel,
       generatedAt: new Date().toISOString(),
       sources: grounding?.sources ?? existing?.contentMeta?.sources,
       promptAugmentation: args.prompt,
@@ -206,12 +259,42 @@ async function main() {
   writeFileSync(CONTENT_PATH, `${output}\n`)
   console.log(`\nWrote ${session.id} to ${CONTENT_PATH}`)
 
+  // Backfill flat r* fields on sessions.json from the scorecard
+  if (scoring) {
+    const target = rawSessions.find((s) => s.id === session.id)
+    if (target) {
+      const sc = scoring.scorecard
+      target.rSig = sc.significance.score
+      target.rExp = sc.experience.score
+      target.rStar = sc.starPower.score
+      target.rUniq = sc.uniqueness.score
+      target.rDem = sc.demand.score
+      target.agg = sc.aggregate
+      writeFileSync(SESSIONS_PATH, `${JSON.stringify(rawSessions, null, 2)}\n`)
+      console.log(`Updated r* fields for ${session.id} in ${SESSIONS_PATH}`)
+    }
+  }
+
   if (writing) {
     console.log(`\n--- New blurb ---\n${writing.blurb}\n-----------------`)
   }
 }
 
+function buildWritingFromExisting(
+  id: string,
+  existing: SessionContent | undefined,
+): WritingData | null {
+  if (!existing?.blurb) return null
+  return {
+    id,
+    blurb: existing.blurb,
+    potentialContendersIntro: existing.potentialContendersIntro ?? '',
+    potentialContenders: existing.potentialContenders ?? [],
+  }
+}
+
 type WritingResult = Awaited<ReturnType<typeof generateWriting>>[number]
+type ScoringResult = Awaited<ReturnType<typeof generateScoring>>[number]
 
 main().catch((err) => {
   console.error('Fatal error:', err)

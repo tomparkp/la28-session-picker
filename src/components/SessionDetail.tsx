@@ -23,12 +23,32 @@ const DEFAULT_WIDTH = 560
 
 type ScoreKey = 'rSig' | 'rExp' | 'rStar' | 'rUniq' | 'rDem'
 
-const ringColors: Record<ScoreKey, { border: string; score: string }> = {
-  rSig: { border: 'border-l-[#0085c7]', score: 'text-[#0085c7]' },
-  rExp: { border: 'border-l-[#f4c300]', score: 'text-[#dab200]' },
-  rStar: { border: 'border-l-[#97928a]', score: 'text-ink2' },
-  rUniq: { border: 'border-l-[#009f3d]', score: 'text-[#009f3d]' },
-  rDem: { border: 'border-l-[#df0024]', score: 'text-[#df0024]' },
+const ringColors: Record<ScoreKey, { tint: string; label: string; badge: string }> = {
+  rSig: {
+    tint: 'bg-[#0085c7]/[0.06]',
+    label: 'text-[#0085c7]',
+    badge: 'bg-[#0085c7] text-white',
+  },
+  rExp: {
+    tint: 'bg-[#dab200]/[0.08]',
+    label: 'text-[#b89400]',
+    badge: 'bg-[#dab200] text-white',
+  },
+  rStar: {
+    tint: 'bg-[#97928a]/[0.08]',
+    label: 'text-ink2',
+    badge: 'bg-[#97928a] text-white',
+  },
+  rUniq: {
+    tint: 'bg-[#009f3d]/[0.07]',
+    label: 'text-[#009f3d]',
+    badge: 'bg-[#009f3d] text-white',
+  },
+  rDem: {
+    tint: 'bg-[#df0024]/[0.06]',
+    label: 'text-[#df0024]',
+    badge: 'bg-[#df0024] text-white',
+  },
 }
 
 const newsDateFormatter = new Intl.DateTimeFormat('en-US', {
@@ -372,26 +392,35 @@ export function SessionDetail({
           Scorecard
         </h3>
 
-        <div className="mt-3 grid grid-cols-2 gap-2.5 max-sm:grid-cols-1">
+        <div className="mt-3 flex flex-col gap-2.5">
           {insights.dimensions.map((dimension) => {
             const colors = ringColors[dimension.key as ScoreKey]
             return (
               <div
                 key={dimension.key}
-                className={cn(
-                  'rounded-lg border border-border bg-surface2 border-l-[3px] px-3.5 py-3',
-                  colors?.border,
-                )}
+                className={cn('flex items-start gap-3.5 rounded-lg px-3.5 py-3', colors?.tint)}
               >
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-ink text-[0.78rem] font-semibold">{dimension.label}</span>
-                  <span className={cn('text-[0.9rem] font-bold tabular-nums', colors?.score)}>
-                    {dimension.score.toFixed(1)}
-                  </span>
+                <div
+                  className={cn(
+                    'flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-[0.95rem] font-bold tabular-nums',
+                    colors?.badge,
+                  )}
+                >
+                  {dimension.score.toFixed(1)}
                 </div>
-                <p className="text-ink3 mt-1.5 text-[0.72rem] leading-normal">
-                  {dimension.explanation}
-                </p>
+                <div className="min-w-0 flex-1">
+                  <span
+                    className={cn(
+                      'text-[0.7rem] font-semibold tracking-[0.06em] uppercase',
+                      colors?.label,
+                    )}
+                  >
+                    {dimension.label}
+                  </span>
+                  <p className="text-ink2 mt-1 text-[0.78rem] leading-normal">
+                    {dimension.explanation}
+                  </p>
+                </div>
               </div>
             )
           })}
