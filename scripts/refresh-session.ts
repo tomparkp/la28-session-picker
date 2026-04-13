@@ -5,7 +5,8 @@ import Anthropic from '@anthropic-ai/sdk'
 
 import type { Session, SessionContent } from '../src/types/session.js'
 import {
-  ANTHROPIC_DEFAULT_MODEL,
+  ANTHROPIC_SCORING_DEFAULT_MODEL,
+  ANTHROPIC_WRITING_DEFAULT_MODEL,
   CONTENT_PATH,
   type GroundingData,
   PERPLEXITY_DEFAULT_MODEL,
@@ -27,7 +28,8 @@ interface ParsedArgs {
   skipScoring: boolean
   dryRun: boolean
   perplexityModel: string
-  anthropicModel: string
+  writingModel: string
+  scoringModel: string
 }
 
 function parseArgs(argv: string[]): ParsedArgs {
@@ -37,7 +39,8 @@ function parseArgs(argv: string[]): ParsedArgs {
     skipScoring: false,
     dryRun: false,
     perplexityModel: PERPLEXITY_DEFAULT_MODEL,
-    anthropicModel: ANTHROPIC_DEFAULT_MODEL,
+    writingModel: ANTHROPIC_WRITING_DEFAULT_MODEL,
+    scoringModel: ANTHROPIC_SCORING_DEFAULT_MODEL,
   }
   const args = argv.slice(2)
   for (let i = 0; i < args.length; i++) {
@@ -59,9 +62,20 @@ function parseArgs(argv: string[]): ParsedArgs {
     } else if (arg.startsWith('--perplexity-model=')) {
       parsed.perplexityModel = arg.slice('--perplexity-model='.length)
     } else if (arg === '--anthropic-model') {
-      parsed.anthropicModel = args[++i]
+      // back-compat: apply to both writing and scoring
+      parsed.writingModel = args[++i]
+      parsed.scoringModel = parsed.writingModel
     } else if (arg.startsWith('--anthropic-model=')) {
-      parsed.anthropicModel = arg.slice('--anthropic-model='.length)
+      parsed.writingModel = arg.slice('--anthropic-model='.length)
+      parsed.scoringModel = parsed.writingModel
+    } else if (arg === '--anthropic-writing-model') {
+      parsed.writingModel = args[++i]
+    } else if (arg.startsWith('--anthropic-writing-model=')) {
+      parsed.writingModel = arg.slice('--anthropic-writing-model='.length)
+    } else if (arg === '--anthropic-scoring-model') {
+      parsed.scoringModel = args[++i]
+    } else if (arg.startsWith('--anthropic-scoring-model=')) {
+      parsed.scoringModel = arg.slice('--anthropic-scoring-model='.length)
     } else if (!arg.startsWith('-') && !parsed.sessionId) {
       parsed.sessionId = arg
     } else {
@@ -85,8 +99,10 @@ Options:
   --skip-writing           Skip Anthropic writing; only refresh grounding / relatedNews.
   --skip-scoring           Skip Anthropic scoring; leave the existing scorecard in place.
   --dry-run                Print resolved session and prompts, make no API calls.
-  --perplexity-model <m>   Override grounding model (default: ${PERPLEXITY_DEFAULT_MODEL}).
-  --anthropic-model <m>    Override writing model (default: ${ANTHROPIC_DEFAULT_MODEL}).
+  --perplexity-model <m>         Override grounding model (default: ${PERPLEXITY_DEFAULT_MODEL}).
+  --anthropic-writing-model <m>  Writing model (default: ${ANTHROPIC_WRITING_DEFAULT_MODEL}).
+  --anthropic-scoring-model <m>  Scoring model (default: ${ANTHROPIC_SCORING_DEFAULT_MODEL}).
+  --anthropic-model <m>          Legacy: apply one model to both writing and scoring.
 
 Example:
   pnpm refresh ATH04
@@ -177,7 +193,7 @@ async function main() {
   // Stage 2: Writing
   let writing: WritingResult | null = null
   if (!args.skipWriting && anthropicClient) {
-    console.log(`\n=== Stage 2: Writing (${args.anthropicModel}) ===`)
+    console.log(`\n=== Stage 2: Writing (${args.writingModel}) ===`)
     const groundingMap = new Map<string, GroundingData>()
     if (grounding) groundingMap.set(session.id, grounding)
     const results = await generateWriting(
@@ -185,7 +201,7 @@ async function main() {
       [session],
       session.sport,
       groundingMap,
-      args.anthropicModel,
+      args.writingModel,
       args.prompt,
     )
     writing = results.find((r) => r.id === session.id) ?? null
@@ -203,7 +219,7 @@ async function main() {
   // Stage 3: Scoring
   let scoring: ScoringResult | null = null
   if (!args.skipScoring && anthropicClient) {
-    console.log(`\n=== Stage 3: Scoring (${args.anthropicModel}) ===`)
+    console.log(`\n=== Stage 3: Scoring (${args.scoringModel}) ===`)
     const groundingMap = new Map<string, GroundingData>()
     if (grounding) groundingMap.set(session.id, grounding)
     const writingMap = new Map<string, WritingData>()
@@ -220,7 +236,7 @@ async function main() {
       session.sport,
       groundingMap,
       writingMap,
-      args.anthropicModel,
+      args.scoringModel,
       args.prompt,
     )
     scoring = results.find((r) => r.id === session.id) ?? null
@@ -247,7 +263,8 @@ async function main() {
     contentMeta: {
       provider: 'hybrid',
       groundingModel: grounding ? args.perplexityModel : existing?.contentMeta?.groundingModel,
-      writingModel: writing || scoring ? args.anthropicModel : existing?.contentMeta?.writingModel,
+      writingModel: writing ? args.writingModel : existing?.contentMeta?.writingModel,
+      scoringModel: scoring ? args.scoringModel : existing?.contentMeta?.scoringModel,
       generatedAt: new Date().toISOString(),
       sources: grounding?.sources ?? existing?.contentMeta?.sources,
       promptAugmentation: args.prompt,
