@@ -13,6 +13,12 @@ import type {
   ScorecardDimension,
   Session,
 } from '../../src/types/session.js'
+import {
+  getSportMedals,
+  matchSessionEvents,
+  type ParisMedalEvent,
+  type ParisMedalsData,
+} from './paris-medals.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 export const ROOT = resolve(__dirname, '..', '..')
@@ -23,14 +29,18 @@ const rawKnowledge = JSON.parse(
 const { _meta: _, ...sportEntries } = rawKnowledge
 const SPORT_KNOWLEDGE = sportEntries as Record<string, SportKnowledge>
 
+const PARIS_MEDALS = JSON.parse(
+  readFileSync(resolve(ROOT, 'src/data/paris-2024-medals.json'), 'utf8'),
+) as ParisMedalsData
+
 export const SESSIONS_PATH = resolve(ROOT, 'src/data/sessions.json')
 export const CONTENT_PATH = resolve(ROOT, 'src/data/session-content.json')
 
 export const PERPLEXITY_DEFAULT_MODEL = 'sonar-pro'
 export const ANTHROPIC_DEFAULT_MODEL = 'claude-sonnet-4-5-20250929'
-export const GROUNDING_VERSION = 1
-export const WRITING_VERSION = 2
-export const SCORING_VERSION = 2
+export const GROUNDING_VERSION = 2
+export const WRITING_VERSION = 3
+export const SCORING_VERSION = 3
 export const MAX_RETRIES = 3
 export const RETRY_DELAY_MS = 5000
 export const MAX_NEWS_ITEMS = 10
@@ -142,6 +152,7 @@ Rules:
 - Do not fabricate URLs, titles, dates, or outlets. If you don't have a source, don't include the fact.
 - Do not write marketing prose — facts only.
 - Do not speculate as fact. Speculation must be labeled ("projected to contend," "expected based on 2025 form").
+- If a "Paris 2024 Medal Results" block is present in the user prompt, treat those medalists as authoritative historical facts. Never contradict them, never substitute other athletes in place of the listed gold/silver/bronze. You may still cite other sources for surrounding context.
 - If a "User correction / additional context" block is present in the user prompt, treat it as authoritative — it represents a human-provided fact or correction that supersedes conflicting search results. Still cite sources for other facts.
 - Return valid JSON matching the schema. No markdown, no code fences.`
 
@@ -179,6 +190,7 @@ Rules:
 - Plain text only. Do not use **bold**, *italics*, markdown syntax, headings, lists, or HTML in any field. The UI renders these as literal characters.
 - The blurb must contain at least one literal "\\n\\n" break (so 2+ paragraphs, up to 4). Do not collapse into a single dense paragraph. If any paragraph exceeds 2 sentences or ~35 words, split it.
 - Prefer the groundingFacts over your training data when they conflict — they're current.
+- If a "Paris 2024 Medal Results" block is provided for a session, treat those medalists as authoritative. Never contradict them, never substitute other athletes in place of the listed gold/silver/bronze. Medals for any event NOT listed in that block are still open questions — use groundingFacts or hedge.
 - If a "User correction / additional context" block is present, treat it as authoritative — it is a human-provided fact or correction that supersedes conflicting grounding facts or training data.
 - Don't overuse superlatives. Don't claim something IS "the single greatest," "the most iconic," "the best ever." If you want that register, hedge: "could become one of the greatest games ever played."
 - Don't state LA28 participation as confirmed when it isn't. If an athlete has publicly cast doubt (injury, retirement, age), acknowledge it.
@@ -190,6 +202,28 @@ Return a JSON array of objects, one per session id, each with "id", "blurb", "po
 function augmentationBlock(extraInstructions?: string): string {
   if (!extraInstructions?.trim()) return ''
   return `\n### User correction / additional context (authoritative — supersedes conflicting information)\n${extraInstructions.trim()}\n\n`
+}
+
+function formatMedalist(m: { name: string; country: string } | null): string {
+  if (!m) return 'n/a'
+  return m.country ? `${m.name} (${m.country})` : m.name
+}
+
+export function buildParisMedalsBlock(session: Session): string {
+  if (!session.sport) return ''
+  const sportMedals = getSportMedals(PARIS_MEDALS, session.sport)
+  if (!sportMedals) return ''
+  const matched: ParisMedalEvent[] = matchSessionEvents(session.desc, sportMedals)
+  if (matched.length === 0) return ''
+  let out = `### Paris 2024 Medal Results (authoritative — do not contradict these medalists)\n`
+  for (const e of matched) {
+    out += `${e.event}:\n`
+    out += `  Gold: ${formatMedalist(e.gold)}\n`
+    out += `  Silver: ${formatMedalist(e.silver)}\n`
+    out += `  Bronze: ${formatMedalist(e.bronze)}\n`
+  }
+  out += '\n'
+  return out
 }
 
 export function buildSportContext(sport: string): string {
@@ -223,6 +257,7 @@ export function buildGroundingPrompt(
   extraInstructions?: string,
 ): string {
   let prompt = buildSportContext(sport)
+  prompt += buildParisMedalsBlock(session)
   prompt += `### Session to Ground\n`
   prompt += `- ID: ${session.id}\n`
   prompt += `- Name: ${session.name}\n`
@@ -251,6 +286,10 @@ export function buildWritingPrompt(
     prompt += `- Venue: ${s.venue}\n`
     prompt += `- Date/Time: ${s.date}, ${s.time}\n`
     prompt += `- Price Range: $${s.pLo}–$${s.pHi}\n`
+    const paris = buildParisMedalsBlock(s)
+    if (paris) {
+      prompt += paris
+    }
     const g = grounding.get(s.id)
     if (g && g.groundingFacts.length > 0) {
       prompt += `- groundingFacts (use these for current info; prefer over your training data):\n`
@@ -522,6 +561,7 @@ Rules:
 - Explanations are plain text. No markdown, no bold, no italics, no lists.
 - Vary the opening of explanations across the batch — don't start every Uniqueness explanation with "While the venue is iconic…".
 - Use the full 4-10 range honestly. A marquee final in prime time at the Coliseum earns its 9s and 10s; an early prelim earns 4-5s. Don't compress everything to the middle.
+- If a "Paris 2024 Medal Results" block is provided for a session, treat those medalists as authoritative. Never name a different athlete as the Paris gold/silver/bronze medalist in any explanation.
 - If a "User correction / additional context" block is present in the user prompt, treat it as authoritative — it supersedes conflicting facts.
 - Return a JSON array of objects, one per session id, each with "id" and "scorecard" containing the five dimensions plus "overall". No markdown fences.
 
@@ -554,6 +594,10 @@ export function buildScoringPrompt(
     prompt += `- Venue: ${s.venue}\n`
     prompt += `- Date/Time: ${s.date}, ${s.time}\n`
     prompt += `- Price Range: $${s.pLo}–$${s.pHi}\n`
+    const paris = buildParisMedalsBlock(s)
+    if (paris) {
+      prompt += paris
+    }
     const w = writing.get(s.id)
     if (w?.blurb) {
       prompt += `- Blurb (already written for this session — for context, do not restate):\n`
