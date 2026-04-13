@@ -3,6 +3,10 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import type Anthropic from '@anthropic-ai/sdk'
+import type {
+  ContentBlock,
+  MessageCreateParamsNonStreaming,
+} from '@anthropic-ai/sdk/resources/messages'
 
 import type { SportKnowledge } from '../../src/data/sport-knowledge.js'
 import type {
@@ -442,7 +446,34 @@ export async function fetchGrounding(
   return null
 }
 
-function parseWritingResponse(text: string): WritingData[] {
+// Source of truth for the writing request shape. Sync (`messages.create`) and
+// batch (`messages.batches.create`) paths both build their request via this
+// helper so model/max_tokens/system/messages stay identical across paths.
+function buildWritingRequest(
+  sessions: Session[],
+  sport: string,
+  grounding: Map<string, GroundingData>,
+  model: string,
+  extraInstructions?: string,
+): MessageCreateParamsNonStreaming {
+  return {
+    model,
+    max_tokens: 8192,
+    system: WRITING_SYSTEM_PROMPT,
+    messages: [
+      {
+        role: 'user',
+        content: buildWritingPrompt(sessions, sport, grounding, extraInstructions),
+      },
+    ],
+  }
+}
+
+// Shared response decoder. Both sync and batch paths receive an array of
+// ContentBlocks; we extract the first text block and validate the JSON shape.
+function parseWritingMessage(content: ContentBlock[]): WritingData[] {
+  const textBlock = content.find((c) => c.type === 'text')
+  const text = textBlock && textBlock.type === 'text' ? textBlock.text : ''
   const jsonMatch = text.match(/\[[\s\S]*\]/)
   if (!jsonMatch) throw new Error('No JSON array in Anthropic response')
   const parsed = JSON.parse(jsonMatch[0]) as unknown
@@ -480,17 +511,11 @@ export async function generateWriting(
   model: string,
   extraInstructions?: string,
 ): Promise<WritingData[]> {
-  const prompt = buildWritingPrompt(sessions, sport, grounding, extraInstructions)
+  const params = buildWritingRequest(sessions, sport, grounding, model, extraInstructions)
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
-      const response = await client.messages.create({
-        model,
-        max_tokens: 8192,
-        system: WRITING_SYSTEM_PROMPT,
-        messages: [{ role: 'user', content: prompt }],
-      })
-      const text = response.content[0].type === 'text' ? response.content[0].text : ''
-      return parseWritingResponse(text)
+      const response = await client.messages.create(params)
+      return parseWritingMessage(response.content)
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
       console.error(`    Writing attempt ${attempt}/${MAX_RETRIES} failed: ${msg}`)
@@ -513,71 +538,133 @@ export interface WritingBatchOutcome {
   error?: string
 }
 
-// Submits every writing job as a single Anthropic Message Batch (50% off vs
-// synchronous calls), polls until processing ends, and parses each request's
-// response back into WritingData keyed to its originating job.
+export interface WritingBatchProgress {
+  sport: string
+  outcomes: WritingBatchOutcome[]
+  elapsedSec: number
+}
+
+export interface WritingBatchesOptions {
+  extraInstructions?: string
+  // Fires as each sport's batch completes so the caller can persist checkpoints
+  // incrementally and emit its own per-sport log line.
+  onSportComplete?: (progress: WritingBatchProgress) => void | Promise<void>
+  pollIntervalMs?: number
+}
+
+// Submits one Anthropic Message Batch per sport (one batch = all writing jobs
+// for that sport), polls all batches in parallel, and reports per-sport as
+// each finishes. Per-sport batching trades a small submission overhead for
+// meaningful progress visibility (each sport's closure is a visible event) and
+// incremental checkpoint persistence, which a single global batch doesn't
+// offer since the API only exposes aggregate counts.
 export async function generateWritingViaBatches(
   client: Anthropic,
   jobs: WritingJob[],
   model: string,
-  extraInstructions?: string,
+  options: WritingBatchesOptions = {},
 ): Promise<WritingBatchOutcome[]> {
   if (jobs.length === 0) return []
 
-  const requests = jobs.map((job, index) => ({
-    custom_id: `w-${index}`,
-    params: {
-      model,
-      max_tokens: 8192,
-      system: WRITING_SYSTEM_PROMPT,
-      messages: [
-        {
-          role: 'user' as const,
-          content: buildWritingPrompt(job.batch, job.sport, job.grounding, extraInstructions),
-        },
-      ],
-    },
-  }))
+  // Group jobs by sport while remembering each job's original index so we can
+  // return outcomes in the same order the caller passed them in.
+  const bySport = new Map<string, { jobs: WritingJob[]; indices: number[] }>()
+  jobs.forEach((job, i) => {
+    let group = bySport.get(job.sport)
+    if (!group) {
+      group = { jobs: [], indices: [] }
+      bySport.set(job.sport, group)
+    }
+    group.jobs.push(job)
+    group.indices.push(i)
+  })
 
-  console.log(`  Submitting writing batch (${jobs.length} job(s))…`)
-  const created = await client.messages.batches.create({ requests })
-  console.log(`  Batch ${created.id} submitted; polling for completion…`)
+  const sports = [...bySport.keys()]
+  console.log(`  Submitting ${sports.length} writing batch(es), one per sport…`)
 
-  let batch = created
-  const startedAt = Date.now()
-  let delayMs = 10_000
-  while (batch.processing_status !== 'ended') {
-    await new Promise((r) => setTimeout(r, delayMs))
-    batch = await client.messages.batches.retrieve(batch.id)
-    const counts = batch.request_counts
-    const elapsedSec = Math.round((Date.now() - startedAt) / 1000)
-    console.log(
-      `    [${elapsedSec}s] status=${batch.processing_status} processing=${counts.processing} succeeded=${counts.succeeded} errored=${counts.errored}`,
+  interface Pending {
+    sport: string
+    group: { jobs: WritingJob[]; indices: number[] }
+    batchId: string
+    startedAt: number
+  }
+  const pending = new Map<string, Pending>()
+
+  for (const sport of sports) {
+    const group = bySport.get(sport)!
+    const requests = group.jobs.map((job, idx) => ({
+      custom_id: `w-${idx}`,
+      params: buildWritingRequest(
+        job.batch,
+        job.sport,
+        job.grounding,
+        model,
+        options.extraInstructions,
+      ),
+    }))
+    const created = await client.messages.batches.create({ requests })
+    pending.set(created.id, { sport, group, batchId: created.id, startedAt: Date.now() })
+  }
+
+  console.log(`  ${pending.size} batch(es) in flight. Polling…`)
+
+  const allOutcomes: (WritingBatchOutcome | undefined)[] = Array.from({ length: jobs.length })
+  const pollIntervalMs = options.pollIntervalMs ?? 20_000
+
+  while (pending.size > 0) {
+    await new Promise((r) => setTimeout(r, pollIntervalMs))
+
+    const statuses = await Promise.all(
+      [...pending.values()].map(async (p) => {
+        const batch = await client.messages.batches.retrieve(p.batchId)
+        return { pending: p, batch }
+      }),
     )
-    // Back off: 10s → 20s → 30s, cap at 60s.
-    delayMs = Math.min(delayMs + 10_000, 60_000)
+
+    const total = sports.length
+    const endedSoFar = total - pending.size
+    const pendingEnded = statuses.filter((s) => s.batch.processing_status === 'ended').length
+    const processing = statuses.reduce((acc, s) => acc + s.batch.request_counts.processing, 0)
+    const succeeded = statuses.reduce((acc, s) => acc + s.batch.request_counts.succeeded, 0)
+    const errored = statuses.reduce((acc, s) => acc + s.batch.request_counts.errored, 0)
+    console.log(
+      `    sports: ${endedSoFar + pendingEnded}/${total} ended; in-flight requests: processing=${processing} succeeded=${succeeded} errored=${errored}`,
+    )
+
+    for (const { pending: p, batch } of statuses) {
+      if (batch.processing_status !== 'ended') continue
+
+      const outcomes: WritingBatchOutcome[] = p.group.jobs.map((job) => ({ job, results: [] }))
+      const byId = new Map(outcomes.map((o, i) => [`w-${i}`, o]))
+      const results = await client.messages.batches.results(p.batchId)
+      for await (const item of results) {
+        const outcome = byId.get(item.custom_id)
+        if (!outcome) continue
+        if (item.result.type !== 'succeeded') {
+          outcome.error = item.result.type
+          continue
+        }
+        try {
+          outcome.results = parseWritingMessage(item.result.message.content)
+        } catch (err) {
+          outcome.error = err instanceof Error ? err.message : String(err)
+        }
+      }
+
+      p.group.indices.forEach((originalIdx, localIdx) => {
+        allOutcomes[originalIdx] = outcomes[localIdx]
+      })
+
+      if (options.onSportComplete) {
+        const elapsedSec = Math.round((Date.now() - p.startedAt) / 1000)
+        await options.onSportComplete({ sport: p.sport, outcomes, elapsedSec })
+      }
+
+      pending.delete(p.batchId)
+    }
   }
 
-  const outcomes: WritingBatchOutcome[] = jobs.map((job) => ({ job, results: [] }))
-  const byId = new Map(outcomes.map((o, i) => [`w-${i}`, o]))
-  const results = await client.messages.batches.results(batch.id)
-  for await (const item of results) {
-    const outcome = byId.get(item.custom_id)
-    if (!outcome) continue
-    if (item.result.type !== 'succeeded') {
-      outcome.error = item.result.type
-      continue
-    }
-    const content = item.result.message.content
-    const textBlock = content.find((c) => c.type === 'text')
-    const text = textBlock && textBlock.type === 'text' ? textBlock.text : ''
-    try {
-      outcome.results = parseWritingResponse(text)
-    } catch (err) {
-      outcome.error = err instanceof Error ? err.message : String(err)
-    }
-  }
-  return outcomes
+  return allOutcomes as WritingBatchOutcome[]
 }
 
 export const SCORING_SYSTEM_PROMPT = `You are scoring LA 2028 Olympics sessions for a ticket-buying guide. For each session you assign integer 1-10 scores across five dimensions and write a short, specific explanation that justifies the SCORE you gave (not the venue or sport in general).

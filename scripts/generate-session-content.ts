@@ -448,28 +448,36 @@ async function main() {
         ),
       )
     } else if (jobs.length > 0) {
-      const batchResults = await generateWritingViaBatches(anthropicClient, jobs, writingModel)
-      for (const { job, results, error } of batchResults) {
-        if (error) {
-          console.error(`  ✗ ${job.sport} batch errored: ${error}`)
-          continue
-        }
-        const gotIds = new Set<string>()
-        for (const r of results) {
-          if (sessionMap.has(r.id)) gotIds.add(r.id)
-        }
-        await checkpointWriter(() => {
-          for (const r of results) {
-            if (sessionMap.has(r.id)) writingCheckpoint.results[r.id] = r
-          }
-          writingCheckpoint.updatedAt = new Date().toISOString()
-          writeJson(writingPath, writingCheckpoint)
-        })
-        const missing = job.batch.filter((s) => !gotIds.has(s.id))
-        console.log(
-          `  ${job.sport} (${job.batch.length}) ✓ wrote ${gotIds.size}${missing.length > 0 ? ` ✗ missing ${missing.map((s) => s.id).join(',')}` : ''}`,
-        )
-      }
+      await generateWritingViaBatches(anthropicClient, jobs, writingModel, {
+        onSportComplete: async ({ sport, outcomes, elapsedSec }) => {
+          let wrote = 0
+          let failed = 0
+          const missing: string[] = []
+          await checkpointWriter(() => {
+            for (const { job, results, error } of outcomes) {
+              if (error) {
+                failed += 1
+                for (const s of job.batch) missing.push(s.id)
+                continue
+              }
+              const got = new Set<string>()
+              for (const r of results) {
+                if (sessionMap.has(r.id)) {
+                  writingCheckpoint.results[r.id] = r
+                  got.add(r.id)
+                  wrote += 1
+                }
+              }
+              for (const s of job.batch) if (!got.has(s.id)) missing.push(s.id)
+            }
+            writingCheckpoint.updatedAt = new Date().toISOString()
+            writeJson(writingPath, writingCheckpoint)
+          })
+          const tail = missing.length > 0 ? ` ✗ missing ${missing.join(',')}` : ''
+          const fail = failed > 0 ? ` (${failed} batch error(s))` : ''
+          console.log(`    ✓ ${sport} done in ${elapsedSec}s — wrote ${wrote}${fail}${tail}`)
+        },
+      })
     }
   } else {
     console.log('\n=== Stage 2: Writing (skipped) ===')
