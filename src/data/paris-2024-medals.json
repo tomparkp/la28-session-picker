@@ -1,0 +1,8136 @@
+{
+  "_meta": {
+    "source": "https://www.olympedia.org/editions/63",
+    "fetchedAt": "2026-04-13T07:17:12.622Z",
+    "note": "Paris 2024 medal results keyed by LA28 sport name. Used as deterministic grounding in scripts/generate-session-content.ts."
+  },
+  "3x3 Basketball": [
+    {
+      "event": "Men's 3x3 Basketball",
+      "gender": "m",
+      "normalizedTokens": ["m", "3x3m", "basketball"],
+      "gold": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "France",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Lithuania",
+        "country": "LTU"
+      }
+    },
+    {
+      "event": "Women's 3x3 Basketball",
+      "gender": "w",
+      "normalizedTokens": ["w", "3x3m", "basketball"],
+      "gold": {
+        "name": "Germany",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Spain",
+        "country": "ESP"
+      },
+      "bronze": {
+        "name": "United States",
+        "country": "USA"
+      }
+    }
+  ],
+  "Archery": [
+    {
+      "event": "Men's Individual",
+      "gender": "m",
+      "normalizedTokens": ["m"],
+      "gold": {
+        "name": "Kim Wu-Jin",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Brady Ellison",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Lee U-Seok",
+        "country": "KOR"
+      }
+    },
+    {
+      "event": "Men's Team",
+      "gender": "m",
+      "normalizedTokens": ["m", "team"],
+      "gold": {
+        "name": "Republic of Korea",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "France",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Türkiye",
+        "country": "TUR"
+      }
+    },
+    {
+      "event": "Women's Individual",
+      "gender": "w",
+      "normalizedTokens": ["w"],
+      "gold": {
+        "name": "Im Si-Hyeon",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Nam Su-Hyeon",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Lisa Barbelin",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's Team",
+      "gender": "w",
+      "normalizedTokens": ["w", "team"],
+      "gold": {
+        "name": "Republic of Korea",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Mexico",
+        "country": "MEX"
+      }
+    },
+    {
+      "event": "Mixed Team",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "team"],
+      "gold": {
+        "name": "Republic of Korea",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Germany",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "United States",
+        "country": "USA"
+      }
+    }
+  ],
+  "Artistic Gymnastics": [
+    {
+      "event": "Men's Individual All-Around",
+      "gender": "m",
+      "normalizedTokens": ["m", "all-around"],
+      "gold": {
+        "name": "Shinnosuke Oka",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Zhang Boheng",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Xiao Ruoteng",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Men's Team All-Around",
+      "gender": "m",
+      "normalizedTokens": ["m", "team", "all-around"],
+      "gold": {
+        "name": "Japan",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "United States",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Floor Exercise",
+      "gender": "m",
+      "normalizedTokens": ["m", "floor", "exercise"],
+      "gold": {
+        "name": "Carlos Yulo",
+        "country": "PHI"
+      },
+      "silver": {
+        "name": "Artem Dolgopyat",
+        "country": "ISR"
+      },
+      "bronze": {
+        "name": "Jake Jarman",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's Vault",
+      "gender": "m",
+      "normalizedTokens": ["m", "vault"],
+      "gold": {
+        "name": "Carlos Yulo",
+        "country": "PHI"
+      },
+      "silver": {
+        "name": "Artur Davtyan",
+        "country": "ARM"
+      },
+      "bronze": {
+        "name": "Harry Hepworth",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's Parallel Bars",
+      "gender": "m",
+      "normalizedTokens": ["m", "parallel", "bars"],
+      "gold": {
+        "name": "Zou Jingyuan",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Illia Kovtun",
+        "country": "UKR"
+      },
+      "bronze": {
+        "name": "Shinnosuke Oka",
+        "country": "JPN"
+      }
+    },
+    {
+      "event": "Men's Horizontal Bar",
+      "gender": "m",
+      "normalizedTokens": ["m", "horizontal", "bar"],
+      "gold": {
+        "name": "Shinnosuke Oka",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Ángel Barajas",
+        "country": "COL"
+      },
+      "bronze": {
+        "name": "Zhang Boheng",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Men's Rings",
+      "gender": "m",
+      "normalizedTokens": ["m", "rings"],
+      "gold": {
+        "name": "Liu Yang",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Zou Jingyuan",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Lefteris Petrounias",
+        "country": "GRE"
+      }
+    },
+    {
+      "event": "Men's Pommelled Horse",
+      "gender": "m",
+      "normalizedTokens": ["m", "pommelled", "horse"],
+      "gold": {
+        "name": "Rhys McClenaghan",
+        "country": "IRL"
+      },
+      "silver": {
+        "name": "Nariman Kurbanov",
+        "country": "KAZ"
+      },
+      "bronze": {
+        "name": "Stephen Nedoroscik",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Individual All-Around",
+      "gender": "w",
+      "normalizedTokens": ["w", "all-around"],
+      "gold": {
+        "name": "Simone Biles",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Rebeca Andrade",
+        "country": "BRA"
+      },
+      "bronze": {
+        "name": "Suni Lee",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Team All-Around",
+      "gender": "w",
+      "normalizedTokens": ["w", "team", "all-around"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Brazil",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Women's Floor Exercise",
+      "gender": "w",
+      "normalizedTokens": ["w", "floor", "exercise"],
+      "gold": {
+        "name": "Rebeca Andrade",
+        "country": "BRA"
+      },
+      "silver": {
+        "name": "Simone Biles",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Ana Bărbosu",
+        "country": "ROU"
+      }
+    },
+    {
+      "event": "Women's Vault",
+      "gender": "w",
+      "normalizedTokens": ["w", "vault"],
+      "gold": {
+        "name": "Simone Biles",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Rebeca Andrade",
+        "country": "BRA"
+      },
+      "bronze": {
+        "name": "Jade Carey",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Uneven Bars",
+      "gender": "w",
+      "normalizedTokens": ["w", "uneven", "bars"],
+      "gold": {
+        "name": "Kaylia Nemour",
+        "country": "ALG"
+      },
+      "silver": {
+        "name": "Qiu Qiyuan",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Suni Lee",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Balance Beam",
+      "gender": "w",
+      "normalizedTokens": ["w", "balance", "beam"],
+      "gold": {
+        "name": "Alice D'Amato",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "Zhou Yaqin",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Manila Esposito",
+        "country": "ITA"
+      }
+    }
+  ],
+  "Artistic Swimming": [
+    {
+      "event": "Open Team",
+      "gender": "open",
+      "normalizedTokens": ["open", "team"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Spain",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Women's Duet",
+      "gender": "w",
+      "normalizedTokens": ["w", "duet"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Netherlands",
+        "country": "NED"
+      }
+    }
+  ],
+  "Athletics (Track & Field)": [
+    {
+      "event": "Men's 100 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "100m"],
+      "gold": {
+        "name": "Noah Lyles",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Kishane Thompson",
+        "country": "JAM"
+      },
+      "bronze": {
+        "name": "Fred Kerley",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 200 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "200m"],
+      "gold": {
+        "name": "Letsile Tebogo",
+        "country": "BOT"
+      },
+      "silver": {
+        "name": "Kenny Bednarek",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Noah Lyles",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 400 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "400m"],
+      "gold": {
+        "name": "Quincy Hall",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Matt Hudson-Smith",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Muzala Samukonga",
+        "country": "ZAM"
+      }
+    },
+    {
+      "event": "Men's 800 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "800m"],
+      "gold": {
+        "name": "Emmanuel Wanyonyi",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Marco Arop",
+        "country": "CAN"
+      },
+      "bronze": {
+        "name": "Djamel Sedjati",
+        "country": "ALG"
+      }
+    },
+    {
+      "event": "Men's 1, 500 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "500m"],
+      "gold": {
+        "name": "Cole Hocker",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Josh Kerr",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Yared Nuguse",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 5, 000 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "000m"],
+      "gold": {
+        "name": "Jakob Ingebrigtsen",
+        "country": "NOR"
+      },
+      "silver": {
+        "name": "Ronald Kwemoi",
+        "country": "KEN"
+      },
+      "bronze": {
+        "name": "Grant Fisher",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 10, 000 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "10", "000m"],
+      "gold": {
+        "name": "Joshua Cheptegei",
+        "country": "UGA"
+      },
+      "silver": {
+        "name": "Berihu Aregawi",
+        "country": "ETH"
+      },
+      "bronze": {
+        "name": "Grant Fisher",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Marathon",
+      "gender": "m",
+      "normalizedTokens": ["m", "marathon"],
+      "gold": {
+        "name": "Tamirat Tola",
+        "country": "ETH"
+      },
+      "silver": {
+        "name": "Bashir Abdi",
+        "country": "BEL"
+      },
+      "bronze": {
+        "name": "Benson Kipruto",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Men's 110 metres Hurdles",
+      "gender": "m",
+      "normalizedTokens": ["m", "110m", "hurdles"],
+      "gold": {
+        "name": "Grant Holloway",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Daniel Roberts",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Rasheed Broadbell",
+        "country": "JAM"
+      }
+    },
+    {
+      "event": "Men's 400 metres Hurdles",
+      "gender": "m",
+      "normalizedTokens": ["m", "400m", "hurdles"],
+      "gold": {
+        "name": "Rai Benjamin",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Karsten Warholm",
+        "country": "NOR"
+      },
+      "bronze": {
+        "name": "Alison dos Santos",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Men's 3, 000 metres Steeplechase",
+      "gender": "m",
+      "normalizedTokens": ["m", "000m", "steeplechase"],
+      "gold": {
+        "name": "Soufiane El-Bakkali",
+        "country": "MAR"
+      },
+      "silver": {
+        "name": "Kenneth Rooks",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Abraham Kibiwot",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Men's 4 × 100 metres Relay",
+      "gender": "m",
+      "normalizedTokens": ["m", "4x100m", "relay"],
+      "gold": {
+        "name": "Canada",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "South Africa",
+        "country": "RSA"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's 4 × 400 metres Relay",
+      "gender": "m",
+      "normalizedTokens": ["m", "4x400m", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Botswana",
+        "country": "BOT"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's 20 kilometres Race Walk",
+      "gender": "m",
+      "normalizedTokens": ["m", "20km", "race", "walk"],
+      "gold": {
+        "name": "Brian Pintado",
+        "country": "ECU"
+      },
+      "silver": {
+        "name": "Caio Bonfim",
+        "country": "BRA"
+      },
+      "bronze": {
+        "name": "Álvaro Martín",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Men's High Jump",
+      "gender": "m",
+      "normalizedTokens": ["m", "high", "jump"],
+      "gold": {
+        "name": "Hamish Kerr",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Shelby McEwen",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Mutaz Essa Barshim",
+        "country": "QAT"
+      }
+    },
+    {
+      "event": "Men's Pole Vault",
+      "gender": "m",
+      "normalizedTokens": ["m", "pole", "vault"],
+      "gold": {
+        "name": "Mondo Duplantis",
+        "country": "SWE"
+      },
+      "silver": {
+        "name": "Sam Kendricks",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Emmanouil Karalis",
+        "country": "GRE"
+      }
+    },
+    {
+      "event": "Men's Long Jump",
+      "gender": "m",
+      "normalizedTokens": ["m", "long", "jump"],
+      "gold": {
+        "name": "Miltiadis Tentoglou",
+        "country": "GRE"
+      },
+      "silver": {
+        "name": "Wayne Pinnock",
+        "country": "JAM"
+      },
+      "bronze": {
+        "name": "Mattia Furlani",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Triple Jump",
+      "gender": "m",
+      "normalizedTokens": ["m", "triple", "jump"],
+      "gold": {
+        "name": "Jordan Díaz",
+        "country": "ESP"
+      },
+      "silver": {
+        "name": "Pedro Pichardo",
+        "country": "POR"
+      },
+      "bronze": {
+        "name": "Andy Díaz",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Shot Put",
+      "gender": "m",
+      "normalizedTokens": ["m", "shot", "put"],
+      "gold": {
+        "name": "Ryan Crouser",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Joe Kovacs",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Rajindra Campbell",
+        "country": "JAM"
+      }
+    },
+    {
+      "event": "Men's Discus Throw",
+      "gender": "m",
+      "normalizedTokens": ["m", "discus", "throw"],
+      "gold": {
+        "name": "Rojé Stona",
+        "country": "JAM"
+      },
+      "silver": {
+        "name": "Mykolas Alekna",
+        "country": "LTU"
+      },
+      "bronze": {
+        "name": "Matthew Denny",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Men's Hammer Throw",
+      "gender": "m",
+      "normalizedTokens": ["m", "hammer", "throw"],
+      "gold": {
+        "name": "Ethan Katzberg",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "Bence Halász",
+        "country": "HUN"
+      },
+      "bronze": {
+        "name": "Mykhailo Kokhan",
+        "country": "UKR"
+      }
+    },
+    {
+      "event": "Men's Javelin Throw",
+      "gender": "m",
+      "normalizedTokens": ["m", "javelin", "throw"],
+      "gold": {
+        "name": "Arshad Nadeem",
+        "country": "PAK"
+      },
+      "silver": {
+        "name": "Neeraj Chopra",
+        "country": "IND"
+      },
+      "bronze": {
+        "name": "Anderson Peters",
+        "country": "GRN"
+      }
+    },
+    {
+      "event": "Men's Decathlon",
+      "gender": "m",
+      "normalizedTokens": ["m", "decathlon"],
+      "gold": {
+        "name": "Markus Rooth",
+        "country": "NOR"
+      },
+      "silver": {
+        "name": "Leo Neugebauer",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Lindon Victor",
+        "country": "GRN"
+      }
+    },
+    {
+      "event": "Women's 100 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "100m"],
+      "gold": {
+        "name": "Julien Alfred",
+        "country": "LCA"
+      },
+      "silver": {
+        "name": "Sha'Carri Richardson",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Melissa Jefferson",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's 200 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "200m"],
+      "gold": {
+        "name": "Gabby Thomas",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Julien Alfred",
+        "country": "LCA"
+      },
+      "bronze": {
+        "name": "Brittany Brown",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's 400 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "400m"],
+      "gold": {
+        "name": "Marileidy Paulino",
+        "country": "DOM"
+      },
+      "silver": {
+        "name": "Salwa Eid Naser",
+        "country": "BRN"
+      },
+      "bronze": {
+        "name": "Natalia Kaczmarek",
+        "country": "POL"
+      }
+    },
+    {
+      "event": "Women's 800 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "800m"],
+      "gold": {
+        "name": "Keely Hodgkinson",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Tsige Duguma",
+        "country": "ETH"
+      },
+      "bronze": {
+        "name": "Mary Moraa",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Women's 1, 500 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "500m"],
+      "gold": {
+        "name": "Faith Kipyegon",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Jessica Jolliffe",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Georgia Bell",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's 5, 000 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "000m"],
+      "gold": {
+        "name": "Beatrice Chebet",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Faith Kipyegon",
+        "country": "KEN"
+      },
+      "bronze": {
+        "name": "Sifan Hassan",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Women's 10, 000 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "10", "000m"],
+      "gold": {
+        "name": "Beatrice Chebet",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Nadia Battocletti",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Sifan Hassan",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Women's Marathon",
+      "gender": "w",
+      "normalizedTokens": ["w", "marathon"],
+      "gold": {
+        "name": "Sifan Hassan",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Tigst Assefa",
+        "country": "ETH"
+      },
+      "bronze": {
+        "name": "Hellen Obiri",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Women's 100 metres Hurdles",
+      "gender": "w",
+      "normalizedTokens": ["w", "100m", "hurdles"],
+      "gold": {
+        "name": "Masai Russell",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Cyréna Samba Mayela",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Jasmine Camacho-Quinn",
+        "country": "PUR"
+      }
+    },
+    {
+      "event": "Women's 400 metres Hurdles",
+      "gender": "w",
+      "normalizedTokens": ["w", "400m", "hurdles"],
+      "gold": {
+        "name": "Sydney McLaughlin-Levrone",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Anna Cockrell",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Femke Bol",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Women's 3, 000 metres Steeplechase",
+      "gender": "w",
+      "normalizedTokens": ["w", "000m", "steeplechase"],
+      "gold": {
+        "name": "Winfred Yavi",
+        "country": "BRN"
+      },
+      "silver": {
+        "name": "Peruth Chemutai",
+        "country": "UGA"
+      },
+      "bronze": {
+        "name": "Faith Cherotich",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Women's 4 × 100 metres Relay",
+      "gender": "w",
+      "normalizedTokens": ["w", "4x100m", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Germany",
+        "country": "GER"
+      }
+    },
+    {
+      "event": "Women's 4 × 400 metres Relay",
+      "gender": "w",
+      "normalizedTokens": ["w", "4x400m", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's 20 kilometres Race Walk",
+      "gender": "w",
+      "normalizedTokens": ["w", "20km", "race", "walk"],
+      "gold": {
+        "name": "Yang Jiayu",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "María Pérez",
+        "country": "ESP"
+      },
+      "bronze": {
+        "name": "Jemima Montag",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Women's High Jump",
+      "gender": "w",
+      "normalizedTokens": ["w", "high", "jump"],
+      "gold": {
+        "name": "Yaroslava Mahuchikh",
+        "country": "UKR"
+      },
+      "silver": {
+        "name": "Nicola Olyslagers",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Eleanor Patterson",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Women's Pole Vault",
+      "gender": "w",
+      "normalizedTokens": ["w", "pole", "vault"],
+      "gold": {
+        "name": "Nina Kennedy",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Katie Moon",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Alysha Newman",
+        "country": "CAN"
+      }
+    },
+    {
+      "event": "Women's Long Jump",
+      "gender": "w",
+      "normalizedTokens": ["w", "long", "jump"],
+      "gold": {
+        "name": "Tara Davis-Woodhall",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Malaika Mihambo",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Jasmine Moore",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Triple Jump",
+      "gender": "w",
+      "normalizedTokens": ["w", "triple", "jump"],
+      "gold": {
+        "name": "Thea LaFond",
+        "country": "DMA"
+      },
+      "silver": {
+        "name": "Shanieka Ricketts",
+        "country": "JAM"
+      },
+      "bronze": {
+        "name": "Jasmine Moore",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Shot Put",
+      "gender": "w",
+      "normalizedTokens": ["w", "shot", "put"],
+      "gold": {
+        "name": "Yemisi Ogunleye",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Maddi Wesche",
+        "country": "NZL"
+      },
+      "bronze": {
+        "name": "Song Jiayuan",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Discus Throw",
+      "gender": "w",
+      "normalizedTokens": ["w", "discus", "throw"],
+      "gold": {
+        "name": "Valarie Allman",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Feng Bin",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Sandra Elkašević",
+        "country": "CRO"
+      }
+    },
+    {
+      "event": "Women's Hammer Throw",
+      "gender": "w",
+      "normalizedTokens": ["w", "hammer", "throw"],
+      "gold": {
+        "name": "Camryn Rogers",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "Annette Echikunwoke",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Zhao Jie",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Javelin Throw",
+      "gender": "w",
+      "normalizedTokens": ["w", "javelin", "throw"],
+      "gold": {
+        "name": "Haruka Kitaguchi",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Jo-Ané van Dyk",
+        "country": "RSA"
+      },
+      "bronze": {
+        "name": "Nikola Ogrodníková",
+        "country": "CZE"
+      }
+    },
+    {
+      "event": "Women's Heptathlon",
+      "gender": "w",
+      "normalizedTokens": ["w", "heptathlon"],
+      "gold": {
+        "name": "Nafi Thiam",
+        "country": "BEL"
+      },
+      "silver": {
+        "name": "Katarina Johnson-Thompson",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Noor Vidts",
+        "country": "BEL"
+      }
+    },
+    {
+      "event": "Mixed 4 × 400 metres Relay",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "4x400m", "relay"],
+      "gold": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Mixed Marathon Race Walk Relay",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "marathon", "race", "walk", "relay"],
+      "gold": {
+        "name": "Spain",
+        "country": "ESP"
+      },
+      "silver": {
+        "name": "Ecuador",
+        "country": "ECU"
+      },
+      "bronze": {
+        "name": "Australia",
+        "country": "AUS"
+      }
+    }
+  ],
+  "Athletics (Marathon)": [
+    {
+      "event": "Men's 100 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "100m"],
+      "gold": {
+        "name": "Noah Lyles",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Kishane Thompson",
+        "country": "JAM"
+      },
+      "bronze": {
+        "name": "Fred Kerley",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 200 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "200m"],
+      "gold": {
+        "name": "Letsile Tebogo",
+        "country": "BOT"
+      },
+      "silver": {
+        "name": "Kenny Bednarek",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Noah Lyles",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 400 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "400m"],
+      "gold": {
+        "name": "Quincy Hall",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Matt Hudson-Smith",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Muzala Samukonga",
+        "country": "ZAM"
+      }
+    },
+    {
+      "event": "Men's 800 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "800m"],
+      "gold": {
+        "name": "Emmanuel Wanyonyi",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Marco Arop",
+        "country": "CAN"
+      },
+      "bronze": {
+        "name": "Djamel Sedjati",
+        "country": "ALG"
+      }
+    },
+    {
+      "event": "Men's 1, 500 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "500m"],
+      "gold": {
+        "name": "Cole Hocker",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Josh Kerr",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Yared Nuguse",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 5, 000 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "000m"],
+      "gold": {
+        "name": "Jakob Ingebrigtsen",
+        "country": "NOR"
+      },
+      "silver": {
+        "name": "Ronald Kwemoi",
+        "country": "KEN"
+      },
+      "bronze": {
+        "name": "Grant Fisher",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 10, 000 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "10", "000m"],
+      "gold": {
+        "name": "Joshua Cheptegei",
+        "country": "UGA"
+      },
+      "silver": {
+        "name": "Berihu Aregawi",
+        "country": "ETH"
+      },
+      "bronze": {
+        "name": "Grant Fisher",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Marathon",
+      "gender": "m",
+      "normalizedTokens": ["m", "marathon"],
+      "gold": {
+        "name": "Tamirat Tola",
+        "country": "ETH"
+      },
+      "silver": {
+        "name": "Bashir Abdi",
+        "country": "BEL"
+      },
+      "bronze": {
+        "name": "Benson Kipruto",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Men's 110 metres Hurdles",
+      "gender": "m",
+      "normalizedTokens": ["m", "110m", "hurdles"],
+      "gold": {
+        "name": "Grant Holloway",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Daniel Roberts",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Rasheed Broadbell",
+        "country": "JAM"
+      }
+    },
+    {
+      "event": "Men's 400 metres Hurdles",
+      "gender": "m",
+      "normalizedTokens": ["m", "400m", "hurdles"],
+      "gold": {
+        "name": "Rai Benjamin",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Karsten Warholm",
+        "country": "NOR"
+      },
+      "bronze": {
+        "name": "Alison dos Santos",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Men's 3, 000 metres Steeplechase",
+      "gender": "m",
+      "normalizedTokens": ["m", "000m", "steeplechase"],
+      "gold": {
+        "name": "Soufiane El-Bakkali",
+        "country": "MAR"
+      },
+      "silver": {
+        "name": "Kenneth Rooks",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Abraham Kibiwot",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Men's 4 × 100 metres Relay",
+      "gender": "m",
+      "normalizedTokens": ["m", "4x100m", "relay"],
+      "gold": {
+        "name": "Canada",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "South Africa",
+        "country": "RSA"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's 4 × 400 metres Relay",
+      "gender": "m",
+      "normalizedTokens": ["m", "4x400m", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Botswana",
+        "country": "BOT"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's 20 kilometres Race Walk",
+      "gender": "m",
+      "normalizedTokens": ["m", "20km", "race", "walk"],
+      "gold": {
+        "name": "Brian Pintado",
+        "country": "ECU"
+      },
+      "silver": {
+        "name": "Caio Bonfim",
+        "country": "BRA"
+      },
+      "bronze": {
+        "name": "Álvaro Martín",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Men's High Jump",
+      "gender": "m",
+      "normalizedTokens": ["m", "high", "jump"],
+      "gold": {
+        "name": "Hamish Kerr",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Shelby McEwen",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Mutaz Essa Barshim",
+        "country": "QAT"
+      }
+    },
+    {
+      "event": "Men's Pole Vault",
+      "gender": "m",
+      "normalizedTokens": ["m", "pole", "vault"],
+      "gold": {
+        "name": "Mondo Duplantis",
+        "country": "SWE"
+      },
+      "silver": {
+        "name": "Sam Kendricks",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Emmanouil Karalis",
+        "country": "GRE"
+      }
+    },
+    {
+      "event": "Men's Long Jump",
+      "gender": "m",
+      "normalizedTokens": ["m", "long", "jump"],
+      "gold": {
+        "name": "Miltiadis Tentoglou",
+        "country": "GRE"
+      },
+      "silver": {
+        "name": "Wayne Pinnock",
+        "country": "JAM"
+      },
+      "bronze": {
+        "name": "Mattia Furlani",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Triple Jump",
+      "gender": "m",
+      "normalizedTokens": ["m", "triple", "jump"],
+      "gold": {
+        "name": "Jordan Díaz",
+        "country": "ESP"
+      },
+      "silver": {
+        "name": "Pedro Pichardo",
+        "country": "POR"
+      },
+      "bronze": {
+        "name": "Andy Díaz",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Shot Put",
+      "gender": "m",
+      "normalizedTokens": ["m", "shot", "put"],
+      "gold": {
+        "name": "Ryan Crouser",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Joe Kovacs",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Rajindra Campbell",
+        "country": "JAM"
+      }
+    },
+    {
+      "event": "Men's Discus Throw",
+      "gender": "m",
+      "normalizedTokens": ["m", "discus", "throw"],
+      "gold": {
+        "name": "Rojé Stona",
+        "country": "JAM"
+      },
+      "silver": {
+        "name": "Mykolas Alekna",
+        "country": "LTU"
+      },
+      "bronze": {
+        "name": "Matthew Denny",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Men's Hammer Throw",
+      "gender": "m",
+      "normalizedTokens": ["m", "hammer", "throw"],
+      "gold": {
+        "name": "Ethan Katzberg",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "Bence Halász",
+        "country": "HUN"
+      },
+      "bronze": {
+        "name": "Mykhailo Kokhan",
+        "country": "UKR"
+      }
+    },
+    {
+      "event": "Men's Javelin Throw",
+      "gender": "m",
+      "normalizedTokens": ["m", "javelin", "throw"],
+      "gold": {
+        "name": "Arshad Nadeem",
+        "country": "PAK"
+      },
+      "silver": {
+        "name": "Neeraj Chopra",
+        "country": "IND"
+      },
+      "bronze": {
+        "name": "Anderson Peters",
+        "country": "GRN"
+      }
+    },
+    {
+      "event": "Men's Decathlon",
+      "gender": "m",
+      "normalizedTokens": ["m", "decathlon"],
+      "gold": {
+        "name": "Markus Rooth",
+        "country": "NOR"
+      },
+      "silver": {
+        "name": "Leo Neugebauer",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Lindon Victor",
+        "country": "GRN"
+      }
+    },
+    {
+      "event": "Women's 100 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "100m"],
+      "gold": {
+        "name": "Julien Alfred",
+        "country": "LCA"
+      },
+      "silver": {
+        "name": "Sha'Carri Richardson",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Melissa Jefferson",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's 200 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "200m"],
+      "gold": {
+        "name": "Gabby Thomas",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Julien Alfred",
+        "country": "LCA"
+      },
+      "bronze": {
+        "name": "Brittany Brown",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's 400 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "400m"],
+      "gold": {
+        "name": "Marileidy Paulino",
+        "country": "DOM"
+      },
+      "silver": {
+        "name": "Salwa Eid Naser",
+        "country": "BRN"
+      },
+      "bronze": {
+        "name": "Natalia Kaczmarek",
+        "country": "POL"
+      }
+    },
+    {
+      "event": "Women's 800 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "800m"],
+      "gold": {
+        "name": "Keely Hodgkinson",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Tsige Duguma",
+        "country": "ETH"
+      },
+      "bronze": {
+        "name": "Mary Moraa",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Women's 1, 500 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "500m"],
+      "gold": {
+        "name": "Faith Kipyegon",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Jessica Jolliffe",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Georgia Bell",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's 5, 000 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "000m"],
+      "gold": {
+        "name": "Beatrice Chebet",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Faith Kipyegon",
+        "country": "KEN"
+      },
+      "bronze": {
+        "name": "Sifan Hassan",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Women's 10, 000 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "10", "000m"],
+      "gold": {
+        "name": "Beatrice Chebet",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Nadia Battocletti",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Sifan Hassan",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Women's Marathon",
+      "gender": "w",
+      "normalizedTokens": ["w", "marathon"],
+      "gold": {
+        "name": "Sifan Hassan",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Tigst Assefa",
+        "country": "ETH"
+      },
+      "bronze": {
+        "name": "Hellen Obiri",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Women's 100 metres Hurdles",
+      "gender": "w",
+      "normalizedTokens": ["w", "100m", "hurdles"],
+      "gold": {
+        "name": "Masai Russell",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Cyréna Samba Mayela",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Jasmine Camacho-Quinn",
+        "country": "PUR"
+      }
+    },
+    {
+      "event": "Women's 400 metres Hurdles",
+      "gender": "w",
+      "normalizedTokens": ["w", "400m", "hurdles"],
+      "gold": {
+        "name": "Sydney McLaughlin-Levrone",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Anna Cockrell",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Femke Bol",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Women's 3, 000 metres Steeplechase",
+      "gender": "w",
+      "normalizedTokens": ["w", "000m", "steeplechase"],
+      "gold": {
+        "name": "Winfred Yavi",
+        "country": "BRN"
+      },
+      "silver": {
+        "name": "Peruth Chemutai",
+        "country": "UGA"
+      },
+      "bronze": {
+        "name": "Faith Cherotich",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Women's 4 × 100 metres Relay",
+      "gender": "w",
+      "normalizedTokens": ["w", "4x100m", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Germany",
+        "country": "GER"
+      }
+    },
+    {
+      "event": "Women's 4 × 400 metres Relay",
+      "gender": "w",
+      "normalizedTokens": ["w", "4x400m", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's 20 kilometres Race Walk",
+      "gender": "w",
+      "normalizedTokens": ["w", "20km", "race", "walk"],
+      "gold": {
+        "name": "Yang Jiayu",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "María Pérez",
+        "country": "ESP"
+      },
+      "bronze": {
+        "name": "Jemima Montag",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Women's High Jump",
+      "gender": "w",
+      "normalizedTokens": ["w", "high", "jump"],
+      "gold": {
+        "name": "Yaroslava Mahuchikh",
+        "country": "UKR"
+      },
+      "silver": {
+        "name": "Nicola Olyslagers",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Eleanor Patterson",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Women's Pole Vault",
+      "gender": "w",
+      "normalizedTokens": ["w", "pole", "vault"],
+      "gold": {
+        "name": "Nina Kennedy",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Katie Moon",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Alysha Newman",
+        "country": "CAN"
+      }
+    },
+    {
+      "event": "Women's Long Jump",
+      "gender": "w",
+      "normalizedTokens": ["w", "long", "jump"],
+      "gold": {
+        "name": "Tara Davis-Woodhall",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Malaika Mihambo",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Jasmine Moore",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Triple Jump",
+      "gender": "w",
+      "normalizedTokens": ["w", "triple", "jump"],
+      "gold": {
+        "name": "Thea LaFond",
+        "country": "DMA"
+      },
+      "silver": {
+        "name": "Shanieka Ricketts",
+        "country": "JAM"
+      },
+      "bronze": {
+        "name": "Jasmine Moore",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Shot Put",
+      "gender": "w",
+      "normalizedTokens": ["w", "shot", "put"],
+      "gold": {
+        "name": "Yemisi Ogunleye",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Maddi Wesche",
+        "country": "NZL"
+      },
+      "bronze": {
+        "name": "Song Jiayuan",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Discus Throw",
+      "gender": "w",
+      "normalizedTokens": ["w", "discus", "throw"],
+      "gold": {
+        "name": "Valarie Allman",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Feng Bin",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Sandra Elkašević",
+        "country": "CRO"
+      }
+    },
+    {
+      "event": "Women's Hammer Throw",
+      "gender": "w",
+      "normalizedTokens": ["w", "hammer", "throw"],
+      "gold": {
+        "name": "Camryn Rogers",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "Annette Echikunwoke",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Zhao Jie",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Javelin Throw",
+      "gender": "w",
+      "normalizedTokens": ["w", "javelin", "throw"],
+      "gold": {
+        "name": "Haruka Kitaguchi",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Jo-Ané van Dyk",
+        "country": "RSA"
+      },
+      "bronze": {
+        "name": "Nikola Ogrodníková",
+        "country": "CZE"
+      }
+    },
+    {
+      "event": "Women's Heptathlon",
+      "gender": "w",
+      "normalizedTokens": ["w", "heptathlon"],
+      "gold": {
+        "name": "Nafi Thiam",
+        "country": "BEL"
+      },
+      "silver": {
+        "name": "Katarina Johnson-Thompson",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Noor Vidts",
+        "country": "BEL"
+      }
+    },
+    {
+      "event": "Mixed 4 × 400 metres Relay",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "4x400m", "relay"],
+      "gold": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Mixed Marathon Race Walk Relay",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "marathon", "race", "walk", "relay"],
+      "gold": {
+        "name": "Spain",
+        "country": "ESP"
+      },
+      "silver": {
+        "name": "Ecuador",
+        "country": "ECU"
+      },
+      "bronze": {
+        "name": "Australia",
+        "country": "AUS"
+      }
+    }
+  ],
+  "Athletics (Race Walk)": [
+    {
+      "event": "Men's 100 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "100m"],
+      "gold": {
+        "name": "Noah Lyles",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Kishane Thompson",
+        "country": "JAM"
+      },
+      "bronze": {
+        "name": "Fred Kerley",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 200 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "200m"],
+      "gold": {
+        "name": "Letsile Tebogo",
+        "country": "BOT"
+      },
+      "silver": {
+        "name": "Kenny Bednarek",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Noah Lyles",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 400 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "400m"],
+      "gold": {
+        "name": "Quincy Hall",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Matt Hudson-Smith",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Muzala Samukonga",
+        "country": "ZAM"
+      }
+    },
+    {
+      "event": "Men's 800 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "800m"],
+      "gold": {
+        "name": "Emmanuel Wanyonyi",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Marco Arop",
+        "country": "CAN"
+      },
+      "bronze": {
+        "name": "Djamel Sedjati",
+        "country": "ALG"
+      }
+    },
+    {
+      "event": "Men's 1, 500 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "500m"],
+      "gold": {
+        "name": "Cole Hocker",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Josh Kerr",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Yared Nuguse",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 5, 000 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "000m"],
+      "gold": {
+        "name": "Jakob Ingebrigtsen",
+        "country": "NOR"
+      },
+      "silver": {
+        "name": "Ronald Kwemoi",
+        "country": "KEN"
+      },
+      "bronze": {
+        "name": "Grant Fisher",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 10, 000 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "10", "000m"],
+      "gold": {
+        "name": "Joshua Cheptegei",
+        "country": "UGA"
+      },
+      "silver": {
+        "name": "Berihu Aregawi",
+        "country": "ETH"
+      },
+      "bronze": {
+        "name": "Grant Fisher",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Marathon",
+      "gender": "m",
+      "normalizedTokens": ["m", "marathon"],
+      "gold": {
+        "name": "Tamirat Tola",
+        "country": "ETH"
+      },
+      "silver": {
+        "name": "Bashir Abdi",
+        "country": "BEL"
+      },
+      "bronze": {
+        "name": "Benson Kipruto",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Men's 110 metres Hurdles",
+      "gender": "m",
+      "normalizedTokens": ["m", "110m", "hurdles"],
+      "gold": {
+        "name": "Grant Holloway",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Daniel Roberts",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Rasheed Broadbell",
+        "country": "JAM"
+      }
+    },
+    {
+      "event": "Men's 400 metres Hurdles",
+      "gender": "m",
+      "normalizedTokens": ["m", "400m", "hurdles"],
+      "gold": {
+        "name": "Rai Benjamin",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Karsten Warholm",
+        "country": "NOR"
+      },
+      "bronze": {
+        "name": "Alison dos Santos",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Men's 3, 000 metres Steeplechase",
+      "gender": "m",
+      "normalizedTokens": ["m", "000m", "steeplechase"],
+      "gold": {
+        "name": "Soufiane El-Bakkali",
+        "country": "MAR"
+      },
+      "silver": {
+        "name": "Kenneth Rooks",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Abraham Kibiwot",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Men's 4 × 100 metres Relay",
+      "gender": "m",
+      "normalizedTokens": ["m", "4x100m", "relay"],
+      "gold": {
+        "name": "Canada",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "South Africa",
+        "country": "RSA"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's 4 × 400 metres Relay",
+      "gender": "m",
+      "normalizedTokens": ["m", "4x400m", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Botswana",
+        "country": "BOT"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's 20 kilometres Race Walk",
+      "gender": "m",
+      "normalizedTokens": ["m", "20km", "race", "walk"],
+      "gold": {
+        "name": "Brian Pintado",
+        "country": "ECU"
+      },
+      "silver": {
+        "name": "Caio Bonfim",
+        "country": "BRA"
+      },
+      "bronze": {
+        "name": "Álvaro Martín",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Men's High Jump",
+      "gender": "m",
+      "normalizedTokens": ["m", "high", "jump"],
+      "gold": {
+        "name": "Hamish Kerr",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Shelby McEwen",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Mutaz Essa Barshim",
+        "country": "QAT"
+      }
+    },
+    {
+      "event": "Men's Pole Vault",
+      "gender": "m",
+      "normalizedTokens": ["m", "pole", "vault"],
+      "gold": {
+        "name": "Mondo Duplantis",
+        "country": "SWE"
+      },
+      "silver": {
+        "name": "Sam Kendricks",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Emmanouil Karalis",
+        "country": "GRE"
+      }
+    },
+    {
+      "event": "Men's Long Jump",
+      "gender": "m",
+      "normalizedTokens": ["m", "long", "jump"],
+      "gold": {
+        "name": "Miltiadis Tentoglou",
+        "country": "GRE"
+      },
+      "silver": {
+        "name": "Wayne Pinnock",
+        "country": "JAM"
+      },
+      "bronze": {
+        "name": "Mattia Furlani",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Triple Jump",
+      "gender": "m",
+      "normalizedTokens": ["m", "triple", "jump"],
+      "gold": {
+        "name": "Jordan Díaz",
+        "country": "ESP"
+      },
+      "silver": {
+        "name": "Pedro Pichardo",
+        "country": "POR"
+      },
+      "bronze": {
+        "name": "Andy Díaz",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Shot Put",
+      "gender": "m",
+      "normalizedTokens": ["m", "shot", "put"],
+      "gold": {
+        "name": "Ryan Crouser",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Joe Kovacs",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Rajindra Campbell",
+        "country": "JAM"
+      }
+    },
+    {
+      "event": "Men's Discus Throw",
+      "gender": "m",
+      "normalizedTokens": ["m", "discus", "throw"],
+      "gold": {
+        "name": "Rojé Stona",
+        "country": "JAM"
+      },
+      "silver": {
+        "name": "Mykolas Alekna",
+        "country": "LTU"
+      },
+      "bronze": {
+        "name": "Matthew Denny",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Men's Hammer Throw",
+      "gender": "m",
+      "normalizedTokens": ["m", "hammer", "throw"],
+      "gold": {
+        "name": "Ethan Katzberg",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "Bence Halász",
+        "country": "HUN"
+      },
+      "bronze": {
+        "name": "Mykhailo Kokhan",
+        "country": "UKR"
+      }
+    },
+    {
+      "event": "Men's Javelin Throw",
+      "gender": "m",
+      "normalizedTokens": ["m", "javelin", "throw"],
+      "gold": {
+        "name": "Arshad Nadeem",
+        "country": "PAK"
+      },
+      "silver": {
+        "name": "Neeraj Chopra",
+        "country": "IND"
+      },
+      "bronze": {
+        "name": "Anderson Peters",
+        "country": "GRN"
+      }
+    },
+    {
+      "event": "Men's Decathlon",
+      "gender": "m",
+      "normalizedTokens": ["m", "decathlon"],
+      "gold": {
+        "name": "Markus Rooth",
+        "country": "NOR"
+      },
+      "silver": {
+        "name": "Leo Neugebauer",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Lindon Victor",
+        "country": "GRN"
+      }
+    },
+    {
+      "event": "Women's 100 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "100m"],
+      "gold": {
+        "name": "Julien Alfred",
+        "country": "LCA"
+      },
+      "silver": {
+        "name": "Sha'Carri Richardson",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Melissa Jefferson",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's 200 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "200m"],
+      "gold": {
+        "name": "Gabby Thomas",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Julien Alfred",
+        "country": "LCA"
+      },
+      "bronze": {
+        "name": "Brittany Brown",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's 400 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "400m"],
+      "gold": {
+        "name": "Marileidy Paulino",
+        "country": "DOM"
+      },
+      "silver": {
+        "name": "Salwa Eid Naser",
+        "country": "BRN"
+      },
+      "bronze": {
+        "name": "Natalia Kaczmarek",
+        "country": "POL"
+      }
+    },
+    {
+      "event": "Women's 800 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "800m"],
+      "gold": {
+        "name": "Keely Hodgkinson",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Tsige Duguma",
+        "country": "ETH"
+      },
+      "bronze": {
+        "name": "Mary Moraa",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Women's 1, 500 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "500m"],
+      "gold": {
+        "name": "Faith Kipyegon",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Jessica Jolliffe",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Georgia Bell",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's 5, 000 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "000m"],
+      "gold": {
+        "name": "Beatrice Chebet",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Faith Kipyegon",
+        "country": "KEN"
+      },
+      "bronze": {
+        "name": "Sifan Hassan",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Women's 10, 000 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "10", "000m"],
+      "gold": {
+        "name": "Beatrice Chebet",
+        "country": "KEN"
+      },
+      "silver": {
+        "name": "Nadia Battocletti",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Sifan Hassan",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Women's Marathon",
+      "gender": "w",
+      "normalizedTokens": ["w", "marathon"],
+      "gold": {
+        "name": "Sifan Hassan",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Tigst Assefa",
+        "country": "ETH"
+      },
+      "bronze": {
+        "name": "Hellen Obiri",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Women's 100 metres Hurdles",
+      "gender": "w",
+      "normalizedTokens": ["w", "100m", "hurdles"],
+      "gold": {
+        "name": "Masai Russell",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Cyréna Samba Mayela",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Jasmine Camacho-Quinn",
+        "country": "PUR"
+      }
+    },
+    {
+      "event": "Women's 400 metres Hurdles",
+      "gender": "w",
+      "normalizedTokens": ["w", "400m", "hurdles"],
+      "gold": {
+        "name": "Sydney McLaughlin-Levrone",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Anna Cockrell",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Femke Bol",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Women's 3, 000 metres Steeplechase",
+      "gender": "w",
+      "normalizedTokens": ["w", "000m", "steeplechase"],
+      "gold": {
+        "name": "Winfred Yavi",
+        "country": "BRN"
+      },
+      "silver": {
+        "name": "Peruth Chemutai",
+        "country": "UGA"
+      },
+      "bronze": {
+        "name": "Faith Cherotich",
+        "country": "KEN"
+      }
+    },
+    {
+      "event": "Women's 4 × 100 metres Relay",
+      "gender": "w",
+      "normalizedTokens": ["w", "4x100m", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Germany",
+        "country": "GER"
+      }
+    },
+    {
+      "event": "Women's 4 × 400 metres Relay",
+      "gender": "w",
+      "normalizedTokens": ["w", "4x400m", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's 20 kilometres Race Walk",
+      "gender": "w",
+      "normalizedTokens": ["w", "20km", "race", "walk"],
+      "gold": {
+        "name": "Yang Jiayu",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "María Pérez",
+        "country": "ESP"
+      },
+      "bronze": {
+        "name": "Jemima Montag",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Women's High Jump",
+      "gender": "w",
+      "normalizedTokens": ["w", "high", "jump"],
+      "gold": {
+        "name": "Yaroslava Mahuchikh",
+        "country": "UKR"
+      },
+      "silver": {
+        "name": "Nicola Olyslagers",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Eleanor Patterson",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Women's Pole Vault",
+      "gender": "w",
+      "normalizedTokens": ["w", "pole", "vault"],
+      "gold": {
+        "name": "Nina Kennedy",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Katie Moon",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Alysha Newman",
+        "country": "CAN"
+      }
+    },
+    {
+      "event": "Women's Long Jump",
+      "gender": "w",
+      "normalizedTokens": ["w", "long", "jump"],
+      "gold": {
+        "name": "Tara Davis-Woodhall",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Malaika Mihambo",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Jasmine Moore",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Triple Jump",
+      "gender": "w",
+      "normalizedTokens": ["w", "triple", "jump"],
+      "gold": {
+        "name": "Thea LaFond",
+        "country": "DMA"
+      },
+      "silver": {
+        "name": "Shanieka Ricketts",
+        "country": "JAM"
+      },
+      "bronze": {
+        "name": "Jasmine Moore",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Shot Put",
+      "gender": "w",
+      "normalizedTokens": ["w", "shot", "put"],
+      "gold": {
+        "name": "Yemisi Ogunleye",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Maddi Wesche",
+        "country": "NZL"
+      },
+      "bronze": {
+        "name": "Song Jiayuan",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Discus Throw",
+      "gender": "w",
+      "normalizedTokens": ["w", "discus", "throw"],
+      "gold": {
+        "name": "Valarie Allman",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Feng Bin",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Sandra Elkašević",
+        "country": "CRO"
+      }
+    },
+    {
+      "event": "Women's Hammer Throw",
+      "gender": "w",
+      "normalizedTokens": ["w", "hammer", "throw"],
+      "gold": {
+        "name": "Camryn Rogers",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "Annette Echikunwoke",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Zhao Jie",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Javelin Throw",
+      "gender": "w",
+      "normalizedTokens": ["w", "javelin", "throw"],
+      "gold": {
+        "name": "Haruka Kitaguchi",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Jo-Ané van Dyk",
+        "country": "RSA"
+      },
+      "bronze": {
+        "name": "Nikola Ogrodníková",
+        "country": "CZE"
+      }
+    },
+    {
+      "event": "Women's Heptathlon",
+      "gender": "w",
+      "normalizedTokens": ["w", "heptathlon"],
+      "gold": {
+        "name": "Nafi Thiam",
+        "country": "BEL"
+      },
+      "silver": {
+        "name": "Katarina Johnson-Thompson",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Noor Vidts",
+        "country": "BEL"
+      }
+    },
+    {
+      "event": "Mixed 4 × 400 metres Relay",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "4x400m", "relay"],
+      "gold": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Mixed Marathon Race Walk Relay",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "marathon", "race", "walk", "relay"],
+      "gold": {
+        "name": "Spain",
+        "country": "ESP"
+      },
+      "silver": {
+        "name": "Ecuador",
+        "country": "ECU"
+      },
+      "bronze": {
+        "name": "Australia",
+        "country": "AUS"
+      }
+    }
+  ],
+  "BMX Freestyle": [
+    {
+      "event": "Men's Park",
+      "gender": "m",
+      "normalizedTokens": ["m", "park"],
+      "gold": {
+        "name": "José Torres Gil",
+        "country": "ARG"
+      },
+      "silver": {
+        "name": "Kieran Reilly",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Anthony Jeanjean",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's Park",
+      "gender": "w",
+      "normalizedTokens": ["w", "park"],
+      "gold": {
+        "name": "Deng Yawen",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Perris Benegas",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Natalya Diehm",
+        "country": "AUS"
+      }
+    }
+  ],
+  "BMX Racing": [
+    {
+      "event": "Men's BMX",
+      "gender": "m",
+      "normalizedTokens": ["m", "bmx"],
+      "gold": {
+        "name": "Joris Daudet",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Sylvain André",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Romain Mahieu",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's BMX",
+      "gender": "w",
+      "normalizedTokens": ["w", "bmx"],
+      "gold": {
+        "name": "Saya Sakakibara",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Manon Veenstra",
+        "country": "NED"
+      },
+      "bronze": {
+        "name": "Zoé Claessens",
+        "country": "SUI"
+      }
+    }
+  ],
+  "Badminton": [
+    {
+      "event": "Men's Singles",
+      "gender": "m",
+      "normalizedTokens": ["m", "singles"],
+      "gold": {
+        "name": "Viktor Axelsen",
+        "country": "DEN"
+      },
+      "silver": {
+        "name": "Kunlavut Vitidsarn",
+        "country": "THA"
+      },
+      "bronze": {
+        "name": "Lee Zii Jia",
+        "country": "MAS"
+      }
+    },
+    {
+      "event": "Men's Doubles",
+      "gender": "m",
+      "normalizedTokens": ["m", "doubles"],
+      "gold": {
+        "name": "Chinese Taipei",
+        "country": "TPE"
+      },
+      "silver": {
+        "name": "People's Republic of China 1",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Malaysia",
+        "country": "MAS"
+      }
+    },
+    {
+      "event": "Women's Singles",
+      "gender": "w",
+      "normalizedTokens": ["w", "singles"],
+      "gold": {
+        "name": "An Se-Yeong",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "He Bingjiao",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Gregoria Mariska Tunjung",
+        "country": "INA"
+      }
+    },
+    {
+      "event": "Women's Doubles",
+      "gender": "w",
+      "normalizedTokens": ["w", "doubles"],
+      "gold": {
+        "name": "People's Republic of China 1",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "People's Republic of China 2",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Japan 1",
+        "country": "JPN"
+      }
+    },
+    {
+      "event": "Mixed Doubles",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "doubles"],
+      "gold": {
+        "name": "People's Republic of China 1",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Republic of Korea 1",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Japan",
+        "country": "JPN"
+      }
+    }
+  ],
+  "Baseball": {
+    "_notInParis": true
+  },
+  "Basketball": [
+    {
+      "event": "Men's Basketball",
+      "gender": "m",
+      "normalizedTokens": ["m", "basketball"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "France",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Serbia",
+        "country": "SRB"
+      }
+    },
+    {
+      "event": "Women's Basketball",
+      "gender": "w",
+      "normalizedTokens": ["w", "basketball"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "France",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Australia",
+        "country": "AUS"
+      }
+    }
+  ],
+  "Beach Volleyball": [
+    {
+      "event": "Men's Beach Volleyball",
+      "gender": "m",
+      "normalizedTokens": ["m", "beach", "volleyball"],
+      "gold": {
+        "name": "Sweden",
+        "country": "SWE"
+      },
+      "silver": {
+        "name": "Germany",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Norway",
+        "country": "NOR"
+      }
+    },
+    {
+      "event": "Women's Beach Volleyball",
+      "gender": "w",
+      "normalizedTokens": ["w", "beach", "volleyball"],
+      "gold": {
+        "name": "Brazil 1",
+        "country": "BRA"
+      },
+      "silver": {
+        "name": "Canada 2",
+        "country": "CAN"
+      },
+      "bronze": {
+        "name": "Switzerland 2",
+        "country": "SUI"
+      }
+    }
+  ],
+  "Boxing - Finals": [
+    {
+      "event": "Men's Flyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "flyweight"],
+      "gold": {
+        "name": "Hasanboy Dusmatov",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Billal Bennama",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "David de Pina",
+        "country": "CPV"
+      }
+    },
+    {
+      "event": "Men's Featherweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "featherweight"],
+      "gold": {
+        "name": "Abdumalik Khalokov",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Munarbek Seitbek",
+        "country": "KGZ"
+      },
+      "bronze": {
+        "name": "Charlie Senior",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Men's Lightweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "lightweight"],
+      "gold": {
+        "name": "Erislandy Álvarez",
+        "country": "CUB"
+      },
+      "silver": {
+        "name": "Sofiane Oumiha",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Wyatt Sanford",
+        "country": "CAN"
+      }
+    },
+    {
+      "event": "Men's Welterweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "welterweight"],
+      "gold": {
+        "name": "Asadkhuja Muydinkhujaev",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Marco Verde",
+        "country": "MEX"
+      },
+      "bronze": {
+        "name": "Lewis Richardson",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's Light-Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "light-heavyweight"],
+      "gold": {
+        "name": "Oleksandr Khyzhniak",
+        "country": "UKR"
+      },
+      "silver": {
+        "name": "Nurbek Oralbay",
+        "country": "KAZ"
+      },
+      "bronze": {
+        "name": "Arlen López",
+        "country": "CUB"
+      }
+    },
+    {
+      "event": "Men's Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "heavyweight"],
+      "gold": {
+        "name": "Lazizbek Mullojonov",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Loren Alfonso",
+        "country": "AZE"
+      },
+      "bronze": {
+        "name": "Enmanuel Reyes",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Men's Super-Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "super-heavyweight"],
+      "gold": {
+        "name": "Bakhodir Jalolov",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Ayoub Ghadfa",
+        "country": "ESP"
+      },
+      "bronze": {
+        "name": "Djamili-Dini Aboudou",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's Flyweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "flyweight"],
+      "gold": {
+        "name": "Wu Yu",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Buse Naz Çakıroğlu",
+        "country": "TUR"
+      },
+      "bronze": {
+        "name": "Nazym Kyzaibay",
+        "country": "KAZ"
+      }
+    },
+    {
+      "event": "Women's Bantamweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "bantamweight"],
+      "gold": {
+        "name": "Chang Yuan",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Hatice Akbaş",
+        "country": "TUR"
+      },
+      "bronze": {
+        "name": "Im Ae-Ji",
+        "country": "KOR"
+      }
+    },
+    {
+      "event": "Women's Featherweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "featherweight"],
+      "gold": {
+        "name": "Lin Yu-Ting",
+        "country": "TPE"
+      },
+      "silver": {
+        "name": "Julia Szeremeta",
+        "country": "POL"
+      },
+      "bronze": {
+        "name": "Nesthy Petecio",
+        "country": "PHI"
+      }
+    },
+    {
+      "event": "Women's Lightweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "lightweight"],
+      "gold": {
+        "name": "Kellie Harrington",
+        "country": "IRL"
+      },
+      "silver": {
+        "name": "Yang Wenlu",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Beatriz Ferreira",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Women's Welterweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "welterweight"],
+      "gold": {
+        "name": "Imane Khelif",
+        "country": "ALG"
+      },
+      "silver": {
+        "name": "Yang Liu",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Janjaem Suwannapheng",
+        "country": "THA"
+      }
+    },
+    {
+      "event": "Women's Middleweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "middleweight"],
+      "gold": {
+        "name": "Li Qian",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Atheyna Bylon",
+        "country": "PAN"
+      },
+      "bronze": {
+        "name": "Caitlin Parker",
+        "country": "AUS"
+      }
+    }
+  ],
+  "Boxing - Prelims": [
+    {
+      "event": "Men's Flyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "flyweight"],
+      "gold": {
+        "name": "Hasanboy Dusmatov",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Billal Bennama",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "David de Pina",
+        "country": "CPV"
+      }
+    },
+    {
+      "event": "Men's Featherweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "featherweight"],
+      "gold": {
+        "name": "Abdumalik Khalokov",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Munarbek Seitbek",
+        "country": "KGZ"
+      },
+      "bronze": {
+        "name": "Charlie Senior",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Men's Lightweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "lightweight"],
+      "gold": {
+        "name": "Erislandy Álvarez",
+        "country": "CUB"
+      },
+      "silver": {
+        "name": "Sofiane Oumiha",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Wyatt Sanford",
+        "country": "CAN"
+      }
+    },
+    {
+      "event": "Men's Welterweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "welterweight"],
+      "gold": {
+        "name": "Asadkhuja Muydinkhujaev",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Marco Verde",
+        "country": "MEX"
+      },
+      "bronze": {
+        "name": "Lewis Richardson",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's Light-Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "light-heavyweight"],
+      "gold": {
+        "name": "Oleksandr Khyzhniak",
+        "country": "UKR"
+      },
+      "silver": {
+        "name": "Nurbek Oralbay",
+        "country": "KAZ"
+      },
+      "bronze": {
+        "name": "Arlen López",
+        "country": "CUB"
+      }
+    },
+    {
+      "event": "Men's Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "heavyweight"],
+      "gold": {
+        "name": "Lazizbek Mullojonov",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Loren Alfonso",
+        "country": "AZE"
+      },
+      "bronze": {
+        "name": "Enmanuel Reyes",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Men's Super-Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "super-heavyweight"],
+      "gold": {
+        "name": "Bakhodir Jalolov",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Ayoub Ghadfa",
+        "country": "ESP"
+      },
+      "bronze": {
+        "name": "Djamili-Dini Aboudou",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's Flyweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "flyweight"],
+      "gold": {
+        "name": "Wu Yu",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Buse Naz Çakıroğlu",
+        "country": "TUR"
+      },
+      "bronze": {
+        "name": "Nazym Kyzaibay",
+        "country": "KAZ"
+      }
+    },
+    {
+      "event": "Women's Bantamweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "bantamweight"],
+      "gold": {
+        "name": "Chang Yuan",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Hatice Akbaş",
+        "country": "TUR"
+      },
+      "bronze": {
+        "name": "Im Ae-Ji",
+        "country": "KOR"
+      }
+    },
+    {
+      "event": "Women's Featherweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "featherweight"],
+      "gold": {
+        "name": "Lin Yu-Ting",
+        "country": "TPE"
+      },
+      "silver": {
+        "name": "Julia Szeremeta",
+        "country": "POL"
+      },
+      "bronze": {
+        "name": "Nesthy Petecio",
+        "country": "PHI"
+      }
+    },
+    {
+      "event": "Women's Lightweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "lightweight"],
+      "gold": {
+        "name": "Kellie Harrington",
+        "country": "IRL"
+      },
+      "silver": {
+        "name": "Yang Wenlu",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Beatriz Ferreira",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Women's Welterweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "welterweight"],
+      "gold": {
+        "name": "Imane Khelif",
+        "country": "ALG"
+      },
+      "silver": {
+        "name": "Yang Liu",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Janjaem Suwannapheng",
+        "country": "THA"
+      }
+    },
+    {
+      "event": "Women's Middleweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "middleweight"],
+      "gold": {
+        "name": "Li Qian",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Atheyna Bylon",
+        "country": "PAN"
+      },
+      "bronze": {
+        "name": "Caitlin Parker",
+        "country": "AUS"
+      }
+    }
+  ],
+  "Canoe Slalom": [
+    {
+      "event": "Men's Kayak Cross, Slalom",
+      "gender": "m",
+      "normalizedTokens": ["m", "k", "cross", "slalom"],
+      "gold": {
+        "name": "Finn Butcher",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Joe Clarke",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Noah Hegge",
+        "country": "GER"
+      }
+    },
+    {
+      "event": "Men's Kayak Singles, Slalom",
+      "gender": "m",
+      "normalizedTokens": ["m", "k", "singles", "slalom"],
+      "gold": {
+        "name": "Giovanni De Gennaro",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "Titouan Castryck",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Pau Echaniz",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Men's Canadian Singles, Slalom",
+      "gender": "m",
+      "normalizedTokens": ["m", "canadian", "singles", "slalom"],
+      "gold": {
+        "name": "Nicolas Gestin",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Adam Burgess",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Matej Beňuš",
+        "country": "SVK"
+      }
+    },
+    {
+      "event": "Women's Kayak Singles, Slalom",
+      "gender": "w",
+      "normalizedTokens": ["w", "k", "singles", "slalom"],
+      "gold": {
+        "name": "Jess Fox",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Klaudia Zwolińska",
+        "country": "POL"
+      },
+      "bronze": {
+        "name": "Kimberley Woods",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's Canadian Singles, Slalom",
+      "gender": "w",
+      "normalizedTokens": ["w", "canadian", "singles", "slalom"],
+      "gold": {
+        "name": "Jess Fox",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Elena Lilik",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Evy Leibfarth",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Kayak Cross, Slalom",
+      "gender": "w",
+      "normalizedTokens": ["w", "k", "cross", "slalom"],
+      "gold": {
+        "name": "Noemie Fox",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Angèle Hug",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Kimberley Woods",
+        "country": "GBR"
+      }
+    }
+  ],
+  "Canoe Sprint": [
+    {
+      "event": "Men's Kayak Singles, 1, 000 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "k", "singles", "000m"],
+      "gold": {
+        "name": "Josef Dostál",
+        "country": "CZE"
+      },
+      "silver": {
+        "name": "Ádám Varga",
+        "country": "HUN"
+      },
+      "bronze": {
+        "name": "Bálint Kopasz",
+        "country": "HUN"
+      }
+    },
+    {
+      "event": "Men's Kayak Doubles, 500 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "k", "doubles", "500m"],
+      "gold": {
+        "name": "Germany 1",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Hungary 1",
+        "country": "HUN"
+      },
+      "bronze": {
+        "name": "Australia",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Men's Kayak Fours, 500 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "k", "fours", "500m"],
+      "gold": {
+        "name": "Germany",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Australia",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Spain",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Men's Canadian Singles, 1, 000 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "canadian", "singles", "000m"],
+      "gold": {
+        "name": "Martin Fuksa",
+        "country": "CZE"
+      },
+      "silver": {
+        "name": "Isaquias Queiroz",
+        "country": "BRA"
+      },
+      "bronze": {
+        "name": "Serghei Tarnovschi",
+        "country": "MDA"
+      }
+    },
+    {
+      "event": "Men's Canadian Doubles, 500 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "canadian", "doubles", "500m"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Spain",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Women's Kayak Singles, 500 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "k", "singles", "500m"],
+      "gold": {
+        "name": "Lisa Carrington",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Tamara Csipes",
+        "country": "HUN"
+      },
+      "bronze": {
+        "name": "Emma Jørgensen",
+        "country": "DEN"
+      }
+    },
+    {
+      "event": "Women's Kayak Doubles, 500 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "k", "doubles", "500m"],
+      "gold": {
+        "name": "New Zealand 1",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Hungary 1",
+        "country": "HUN"
+      },
+      "bronze": {
+        "name": "Germany 1Hungary 2",
+        "country": "GER"
+      }
+    },
+    {
+      "event": "Women's Kayak Fours, 500 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "k", "fours", "500m"],
+      "gold": {
+        "name": "New Zealand",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Germany",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Hungary",
+        "country": "HUN"
+      }
+    },
+    {
+      "event": "Women's Canadian Singles, 200 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "canadian", "singles", "200m"],
+      "gold": {
+        "name": "Katie Vincent",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "Nevin Harrison",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Yarisleidis Cirilo",
+        "country": "CUB"
+      }
+    },
+    {
+      "event": "Women's Canadian Doubles, 500 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "canadian", "doubles", "500m"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Ukraine",
+        "country": "UKR"
+      },
+      "bronze": {
+        "name": "Canada",
+        "country": "CAN"
+      }
+    }
+  ],
+  "Climbing": [
+    {
+      "event": "Men's Boulder and Lead",
+      "gender": "m",
+      "normalizedTokens": ["m", "boulder", "lead"],
+      "gold": {
+        "name": "Toby Roberts",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Sorato Anraku",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Jakob Schubert",
+        "country": "AUT"
+      }
+    },
+    {
+      "event": "Men's Speed",
+      "gender": "m",
+      "normalizedTokens": ["m", "speed"],
+      "gold": {
+        "name": "Veddriq Leonardo",
+        "country": "INA"
+      },
+      "silver": {
+        "name": "Wu Peng",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Sam Watson",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Boulder and Lead",
+      "gender": "w",
+      "normalizedTokens": ["w", "boulder", "lead"],
+      "gold": {
+        "name": "Janja Garnbret",
+        "country": "SLO"
+      },
+      "silver": {
+        "name": "Brooke Raboutou",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Jessica Pilz",
+        "country": "AUT"
+      }
+    },
+    {
+      "event": "Women's Speed",
+      "gender": "w",
+      "normalizedTokens": ["w", "speed"],
+      "gold": {
+        "name": "Aleksandra Mirosław",
+        "country": "POL"
+      },
+      "silver": {
+        "name": "Deng Lijuan",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Aleksandra Kałucka",
+        "country": "POL"
+      }
+    }
+  ],
+  "Cricket": {
+    "_notInParis": true
+  },
+  "Cycling Road (Road Race)": [
+    {
+      "event": "Men's Road Race, Individual",
+      "gender": "m",
+      "normalizedTokens": ["m", "road", "race"],
+      "gold": {
+        "name": "Remco Evenepoel",
+        "country": "BEL"
+      },
+      "silver": {
+        "name": "Valentin Madouas",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Christophe Laporte",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Men's Individual Time Trial",
+      "gender": "m",
+      "normalizedTokens": ["m", "time", "trial"],
+      "gold": {
+        "name": "Remco Evenepoel",
+        "country": "BEL"
+      },
+      "silver": {
+        "name": "Filippo Ganna",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Wout Van Aert",
+        "country": "BEL"
+      }
+    },
+    {
+      "event": "Women's Road Race, Individual",
+      "gender": "w",
+      "normalizedTokens": ["w", "road", "race"],
+      "gold": {
+        "name": "Kristen Faulkner",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Marianne Vos",
+        "country": "NED"
+      },
+      "bronze": {
+        "name": "Lotte Kopecky",
+        "country": "BEL"
+      }
+    },
+    {
+      "event": "Women's Individual Time Trial",
+      "gender": "w",
+      "normalizedTokens": ["w", "time", "trial"],
+      "gold": {
+        "name": "Grace Brown",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Anna Henderson",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Chloé Dygert",
+        "country": "USA"
+      }
+    }
+  ],
+  "Cycling Road (Time Trial)": [
+    {
+      "event": "Men's Road Race, Individual",
+      "gender": "m",
+      "normalizedTokens": ["m", "road", "race"],
+      "gold": {
+        "name": "Remco Evenepoel",
+        "country": "BEL"
+      },
+      "silver": {
+        "name": "Valentin Madouas",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Christophe Laporte",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Men's Individual Time Trial",
+      "gender": "m",
+      "normalizedTokens": ["m", "time", "trial"],
+      "gold": {
+        "name": "Remco Evenepoel",
+        "country": "BEL"
+      },
+      "silver": {
+        "name": "Filippo Ganna",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Wout Van Aert",
+        "country": "BEL"
+      }
+    },
+    {
+      "event": "Women's Road Race, Individual",
+      "gender": "w",
+      "normalizedTokens": ["w", "road", "race"],
+      "gold": {
+        "name": "Kristen Faulkner",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Marianne Vos",
+        "country": "NED"
+      },
+      "bronze": {
+        "name": "Lotte Kopecky",
+        "country": "BEL"
+      }
+    },
+    {
+      "event": "Women's Individual Time Trial",
+      "gender": "w",
+      "normalizedTokens": ["w", "time", "trial"],
+      "gold": {
+        "name": "Grace Brown",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Anna Henderson",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Chloé Dygert",
+        "country": "USA"
+      }
+    }
+  ],
+  "Cycling Track": [
+    {
+      "event": "Men's Sprint",
+      "gender": "m",
+      "normalizedTokens": ["m", "sprint"],
+      "gold": {
+        "name": "Harrie Lavreysen",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Matthew Richardson",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Jack Carlin",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's Keirin",
+      "gender": "m",
+      "normalizedTokens": ["m", "keirin"],
+      "gold": {
+        "name": "Harrie Lavreysen",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Matthew Richardson",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Matthew Glaetzer",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Men's Team Sprint",
+      "gender": "m",
+      "normalizedTokens": ["m", "team", "sprint"],
+      "gold": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Australia",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Men's Team Pursuit, 4, 000 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "team", "pursuit", "000m"],
+      "gold": {
+        "name": "Australia",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Italy",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Madison",
+      "gender": "m",
+      "normalizedTokens": ["m", "madison"],
+      "gold": {
+        "name": "Portugal",
+        "country": "POR"
+      },
+      "silver": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Denmark",
+        "country": "DEN"
+      }
+    },
+    {
+      "event": "Men's Omnium",
+      "gender": "m",
+      "normalizedTokens": ["m", "omnium"],
+      "gold": {
+        "name": "Benjamin Thomas",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Iúri Leitão",
+        "country": "POR"
+      },
+      "bronze": {
+        "name": "Fabio van den Bossche",
+        "country": "BEL"
+      }
+    },
+    {
+      "event": "Women's Sprint",
+      "gender": "w",
+      "normalizedTokens": ["w", "sprint"],
+      "gold": {
+        "name": "Ellesse Andrews",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Lea-Sophie Friedrich",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Emma Finucane",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's Keirin",
+      "gender": "w",
+      "normalizedTokens": ["w", "keirin"],
+      "gold": {
+        "name": "Ellesse Andrews",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Hetty van de Wouw",
+        "country": "NED"
+      },
+      "bronze": {
+        "name": "Emma Finucane",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's Team Sprint",
+      "gender": "w",
+      "normalizedTokens": ["w", "team", "sprint"],
+      "gold": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "New Zealand",
+        "country": "NZL"
+      },
+      "bronze": {
+        "name": "Germany",
+        "country": "GER"
+      }
+    },
+    {
+      "event": "Women's Team Pursuit",
+      "gender": "w",
+      "normalizedTokens": ["w", "team", "pursuit"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "New Zealand",
+        "country": "NZL"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's Madison",
+      "gender": "w",
+      "normalizedTokens": ["w", "madison"],
+      "gold": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Netherlands",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Women's Omnium",
+      "gender": "w",
+      "normalizedTokens": ["w", "omnium"],
+      "gold": {
+        "name": "Jennifer Valente",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Daria Pikulik",
+        "country": "POL"
+      },
+      "bronze": {
+        "name": "Ally Wollaston",
+        "country": "NZL"
+      }
+    }
+  ],
+  "Diving": [
+    {
+      "event": "Men's Springboard",
+      "gender": "m",
+      "normalizedTokens": ["m", "springboard"],
+      "gold": {
+        "name": "Xie Siyi",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Wang Zongyuan",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Osmar Olvera",
+        "country": "MEX"
+      }
+    },
+    {
+      "event": "Men's Platform",
+      "gender": "m",
+      "normalizedTokens": ["m", "platform"],
+      "gold": {
+        "name": "Cao Yuan",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Rikuto Tamai",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Noah Williams",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's Synchronized Springboard",
+      "gender": "m",
+      "normalizedTokens": ["m", "synchronized", "springboard"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Mexico",
+        "country": "MEX"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's Synchronized Platform",
+      "gender": "m",
+      "normalizedTokens": ["m", "synchronized", "platform"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Canada",
+        "country": "CAN"
+      }
+    },
+    {
+      "event": "Women's Springboard",
+      "gender": "w",
+      "normalizedTokens": ["w", "springboard"],
+      "gold": {
+        "name": "Chen Yiwen",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Maddison Keeney",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Chang Yani",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Platform",
+      "gender": "w",
+      "normalizedTokens": ["w", "platform"],
+      "gold": {
+        "name": "Quan Hongchan",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Chen Yuxi",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Kim Mi-Rae",
+        "country": "PRK"
+      }
+    },
+    {
+      "event": "Women's Synchronized Springboard",
+      "gender": "w",
+      "normalizedTokens": ["w", "synchronized", "springboard"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's Synchronized Platform",
+      "gender": "w",
+      "normalizedTokens": ["w", "synchronized", "platform"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Democratic People's Republic of Korea",
+        "country": "PRK"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    }
+  ],
+  "Equestrian": [
+    {
+      "event": "Open Individual",
+      "gender": "open",
+      "normalizedTokens": ["open"],
+      "gold": {
+        "name": "Jessica von Bredow-Werndl",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Isabell Werth",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Lottie Fry",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Open Team",
+      "gender": "open",
+      "normalizedTokens": ["open", "team"],
+      "gold": {
+        "name": "Germany",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Denmark",
+        "country": "DEN"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Open Individual",
+      "gender": "open",
+      "normalizedTokens": ["open"],
+      "gold": {
+        "name": "Christian Kukuk",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Steve Guerdat",
+        "country": "SUI"
+      },
+      "bronze": {
+        "name": "Maikel van der Vleuten",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Open Team",
+      "gender": "open",
+      "normalizedTokens": ["open", "team"],
+      "gold": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "France",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Open Individual",
+      "gender": "open",
+      "normalizedTokens": ["open"],
+      "gold": {
+        "name": "Michael Jung",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Christopher Burton",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Laura Collett",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Open Team",
+      "gender": "open",
+      "normalizedTokens": ["open", "team"],
+      "gold": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "France",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Japan",
+        "country": "JPN"
+      }
+    }
+  ],
+  "Fencing": [
+    {
+      "event": "Men's Foil, Individual",
+      "gender": "m",
+      "normalizedTokens": ["m", "foil"],
+      "gold": {
+        "name": "Edgar Cheung",
+        "country": "HKG"
+      },
+      "silver": {
+        "name": "Filippo Macchi",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Nick Itkin",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Foil, Team",
+      "gender": "m",
+      "normalizedTokens": ["m", "foil", "team"],
+      "gold": {
+        "name": "Japan",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "France",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Men's Épée, Individual",
+      "gender": "m",
+      "normalizedTokens": ["m", "epee"],
+      "gold": {
+        "name": "Koki Kano",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Yannick Borel",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Mohamed El-Sayed",
+        "country": "EGY"
+      }
+    },
+    {
+      "event": "Men's Épée, Team",
+      "gender": "m",
+      "normalizedTokens": ["m", "epee", "team"],
+      "gold": {
+        "name": "Hungary",
+        "country": "HUN"
+      },
+      "silver": {
+        "name": "Japan",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Czechia",
+        "country": "CZE"
+      }
+    },
+    {
+      "event": "Men's Sabre, Individual",
+      "gender": "m",
+      "normalizedTokens": ["m", "sabre"],
+      "gold": {
+        "name": "Oh Sang-Uk",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Fares Ferjani",
+        "country": "TUN"
+      },
+      "bronze": {
+        "name": "Luigi Samele",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Sabre, Team",
+      "gender": "m",
+      "normalizedTokens": ["m", "sabre", "team"],
+      "gold": {
+        "name": "Republic of Korea",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Hungary",
+        "country": "HUN"
+      },
+      "bronze": {
+        "name": "France",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's Foil, Individual",
+      "gender": "w",
+      "normalizedTokens": ["w", "foil"],
+      "gold": {
+        "name": "Lee Kiefer",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Lauren Scruggs",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Eleanor Harvey",
+        "country": "CAN"
+      }
+    },
+    {
+      "event": "Women's Foil, Team",
+      "gender": "w",
+      "normalizedTokens": ["w", "foil", "team"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Japan",
+        "country": "JPN"
+      }
+    },
+    {
+      "event": "Women's Épée, Individual",
+      "gender": "w",
+      "normalizedTokens": ["w", "epee"],
+      "gold": {
+        "name": "Vivian Kong",
+        "country": "HKG"
+      },
+      "silver": {
+        "name": "Auriane Mallo-Breton",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Eszter Muhari",
+        "country": "HUN"
+      }
+    },
+    {
+      "event": "Women's Épée, Team",
+      "gender": "w",
+      "normalizedTokens": ["w", "epee", "team"],
+      "gold": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "France",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Poland",
+        "country": "POL"
+      }
+    },
+    {
+      "event": "Women's Sabre, Individual",
+      "gender": "w",
+      "normalizedTokens": ["w", "sabre"],
+      "gold": {
+        "name": "Manon Apithy-Brunet",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Sara Balzer",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Olha Kharlan",
+        "country": "UKR"
+      }
+    },
+    {
+      "event": "Women's Sabre, Team",
+      "gender": "w",
+      "normalizedTokens": ["w", "sabre", "team"],
+      "gold": {
+        "name": "Ukraine",
+        "country": "UKR"
+      },
+      "silver": {
+        "name": "Republic of Korea",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Japan",
+        "country": "JPN"
+      }
+    }
+  ],
+  "Flag Football": {
+    "_notInParis": true
+  },
+  "Football (Soccer)": [
+    {
+      "event": "Men's Football",
+      "gender": "m",
+      "normalizedTokens": ["m", "football"],
+      "gold": {
+        "name": "Spain",
+        "country": "ESP"
+      },
+      "silver": {
+        "name": "France",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Morocco",
+        "country": "MAR"
+      }
+    },
+    {
+      "event": "Women's Football",
+      "gender": "w",
+      "normalizedTokens": ["w", "football"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Brazil",
+        "country": "BRA"
+      },
+      "bronze": {
+        "name": "Germany",
+        "country": "GER"
+      }
+    }
+  ],
+  "Golf": [
+    {
+      "event": "Men's Individual",
+      "gender": "m",
+      "normalizedTokens": ["m"],
+      "gold": {
+        "name": "Scottie Scheffler",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Tommy Fleetwood",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Hideki Matsuyama",
+        "country": "JPN"
+      }
+    },
+    {
+      "event": "Women's Individual",
+      "gender": "w",
+      "normalizedTokens": ["w"],
+      "gold": {
+        "name": "Lydia Ko",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Esther Henseleit",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Janet Lin",
+        "country": "CHN"
+      }
+    }
+  ],
+  "Handball": [
+    {
+      "event": "Men's Handball",
+      "gender": "m",
+      "normalizedTokens": ["m", "handball"],
+      "gold": {
+        "name": "Denmark",
+        "country": "DEN"
+      },
+      "silver": {
+        "name": "Germany",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Spain",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Women's Handball",
+      "gender": "w",
+      "normalizedTokens": ["w", "handball"],
+      "gold": {
+        "name": "Norway",
+        "country": "NOR"
+      },
+      "silver": {
+        "name": "France",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Denmark",
+        "country": "DEN"
+      }
+    }
+  ],
+  "Hockey": [
+    {
+      "event": "Men's Hockey",
+      "gender": "m",
+      "normalizedTokens": ["m", "hockey"],
+      "gold": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Germany",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "India",
+        "country": "IND"
+      }
+    },
+    {
+      "event": "Women's Hockey",
+      "gender": "w",
+      "normalizedTokens": ["w", "hockey"],
+      "gold": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Argentina",
+        "country": "ARG"
+      }
+    }
+  ],
+  "Judo": [
+    {
+      "event": "Men's Extra-Lightweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "extra-lightweight"],
+      "gold": {
+        "name": "Yeldos Smetov",
+        "country": "KAZ"
+      },
+      "silver": {
+        "name": "Luka Mkheidze",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Francisco Garrigós",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Men's Half-Lightweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "half-lightweight"],
+      "gold": {
+        "name": "Hifumi Abe",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Willian Lima",
+        "country": "BRA"
+      },
+      "bronze": {
+        "name": "Gusman Kyrgyzbayev",
+        "country": "KAZ"
+      }
+    },
+    {
+      "event": "Men's Lightweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "lightweight"],
+      "gold": {
+        "name": "Hidayət Heydərov",
+        "country": "AZE"
+      },
+      "silver": {
+        "name": "Joan-Benjamin Gaba",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Soichi Hashimoto",
+        "country": "JPN"
+      }
+    },
+    {
+      "event": "Men's Half-Middleweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "half-middleweight"],
+      "gold": {
+        "name": "Takanori Nagase",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Tato Grigalashvili",
+        "country": "GEO"
+      },
+      "bronze": {
+        "name": "Lee Jun-Hwan",
+        "country": "KOR"
+      }
+    },
+    {
+      "event": "Men's Middleweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "middleweight"],
+      "gold": {
+        "name": "Lasha Bekauri",
+        "country": "GEO"
+      },
+      "silver": {
+        "name": "Sanshiro Murao",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Maxime-Gaël Ngayap Hambou",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Men's Half-Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "half-heavyweight"],
+      "gold": {
+        "name": "Zelym Kotsoiev",
+        "country": "AZE"
+      },
+      "silver": {
+        "name": "Ilia Sulamanidze",
+        "country": "GEO"
+      },
+      "bronze": {
+        "name": "Peter Paltchik",
+        "country": "ISR"
+      }
+    },
+    {
+      "event": "Men's Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "heavyweight"],
+      "gold": {
+        "name": "Teddy Riner",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Kim Min-Jong",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Temur Rakhimov",
+        "country": "TJK"
+      }
+    },
+    {
+      "event": "Women's Extra-Lightweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "extra-lightweight"],
+      "gold": {
+        "name": "Natsumi Tsunoda",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Bavuudorjiin Baasankhüü",
+        "country": "MGL"
+      },
+      "bronze": {
+        "name": "Shirine Boukli",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's Half-Lightweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "half-lightweight"],
+      "gold": {
+        "name": "Diyora Keldiyorova",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Distria Krasniqi",
+        "country": "KOS"
+      },
+      "bronze": {
+        "name": "Larissa Pimenta",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Women's Lightweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "lightweight"],
+      "gold": {
+        "name": "Christa Deguchi",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "Heo Mi-Mi",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Sarah-Léonie Cysique",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's Half-Middleweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "half-middleweight"],
+      "gold": {
+        "name": "Andreja Leški",
+        "country": "SLO"
+      },
+      "silver": {
+        "name": "Prisca Awiti",
+        "country": "MEX"
+      },
+      "bronze": {
+        "name": "Clarisse Agbegnenou",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's Middleweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "middleweight"],
+      "gold": {
+        "name": "Barbara Matić",
+        "country": "CRO"
+      },
+      "silver": {
+        "name": "Miriam Butkereit",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Michi Polleres",
+        "country": "AUT"
+      }
+    },
+    {
+      "event": "Women's Half-Heavyweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "half-heavyweight"],
+      "gold": {
+        "name": "Alice Bellandi",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "Inbar Lanir",
+        "country": "ISR"
+      },
+      "bronze": {
+        "name": "Ma Zhenzhao",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Heavyweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "heavyweight"],
+      "gold": {
+        "name": "Beatriz Souza",
+        "country": "BRA"
+      },
+      "silver": {
+        "name": "Raz Hershko",
+        "country": "ISR"
+      },
+      "bronze": {
+        "name": "Romane Dicko",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Mixed Team",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "team"],
+      "gold": {
+        "name": "France",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Japan",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "BrazilRepublic of Korea",
+        "country": "BRA"
+      }
+    }
+  ],
+  "Lacrosse": {
+    "_notInParis": true
+  },
+  "Modern Pentathlon": [
+    {
+      "event": "Men's Individual",
+      "gender": "m",
+      "normalizedTokens": ["m"],
+      "gold": {
+        "name": "Ahmed El-Gendy",
+        "country": "EGY"
+      },
+      "silver": {
+        "name": "Taishu Sato",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Giorgio Malan",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Women's Individual",
+      "gender": "w",
+      "normalizedTokens": ["w"],
+      "gold": {
+        "name": "Michelle Gulyás",
+        "country": "HUN"
+      },
+      "silver": {
+        "name": "Élodie Clouvel",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Seong Seung-Min",
+        "country": "KOR"
+      }
+    }
+  ],
+  "Mountain Bike": [
+    {
+      "event": "Men's Cross-Country",
+      "gender": "m",
+      "normalizedTokens": ["m", "cross-country"],
+      "gold": {
+        "name": "Tom Pidcock",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Victor Koretzky",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Alan Hatherly",
+        "country": "RSA"
+      }
+    },
+    {
+      "event": "Women's Cross-Country",
+      "gender": "w",
+      "normalizedTokens": ["w", "cross-country"],
+      "gold": {
+        "name": "Pauline Ferrand-Prévot",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Haley Batten",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Jenny Rissveds",
+        "country": "SWE"
+      }
+    }
+  ],
+  "Open Water Swimming": [
+    {
+      "event": "Men's 10 kilometres Open Water",
+      "gender": "m",
+      "normalizedTokens": ["m", "10km", "open", "water"],
+      "gold": {
+        "name": "Kristóf Rasovszky",
+        "country": "HUN"
+      },
+      "silver": {
+        "name": "Oliver Klemet",
+        "country": "GER"
+      },
+      "bronze": {
+        "name": "Dávid Betlehem",
+        "country": "HUN"
+      }
+    },
+    {
+      "event": "Women's 10 kilometres Open Water",
+      "gender": "w",
+      "normalizedTokens": ["w", "10km", "open", "water"],
+      "gold": {
+        "name": "Sharon van Rouwendaal",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Moesha Johnson",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Ginevra Taddeucci",
+        "country": "ITA"
+      }
+    }
+  ],
+  "Rhythmic Gymnastics": [
+    {
+      "event": "Women's Individual",
+      "gender": "w",
+      "normalizedTokens": ["w"],
+      "gold": {
+        "name": "Darja Varfolomeev",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Boryana Kaleyn",
+        "country": "BUL"
+      },
+      "bronze": {
+        "name": "Sofia Raffaeli",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Women's Group",
+      "gender": "w",
+      "normalizedTokens": ["w"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Israel",
+        "country": "ISR"
+      },
+      "bronze": {
+        "name": "Italy",
+        "country": "ITA"
+      }
+    }
+  ],
+  "Rowing": [
+    {
+      "event": "Men's Single Sculls",
+      "gender": "m",
+      "normalizedTokens": ["m", "single", "sculls"],
+      "gold": {
+        "name": "Oliver Zeidler",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Yauheni Zalaty",
+        "country": "AIN"
+      },
+      "bronze": {
+        "name": "Simon van Dorp",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Men's Double Sculls",
+      "gender": "m",
+      "normalizedTokens": ["m", "double", "sculls"],
+      "gold": {
+        "name": "Romania",
+        "country": "ROU"
+      },
+      "silver": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "bronze": {
+        "name": "Ireland",
+        "country": "IRL"
+      }
+    },
+    {
+      "event": "Men's Quadruple Sculls",
+      "gender": "m",
+      "normalizedTokens": ["m", "quadruple", "sculls"],
+      "gold": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Poland",
+        "country": "POL"
+      }
+    },
+    {
+      "event": "Men's Coxless Pairs",
+      "gender": "m",
+      "normalizedTokens": ["m", "coxless", "pairs"],
+      "gold": {
+        "name": "Croatia",
+        "country": "CRO"
+      },
+      "silver": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Switzerland",
+        "country": "SUI"
+      }
+    },
+    {
+      "event": "Men's Coxless Fours",
+      "gender": "m",
+      "normalizedTokens": ["m", "coxless", "fours"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "New Zealand",
+        "country": "NZL"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Men's Eights",
+      "gender": "m",
+      "normalizedTokens": ["m", "eights"],
+      "gold": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "bronze": {
+        "name": "United States",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Lightweight Double Sculls",
+      "gender": "m",
+      "normalizedTokens": ["m", "lightweight", "double", "sculls"],
+      "gold": {
+        "name": "Ireland",
+        "country": "IRL"
+      },
+      "silver": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Greece",
+        "country": "GRE"
+      }
+    },
+    {
+      "event": "Women's Single Sculls",
+      "gender": "w",
+      "normalizedTokens": ["w", "single", "sculls"],
+      "gold": {
+        "name": "Karolien Florijn",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Emma Twigg",
+        "country": "NZL"
+      },
+      "bronze": {
+        "name": "Viktorija Senkutė",
+        "country": "LTU"
+      }
+    },
+    {
+      "event": "Women's Double Sculls",
+      "gender": "w",
+      "normalizedTokens": ["w", "double", "sculls"],
+      "gold": {
+        "name": "New Zealand",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Romania",
+        "country": "ROU"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's Quadruple Sculls",
+      "gender": "w",
+      "normalizedTokens": ["w", "quadruple", "sculls"],
+      "gold": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "bronze": {
+        "name": "Germany",
+        "country": "GER"
+      }
+    },
+    {
+      "event": "Women's Coxless Pairs",
+      "gender": "w",
+      "normalizedTokens": ["w", "coxless", "pairs"],
+      "gold": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Romania",
+        "country": "ROU"
+      },
+      "bronze": {
+        "name": "Australia",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Women's Coxless Fours",
+      "gender": "w",
+      "normalizedTokens": ["w", "coxless", "fours"],
+      "gold": {
+        "name": "Netherlands",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "New Zealand",
+        "country": "NZL"
+      }
+    },
+    {
+      "event": "Women's Eights",
+      "gender": "w",
+      "normalizedTokens": ["w", "eights"],
+      "gold": {
+        "name": "Romania",
+        "country": "ROU"
+      },
+      "silver": {
+        "name": "Canada",
+        "country": "CAN"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's Lightweight Double Sculls",
+      "gender": "w",
+      "normalizedTokens": ["w", "lightweight", "double", "sculls"],
+      "gold": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Romania",
+        "country": "ROU"
+      },
+      "bronze": {
+        "name": "Greece",
+        "country": "GRE"
+      }
+    }
+  ],
+  "Rowing Coastal": {
+    "_notInParis": true
+  },
+  "Rugby Sevens": [
+    {
+      "event": "Men's Rugby Sevens",
+      "gender": "m",
+      "normalizedTokens": ["m", "rugby", "sevens"],
+      "gold": {
+        "name": "France",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Fiji",
+        "country": "FIJ"
+      },
+      "bronze": {
+        "name": "South Africa",
+        "country": "RSA"
+      }
+    },
+    {
+      "event": "Women's Rugby Sevens",
+      "gender": "w",
+      "normalizedTokens": ["w", "rugby", "sevens"],
+      "gold": {
+        "name": "New Zealand",
+        "country": "NZL"
+      },
+      "silver": {
+        "name": "Canada",
+        "country": "CAN"
+      },
+      "bronze": {
+        "name": "United States",
+        "country": "USA"
+      }
+    }
+  ],
+  "Sailing (D/S/M)": [
+    {
+      "event": "Men's Windsurfer",
+      "gender": "m",
+      "normalizedTokens": ["m", "windsurfer"],
+      "gold": {
+        "name": "Tom Reuveny",
+        "country": "ISR"
+      },
+      "silver": {
+        "name": "Grae Morris",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Luuc van Opzeeland",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Men's One Person Dinghy",
+      "gender": "m",
+      "normalizedTokens": ["m", "one", "person", "dinghy"],
+      "gold": {
+        "name": "Matt Wearn",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Pavlos Kontides",
+        "country": "CYP"
+      },
+      "bronze": {
+        "name": "Stefano Peschiera",
+        "country": "PER"
+      }
+    },
+    {
+      "event": "Men's Skiff",
+      "gender": "m",
+      "normalizedTokens": ["m", "skiff"],
+      "gold": {
+        "name": "Spain",
+        "country": "ESP"
+      },
+      "silver": {
+        "name": "New Zealand",
+        "country": "NZL"
+      },
+      "bronze": {
+        "name": "United States",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Kiteboarding",
+      "gender": "m",
+      "normalizedTokens": ["m", "kiteboarding"],
+      "gold": {
+        "name": "Valentin Bontus",
+        "country": "AUT"
+      },
+      "silver": {
+        "name": "Toni Vodišek",
+        "country": "SLO"
+      },
+      "bronze": {
+        "name": "Max Maeder",
+        "country": "SGP"
+      }
+    },
+    {
+      "event": "Women's Windsurfer",
+      "gender": "w",
+      "normalizedTokens": ["w", "windsurfer"],
+      "gold": {
+        "name": "Marta Maggetti",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "Sharon Kantor",
+        "country": "ISR"
+      },
+      "bronze": {
+        "name": "Emma Wilson",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's One Person Dinghy",
+      "gender": "w",
+      "normalizedTokens": ["w", "one", "person", "dinghy"],
+      "gold": {
+        "name": "Marit Bouwmeester",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Anne-Marie Rindom",
+        "country": "DEN"
+      },
+      "bronze": {
+        "name": "Line Høst",
+        "country": "NOR"
+      }
+    },
+    {
+      "event": "Women's Kiteboarding",
+      "gender": "w",
+      "normalizedTokens": ["w", "kiteboarding"],
+      "gold": {
+        "name": "Ellie Aldridge",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Lauriane Nolot",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Annelous Lammerts",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Mixed Multihull",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "multihull"],
+      "gold": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "Argentina",
+        "country": "ARG"
+      },
+      "bronze": {
+        "name": "New Zealand",
+        "country": "NZL"
+      }
+    },
+    {
+      "event": "Mixed Two Person Dinghy",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "two", "person", "dinghy"],
+      "gold": {
+        "name": "Austria",
+        "country": "AUT"
+      },
+      "silver": {
+        "name": "Japan",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Sweden",
+        "country": "SWE"
+      }
+    }
+  ],
+  "Sailing (W/K)": [
+    {
+      "event": "Men's Windsurfer",
+      "gender": "m",
+      "normalizedTokens": ["m", "windsurfer"],
+      "gold": {
+        "name": "Tom Reuveny",
+        "country": "ISR"
+      },
+      "silver": {
+        "name": "Grae Morris",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Luuc van Opzeeland",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Men's One Person Dinghy",
+      "gender": "m",
+      "normalizedTokens": ["m", "one", "person", "dinghy"],
+      "gold": {
+        "name": "Matt Wearn",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Pavlos Kontides",
+        "country": "CYP"
+      },
+      "bronze": {
+        "name": "Stefano Peschiera",
+        "country": "PER"
+      }
+    },
+    {
+      "event": "Men's Skiff",
+      "gender": "m",
+      "normalizedTokens": ["m", "skiff"],
+      "gold": {
+        "name": "Spain",
+        "country": "ESP"
+      },
+      "silver": {
+        "name": "New Zealand",
+        "country": "NZL"
+      },
+      "bronze": {
+        "name": "United States",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Kiteboarding",
+      "gender": "m",
+      "normalizedTokens": ["m", "kiteboarding"],
+      "gold": {
+        "name": "Valentin Bontus",
+        "country": "AUT"
+      },
+      "silver": {
+        "name": "Toni Vodišek",
+        "country": "SLO"
+      },
+      "bronze": {
+        "name": "Max Maeder",
+        "country": "SGP"
+      }
+    },
+    {
+      "event": "Women's Windsurfer",
+      "gender": "w",
+      "normalizedTokens": ["w", "windsurfer"],
+      "gold": {
+        "name": "Marta Maggetti",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "Sharon Kantor",
+        "country": "ISR"
+      },
+      "bronze": {
+        "name": "Emma Wilson",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Women's One Person Dinghy",
+      "gender": "w",
+      "normalizedTokens": ["w", "one", "person", "dinghy"],
+      "gold": {
+        "name": "Marit Bouwmeester",
+        "country": "NED"
+      },
+      "silver": {
+        "name": "Anne-Marie Rindom",
+        "country": "DEN"
+      },
+      "bronze": {
+        "name": "Line Høst",
+        "country": "NOR"
+      }
+    },
+    {
+      "event": "Women's Kiteboarding",
+      "gender": "w",
+      "normalizedTokens": ["w", "kiteboarding"],
+      "gold": {
+        "name": "Ellie Aldridge",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Lauriane Nolot",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Annelous Lammerts",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Mixed Multihull",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "multihull"],
+      "gold": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "Argentina",
+        "country": "ARG"
+      },
+      "bronze": {
+        "name": "New Zealand",
+        "country": "NZL"
+      }
+    },
+    {
+      "event": "Mixed Two Person Dinghy",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "two", "person", "dinghy"],
+      "gold": {
+        "name": "Austria",
+        "country": "AUT"
+      },
+      "silver": {
+        "name": "Japan",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Sweden",
+        "country": "SWE"
+      }
+    }
+  ],
+  "Shooting (R/P)": [
+    {
+      "event": "Men's Air Pistol, 10 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "air", "pistol", "10m"],
+      "gold": {
+        "name": "Xie Yu",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Federico Maldini",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Paolo Monna",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Rapid-Fire Pistol, 25 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "rapid-fire", "pistol", "25m"],
+      "gold": {
+        "name": "Li Yuehong",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Jo Yeong-Jae",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Wang Xinjie",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Men's Air Rifle, 10 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "air", "rifle", "10m"],
+      "gold": {
+        "name": "Sheng Lihao",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Victor Lindgren",
+        "country": "SWE"
+      },
+      "bronze": {
+        "name": "Miran Maričić",
+        "country": "CRO"
+      }
+    },
+    {
+      "event": "Men's Small-Bore Rifle, Three Positions, 50 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "small-bore", "rifle", "three", "positions", "50m"],
+      "gold": {
+        "name": "Liu Yukun",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Serhiy Kulish",
+        "country": "UKR"
+      },
+      "bronze": {
+        "name": "Swapnil Kusale",
+        "country": "IND"
+      }
+    },
+    {
+      "event": "Men's Trap",
+      "gender": "m",
+      "normalizedTokens": ["m", "trap"],
+      "gold": {
+        "name": "Nathan Hales",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Qi Ying",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Jean-Pierre Brol",
+        "country": "GUA"
+      }
+    },
+    {
+      "event": "Men's Skeet",
+      "gender": "m",
+      "normalizedTokens": ["m", "skeet"],
+      "gold": {
+        "name": "Vincent Hancock",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Conner Prince",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Lee Meng-Yuan",
+        "country": "TPE"
+      }
+    },
+    {
+      "event": "Women's Air Pistol, 10 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "air", "pistol", "10m"],
+      "gold": {
+        "name": "Oh Ye-Jin",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Kim Ye-Ji",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Manu Bhaker",
+        "country": "IND"
+      }
+    },
+    {
+      "event": "Women's Sporting Pistol, 25 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "sporting", "pistol", "25m"],
+      "gold": {
+        "name": "Yang Ji-In",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Camille Jedrzejewski",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Veronika Major",
+        "country": "HUN"
+      }
+    },
+    {
+      "event": "Women's Air Rifle, 10 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "air", "rifle", "10m"],
+      "gold": {
+        "name": "Ban Hyo-Jin",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Huang Yuting",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Audrey Gogniat",
+        "country": "SUI"
+      }
+    },
+    {
+      "event": "Women's Small-Bore Rifle, Three Positions, 50 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "small-bore", "rifle", "three", "positions", "50m"],
+      "gold": {
+        "name": "Chiara Leone",
+        "country": "SUI"
+      },
+      "silver": {
+        "name": "Sagen Maddalena",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Zhang Qiongyue",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Trap",
+      "gender": "w",
+      "normalizedTokens": ["w", "trap"],
+      "gold": {
+        "name": "Adriana Ruano",
+        "country": "GUA"
+      },
+      "silver": {
+        "name": "Silvana Stanco",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Penny Smith",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Women's Skeet",
+      "gender": "w",
+      "normalizedTokens": ["w", "skeet"],
+      "gold": {
+        "name": "Francisca Crovetto",
+        "country": "CHI"
+      },
+      "silver": {
+        "name": "Amber Rutter",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Austen Smith",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Mixed Air Pistol, 10 metres, Team",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "air", "pistol", "10m", "team"],
+      "gold": {
+        "name": "Serbia",
+        "country": "SRB"
+      },
+      "silver": {
+        "name": "Türkiye 2",
+        "country": "TUR"
+      },
+      "bronze": {
+        "name": "India 1",
+        "country": "IND"
+      }
+    },
+    {
+      "event": "Mixed Air Rifle, 10 metres, Team",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "air", "rifle", "10m", "team"],
+      "gold": {
+        "name": "People's Republic of China 1",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Republic of Korea 1",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Kazakhstan 1",
+        "country": "KAZ"
+      }
+    },
+    {
+      "event": "Mixed Skeet, Team",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "skeet", "team"],
+      "gold": {
+        "name": "Italy 1",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "United States 1",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      }
+    }
+  ],
+  "Shooting (Shotgun)": [
+    {
+      "event": "Men's Air Pistol, 10 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "air", "pistol", "10m"],
+      "gold": {
+        "name": "Xie Yu",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Federico Maldini",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Paolo Monna",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Rapid-Fire Pistol, 25 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "rapid-fire", "pistol", "25m"],
+      "gold": {
+        "name": "Li Yuehong",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Jo Yeong-Jae",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Wang Xinjie",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Men's Air Rifle, 10 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "air", "rifle", "10m"],
+      "gold": {
+        "name": "Sheng Lihao",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Victor Lindgren",
+        "country": "SWE"
+      },
+      "bronze": {
+        "name": "Miran Maričić",
+        "country": "CRO"
+      }
+    },
+    {
+      "event": "Men's Small-Bore Rifle, Three Positions, 50 metres",
+      "gender": "m",
+      "normalizedTokens": ["m", "small-bore", "rifle", "three", "positions", "50m"],
+      "gold": {
+        "name": "Liu Yukun",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Serhiy Kulish",
+        "country": "UKR"
+      },
+      "bronze": {
+        "name": "Swapnil Kusale",
+        "country": "IND"
+      }
+    },
+    {
+      "event": "Men's Trap",
+      "gender": "m",
+      "normalizedTokens": ["m", "trap"],
+      "gold": {
+        "name": "Nathan Hales",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Qi Ying",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Jean-Pierre Brol",
+        "country": "GUA"
+      }
+    },
+    {
+      "event": "Men's Skeet",
+      "gender": "m",
+      "normalizedTokens": ["m", "skeet"],
+      "gold": {
+        "name": "Vincent Hancock",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Conner Prince",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Lee Meng-Yuan",
+        "country": "TPE"
+      }
+    },
+    {
+      "event": "Women's Air Pistol, 10 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "air", "pistol", "10m"],
+      "gold": {
+        "name": "Oh Ye-Jin",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Kim Ye-Ji",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Manu Bhaker",
+        "country": "IND"
+      }
+    },
+    {
+      "event": "Women's Sporting Pistol, 25 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "sporting", "pistol", "25m"],
+      "gold": {
+        "name": "Yang Ji-In",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Camille Jedrzejewski",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Veronika Major",
+        "country": "HUN"
+      }
+    },
+    {
+      "event": "Women's Air Rifle, 10 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "air", "rifle", "10m"],
+      "gold": {
+        "name": "Ban Hyo-Jin",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Huang Yuting",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Audrey Gogniat",
+        "country": "SUI"
+      }
+    },
+    {
+      "event": "Women's Small-Bore Rifle, Three Positions, 50 metres",
+      "gender": "w",
+      "normalizedTokens": ["w", "small-bore", "rifle", "three", "positions", "50m"],
+      "gold": {
+        "name": "Chiara Leone",
+        "country": "SUI"
+      },
+      "silver": {
+        "name": "Sagen Maddalena",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Zhang Qiongyue",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Trap",
+      "gender": "w",
+      "normalizedTokens": ["w", "trap"],
+      "gold": {
+        "name": "Adriana Ruano",
+        "country": "GUA"
+      },
+      "silver": {
+        "name": "Silvana Stanco",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Penny Smith",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Women's Skeet",
+      "gender": "w",
+      "normalizedTokens": ["w", "skeet"],
+      "gold": {
+        "name": "Francisca Crovetto",
+        "country": "CHI"
+      },
+      "silver": {
+        "name": "Amber Rutter",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Austen Smith",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Mixed Air Pistol, 10 metres, Team",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "air", "pistol", "10m", "team"],
+      "gold": {
+        "name": "Serbia",
+        "country": "SRB"
+      },
+      "silver": {
+        "name": "Türkiye 2",
+        "country": "TUR"
+      },
+      "bronze": {
+        "name": "India 1",
+        "country": "IND"
+      }
+    },
+    {
+      "event": "Mixed Air Rifle, 10 metres, Team",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "air", "rifle", "10m", "team"],
+      "gold": {
+        "name": "People's Republic of China 1",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Republic of Korea 1",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Kazakhstan 1",
+        "country": "KAZ"
+      }
+    },
+    {
+      "event": "Mixed Skeet, Team",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "skeet", "team"],
+      "gold": {
+        "name": "Italy 1",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "United States 1",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      }
+    }
+  ],
+  "Skateboarding": [
+    {
+      "event": "Men's Street",
+      "gender": "m",
+      "normalizedTokens": ["m", "street"],
+      "gold": {
+        "name": "Yuto Horigome",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Jagger Eaton",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Nyjah Huston",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Park",
+      "gender": "m",
+      "normalizedTokens": ["m", "park"],
+      "gold": {
+        "name": "Keegan Palmer",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Tom Schaar",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Augusto Akio",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Women's Street",
+      "gender": "w",
+      "normalizedTokens": ["w", "street"],
+      "gold": {
+        "name": "Coco Yoshizawa",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Liz Akama",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Rayssa Leal",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Women's Park",
+      "gender": "w",
+      "normalizedTokens": ["w", "park"],
+      "gold": {
+        "name": "Arisa Trew",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Kokona Hiraki",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Sky Brown",
+        "country": "GBR"
+      }
+    }
+  ],
+  "Skateboarding (Park)": [
+    {
+      "event": "Men's Street",
+      "gender": "m",
+      "normalizedTokens": ["m", "street"],
+      "gold": {
+        "name": "Yuto Horigome",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Jagger Eaton",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Nyjah Huston",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Park",
+      "gender": "m",
+      "normalizedTokens": ["m", "park"],
+      "gold": {
+        "name": "Keegan Palmer",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Tom Schaar",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Augusto Akio",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Women's Street",
+      "gender": "w",
+      "normalizedTokens": ["w", "street"],
+      "gold": {
+        "name": "Coco Yoshizawa",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Liz Akama",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Rayssa Leal",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Women's Park",
+      "gender": "w",
+      "normalizedTokens": ["w", "park"],
+      "gold": {
+        "name": "Arisa Trew",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Kokona Hiraki",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Sky Brown",
+        "country": "GBR"
+      }
+    }
+  ],
+  "Skateboarding (Street)": [
+    {
+      "event": "Men's Street",
+      "gender": "m",
+      "normalizedTokens": ["m", "street"],
+      "gold": {
+        "name": "Yuto Horigome",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Jagger Eaton",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Nyjah Huston",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Park",
+      "gender": "m",
+      "normalizedTokens": ["m", "park"],
+      "gold": {
+        "name": "Keegan Palmer",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Tom Schaar",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Augusto Akio",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Women's Street",
+      "gender": "w",
+      "normalizedTokens": ["w", "street"],
+      "gold": {
+        "name": "Coco Yoshizawa",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Liz Akama",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Rayssa Leal",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Women's Park",
+      "gender": "w",
+      "normalizedTokens": ["w", "park"],
+      "gold": {
+        "name": "Arisa Trew",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Kokona Hiraki",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Sky Brown",
+        "country": "GBR"
+      }
+    }
+  ],
+  "Softball": {
+    "_notInParis": true
+  },
+  "Squash": {
+    "_notInParis": true
+  },
+  "Surfing": [
+    {
+      "event": "Men's Shortboard",
+      "gender": "m",
+      "normalizedTokens": ["m", "shortboard"],
+      "gold": {
+        "name": "Kauli Vaast",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Jack Robinson",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Gabriel Medina",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Women's Shortboard",
+      "gender": "w",
+      "normalizedTokens": ["w", "shortboard"],
+      "gold": {
+        "name": "Caroline Marks",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Tatiana Weston-Webb",
+        "country": "BRA"
+      },
+      "bronze": {
+        "name": "Johanne Defay",
+        "country": "FRA"
+      }
+    }
+  ],
+  "Swimming": [
+    {
+      "event": "Men's 50 metres Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "50m", "free"],
+      "gold": {
+        "name": "Cameron McEvoy",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Ben Proud",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Florent Manaudou",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Men's 100 metres Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "100m", "free"],
+      "gold": {
+        "name": "Pan Zhanle",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Kyle Chalmers",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "David Popovici",
+        "country": "ROU"
+      }
+    },
+    {
+      "event": "Men's 200 metres Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "200m", "free"],
+      "gold": {
+        "name": "David Popovici",
+        "country": "ROU"
+      },
+      "silver": {
+        "name": "Matt Richards",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Luke Hobson",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 400 metres Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "400m", "free"],
+      "gold": {
+        "name": "Lukas Märtens",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "Elijah Winnington",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Kim U-Min",
+        "country": "KOR"
+      }
+    },
+    {
+      "event": "Men's 800 metres Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "800m", "free"],
+      "gold": {
+        "name": "Daniel Wiffen",
+        "country": "IRL"
+      },
+      "silver": {
+        "name": "Bobby Finke",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Gregorio Paltrinieri",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's 1, 500 metres Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "500m", "free"],
+      "gold": {
+        "name": "Bobby Finke",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Gregorio Paltrinieri",
+        "country": "ITA"
+      },
+      "bronze": {
+        "name": "Daniel Wiffen",
+        "country": "IRL"
+      }
+    },
+    {
+      "event": "Men's 4 × 100 metres Freestyle Relay",
+      "gender": "m",
+      "normalizedTokens": ["m", "4x100m", "free", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Australia",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Italy",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's 4 × 200 metres Freestyle Relay",
+      "gender": "m",
+      "normalizedTokens": ["m", "4x200m", "free", "relay"],
+      "gold": {
+        "name": "Great Britain",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Australia",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Men's 100 metres Backstroke",
+      "gender": "m",
+      "normalizedTokens": ["m", "100m", "back"],
+      "gold": {
+        "name": "Thomas Ceccon",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "Xu Jiayu",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Ryan Murphy",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 200 metres Backstroke",
+      "gender": "m",
+      "normalizedTokens": ["m", "200m", "back"],
+      "gold": {
+        "name": "Hubert Kós",
+        "country": "HUN"
+      },
+      "silver": {
+        "name": "Apostolos Christou",
+        "country": "GRE"
+      },
+      "bronze": {
+        "name": "Roman Mityukov",
+        "country": "SUI"
+      }
+    },
+    {
+      "event": "Men's 100 metres Breaststroke",
+      "gender": "m",
+      "normalizedTokens": ["m", "100m", "breast"],
+      "gold": {
+        "name": "Nicolò Martinenghi",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "Adam Peaty",
+        "country": "GBR"
+      },
+      "bronze": null
+    },
+    {
+      "event": "Men's 200 metres Breaststroke",
+      "gender": "m",
+      "normalizedTokens": ["m", "200m", "breast"],
+      "gold": {
+        "name": "Léon Marchand",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Zac Stubblety-Cook",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Caspar Corbeau",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Men's 100 metres Butterfly",
+      "gender": "m",
+      "normalizedTokens": ["m", "100m", "fly"],
+      "gold": {
+        "name": "Kristóf Milák",
+        "country": "HUN"
+      },
+      "silver": {
+        "name": "Josh Liendo",
+        "country": "CAN"
+      },
+      "bronze": {
+        "name": "Ilya Kharun",
+        "country": "CAN"
+      }
+    },
+    {
+      "event": "Men's 200 metres Butterfly",
+      "gender": "m",
+      "normalizedTokens": ["m", "200m", "fly"],
+      "gold": {
+        "name": "Léon Marchand",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Kristóf Milák",
+        "country": "HUN"
+      },
+      "bronze": {
+        "name": "Ilya Kharun",
+        "country": "CAN"
+      }
+    },
+    {
+      "event": "Men's 200 metres Individual Medley",
+      "gender": "m",
+      "normalizedTokens": ["m", "200m", "im"],
+      "gold": {
+        "name": "Léon Marchand",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Duncan Scott",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Wang Shun",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Men's 400 metres Individual Medley",
+      "gender": "m",
+      "normalizedTokens": ["m", "400m", "im"],
+      "gold": {
+        "name": "Léon Marchand",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Tomoyuki Matsushita",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Carson Foster",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's 4 × 100 metres Medley Relay",
+      "gender": "m",
+      "normalizedTokens": ["m", "4x100m", "im", "relay"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "France",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's 50 metres Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "50m", "free"],
+      "gold": {
+        "name": "Sarah Sjöström",
+        "country": "SWE"
+      },
+      "silver": {
+        "name": "Meg Harris",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Zhang Yufei",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's 100 metres Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "100m", "free"],
+      "gold": {
+        "name": "Sarah Sjöström",
+        "country": "SWE"
+      },
+      "silver": {
+        "name": "Torri Huske",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Siobhán Haughey",
+        "country": "HKG"
+      }
+    },
+    {
+      "event": "Women's 200 metres Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "200m", "free"],
+      "gold": {
+        "name": "Mollie O'Callaghan",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Ariarne Titmus",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Siobhán Haughey",
+        "country": "HKG"
+      }
+    },
+    {
+      "event": "Women's 400 metres Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "400m", "free"],
+      "gold": {
+        "name": "Ariarne Titmus",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Summer McIntosh",
+        "country": "CAN"
+      },
+      "bronze": {
+        "name": "Katie Ledecky",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's 800 metres Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "800m", "free"],
+      "gold": {
+        "name": "Katie Ledecky",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Ariarne Titmus",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Paige Madden",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's 1, 500 metres Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "500m", "free"],
+      "gold": {
+        "name": "Katie Ledecky",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Anastasiya Kirpichnikova",
+        "country": "FRA"
+      },
+      "bronze": {
+        "name": "Isabel Gose",
+        "country": "GER"
+      }
+    },
+    {
+      "event": "Women's 4 × 100 metres Freestyle Relay",
+      "gender": "w",
+      "normalizedTokens": ["w", "4x100m", "free", "relay"],
+      "gold": {
+        "name": "Australia",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's 4 × 200 metres Freestyle Relay",
+      "gender": "w",
+      "normalizedTokens": ["w", "4x200m", "free", "relay"],
+      "gold": {
+        "name": "Australia",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's 100 metres Backstroke",
+      "gender": "w",
+      "normalizedTokens": ["w", "100m", "back"],
+      "gold": {
+        "name": "Kaylee McKeown",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Regan Smith",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Katharine Berkoff",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's 200 metres Backstroke",
+      "gender": "w",
+      "normalizedTokens": ["w", "200m", "back"],
+      "gold": {
+        "name": "Kaylee McKeown",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "Regan Smith",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Kylie Masse",
+        "country": "CAN"
+      }
+    },
+    {
+      "event": "Women's 100 metres Breaststroke",
+      "gender": "w",
+      "normalizedTokens": ["w", "100m", "breast"],
+      "gold": {
+        "name": "Tatjana Schoenmaker-Smith",
+        "country": "RSA"
+      },
+      "silver": {
+        "name": "Tang Qianting",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Mona McSharry",
+        "country": "IRL"
+      }
+    },
+    {
+      "event": "Women's 200 metres Breaststroke",
+      "gender": "w",
+      "normalizedTokens": ["w", "200m", "breast"],
+      "gold": {
+        "name": "Kate Douglass",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Tatjana Schoenmaker-Smith",
+        "country": "RSA"
+      },
+      "bronze": {
+        "name": "Tes Schouten",
+        "country": "NED"
+      }
+    },
+    {
+      "event": "Women's 100 metres Butterfly",
+      "gender": "w",
+      "normalizedTokens": ["w", "100m", "fly"],
+      "gold": {
+        "name": "Torri Huske",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Gretchen Walsh",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Zhang Yufei",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's 200 metres Butterfly",
+      "gender": "w",
+      "normalizedTokens": ["w", "200m", "fly"],
+      "gold": {
+        "name": "Summer McIntosh",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "Regan Smith",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Zhang Yufei",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's 200 metres Individual Medley",
+      "gender": "w",
+      "normalizedTokens": ["w", "200m", "im"],
+      "gold": {
+        "name": "Summer McIntosh",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "Kate Douglass",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Kaylee McKeown",
+        "country": "AUS"
+      }
+    },
+    {
+      "event": "Women's 400 metres Individual Medley",
+      "gender": "w",
+      "normalizedTokens": ["w", "400m", "im"],
+      "gold": {
+        "name": "Summer McIntosh",
+        "country": "CAN"
+      },
+      "silver": {
+        "name": "Katie Grimes",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Emma Weyant",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's 4 × 100 metres Medley Relay",
+      "gender": "w",
+      "normalizedTokens": ["w", "4x100m", "im", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Australia",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Mixed 4 × 100 metres Medley Relay",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "4x100m", "im", "relay"],
+      "gold": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Australia",
+        "country": "AUS"
+      }
+    }
+  ],
+  "Table Tennis": [
+    {
+      "event": "Men's Singles",
+      "gender": "m",
+      "normalizedTokens": ["m", "singles"],
+      "gold": {
+        "name": "Fan Zhendong",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Truls Möregårdh",
+        "country": "SWE"
+      },
+      "bronze": {
+        "name": "Félix Lebrun",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Men's Team",
+      "gender": "m",
+      "normalizedTokens": ["m", "team"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Sweden",
+        "country": "SWE"
+      },
+      "bronze": {
+        "name": "France",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's Singles",
+      "gender": "w",
+      "normalizedTokens": ["w", "singles"],
+      "gold": {
+        "name": "Chen Meng",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Sun Yingsha",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Hina Hayata",
+        "country": "JPN"
+      }
+    },
+    {
+      "event": "Women's Team",
+      "gender": "w",
+      "normalizedTokens": ["w", "team"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Japan",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Republic of Korea",
+        "country": "KOR"
+      }
+    },
+    {
+      "event": "Mixed Doubles",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "doubles"],
+      "gold": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Democratic People's Republic of Korea",
+        "country": "PRK"
+      },
+      "bronze": {
+        "name": "Republic of Korea",
+        "country": "KOR"
+      }
+    }
+  ],
+  "Taekwondo": [
+    {
+      "event": "Men's Flyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "flyweight"],
+      "gold": {
+        "name": "Park Tae-Jun",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Gashim Magomedov",
+        "country": "AZE"
+      },
+      "bronze": {
+        "name": "Cyrian Ravet",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Men's Featherweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "featherweight"],
+      "gold": {
+        "name": "Ulugbek Rashitov",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Zaid Mustafa",
+        "country": "JOR"
+      },
+      "bronze": {
+        "name": "Edival Pontes",
+        "country": "BRA"
+      }
+    },
+    {
+      "event": "Men's Welterweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "welterweight"],
+      "gold": {
+        "name": "Firas Katoussi",
+        "country": "TUN"
+      },
+      "silver": {
+        "name": "Mehran Barkhordari",
+        "country": "IRI"
+      },
+      "bronze": {
+        "name": "Edi Hrnic",
+        "country": "DEN"
+      }
+    },
+    {
+      "event": "Men's Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "heavyweight"],
+      "gold": {
+        "name": "Arian Salimi",
+        "country": "IRI"
+      },
+      "silver": {
+        "name": "Caden Cunningham",
+        "country": "GBR"
+      },
+      "bronze": {
+        "name": "Cheick Sallah Cissé",
+        "country": "CIV"
+      }
+    },
+    {
+      "event": "Women's Flyweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "flyweight"],
+      "gold": {
+        "name": "Panipak Wongpattanakit",
+        "country": "THA"
+      },
+      "silver": {
+        "name": "Guo Qing",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Lena Stojković",
+        "country": "CRO"
+      }
+    },
+    {
+      "event": "Women's Featherweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "featherweight"],
+      "gold": {
+        "name": "Kim Yu-Jin",
+        "country": "KOR"
+      },
+      "silver": {
+        "name": "Nahid Kiyani",
+        "country": "IRI"
+      },
+      "bronze": {
+        "name": "Kimia Alizadeh",
+        "country": "BUL"
+      }
+    },
+    {
+      "event": "Women's Welterweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "welterweight"],
+      "gold": {
+        "name": "Viviana Márton",
+        "country": "HUN"
+      },
+      "silver": {
+        "name": "Aleksandra Perišić",
+        "country": "SRB"
+      },
+      "bronze": {
+        "name": "Sarah Chaâri",
+        "country": "BEL"
+      }
+    },
+    {
+      "event": "Women's Heavyweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "heavyweight"],
+      "gold": {
+        "name": "Althéa Laurin",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Svetlana Osipova",
+        "country": "UZB"
+      },
+      "bronze": {
+        "name": "Lee Da-Bin",
+        "country": "KOR"
+      }
+    }
+  ],
+  "Tennis": [
+    {
+      "event": "Men's Singles",
+      "gender": "m",
+      "normalizedTokens": ["m", "singles"],
+      "gold": {
+        "name": "Novak Đoković",
+        "country": "SRB"
+      },
+      "silver": {
+        "name": "Carlos Alcaraz",
+        "country": "ESP"
+      },
+      "bronze": {
+        "name": "Lorenzo Musetti",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Doubles",
+      "gender": "m",
+      "normalizedTokens": ["m", "doubles"],
+      "gold": {
+        "name": "Australia 2",
+        "country": "AUS"
+      },
+      "silver": {
+        "name": "United States 2",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "United States 1",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Singles",
+      "gender": "w",
+      "normalizedTokens": ["w", "singles"],
+      "gold": {
+        "name": "Zheng Qinwen",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Donna Vekić",
+        "country": "CRO"
+      },
+      "bronze": {
+        "name": "Iga Świątek",
+        "country": "POL"
+      }
+    },
+    {
+      "event": "Women's Doubles",
+      "gender": "w",
+      "normalizedTokens": ["w", "doubles"],
+      "gold": {
+        "name": "Italy 1",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "Individual Neutral Athletes 1",
+        "country": "AIN"
+      },
+      "bronze": {
+        "name": "Spain",
+        "country": "ESP"
+      }
+    },
+    {
+      "event": "Mixed Doubles",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "doubles"],
+      "gold": {
+        "name": "Czechia",
+        "country": "CZE"
+      },
+      "silver": {
+        "name": "People's Republic of China",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Canada",
+        "country": "CAN"
+      }
+    }
+  ],
+  "Trampoline Gymnastics": [
+    {
+      "event": "Men's Individual",
+      "gender": "m",
+      "normalizedTokens": ["m"],
+      "gold": {
+        "name": "Ivan Litvinovich",
+        "country": "AIN"
+      },
+      "silver": {
+        "name": "Wang Zisai",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Yan Langyu",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Individual",
+      "gender": "w",
+      "normalizedTokens": ["w"],
+      "gold": {
+        "name": "Bryony Page",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Viyaleta Bardzilouskaya",
+        "country": "AIN"
+      },
+      "bronze": {
+        "name": "Sophiane Méthot",
+        "country": "CAN"
+      }
+    }
+  ],
+  "Triathlon": [
+    {
+      "event": "Men's Olympic Distance",
+      "gender": "m",
+      "normalizedTokens": ["m", "olympic", "distance"],
+      "gold": {
+        "name": "Alex Yee",
+        "country": "GBR"
+      },
+      "silver": {
+        "name": "Hayden Wilde",
+        "country": "NZL"
+      },
+      "bronze": {
+        "name": "Léo Bergère",
+        "country": "FRA"
+      }
+    },
+    {
+      "event": "Women's Olympic Distance",
+      "gender": "w",
+      "normalizedTokens": ["w", "olympic", "distance"],
+      "gold": {
+        "name": "Cassandre Beaugrand",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Julie Derron",
+        "country": "SUI"
+      },
+      "bronze": {
+        "name": "Beth Potter",
+        "country": "GBR"
+      }
+    },
+    {
+      "event": "Mixed Relay",
+      "gender": "mixed",
+      "normalizedTokens": ["mixed", "relay"],
+      "gold": {
+        "name": "Germany",
+        "country": "GER"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Great Britain",
+        "country": "GBR"
+      }
+    }
+  ],
+  "Volleyball": [
+    {
+      "event": "Men's Volleyball",
+      "gender": "m",
+      "normalizedTokens": ["m", "volleyball"],
+      "gold": {
+        "name": "France",
+        "country": "FRA"
+      },
+      "silver": {
+        "name": "Poland",
+        "country": "POL"
+      },
+      "bronze": {
+        "name": "United States",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Volleyball",
+      "gender": "w",
+      "normalizedTokens": ["w", "volleyball"],
+      "gold": {
+        "name": "Italy",
+        "country": "ITA"
+      },
+      "silver": {
+        "name": "United States",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Brazil",
+        "country": "BRA"
+      }
+    }
+  ],
+  "Water Polo": [
+    {
+      "event": "Men's Water Polo",
+      "gender": "m",
+      "normalizedTokens": ["m", "water", "polo"],
+      "gold": {
+        "name": "Serbia",
+        "country": "SRB"
+      },
+      "silver": {
+        "name": "Croatia",
+        "country": "CRO"
+      },
+      "bronze": {
+        "name": "United States",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Women's Water Polo",
+      "gender": "w",
+      "normalizedTokens": ["w", "water", "polo"],
+      "gold": {
+        "name": "Spain",
+        "country": "ESP"
+      },
+      "silver": {
+        "name": "Australia",
+        "country": "AUS"
+      },
+      "bronze": {
+        "name": "Netherlands",
+        "country": "NED"
+      }
+    }
+  ],
+  "Weightlifting": [
+    {
+      "event": "Men's Featherweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "featherweight"],
+      "gold": {
+        "name": "Li Fabin",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Theerapong Silachai",
+        "country": "THA"
+      },
+      "bronze": {
+        "name": "Hampton Morris",
+        "country": "USA"
+      }
+    },
+    {
+      "event": "Men's Middleweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "middleweight"],
+      "gold": {
+        "name": "Rizki Juniansyah",
+        "country": "INA"
+      },
+      "silver": {
+        "name": "Weeraphon Wichuma",
+        "country": "THA"
+      },
+      "bronze": {
+        "name": "Bozhidar Dimitrov Andreev",
+        "country": "BUL"
+      }
+    },
+    {
+      "event": "Men's Light-Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "light-heavyweight"],
+      "gold": {
+        "name": "Karlos Nasar",
+        "country": "BUL"
+      },
+      "silver": {
+        "name": "Yeison López",
+        "country": "COL"
+      },
+      "bronze": {
+        "name": "Antonino Pizzolato",
+        "country": "ITA"
+      }
+    },
+    {
+      "event": "Men's Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "heavyweight"],
+      "gold": {
+        "name": "Liu Huanhua",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Akbar Djuraev",
+        "country": "UZB"
+      },
+      "bronze": {
+        "name": "Yauhen Tsikhantsou",
+        "country": "AIN"
+      }
+    },
+    {
+      "event": "Men's Super-Heavyweight",
+      "gender": "m",
+      "normalizedTokens": ["m", "super-heavyweight"],
+      "gold": {
+        "name": "Lasha Talakhadze",
+        "country": "GEO"
+      },
+      "silver": {
+        "name": "Varazdat Lalayan",
+        "country": "ARM"
+      },
+      "bronze": {
+        "name": "Gor Minasyan",
+        "country": "BRN"
+      }
+    },
+    {
+      "event": "Women's Flyweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "flyweight"],
+      "gold": {
+        "name": "Hou Zhihui",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Mihaela Cambei",
+        "country": "ROU"
+      },
+      "bronze": {
+        "name": "Surodchana Khambao",
+        "country": "THA"
+      }
+    },
+    {
+      "event": "Women's Lightweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "lightweight"],
+      "gold": {
+        "name": "Luo Shifang",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Maude Charron",
+        "country": "CAN"
+      },
+      "bronze": {
+        "name": "Kuo Hsing-Chun",
+        "country": "TPE"
+      }
+    },
+    {
+      "event": "Women's Middleweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "middleweight"],
+      "gold": {
+        "name": "Olivia Reeves",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Mari Sánchez",
+        "country": "COL"
+      },
+      "bronze": {
+        "name": "Angie Palacios",
+        "country": "ECU"
+      }
+    },
+    {
+      "event": "Women's Heavyweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "heavyweight"],
+      "gold": {
+        "name": "Solfrid Koanda",
+        "country": "NOR"
+      },
+      "silver": {
+        "name": "Sara Samir",
+        "country": "EGY"
+      },
+      "bronze": {
+        "name": "Neisi Dajomes",
+        "country": "ECU"
+      }
+    },
+    {
+      "event": "Women's Super-Heavyweight",
+      "gender": "w",
+      "normalizedTokens": ["w", "super-heavyweight"],
+      "gold": {
+        "name": "Li Wenwen",
+        "country": "CHN"
+      },
+      "silver": {
+        "name": "Park Hye-Jeong",
+        "country": "KOR"
+      },
+      "bronze": {
+        "name": "Emily Campbell",
+        "country": "GBR"
+      }
+    }
+  ],
+  "Wrestling": [
+    {
+      "event": "Men's Featherweight, Greco-Roman",
+      "gender": "m",
+      "normalizedTokens": ["m", "featherweight", "greco-roman"],
+      "gold": {
+        "name": "Kenichiro Fumita",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Cao Liguo",
+        "country": "CHN"
+      },
+      "bronze": {
+        "name": "Zholoman Sharshenbekov",
+        "country": "KGZ"
+      }
+    },
+    {
+      "event": "Men's Welterweight, Greco-Roman",
+      "gender": "m",
+      "normalizedTokens": ["m", "welterweight", "greco-roman"],
+      "gold": {
+        "name": "Saeid Esmaeili",
+        "country": "IRI"
+      },
+      "silver": {
+        "name": "Parviz Nasibov",
+        "country": "UKR"
+      },
+      "bronze": {
+        "name": "Həsrət Cəfərov",
+        "country": "AZE"
+      }
+    },
+    {
+      "event": "Men's Middleweight, Greco-Roman",
+      "gender": "m",
+      "normalizedTokens": ["m", "middleweight", "greco-roman"],
+      "gold": {
+        "name": "Nao Kusaka",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Demeu Zhadrayev",
+        "country": "KAZ"
+      },
+      "bronze": {
+        "name": "Malkhas Amoyan",
+        "country": "ARM"
+      }
+    },
+    {
+      "event": "Men's Light-Heavyweight, Greco-Roman",
+      "gender": "m",
+      "normalizedTokens": ["m", "light-heavyweight", "greco-roman"],
+      "gold": {
+        "name": "Semen Novikov",
+        "country": "BUL"
+      },
+      "silver": {
+        "name": "Alireza Mohmadipiani",
+        "country": "IRI"
+      },
+      "bronze": {
+        "name": "Turpal Bisultanov",
+        "country": "DEN"
+      }
+    },
+    {
+      "event": "Men's Heavyweight, Greco-Roman",
+      "gender": "m",
+      "normalizedTokens": ["m", "heavyweight", "greco-roman"],
+      "gold": {
+        "name": "Mohammadhadi Saravi",
+        "country": "IRI"
+      },
+      "silver": {
+        "name": "Artur Aleksanyan",
+        "country": "ARM"
+      },
+      "bronze": {
+        "name": "Gabriel Rosillo",
+        "country": "CUB"
+      }
+    },
+    {
+      "event": "Men's Super-Heavyweight, Greco-Roman",
+      "gender": "m",
+      "normalizedTokens": ["m", "super-heavyweight", "greco-roman"],
+      "gold": {
+        "name": "Mijaín López",
+        "country": "CUB"
+      },
+      "silver": {
+        "name": "Yasmani Acosta",
+        "country": "CHI"
+      },
+      "bronze": {
+        "name": "Meng Lingzhe",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Men's Featherweight, Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "featherweight", "free"],
+      "gold": {
+        "name": "Rei Higuchi",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Spencer Lee",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Aman Sehrawat",
+        "country": "IND"
+      }
+    },
+    {
+      "event": "Men's Welterweight, Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "welterweight", "free"],
+      "gold": {
+        "name": "Kotaro Kiyooka",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Rahman Amouzad",
+        "country": "IRI"
+      },
+      "bronze": {
+        "name": "Islam Dudaev",
+        "country": "ALB"
+      }
+    },
+    {
+      "event": "Men's Middleweight, Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "middleweight", "free"],
+      "gold": {
+        "name": "Razambek Zhamalov",
+        "country": "UZB"
+      },
+      "silver": {
+        "name": "Daichi Takatani",
+        "country": "JPN"
+      },
+      "bronze": {
+        "name": "Chermen Valiev",
+        "country": "ALB"
+      }
+    },
+    {
+      "event": "Men's Light-Heavyweight, Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "light-heavyweight", "free"],
+      "gold": {
+        "name": "Magomed Ramazanov",
+        "country": "BUL"
+      },
+      "silver": {
+        "name": "Hassan Yazdani",
+        "country": "IRI"
+      },
+      "bronze": {
+        "name": "Dauren Kurugliyev",
+        "country": "GRE"
+      }
+    },
+    {
+      "event": "Men's Heavyweight, Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "heavyweight", "free"],
+      "gold": {
+        "name": "Akhmed Tazhudinov",
+        "country": "BRN"
+      },
+      "silver": {
+        "name": "Givi Matcharashvili",
+        "country": "GEO"
+      },
+      "bronze": {
+        "name": "Maqomedxan Maqomedov",
+        "country": "AZE"
+      }
+    },
+    {
+      "event": "Men's Super-Heavyweight, Freestyle",
+      "gender": "m",
+      "normalizedTokens": ["m", "super-heavyweight", "free"],
+      "gold": {
+        "name": "Geno Petriashvili",
+        "country": "GEO"
+      },
+      "silver": {
+        "name": "Amir Hossein Zare",
+        "country": "IRI"
+      },
+      "bronze": {
+        "name": "Giorgi Meşvildişvili",
+        "country": "AZE"
+      }
+    },
+    {
+      "event": "Women's Flyweight, Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "flyweight", "free"],
+      "gold": {
+        "name": "Sarah Hildebrandt",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Yusneylys Guzmán",
+        "country": "CUB"
+      },
+      "bronze": {
+        "name": "Feng Ziqi",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Featherweight, Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "featherweight", "free"],
+      "gold": {
+        "name": "Akari Fujinami",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Lucía Yépez",
+        "country": "ECU"
+      },
+      "bronze": {
+        "name": "Pang Qianyu",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Lightweight, Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "lightweight", "free"],
+      "gold": {
+        "name": "Tsugumi Sakurai",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Anastasia Nichita",
+        "country": "MDA"
+      },
+      "bronze": {
+        "name": "Hong Kexin",
+        "country": "CHN"
+      }
+    },
+    {
+      "event": "Women's Middleweight, Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "middleweight", "free"],
+      "gold": {
+        "name": "Sakura Motoki",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Iryna Koliadenko",
+        "country": "UKR"
+      },
+      "bronze": {
+        "name": "Aysuluu Tynybekova",
+        "country": "KGZ"
+      }
+    },
+    {
+      "event": "Women's Light-Heavyweight, Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "light-heavyweight", "free"],
+      "gold": {
+        "name": "Amit Elor",
+        "country": "USA"
+      },
+      "silver": {
+        "name": "Meerim Zhumanazarova",
+        "country": "KGZ"
+      },
+      "bronze": {
+        "name": "Nonoka Ozaki",
+        "country": "JPN"
+      }
+    },
+    {
+      "event": "Women's Heavyweight, Freestyle",
+      "gender": "w",
+      "normalizedTokens": ["w", "heavyweight", "free"],
+      "gold": {
+        "name": "Yuka Kagami",
+        "country": "JPN"
+      },
+      "silver": {
+        "name": "Kennedy Blades",
+        "country": "USA"
+      },
+      "bronze": {
+        "name": "Tatiana Rentería",
+        "country": "COL"
+      }
+    }
+  ]
+}
