@@ -1,0 +1,84 @@
+name: Generate Content
+
+on:
+  workflow_dispatch:
+    inputs:
+      sport:
+        description: 'Limit to one sport (e.g. "Athletics (Track & Field)"). Leave blank for all sports.'
+        required: false
+        type: string
+      force:
+        description: 'Regenerate content for all sessions, even those with existing blurbs/scorecards.'
+        required: false
+        type: boolean
+        default: false
+      skip_grounding:
+        description: 'Skip Perplexity grounding stage.'
+        required: false
+        type: boolean
+        default: false
+      skip_writing:
+        description: 'Skip Anthropic writing stage (blurbs + contenders).'
+        required: false
+        type: boolean
+        default: false
+      skip_scoring:
+        description: 'Skip Anthropic scoring stage (scorecard dimensions).'
+        required: false
+        type: boolean
+        default: false
+      dry_run:
+        description: 'Print what would run without making API calls or writing to D1.'
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: content-write-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Build args
+        id: args
+        env:
+          SPORT: ${{ inputs.sport }}
+          FORCE: ${{ inputs.force }}
+          SKIP_GROUNDING: ${{ inputs.skip_grounding }}
+          SKIP_WRITING: ${{ inputs.skip_writing }}
+          SKIP_SCORING: ${{ inputs.skip_scoring }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          ARGS="--remote"
+          if [ -n "$SPORT" ]; then ARGS="$ARGS sport=$SPORT"; fi
+          if [ "$FORCE" = "true" ]; then ARGS="$ARGS --force"; fi
+          if [ "$SKIP_GROUNDING" = "true" ]; then ARGS="$ARGS --skip-grounding"; fi
+          if [ "$SKIP_WRITING" = "true" ]; then ARGS="$ARGS --skip-writing"; fi
+          if [ "$SKIP_SCORING" = "true" ]; then ARGS="$ARGS --skip-scoring"; fi
+          if [ "$DRY_RUN" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          echo "args=$ARGS" >> "$GITHUB_OUTPUT"
+          echo "Running with: $ARGS"
+      - name: Generate content
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          ARGS: ${{ steps.args.outputs.args }}
+        run: pnpm generate-content $ARGS
