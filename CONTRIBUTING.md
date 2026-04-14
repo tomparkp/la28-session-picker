@@ -30,12 +30,14 @@ pnpm db:migrate:local   # apply migrations to local D1
 pnpm db:studio          # browse/edit local DB at https://local.drizzle.studio
 ```
 
-A fresh worktree has no local data. To populate it, run the content generation scripts (`pnpm generate-content`) or dump from remote:
+A fresh worktree has no local data. To populate it from remote:
 
 ```bash
-pnpm wrangler d1 export la28 --remote --no-schema --output=/tmp/la28.sql
-pnpm wrangler d1 execute la28 --local --file=/tmp/la28.sql
+pnpm wrangler login   # one-time per machine
+pnpm db:pull          # exports remote D1 and upserts into local
 ```
+
+Or run the content generation scripts (`pnpm generate-content`) to build data from scratch.
 
 ### Remote (production)
 

@@ -2,6 +2,8 @@
 # Sync local D1 from remote. Upserts only — rows deleted remotely will
 # persist locally. Run `wrangler d1 execute la28 --local --command='DELETE ...'`
 # first if you need a strict mirror.
+#
+# Requires an authenticated wrangler CLI (run `pnpm wrangler login` once).
 set -euo pipefail
 
 TMP_DIR=".wrangler/tmp"
