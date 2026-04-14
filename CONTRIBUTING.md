@@ -41,16 +41,9 @@ pnpm wrangler d1 execute la28 --local --file=/tmp/la28.sql
 
 ```bash
 pnpm db:migrate:remote  # apply migrations to prod D1
-pnpm db:studio:remote   # browse/edit prod DB via D1 HTTP
 ```
 
-`db:studio:remote` needs a Cloudflare API token with `Account → D1 → Edit` permission. Create at https://dash.cloudflare.com/profile/api-tokens (Custom token → Account → D1 → Edit), then add to `.env`:
-
-```
-CLOUDFLARE_ACCOUNT_ID=<account id>
-CLOUDFLARE_DATABASE_ID=<database id from wrangler.jsonc>
-CLOUDFLARE_D1_TOKEN=<token>
-```
+To browse/edit prod data, use the official [Cloudflare Dashboard D1 console](https://dash.cloudflare.com) (Workers & Pages → D1 → `la28` → Console). Drizzle Studio is local-only in this repo — Cloudflare doesn't support scoping API tokens to a single D1 database, so we avoid creating tokens with account-wide D1 access.
 
 ### Schema changes
 

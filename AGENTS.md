@@ -28,7 +28,7 @@ Session data lives in Cloudflare D1 (binding `DB`). Schema in `src/db/schema.ts`
 
 - `pnpm db:migrate:local` / `pnpm db:migrate:remote` — apply migrations
 - `pnpm db:generate --name <desc>` — generate a new migration (omit `--name` and you get a random suffix like `needy_ma_gnuci`)
-- `pnpm db:studio` — browse local; `pnpm db:studio:remote` — browse prod (needs `CLOUDFLARE_ACCOUNT_ID` / `CLOUDFLARE_DATABASE_ID` / `CLOUDFLARE_D1_TOKEN` in `.env`, token scope `Account → D1 → Edit`)
+- `pnpm db:studio` — browse local D1 at https://local.drizzle.studio (local only; for prod use the Cloudflare Dashboard D1 console)
 
 Each worktree has its own local D1 under `.wrangler/state/`. A fresh worktree needs `pnpm db:migrate:local` plus data (run content scripts or dump remote with `wrangler d1 export la28 --remote --no-schema --output=/tmp/la28.sql && wrangler d1 execute la28 --local --file=/tmp/la28.sql`).
 
