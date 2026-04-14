@@ -18,6 +18,10 @@ This file provides guidance to AI coding agents working with code in this reposi
 
 Before opening a pull request, run the CI-equivalent checks locally and fix any failures first: `pnpm format:check`, `pnpm lint`, `pnpm typecheck`, and `pnpm test`. Run them in parallel when possible. This avoids pushing commits that fail CI.
 
+### Cloudflare operations
+
+Always ask the user before using any Cloudflare MCP tools or running `wrangler` commands that touch remote resources (deploys, D1 writes against `--remote`, DB create/delete, secret changes, etc.). Local-only commands (`--local` D1, `wrangler types`, `wrangler dev`) are fine without asking.
+
 ## Architecture
 
 This is a **TanStack Start** (React 19) full-stack app with SSR, file-based routing, and Tailwind CSS v4.

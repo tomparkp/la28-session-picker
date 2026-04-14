@@ -20,7 +20,6 @@
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
-    "deploy": "pnpm build && wrangler deploy",
     "cf-typegen": "wrangler types",
     "db:generate": "drizzle-kit generate",
     "db:migrate:local": "wrangler d1 migrations apply la28 --local",
