@@ -12,7 +12,7 @@
     {
       "binding": "DB",
       "database_name": "la28",
-      "database_id": "f6be2416-8204-4c47-b5e0-078fb78695fb",
+      "database_id": "92ecfb14-5274-42b9-9493-166460e603c7",
       "migrations_dir": "drizzle",
     },
   ],
