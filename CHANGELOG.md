@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.0](https://github.com/tomparkp/la28-session-picker/compare/v1.2.0...v1.3.0) (2026-04-14)
+
+
+### Features
+
+* **content:** ground session prompts in Paris 2024 medal data ([#78](https://github.com/tomparkp/la28-session-picker/issues/78)) ([e915464](https://github.com/tomparkp/la28-session-picker/commit/e91546444dd35052361696412ca904b28c506517))
+* **content:** Haiku scoring + Batches API writing ([#79](https://github.com/tomparkp/la28-session-picker/issues/79)) ([b09fe6f](https://github.com/tomparkp/la28-session-picker/commit/b09fe6f524d0fe104d6a4ebb53609204fdee538a))
+* **data:** migrate session storage from JSON to Cloudflare D1 ([#81](https://github.com/tomparkp/la28-session-picker/issues/81)) ([93e0458](https://github.com/tomparkp/la28-session-picker/commit/93e045811161f76c146a98f3a2a15a2e5e255b02))
+* **db:** Drizzle Studio + timestamp migration prefix ([#82](https://github.com/tomparkp/la28-session-picker/issues/82)) ([aa6ce7a](https://github.com/tomparkp/la28-session-picker/commit/aa6ce7a9271c6cc5d0cc35cb785e9452926a59bd))
+* **ratings:** AI-generated scorecards with per-dimension explanations ([#77](https://github.com/tomparkp/la28-session-picker/issues/77)) ([51a536a](https://github.com/tomparkp/la28-session-picker/commit/51a536a882925e7b126e38942a00a1667ea08c04))
+* **scripts:** add pnpm refresh for single-session content ([#76](https://github.com/tomparkp/la28-session-picker/issues/76)) ([82ca301](https://github.com/tomparkp/la28-session-picker/commit/82ca301c9d9c13e9dd72980e03dcabfe7450fe55))
+
+
+### Bug Fixes
+
+* **session-detail:** reset scroll when switching sessions ([#73](https://github.com/tomparkp/la28-session-picker/issues/73)) ([4ab2b3e](https://github.com/tomparkp/la28-session-picker/commit/4ab2b3e8f7268cc0fa870fc1b83de05f3232a4a4))
+
 ## [1.2.0](https://github.com/tomparkp/la28-session-picker/compare/v1.1.1...v1.2.0) (2026-04-12)
 
 
