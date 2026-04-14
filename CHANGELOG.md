@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/tomparkp/la28-session-picker/compare/v1.3.0...v1.3.1) (2026-04-14)
+
+
+### Bug Fixes
+
+* **build:** seed local D1 before prerender so `/` ships with real data ([#84](https://github.com/tomparkp/la28-session-picker/issues/84)) ([b4bc32e](https://github.com/tomparkp/la28-session-picker/commit/b4bc32edc9bffb116aee73766f2c01ece1f79706))
+
 ## [1.3.0](https://github.com/tomparkp/la28-session-picker/compare/v1.2.0...v1.3.0) (2026-04-14)
 
 
