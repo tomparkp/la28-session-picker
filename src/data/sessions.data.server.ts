@@ -1,15 +1,17 @@
+import { and, eq, gte, inArray, lte, sql } from 'drizzle-orm'
+
+import { getDb } from '@/db/client'
+import { sessionContent, sessions as sessionsTable } from '@/db/schema'
 import { getSessionInsights, type SessionInsights } from '@/lib/ai-scorecard'
-import { filterSessions, sortSessions } from '@/lib/filter'
+import { sortSessions } from '@/lib/filter'
 import type {
   Filters,
+  RoundType,
   Session,
   SessionContent,
   SessionWithContent,
   SortState,
 } from '@/types/session'
-
-import rawSessionContent from './session-content.json'
-import rawSessions from './sessions.json'
 
 export interface SessionsPage {
   items: Session[]
@@ -25,47 +27,46 @@ export interface SessionDetailPayload {
   contentMeta?: SessionContent['contentMeta']
 }
 
-interface SessionsIndex {
-  sessions: Session[]
-  sports: string[]
-  zones: string[]
-  sessionsById: Map<string, Session>
-  contentBySessionId: Record<string, SessionContent>
-}
+function buildFilterConditions(filters: Filters) {
+  const conditions = []
 
-// Workers isolates may be evicted between requests, so this is best-effort.
-let cachedIndex: SessionsIndex | null = null
+  if (filters.sport) conditions.push(eq(sessionsTable.sport, filters.sport))
+  if (filters.round) conditions.push(eq(sessionsTable.rt, filters.round as RoundType))
+  if (filters.zone) conditions.push(eq(sessionsTable.zone, filters.zone))
 
-function getSessionsIndex(): SessionsIndex {
-  if (cachedIndex) return cachedIndex
-
-  const sessions = rawSessions as Session[]
-  const sports = [...new Set(sessions.map((session) => session.sport))].filter(Boolean).sort()
-  const zones = [...new Set(sessions.map((session) => session.zone))].sort()
-
-  cachedIndex = {
-    sessions,
-    sports,
-    zones,
-    sessionsById: new Map(sessions.map((session) => [session.id, session])),
-    contentBySessionId: rawSessionContent as Record<string, SessionContent>,
+  if (filters.price) {
+    const [lo, hi] = filters.price.split('-').map(Number)
+    if (Number.isFinite(lo)) conditions.push(gte(sessionsTable.pLo, lo))
+    if (Number.isFinite(hi)) conditions.push(lte(sessionsTable.pLo, hi))
   }
 
-  return cachedIndex
+  if (filters.score) {
+    const scoreMin = Number(filters.score)
+    if (Number.isFinite(scoreMin) && scoreMin > 0) {
+      conditions.push(gte(sessionsTable.agg, scoreMin))
+    }
+  }
+
+  return conditions.length > 0 ? and(...conditions) : undefined
 }
 
-function getSessionWithContent(sessionId: string): SessionWithContent | null {
-  const { sessionsById, contentBySessionId } = getSessionsIndex()
-  const session = sessionsById.get(sessionId)
-  if (!session) return null
+async function getSportsAndZones(): Promise<{ sports: string[]; zones: string[] }> {
+  const db = getDb()
+  const [sportRows, zoneRows] = await Promise.all([
+    db
+      .selectDistinct({ sport: sessionsTable.sport })
+      .from(sessionsTable)
+      .orderBy(sessionsTable.sport),
+    db.selectDistinct({ zone: sessionsTable.zone }).from(sessionsTable).orderBy(sessionsTable.zone),
+  ])
 
   return {
-    ...session,
-    ...contentBySessionId[sessionId],
+    sports: sportRows.map((r) => r.sport).filter(Boolean),
+    zones: zoneRows.map((r) => r.zone),
   }
 }
 
-export function getSessionsPageData({
+export async function getSessionsPageData({
   filters,
   sort,
   offset,
@@ -75,10 +76,21 @@ export function getSessionsPageData({
   sort: SortState
   offset: number
   limit: number
-}): SessionsPage {
-  const { sessions, sports, zones } = getSessionsIndex()
-  const filtered = filterSessions(sessions, filters)
-  const sorted = sortSessions(filtered, sort)
+}): Promise<SessionsPage> {
+  const db = getDb()
+  const where = buildFilterConditions(filters)
+
+  const [rows, { sports, zones }] = await Promise.all([
+    db
+      .select()
+      .from(sessionsTable)
+      .where(where ?? sql`1 = 1`),
+    getSportsAndZones(),
+  ])
+
+  // Sort in JS to preserve the tie-breaking behavior of the existing util
+  // (date sort parses `time` into minutes). Dataset is ~800 rows.
+  const sorted = sortSessions(rows as Session[], sort)
   const items = sorted.slice(offset, offset + limit)
   const nextOffset = offset + items.length < sorted.length ? offset + items.length : null
 
@@ -91,30 +103,38 @@ export function getSessionsPageData({
   }
 }
 
-export function getSessionDetailData(sessionId: string): SessionDetailPayload | null {
-  const session = getSessionWithContent(sessionId)
-  if (!session) return null
+export async function getSessionDetailData(
+  sessionId: string,
+): Promise<SessionDetailPayload | null> {
+  const db = getDb()
+  const row = await db
+    .select()
+    .from(sessionsTable)
+    .leftJoin(sessionContent, eq(sessionContent.sessionId, sessionsTable.id))
+    .where(eq(sessionsTable.id, sessionId))
+    .get()
 
-  const {
-    blurb: _blurb,
-    potentialContenders: _potentialContenders,
-    potentialContendersIntro: _potentialContendersIntro,
-    contentMeta,
-    ...sessionSummary
-  } = session
+  if (!row) return null
+
+  const session = row.sessions as Session
+  const content = (row.session_content ?? {}) as Partial<SessionContent>
+  const withContent: SessionWithContent = { ...session, ...content }
 
   return {
-    session: sessionSummary,
-    insights: getSessionInsights(session),
-    contentMeta,
+    session,
+    insights: getSessionInsights(withContent),
+    contentMeta: content.contentMeta,
   }
 }
 
-export function getSessionsByIds(ids: string[]): Session[] {
-  const { sessionsById } = getSessionsIndex()
+export async function getSessionsByIds(ids: string[]): Promise<Session[]> {
+  if (ids.length === 0) return []
 
-  return ids
-    .map((id) => sessionsById.get(id))
-    .filter((session): session is Session => !!session)
-    .sort((a, b) => a.dk.localeCompare(b.dk) || a.name.localeCompare(b.name))
+  const db = getDb()
+  const rows = (await db
+    .select()
+    .from(sessionsTable)
+    .where(inArray(sessionsTable.id, ids))) as Session[]
+
+  return rows.sort((a, b) => a.dk.localeCompare(b.dk) || a.name.localeCompare(b.name))
 }

@@ -37,9 +37,6 @@ const PARIS_MEDALS = JSON.parse(
   readFileSync(resolve(ROOT, 'src/data/paris-2024-medals.json'), 'utf8'),
 ) as ParisMedalsData
 
-export const SESSIONS_PATH = resolve(ROOT, 'src/data/sessions.json')
-export const CONTENT_PATH = resolve(ROOT, 'src/data/session-content.json')
-
 export const PERPLEXITY_DEFAULT_MODEL = 'sonar-pro'
 export const ANTHROPIC_DEFAULT_MODEL = 'claude-sonnet-4-5-20250929'
 export const ANTHROPIC_WRITING_DEFAULT_MODEL = 'claude-sonnet-4-5-20250929'

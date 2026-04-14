@@ -1,16 +1,20 @@
 import 'dotenv/config'
-import { readFileSync, writeFileSync } from 'node:fs'
-
 import Anthropic from '@anthropic-ai/sdk'
 
-import type { Session, SessionContent } from '../src/types/session.js'
+import type { SessionContent } from '../src/types/session.js'
+import {
+  buildSessionContentUpsertSql,
+  buildSessionUpsertSql,
+  executeSql,
+  parseDbTargetFromArgs,
+  readContentById,
+  readSessionById,
+} from './lib/db.js'
 import {
   ANTHROPIC_SCORING_DEFAULT_MODEL,
   ANTHROPIC_WRITING_DEFAULT_MODEL,
-  CONTENT_PATH,
   type GroundingData,
   PERPLEXITY_DEFAULT_MODEL,
-  SESSIONS_PATH,
   type WritingData,
   buildGroundingPrompt,
   buildScoringPrompt,
@@ -90,7 +94,7 @@ function usage(): never {
   console.error(`Usage: pnpm refresh <sessionId> [options]
 
 Regenerates blurb, contenders, and related news for a single session.
-Bypasses the checkpoint cache; writes directly to session-content.json.
+Bypasses the checkpoint cache; writes directly to D1 (default: --local).
 
 Options:
   --prompt <text>          Extra instructions appended to both grounding and writing prompts
@@ -134,19 +138,16 @@ async function main() {
     }
   }
 
-  const rawSessions = JSON.parse(readFileSync(SESSIONS_PATH, 'utf8')) as Session[]
-  const sessionContent = JSON.parse(readFileSync(CONTENT_PATH, 'utf8')) as Record<
-    string,
-    SessionContent
-  >
+  const dbTarget = parseDbTargetFromArgs(process.argv.slice(2))
+  console.log(`D1 target: ${dbTarget}`)
 
-  const session = rawSessions.find((s) => s.id === args.sessionId)
+  const session = readSessionById(args.sessionId, dbTarget)
   if (!session) {
-    console.error(`Error: session "${args.sessionId}" not found in ${SESSIONS_PATH}`)
+    console.error(`Error: session "${args.sessionId}" not found in D1 (${dbTarget})`)
     process.exit(1)
   }
 
-  const existing = sessionContent[session.id]
+  const existing = readContentById(session.id, dbTarget) ?? undefined
   console.log(`Session:       ${session.id} — ${session.name}`)
   console.log(`Sport/Venue:   ${session.sport} @ ${session.venue}`)
   console.log(`Date/Time:     ${session.date}, ${session.time}`)
@@ -271,25 +272,26 @@ async function main() {
     },
   }
 
-  const nextSessionContent = { ...sessionContent, [session.id]: next }
-  const output = JSON.stringify(nextSessionContent, null, 2)
-  writeFileSync(CONTENT_PATH, `${output}\n`)
-  console.log(`\nWrote ${session.id} to ${CONTENT_PATH}`)
+  executeSql(
+    [buildSessionContentUpsertSql(session.id, next)],
+    dbTarget,
+    `refresh-content-${session.id}`,
+  )
+  console.log(`\nWrote ${session.id} content to D1`)
 
-  // Backfill flat r* fields on sessions.json from the scorecard
   if (scoring) {
-    const target = rawSessions.find((s) => s.id === session.id)
-    if (target) {
-      const sc = scoring.scorecard
-      target.rSig = sc.significance.score
-      target.rExp = sc.experience.score
-      target.rStar = sc.starPower.score
-      target.rUniq = sc.uniqueness.score
-      target.rDem = sc.demand.score
-      target.agg = sc.aggregate
-      writeFileSync(SESSIONS_PATH, `${JSON.stringify(rawSessions, null, 2)}\n`)
-      console.log(`Updated r* fields for ${session.id} in ${SESSIONS_PATH}`)
+    const sc = scoring.scorecard
+    const updatedSession = {
+      ...session,
+      rSig: sc.significance.score,
+      rExp: sc.experience.score,
+      rStar: sc.starPower.score,
+      rUniq: sc.uniqueness.score,
+      rDem: sc.demand.score,
+      agg: sc.aggregate,
     }
+    executeSql([buildSessionUpsertSql(updatedSession)], dbTarget, `refresh-session-${session.id}`)
+    console.log(`Updated r* fields for ${session.id} in D1`)
   }
 
   if (writing) {

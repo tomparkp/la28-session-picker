@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import { existsSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 import Anthropic from '@anthropic-ai/sdk'
@@ -7,9 +7,17 @@ import pLimit from 'p-limit'
 
 import type { Session, SessionContent } from '../src/types/session.js'
 import {
+  buildSessionContentUpsertSql,
+  buildSessionUpsertSql,
+  chunk as chunkSql,
+  executeSql,
+  parseDbTargetFromArgs,
+  readAllContent,
+  readAllSessions,
+} from './lib/db.js'
+import {
   ANTHROPIC_SCORING_DEFAULT_MODEL,
   ANTHROPIC_WRITING_DEFAULT_MODEL,
-  CONTENT_PATH,
   GROUNDING_VERSION,
   type GroundingData,
   PERPLEXITY_DEFAULT_MODEL,
@@ -17,7 +25,6 @@ import {
   SCORING_BATCH_SIZE,
   SCORING_VERSION,
   type ScoringData,
-  SESSIONS_PATH,
   WRITING_BATCH_SIZE,
   WRITING_VERSION,
   type WritingData,
@@ -306,8 +313,8 @@ async function main() {
   const writingPath = getWritingPath(writingModel, sportFilter, forceAll)
   const scoringPath = getScoringPath(scoringModel, sportFilter, forceAll)
 
-  console.log(`Reading ${SESSIONS_PATH}`)
-  console.log(`Reading ${CONTENT_PATH}`)
+  const dbTarget = parseDbTargetFromArgs()
+  console.log(`D1 target: ${dbTarget}`)
   console.log(`Grounding: perplexity ${perplexityModel}  concurrency=${groundingConcurrency}`)
   console.log(`  → ${groundingPath}`)
   const writingMode = noWritingBatch ? `sync concurrency=${writingConcurrency}` : 'batches-api'
@@ -316,11 +323,8 @@ async function main() {
   console.log(`Scoring:   anthropic  ${scoringModel}  concurrency=${scoringConcurrency}`)
   console.log(`  → ${scoringPath}`)
 
-  const rawSessions = JSON.parse(readFileSync(SESSIONS_PATH, 'utf8')) as Session[]
-  const sessionContent = JSON.parse(readFileSync(CONTENT_PATH, 'utf8')) as Record<
-    string,
-    SessionContent
-  >
+  const rawSessions = readAllSessions(dbTarget)
+  const sessionContent = readAllContent(dbTarget)
   const sessions = rawSessions.map((session) => ({ ...session, ...sessionContent[session.id] }))
   console.log(`Loaded ${sessions.length} sessions`)
 
@@ -560,54 +564,71 @@ async function main() {
     console.log('\n=== Stage 3: Scoring (skipped) ===')
   }
 
-  // Merge into session-content.json + sessions.json
+  // Merge into D1: session_content + sessions
   if (!dryRun) {
-    const nextSessionContent = { ...sessionContent }
+    const contentUpdates: Array<{ id: string; content: SessionContent }> = []
     for (const session of needsContent) {
       const writing = writingCheckpoint.results[session.id]
       const grounding = groundingCheckpoint.results[session.id]
       const scoring = scoringCheckpoint.results[session.id]
-      const existing = nextSessionContent[session.id] ?? {}
+      const existing = sessionContent[session.id] ?? {}
       if (!writing && !scoring && !grounding) continue
-      nextSessionContent[session.id] = {
-        blurb: writing?.blurb ?? existing.blurb,
-        potentialContendersIntro:
-          writing?.potentialContendersIntro ?? existing.potentialContendersIntro,
-        potentialContenders: writing?.potentialContenders ?? existing.potentialContenders,
-        relatedNews: grounding?.relatedNews ?? existing.relatedNews ?? [],
-        scorecard: scoring?.scorecard ?? existing.scorecard,
-        contentMeta: {
-          provider: 'hybrid',
-          groundingModel: grounding ? perplexityModel : existing.contentMeta?.groundingModel,
-          writingModel: writing ? writingModel : existing.contentMeta?.writingModel,
-          scoringModel: scoring ? scoringModel : existing.contentMeta?.scoringModel,
-          generatedAt: new Date().toISOString(),
-          sources: grounding?.sources ?? existing.contentMeta?.sources,
+      contentUpdates.push({
+        id: session.id,
+        content: {
+          blurb: writing?.blurb ?? existing.blurb,
+          potentialContendersIntro:
+            writing?.potentialContendersIntro ?? existing.potentialContendersIntro,
+          potentialContenders: writing?.potentialContenders ?? existing.potentialContenders,
+          relatedNews: grounding?.relatedNews ?? existing.relatedNews ?? [],
+          scorecard: scoring?.scorecard ?? existing.scorecard,
+          contentMeta: {
+            provider: 'hybrid',
+            groundingModel: grounding ? perplexityModel : existing.contentMeta?.groundingModel,
+            writingModel: writing ? writingModel : existing.contentMeta?.writingModel,
+            scoringModel: scoring ? scoringModel : existing.contentMeta?.scoringModel,
+            generatedAt: new Date().toISOString(),
+            sources: grounding?.sources ?? existing.contentMeta?.sources,
+          },
         },
-      }
+      })
     }
-    const output = JSON.stringify(nextSessionContent, null, 2)
-    writeFileSync(CONTENT_PATH, `${output}\n`)
-    console.log(`\nWrote ${Object.keys(nextSessionContent).length} entries to ${CONTENT_PATH}`)
 
-    // Backfill flat r* fields on sessions.json from scorecards
-    let updatedSessions = 0
+    const contentStmts = contentUpdates.map((u) => buildSessionContentUpsertSql(u.id, u.content))
+    const contentBatches = chunkSql(contentStmts, 50)
+    contentBatches.forEach((batch, i) => {
+      console.log(`  content upsert batch ${i + 1}/${contentBatches.length}`)
+      executeSql(batch, dbTarget, `gen-content-${i}`)
+    })
+    console.log(`\nWrote ${contentUpdates.length} content rows to D1`)
+
+    // Backfill flat r* fields on sessions from scorecards
+    const sessionUpdates: Session[] = []
     for (const session of rawSessions) {
-      const sc = nextSessionContent[session.id]?.scorecard
+      const sc =
+        contentUpdates.find((u) => u.id === session.id)?.content.scorecard ??
+        sessionContent[session.id]?.scorecard
       if (!sc) continue
       const target = rawSessionMap.get(session.id)
       if (!target) continue
-      target.rSig = sc.significance.score
-      target.rExp = sc.experience.score
-      target.rStar = sc.starPower.score
-      target.rUniq = sc.uniqueness.score
-      target.rDem = sc.demand.score
-      target.agg = sc.aggregate
-      updatedSessions += 1
+      sessionUpdates.push({
+        ...target,
+        rSig: sc.significance.score,
+        rExp: sc.experience.score,
+        rStar: sc.starPower.score,
+        rUniq: sc.uniqueness.score,
+        rDem: sc.demand.score,
+        agg: sc.aggregate,
+      })
     }
-    if (updatedSessions > 0) {
-      writeFileSync(SESSIONS_PATH, `${JSON.stringify(rawSessions, null, 2)}\n`)
-      console.log(`Updated ${updatedSessions} session r* fields in ${SESSIONS_PATH}`)
+    if (sessionUpdates.length > 0) {
+      const sessionStmts = sessionUpdates.map(buildSessionUpsertSql)
+      const sessionBatches = chunkSql(sessionStmts, 50)
+      sessionBatches.forEach((batch, i) => {
+        console.log(`  sessions upsert batch ${i + 1}/${sessionBatches.length}`)
+        executeSql(batch, dbTarget, `gen-sessions-${i}`)
+      })
+      console.log(`Updated r* fields for ${sessionUpdates.length} sessions in D1`)
     }
   }
 
