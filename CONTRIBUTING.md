@@ -30,14 +30,17 @@ pnpm db:migrate:local   # apply migrations to local D1
 pnpm db:studio          # browse/edit local DB at https://local.drizzle.studio
 ```
 
-A fresh worktree has no local data. To populate it from remote:
+A fresh worktree has no local data. Options:
 
-```bash
-pnpm wrangler login   # one-time per machine
-pnpm db:pull          # exports remote D1 and upserts into local
-```
+- **External contributors**: ask the maintainer for a seed SQL dump, then `pnpm wrangler d1 execute la28 --local --file=<dump>`. `pnpm db:pull` won't work without maintainer credentials since Cloudflare doesn't support per-database scoped access.
+- **Maintainer** (or anyone authed to the Cloudflare account owning this D1):
 
-Or run the content generation scripts (`pnpm generate-content`) to build data from scratch.
+  ```bash
+  pnpm wrangler login   # one-time per machine
+  pnpm db:pull          # exports remote D1 and upserts into local
+  ```
+
+- **If you have Anthropic/Perplexity API keys**: `pnpm generate-content` will build content from scratch against the LA28 schedule, no remote access required.
 
 ### Remote (production)
 
