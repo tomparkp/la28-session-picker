@@ -15,17 +15,60 @@ The dev server runs on port 3000.
 - `pnpm build` — Production build
 - `pnpm preview` — Preview production build
 - `pnpm test` — Run tests with Vitest
-- `pnpm rate-sessions` — Recompute rating fields in `src/data/sessions.json` (see below)
+- `pnpm rate-sessions` — Recompute rating fields in D1 (see [Database](#database))
 
-## Regenerating session ratings
+## Database
 
-After changing rating logic in `src/lib/ratings.ts` or session data in `src/data/sessions.json`, recompute stored ratings with:
+Session data lives in a Cloudflare D1 database (binding `DB`, defined in `wrangler.jsonc`). The schema is managed by Drizzle — source of truth is `src/db/schema.ts`.
+
+### Local development
+
+Dev uses Wrangler's local SQLite emulation under `.wrangler/state/`. Each worktree has its own local DB.
 
 ```bash
-pnpm rate-sessions
+pnpm db:migrate:local   # apply migrations to local D1
+pnpm db:studio          # browse/edit local DB at https://local.drizzle.studio
 ```
 
-That script runs `rateEvent()` over `src/data/sessions.json` and writes the dimension fields and aggregate back into the same file.
+A fresh worktree has no local data. To populate it, run the content generation scripts (`pnpm generate-content`) or dump from remote:
+
+```bash
+pnpm wrangler d1 export la28 --remote --no-schema --output=/tmp/la28.sql
+pnpm wrangler d1 execute la28 --local --file=/tmp/la28.sql
+```
+
+### Remote (production)
+
+```bash
+pnpm db:migrate:remote  # apply migrations to prod D1
+pnpm db:studio:remote   # browse/edit prod DB via D1 HTTP
+```
+
+`db:studio:remote` needs a Cloudflare API token with `Account → D1 → Edit` permission. Create at https://dash.cloudflare.com/profile/api-tokens (Custom token → Account → D1 → Edit), then add to `.env`:
+
+```
+CLOUDFLARE_ACCOUNT_ID=<account id>
+CLOUDFLARE_DATABASE_ID=<database id from wrangler.jsonc>
+CLOUDFLARE_D1_TOKEN=<token>
+```
+
+### Schema changes
+
+1. Edit `src/db/schema.ts`
+2. `pnpm db:generate --name <short-description>` — generates `drizzle/<timestamp>_<name>.sql` (drop `--name` and Drizzle appends a random suffix)
+3. Review the SQL, then `pnpm db:migrate:local` to apply
+4. After merge, `pnpm db:migrate:remote` to apply to prod
+
+### Regenerating session ratings
+
+After changing rating logic in `src/lib/ratings.ts` or session content, recompute stored ratings:
+
+```bash
+pnpm rate-sessions           # writes to local D1
+pnpm rate-sessions --remote  # writes to prod D1
+```
+
+`pnpm generate-content` and `pnpm refresh <sessionId>` follow the same local-by-default, `--remote` opt-in pattern.
 
 ## Routing
 

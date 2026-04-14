@@ -22,6 +22,16 @@ Before opening a pull request, run the CI-equivalent checks locally and fix any 
 
 This is a **TanStack Start** (React 19) full-stack app with SSR, file-based routing, and Tailwind CSS v4.
 
+### Database
+
+Session data lives in Cloudflare D1 (binding `DB`). Schema in `src/db/schema.ts` (Drizzle). Runtime reads via `drizzle(env.DB)` from `cloudflare:workers`; writer scripts (`generate-content`, `refresh`, `rate-sessions`) shell out to `wrangler d1 execute` via `scripts/lib/db.ts` — default `--local`, pass `--remote` for prod.
+
+- `pnpm db:migrate:local` / `pnpm db:migrate:remote` — apply migrations
+- `pnpm db:generate --name <desc>` — generate a new migration (omit `--name` and you get a random suffix like `needy_ma_gnuci`)
+- `pnpm db:studio` — browse local; `pnpm db:studio:remote` — browse prod (needs `CLOUDFLARE_ACCOUNT_ID` / `CLOUDFLARE_DATABASE_ID` / `CLOUDFLARE_D1_TOKEN` in `.env`, token scope `Account → D1 → Edit`)
+
+Each worktree has its own local D1 under `.wrangler/state/`. A fresh worktree needs `pnpm db:migrate:local` plus data (run content scripts or dump remote with `wrangler d1 export la28 --remote --no-schema --output=/tmp/la28.sql && wrangler d1 execute la28 --local --file=/tmp/la28.sql`).
+
 ### Routing
 
 Routes live in `src/routes/` and are auto-generated into `src/routeTree.gen.ts` by the TanStack Router plugin. Do not edit `routeTree.gen.ts` manually.
