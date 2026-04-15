@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.2](https://github.com/tomparkp/la28-session-picker/compare/v1.4.1...v1.4.2) (2026-04-15)
+
+
+### Bug Fixes
+
+* **ci:** pass CLOUDFLARE_DATABASE_ID to content workflows ([#93](https://github.com/tomparkp/la28-session-picker/issues/93)) ([a645d75](https://github.com/tomparkp/la28-session-picker/commit/a645d753355f1271c67b5084529d1acf99c26b6c))
+* **scripts:** use `batch` shape for D1 HTTP multi-statement requests ([#95](https://github.com/tomparkp/la28-session-picker/issues/95)) ([c56ad2b](https://github.com/tomparkp/la28-session-picker/commit/c56ad2b647ed2768b7dfe9b6f444c60278df6339))
+
 ## [1.4.1](https://github.com/tomparkp/la28-session-picker/compare/v1.4.0...v1.4.1) (2026-04-15)
 
 
