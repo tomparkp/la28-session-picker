@@ -169,7 +169,7 @@ const csvRaw = readFileSync(csvPath, 'utf-8')
 const csvSessions = parseCsv(csvRaw)
 const csvMap = new Map(csvSessions.map((s) => [s.code, s]))
 
-const appSessions: AppSession[] = readAllSessions(parseDbTargetFromArgs()) as AppSession[]
+const appSessions: AppSession[] = (await readAllSessions(parseDbTargetFromArgs())) as AppSession[]
 const appMap = new Map(appSessions.map((s) => [s.id, s]))
 
 console.log(`\n${'='.repeat(72)}`)
