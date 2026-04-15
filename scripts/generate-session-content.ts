@@ -1,19 +1,17 @@
 import 'dotenv/config'
-import { existsSync, readFileSync } from 'node:fs'
-import { resolve } from 'node:path'
-
 import Anthropic from '@anthropic-ai/sdk'
 import pLimit from 'p-limit'
 
-import type { Session, SessionContent } from '../src/types/session.js'
+import type { Session } from '../src/types/session.js'
 import {
-  buildSessionContentUpsertSql,
-  buildSessionUpsertSql,
-  chunk as chunkSql,
-  executeSql,
+  chunk as chunkList,
   parseDbTargetFromArgs,
-  readAllContent,
   readAllSessions,
+  readStageStatus,
+  upsertGrounding,
+  upsertScoring,
+  upsertWriting,
+  type StageStatus,
 } from './lib/db.js'
 import {
   ANTHROPIC_SCORING_DEFAULT_MODEL,
@@ -21,10 +19,8 @@ import {
   GROUNDING_VERSION,
   type GroundingData,
   PERPLEXITY_DEFAULT_MODEL,
-  ROOT,
   SCORING_BATCH_SIZE,
   SCORING_VERSION,
-  type ScoringData,
   WRITING_BATCH_SIZE,
   WRITING_VERSION,
   type WritingData,
@@ -33,55 +29,15 @@ import {
   generateScoring,
   generateWriting,
   generateWritingViaBatches,
-  writeJson,
 } from './lib/session-content.js'
 
-// Conservative concurrency defaults. Perplexity sonar-pro is typically 50 req/min;
-// 5 in flight averaging ~12s/call ≈ 25 req/min, well under the limit.
-// Anthropic tier-1 output TPM (8k/min on sonnet-4.5) is the binding constraint;
-// 2 concurrent writing batches (~2.5k output each) stays safely under the cap.
+// Conservative concurrency defaults. Perplexity sonar-pro is typically 50
+// req/min; 5 in flight averaging ~12s/call ≈ 25 req/min. Anthropic tier-1
+// output TPM (8k/min on sonnet-4.5) is the binding constraint for writing;
+// 2 concurrent writing batches (~2.5k output each) stays safely under.
 const DEFAULT_GROUNDING_CONCURRENCY = 5
 const DEFAULT_WRITING_CONCURRENCY = 2
 const DEFAULT_SCORING_CONCURRENCY = 2
-
-interface GroundingCheckpoint {
-  meta: {
-    model: string
-    promptVersion: number
-    sportFilter?: string
-    forceAll: boolean
-  }
-  generatedAt: string
-  updatedAt: string
-  results: Record<string, GroundingData>
-}
-
-interface WritingCheckpoint {
-  meta: {
-    model: string
-    promptVersion: number
-    groundingVersion: number
-    sportFilter?: string
-    forceAll: boolean
-  }
-  generatedAt: string
-  updatedAt: string
-  results: Record<string, WritingData>
-}
-
-interface ScoringCheckpoint {
-  meta: {
-    model: string
-    promptVersion: number
-    groundingVersion: number
-    writingVersion: number
-    sportFilter?: string
-    forceAll: boolean
-  }
-  generatedAt: string
-  updatedAt: string
-  results: Record<string, ScoringData>
-}
 
 function getArgValue(name: string): string | undefined {
   const prefix = `${name}=`
@@ -89,162 +45,11 @@ function getArgValue(name: string): string | undefined {
   return arg ? arg.slice(prefix.length) : undefined
 }
 
-function safeName(value: string) {
-  return value.replace(/[^a-zA-Z0-9._-]+/g, '-')
-}
-
-function sportSlug(sportFilter: string | undefined) {
-  return sportFilter ? safeName(sportFilter) : 'all'
-}
-
-function modeSlug(forceAll: boolean) {
-  return forceAll ? 'force' : 'missing'
-}
-
-function getGroundingPath(model: string, sportFilter: string | undefined, forceAll: boolean) {
-  return resolve(
-    ROOT,
-    '.cache',
-    'generate-session-content',
-    `grounding-v${GROUNDING_VERSION}-perplexity-${safeName(model)}-${sportSlug(sportFilter)}-${modeSlug(forceAll)}.json`,
-  )
-}
-
-function getWritingPath(model: string, sportFilter: string | undefined, forceAll: boolean) {
-  return resolve(
-    ROOT,
-    '.cache',
-    'generate-session-content',
-    `writing-v${WRITING_VERSION}-anthropic-${safeName(model)}-${sportSlug(sportFilter)}-${modeSlug(forceAll)}.json`,
-  )
-}
-
-function getScoringPath(model: string, sportFilter: string | undefined, forceAll: boolean) {
-  return resolve(
-    ROOT,
-    '.cache',
-    'generate-session-content',
-    `scoring-v${SCORING_VERSION}-anthropic-${safeName(model)}-${sportSlug(sportFilter)}-${modeSlug(forceAll)}.json`,
-  )
-}
-
-function loadGroundingCheckpoint(
-  path: string,
-  model: string,
-  sportFilter: string | undefined,
-  forceAll: boolean,
-): GroundingCheckpoint {
-  const now = new Date().toISOString()
-  const fresh: GroundingCheckpoint = {
-    meta: { model, promptVersion: GROUNDING_VERSION, sportFilter, forceAll },
-    generatedAt: now,
-    updatedAt: now,
-    results: {},
-  }
-  if (!existsSync(path)) return fresh
-  const existing = JSON.parse(readFileSync(path, 'utf8')) as GroundingCheckpoint
-  const same =
-    existing.meta.model === model &&
-    existing.meta.promptVersion === GROUNDING_VERSION &&
-    existing.meta.sportFilter === sportFilter &&
-    existing.meta.forceAll === forceAll
-  if (!same) {
-    throw new Error(`Grounding checkpoint metadata mismatch in ${path}.`)
-  }
-  return existing
-}
-
-function loadWritingCheckpoint(
-  path: string,
-  model: string,
-  sportFilter: string | undefined,
-  forceAll: boolean,
-): WritingCheckpoint {
-  const now = new Date().toISOString()
-  const fresh: WritingCheckpoint = {
-    meta: {
-      model,
-      promptVersion: WRITING_VERSION,
-      groundingVersion: GROUNDING_VERSION,
-      sportFilter,
-      forceAll,
-    },
-    generatedAt: now,
-    updatedAt: now,
-    results: {},
-  }
-  if (!existsSync(path)) return fresh
-  const existing = JSON.parse(readFileSync(path, 'utf8')) as WritingCheckpoint
-  const same =
-    existing.meta.model === model &&
-    existing.meta.promptVersion === WRITING_VERSION &&
-    existing.meta.groundingVersion === GROUNDING_VERSION &&
-    existing.meta.sportFilter === sportFilter &&
-    existing.meta.forceAll === forceAll
-  if (!same) {
-    throw new Error(`Writing checkpoint metadata mismatch in ${path}.`)
-  }
-  return existing
-}
-
-function loadScoringCheckpoint(
-  path: string,
-  model: string,
-  sportFilter: string | undefined,
-  forceAll: boolean,
-): ScoringCheckpoint {
-  const now = new Date().toISOString()
-  const fresh: ScoringCheckpoint = {
-    meta: {
-      model,
-      promptVersion: SCORING_VERSION,
-      groundingVersion: GROUNDING_VERSION,
-      writingVersion: WRITING_VERSION,
-      sportFilter,
-      forceAll,
-    },
-    generatedAt: now,
-    updatedAt: now,
-    results: {},
-  }
-  if (!existsSync(path)) return fresh
-  const existing = JSON.parse(readFileSync(path, 'utf8')) as ScoringCheckpoint
-  const same =
-    existing.meta.model === model &&
-    existing.meta.promptVersion === SCORING_VERSION &&
-    existing.meta.groundingVersion === GROUNDING_VERSION &&
-    existing.meta.writingVersion === WRITING_VERSION &&
-    existing.meta.sportFilter === sportFilter &&
-    existing.meta.forceAll === forceAll
-  if (!same) {
-    throw new Error(`Scoring checkpoint metadata mismatch in ${path}.`)
-  }
-  return existing
-}
-
-function chunk<T>(arr: T[], size: number): T[][] {
-  const chunks: T[][] = []
-  for (let i = 0; i < arr.length; i += size) chunks.push(arr.slice(i, i + size))
-  return chunks
-}
-
 function parsePositiveInt(value: string | undefined, fallback: number): number {
   if (!value) return fallback
   const n = Number.parseInt(value, 10)
   if (!Number.isFinite(n) || n < 1) return fallback
   return n
-}
-
-// Serialize checkpoint writes so parallel workers don't race the same file.
-function createWriteQueue() {
-  let tail: Promise<void> = Promise.resolve()
-  return function enqueue(fn: () => void): Promise<void> {
-    const next = tail.then(() => {
-      fn()
-    })
-    tail = next.catch(() => {})
-    return next
-  }
 }
 
 function groupBySport<T extends { sport: string }>(items: T[]): Map<string, T[]> {
@@ -257,9 +62,27 @@ function groupBySport<T extends { sport: string }>(items: T[]): Map<string, T[]>
   return groups
 }
 
+function needsGrounding(status: StageStatus | undefined, forceAll: boolean): boolean {
+  if (forceAll) return true
+  if (!status) return true
+  return (status.groundingPromptVersion ?? -1) < GROUNDING_VERSION
+}
+
+function needsWriting(status: StageStatus | undefined, forceAll: boolean): boolean {
+  if (forceAll) return true
+  if (!status) return true
+  return (status.writingPromptVersion ?? -1) < WRITING_VERSION
+}
+
+function needsScoring(status: StageStatus | undefined, forceAll: boolean): boolean {
+  if (forceAll) return true
+  if (!status) return true
+  return (status.scoringPromptVersion ?? -1) < SCORING_VERSION
+}
+
 async function main() {
   const perplexityModel = getArgValue('--perplexity-model') ?? PERPLEXITY_DEFAULT_MODEL
-  // --anthropic-model overrides both stages (back-compat); per-stage flags win if set.
+  // --anthropic-model overrides both stages (back-compat); per-stage flags win.
   const legacyAnthropicModel = getArgValue('--anthropic-model')
   const writingModel =
     getArgValue('--anthropic-writing-model') ??
@@ -297,125 +120,144 @@ async function main() {
       console.error('Error: PERPLEXITY_API_KEY is required (or use --skip-grounding)')
       process.exit(1)
     }
-    if (!skipWriting && !anthropicKey) {
-      console.error('Error: ANTHROPIC_API_KEY is required (or use --skip-writing)')
+    if ((!skipWriting || !skipScoring) && !anthropicKey) {
+      console.error('Error: ANTHROPIC_API_KEY is required (or use --skip-writing/--skip-scoring)')
       process.exit(1)
     }
-    if (!skipScoring && !anthropicKey) {
-      console.error('Error: ANTHROPIC_API_KEY is required (or use --skip-scoring)')
-      process.exit(1)
+  }
+
+  const dbTarget = parseDbTargetFromArgs()
+  console.log(`D1 target: ${dbTarget}`)
+  const writingMode = noWritingBatch ? `sync concurrency=${writingConcurrency}` : 'batches-api'
+  console.log(`Grounding: perplexity ${perplexityModel}  concurrency=${groundingConcurrency}`)
+  console.log(`Writing:   anthropic  ${writingModel}  ${writingMode}`)
+  console.log(`Scoring:   anthropic  ${scoringModel}  concurrency=${scoringConcurrency}`)
+
+  const sessions = readAllSessions(dbTarget)
+  const stageStatus = readStageStatus(dbTarget)
+  const sessionMap = new Map(sessions.map((s) => [s.id, s]))
+  console.log(`Loaded ${sessions.length} sessions from D1`)
+
+  const candidates = sessions.filter((s) => {
+    if (sportFilter && s.sport !== sportFilter) return false
+    const status = stageStatus.get(s.id)
+    return (
+      needsGrounding(status, forceAll) ||
+      needsWriting(status, forceAll) ||
+      needsScoring(status, forceAll)
+    )
+  })
+  console.log(`${candidates.length} session(s) have at least one stage outstanding`)
+
+  // Track grounding results from this run so stage 2 can use them without a
+  // second DB read. Not required for resume (DB is source of truth) — just a
+  // hot cache for the in-progress run.
+  const groundingThisRun = new Map<string, GroundingData>()
+
+  // Stage 1: Grounding (parallel, rate-limited)
+  if (skipGrounding) {
+    console.log('\n=== Stage 1: Grounding (skipped) ===')
+  } else {
+    const groundingTargets = candidates.filter((s) =>
+      needsGrounding(stageStatus.get(s.id), forceAll),
+    )
+    console.log(`\n=== Stage 1: Grounding ===`)
+    console.log(`${groundingTargets.length} session(s) need grounding`)
+
+    if (dryRun) {
+      for (const s of groundingTargets) console.log(`  [dry-run] ${s.id} (${s.sport})`)
+    } else if (groundingTargets.length > 0) {
+      const limit = pLimit(groundingConcurrency)
+      let done = 0
+      await Promise.all(
+        groundingTargets.map((session) =>
+          limit(async () => {
+            const g = await fetchGrounding(perplexityKey!, session, session.sport, perplexityModel)
+            done += 1
+            if (!g) {
+              console.log(`  [${done}/${groundingTargets.length}] ${session.id} ✗ failed`)
+              return
+            }
+            groundingThisRun.set(session.id, g)
+            upsertGrounding(
+              [
+                {
+                  sessionId: session.id,
+                  facts: g.groundingFacts,
+                  relatedNews: g.relatedNews,
+                  sources: g.sources,
+                },
+              ],
+              {
+                model: perplexityModel,
+                promptVersion: GROUNDING_VERSION,
+                generatedAt: new Date().toISOString(),
+              },
+              dbTarget,
+            )
+            console.log(
+              `  [${done}/${groundingTargets.length}] ${session.id} ✓ facts:${g.groundingFacts.length} news:${g.relatedNews.length}`,
+            )
+          }),
+        ),
+      )
     }
   }
 
   const anthropicClient = anthropicKey ? new Anthropic({ apiKey: anthropicKey }) : null
 
-  const groundingPath = getGroundingPath(perplexityModel, sportFilter, forceAll)
-  const writingPath = getWritingPath(writingModel, sportFilter, forceAll)
-  const scoringPath = getScoringPath(scoringModel, sportFilter, forceAll)
-
-  const dbTarget = parseDbTargetFromArgs()
-  console.log(`D1 target: ${dbTarget}`)
-  console.log(`Grounding: perplexity ${perplexityModel}  concurrency=${groundingConcurrency}`)
-  console.log(`  → ${groundingPath}`)
-  const writingMode = noWritingBatch ? `sync concurrency=${writingConcurrency}` : 'batches-api'
-  console.log(`Writing:   anthropic  ${writingModel}  ${writingMode}`)
-  console.log(`  → ${writingPath}`)
-  console.log(`Scoring:   anthropic  ${scoringModel}  concurrency=${scoringConcurrency}`)
-  console.log(`  → ${scoringPath}`)
-
-  const rawSessions = readAllSessions(dbTarget)
-  const sessionContent = readAllContent(dbTarget)
-  const sessions = rawSessions.map((session) => ({ ...session, ...sessionContent[session.id] }))
-  console.log(`Loaded ${sessions.length} sessions`)
-
-  const groundingCheckpoint = loadGroundingCheckpoint(
-    groundingPath,
-    perplexityModel,
-    sportFilter,
-    forceAll,
-  )
-  const writingCheckpoint = loadWritingCheckpoint(writingPath, writingModel, sportFilter, forceAll)
-  const scoringCheckpoint = loadScoringCheckpoint(scoringPath, scoringModel, sportFilter, forceAll)
-  console.log(
-    `Checkpoints: ${Object.keys(groundingCheckpoint.results).length} grounded, ${Object.keys(writingCheckpoint.results).length} written, ${Object.keys(scoringCheckpoint.results).length} scored`,
-  )
-
-  const sessionMap = new Map(sessions.map((s) => [s.id, s]))
-  const rawSessionMap = new Map(rawSessions.map((s) => [s.id, s]))
-  const needsContent = sessions.filter((s) => {
-    if (sportFilter && s.sport !== sportFilter) return false
-    if (forceAll) return true
-    return !s.blurb || !sessionContent[s.id]?.scorecard
-  })
-
-  console.log(`${needsContent.length} session(s) to process`)
-  if (needsContent.length === 0) {
-    console.log('Nothing to do.')
-    return
-  }
-
-  const checkpointWriter = createWriteQueue()
-
-  // Stage 1: Grounding (parallel, rate-limited)
-  if (!skipGrounding) {
-    const needsGrounding = needsContent.filter((s) => !groundingCheckpoint.results[s.id])
-    console.log(`\n=== Stage 1: Grounding ===`)
-    console.log(`${needsGrounding.length} session(s) need grounding`)
-    if (dryRun) {
-      for (const s of needsGrounding) console.log(`  [dry-run] ${s.id} (${s.sport})`)
-    } else if (needsGrounding.length > 0) {
-      const limit = pLimit(groundingConcurrency)
-      let done = 0
-      await Promise.all(
-        needsGrounding.map((session) =>
-          limit(async () => {
-            const g = await fetchGrounding(perplexityKey!, session, session.sport, perplexityModel)
-            done += 1
-            if (g) {
-              await checkpointWriter(() => {
-                groundingCheckpoint.results[session.id] = g
-                groundingCheckpoint.updatedAt = new Date().toISOString()
-                writeJson(groundingPath, groundingCheckpoint)
-              })
-              console.log(
-                `  [${done}/${needsGrounding.length}] ${session.id} ✓ facts:${g.groundingFacts.length} news:${g.relatedNews.length}`,
-              )
-            } else {
-              console.log(`  [${done}/${needsGrounding.length}] ${session.id} ✗ failed`)
-            }
-          }),
-        ),
-      )
-    }
+  // Stage 2: Writing
+  if (skipWriting || !anthropicClient) {
+    if (skipWriting) console.log('\n=== Stage 2: Writing (skipped) ===')
   } else {
-    console.log('\n=== Stage 1: Grounding (skipped) ===')
-  }
-
-  // Stage 2: Writing (batched per sport). Default submits via the Anthropic
-  // Batches API (50% off) and awaits completion; --writing-no-batch falls back
-  // to synchronous per-batch calls with pLimit.
-  if (!skipWriting && anthropicClient) {
-    const needsWriting = needsContent.filter((s) => {
-      if (writingCheckpoint.results[s.id]) return false
-      return skipGrounding || groundingCheckpoint.results[s.id] !== undefined
+    // Re-read stage status so we pick up grounding rows written moments ago.
+    const freshStatus = readStageStatus(dbTarget)
+    const writingTargets = candidates.filter((s) => {
+      const st = freshStatus.get(s.id)
+      const stageDone = !needsWriting(st, forceAll)
+      // Skip if writing complete AND we didn't just re-ground (force)
+      if (stageDone && !forceAll) return false
+      // Can't write without grounding at current version (skip-grounding allows reuse)
+      return (st?.groundingPromptVersion ?? -1) >= GROUNDING_VERSION
     })
     console.log(`\n=== Stage 2: Writing ===`)
-    console.log(`${needsWriting.length} session(s) need writing`)
-    const bySport = groupBySport(needsWriting)
+    console.log(`${writingTargets.length} session(s) ready for writing`)
+
+    if (!dryRun && writingTargets.length > 0) {
+      // Preload grounding data for sessions that haven't been loaded this run.
+      const missingGrounding = writingTargets.filter((s) => !groundingThisRun.has(s.id))
+      if (missingGrounding.length > 0) {
+        const { readGroundingForSession } = await import('./lib/db.js')
+        for (const s of missingGrounding) {
+          const g = readGroundingForSession(s.id, dbTarget)
+          if (g && g.facts) {
+            groundingThisRun.set(s.id, {
+              id: s.id,
+              groundingFacts: g.facts,
+              relatedNews: g.relatedNews,
+              sources: g.sources,
+            })
+          }
+        }
+      }
+    }
+
+    const bySport = groupBySport(writingTargets)
     const sports = [...bySport.keys()].sort()
     const jobs: WritingJob[] = []
     for (const sport of sports) {
       const list = bySport.get(sport)!
-      for (const batch of chunk(list, WRITING_BATCH_SIZE)) {
-        const groundingForBatch = new Map<string, GroundingData>()
+      for (const batch of chunkList(list, WRITING_BATCH_SIZE)) {
+        const grounding = new Map<string, GroundingData>()
         for (const s of batch) {
-          const g = groundingCheckpoint.results[s.id]
-          if (g) groundingForBatch.set(s.id, g)
+          const g = groundingThisRun.get(s.id)
+          if (g) grounding.set(s.id, g)
         }
-        jobs.push({ sport, batch, grounding: groundingForBatch })
+        jobs.push({ sport, batch, grounding })
       }
     }
     console.log(`${jobs.length} batch(es) across ${sports.length} sport(s)`)
+
     if (dryRun) {
       for (const job of jobs)
         console.log(`  [dry-run] ${job.sport} batch (${job.batch.length} sessions)`)
@@ -432,103 +274,128 @@ async function main() {
               job.grounding,
               writingModel,
             )
-            const gotIds = new Set<string>()
-            for (const r of results) {
-              if (sessionMap.has(r.id)) gotIds.add(r.id)
-            }
-            await checkpointWriter(() => {
-              for (const r of results) {
-                if (sessionMap.has(r.id)) writingCheckpoint.results[r.id] = r
-              }
-              writingCheckpoint.updatedAt = new Date().toISOString()
-              writeJson(writingPath, writingCheckpoint)
-            })
+            const toUpsert = results
+              .filter((r) => sessionMap.has(r.id))
+              .map((r) => ({
+                sessionId: r.id,
+                blurb: r.blurb,
+                potentialContendersIntro: r.potentialContendersIntro || undefined,
+                potentialContenders: r.potentialContenders,
+              }))
+            upsertWriting(
+              toUpsert,
+              {
+                model: writingModel,
+                promptVersion: WRITING_VERSION,
+                generatedAt: new Date().toISOString(),
+              },
+              dbTarget,
+            )
             done += 1
-            const missing = job.batch.filter((s) => !gotIds.has(s.id))
+            const missing = job.batch.filter((s) => !toUpsert.find((w) => w.sessionId === s.id))
+            const tail =
+              missing.length > 0 ? ` ✗ missing ${missing.map((s) => s.id).join(',')}` : ''
             console.log(
-              `  [${done}/${jobs.length}] ${job.sport} (${job.batch.length}) ✓ wrote ${gotIds.size}${missing.length > 0 ? ` ✗ missing ${missing.map((s) => s.id).join(',')}` : ''}`,
+              `  [${done}/${jobs.length}] ${job.sport} (${job.batch.length}) ✓ wrote ${toUpsert.length}${tail}`,
             )
           }),
         ),
       )
     } else if (jobs.length > 0) {
       await generateWritingViaBatches(anthropicClient, jobs, writingModel, {
-        onSportComplete: async ({ sport, outcomes, elapsedSec }) => {
+        onSportComplete: ({ sport, outcomes, elapsedSec }) => {
           let wrote = 0
           let failed = 0
           const missing: string[] = []
-          await checkpointWriter(() => {
-            for (const { job, results, error } of outcomes) {
-              if (error) {
-                failed += 1
-                for (const s of job.batch) missing.push(s.id)
-                continue
-              }
-              const got = new Set<string>()
-              for (const r of results) {
-                if (sessionMap.has(r.id)) {
-                  writingCheckpoint.results[r.id] = r
-                  got.add(r.id)
-                  wrote += 1
-                }
-              }
-              for (const s of job.batch) if (!got.has(s.id)) missing.push(s.id)
+          const toUpsert: Parameters<typeof upsertWriting>[0] = []
+          for (const { job, results, error } of outcomes) {
+            if (error) {
+              failed += 1
+              for (const s of job.batch) missing.push(s.id)
+              continue
             }
-            writingCheckpoint.updatedAt = new Date().toISOString()
-            writeJson(writingPath, writingCheckpoint)
-          })
+            const got = new Set<string>()
+            for (const r of results) {
+              if (!sessionMap.has(r.id)) continue
+              toUpsert.push({
+                sessionId: r.id,
+                blurb: r.blurb,
+                potentialContendersIntro: r.potentialContendersIntro || undefined,
+                potentialContenders: r.potentialContenders,
+              })
+              got.add(r.id)
+              wrote += 1
+            }
+            for (const s of job.batch) if (!got.has(s.id)) missing.push(s.id)
+            // Per-batch upsert so partial failures don't lose work from other
+            // batches in the same sport.
+            if (toUpsert.length > 0) {
+              upsertWriting(
+                toUpsert.splice(0, toUpsert.length),
+                {
+                  model: writingModel,
+                  promptVersion: WRITING_VERSION,
+                  generatedAt: new Date().toISOString(),
+                },
+                dbTarget,
+              )
+            }
+          }
           const tail = missing.length > 0 ? ` ✗ missing ${missing.join(',')}` : ''
           const fail = failed > 0 ? ` (${failed} batch error(s))` : ''
           console.log(`    ✓ ${sport} done in ${elapsedSec}s — wrote ${wrote}${fail}${tail}`)
         },
       })
     }
-  } else {
-    console.log('\n=== Stage 2: Writing (skipped) ===')
   }
 
-  // Stage 3: Scoring (batched per sport, batches run in parallel)
-  if (!skipScoring && anthropicClient) {
-    const needsScoring = needsContent.filter((s) => {
-      if (scoringCheckpoint.results[s.id]) return false
-      // Need a blurb to score against — either from this run or already in content
-      return !!(writingCheckpoint.results[s.id] || sessionContent[s.id]?.blurb)
+  // Stage 3: Scoring
+  if (skipScoring || !anthropicClient) {
+    if (skipScoring) console.log('\n=== Stage 3: Scoring (skipped) ===')
+  } else {
+    const freshStatus = readStageStatus(dbTarget)
+    const scoringTargets = candidates.filter((s) => {
+      const st = freshStatus.get(s.id)
+      const stageDone = !needsScoring(st, forceAll)
+      if (stageDone && !forceAll) return false
+      // Scoring needs a blurb (writing at current version).
+      return (st?.writingPromptVersion ?? -1) >= WRITING_VERSION
     })
     console.log(`\n=== Stage 3: Scoring ===`)
-    console.log(`${needsScoring.length} session(s) need scoring`)
-    const bySport = groupBySport(needsScoring)
+    console.log(`${scoringTargets.length} session(s) ready for scoring`)
+
+    const bySport = groupBySport(scoringTargets)
     const sports = [...bySport.keys()].sort()
     type Job = { sport: string; batch: Session[] }
     const jobs: Job[] = []
     for (const sport of sports) {
       const list = bySport.get(sport)!
-      for (const batch of chunk(list, SCORING_BATCH_SIZE)) jobs.push({ sport, batch })
+      for (const batch of chunkList(list, SCORING_BATCH_SIZE)) jobs.push({ sport, batch })
     }
     console.log(`${jobs.length} batch(es) across ${sports.length} sport(s)`)
+
     if (dryRun) {
       for (const job of jobs)
         console.log(`  [dry-run] ${job.sport} batch (${job.batch.length} sessions)`)
     } else if (jobs.length > 0) {
+      const { readWritingForSession } = await import('./lib/db.js')
       const limit = pLimit(scoringConcurrency)
       let done = 0
       await Promise.all(
         jobs.map((job) =>
           limit(async () => {
-            const groundingForBatch = new Map<string, GroundingData>()
-            const writingForBatch = new Map<string, WritingData>()
+            const grounding = new Map<string, GroundingData>()
+            const writing = new Map<string, WritingData>()
             for (const s of job.batch) {
-              const g = groundingCheckpoint.results[s.id]
-              if (g) groundingForBatch.set(s.id, g)
-              const w = writingCheckpoint.results[s.id]
-              const existingContent = sessionContent[s.id]
+              const g = groundingThisRun.get(s.id)
+              if (g) grounding.set(s.id, g)
+              const w = readWritingForSession(s.id, dbTarget)
               if (w) {
-                writingForBatch.set(s.id, w)
-              } else if (existingContent?.blurb) {
-                writingForBatch.set(s.id, {
+                writing.set(s.id, {
                   id: s.id,
-                  blurb: existingContent.blurb,
-                  potentialContendersIntro: existingContent.potentialContendersIntro ?? '',
-                  potentialContenders: existingContent.potentialContenders ?? [],
+                  blurb: w.blurb,
+                  potentialContendersIntro: w.potentialContendersIntro ?? '',
+                  potentialContenders: w.potentialContenders,
                 })
               }
             }
@@ -536,106 +403,49 @@ async function main() {
               anthropicClient,
               job.batch,
               job.sport,
-              groundingForBatch,
-              writingForBatch,
+              grounding,
+              writing,
               scoringModel,
             )
-            const gotIds = new Set<string>()
-            for (const r of results) {
-              if (sessionMap.has(r.id)) gotIds.add(r.id)
-            }
-            await checkpointWriter(() => {
-              for (const r of results) {
-                if (sessionMap.has(r.id)) scoringCheckpoint.results[r.id] = r
-              }
-              scoringCheckpoint.updatedAt = new Date().toISOString()
-              writeJson(scoringPath, scoringCheckpoint)
-            })
+            const toUpsert = results
+              .filter((r) => sessionMap.has(r.id))
+              .map((r) => ({ sessionId: r.id, scorecard: r.scorecard }))
+            upsertScoring(
+              toUpsert,
+              {
+                model: scoringModel,
+                promptVersion: SCORING_VERSION,
+                generatedAt: new Date().toISOString(),
+              },
+              dbTarget,
+            )
             done += 1
-            const missing = job.batch.filter((s) => !gotIds.has(s.id))
+            const missing = job.batch.filter((s) => !toUpsert.find((r) => r.sessionId === s.id))
+            const tail =
+              missing.length > 0 ? ` ✗ missing ${missing.map((s) => s.id).join(',')}` : ''
             console.log(
-              `  [${done}/${jobs.length}] ${job.sport} (${job.batch.length}) ✓ scored ${gotIds.size}${missing.length > 0 ? ` ✗ missing ${missing.map((s) => s.id).join(',')}` : ''}`,
+              `  [${done}/${jobs.length}] ${job.sport} (${job.batch.length}) ✓ scored ${toUpsert.length}${tail}`,
             )
           }),
         ),
       )
     }
-  } else {
-    console.log('\n=== Stage 3: Scoring (skipped) ===')
   }
 
-  // Merge into D1: session_content + sessions
-  if (!dryRun) {
-    const contentUpdates: Array<{ id: string; content: SessionContent }> = []
-    for (const session of needsContent) {
-      const writing = writingCheckpoint.results[session.id]
-      const grounding = groundingCheckpoint.results[session.id]
-      const scoring = scoringCheckpoint.results[session.id]
-      const existing = sessionContent[session.id] ?? {}
-      if (!writing && !scoring && !grounding) continue
-      contentUpdates.push({
-        id: session.id,
-        content: {
-          blurb: writing?.blurb ?? existing.blurb,
-          potentialContendersIntro:
-            writing?.potentialContendersIntro ?? existing.potentialContendersIntro,
-          potentialContenders: writing?.potentialContenders ?? existing.potentialContenders,
-          relatedNews: grounding?.relatedNews ?? existing.relatedNews ?? [],
-          scorecard: scoring?.scorecard ?? existing.scorecard,
-          contentMeta: {
-            provider: 'hybrid',
-            groundingModel: grounding ? perplexityModel : existing.contentMeta?.groundingModel,
-            writingModel: writing ? writingModel : existing.contentMeta?.writingModel,
-            scoringModel: scoring ? scoringModel : existing.contentMeta?.scoringModel,
-            generatedAt: new Date().toISOString(),
-            sources: grounding?.sources ?? existing.contentMeta?.sources,
-          },
-        },
-      })
-    }
-
-    const contentStmts = contentUpdates.map((u) => buildSessionContentUpsertSql(u.id, u.content))
-    const contentBatches = chunkSql(contentStmts, 50)
-    contentBatches.forEach((batch, i) => {
-      console.log(`  content upsert batch ${i + 1}/${contentBatches.length}`)
-      executeSql(batch, dbTarget, `gen-content-${i}`)
-    })
-    console.log(`\nWrote ${contentUpdates.length} content rows to D1`)
-
-    // Backfill flat r* fields on sessions from scorecards
-    const sessionUpdates: Session[] = []
-    for (const session of rawSessions) {
-      const sc =
-        contentUpdates.find((u) => u.id === session.id)?.content.scorecard ??
-        sessionContent[session.id]?.scorecard
-      if (!sc) continue
-      const target = rawSessionMap.get(session.id)
-      if (!target) continue
-      sessionUpdates.push({
-        ...target,
-        rSig: sc.significance.score,
-        rExp: sc.experience.score,
-        rStar: sc.starPower.score,
-        rUniq: sc.uniqueness.score,
-        rDem: sc.demand.score,
-        agg: sc.aggregate,
-      })
-    }
-    if (sessionUpdates.length > 0) {
-      const sessionStmts = sessionUpdates.map(buildSessionUpsertSql)
-      const sessionBatches = chunkSql(sessionStmts, 50)
-      sessionBatches.forEach((batch, i) => {
-        console.log(`  sessions upsert batch ${i + 1}/${sessionBatches.length}`)
-        executeSql(batch, dbTarget, `gen-sessions-${i}`)
-      })
-      console.log(`Updated r* fields for ${sessionUpdates.length} sessions in D1`)
-    }
-  }
-
-  const grounded = Object.keys(groundingCheckpoint.results).length
-  const written = Object.keys(writingCheckpoint.results).length
-  const scored = Object.keys(scoringCheckpoint.results).length
-  console.log(`\nDone: ${grounded} grounded, ${written} written, ${scored} scored`)
+  // Report final stage coverage.
+  const finalStatus = readStageStatus(dbTarget)
+  const grounded = [...finalStatus.values()].filter(
+    (s) => (s.groundingPromptVersion ?? -1) >= GROUNDING_VERSION,
+  ).length
+  const written = [...finalStatus.values()].filter(
+    (s) => (s.writingPromptVersion ?? -1) >= WRITING_VERSION,
+  ).length
+  const scored = [...finalStatus.values()].filter(
+    (s) => (s.scoringPromptVersion ?? -1) >= SCORING_VERSION,
+  ).length
+  console.log(
+    `\nDone: ${grounded} grounded (v${GROUNDING_VERSION}), ${written} written (v${WRITING_VERSION}), ${scored} scored (v${SCORING_VERSION})`,
+  )
 }
 
 main().catch((err) => {

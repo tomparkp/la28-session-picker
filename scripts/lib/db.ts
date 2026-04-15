@@ -4,6 +4,7 @@ import { dirname, resolve } from 'node:path'
 
 import type {
   ContentMeta,
+  ContentSource,
   Contender,
   RelatedNews,
   Scorecard,
@@ -247,6 +248,265 @@ export function chunk<T>(arr: T[], size: number): T[][] {
   const out: T[][] = []
   for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size))
   return out
+}
+
+// ---- Staging table helpers ----------------------------------------------
+//
+// The content pipeline writes raw stage outputs to session_grounding,
+// session_writing, and session_scoring. After each upsert the projection
+// `session_content` (and for scoring, `sessions.r_*`/`agg`) gets rebuilt
+// via JOIN so the runtime always reads a denormalized row.
+
+export interface StageMetadata {
+  model: string
+  promptVersion: number
+  generatedAt: string
+  batchId?: string
+}
+
+export interface GroundingUpsert {
+  sessionId: string
+  facts: string[] | null
+  relatedNews: RelatedNews[]
+  sources: ContentSource[] | undefined
+}
+
+export interface WritingUpsert {
+  sessionId: string
+  blurb: string
+  potentialContendersIntro: string | undefined
+  potentialContenders: Contender[]
+}
+
+export interface ScoringUpsert {
+  sessionId: string
+  scorecard: Scorecard
+}
+
+function quoteIdList(ids: string[]): string {
+  return ids.map((id) => sqlString(id)).join(', ')
+}
+
+function buildRebuildSessionContentSql(sessionIds: string[]): string {
+  const inList = quoteIdList(sessionIds)
+  return `
+INSERT OR REPLACE INTO session_content
+  (session_id, blurb, potential_contenders_intro, potential_contenders, related_news, scorecard, content_meta)
+SELECT
+  s.id,
+  w.blurb,
+  w.potential_contenders_intro,
+  w.potential_contenders,
+  g.related_news,
+  sc.scorecard,
+  json_object(
+    'provider', 'hybrid',
+    'groundingModel', g.model,
+    'writingModel', w.model,
+    'scoringModel', sc.model,
+    'sources', CASE WHEN g.sources IS NOT NULL THEN json(g.sources) END,
+    'generatedAt', COALESCE(sc.generated_at, w.generated_at, g.generated_at)
+  )
+FROM sessions s
+LEFT JOIN session_grounding g ON g.session_id = s.id
+LEFT JOIN session_writing w ON w.session_id = s.id
+LEFT JOIN session_scoring sc ON sc.session_id = s.id
+WHERE s.id IN (${inList});`.trim()
+}
+
+function buildSessionRatingUpdateSql(sessionIds: string[]): string {
+  // After scoring, denormalize scorecard scores onto sessions.r_* so the list
+  // view can sort without touching session_content.
+  const inList = quoteIdList(sessionIds)
+  return `
+UPDATE sessions SET
+  r_sig = (SELECT json_extract(sc.scorecard, '$.significance.score') FROM session_scoring sc WHERE sc.session_id = sessions.id),
+  r_exp = (SELECT json_extract(sc.scorecard, '$.experience.score') FROM session_scoring sc WHERE sc.session_id = sessions.id),
+  r_star = (SELECT json_extract(sc.scorecard, '$.starPower.score') FROM session_scoring sc WHERE sc.session_id = sessions.id),
+  r_uniq = (SELECT json_extract(sc.scorecard, '$.uniqueness.score') FROM session_scoring sc WHERE sc.session_id = sessions.id),
+  r_dem = (SELECT json_extract(sc.scorecard, '$.demand.score') FROM session_scoring sc WHERE sc.session_id = sessions.id),
+  agg = (SELECT json_extract(sc.scorecard, '$.aggregate') FROM session_scoring sc WHERE sc.session_id = sessions.id)
+WHERE sessions.id IN (${inList})
+  AND EXISTS (SELECT 1 FROM session_scoring sc WHERE sc.session_id = sessions.id);`.trim()
+}
+
+export function upsertGrounding(
+  rows: GroundingUpsert[],
+  meta: StageMetadata,
+  target: DbTarget,
+): void {
+  if (rows.length === 0) return
+  const stmts = rows.map((r) => {
+    const vals = [
+      r.sessionId,
+      r.facts ? JSON.stringify(r.facts) : null,
+      JSON.stringify(r.relatedNews),
+      r.sources ? JSON.stringify(r.sources) : null,
+      meta.model,
+      meta.promptVersion,
+      meta.generatedAt,
+    ].map(sqlValue)
+    return `INSERT OR REPLACE INTO session_grounding (session_id, facts, related_news, sources, model, prompt_version, generated_at) VALUES (${vals.join(', ')});`
+  })
+  stmts.push(buildRebuildSessionContentSql(rows.map((r) => r.sessionId)))
+  executeSql(stmts, target, 'grounding-upsert')
+}
+
+export function upsertWriting(rows: WritingUpsert[], meta: StageMetadata, target: DbTarget): void {
+  if (rows.length === 0) return
+  const stmts = rows.map((r) => {
+    const vals = [
+      r.sessionId,
+      r.blurb,
+      r.potentialContendersIntro ?? null,
+      JSON.stringify(r.potentialContenders),
+      meta.model,
+      meta.promptVersion,
+      meta.batchId ?? null,
+      meta.generatedAt,
+    ].map(sqlValue)
+    return `INSERT OR REPLACE INTO session_writing (session_id, blurb, potential_contenders_intro, potential_contenders, model, prompt_version, batch_id, generated_at) VALUES (${vals.join(', ')});`
+  })
+  stmts.push(buildRebuildSessionContentSql(rows.map((r) => r.sessionId)))
+  executeSql(stmts, target, 'writing-upsert')
+}
+
+export function upsertScoring(rows: ScoringUpsert[], meta: StageMetadata, target: DbTarget): void {
+  if (rows.length === 0) return
+  const ids = rows.map((r) => r.sessionId)
+  const stmts = rows.map((r) => {
+    const vals = [
+      r.sessionId,
+      JSON.stringify(r.scorecard),
+      meta.model,
+      meta.promptVersion,
+      meta.batchId ?? null,
+      meta.generatedAt,
+    ].map(sqlValue)
+    return `INSERT OR REPLACE INTO session_scoring (session_id, scorecard, model, prompt_version, batch_id, generated_at) VALUES (${vals.join(', ')});`
+  })
+  stmts.push(buildRebuildSessionContentSql(ids))
+  stmts.push(buildSessionRatingUpdateSql(ids))
+  executeSql(stmts, target, 'scoring-upsert')
+}
+
+// ---- Staging read helpers ------------------------------------------------
+
+export interface StageStatus {
+  sessionId: string
+  groundingPromptVersion: number | null
+  writingPromptVersion: number | null
+  scoringPromptVersion: number | null
+}
+
+interface StageStatusRow {
+  session_id: string
+  g_ver: number | null
+  w_ver: number | null
+  s_ver: number | null
+}
+
+export function readStageStatus(target: DbTarget): Map<string, StageStatus> {
+  const rows = querySql<StageStatusRow>(
+    `SELECT s.id as session_id,
+        g.prompt_version as g_ver,
+        w.prompt_version as w_ver,
+        sc.prompt_version as s_ver
+     FROM sessions s
+     LEFT JOIN session_grounding g ON g.session_id = s.id
+     LEFT JOIN session_writing w ON w.session_id = s.id
+     LEFT JOIN session_scoring sc ON sc.session_id = s.id`,
+    target,
+  )
+  const out = new Map<string, StageStatus>()
+  for (const r of rows) {
+    out.set(r.session_id, {
+      sessionId: r.session_id,
+      groundingPromptVersion: r.g_ver ?? null,
+      writingPromptVersion: r.w_ver ?? null,
+      scoringPromptVersion: r.s_ver ?? null,
+    })
+  }
+  return out
+}
+
+interface GroundingRow {
+  session_id: string
+  facts: string | null
+  related_news: string
+  sources: string | null
+  model: string
+  prompt_version: number
+  generated_at: string
+}
+
+interface WritingRow {
+  session_id: string
+  blurb: string
+  potential_contenders_intro: string | null
+  potential_contenders: string
+  model: string
+  prompt_version: number
+  batch_id: string | null
+  generated_at: string
+}
+
+export interface GroundingStageData {
+  facts: string[] | null
+  relatedNews: RelatedNews[]
+  sources: ContentSource[] | undefined
+  model: string
+  promptVersion: number
+  generatedAt: string
+}
+
+export interface WritingStageData {
+  blurb: string
+  potentialContendersIntro: string | undefined
+  potentialContenders: Contender[]
+  model: string
+  promptVersion: number
+  generatedAt: string
+}
+
+export function readGroundingForSession(
+  sessionId: string,
+  target: DbTarget,
+): GroundingStageData | null {
+  const rows = querySql<GroundingRow>(
+    `SELECT * FROM session_grounding WHERE session_id=${sqlString(sessionId)}`,
+    target,
+  )
+  const row = rows[0]
+  if (!row) return null
+  return {
+    facts: row.facts ? (JSON.parse(row.facts) as string[]) : null,
+    relatedNews: JSON.parse(row.related_news) as RelatedNews[],
+    sources: row.sources ? (JSON.parse(row.sources) as ContentSource[]) : undefined,
+    model: row.model,
+    promptVersion: row.prompt_version,
+    generatedAt: row.generated_at,
+  }
+}
+
+export function readWritingForSession(
+  sessionId: string,
+  target: DbTarget,
+): WritingStageData | null {
+  const rows = querySql<WritingRow>(
+    `SELECT * FROM session_writing WHERE session_id=${sqlString(sessionId)}`,
+    target,
+  )
+  const row = rows[0]
+  if (!row) return null
+  return {
+    blurb: row.blurb,
+    potentialContendersIntro: row.potential_contenders_intro ?? undefined,
+    potentialContenders: JSON.parse(row.potential_contenders) as Contender[],
+    model: row.model,
+    promptVersion: row.prompt_version,
+    generatedAt: row.generated_at,
+  }
 }
 
 // Types re-exported so callers don't need to import from @/types

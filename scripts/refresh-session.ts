@@ -1,20 +1,23 @@
 import 'dotenv/config'
 import Anthropic from '@anthropic-ai/sdk'
 
-import type { SessionContent } from '../src/types/session.js'
 import {
-  buildSessionContentUpsertSql,
-  buildSessionUpsertSql,
-  executeSql,
   parseDbTargetFromArgs,
-  readContentById,
+  readGroundingForSession,
   readSessionById,
+  readWritingForSession,
+  upsertGrounding,
+  upsertScoring,
+  upsertWriting,
 } from './lib/db.js'
 import {
   ANTHROPIC_SCORING_DEFAULT_MODEL,
   ANTHROPIC_WRITING_DEFAULT_MODEL,
+  GROUNDING_VERSION,
   type GroundingData,
   PERPLEXITY_DEFAULT_MODEL,
+  SCORING_VERSION,
+  WRITING_VERSION,
   type WritingData,
   buildGroundingPrompt,
   buildScoringPrompt,
@@ -61,12 +64,13 @@ function parseArgs(argv: string[]): ParsedArgs {
       parsed.skipScoring = true
     } else if (arg === '--dry-run') {
       parsed.dryRun = true
+    } else if (arg === '--remote' || arg === '--local') {
+      // handled by parseDbTargetFromArgs
     } else if (arg === '--perplexity-model') {
       parsed.perplexityModel = args[++i]
     } else if (arg.startsWith('--perplexity-model=')) {
       parsed.perplexityModel = arg.slice('--perplexity-model='.length)
     } else if (arg === '--anthropic-model') {
-      // back-compat: apply to both writing and scoring
       parsed.writingModel = args[++i]
       parsed.scoringModel = parsed.writingModel
     } else if (arg.startsWith('--anthropic-model=')) {
@@ -93,16 +97,16 @@ function parseArgs(argv: string[]): ParsedArgs {
 function usage(): never {
   console.error(`Usage: pnpm refresh <sessionId> [options]
 
-Regenerates blurb, contenders, and related news for a single session.
-Bypasses the checkpoint cache; writes directly to D1 (default: --local).
+Regenerates blurb, contenders, and related news for a single session
+against D1 (default: --local; use --remote to write to prod).
 
 Options:
-  --prompt <text>          Extra instructions appended to both grounding and writing prompts
-                           (e.g. "Athlete X has been ruled out"). Treated as authoritative.
-  --skip-grounding         Skip Perplexity; reuse existing relatedNews/sources for this id.
-  --skip-writing           Skip Anthropic writing; only refresh grounding / relatedNews.
+  --prompt <text>          Extra instructions appended to both grounding and writing prompts.
+  --skip-grounding         Skip Perplexity; reuse the grounding row already in D1.
+  --skip-writing           Skip Anthropic writing; only refresh grounding.
   --skip-scoring           Skip Anthropic scoring; leave the existing scorecard in place.
   --dry-run                Print resolved session and prompts, make no API calls.
+  --remote                 Write to production D1 (default is local).
   --perplexity-model <m>         Override grounding model (default: ${PERPLEXITY_DEFAULT_MODEL}).
   --anthropic-writing-model <m>  Writing model (default: ${ANTHROPIC_WRITING_DEFAULT_MODEL}).
   --anthropic-scoring-model <m>  Scoring model (default: ${ANTHROPIC_SCORING_DEFAULT_MODEL}).
@@ -110,7 +114,7 @@ Options:
 
 Example:
   pnpm refresh ATH04
-  pnpm refresh ATH04 --prompt "Noah Lyles withdrew due to injury"
+  pnpm refresh ATH04 --remote --prompt "Noah Lyles withdrew due to injury"
   pnpm refresh ATH04 --skip-grounding --prompt "Tighten the blurb"
 `)
   process.exit(1)
@@ -128,12 +132,8 @@ async function main() {
       console.error('Error: PERPLEXITY_API_KEY is required (or use --skip-grounding)')
       process.exit(1)
     }
-    if (!args.skipWriting && !anthropicKey) {
-      console.error('Error: ANTHROPIC_API_KEY is required (or use --skip-writing)')
-      process.exit(1)
-    }
-    if (!args.skipScoring && !anthropicKey) {
-      console.error('Error: ANTHROPIC_API_KEY is required (or use --skip-scoring)')
+    if ((!args.skipWriting || !args.skipScoring) && !anthropicKey) {
+      console.error('Error: ANTHROPIC_API_KEY is required (or use --skip-writing/--skip-scoring)')
       process.exit(1)
     }
   }
@@ -147,13 +147,15 @@ async function main() {
     process.exit(1)
   }
 
-  const existing = readContentById(session.id, dbTarget) ?? undefined
+  const existingGrounding = readGroundingForSession(session.id, dbTarget)
+  const existingWriting = readWritingForSession(session.id, dbTarget)
+
   console.log(`Session:       ${session.id} — ${session.name}`)
   console.log(`Sport/Venue:   ${session.sport} @ ${session.venue}`)
   console.log(`Date/Time:     ${session.date}, ${session.time}`)
   if (args.prompt) console.log(`Augmentation:  ${args.prompt}`)
-  if (existing?.blurb) {
-    console.log(`\n--- Existing blurb ---\n${existing.blurb}\n----------------------`)
+  if (existingWriting?.blurb) {
+    console.log(`\n--- Existing blurb ---\n${existingWriting.blurb}\n----------------------`)
   }
 
   if (args.dryRun) {
@@ -184,15 +186,39 @@ async function main() {
     console.log(
       `  ✓ facts:${grounding.groundingFacts.length} news:${grounding.relatedNews.length} sources:${grounding.sources?.length ?? 0}`,
     )
+    upsertGrounding(
+      [
+        {
+          sessionId: session.id,
+          facts: grounding.groundingFacts,
+          relatedNews: grounding.relatedNews,
+          sources: grounding.sources,
+        },
+      ],
+      {
+        model: args.perplexityModel,
+        promptVersion: GROUNDING_VERSION,
+        generatedAt: new Date().toISOString(),
+      },
+      dbTarget,
+    )
   } else {
     console.log('\n=== Stage 1: Grounding (skipped) ===')
+    if (existingGrounding && existingGrounding.facts) {
+      grounding = {
+        id: session.id,
+        groundingFacts: existingGrounding.facts,
+        relatedNews: existingGrounding.relatedNews,
+        sources: existingGrounding.sources,
+      }
+    }
   }
 
   const anthropicClient =
     !args.skipWriting || !args.skipScoring ? new Anthropic({ apiKey: anthropicKey! }) : null
 
   // Stage 2: Writing
-  let writing: WritingResult | null = null
+  let writing: WritingData | null = null
   if (!args.skipWriting && anthropicClient) {
     console.log(`\n=== Stage 2: Writing (${args.writingModel}) ===`)
     const groundingMap = new Map<string, GroundingData>()
@@ -213,24 +239,45 @@ async function main() {
     console.log(
       `  ✓ blurb:${writing.blurb.length}ch contenders:${writing.potentialContenders.length}`,
     )
+    upsertWriting(
+      [
+        {
+          sessionId: session.id,
+          blurb: writing.blurb,
+          potentialContendersIntro: writing.potentialContendersIntro || undefined,
+          potentialContenders: writing.potentialContenders,
+        },
+      ],
+      {
+        model: args.writingModel,
+        promptVersion: WRITING_VERSION,
+        generatedAt: new Date().toISOString(),
+      },
+      dbTarget,
+    )
   } else {
     console.log('\n=== Stage 2: Writing (skipped) ===')
+    if (existingWriting) {
+      writing = {
+        id: session.id,
+        blurb: existingWriting.blurb,
+        potentialContendersIntro: existingWriting.potentialContendersIntro ?? '',
+        potentialContenders: existingWriting.potentialContenders,
+      }
+    }
   }
 
   // Stage 3: Scoring
-  let scoring: ScoringResult | null = null
   if (!args.skipScoring && anthropicClient) {
     console.log(`\n=== Stage 3: Scoring (${args.scoringModel}) ===`)
     const groundingMap = new Map<string, GroundingData>()
     if (grounding) groundingMap.set(session.id, grounding)
     const writingMap = new Map<string, WritingData>()
-    const writingForScoring: WritingData | null =
-      writing ?? buildWritingFromExisting(session.id, existing)
-    if (writingForScoring) writingMap.set(session.id, writingForScoring)
-    if (!writingForScoring) {
+    if (!writing) {
       console.error('No blurb available for scoring (run without --skip-writing or seed content).')
       process.exit(1)
     }
+    writingMap.set(session.id, writing)
     const results = await generateScoring(
       anthropicClient,
       [session],
@@ -240,7 +287,7 @@ async function main() {
       args.scoringModel,
       args.prompt,
     )
-    scoring = results.find((r) => r.id === session.id) ?? null
+    const scoring = results.find((r) => r.id === session.id) ?? null
     if (!scoring) {
       console.error('Scoring failed; aborting.')
       process.exit(1)
@@ -249,71 +296,23 @@ async function main() {
     console.log(
       `  ✓ Sig${sc.significance.score} Exp${sc.experience.score} Star${sc.starPower.score} Uniq${sc.uniqueness.score} Dem${sc.demand.score} = ${sc.aggregate}`,
     )
+    upsertScoring(
+      [{ sessionId: session.id, scorecard: scoring.scorecard }],
+      {
+        model: args.scoringModel,
+        promptVersion: SCORING_VERSION,
+        generatedAt: new Date().toISOString(),
+      },
+      dbTarget,
+    )
   } else {
     console.log('\n=== Stage 3: Scoring (skipped) ===')
   }
 
-  // Merge back into session-content.json
-  const next: SessionContent = {
-    blurb: writing?.blurb ?? existing?.blurb,
-    potentialContendersIntro:
-      writing?.potentialContendersIntro ?? existing?.potentialContendersIntro,
-    potentialContenders: writing?.potentialContenders ?? existing?.potentialContenders,
-    relatedNews: grounding?.relatedNews ?? existing?.relatedNews ?? [],
-    scorecard: scoring?.scorecard ?? existing?.scorecard,
-    contentMeta: {
-      provider: 'hybrid',
-      groundingModel: grounding ? args.perplexityModel : existing?.contentMeta?.groundingModel,
-      writingModel: writing ? args.writingModel : existing?.contentMeta?.writingModel,
-      scoringModel: scoring ? args.scoringModel : existing?.contentMeta?.scoringModel,
-      generatedAt: new Date().toISOString(),
-      sources: grounding?.sources ?? existing?.contentMeta?.sources,
-      promptAugmentation: args.prompt,
-    },
-  }
-
-  executeSql(
-    [buildSessionContentUpsertSql(session.id, next)],
-    dbTarget,
-    `refresh-content-${session.id}`,
-  )
-  console.log(`\nWrote ${session.id} content to D1`)
-
-  if (scoring) {
-    const sc = scoring.scorecard
-    const updatedSession = {
-      ...session,
-      rSig: sc.significance.score,
-      rExp: sc.experience.score,
-      rStar: sc.starPower.score,
-      rUniq: sc.uniqueness.score,
-      rDem: sc.demand.score,
-      agg: sc.aggregate,
-    }
-    executeSql([buildSessionUpsertSql(updatedSession)], dbTarget, `refresh-session-${session.id}`)
-    console.log(`Updated r* fields for ${session.id} in D1`)
-  }
-
   if (writing) {
-    console.log(`\n--- New blurb ---\n${writing.blurb}\n-----------------`)
+    console.log(`\n--- Current blurb ---\n${writing.blurb}\n---------------------`)
   }
 }
-
-function buildWritingFromExisting(
-  id: string,
-  existing: SessionContent | undefined,
-): WritingData | null {
-  if (!existing?.blurb) return null
-  return {
-    id,
-    blurb: existing.blurb,
-    potentialContendersIntro: existing.potentialContendersIntro ?? '',
-    potentialContenders: existing.potentialContenders ?? [],
-  }
-}
-
-type WritingResult = Awaited<ReturnType<typeof generateWriting>>[number]
-type ScoringResult = Awaited<ReturnType<typeof generateScoring>>[number]
 
 main().catch((err) => {
   console.error('Fatal error:', err)

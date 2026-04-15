@@ -66,7 +66,7 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
           ARGS="--remote"
-          if [ -n "$SPORT" ]; then ARGS="$ARGS sport=$SPORT"; fi
+          if [ -n "$SPORT" ]; then ARGS="$ARGS --sport=$SPORT"; fi
           if [ "$FORCE" = "true" ]; then ARGS="$ARGS --force"; fi
           if [ "$SKIP_GROUNDING" = "true" ]; then ARGS="$ARGS --skip-grounding"; fi
           if [ "$SKIP_WRITING" = "true" ]; then ARGS="$ARGS --skip-writing"; fi
