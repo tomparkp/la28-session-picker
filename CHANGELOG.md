@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/tomparkp/la28-session-picker/compare/v1.3.1...v1.4.0) (2026-04-15)
+
+
+### Features
+
+* **content:** incremental D1 writes + GHA workflows ([#87](https://github.com/tomparkp/la28-session-picker/issues/87)) ([2d348bc](https://github.com/tomparkp/la28-session-picker/commit/2d348bc5dcf4457b892e28adf2cfdf8ca0f65a2d))
+
+
+### Bug Fixes
+
+* **scripts:** bump querySql maxBuffer so full content reads succeed ([#86](https://github.com/tomparkp/la28-session-picker/issues/86)) ([866c899](https://github.com/tomparkp/la28-session-picker/commit/866c89978b40c69c1976fc1c4c53eeb9dc9f887a))
+
 ## [1.3.1](https://github.com/tomparkp/la28-session-picker/compare/v1.3.0...v1.3.1) (2026-04-14)
 
 
