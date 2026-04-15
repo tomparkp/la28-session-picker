@@ -79,8 +79,10 @@ function buildHttpProxy() {
       return { rows: toPositional(json.result?.[0]?.results ?? []) }
     },
     async (queries: ProxyQuery[]) => {
+      // D1 batch: one HTTP round trip executes the statements sequentially
+      // (not atomically — each stmt auto-commits per the docs).
       const json = await postQuery({
-        queries: queries.map((q) => ({ sql: q.sql, params: q.params })),
+        batch: queries.map((q) => ({ sql: q.sql, params: q.params })),
       })
       return json.result?.map((r) => ({ rows: toPositional(r.results ?? []) })) ?? []
     },
