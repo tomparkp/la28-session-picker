@@ -141,14 +141,14 @@ async function main() {
   const dbTarget = parseDbTargetFromArgs(process.argv.slice(2))
   console.log(`D1 target: ${dbTarget}`)
 
-  const session = readSessionById(args.sessionId, dbTarget)
+  const session = await readSessionById(args.sessionId, dbTarget)
   if (!session) {
     console.error(`Error: session "${args.sessionId}" not found in D1 (${dbTarget})`)
     process.exit(1)
   }
 
-  const existingGrounding = readGroundingForSession(session.id, dbTarget)
-  const existingWriting = readWritingForSession(session.id, dbTarget)
+  const existingGrounding = await readGroundingForSession(session.id, dbTarget)
+  const existingWriting = await readWritingForSession(session.id, dbTarget)
 
   console.log(`Session:       ${session.id} — ${session.name}`)
   console.log(`Sport/Venue:   ${session.sport} @ ${session.venue}`)
@@ -186,7 +186,7 @@ async function main() {
     console.log(
       `  ✓ facts:${grounding.groundingFacts.length} news:${grounding.relatedNews.length} sources:${grounding.sources?.length ?? 0}`,
     )
-    upsertGrounding(
+    await upsertGrounding(
       [
         {
           sessionId: session.id,
@@ -239,7 +239,7 @@ async function main() {
     console.log(
       `  ✓ blurb:${writing.blurb.length}ch contenders:${writing.potentialContenders.length}`,
     )
-    upsertWriting(
+    await upsertWriting(
       [
         {
           sessionId: session.id,
@@ -296,7 +296,7 @@ async function main() {
     console.log(
       `  ✓ Sig${sc.significance.score} Exp${sc.experience.score} Star${sc.starPower.score} Uniq${sc.uniqueness.score} Dem${sc.demand.score} = ${sc.aggregate}`,
     )
-    upsertScoring(
+    await upsertScoring(
       [{ sessionId: session.id, scorecard: scoring.scorecard }],
       {
         model: args.scoringModel,

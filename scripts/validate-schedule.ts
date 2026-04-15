@@ -177,7 +177,7 @@ const csvRaw = readFileSync(csvPath, 'utf-8')
 const csvRows = parseCsv(csvRaw)
 const csvSessions = groupBySession(csvRows)
 
-const sessions: Session[] = readAllSessions(parseDbTargetFromArgs()) as Session[]
+const sessions: Session[] = (await readAllSessions(parseDbTargetFromArgs())) as Session[]
 const sessionMap = new Map(sessions.map((s) => [s.id, s]))
 
 console.log(`\n${'='.repeat(70)}`)

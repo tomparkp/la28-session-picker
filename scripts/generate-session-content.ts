@@ -133,8 +133,8 @@ async function main() {
   console.log(`Writing:   anthropic  ${writingModel}  ${writingMode}`)
   console.log(`Scoring:   anthropic  ${scoringModel}  concurrency=${scoringConcurrency}`)
 
-  const sessions = readAllSessions(dbTarget)
-  const stageStatus = readStageStatus(dbTarget)
+  const sessions = await readAllSessions(dbTarget)
+  const stageStatus = await readStageStatus(dbTarget)
   const sessionMap = new Map(sessions.map((s) => [s.id, s]))
   console.log(`Loaded ${sessions.length} sessions from D1`)
 
@@ -211,7 +211,7 @@ async function main() {
     if (skipWriting) console.log('\n=== Stage 2: Writing (skipped) ===')
   } else {
     // Re-read stage status so we pick up grounding rows written moments ago.
-    const freshStatus = readStageStatus(dbTarget)
+    const freshStatus = await readStageStatus(dbTarget)
     const writingTargets = candidates.filter((s) => {
       const st = freshStatus.get(s.id)
       const stageDone = !needsWriting(st, forceAll)
@@ -229,7 +229,7 @@ async function main() {
       if (missingGrounding.length > 0) {
         const { readGroundingForSession } = await import('./lib/db.js')
         for (const s of missingGrounding) {
-          const g = readGroundingForSession(s.id, dbTarget)
+          const g = await readGroundingForSession(s.id, dbTarget)
           if (g && g.facts) {
             groundingThisRun.set(s.id, {
               id: s.id,
@@ -353,7 +353,7 @@ async function main() {
   if (skipScoring || !anthropicClient) {
     if (skipScoring) console.log('\n=== Stage 3: Scoring (skipped) ===')
   } else {
-    const freshStatus = readStageStatus(dbTarget)
+    const freshStatus = await readStageStatus(dbTarget)
     const scoringTargets = candidates.filter((s) => {
       const st = freshStatus.get(s.id)
       const stageDone = !needsScoring(st, forceAll)
@@ -389,7 +389,7 @@ async function main() {
             for (const s of job.batch) {
               const g = groundingThisRun.get(s.id)
               if (g) grounding.set(s.id, g)
-              const w = readWritingForSession(s.id, dbTarget)
+              const w = await readWritingForSession(s.id, dbTarget)
               if (w) {
                 writing.set(s.id, {
                   id: s.id,
@@ -433,7 +433,7 @@ async function main() {
   }
 
   // Report final stage coverage.
-  const finalStatus = readStageStatus(dbTarget)
+  const finalStatus = await readStageStatus(dbTarget)
   const grounded = [...finalStatus.values()].filter(
     (s) => (s.groundingPromptVersion ?? -1) >= GROUNDING_VERSION,
   ).length
