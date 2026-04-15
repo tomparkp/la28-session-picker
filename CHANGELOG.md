@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/tomparkp/la28-session-picker/compare/v1.4.0...v1.4.1) (2026-04-15)
+
+
+### Bug Fixes
+
+* **scripts:** silence wrangler chatter on D1 upserts ([#90](https://github.com/tomparkp/la28-session-picker/issues/90)) ([9848d07](https://github.com/tomparkp/la28-session-picker/commit/9848d073da3776fe86a609ff6083d2607ee63c1e))
+
 ## [1.4.0](https://github.com/tomparkp/la28-session-picker/compare/v1.3.1...v1.4.0) (2026-04-15)
 
 
