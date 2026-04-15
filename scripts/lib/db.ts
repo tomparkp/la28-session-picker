@@ -132,7 +132,9 @@ export function querySql<T = Record<string, unknown>>(command: string, target: D
       '--json',
       `--command=${command}`,
     ],
-    { encoding: 'utf8' },
+    // session_content rows are JSON blobs and SELECT * can run into tens of MB.
+    // Default maxBuffer is 1MB which hits ENOBUFS; give it plenty of headroom.
+    { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 },
   )
   const parsed = JSON.parse(out) as Array<{ results: T[] }>
   return parsed[0]?.results ?? []
