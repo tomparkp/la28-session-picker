@@ -114,9 +114,22 @@ export function buildSessionContentUpsertSql(sessionId: string, content: Session
 
 export function executeSqlFile(sqlPath: string, target: DbTarget): void {
   const targetFlag = target === 'remote' ? '--remote' : '--local'
-  execFileSync('pnpm', ['wrangler', 'd1', 'execute', DB_NAME, targetFlag, `--file=${sqlPath}`], {
-    stdio: 'inherit',
-  })
+  // Capture wrangler's output so the happy-path banner + JSON result isn't
+  // flushed to the console on every upsert (one per session × 800+ sessions
+  // produced tens of thousands of noisy log lines). If the invocation errors,
+  // execFileSync throws and we surface what wrangler printed.
+  try {
+    execFileSync(
+      'pnpm',
+      ['--silent', 'wrangler', 'd1', 'execute', DB_NAME, targetFlag, `--file=${sqlPath}`],
+      { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 },
+    )
+  } catch (err) {
+    const e = err as { stdout?: string; stderr?: string }
+    if (e.stdout) process.stderr.write(e.stdout)
+    if (e.stderr) process.stderr.write(e.stderr)
+    throw err
+  }
 }
 
 export function querySql<T = Record<string, unknown>>(command: string, target: DbTarget): T[] {
