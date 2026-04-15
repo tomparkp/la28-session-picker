@@ -7,6 +7,7 @@ import type {
   ContentBlock,
   MessageCreateParamsNonStreaming,
 } from '@anthropic-ai/sdk/resources/messages'
+import pLimit from 'p-limit'
 
 import type { SportKnowledge } from '../../src/data/sport-knowledge.js'
 import type {
@@ -555,6 +556,33 @@ export interface WritingBatchesOptions {
 // meaningful progress visibility (each sport's closure is a visible event) and
 // incremental checkpoint persistence, which a single global batch doesn't
 // offer since the API only exposes aggregate counts.
+// Anthropic tier-1 request limit is 50 RPM. With 60+ sports in a single
+// `--force` run we have to fan out the batch create/poll calls carefully or
+// the org-level RPM cap trips. Cap to a conservative parallelism and retry
+// 429s using the server-suggested backoff.
+const ANTHROPIC_API_CONCURRENCY = 5
+
+async function anthropicWithRetry<T>(fn: () => Promise<T>, label: string): Promise<T> {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      return await fn()
+    } catch (err: unknown) {
+      const e = err as { status?: number; headers?: { get?: (k: string) => string | null } }
+      if (e?.status !== 429 || attempt >= 5) throw err
+      const retryHeader = e.headers?.get?.('retry-after')
+      const retryAfter = retryHeader ? Number(retryHeader) : NaN
+      const waitMs =
+        Number.isFinite(retryAfter) && retryAfter > 0
+          ? retryAfter * 1000
+          : Math.min(60_000, 2_000 * 2 ** attempt)
+      console.log(
+        `    429 on ${label} — retrying in ${Math.round(waitMs / 1000)}s (attempt ${attempt + 1}/5)`,
+      )
+      await new Promise((r) => setTimeout(r, waitMs))
+    }
+  }
+}
+
 export async function generateWritingViaBatches(
   client: Anthropic,
   jobs: WritingJob[],
@@ -587,21 +615,29 @@ export async function generateWritingViaBatches(
   }
   const pending = new Map<string, Pending>()
 
-  for (const sport of sports) {
-    const group = bySport.get(sport)!
-    const requests = group.jobs.map((job, idx) => ({
-      custom_id: `w-${idx}`,
-      params: buildWritingRequest(
-        job.batch,
-        job.sport,
-        job.grounding,
-        model,
-        options.extraInstructions,
-      ),
-    }))
-    const created = await client.messages.batches.create({ requests })
-    pending.set(created.id, { sport, group, batchId: created.id, startedAt: Date.now() })
-  }
+  const createLimit = pLimit(ANTHROPIC_API_CONCURRENCY)
+  await Promise.all(
+    sports.map((sport) =>
+      createLimit(async () => {
+        const group = bySport.get(sport)!
+        const requests = group.jobs.map((job, idx) => ({
+          custom_id: `w-${idx}`,
+          params: buildWritingRequest(
+            job.batch,
+            job.sport,
+            job.grounding,
+            model,
+            options.extraInstructions,
+          ),
+        }))
+        const created = await anthropicWithRetry(
+          () => client.messages.batches.create({ requests }),
+          `create ${sport}`,
+        )
+        pending.set(created.id, { sport, group, batchId: created.id, startedAt: Date.now() })
+      }),
+    ),
+  )
 
   console.log(`  ${pending.size} batch(es) in flight. Polling…`)
 
@@ -611,11 +647,17 @@ export async function generateWritingViaBatches(
   while (pending.size > 0) {
     await new Promise((r) => setTimeout(r, pollIntervalMs))
 
+    const pollLimit = pLimit(ANTHROPIC_API_CONCURRENCY)
     const statuses = await Promise.all(
-      [...pending.values()].map(async (p) => {
-        const batch = await client.messages.batches.retrieve(p.batchId)
-        return { pending: p, batch }
-      }),
+      [...pending.values()].map((p) =>
+        pollLimit(async () => {
+          const batch = await anthropicWithRetry(
+            () => client.messages.batches.retrieve(p.batchId),
+            `poll ${p.sport}`,
+          )
+          return { pending: p, batch }
+        }),
+      ),
     )
 
     const total = sports.length
@@ -633,7 +675,10 @@ export async function generateWritingViaBatches(
 
       const outcomes: WritingBatchOutcome[] = p.group.jobs.map((job) => ({ job, results: [] }))
       const byId = new Map(outcomes.map((o, i) => [`w-${i}`, o]))
-      const results = await client.messages.batches.results(p.batchId)
+      const results = await anthropicWithRetry(
+        () => client.messages.batches.results(p.batchId),
+        `results ${p.sport}`,
+      )
       for await (const item of results) {
         const outcome = byId.get(item.custom_id)
         if (!outcome) continue
