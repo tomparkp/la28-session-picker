@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/terms')({
   head: () => ({
-    meta: [{ title: 'Terms of Use · 2028 Games Unofficial Session Guide' }],
+    meta: [{ title: 'Terms of Use · 2028 Games Unofficial Guide' }],
   }),
   component: TermsPage,
 })
@@ -19,9 +19,9 @@ function TermsPage() {
         <section>
           <h2 className="font-display mt-6 mb-2 text-lg">Unofficial project</h2>
           <p>
-            2028 Games Unofficial Session Guide is an unofficial, open-source tool and is not
-            affiliated with, endorsed by, or sponsored by any official games organizing body. All
-            trademarks are the property of their respective owners.
+            2028 Games Unofficial Guide is an open-source tool and is not affiliated with, endorsed
+            by, or sponsored by any official games organizing body. All trademarks are the property
+            of their respective owners.
           </p>
         </section>
 

@@ -17,7 +17,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: '2028 Games Unofficial Session Guide' },
+      { title: '2028 Games Unofficial Guide' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
