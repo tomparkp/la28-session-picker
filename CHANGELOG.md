@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/tomparkp/2028-games-guide/compare/28games-v1.6.0...28games-v1.6.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* **scripts:** chunk D1 upserts to stay within 100-parameter limit ([#101](https://github.com/tomparkp/2028-games-guide/issues/101)) ([7c7c4cd](https://github.com/tomparkp/2028-games-guide/commit/7c7c4cdd8df75d410f1b97ee4499284336f808fa))
+
 ## [1.6.0](https://github.com/tomparkp/2028-games-guide/compare/28games-v1.5.0...28games-v1.6.0) (2026-04-16)
 
 
