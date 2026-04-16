@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/privacy')({
   head: () => ({
-    meta: [{ title: 'Privacy Policy · LA28 Session Picker' }],
+    meta: [{ title: 'Privacy Policy · 2028 Games Unofficial Guide' }],
   }),
   component: PrivacyPage,
 })
@@ -17,7 +17,7 @@ function PrivacyPage() {
 
       <div className="text-ink2 prose prose-sm max-w-none space-y-5 text-sm leading-relaxed">
         <p>
-          LA28 Session Picker is an unofficial, open-source project. We try to collect as little
+          2028 Games Unofficial Guide is an open-source project. We try to collect as little
           information as possible. This page describes what we do collect and the third parties that
           process it.
         </p>

@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/terms')({
   head: () => ({
-    meta: [{ title: 'Terms of Use · LA28 Session Picker' }],
+    meta: [{ title: 'Terms of Use · 2028 Games Unofficial Guide' }],
   }),
   component: TermsPage,
 })
@@ -19,10 +19,10 @@ function TermsPage() {
         <section>
           <h2 className="font-display mt-6 mb-2 text-lg">Unofficial project</h2>
           <p>
-            LA28 Session Picker is an unofficial, open-source tool and is not affiliated with,
-            endorsed by, or sponsored by the International Olympic Committee (IOC), the LA28
-            Organizing Committee, or any official Olympic body. All Olympic and LA28 trademarks are
-            the property of their respective owners.
+            2028 Games Unofficial Guide is an open-source tool and is not affiliated with, endorsed
+            by, or sponsored by the International Olympic Committee (IOC), the LA28 Organizing
+            Committee, or any official Olympic body. All Olympic and LA28 trademarks are the
+            property of their respective owners.
           </p>
         </section>
 
