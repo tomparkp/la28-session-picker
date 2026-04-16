@@ -387,45 +387,47 @@ export function SessionDetail({
         </div>
       </div>
 
-      <div className="px-5 pt-2 pb-5 max-md:px-4">
-        <h3 className="text-ink3 text-[0.68rem] font-semibold tracking-[0.08em] uppercase">
-          Scorecard
-        </h3>
+      {insights.dimensions.length > 0 ? (
+        <div className="px-5 pt-2 pb-5 max-md:px-4">
+          <h3 className="text-ink3 text-[0.68rem] font-semibold tracking-[0.08em] uppercase">
+            Scorecard
+          </h3>
 
-        <div className="mt-3 flex flex-col gap-2.5">
-          {insights.dimensions.map((dimension) => {
-            const colors = ringColors[dimension.key as ScoreKey]
-            return (
-              <div
-                key={dimension.key}
-                className={cn('flex items-start gap-3.5 rounded-lg px-3.5 py-3', colors?.tint)}
-              >
+          <div className="mt-3 flex flex-col gap-2.5">
+            {insights.dimensions.map((dimension) => {
+              const colors = ringColors[dimension.key as ScoreKey]
+              return (
                 <div
-                  className={cn(
-                    'flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-[0.95rem] font-bold tabular-nums',
-                    colors?.badge,
-                  )}
+                  key={dimension.key}
+                  className={cn('flex items-start gap-3.5 rounded-lg px-3.5 py-3', colors?.tint)}
                 >
-                  {dimension.score.toFixed(1)}
-                </div>
-                <div className="min-w-0 flex-1">
-                  <span
+                  <div
                     className={cn(
-                      'text-[0.7rem] font-semibold tracking-[0.06em] uppercase',
-                      colors?.label,
+                      'flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-[0.95rem] font-bold tabular-nums',
+                      colors?.badge,
                     )}
                   >
-                    {dimension.label}
-                  </span>
-                  <p className="text-ink2 mt-1 text-[0.78rem] leading-normal">
-                    {dimension.explanation}
-                  </p>
+                    {dimension.score.toFixed(1)}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <span
+                      className={cn(
+                        'text-[0.7rem] font-semibold tracking-[0.06em] uppercase',
+                        colors?.label,
+                      )}
+                    >
+                      {dimension.label}
+                    </span>
+                    <p className="text-ink2 mt-1 text-[0.78rem] leading-normal">
+                      {dimension.explanation}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
-      </div>
+      ) : null}
 
       {insights.potentialContenders.length > 0 ? (
         <div className="px-5 pt-2 pb-5 max-md:px-4">

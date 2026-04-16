@@ -32,7 +32,7 @@ This is a **TanStack Start** (React 19) full-stack app with SSR, file-based rout
 
 ### Database
 
-Session data lives in Cloudflare D1 (binding `DB`). Schema in `src/db/schema.ts` (Drizzle). Runtime reads via `drizzle(env.DB)` from `cloudflare:workers`; writer scripts (`generate-content`, `refresh`, `rate-sessions`) shell out to `wrangler d1 execute` via `scripts/lib/db.ts` — default `--local`, pass `--remote` for prod.
+Session data lives in Cloudflare D1 (binding `DB`). Schema in `src/db/schema.ts` (Drizzle). Runtime reads via `drizzle(env.DB)` from `cloudflare:workers`; writer scripts (`generate-content`, `refresh`) shell out to `wrangler d1 execute` via `scripts/lib/db.ts` — default `--local`, pass `--remote` for prod.
 
 - `pnpm db:migrate:local` / `pnpm db:migrate:remote` — apply migrations
 - `pnpm db:generate --name <desc>` — generate a new migration (omit `--name` and you get a random suffix like `needy_ma_gnuci`)

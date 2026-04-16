@@ -12,7 +12,6 @@
     "preview": "vite preview",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "rate-sessions": "tsx scripts/rate-sessions.ts",
     "generate-content": "tsx scripts/generate-session-content.ts",
     "fetch:paris-medals": "tsx scripts/fetch-paris-2024-medals.ts",
     "refresh": "tsx scripts/refresh-session.ts",

@@ -360,56 +360,5 @@ export async function upsertScoring(
   }
 }
 
-// ---- Bulk session rating update (used by rate-sessions) -----------------
-
-export interface SessionRatingUpdate {
-  id: string
-  rSig: number
-  rExp: number
-  rStar: number
-  rUniq: number
-  rDem: number
-  agg: number
-}
-
-export async function updateSessionRatings(
-  updates: SessionRatingUpdate[],
-  target: DbTarget,
-): Promise<void> {
-  if (updates.length === 0) return
-  const db = getDrizzleDb(target)
-  for (const batch of chunk(updates, 50)) {
-    const ops = batch.map((u) =>
-      db
-        .update(sessionsTable)
-        .set({
-          rSig: u.rSig,
-          rExp: u.rExp,
-          rStar: u.rStar,
-          rUniq: u.rUniq,
-          rDem: u.rDem,
-          agg: u.agg,
-        })
-        .where(eq(sessionsTable.id, u.id)),
-    )
-    await db.batch(ops as unknown as Parameters<typeof db.batch>[0])
-  }
-}
-
-export async function readScorecards(target: DbTarget): Promise<Map<string, Scorecard>> {
-  const db = getDrizzleDb(target)
-  const rows = await db
-    .select({
-      sessionId: sessionContentTable.sessionId,
-      scorecard: sessionContentTable.scorecard,
-    })
-    .from(sessionContentTable)
-  const out = new Map<string, Scorecard>()
-  for (const r of rows) {
-    if (r.scorecard) out.set(r.sessionId, r.scorecard as Scorecard)
-  }
-  return out
-}
-
 // Re-export types for callers
 export type { Contender, ContentMeta, RelatedNews, Scorecard, Session, SessionContent }

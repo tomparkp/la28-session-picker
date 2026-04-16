@@ -15,7 +15,7 @@ The dev server runs on port 3000.
 - `pnpm build` — Production build
 - `pnpm preview` — Preview production build
 - `pnpm test` — Run tests with Vitest
-- `pnpm rate-sessions` — Recompute rating fields in D1 (see [Database](#database))
+- `pnpm generate-content` — Run the AI content + scorecard pipeline (see [Database](#database))
 
 ## Database
 
@@ -57,16 +57,9 @@ To browse/edit prod data, use the official [Cloudflare Dashboard D1 console](htt
 3. Review the SQL, then `pnpm db:migrate:local` to apply
 4. After merge, `pnpm db:migrate:remote` to apply to prod
 
-### Regenerating session ratings
+### Regenerating session content and ratings
 
-After changing rating logic in `src/lib/ratings.ts` or session content, recompute stored ratings:
-
-```bash
-pnpm rate-sessions           # writes to local D1
-pnpm rate-sessions --remote  # writes to prod D1
-```
-
-`pnpm generate-content` and `pnpm refresh <sessionId>` follow the same local-by-default, `--remote` opt-in pattern.
+`pnpm generate-content` runs the full AI pipeline (grounding → writing → scoring) and writes the resulting blurb, scorecard, and aggregate rating back to D1 in one pass. `pnpm refresh <sessionId>` refreshes a single session. Both default to local D1; pass `--remote` to target prod.
 
 ## Routing
 
