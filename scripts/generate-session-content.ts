@@ -179,7 +179,7 @@ async function main() {
               return
             }
             groundingThisRun.set(session.id, g)
-            upsertGrounding(
+            await upsertGrounding(
               [
                 {
                   sessionId: session.id,
@@ -282,7 +282,7 @@ async function main() {
                 potentialContendersIntro: r.potentialContendersIntro || undefined,
                 potentialContenders: r.potentialContenders,
               }))
-            upsertWriting(
+            await upsertWriting(
               toUpsert,
               {
                 model: writingModel,
@@ -303,7 +303,7 @@ async function main() {
       )
     } else if (jobs.length > 0) {
       await generateWritingViaBatches(anthropicClient, jobs, writingModel, {
-        onSportComplete: ({ sport, outcomes, elapsedSec }) => {
+        onSportComplete: async ({ sport, outcomes, elapsedSec }) => {
           let wrote = 0
           let failed = 0
           const missing: string[] = []
@@ -330,7 +330,7 @@ async function main() {
             // Per-batch upsert so partial failures don't lose work from other
             // batches in the same sport.
             if (toUpsert.length > 0) {
-              upsertWriting(
+              await upsertWriting(
                 toUpsert.splice(0, toUpsert.length),
                 {
                   model: writingModel,
@@ -410,7 +410,7 @@ async function main() {
             const toUpsert = results
               .filter((r) => sessionMap.has(r.id))
               .map((r) => ({ sessionId: r.id, scorecard: r.scorecard }))
-            upsertScoring(
+            await upsertScoring(
               toUpsert,
               {
                 model: scoringModel,
