@@ -79,12 +79,15 @@ function buildHttpProxy() {
       return { rows: toPositional(json.result?.[0]?.results ?? []) }
     },
     async (queries: ProxyQuery[]) => {
-      // D1 batch: one HTTP round trip executes the statements sequentially
-      // (not atomically — each stmt auto-commits per the docs).
-      const json = await postQuery({
-        batch: queries.map((q) => ({ sql: q.sql, params: q.params })),
-      })
-      return json.result?.map((r) => ({ rows: toPositional(r.results ?? []) })) ?? []
+      // Cloudflare's /query REST endpoint only accepts {sql, params} for a
+      // single statement — it has no batch endpoint, so fan the statements
+      // out as separate POSTs. Each auto-commits; not atomic across the batch.
+      const out: ProxyResult[] = []
+      for (const q of queries) {
+        const json = await postQuery({ sql: q.sql, params: q.params })
+        out.push({ rows: toPositional(json.result?.[0]?.results ?? []) })
+      }
+      return out
     },
     { schema, casing: 'snake_case' },
   )
