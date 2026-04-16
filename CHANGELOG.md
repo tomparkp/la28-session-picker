@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.2](https://github.com/tomparkp/2028-games-guide/compare/28games-v1.6.1...28games-v1.6.2) (2026-04-16)
+
+
+### Refactors
+
+* drop rule-based ratings in favor of AI-only scorecards ([#103](https://github.com/tomparkp/2028-games-guide/issues/103)) ([aebe4a5](https://github.com/tomparkp/2028-games-guide/commit/aebe4a5b92940406faf96960c8f3f7d87b8eda7c))
+
 ## [1.6.1](https://github.com/tomparkp/2028-games-guide/compare/28games-v1.6.0...28games-v1.6.1) (2026-04-16)
 
 
