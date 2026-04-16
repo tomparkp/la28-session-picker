@@ -19,6 +19,10 @@ import type {
 
 import { getDrizzleDb } from './drizzle-db'
 
+const D1_CHUNK_SIZE_6_COLS = 16
+const D1_CHUNK_SIZE_7_COLS = 14
+const D1_CHUNK_SIZE_8_COLS = 12
+
 export type DbTarget = 'local' | 'remote'
 
 export function parseDbTargetFromArgs(argv: string[] = process.argv.slice(2)): DbTarget {
@@ -248,33 +252,35 @@ export async function upsertGrounding(
 ): Promise<void> {
   if (rows.length === 0) return
   const db = getDrizzleDb(target)
-  const values = rows.map((r) => ({
-    sessionId: r.sessionId,
-    facts: r.facts,
-    relatedNews: r.relatedNews,
-    sources: r.sources ?? null,
-    model: meta.model,
-    promptVersion: meta.promptVersion,
-    generatedAt: meta.generatedAt,
-  }))
-  const ids = rows.map((r) => r.sessionId)
-  await db.batch([
-    db
-      .insert(sessionGroundingTable)
-      .values(values)
-      .onConflictDoUpdate({
-        target: sessionGroundingTable.sessionId,
-        set: {
-          facts: sql.raw('excluded.facts'),
-          relatedNews: sql.raw('excluded.related_news'),
-          sources: sql.raw('excluded.sources'),
-          model: sql.raw('excluded.model'),
-          promptVersion: sql.raw('excluded.prompt_version'),
-          generatedAt: sql.raw('excluded.generated_at'),
-        },
-      }),
-    db.run(rebuildContentSql(ids)),
-  ])
+  for (const batch of chunk(rows, D1_CHUNK_SIZE_7_COLS)) {
+    const values = batch.map((r) => ({
+      sessionId: r.sessionId,
+      facts: r.facts,
+      relatedNews: r.relatedNews,
+      sources: r.sources ?? null,
+      model: meta.model,
+      promptVersion: meta.promptVersion,
+      generatedAt: meta.generatedAt,
+    }))
+    const ids = batch.map((r) => r.sessionId)
+    await db.batch([
+      db
+        .insert(sessionGroundingTable)
+        .values(values)
+        .onConflictDoUpdate({
+          target: sessionGroundingTable.sessionId,
+          set: {
+            facts: sql.raw('excluded.facts'),
+            relatedNews: sql.raw('excluded.related_news'),
+            sources: sql.raw('excluded.sources'),
+            model: sql.raw('excluded.model'),
+            promptVersion: sql.raw('excluded.prompt_version'),
+            generatedAt: sql.raw('excluded.generated_at'),
+          },
+        }),
+      db.run(rebuildContentSql(ids)),
+    ])
+  }
 }
 
 export async function upsertWriting(
@@ -284,35 +290,37 @@ export async function upsertWriting(
 ): Promise<void> {
   if (rows.length === 0) return
   const db = getDrizzleDb(target)
-  const values = rows.map((r) => ({
-    sessionId: r.sessionId,
-    blurb: r.blurb,
-    potentialContendersIntro: r.potentialContendersIntro ?? null,
-    potentialContenders: r.potentialContenders,
-    model: meta.model,
-    promptVersion: meta.promptVersion,
-    batchId: meta.batchId ?? null,
-    generatedAt: meta.generatedAt,
-  }))
-  const ids = rows.map((r) => r.sessionId)
-  await db.batch([
-    db
-      .insert(sessionWritingTable)
-      .values(values)
-      .onConflictDoUpdate({
-        target: sessionWritingTable.sessionId,
-        set: {
-          blurb: sql.raw('excluded.blurb'),
-          potentialContendersIntro: sql.raw('excluded.potential_contenders_intro'),
-          potentialContenders: sql.raw('excluded.potential_contenders'),
-          model: sql.raw('excluded.model'),
-          promptVersion: sql.raw('excluded.prompt_version'),
-          batchId: sql.raw('excluded.batch_id'),
-          generatedAt: sql.raw('excluded.generated_at'),
-        },
-      }),
-    db.run(rebuildContentSql(ids)),
-  ])
+  for (const batch of chunk(rows, D1_CHUNK_SIZE_8_COLS)) {
+    const values = batch.map((r) => ({
+      sessionId: r.sessionId,
+      blurb: r.blurb,
+      potentialContendersIntro: r.potentialContendersIntro ?? null,
+      potentialContenders: r.potentialContenders,
+      model: meta.model,
+      promptVersion: meta.promptVersion,
+      batchId: meta.batchId ?? null,
+      generatedAt: meta.generatedAt,
+    }))
+    const ids = batch.map((r) => r.sessionId)
+    await db.batch([
+      db
+        .insert(sessionWritingTable)
+        .values(values)
+        .onConflictDoUpdate({
+          target: sessionWritingTable.sessionId,
+          set: {
+            blurb: sql.raw('excluded.blurb'),
+            potentialContendersIntro: sql.raw('excluded.potential_contenders_intro'),
+            potentialContenders: sql.raw('excluded.potential_contenders'),
+            model: sql.raw('excluded.model'),
+            promptVersion: sql.raw('excluded.prompt_version'),
+            batchId: sql.raw('excluded.batch_id'),
+            generatedAt: sql.raw('excluded.generated_at'),
+          },
+        }),
+      db.run(rebuildContentSql(ids)),
+    ])
+  }
 }
 
 export async function upsertScoring(
@@ -322,32 +330,34 @@ export async function upsertScoring(
 ): Promise<void> {
   if (rows.length === 0) return
   const db = getDrizzleDb(target)
-  const values = rows.map((r) => ({
-    sessionId: r.sessionId,
-    scorecard: r.scorecard,
-    model: meta.model,
-    promptVersion: meta.promptVersion,
-    batchId: meta.batchId ?? null,
-    generatedAt: meta.generatedAt,
-  }))
-  const ids = rows.map((r) => r.sessionId)
-  await db.batch([
-    db
-      .insert(sessionScoringTable)
-      .values(values)
-      .onConflictDoUpdate({
-        target: sessionScoringTable.sessionId,
-        set: {
-          scorecard: sql.raw('excluded.scorecard'),
-          model: sql.raw('excluded.model'),
-          promptVersion: sql.raw('excluded.prompt_version'),
-          batchId: sql.raw('excluded.batch_id'),
-          generatedAt: sql.raw('excluded.generated_at'),
-        },
-      }),
-    db.run(rebuildContentSql(ids)),
-    db.run(updateRatingsSql(ids)),
-  ])
+  for (const batch of chunk(rows, D1_CHUNK_SIZE_6_COLS)) {
+    const values = batch.map((r) => ({
+      sessionId: r.sessionId,
+      scorecard: r.scorecard,
+      model: meta.model,
+      promptVersion: meta.promptVersion,
+      batchId: meta.batchId ?? null,
+      generatedAt: meta.generatedAt,
+    }))
+    const ids = batch.map((r) => r.sessionId)
+    await db.batch([
+      db
+        .insert(sessionScoringTable)
+        .values(values)
+        .onConflictDoUpdate({
+          target: sessionScoringTable.sessionId,
+          set: {
+            scorecard: sql.raw('excluded.scorecard'),
+            model: sql.raw('excluded.model'),
+            promptVersion: sql.raw('excluded.prompt_version'),
+            batchId: sql.raw('excluded.batch_id'),
+            generatedAt: sql.raw('excluded.generated_at'),
+          },
+        }),
+      db.run(rebuildContentSql(ids)),
+      db.run(updateRatingsSql(ids)),
+    ])
+  }
 }
 
 // ---- Bulk session rating update (used by rate-sessions) -----------------
