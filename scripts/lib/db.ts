@@ -1,3 +1,8 @@
+import { execFile } from 'node:child_process'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { dirname, resolve } from 'node:path'
+import { promisify } from 'node:util'
+
 import { eq, sql } from 'drizzle-orm'
 
 import {
@@ -18,6 +23,9 @@ import type {
 } from '@/types/session'
 
 import { getDrizzleDb } from './drizzle-db'
+
+const execFileP = promisify(execFile)
+const DB_NAME = 'la28'
 
 const D1_CHUNK_SIZE_6_COLS = 16
 const D1_CHUNK_SIZE_7_COLS = 14
@@ -190,11 +198,174 @@ export async function readWritingForSession(
   }
 }
 
+// ---- Remote write path (wrangler shellout) ------------------------------
+//
+// The Cloudflare D1 REST /query endpoint accepts only single-statement
+// {sql, params} requests and has no batch endpoint we can hit reliably from
+// the Drizzle sqlite-proxy. wrangler's `d1 execute --file` uses Cloudflare's
+// purpose-built /import flow and works for arbitrary multi-statement SQL.
+// Local writes stay on better-sqlite3 (via Drizzle) because that's fast and
+// already correct.
+
+function sqlString(value: string): string {
+  return `'${value.replace(/'/g, "''")}'`
+}
+
+function sqlValue(value: unknown): string {
+  if (value === null || value === undefined) return 'NULL'
+  if (typeof value === 'number') return Number.isFinite(value) ? String(value) : 'NULL'
+  if (typeof value === 'boolean') return value ? '1' : '0'
+  if (typeof value === 'string') return sqlString(value)
+  return sqlString(JSON.stringify(value))
+}
+
+function sqlIdList(ids: string[]): string {
+  return ids.map(sqlValue).join(', ')
+}
+
+async function executeRemoteSql(statements: string[], label: string): Promise<void> {
+  if (statements.length === 0) return
+  const tmpDir = resolve(process.cwd(), '.wrangler/tmp')
+  const stamp = `${Date.now()}-${process.pid}-${Math.random().toString(36).slice(2, 8)}`
+  const tmpPath = resolve(tmpDir, `${label}-${stamp}.sql`)
+  mkdirSync(dirname(tmpPath), { recursive: true })
+  writeFileSync(tmpPath, statements.join('\n'))
+  try {
+    await execFileP(
+      'pnpm',
+      ['--silent', 'wrangler', 'd1', 'execute', DB_NAME, '--remote', `--file=${tmpPath}`],
+      { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 },
+    )
+  } catch (err) {
+    const e = err as { stdout?: string; stderr?: string }
+    if (e.stdout) process.stderr.write(String(e.stdout))
+    if (e.stderr) process.stderr.write(String(e.stderr))
+    throw err
+  }
+}
+
+function buildGroundingUpsertSql(rows: GroundingUpsert[], meta: StageMetadata): string {
+  const tuples = rows
+    .map((r) => {
+      const vals = [
+        r.sessionId,
+        r.facts === null ? null : JSON.stringify(r.facts),
+        JSON.stringify(r.relatedNews),
+        r.sources === undefined ? null : JSON.stringify(r.sources),
+        meta.model,
+        meta.promptVersion,
+        meta.generatedAt,
+      ]
+      return `(${vals.map(sqlValue).join(', ')})`
+    })
+    .join(',\n  ')
+  return `INSERT INTO session_grounding (session_id, facts, related_news, sources, model, prompt_version, generated_at) VALUES
+  ${tuples}
+ON CONFLICT(session_id) DO UPDATE SET
+  facts = excluded.facts,
+  related_news = excluded.related_news,
+  sources = excluded.sources,
+  model = excluded.model,
+  prompt_version = excluded.prompt_version,
+  generated_at = excluded.generated_at;`
+}
+
+function buildWritingUpsertSql(rows: WritingUpsert[], meta: StageMetadata): string {
+  const tuples = rows
+    .map((r) => {
+      const vals = [
+        r.sessionId,
+        r.blurb,
+        r.potentialContendersIntro ?? null,
+        JSON.stringify(r.potentialContenders),
+        meta.model,
+        meta.promptVersion,
+        meta.batchId ?? null,
+        meta.generatedAt,
+      ]
+      return `(${vals.map(sqlValue).join(', ')})`
+    })
+    .join(',\n  ')
+  return `INSERT INTO session_writing (session_id, blurb, potential_contenders_intro, potential_contenders, model, prompt_version, batch_id, generated_at) VALUES
+  ${tuples}
+ON CONFLICT(session_id) DO UPDATE SET
+  blurb = excluded.blurb,
+  potential_contenders_intro = excluded.potential_contenders_intro,
+  potential_contenders = excluded.potential_contenders,
+  model = excluded.model,
+  prompt_version = excluded.prompt_version,
+  batch_id = excluded.batch_id,
+  generated_at = excluded.generated_at;`
+}
+
+function buildScoringUpsertSql(rows: ScoringUpsert[], meta: StageMetadata): string {
+  const tuples = rows
+    .map((r) => {
+      const vals = [
+        r.sessionId,
+        JSON.stringify(r.scorecard),
+        meta.model,
+        meta.promptVersion,
+        meta.batchId ?? null,
+        meta.generatedAt,
+      ]
+      return `(${vals.map(sqlValue).join(', ')})`
+    })
+    .join(',\n  ')
+  return `INSERT INTO session_scoring (session_id, scorecard, model, prompt_version, batch_id, generated_at) VALUES
+  ${tuples}
+ON CONFLICT(session_id) DO UPDATE SET
+  scorecard = excluded.scorecard,
+  model = excluded.model,
+  prompt_version = excluded.prompt_version,
+  batch_id = excluded.batch_id,
+  generated_at = excluded.generated_at;`
+}
+
+function buildRebuildContentSqlString(ids: string[]): string {
+  return `INSERT OR REPLACE INTO session_content
+  (session_id, blurb, potential_contenders_intro, potential_contenders, related_news, scorecard, content_meta)
+SELECT
+  s.id,
+  w.blurb,
+  w.potential_contenders_intro,
+  w.potential_contenders,
+  g.related_news,
+  sc.scorecard,
+  json_object(
+    'provider', 'hybrid',
+    'groundingModel', g.model,
+    'writingModel', w.model,
+    'scoringModel', sc.model,
+    'sources', CASE WHEN g.sources IS NOT NULL THEN json(g.sources) END,
+    'generatedAt', COALESCE(sc.generated_at, w.generated_at, g.generated_at)
+  )
+FROM sessions s
+LEFT JOIN session_grounding g ON g.session_id = s.id
+LEFT JOIN session_writing w ON w.session_id = s.id
+LEFT JOIN session_scoring sc ON sc.session_id = s.id
+WHERE s.id IN (${sqlIdList(ids)});`
+}
+
+function buildUpdateRatingsSqlString(ids: string[]): string {
+  return `UPDATE sessions SET
+  r_sig = (SELECT json_extract(sc.scorecard, '$.significance.score') FROM session_scoring sc WHERE sc.session_id = sessions.id),
+  r_exp = (SELECT json_extract(sc.scorecard, '$.experience.score') FROM session_scoring sc WHERE sc.session_id = sessions.id),
+  r_star = (SELECT json_extract(sc.scorecard, '$.starPower.score') FROM session_scoring sc WHERE sc.session_id = sessions.id),
+  r_uniq = (SELECT json_extract(sc.scorecard, '$.uniqueness.score') FROM session_scoring sc WHERE sc.session_id = sessions.id),
+  r_dem = (SELECT json_extract(sc.scorecard, '$.demand.score') FROM session_scoring sc WHERE sc.session_id = sessions.id),
+  agg = (SELECT json_extract(sc.scorecard, '$.aggregate') FROM session_scoring sc WHERE sc.session_id = sessions.id)
+WHERE sessions.id IN (${sqlIdList(ids)})
+  AND EXISTS (SELECT 1 FROM session_scoring sc WHERE sc.session_id = sessions.id);`
+}
+
 // ---- Stage upserts -------------------------------------------------------
 //
 // Each upsert writes to a raw staging table, then rebuilds the
-// session_content projection (and for scoring, sessions.r_*) via JOIN. All
-// statements ship in one db.batch() so a partial failure rolls back cleanly.
+// session_content projection (and for scoring, sessions.r_*) via JOIN.
+// Local: Drizzle/better-sqlite3 in a single batch (atomic).
+// Remote: SQL string written to a tempfile and replayed via `wrangler d1
+// execute --file` — statements run sequentially, each auto-commits.
 
 function rebuildContentSql(ids: string[]) {
   const idList = sql.join(
@@ -251,6 +422,15 @@ export async function upsertGrounding(
   target: DbTarget,
 ): Promise<void> {
   if (rows.length === 0) return
+  if (target === 'remote') {
+    const statements: string[] = []
+    for (const batch of chunk(rows, D1_CHUNK_SIZE_7_COLS)) {
+      statements.push(buildGroundingUpsertSql(batch, meta))
+      statements.push(buildRebuildContentSqlString(batch.map((r) => r.sessionId)))
+    }
+    await executeRemoteSql(statements, 'grounding')
+    return
+  }
   const db = getDrizzleDb(target)
   for (const batch of chunk(rows, D1_CHUNK_SIZE_7_COLS)) {
     const values = batch.map((r) => ({
@@ -289,6 +469,15 @@ export async function upsertWriting(
   target: DbTarget,
 ): Promise<void> {
   if (rows.length === 0) return
+  if (target === 'remote') {
+    const statements: string[] = []
+    for (const batch of chunk(rows, D1_CHUNK_SIZE_8_COLS)) {
+      statements.push(buildWritingUpsertSql(batch, meta))
+      statements.push(buildRebuildContentSqlString(batch.map((r) => r.sessionId)))
+    }
+    await executeRemoteSql(statements, 'writing')
+    return
+  }
   const db = getDrizzleDb(target)
   for (const batch of chunk(rows, D1_CHUNK_SIZE_8_COLS)) {
     const values = batch.map((r) => ({
@@ -329,6 +518,17 @@ export async function upsertScoring(
   target: DbTarget,
 ): Promise<void> {
   if (rows.length === 0) return
+  if (target === 'remote') {
+    const statements: string[] = []
+    for (const batch of chunk(rows, D1_CHUNK_SIZE_6_COLS)) {
+      const ids = batch.map((r) => r.sessionId)
+      statements.push(buildScoringUpsertSql(batch, meta))
+      statements.push(buildRebuildContentSqlString(ids))
+      statements.push(buildUpdateRatingsSqlString(ids))
+    }
+    await executeRemoteSql(statements, 'scoring')
+    return
+  }
   const db = getDrizzleDb(target)
   for (const batch of chunk(rows, D1_CHUNK_SIZE_6_COLS)) {
     const values = batch.map((r) => ({
