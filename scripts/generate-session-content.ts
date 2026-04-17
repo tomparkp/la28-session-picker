@@ -23,12 +23,14 @@ import {
   PERPLEXITY_DEFAULT_MODEL,
   SCORING_BATCH_SIZE,
   SCORING_VERSION,
+  type ScoringJob,
   WRITING_BATCH_SIZE,
   WRITING_VERSION,
   type WritingData,
   type WritingJob,
   fetchGroundingBatch,
   generateScoring,
+  generateScoringViaBatches,
   generateWriting,
   generateWritingViaBatches,
 } from './lib/session-content.js'
@@ -82,6 +84,17 @@ function needsScoring(status: StageStatus | undefined, forceAll: boolean): boole
   return (status.scoringPromptVersion ?? -1) < SCORING_VERSION
 }
 
+function loadWritingFromDisk(sessionId: string): WritingData | undefined {
+  const w = readWritingForSession(sessionId)
+  if (!w) return undefined
+  return {
+    id: sessionId,
+    blurb: w.blurb,
+    potentialContendersIntro: w.potentialContendersIntro ?? '',
+    potentialContenders: w.potentialContenders,
+  }
+}
+
 async function main() {
   const perplexityModel = getArgValue('--perplexity-model') ?? PERPLEXITY_DEFAULT_MODEL
   // --anthropic-model overrides both stages (back-compat); per-stage flags win.
@@ -100,6 +113,7 @@ async function main() {
   const skipWriting = process.argv.includes('--skip-writing')
   const skipScoring = process.argv.includes('--skip-scoring')
   const noWritingBatch = process.argv.includes('--writing-no-batch')
+  const noScoringBatch = process.argv.includes('--scoring-no-batch')
   const sportFilter = getArgValue('--sport')
   const groundingConcurrency = parsePositiveInt(
     getArgValue('--grounding-concurrency'),
@@ -129,9 +143,10 @@ async function main() {
   }
 
   const writingMode = noWritingBatch ? `sync concurrency=${writingConcurrency}` : 'batches-api'
+  const scoringMode = noScoringBatch ? `sync concurrency=${scoringConcurrency}` : 'batches-api'
   console.log(`Grounding: perplexity ${perplexityModel}  concurrency=${groundingConcurrency}`)
   console.log(`Writing:   anthropic  ${writingModel}  ${writingMode}`)
-  console.log(`Scoring:   anthropic  ${scoringModel}  concurrency=${scoringConcurrency}`)
+  console.log(`Scoring:   anthropic  ${scoringModel}  ${scoringMode}`)
 
   const sessions = readAllSessions()
   const stageStatus = readStageStatus()
@@ -149,10 +164,11 @@ async function main() {
   })
   console.log(`${candidates.length} session(s) have at least one stage outstanding`)
 
-  // Track grounding results from this run so stage 2 can use them without a
-  // second disk read. Not required for resume (JSON store is source of
-  // truth) — just a hot cache for the in-progress run.
+  // Track grounding and writing results from this run so later stages can use
+  // them without a second disk read. Not required for resume (JSON store is
+  // source of truth) — just a hot cache for the in-progress run.
   const groundingThisRun = new Map<string, GroundingData>()
+  const writingThisRun = new Map<string, WritingData>()
 
   // Stage 1: Grounding (parallel, rate-limited)
   if (skipGrounding) {
@@ -298,6 +314,9 @@ async function main() {
               promptVersion: WRITING_VERSION,
               generatedAt: new Date().toISOString(),
             })
+            for (const r of results) {
+              if (sessionMap.has(r.id)) writingThisRun.set(r.id, r)
+            }
             done += 1
             const missing = job.batch.filter((s) => !toUpsert.find((w) => w.sessionId === s.id))
             const tail =
@@ -330,6 +349,7 @@ async function main() {
                 potentialContendersIntro: r.potentialContendersIntro || undefined,
                 potentialContenders: r.potentialContenders,
               })
+              writingThisRun.set(r.id, r)
               got.add(r.id)
               wrote += 1
             }
@@ -369,44 +389,38 @@ async function main() {
 
     const bySport = groupBySport(scoringTargets)
     const sports = [...bySport.keys()].sort()
-    type Job = { sport: string; batch: SessionSource[] }
-    const jobs: Job[] = []
+    const jobs: ScoringJob[] = []
     for (const sport of sports) {
       const list = bySport.get(sport)!
-      for (const batch of chunkList(list, SCORING_BATCH_SIZE)) jobs.push({ sport, batch })
+      for (const batch of chunkList(list, SCORING_BATCH_SIZE)) {
+        const grounding = new Map<string, GroundingData>()
+        const writing = new Map<string, WritingData>()
+        for (const s of batch) {
+          const g = groundingThisRun.get(s.id)
+          if (g) grounding.set(s.id, g)
+          const w = writingThisRun.get(s.id) ?? loadWritingFromDisk(s.id)
+          if (w) writing.set(s.id, w)
+        }
+        jobs.push({ sport, batch, grounding, writing })
+      }
     }
     console.log(`${jobs.length} batch(es) across ${sports.length} sport(s)`)
 
     if (dryRun) {
       for (const job of jobs)
         console.log(`  [dry-run] ${job.sport} batch (${job.batch.length} sessions)`)
-    } else if (jobs.length > 0) {
+    } else if (jobs.length > 0 && noScoringBatch) {
       const limit = pLimit(scoringConcurrency)
       let done = 0
       await Promise.all(
         jobs.map((job) =>
           limit(async () => {
-            const grounding = new Map<string, GroundingData>()
-            const writing = new Map<string, WritingData>()
-            for (const s of job.batch) {
-              const g = groundingThisRun.get(s.id)
-              if (g) grounding.set(s.id, g)
-              const w = readWritingForSession(s.id)
-              if (w) {
-                writing.set(s.id, {
-                  id: s.id,
-                  blurb: w.blurb,
-                  potentialContendersIntro: w.potentialContendersIntro ?? '',
-                  potentialContenders: w.potentialContenders,
-                })
-              }
-            }
             const results = await generateScoring(
               anthropicClient,
               job.batch,
               job.sport,
-              grounding,
-              writing,
+              job.grounding,
+              job.writing,
               scoringModel,
             )
             const toUpsert = results
@@ -427,6 +441,40 @@ async function main() {
           }),
         ),
       )
+    } else if (jobs.length > 0) {
+      await generateScoringViaBatches(anthropicClient, jobs, scoringModel, {
+        onSportComplete: async ({ sport, outcomes, elapsedSec }) => {
+          let scored = 0
+          let failed = 0
+          const missing: string[] = []
+          const toUpsert: Parameters<typeof upsertScoring>[0] = []
+          for (const { job, results, error } of outcomes) {
+            if (error) {
+              failed += 1
+              for (const s of job.batch) missing.push(s.id)
+              continue
+            }
+            const got = new Set<string>()
+            for (const r of results) {
+              if (!sessionMap.has(r.id)) continue
+              toUpsert.push({ sessionId: r.id, scorecard: r.scorecard })
+              got.add(r.id)
+              scored += 1
+            }
+            for (const s of job.batch) if (!got.has(s.id)) missing.push(s.id)
+            if (toUpsert.length > 0) {
+              await upsertScoring(toUpsert.splice(0, toUpsert.length), {
+                model: scoringModel,
+                promptVersion: SCORING_VERSION,
+                generatedAt: new Date().toISOString(),
+              })
+            }
+          }
+          const tail = missing.length > 0 ? ` ✗ missing ${missing.join(',')}` : ''
+          const fail = failed > 0 ? ` (${failed} batch error(s))` : ''
+          console.log(`    ✓ ${sport} done in ${elapsedSec}s — scored ${scored}${fail}${tail}`)
+        },
+      })
     }
   }
 
