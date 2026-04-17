@@ -1,0 +1,242 @@
+[
+  {
+    "name": "3x3 Basketball",
+    "sessions": 20
+  },
+  {
+    "name": "Archery",
+    "sessions": 17
+  },
+  {
+    "name": "Artistic Gymnastics",
+    "sessions": 15
+  },
+  {
+    "name": "Artistic Swimming",
+    "sessions": 5
+  },
+  {
+    "name": "Athletics (Marathon)",
+    "sessions": 2
+  },
+  {
+    "name": "Athletics (Race Walk)",
+    "sessions": 1
+  },
+  {
+    "name": "Athletics (Track & Field)",
+    "sessions": 17
+  },
+  {
+    "name": "Badminton",
+    "sessions": 26
+  },
+  {
+    "name": "Baseball",
+    "sessions": 12
+  },
+  {
+    "name": "Basketball",
+    "sessions": 43
+  },
+  {
+    "name": "Beach Volleyball",
+    "sessions": 39
+  },
+  {
+    "name": "BMX Freestyle",
+    "sessions": 2
+  },
+  {
+    "name": "BMX Racing",
+    "sessions": 2
+  },
+  {
+    "name": "Boxing - Finals",
+    "sessions": 7
+  },
+  {
+    "name": "Boxing - Prelims",
+    "sessions": 17
+  },
+  {
+    "name": "Canoe Slalom",
+    "sessions": 9
+  },
+  {
+    "name": "Canoe Sprint",
+    "sessions": 5
+  },
+  {
+    "name": "Ceremony",
+    "sessions": 2
+  },
+  {
+    "name": "Climbing",
+    "sessions": 10
+  },
+  {
+    "name": "Cricket",
+    "sessions": 28
+  },
+  {
+    "name": "Cycling Road (Road Race)",
+    "sessions": 2
+  },
+  {
+    "name": "Cycling Road (Time Trial)",
+    "sessions": 1
+  },
+  {
+    "name": "Cycling Track",
+    "sessions": 9
+  },
+  {
+    "name": "Diving",
+    "sessions": 16
+  },
+  {
+    "name": "Equestrian",
+    "sessions": 16
+  },
+  {
+    "name": "Fencing",
+    "sessions": 18
+  },
+  {
+    "name": "Flag Football",
+    "sessions": 14
+  },
+  {
+    "name": "Football (Soccer)",
+    "sessions": 58
+  },
+  {
+    "name": "Golf",
+    "sessions": 10
+  },
+  {
+    "name": "Handball",
+    "sessions": 46
+  },
+  {
+    "name": "Hockey",
+    "sessions": 34
+  },
+  {
+    "name": "Judo",
+    "sessions": 16
+  },
+  {
+    "name": "Lacrosse",
+    "sessions": 12
+  },
+  {
+    "name": "Modern Pentathlon",
+    "sessions": 4
+  },
+  {
+    "name": "Mountain Bike",
+    "sessions": 2
+  },
+  {
+    "name": "Open Water Swimming",
+    "sessions": 2
+  },
+  {
+    "name": "Rhythmic Gymnastics",
+    "sessions": 5
+  },
+  {
+    "name": "Rowing",
+    "sessions": 8
+  },
+  {
+    "name": "Rowing Coastal",
+    "sessions": 4
+  },
+  {
+    "name": "Rugby Sevens",
+    "sessions": 12
+  },
+  {
+    "name": "Sailing (D/S/M)",
+    "sessions": 6
+  },
+  {
+    "name": "Sailing (W/K)",
+    "sessions": 5
+  },
+  {
+    "name": "Shooting (R/P)",
+    "sessions": 9
+  },
+  {
+    "name": "Shooting (Shotgun)",
+    "sessions": 5
+  },
+  {
+    "name": "Skateboarding",
+    "sessions": 3
+  },
+  {
+    "name": "Skateboarding (Park)",
+    "sessions": 4
+  },
+  {
+    "name": "Skateboarding (Street)",
+    "sessions": 1
+  },
+  {
+    "name": "Softball",
+    "sessions": 17
+  },
+  {
+    "name": "Squash",
+    "sessions": 10
+  },
+  {
+    "name": "Surfing",
+    "sessions": 4
+  },
+  {
+    "name": "Swimming",
+    "sessions": 17
+  },
+  {
+    "name": "Table Tennis",
+    "sessions": 37
+  },
+  {
+    "name": "Taekwondo",
+    "sessions": 12
+  },
+  {
+    "name": "Tennis",
+    "sessions": 41
+  },
+  {
+    "name": "Trampoline Gymnastics",
+    "sessions": 2
+  },
+  {
+    "name": "Triathlon",
+    "sessions": 3
+  },
+  {
+    "name": "Volleyball",
+    "sessions": 52
+  },
+  {
+    "name": "Water Polo",
+    "sessions": 28
+  },
+  {
+    "name": "Weightlifting",
+    "sessions": 10
+  },
+  {
+    "name": "Wrestling",
+    "sessions": 13
+  }
+]
