@@ -86,9 +86,7 @@ async function main() {
   const blocked = sessions.filter((s) => {
     if (sportFilter && s.sport !== sportFilter) return false
     const st = stageStatus.get(s.id)
-    return (
-      needsWriting(st, forceAll) && (st?.groundingPromptVersion ?? -1) < GROUNDING_VERSION
-    )
+    return needsWriting(st, forceAll) && (st?.groundingPromptVersion ?? -1) < GROUNDING_VERSION
   })
   console.log(`${targets.length} session(s) ready for writing`)
   if (blocked.length > 0) {
@@ -162,8 +160,7 @@ async function main() {
           })
           done += 1
           const missing = job.batch.filter((s) => !toUpsert.find((w) => w.sessionId === s.id))
-          const tail =
-            missing.length > 0 ? ` ✗ missing ${missing.map((s) => s.id).join(',')}` : ''
+          const tail = missing.length > 0 ? ` ✗ missing ${missing.map((s) => s.id).join(',')}` : ''
           console.log(
             `  [${done}/${jobs.length}] ${job.sport} (${job.batch.length}) ✓ wrote ${toUpsert.length}${tail}`,
           )

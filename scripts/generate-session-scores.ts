@@ -86,15 +86,11 @@ async function main() {
   const blocked = sessions.filter((s) => {
     if (sportFilter && s.sport !== sportFilter) return false
     const st = stageStatus.get(s.id)
-    return (
-      needsScoring(st, forceAll) && (st?.writingPromptVersion ?? -1) < WRITING_VERSION
-    )
+    return needsScoring(st, forceAll) && (st?.writingPromptVersion ?? -1) < WRITING_VERSION
   })
   console.log(`${targets.length} session(s) ready for scoring`)
   if (blocked.length > 0) {
-    console.log(
-      `${blocked.length} session(s) blocked — run pnpm generate:session-content first`,
-    )
+    console.log(`${blocked.length} session(s) blocked — run pnpm generate:session-content first`)
   }
 
   if (dryRun) {
@@ -164,8 +160,7 @@ async function main() {
           })
           done += 1
           const missing = job.batch.filter((s) => !toUpsert.find((r) => r.sessionId === s.id))
-          const tail =
-            missing.length > 0 ? ` ✗ missing ${missing.map((s) => s.id).join(',')}` : ''
+          const tail = missing.length > 0 ? ` ✗ missing ${missing.map((s) => s.id).join(',')}` : ''
           console.log(
             `  [${done}/${jobs.length}] ${job.sport} (${job.batch.length}) ✓ scored ${toUpsert.length}${tail}`,
           )
