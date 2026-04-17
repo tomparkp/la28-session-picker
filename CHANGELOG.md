@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.7.0](https://github.com/tomparkp/2028-games-guide/compare/28games-v1.6.3...28games-v1.7.0) (2026-04-17)
+
+
+### Features
+
+* **content:** split facts data sources and cost-optimize pipeline ([#112](https://github.com/tomparkp/2028-games-guide/issues/112)) ([9bbbaad](https://github.com/tomparkp/2028-games-guide/commit/9bbbaade2b1ce3a116213c8a033e5f1adca27422))
+
+
+### Bug Fixes
+
+* **scripts:** write remote D1 upserts via wrangler instead of HTTP proxy ([#108](https://github.com/tomparkp/2028-games-guide/issues/108)) ([21c1006](https://github.com/tomparkp/2028-games-guide/commit/21c100643a00fd27d9fc71326c462709e8e23403))
+
+
+### Performance
+
+* **scripts:** batch grounding requests by sport ([#111](https://github.com/tomparkp/2028-games-guide/issues/111)) ([d958f41](https://github.com/tomparkp/2028-games-guide/commit/d958f41b300d826007c3cc948708ef446e65aa1b))
+
+
+### Refactors
+
+* **content:** six independent pipeline scripts + persistent corrections layer ([#113](https://github.com/tomparkp/2028-games-guide/issues/113)) ([21d51c8](https://github.com/tomparkp/2028-games-guide/commit/21d51c86a175f588a4732068c5db0ec19e52c70b))
+* **data:** migrate from D1 to committed JSON files ([#110](https://github.com/tomparkp/2028-games-guide/issues/110)) ([2de2e5e](https://github.com/tomparkp/2028-games-guide/commit/2de2e5e41dbd1b8002e86a488dc7bcb8277e7b9b))
+
 ## [1.6.3](https://github.com/tomparkp/2028-games-guide/compare/28games-v1.6.2...28games-v1.6.3) (2026-04-16)
 
 
