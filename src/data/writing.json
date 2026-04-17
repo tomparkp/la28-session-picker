@@ -1,355 +1,361 @@
 {
   "ARC01": {
-    "blurb": "LA28 debuts compound archery on the Olympic stage, and this quiet morning session is where it begins. Archers shooting at 50 meters with release aids face precision demands unlike anything in recurve — the compound bow is mechanically assisted, making near-perfect scores routine and margins razor-thin.\n\nMen's recurve qualification runs alongside, establishing rankings for the knockout bracket. 64 archers from around the world shoot 72 arrows at 70 meters, where a single bad arrow can sink a medal favorite before the elimination rounds even start.\n\nCarson Stadium sits in the heart of suburban Los Angeles, a soccer venue transformed into an archery arena. Targets downfield, grandstands filling with early-bird fans, the first arrows of the Games in flight.",
-    "potentialContendersIntro": "",
+    "blurb": "Qualification rounds set the field but aren't ticketed — archers shoot 72 arrows at 70 meters to rank for elimination brackets. Women's compound debuts at the 2028 Games alongside the familiar men's recurve discipline.\n\nCompound bows use sights and release aids for laser precision; recurve is the traditional form you recognize from historical imagery. Rankings from these sessions determine matchups through the knockout rounds.\n\nThese early rounds happen at Dignity Health Sports Park in Carson, about 13 miles south of downtown — a temporary stadium setup where archers face the target in dead silence.",
+    "potentialContendersIntro": null,
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
+    "generatedAt": "2026-04-17T03:01:45.495Z"
   },
   "ARC02": {
-    "blurb": "The afternoon shift brings women's recurve and men's compound qualification rounds. Women's recurve is South Korea's domain — they swept gold in Paris and have claimed every Olympic team title since 1988 — but qualification is where upsets begin, where nerves and wind betray the best.\n\nMen's compound qualification is uncharted Olympic territory. No prior Games, no historical narrative, just the top archers in a discipline where perfection is expected and 10-rings are routine. One slip, one gust, one miscalculation and a medal path narrows.\n\nCarson Stadium's grandstands face west, meaning afternoon sun and shifting shadows. Archers adjust for light, for breeze off the Pacific 15 miles away, for the weight of launching a new Olympic event.",
-    "potentialContendersIntro": "",
+    "blurb": "The afternoon qualification session completes the opening round — men's compound and women's recurve archers each fire 72 arrows to establish their bracket positions. Not ticketed, but these scores matter: a strong qualifying rank can mean avoiding the top seed until later.\n\nCompound archery makes its Games debut in 2028 with technology-assisted accuracy. Women's recurve is the traditional discipline where Korea's Lim Si-hyeon took Paris gold.\n\nCarson Stadium at Dignity Health Sports Park hosts all archery — a venue built for precision and focus, with sightlines down the 70-meter range.",
+    "potentialContendersIntro": null,
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
+    "generatedAt": "2026-04-17T03:01:45.495Z"
   },
   "ARC03": {
-    "blurb": "Olympic archery adds a sixth medal event for the first time since 1988, and it all happens in one Friday night session. Compound mixed team — two archers, alternating shots, 12 teams chasing gold in a format the Games have never seen.\n\nThe entire bracket unfolds in one evening: round of 16, quarters, semis, medal matches. Compound scoring is ruthlessly tight — scores of 158 out of 160 are common, meaning a single arrow off-center can end a campaign. Strategy shifts with every end; teammates read wind, call holds, manage pressure together.\n\nNight archery under Carson Stadium lights has a different texture than daylight rounds. The crowd noise swells with each arrow; archers step to the line knowing one session, one night, decides everything.",
-    "potentialContendersIntro": "",
-    "potentialContenders": [],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC04": {
-    "blurb": "The recurve individual brackets open with 64 men and 64 women, and this morning session is where the field begins to thin. One-on-one elimination, best-of-five sets, archers shooting head-to-head for the first time after days of ranking rounds.\n\nSouth Korea enters as the global standard — Lim Si-hyeon won individual gold in Paris, Kim Woo-jin claimed men's gold — but the bracket format is unforgiving. A hot shooter from anywhere in the draw can knock out a medal favorite with three strong sets.\n\nCarson Stadium's sightlines put fans close to the shooting line. You see the archer's face before release, the arrow's flight downfield, the target 70 meters away where fractions of an inch separate advancement from elimination.",
-    "potentialContendersIntro": "Paris 2024 medalists and top-ranked archers are projected to dominate early rounds, though lower seeds can spring upsets in head-to-head knockout archery.",
-    "potentialContenders": [
-      {
-        "name": "Lim Si-hyeon",
-        "country": "KOR",
-        "note": "Won individual gold at Paris 2024; Korea's reigning champion."
-      },
-      {
-        "name": "Kim Woo-jin",
-        "country": "KOR",
-        "note": "Paris 2024 men's individual gold medalist; world number one."
-      },
-      {
-        "name": "Brady Ellison",
-        "country": "USA",
-        "note": "Four-time Olympian shooting on home soil; finished 17th in Paris."
-      },
-      {
-        "name": "An San",
-        "country": "KOR",
-        "note": "Tokyo triple gold medalist; did not qualify for Paris, potential LA28 contender if she clears Korea's selection trials."
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC05": {
-    "blurb": "Night archery in Los Angeles, and the recurve brackets accelerate. The 1/32 survivors return alongside fresh matchups in the round of 16 — archers under lights, targets illuminated downfield, every arrow magnified by elimination stakes.\n\nThe session mixes completion of the opening round with the next stage of cuts. By night's end, half the field is gone. The format favors composure — archers who hold form under stadium lights, who tune out crowd noise, who execute when a set hangs on the final arrow.\n\nCarson Stadium transforms after dark. Floodlights replace California sun, shadows vanish, wind settles. The intimacy tightens — fewer archers, sharper focus, medal paths coming into view.",
-    "potentialContendersIntro": "Expect top seeds from Korea, the USA's Brady Ellison if he advances, and dark horses who thrive in knockout archery's high-pressure format.",
-    "potentialContenders": [
-      {
-        "name": "Lim Si-hyeon",
-        "country": "KOR",
-        "note": "Paris 2024 individual gold medalist; likely top seed."
-      },
-      {
-        "name": "Kim Woo-jin",
-        "country": "KOR",
-        "note": "World number one and Paris gold medalist in men's individual."
-      },
-      {
-        "name": "Brady Ellison",
-        "country": "USA",
-        "note": "Four-time Olympian aiming for a home Games medal."
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC06": {
-    "blurb": "Sunday morning, and the recurve brackets continue their march toward medal rounds. More 1/32 and 1/16 matchups, archers fighting to stay alive in the draw, every set a referendum on nerves and execution.\n\nSouth Korea's depth is staggering — they could field multiple Olympic-caliber teams from their national trials alone — but archery's knockout format is ruthless. One off day, one archer peaking at the right moment, and the favorite goes home.\n\nCarson Stadium fills early on a summer Sunday. Families, archery clubs, fans who've never seen the sport live watch arrows fly 70 meters in near-silence, then erupt when a 10-ring decides a set.",
-    "potentialContendersIntro": "Leading archers from Korea and top-ranked international contenders are projected to feature, though early upsets can reshape the bracket.",
-    "potentialContenders": [
-      {
-        "name": "Lim Si-hyeon",
-        "country": "KOR",
-        "note": "Paris 2024 gold medalist and Korea's top women's archer."
-      },
-      {
-        "name": "Kim Woo-jin",
-        "country": "KOR",
-        "note": "Paris 2024 men's individual champion."
-      },
-      {
-        "name": "Brady Ellison",
-        "country": "USA",
-        "note": "Veteran Olympian seeking a breakthrough on home soil."
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC07": {
-    "blurb": "Another night session, another round of cuts. The recurve fields narrow under lights as the round of 16 wraps and the path to quarterfinals clarifies. Archers who've survived the opening gauntlet now face opponents who've proven they belong.\n\nThe rhythm of night archery is distinct — cooler air, steadier conditions, crowd energy building with each successive match. Upsets feel bigger under stadium lights; favorites who stumble here lose their shot at the podium in front of a packed house.\n\nCarson Stadium's stands rise steeply, giving sightlines that put every arrow in view. You watch the archer's release, track the flight, see the impact — and hear the crowd react before the score even posts.",
-    "potentialContendersIntro": "Projected medal contenders from Korea and other top archery nations, plus potential surprise advancers from earlier rounds.",
-    "potentialContenders": [
-      {
-        "name": "Lim Si-hyeon",
-        "country": "KOR",
-        "note": "Defending Paris champion."
-      },
-      {
-        "name": "Kim Woo-jin",
-        "country": "KOR",
-        "note": "Paris gold medalist; consistent at the highest level."
-      },
-      {
-        "name": "Brady Ellison",
-        "country": "USA",
-        "note": "Four Olympics deep, aiming for a home Games podium finish."
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC08": {
-    "blurb": "A focused Monday morning session for women's recurve — the bracket continues its narrowing, 1/32 survivors returning for the round of 16. Fewer distractions, fewer simultaneous matches, more space for each arrow to matter.\n\nSouth Korea has owned women's recurve for generations, but the individual bracket is where that dominance gets tested one archer at a time. Qualification rankings mean less here; what matters is who shoots best in the moment, under pressure, when a set hangs on the final end.\n\nCarson Stadium's morning light is clean and direct. No shadows, no wind gusts yet, just archers and targets and the quiet intensity of knockout archery at 70 meters.",
-    "potentialContendersIntro": "Korea's top women are expected to dominate, though the round of 16 has historically produced upsets against even the strongest favorites.",
-    "potentialContenders": [
-      {
-        "name": "Lim Si-hyeon",
-        "country": "KOR",
-        "note": "Paris 2024 individual gold medalist."
-      },
-      {
-        "name": "An San",
-        "country": "KOR",
-        "note": "Tokyo triple gold medalist; did not qualify for Paris, potential contender if she clears LA28 trials."
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC09": {
-    "blurb": "The first team medal session of the Games, and men's recurve takes center stage. Three archers per team, six arrows per end, knockout rounds from quarters through gold. South Korea won in Paris and enters as the heavy favorite — they've claimed nearly every Olympic team title in the modern era.\n\nBut team archery is a different animal than individual. One archer off form can sink a medal run; chemistry and clutch shooting under pressure matter as much as raw skill. The USA, with Brady Ellison anchoring, has a path to the podium on home soil if they shoot clean.\n\nNight session, full bracket in one evening, medals decided before the crowd goes home. Carson Stadium under lights, the team format's energy and urgency on full display.",
-    "potentialContendersIntro": "South Korea dominated men's recurve team in Paris and remains the clear favorite, with the USA and other top teams projected to chase medals.",
+    "blurb": "Compound mixed team crowns the first-ever archery champions in this format — pairs of one man and one woman shooting alternating arrows through knockout rounds all in one night. Technology-assisted bows, pinpoint accuracy, and a brand-new event.\n\nThe session runs from round of 16 through the gold medal match. Countries likely to field strong compound pairs include South Korea and the USA, both with deep rosters in World Archery rankings.\n\nEvening at Carson Stadium — lights, silence between shots, and the tension of elimination archery where every arrow decides whether you advance or go home.",
+    "potentialContendersIntro": "Projected contenders for compound mixed team — a new event with no prior Games results but known strength in World Archery competition.",
     "potentialContenders": [
       {
         "name": "South Korea",
         "country": "KOR",
-        "note": "Paris 2024 gold medalists; world number one team as of 2026."
+        "note": "Leads compound results in World Archery events; expected to field a top-ranked mixed pair."
       },
       {
         "name": "USA",
         "country": "USA",
-        "note": "Finished 6th in Paris; Brady Ellison leads a home-crowd hopeful squad."
-      },
-      {
-        "name": "Kim Woo-jin",
-        "country": "KOR",
-        "note": "Paris team and individual gold medalist; anchors Korea's dominant lineup."
+        "note": "Strong compound program with national tournament depth; likely contenders for medals."
       }
     ],
     "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
+    "generatedAt": "2026-04-17T03:01:45.495Z"
   },
-  "ARC10": {
-    "blurb": "Men's recurve individual, round of 32 and round of 16 — the bracket narrows as archers who survived the opening cuts face fresh elimination pressure. By session's end, only eight men remain in the hunt for medals.\n\nThis is where favorites prove they belong and dark horses make their stand. The format is unforgiving: one bad set, one lapse in focus, and a medal path evaporates. South Korea's depth means multiple archers could advance deep; the USA's Brady Ellison, shooting at home, could be the spoiler.\n\nCarson Stadium's Tuesday morning crowd is growing — word spreads when upsets happen, when a local archer advances, when the draw opens up. Every arrow matters; every set feels like a final.",
-    "potentialContendersIntro": "Top seeds from Paris 2024 and world-ranked archers are projected to feature, though qualification remains ahead.",
-    "potentialContenders": [
-      {
-        "name": "Kim Woo-jin",
-        "country": "KOR",
-        "note": "Paris 2024 men's individual gold medalist; expected top contender."
-      },
-      {
-        "name": "Brady Ellison",
-        "country": "USA",
-        "note": "Four-time Olympian seeking a home Games breakthrough."
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC11": {
-    "blurb": "Women's recurve team finals night — quarters, semis, and medals all decided in one session. South Korea has won every Olympic women's team title since 1988; they swept Paris 2024 and enter LA28 as the prohibitive favorite to extend the streak.\n\nBut archery's team format compresses pressure. Three archers must all shoot clean, all handle nerves, all execute when a medal hangs on the final end. One wobble and the dynasty narrative cracks. Lim Si-hyeon, Paris individual champion, is projected to anchor Korea's lineup if she qualifies.\n\nNight session, Carson Stadium packed, the longest winning streak in Olympic sport on the line. The crowd energy alone makes this worth watching, even if Korea's dominance feels inevitable.",
-    "potentialContendersIntro": "South Korea dominated women's recurve team in Paris and is heavily favored to extend their Olympic dynasty, with other nations chasing an upset.",
-    "potentialContenders": [
-      {
-        "name": "South Korea",
-        "country": "KOR",
-        "note": "Paris 2024 gold medalists; unbeaten in Olympic women's team since 1988."
-      },
-      {
-        "name": "Lim Si-hyeon",
-        "country": "KOR",
-        "note": "Paris individual and team gold medalist; likely anchor for Korea if she qualifies."
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC12": {
-    "blurb": "Mixed team archery — one man, one woman, alternating arrows — begins its bracket. The round of 16 cuts the field in half; survivors advance to the medal rounds later this week. South Korea swept mixed team gold in Paris and dominates world rankings entering LA28.\n\nThe mixed format adds strategic wrinkles. Coaches decide shooting order; teams adjust tactics mid-match based on their opponent's score. Chemistry matters as much as individual skill — archers must trust their partner to hold under pressure, to deliver when the set is on the line.\n\nCarson Stadium midday, the crowd warming up, archers navigating the unique rhythm of mixed team elimination. It's a young Olympic event — added in Tokyo 2020 — but already a showcase for archery's elite partnerships.",
-    "potentialContendersIntro": "South Korea's Lim Si-hyeon and Kim Woo-jin won Paris 2024 mixed team gold and are projected medal favorites if they team up again.",
-    "potentialContenders": [
-      {
-        "name": "Lim Si-hyeon & Kim Woo-jin",
-        "country": "KOR",
-        "note": "Paris 2024 mixed team gold medalists."
-      },
-      {
-        "name": "Brady Ellison",
-        "country": "USA",
-        "note": "Potential US mixed team anchor; finished 17th in Paris individual."
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC13": {
-    "blurb": "Mixed team finals night — the entire bracket from quarters through gold unfolds in one session. South Korea's Lim Si-hyeon and Kim Woo-jin won Paris 2024 and could return as the team to beat, though lineups won't be confirmed until qualification concludes.\n\nThe format is ruthless: one off end and a medal run ends. Archers alternate shots, building score together, carrying each other when nerves hit. The crowd energy surges with each arrow — mixed team archery is visceral, immediate, every release audible in the silence before impact.\n\nCarson Stadium under lights, medals decided in real time, partnerships tested under maximum pressure. This is archery at its most intense — no tomorrow, no second chances, just four arrows per end and the scoreboard climbing.",
-    "potentialContendersIntro": "Paris 2024 champions Lim Si-hyeon and Kim Woo-jin of South Korea are projected favorites, with the USA and other top pairs chasing medals.",
-    "potentialContenders": [
-      {
-        "name": "Lim Si-hyeon & Kim Woo-jin",
-        "country": "KOR",
-        "note": "Paris 2024 mixed team gold medalists; dominant partnership."
-      },
-      {
-        "name": "Brady Ellison",
-        "country": "USA",
-        "note": "Likely US mixed team anchor if he qualifies; four-time Olympian."
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC14": {
-    "blurb": "Men's individual, round of 16 — the final step before quarterfinals and medal rounds. Eight matches, eight survivors, the bracket tightening toward its conclusion. South Korea's Kim Woo-jin won Paris 2024 and is projected to dominate again, but archery's knockout format has no safe leads.\n\nThis is where form and nerves collide. Archers who've shot clean all week face the reality that one bad set ends their campaign. The USA's Brady Ellison, if he advances, faces his best chance at a home Games medal — four Olympics deep, still chasing gold, the crowd behind him.\n\nCarson Stadium's Thursday morning session, the men's bracket down to its final 16. Medal matches loom; every arrow carries the weight of everything that comes after.",
-    "potentialContendersIntro": "Paris 2024 medalists and top-ranked archers are projected to reach this stage, with qualification still ahead.",
-    "potentialContenders": [
-      {
-        "name": "Kim Woo-jin",
-        "country": "KOR",
-        "note": "Paris 2024 individual gold medalist; Korea's top men's archer."
-      },
-      {
-        "name": "Brady Ellison",
-        "country": "USA",
-        "note": "Four-time Olympian shooting at home; finished 4th in Paris."
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC15": {
-    "blurb": "Men's individual recurve decides its medals in one Thursday night session. Quarterfinals, semifinals, bronze, gold — the entire podium settled under Carson Stadium lights. Kim Woo-jin of South Korea won in Paris and is projected as the favorite if he qualifies, but archery finals are one-arrow-at-a-time drama.\n\nThe format strips away everything but execution. No second chances, no replays, just archers stepping to the line and releasing. The crowd falls silent before each shot; the roar when a 10-ring decides a semifinal is visceral, immediate, the sound of pressure breaking.\n\nNight archery in LA, the final individual medals of the Games on the line. Brady Ellison, if he reaches this session, shoots for a home Games medal to cap a career. The stadium will be loud, the stakes absolute, the arrows flying into Olympic history.",
-    "potentialContendersIntro": "Kim Woo-jin of South Korea is the projected favorite after winning Paris 2024, with Brady Ellison of the USA aiming for a home Games medal.",
-    "potentialContenders": [
-      {
-        "name": "Kim Woo-jin",
-        "country": "KOR",
-        "note": "Paris 2024 individual gold medalist; world number one."
-      },
-      {
-        "name": "Brady Ellison",
-        "country": "USA",
-        "note": "Four-time Olympian; finished 4th in Paris, seeking home Games podium."
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
-    "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
-  },
-  "ARC16": {
-    "blurb": "The knockout bracket begins at Carson Stadium, where 16 women fire one arrow at a time to survive. This is archery stripped to its purest form — 70 meters, dead silence between shots, and elimination on the line.\n\nThe round of 16 is where upsets can bloom before the favorites tighten their grip. South Korea's production line has dominated this event for decades, but the bracket format rewards nerve as much as precision.\n\nYou'll watch from the stadium seating as archers step to the line alone. When the wind picks up off the coast, even a millimeter of drift can end an Olympic dream.",
-    "potentialContendersIntro": "South Korea is expected to field multiple archers, with Lim Si-hyeon the reigning Paris 2024 champion. Rosters won't be finalized until closer to the Games.",
+  "ARC04": {
+    "blurb": "The recurve individual brackets open with round of 32 elimination — both men's and women's fields trimmed in head-to-head matches. Archers shoot sets of arrows; best of five sets wins. Upsets happen early.\n\nSouth Korea enters as the dominant force: Lim Si-hyeon won Paris women's gold, Kim Woo-jin anchored the men's team to Paris gold. USA's Brady Ellison, a four-time Games veteran, could appear if he qualifies — a morning session at home would be a capstone moment.\n\nCarson Stadium morning session — the crowd hasn't filled yet, but the archers have already been shooting since dawn in practice. The range feels wide open under Southern California sky.",
+    "potentialContendersIntro": "Likely field for recurve individual round of 32 — mix of Paris medalists and projected qualifiers.",
     "potentialContenders": [
       {
         "name": "Lim Si-hyeon",
         "country": "KOR",
-        "note": "Paris 2024 gold medalist — South Korea's latest in a generational line of champions"
+        "note": "Paris 2024 women's individual gold medalist; South Korea's current leader."
       },
       {
-        "name": "Projected South Korean qualifier",
+        "name": "Kim Woo-jin",
         "country": "KOR",
-        "note": "South Korea typically sends multiple medal contenders through their ruthless national trials"
+        "note": "Paris 2024 men's team gold; consistent top-level performer."
       },
       {
-        "name": "Projected European contender",
-        "country": "TBD",
-        "note": "European archers have consistently challenged South Korean dominance in recent World Championships"
+        "name": "Brady Ellison",
+        "country": "USA",
+        "note": "Four-time Games competitor; fifth in Paris men's individual; home Games opportunity."
       }
     ],
     "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
+    "generatedAt": "2026-04-17T03:01:45.495Z"
   },
-  "ARC17": {
-    "blurb": "Four matches, one champion — the women's recurve final unfolds under the lights at Carson Stadium. Quarterfinals winnow eight archers to four, semifinals deliver two, and the gold medal match crowns the best archer on earth.\n\nEvery arrow is sudden death. South Korea has won this event at five straight Olympics, but the bracket format means one bad end can shatter a dynasty. The bronze and gold finals are shot back-to-back in front of a charged evening crowd.\n\nThe targets are 70 meters away — from the stands they look like dinner plates. Watch the scoreboard light up after each arrow. The silence between shots is cathedral-quiet.",
-    "potentialContendersIntro": "Lim Si-hyeon won Paris 2024 gold and could return to defend, though South Korea's brutal selection trials make nothing certain. An San, the Tokyo triple gold medalist, failed to make the Paris team but could be a storyline if she qualifies for LA.",
+  "ARC05": {
+    "blurb": "Evening elimination session continues the individual recurve brackets — round of 32 wraps up, round of 16 begins. Under stadium lights the tension sharpens; every match is sudden-death archery.\n\nSouth Korea's production line of recurve champions could field multiple archers deep in both draws. Brady Ellison of the USA, if competing, brings veteran presence in front of a home crowd.\n\nNight archery at Carson Stadium — lights isolate the range, crowd noise drops to nothing between arrows, and the targets 70 meters downrange look impossibly small.",
+    "potentialContendersIntro": "Projected contenders advancing through round of 32 and 16 eliminations.",
     "potentialContenders": [
       {
         "name": "Lim Si-hyeon",
         "country": "KOR",
-        "note": "Paris 2024 champion — likely favorite if she survives South Korea's national trials"
+        "note": "Paris 2024 women's gold; expected to advance if she competes."
+      },
+      {
+        "name": "Kim Woo-jin",
+        "country": "KOR",
+        "note": "Paris 2024 team gold; South Korea's men's recurve anchor."
+      },
+      {
+        "name": "Brady Ellison",
+        "country": "USA",
+        "note": "USA's top recurve archer; four Games of experience."
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.495Z"
+  },
+  "ARC06": {
+    "blurb": "Sunday morning continues the grind through recurve individual brackets — more round of 32 and round of 16 matches whittling both fields toward quarterfinals. Head-to-head sets, best of five, no margin for error.\n\nKorea's depth means multiple archers likely in the mix. An San, the Tokyo triple gold medalist, did not qualify for Paris — if she returns for 2028, this would be her stage.\n\nCarson Stadium mid-morning — the sun's already warm, the range is busy, and the elimination pressure mounts with every session.",
+    "potentialContendersIntro": "Likely competitors in Sunday morning elimination rounds — mix of established stars and emerging qualifiers.",
+    "potentialContenders": [
+      {
+        "name": "Lim Si-hyeon",
+        "country": "KOR",
+        "note": "Paris 2024 women's gold medalist; projected to compete."
       },
       {
         "name": "An San",
         "country": "KOR",
-        "note": "Tokyo triple gold medalist who missed Paris — a potential redemption arc if she qualifies"
+        "note": "Tokyo triple gold medalist; missed Paris qualification but could return for 2028."
       },
       {
-        "name": "Projected South Korean qualifier",
-        "country": "KOR",
-        "note": "South Korea's depth means a third archer could emerge as a medal contender"
-      },
-      {
-        "name": "Projected international challenger",
-        "country": "TBD",
-        "note": "Non-Korean archers have medaled recently — someone will try to break the dynasty"
+        "name": "Brady Ellison",
+        "country": "USA",
+        "note": "USA veteran; fifth in Paris men's individual."
       }
     ],
     "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 0,
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-12T14:37:54.510Z"
+    "generatedAt": "2026-04-17T03:01:45.495Z"
+  },
+  "ARC07": {
+    "blurb": "Sunday night wraps the opening weekend of individual recurve eliminations — final round of 32 and round of 16 matches before quarterfinals. The field is narrowing fast.\n\nSouth Korea's men and women both dominated Paris recurve; if Kim Woo-jin or Lim Si-hyeon compete, expect them deep in the bracket. Brady Ellison, a four-Games veteran, could bring home-crowd energy to USA's men's draw.\n\nEvening session at Carson Stadium — the weekend crowd fills the stands, and the elimination stakes make every arrow count.",
+    "potentialContendersIntro": "Expected archers advancing through Sunday evening eliminations in recurve individual.",
+    "potentialContenders": [
+      {
+        "name": "Kim Woo-jin",
+        "country": "KOR",
+        "note": "Paris 2024 men's team gold; South Korea's recurve anchor."
+      },
+      {
+        "name": "Lim Si-hyeon",
+        "country": "KOR",
+        "note": "Paris 2024 women's individual and team gold."
+      },
+      {
+        "name": "Brady Ellison",
+        "country": "USA",
+        "note": "Four-time Games participant; home venue advantage."
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.495Z"
+  },
+  "ARC08": {
+    "blurb": "Monday morning focuses solely on women's recurve — round of 32 and round of 16 matches thinning the field before quarterfinals. Single-elimination archery rewards consistency and nerve.\n\nSouth Korea swept Paris women's recurve team gold with Lim Si-hyeon leading. If she competes, she's the favorite. An San's Tokyo heroics still echo, but her absence from Paris shows how brutal Korea's trials are.\n\nCarson Stadium mid-morning — a quieter session than evening finals, but the arrows still fly at 70 meters and every set matters.",
+    "potentialContendersIntro": "Likely women's recurve competitors in Monday morning eliminations.",
+    "potentialContenders": [
+      {
+        "name": "Lim Si-hyeon",
+        "country": "KOR",
+        "note": "Paris 2024 individual and team gold; Korea's current top woman."
+      },
+      {
+        "name": "An San",
+        "country": "KOR",
+        "note": "Tokyo triple gold medalist; failed Paris qualification but could return."
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.495Z"
+  },
+  "ARC09": {
+    "blurb": "Men's recurve team medals are decided in one night — quarterfinals through gold. Three archers per team, alternating shots, elimination rounds building to the final. South Korea won Paris team gold with Kim Woo-jin and is the clear favorite if they field a similar squad.\n\nUSA men's team placed outside medals at Paris but could be stronger at home. Brady Ellison, if competing, brings veteran leadership to a team event that rewards coordination and composure.\n\nEvening at Carson Stadium — team archery has a different rhythm than individual, with strategy between partners and the crowd reacting to every set.",
+    "potentialContendersIntro": "Expected teams competing in men's recurve team finals — South Korea dominates, but other nations project to challenge.",
+    "potentialContenders": [
+      {
+        "name": "South Korea",
+        "country": "KOR",
+        "note": "Paris 2024 men's team gold with Kim Woo-jin, Lee Woo-seok, Kim Je-deok; heavy favorites."
+      },
+      {
+        "name": "USA",
+        "country": "USA",
+        "note": "Could feature Brady Ellison; home venue advantage and improving depth."
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.495Z"
+  },
+  "ARC10": {
+    "blurb": "Tuesday morning continues men's recurve individual eliminations — round of 32 and round of 16 matches narrowing the men's bracket. Head-to-head sets, five arrows per set, best of five.\n\nKim Woo-jin won Paris team gold; Lee Woo-seok took Paris individual gold. Korea's men's recurve depth is extraordinary. Brady Ellison, if he competes, would carry USA hopes in a home Games.\n\nCarson Stadium mid-morning session — the range is set, the targets are 70 meters downrange, and the eliminations are relentless.",
+    "potentialContendersIntro": "Projected men's recurve competitors in Tuesday eliminations — Paris medalists and likely qualifiers.",
+    "potentialContenders": [
+      {
+        "name": "Lee Woo-seok",
+        "country": "KOR",
+        "note": "Paris 2024 men's individual gold medalist."
+      },
+      {
+        "name": "Kim Woo-jin",
+        "country": "KOR",
+        "note": "Paris 2024 individual silver and team gold."
+      },
+      {
+        "name": "Brady Ellison",
+        "country": "USA",
+        "note": "Four-time Games veteran; USA's top recurve archer."
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.495Z"
+  },
+  "ARC11": {
+    "blurb": "Women's recurve team medals are on the line — quarterfinals, semifinals, bronze, and gold all in one evening. South Korea won Paris team gold with Lim Si-hyeon, Nam Su-hyeon, and Jeong Dasomi and remains the program to beat. No other nation matches Korea's recurve depth.\n\nTeam eliminations are best-of-four sets, six arrows per set, three archers rotating. Strategy and execution under maximum pressure.\n\nTuesday night at Carson Stadium — the crowd fills for a medal session, and the women's team final could be Korea versus the field.",
+    "potentialContendersIntro": "Expected teams in women's recurve team finals — South Korea dominated Paris and projects to lead again.",
+    "potentialContenders": [
+      {
+        "name": "South Korea",
+        "country": "KOR",
+        "note": "Paris 2024 women's team gold; Lim Si-hyeon and teammates dominated."
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.495Z"
+  },
+  "ARC12": {
+    "blurb": "Mixed team recurve begins eliminations — round of 16 matches pairing one man and one woman per country, alternating arrows. South Korea won Paris mixed gold with Lim Si-hyeon and Kim Woo-jin; if both compete, they're the duo to beat.\n\nBrady Ellison could anchor a USA mixed pair in front of a home crowd. The format rewards coordination and composure under shared pressure.\n\nWednesday late morning at Carson Stadium — mixed team is a newer event, but the archery fundamentals don't change: 70 meters, dead silence, arrows in the gold.",
+    "potentialContendersIntro": "Projected mixed team pairs in recurve round of 16 — Paris medalists and likely qualifiers.",
+    "potentialContenders": [
+      {
+        "name": "Lim Si-hyeon / Kim Woo-jin",
+        "country": "KOR",
+        "note": "Paris 2024 mixed team gold medalists; both individual stars."
+      },
+      {
+        "name": "Brady Ellison / TBD",
+        "country": "USA",
+        "note": "Ellison could pair with a USA women's qualifier; home venue advantage."
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.495Z"
+  },
+  "ARC13": {
+    "blurb": "Mixed team recurve medals are decided tonight — quarterfinals through gold. Lim Si-hyeon and Kim Woo-jin won Paris gold for South Korea and would enter as heavy favorites if they compete. One man, one woman, alternating shots, elimination pressure on every arrow.\n\nUSA could field Brady Ellison in mixed team, bringing four Games of experience to a home final. Compound mixed team debuted earlier in the week; this is recurve's turn.\n\nEvening at Carson Stadium — lights, crowd, and the unique rhythm of mixed pairs archery where strategy runs between arrows.",
+    "potentialContendersIntro": "Expected mixed team pairs competing for recurve medals — Paris champions and projected contenders.",
+    "potentialContenders": [
+      {
+        "name": "Lim Si-hyeon / Kim Woo-jin",
+        "country": "KOR",
+        "note": "Paris 2024 mixed team gold; both also Paris individual medalists."
+      },
+      {
+        "name": "Brady Ellison / TBD",
+        "country": "USA",
+        "note": "Ellison's experience could anchor a USA pair at home."
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.495Z"
+  },
+  "ARC14": {
+    "blurb": "Men's recurve individual reaches round of 16 — the bracket is down to eight matches, head-to-head, best of five sets. Lee Woo-seok won Paris individual gold; Kim Woo-jin took silver. If both compete for Korea, the draw could feature an all-Korea semifinal.\n\nBrady Ellison, if he qualifies, would be shooting in front of a home crowd in his likely final Games. Round of 16 is where contenders separate from qualifiers.\n\nThursday late morning at Carson Stadium — single-elimination archery at its sharpest, every arrow deciding who advances.",
+    "potentialContendersIntro": "Likely men's recurve competitors in round of 16 — Paris medalists and projected qualifiers.",
+    "potentialContenders": [
+      {
+        "name": "Lee Woo-seok",
+        "country": "KOR",
+        "note": "Paris 2024 men's individual gold medalist."
+      },
+      {
+        "name": "Kim Woo-jin",
+        "country": "KOR",
+        "note": "Paris 2024 men's individual silver and team gold."
+      },
+      {
+        "name": "Brady Ellison",
+        "country": "USA",
+        "note": "Four-time Games participant; home venue swan song."
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.495Z"
+  },
+  "ARC15": {
+    "blurb": "Men's recurve individual medals — quarterfinals, semifinals, bronze, and gold all in one night. Lee Woo-seok won Paris gold; Kim Woo-jin took silver. If both make the semis, Korea could face itself for gold. Brady Ellison, if competing, seeks the home medal that's eluded him across four prior Games.\n\nArchers shoot one arrow at a time in the final — no sets, just points. Maximum pressure, dead silence between shots, and the gold decided by millimeters.\n\nThursday evening at Carson Stadium — lights, crowd filling every seat, and the quietest tension in all of sport when an archer draws.",
+    "potentialContendersIntro": "Expected men's recurve finalists — Paris medalists and projected medal contenders.",
+    "potentialContenders": [
+      {
+        "name": "Lee Woo-seok",
+        "country": "KOR",
+        "note": "Paris 2024 individual gold medalist; Korea's top man."
+      },
+      {
+        "name": "Kim Woo-jin",
+        "country": "KOR",
+        "note": "Paris 2024 individual silver and team gold; consistent elite performer."
+      },
+      {
+        "name": "Brady Ellison",
+        "country": "USA",
+        "note": "Four Games of experience; home final would be career capstone."
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.495Z"
+  },
+  "ARC16": {
+    "blurb": "The recurve women's individual bracket narrows to eight survivors at Carson Stadium. Elimination rounds in archery are one-on-one duels — five sets, first to six points, sudden death if tied.\n\nSouth Korea's assembly line of champions will likely place multiple archers in this round. Lim Si-hyeon, the Paris 2024 gold medalist, could appear if she qualifies for the 2028 team through Korea's notoriously cutthroat trials.\n\nCarson Stadium sits at Dignity Health Sports Park, a purpose-built venue for the Games. Archers shoot from 70 meters — the targets look impossibly small from the stands, and every arrow lands in near-silence.",
+    "potentialContendersIntro": "Lim Si-hyeon won gold in Paris, but South Korea's selection process is ruthless — no spot is guaranteed four years out. An San, the Tokyo triple gold medalist, failed to make the Paris team.",
+    "potentialContenders": [
+      {
+        "name": "Lim Si-hyeon",
+        "country": "KOR",
+        "note": "Paris 2024 individual and team gold medalist — if she qualifies for 2028"
+      },
+      {
+        "name": "Nam Su-hyeon",
+        "country": "KOR",
+        "note": "Paris 2024 individual silver medalist"
+      },
+      {
+        "name": "Jeong Dasomi",
+        "country": "KOR",
+        "note": "Paris 2024 team gold medalist — could contend individually in 2028"
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.506Z"
+  },
+  "ARC17": {
+    "blurb": "Four medal matches unfold in a single electric evening at Carson Stadium. Quarterfinals cut eight archers to four, semifinals determine the gold medal matchup, and the bronze and gold finals close the night under lights.\n\nThis is archery's highest-stakes format — one arrow at a time, maximum pressure, the crowd holding its breath between shots. South Korea has owned this event for decades, but single-elimination brackets produce upsets.\n\nThe session runs late into the Southern California night. Carson Stadium's temporary stands put you close to the shooting line — close enough to hear the snap of the bowstring and the thud of arrows hitting targets 70 meters downrange.",
+    "potentialContendersIntro": "Lim Si-hyeon enters as the reigning Paris champion, though An San's absence from Paris shows how uncertain South Korean team selection can be. Expect at least two Korean archers projected to reach the medal rounds.",
+    "potentialContenders": [
+      {
+        "name": "Lim Si-hyeon",
+        "country": "KOR",
+        "note": "Paris 2024 gold medalist — defending champion if she qualifies"
+      },
+      {
+        "name": "Nam Su-hyeon",
+        "country": "KOR",
+        "note": "Paris 2024 silver medalist — proven under pressure"
+      },
+      {
+        "name": "Jeong Dasomi",
+        "country": "KOR",
+        "note": "Paris 2024 team gold medalist, potential individual contender"
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T03:01:45.506Z"
   },
   "ATH01": {
     "blurb": "Track and field opens at the Coliseum — the same stadium where Carl Lewis ran in 1984. Morning prelims bring the first glimpse of the world's fastest sprinters in the 100m heats, plus qualifying rounds in shot put, hammer throw, and pole vault.\n\nThe session includes over 80 athletes across six events. Sprinters jockey for semifinal spots; throwers chase the top-12 qualifying mark. Early rounds are loose and exploratory — athletes finding rhythm before the stakes rise.\n\nYou're watching from the rim of a stadium that has hosted Games twice before. The temporary track sits elevated on stilts, and 68,000 seats wrap around the oval in a configuration unchanged since Jesse Owens's era.",

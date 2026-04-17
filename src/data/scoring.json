@@ -1,224 +1,615 @@
 {
   "ARC01": {
-    "agg": 2.1,
-    "rSig": 2,
-    "rExp": 3,
-    "rStar": 1,
-    "rUniq": 3,
+    "agg": 3.7,
+    "rSig": 4,
+    "rExp": 4,
+    "rStar": 5,
+    "rUniq": 4,
     "rDem": 1,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "scorecard": {
+      "significance": {
+        "score": 4,
+        "explanation": "Qualification rounds establish bracket seeding but carry no medal stakes — archers are competing for advancement and positioning rather than medals. These sessions are essential to the event structure but represent the lowest tier of competitive consequence."
+      },
+      "experience": {
+        "score": 4,
+        "explanation": "Early morning at a temporary venue in Carson — not ticketed, so no live crowd atmosphere. The range operates in relative quiet with minimal spectacle, though the 70-meter shooting is technically impressive."
+      },
+      "starPower": {
+        "score": 5,
+        "explanation": "World-class archers compete in qualification, including potential appearances by Paris medalists like Lim Si-hyeon and Kim Woo-jin, though the field includes many national champions and lesser-known qualifiers from around the world."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Qualification rounds are routine preparation events — not ticketed and structurally identical across most Games in archery. While women's compound debuts in 2028, qualification itself is standard procedural archery."
+      },
+      "demand": {
+        "score": 1,
+        "explanation": "Not ticketed — no demand dimension applies. This is a closed competition session."
+      },
+      "aggregate": 3.7,
+      "overall": "A closed, non-ticketed qualification session that sets the field but carries minimal spectator experience or stakes. Essential to the event structure but not accessible to the ticket-buying public."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC02": {
-    "agg": 2.1,
-    "rSig": 2,
-    "rExp": 3,
-    "rStar": 1,
-    "rUniq": 3,
+    "agg": 3.7,
+    "rSig": 4,
+    "rExp": 4,
+    "rStar": 5,
+    "rUniq": 4,
     "rDem": 1,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "scorecard": {
+      "significance": {
+        "score": 4,
+        "explanation": "Afternoon qualification rounds complete the seeding phase — archers compete for bracket position but not medals. Competitive stakes are earned through advancement, not medal-deciding outcomes."
+      },
+      "experience": {
+        "score": 4,
+        "explanation": "Afternoon non-ticketed session at a temporary venue. No public attendance, no crowd energy — purely a technical competition structure to rank athletes for elimination rounds."
+      },
+      "starPower": {
+        "score": 5,
+        "explanation": "Paris medalists including Lim Si-hyeon and Kim Woo-jin may shoot these rounds, but qualification fields always mix top seeds with regional qualifiers and lesser-known competitors from smaller federations."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Qualification is procedural archery across all Games — compound's debut is notable for the sport, but the qualification round format itself is standard and not unique to this session."
+      },
+      "demand": {
+        "score": 1,
+        "explanation": "Not ticketed — demand dimension does not apply."
+      },
+      "aggregate": 3.7,
+      "overall": "A closed, non-ticketed qualification session structurally identical to countless prior Games archery prelims. Essential procedurally but with no spectator access or unique character."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC03": {
-    "agg": 5.5,
-    "rSig": 8,
-    "rExp": 5,
-    "rStar": 4,
-    "rUniq": 3,
-    "rDem": 5,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "agg": 8,
+    "rSig": 9,
+    "rExp": 8,
+    "rStar": 7,
+    "rUniq": 8,
+    "rDem": 7,
+    "scorecard": {
+      "significance": {
+        "score": 9,
+        "explanation": "Compound mixed team crowns the first-ever Games gold medals in this debut format, with quarterfinals through gold all in one session. Medal-deciding stakes in a brand-new event carry substantial competitive weight."
+      },
+      "experience": {
+        "score": 8,
+        "explanation": "Evening session under stadium lights at Carson allows crowd atmosphere and prime-time viewing of elimination archery. The mixed-team format creates strategic rhythm and coordination drama between partners that adds engagement beyond individual competition."
+      },
+      "starPower": {
+        "score": 7,
+        "explanation": "South Korea fields world-class compound pairs, and USA archery leaders could compete, but compound lacks the global household-name recognition of recurve stars. The athletes are elite, though less likely to be recognized by general audiences."
+      },
+      "uniqueness": {
+        "score": 8,
+        "explanation": "Compound mixed team is a Games debut event, making this the inaugural gold-medal match in the format — a genuinely historic pairing of new event and medal stakes. The newness combined with elimination medals justifies a high uniqueness score."
+      },
+      "demand": {
+        "score": 7,
+        "explanation": "Medal round evening session at an iconic venue drives demand, though compound's lower global profile and debut status mean ticket competition is likely modest compared to recurve finals or marquee sports. Still expected to draw solid crowds."
+      },
+      "aggregate": 8,
+      "overall": "The debut compound mixed team medal session offers historic significance as the first-ever Games gold in this format, with evening atmosphere and strategic appeal. Lower global star power than recurve, but the novelty and medal stakes make it a sought-after Games ticket."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC04": {
-    "agg": 2.1,
-    "rSig": 2,
-    "rExp": 3,
-    "rStar": 1,
-    "rUniq": 3,
-    "rDem": 1,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "agg": 5.1,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 4,
+    "rDem": 5,
+    "scorecard": {
+      "significance": {
+        "score": 5,
+        "explanation": "Round-of-32 individual eliminations carry advancement stakes but are preliminary rounds — archers compete to avoid early exits, not for medals. Competitive pressure exists but is diffused across many matches rather than concentrated on medal outcomes."
+      },
+      "experience": {
+        "score": 5,
+        "explanation": "Morning session at Carson Stadium — early in the day before crowds build, but in a dedicated Games venue with a live audience present. The archery itself is world-class, though the atmosphere lacks the intensity of evening medal rounds or later-stage eliminations."
+      },
+      "starPower": {
+        "score": 7,
+        "explanation": "Likely includes Paris medalist Lim Si-hyeon and top Korean competitors, plus potential appearance by Brady Ellison shooting in front of his home crowd. Top-seeded archers often dominate early rounds, raising the probability of seeing elite athletes."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Round of 32 is a routine preliminary elimination format replicated across every Games and sport — though the venue and athlete roster change, the competitive structure is standard and occurs multiple times during the archery schedule."
+      },
+      "demand": {
+        "score": 5,
+        "explanation": "Prelim-round ticket at a Games venue, morning timing reduces evening prime-time demand, but still a ticketed archery session at the 2028 Games. Easier to obtain than medal rounds but still expected to draw solid ticket interest."
+      },
+      "aggregate": 5.1,
+      "overall": "A preliminary elimination session with solid star-power potential and home crowd appeal if Brady Ellison competes, but morning timing and early-round stakes limit it below medal sessions. A solid mid-tier Games ticket with notable athletes but not the intensity or rarity of medal rounds."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC05": {
-    "agg": 2.1,
-    "rSig": 2,
-    "rExp": 3,
-    "rStar": 1,
-    "rUniq": 3,
-    "rDem": 1,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "agg": 5.5,
+    "rSig": 5,
+    "rExp": 6,
+    "rStar": 7,
+    "rUniq": 4,
+    "rDem": 6,
+    "scorecard": {
+      "significance": {
+        "score": 5,
+        "explanation": "Round-of-32 and round-of-16 matches represent early eliminations with advancement stakes. Competitive pressure builds as the field narrows, but these are prelim rounds — medal stakes remain several rounds ahead."
+      },
+      "experience": {
+        "score": 6,
+        "explanation": "Evening session at Carson Stadium under lights creates atmosphere and allows crowd energy to build. Archery's inherent tension is heightened in prime-time, though the competitive significance of early eliminations keeps it below medal-round intensity."
+      },
+      "starPower": {
+        "score": 7,
+        "explanation": "South Korea's top recurve archers likely appear in round of 16, and Brady Ellison's potential presence brings veteran star power in a home Games. Top seeds dominate early rounds, so seeing elite archers is probable."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Round-of-32 and round-of-16 eliminations are standard recurring formats across the archery schedule — multiple sessions feature identical round structures, so this session's competitive format is routine rather than novel."
+      },
+      "demand": {
+        "score": 6,
+        "explanation": "Evening ticketed archery session with crowd atmosphere and prime-time appeal. Prelim-round status and early elimination stakes limit demand below medal rounds, but evening timing and live atmosphere make it more sought-after than morning sessions."
+      },
+      "aggregate": 5.5,
+      "overall": "An evening session with solid star-power potential and better atmosphere than morning prelims, but early elimination stakes and recurring format keep it as a mid-tier Games ticket. Home-crowd appeal and evening timing elevate it modestly above comparable morning rounds."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC06": {
-    "agg": 2.1,
-    "rSig": 2,
-    "rExp": 3,
-    "rStar": 1,
-    "rUniq": 3,
-    "rDem": 1,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "agg": 4.9,
+    "rSig": 5,
+    "rExp": 4,
+    "rStar": 7,
+    "rUniq": 4,
+    "rDem": 5,
+    "scorecard": {
+      "significance": {
+        "score": 5,
+        "explanation": "Continuing round-of-32 and round-of-16 eliminations carries advancement stakes as the bracket narrows. Competitive pressure mounts toward quarterfinals, but these are still preliminary rounds without medal-deciding outcomes."
+      },
+      "experience": {
+        "score": 4,
+        "explanation": "Sunday morning at Carson Stadium — early in the day before crowds build, and morning timing mutes the energy that evening sessions generate. The archery competition is world-class, but the spectator atmosphere lacks prime-time intensity."
+      },
+      "starPower": {
+        "score": 7,
+        "explanation": "Paris medalists Lim Si-hyeon and Kim Woo-jin likely appear in round-of-16 matches. An San's potential return after missing Paris adds intrigue. Top-seeded archers dominate early rounds, increasing the probability of seeing marquee names."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Round-of-32 and round-of-16 formats repeat multiple times throughout the archery schedule — while An San's potential appearance would be narratively interesting, the competitive structure itself is standard recurring elimination archery."
+      },
+      "demand": {
+        "score": 5,
+        "explanation": "Prelim-round ticketed session with daytime timing reducing demand compared to evening medals. Morning archery is still a Games event, but the weekend timing and early-round status place it as baseline demand for archery tickets."
+      },
+      "aggregate": 4.9,
+      "overall": "A Sunday morning session with notable star-power potential, especially if An San competes, but daytime timing and early elimination stakes limit its appeal. Functionally similar to other early-round sessions, it lands as a baseline-tier Games ticket with interesting storylines but limited scarcity."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC07": {
-    "agg": 2.1,
-    "rSig": 2,
-    "rExp": 3,
-    "rStar": 1,
-    "rUniq": 3,
-    "rDem": 1,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "agg": 5.7,
+    "rSig": 5,
+    "rExp": 6,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 6,
+    "scorecard": {
+      "significance": {
+        "score": 5,
+        "explanation": "Final round-of-32 and round-of-16 matches continue eliminations with advancement stakes as the bracket tightens toward quarterfinals. Competitive weight increases but medals remain several rounds away."
+      },
+      "experience": {
+        "score": 6,
+        "explanation": "Sunday evening at Carson with weekend crowds and prime-time atmosphere. The session runs late enough to draw spectators finishing daytime activities, creating better crowd energy than morning rounds while maintaining the intimate tension archery requires."
+      },
+      "starPower": {
+        "score": 8,
+        "explanation": "Round-of-16 stage increases the likelihood of seeing Paris medalists like Lim Si-hyeon and Kim Woo-jin still in competition. Brady Ellison's potential presence in front of home crowds brings additional star appeal. Top contenders cluster in later qualifying rounds."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Round-of-16 elimination matches are routine formats replicated throughout the archery competition schedule — while the specific athlete matchups are unique, the competitive structure is standard and non-distinctive."
+      },
+      "demand": {
+        "score": 6,
+        "explanation": "Evening session with weekend timing and building crowd energy. Prelim-round status limits demand below medal rounds, but evening prime-time and weekend atmosphere make it more sought-after than comparable weekday or morning sessions."
+      },
+      "aggregate": 5.7,
+      "overall": "A strong Sunday evening session with elevated star-power potential and better atmosphere than morning rounds. Early-elimination status and recurring format prevent it from reaching medal-round demand, but weekend timing and evening hours make it a solid mid-tier Games ticket."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC08": {
-    "agg": 2.1,
-    "rSig": 2,
-    "rExp": 3,
-    "rStar": 1,
-    "rUniq": 3,
-    "rDem": 1,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "agg": 5.3,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 5,
+    "scorecard": {
+      "significance": {
+        "score": 5,
+        "explanation": "Women's recurve round-of-32 and round-of-16 eliminations carry advancement stakes as the bracket narrows. Competitive pressure increases, but these remain preliminary rounds without medal-deciding outcomes."
+      },
+      "experience": {
+        "score": 5,
+        "explanation": "Mid-morning session at Carson Stadium before peak crowd hours. The archery is world-class, but daytime timing and early-round structure limit the spectator energy compared to evening medal rounds. Still a live Games experience within an archery venue."
+      },
+      "starPower": {
+        "score": 8,
+        "explanation": "Lim Si-hyeon, the Paris women's gold medalist, likely appears in round-of-16 matches. An San's potential return would add major intrigue despite her Paris absence. Women's recurve carries South Korea's strongest global archery profile, raising the probability of seeing recognizable names."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Round-of-32 and round-of-16 formats are standard eliminations repeated throughout the archery schedule. While the athlete roster is specific, the competitive structure is routine across multiple sessions."
+      },
+      "demand": {
+        "score": 5,
+        "explanation": "Daytime ticketed session at a Games venue. Prelim-round status and morning timing reduce demand, though women's recurve's strong global interest may draw steady crowds. Baseline demand tier for archery preliminaries."
+      },
+      "aggregate": 5.3,
+      "overall": "A daytime preliminary session with strong star-power potential — especially if Lim Si-hyeon or An San competes — but morning timing and early-elimination stakes limit its standing. Lim Si-hyeon's status as Paris gold medalist provides narrative appeal, making this a solid baseline Games ticket with notable athletes."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC09": {
-    "agg": 5.8,
+    "agg": 8,
     "rSig": 9,
-    "rExp": 5,
-    "rStar": 4,
-    "rUniq": 3,
-    "rDem": 5,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "rExp": 8,
+    "rStar": 8,
+    "rUniq": 6,
+    "rDem": 8,
+    "scorecard": {
+      "significance": {
+        "score": 9,
+        "explanation": "Men's recurve team quarterfinals through gold medal are decided in a single session — three consecutive medal-deciding rounds with two bronze-medal matches and one gold final. Medal stakes compress into one night with maximum competitive importance."
+      },
+      "experience": {
+        "score": 8,
+        "explanation": "Evening session at Carson Stadium under lights with crowd atmosphere. Team archery adds strategic rhythm and coordination drama between partners, creating spectator engagement beyond individual competition. Prime-time timing maximizes the live experience."
+      },
+      "starPower": {
+        "score": 8,
+        "explanation": "Paris gold medalists including Kim Woo-jin likely anchor South Korea's team. Brady Ellison could anchor USA's team in front of a home crowd. Team finals feature the top seeds and Paris medalists competing for the most prestigious medal round."
+      },
+      "uniqueness": {
+        "score": 6,
+        "explanation": "Team recurve medals are decided at every Games, but the specific athlete roster and competitive narrative are unique to 2028. Team-format archery is familiar rather than novel, though this particular collection of athletes and pairings is specific to this Games."
+      },
+      "demand": {
+        "score": 8,
+        "explanation": "Evening medal-round session with strong star power and strategic appeal. Team finals are considered prestige events within archery, with multiple bronze and gold medals awarded, driving ticket demand. Evening timing and medal stakes create solid demand tier."
+      },
+      "aggregate": 8,
+      "overall": "A strong evening medal session combining the Paris gold-medal team, home-crowd potential with Brady Ellison, and strategic team-format appeal. The concentration of medal rounds in one night and team-coordination drama elevate it above individual preliminaries, making it a sought-after Games ticket."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC10": {
-    "agg": 2.1,
-    "rSig": 2,
-    "rExp": 3,
-    "rStar": 1,
-    "rUniq": 3,
-    "rDem": 1,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "agg": 5.1,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 4,
+    "rDem": 5,
+    "scorecard": {
+      "significance": {
+        "score": 5,
+        "explanation": "Men's recurve round-of-32 and round-of-16 eliminations carry advancement stakes as the bracket narrows. Competitive pressure mounts, but these remain preliminary rounds without medal-deciding outcomes."
+      },
+      "experience": {
+        "score": 5,
+        "explanation": "Mid-morning session at Carson Stadium before peak crowd attendance. Daytime timing limits spectator energy compared to evening rounds. The archery is world-class, but the preliminary format and morning hour keep the atmosphere below medal-round intensity."
+      },
+      "starPower": {
+        "score": 7,
+        "explanation": "Paris gold medalist Lee Woo-seok and silver medalist Kim Woo-jin likely appear in round-of-16 matches. Brady Ellison brings veteran star power as a four-time Games competitor. Round-of-16 stage concentrates top-seeded archers, raising the probability of seeing recognizable athletes."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Round-of-32 and round-of-16 eliminations are standard recurring formats throughout the archery schedule. Multiple sessions feature identical competitive structures, making this session format-routine rather than distinctive."
+      },
+      "demand": {
+        "score": 5,
+        "explanation": "Daytime ticketed session at a Games venue. Prelim-round status and morning timing reduce demand compared to medal rounds. Men's recurve has strong global interest, but early-round status creates baseline demand expectations."
+      },
+      "aggregate": 5.1,
+      "overall": "A daytime preliminary session with solid star-power potential from Paris medalists Lee Woo-seok and Kim Woo-jin. Morning timing and early-round stakes limit its demand below medal rounds, though strong Asian interest may drive steady ticket interest. A baseline mid-tier Games ticket."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC11": {
-    "agg": 5.8,
+    "agg": 8.1,
     "rSig": 9,
-    "rExp": 5,
-    "rStar": 4,
-    "rUniq": 3,
-    "rDem": 5,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 6,
+    "rDem": 8,
+    "scorecard": {
+      "significance": {
+        "score": 9,
+        "explanation": "Women's recurve team quarterfinals through gold medals are decided in one night — multiple medal rounds compressed into a single session. Medal-deciding stakes in all rounds with consistent competitive importance throughout."
+      },
+      "experience": {
+        "score": 8,
+        "explanation": "Evening session at Carson Stadium with prime-time atmosphere and crowd energy. Team archery creates strategic rhythm and coordination drama between three-person rotations, enhancing spectator engagement beyond individual competition format."
+      },
+      "starPower": {
+        "score": 9,
+        "explanation": "Paris gold-medal team anchored by Lim Si-hyeon, Nam Su-hyeon, and Jeong Dasomi likely competes. South Korea's women's recurve team carries exceptional global recognition. Team finals attract the strongest archers, with Paris medalists almost certain to appear."
+      },
+      "uniqueness": {
+        "score": 6,
+        "explanation": "Team recurve medals are decided at every Games, making the format familiar. However, the specific athlete roster and Lim Si-hyeon's Paris gold-medal team returning creates narrative specificity to this Games, beyond generic team-final structure."
+      },
+      "demand": {
+        "score": 8,
+        "explanation": "Evening medal-round session with exceptional star power and team-format appeal. Women's recurve carries strong global interest, especially South Korea's historical dominance. Multiple bronze and gold medals compressed into one night drive solid ticket demand."
+      },
+      "aggregate": 8.1,
+      "overall": "A strong evening medal session anchored by the Paris gold-medal women's team, with exceptional star power and strategic appeal. Team-format drama and multiple medals in one night create premium Games demand. Among the higher-tier archery tickets available."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC12": {
-    "agg": 2.1,
-    "rSig": 2,
-    "rExp": 3,
-    "rStar": 1,
-    "rUniq": 3,
-    "rDem": 1,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "agg": 5.3,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 5,
+    "scorecard": {
+      "significance": {
+        "score": 5,
+        "explanation": "Mixed team recurve round-of-16 elimination is the opening round of a medal event. Advancement stakes exist, but medals are several rounds away — preliminary competitive pressure without medal-deciding outcomes."
+      },
+      "experience": {
+        "score": 5,
+        "explanation": "Late-morning session at Carson Stadium before peak afternoon crowds. Daytime timing and early-round format limit spectator energy. The mixed-team format adds strategic appeal compared to individual rounds, but early-elimination status keeps the atmosphere muted."
+      },
+      "starPower": {
+        "score": 8,
+        "explanation": "Paris mixed-team gold medalists Lim Si-hyeon and Kim Woo-jin likely open their defense. Brady Ellison's potential mixed pairing brings home-crowd star power. Mixed team attracts top individual seeds, increasing the probability of seeing globally recognized archers."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Round-of-16 elimination is a standard format repeated throughout archery scheduling. While mixed-team format adds novelty to recurve, the round-of-16 structure itself is routine and non-distinctive relative to other archery elimination rounds."
+      },
+      "demand": {
+        "score": 5,
+        "explanation": "Late-morning ticketed session at a Games venue. Prelim-round status and daytime timing reduce demand below medal rounds. Mixed-team format may draw interest from fans following Paris medalists, but early-round status creates baseline demand."
+      },
+      "aggregate": 5.3,
+      "overall": "A late-morning preliminary session with strong star-power potential from the Paris gold-medal pair of Lim Si-hyeon and Kim Woo-jin. Early-round status and daytime timing limit demand below medal rounds, but the Paris medalists' presence and mixed-format appeal create solid baseline Games ticket interest."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC13": {
-    "agg": 5.8,
+    "agg": 8.1,
     "rSig": 9,
-    "rExp": 5,
-    "rStar": 4,
-    "rUniq": 3,
-    "rDem": 5,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 6,
+    "rDem": 8,
+    "scorecard": {
+      "significance": {
+        "score": 9,
+        "explanation": "Mixed team recurve quarterfinals through gold medal are decided in one night — multiple medal-deciding rounds compressed into a single session. All three medal matches carry equal competitive weight with consistent high stakes."
+      },
+      "experience": {
+        "score": 8,
+        "explanation": "Evening session at Carson Stadium with prime-time atmosphere and crowd energy. Mixed-team format creates unique strategic drama with one-man-one-woman alternating-shot structure, adding tactical complexity and coordination appeal beyond individual competition."
+      },
+      "starPower": {
+        "score": 9,
+        "explanation": "Paris gold medalists Lim Si-hyeon and Kim Woo-jin are likely defending their title. Brady Ellison could anchor USA's mixed team in a home Games. Mixed-team finals attract top individual seeded archers, with Paris medalists nearly certain to appear in medal rounds."
+      },
+      "uniqueness": {
+        "score": 6,
+        "explanation": "Mixed-team medal formats repeat at every Games, making the structure familiar. However, the specific Paris medalists and home-Games narrative involving Brady Ellison create some story-specific uniqueness, though the competitive format is routine."
+      },
+      "demand": {
+        "score": 8,
+        "explanation": "Evening medal-round session with exceptional star power and novel team-format appeal. Paris medalists and potential home-crowd narrative drive ticket demand. Multiple medals in one night at prime time create strong Games ticket appeal."
+      },
+      "aggregate": 8.1,
+      "overall": "A premium evening medal session anchored by Paris gold medalists Lim Si-hyeon and Kim Woo-jin, with potential home-crowd storyline and strategic mixed-format appeal. Multiple medals in one night and strong star power make it one of the top-tier archery tickets available."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC14": {
-    "agg": 2.1,
-    "rSig": 2,
-    "rExp": 3,
-    "rStar": 1,
-    "rUniq": 3,
-    "rDem": 1,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "agg": 5.3,
+    "rSig": 5,
+    "rExp": 5,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 5,
+    "scorecard": {
+      "significance": {
+        "score": 5,
+        "explanation": "Men's recurve round-of-16 elimination narrows the field to eight contenders. Advancement stakes increase as the bracket tightens, but medals remain two rounds away — preliminary competitive pressure without medal-deciding outcomes."
+      },
+      "experience": {
+        "score": 5,
+        "explanation": "Late-morning session at Carson Stadium before peak afternoon hours. Daytime timing limits the crowd energy and spectator atmosphere compared to evening rounds. Archery is world-class, but the preliminary format and morning hour keep intensity below medal rounds."
+      },
+      "starPower": {
+        "score": 8,
+        "explanation": "Paris gold medalist Lee Woo-seok and silver medalist Kim Woo-jin likely compete. Brady Ellison's potential appearance in front of a home crowd adds veteran star power. Round-of-16 stage concentrates top seeds, with Paris medalists highly likely to appear."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Round-of-16 elimination is a standard format replicated throughout archery scheduling. Multiple sessions across the Games feature identical round structures, making this session's competitive format routine rather than distinctive."
+      },
+      "demand": {
+        "score": 5,
+        "explanation": "Late-morning ticketed session at a Games venue. Prelim-round status and daytime timing reduce demand below medal rounds. Men's recurve's strong global interest may generate steady ticket interest, but early-round status creates baseline demand tier."
+      },
+      "aggregate": 5.3,
+      "overall": "A late-morning preliminary session with strong star-power potential from Paris medalists Lee Woo-seok and Kim Woo-jin, plus Brady Ellison's home presence. Early-round status and daytime timing limit demand below medal rounds, though Asian interest and star athletes create solid baseline Games ticket appeal."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC15": {
-    "agg": 5.8,
-    "rSig": 9,
-    "rExp": 5,
-    "rStar": 4,
-    "rUniq": 3,
-    "rDem": 5,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "agg": 9.6,
+    "rSig": 10,
+    "rExp": 9,
+    "rStar": 9,
+    "rUniq": 10,
+    "rDem": 10,
+    "scorecard": {
+      "significance": {
+        "score": 10,
+        "explanation": "Men's recurve individual quarterfinals through gold medal are decided in one night — the marquee archery event culminating in a singles final. Gold-medal match in archery's most prestigious individual format carries maximum competitive weight and historical significance."
+      },
+      "experience": {
+        "score": 9,
+        "explanation": "Evening session at Carson Stadium under lights with full crowd atmosphere and prime-time energy. The individual-final format — one arrow at a time with no sets — creates maximum tension and silence between shots. Archery's purest form under maximum pressure in front of a live audience."
+      },
+      "starPower": {
+        "score": 9,
+        "explanation": "Paris gold medalist Lee Woo-seok and silver medalist Kim Woo-jin are near-certain to appear in medal rounds. Brady Ellison brings four-Games experience and home-crowd narrative to USA's archery. Individual finals concentrate the sport's biggest names competing for its highest honor."
+      },
+      "uniqueness": {
+        "score": 10,
+        "explanation": "Men's recurve individual gold medal at the 2028 Games is an iconic marquee final — the singular championship moment of archery's core discipline at a major Games. This is the definitive archery spectacle, once-per-Games significance."
+      },
+      "demand": {
+        "score": 10,
+        "explanation": "Evening gold-medal final in archery's premier individual event, with Paris medalists competing and home-crowd potential. Medal-round concentration with one-arrow final format creates maximum prestige. Among the most sought-after archery tickets, tracking toward sell-out."
+      },
+      "aggregate": 9.6,
+      "overall": "The premier archery session of the 2028 Games — men's recurve individual gold medal with Paris medalists Lee Woo-seok and Kim Woo-jin competing, plus Brady Ellison's potential home-medal narrative. Evening one-arrow-at-a-time final format maximizes tension and prestige. A marquee Games ticket with historic significance and exceptional demand."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.692Z"
   },
   "ARC16": {
-    "agg": 2.1,
-    "rSig": 2,
-    "rExp": 3,
-    "rStar": 1,
-    "rUniq": 3,
-    "rDem": 1,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "agg": 4.6,
+    "rSig": 5,
+    "rExp": 4,
+    "rStar": 6,
+    "rUniq": 4,
+    "rDem": 4,
+    "scorecard": {
+      "significance": {
+        "score": 5,
+        "explanation": "A quarterfinal round where eight archers compete for advancement — real stakes for athletes earning their path to medals, but not a medal-deciding match itself. This is a crucial turning point in the bracket rather than a championship round."
+      },
+      "experience": {
+        "score": 4,
+        "explanation": "A 9:30 AM Friday slot at a temporary venue means early-morning crowds and minimal daytime energy, which is about as modest as spectator conditions get at the 2028 Games, though the silent, tension-filled nature of archery competition can still captivate attentive audiences."
+      },
+      "starPower": {
+        "score": 6,
+        "explanation": "South Korea's national team pipeline virtually guarantees world-class competitors and likely medal contenders in the field, though individual names may not register globally outside archery circles. Lim Si-hyeon, the Paris gold medalist, could appear depending on Korea's team selection."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Archery preliminaries and early elimination rounds at Carson Stadium are one of many similar sessions across the Games schedule — the format and venue are standard, and this quarterfinal sits in the middle of a multi-round competition day without ceremonial or iconic venue distinction."
+      },
+      "demand": {
+        "score": 4,
+        "explanation": "An early morning preliminary round of a niche sport with a low ticket price ceiling makes this the easiest session to book within archery, though Games scarcity still ensures no genuine surplus — relative availability within the 2028 context, not absolute ease."
+      },
+      "aggregate": 4.6,
+      "overall": "A baseline archery session: the early-morning quarterfinal slot and preliminary round status limit spectator energy and medal stakes, though South Korea's dominance and the silent intensity of one-on-one duels offer quiet appeal for dedicated fans. Accessible tickets and flexible scheduling make this the entry point for archery attendance."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.696Z"
   },
   "ARC17": {
-    "agg": 5.8,
+    "agg": 8.1,
     "rSig": 9,
-    "rExp": 5,
-    "rStar": 4,
-    "rUniq": 3,
-    "rDem": 5,
-    "scorecard": null,
-    "model": "legacy",
-    "promptVersion": 0,
+    "rExp": 8,
+    "rStar": 8,
+    "rUniq": 7,
+    "rDem": 8,
+    "scorecard": {
+      "significance": {
+        "score": 9,
+        "explanation": "Four medal matches — quarterfinals through gold medal final — compress the entire medal-deciding sequence into a single session, making every arrow on the line count toward a gold medal. This is the sport's championship night with the highest competitive stakes."
+      },
+      "experience": {
+        "score": 8,
+        "explanation": "Prime-time evening under lights (8:30 PM–10:50 PM) at a purpose-built venue with temporary stands placed close to the shooting line creates electric atmosphere. The progression from quarterfinals to gold medal final builds narrative momentum, and the intimate scale of archery competition amplifies the tension of each shot."
+      },
+      "starPower": {
+        "score": 8,
+        "explanation": "Lim Si-hyeon, the Paris 2024 gold medalist and a confirmed Games contender, is highly likely to compete in this final round. South Korea's relentless dominance in women's recurve means multiple medal podium candidates are present, though outside archery circles global name recognition may be modest."
+      },
+      "uniqueness": {
+        "score": 7,
+        "explanation": "A women's recurve individual gold medal final at the 2028 Games is a marquee championship moment, and the expanded session format — collapsing quarterfinalist through medal rounds into one prime-time night — creates a curated spectacle that elevates this above a standard medal match."
+      },
+      "demand": {
+        "score": 8,
+        "explanation": "The combination of prime-time scheduling, medal stakes, and the rare spectacle of four consecutive elimination matches under lights drives strong demand. Price ceiling ($862) and the concentrated medal-deciding format make this one of the most sought-after archery sessions, though not quite the absolute scarcity tier of basketball or track finals."
+      },
+      "aggregate": 8.1,
+      "overall": "A marquee archery championship: the gold medal final and three preceding elimination rounds, combined with prime-time evening scheduling and likely appearance of Paris medalists, make this the prestige archery session. South Korea's global dominance of women's recurve adds intrigue, and the silent, high-pressure format translates powerfully to live spectatorship."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 3,
     "batchId": null,
-    "generatedAt": ""
+    "generatedAt": "2026-04-17T03:10:11.696Z"
   },
   "ATH01": {
     "agg": 5.4,
