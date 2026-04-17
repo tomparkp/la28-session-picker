@@ -1,5 +1,8 @@
 {
   "_meta": {
     "notes": "Per-sport corrections, keyed by sport name (matches sessions.json sport field). Each value is an array of authoritative correction strings. Injected into generate:sport-facts and into per-sport prompts in generate:session-content / generate:session-scores. Edit by hand, then re-run the relevant generate command with --force on that sport."
-  }
+  },
+  "Badminton": [
+    "Viktor Axelsen (Denmark, Paris 2024 men's singles gold medalist and Tokyo 2020 champion) has retired from competitive badminton due to chronic back problems. He will not compete at LA28. Do not frame the men's singles draw around an Axelsen title defense."
+  ]
 }

@@ -1332,904 +1332,904 @@
     "generatedAt": "2026-04-17T10:41:33.485Z"
   },
   "BDM01": {
-    "agg": 4.6,
+    "agg": 4.7,
     "rSig": 4,
     "rExp": 5,
     "rStar": 6,
     "rUniq": 4,
-    "rDem": 4,
+    "rDem": 5,
     "scorecard": {
       "significance": {
         "score": 4,
-        "explanation": "Opening group play session with no medal stakes—athletes compete for advancement only. Round-robin format means every match counts toward seeding, but this is preliminary positioning, not podium-deciding competition."
+        "explanation": "Opening group play session with no medal stakes—athletes compete for bracket advancement only. World-class field across all five events, but results determine seeding rather than medals."
       },
       "experience": {
         "score": 5,
-        "explanation": "Early Saturday morning (8:00 AM) limits crowd energy and peak stadium atmosphere. Galen Center's 10,000+ capacity and climate control provide solid viewing, but daytime timing and non-knockout format lack the intensity of evening prime-time rounds."
+        "explanation": "Early morning (8:00 AM) slot at a solid indoor venue with multiple courts running simultaneously. Good sightlines and climate control, but daytime lacks the energy of prime-time sessions."
       },
       "starPower": {
         "score": 6,
-        "explanation": "Paris medalists from China, Chinese Taipei, Malaysia, Japan, and Korea are projected to compete, but group play often sees top seeds manage matches casually. World-class athletes throughout the field, though not all marquee names will compete aggressively in early rounds."
+        "explanation": "Paris medalists from China, Chinese Taipei, Malaysia, and Japan are projected to compete if they qualify. Top-tier athletes present, but group play features varied matchups rather than marquee showdowns."
       },
       "uniqueness": {
         "score": 4,
-        "explanation": "Standard opening group-play session typical of badminton tournament structure. While it's the 2028 Games, this is one of many identical preliminary sessions across the tournament—no rare venue-sport pairing or historic moment distinguishes it."
+        "explanation": "First badminton session of the Games at an indoor multipurpose venue. Opening-day novelty carries some weight, but it's a standard group play round across a generic arena with no iconic pairing or ceremonial element."
       },
       "demand": {
-        "score": 4,
-        "explanation": "Low price ceiling ($28–$304) and early-morning timing reduce ticket competition. Early-round badminton sessions attract dedicated fans and completionists; general audiences chase knockout rounds and evening slots with higher prices and star visibility."
+        "score": 5,
+        "explanation": "Low price ceiling ($28–$303) and early-morning timing make this easier to access than evening sessions. Still a 2028 Games session with global scarcity, but preliminary play and daytime slot dampen urgency."
       },
-      "aggregate": 4.6,
-      "overall": "Opening badminton group play with no medal stakes and morning timing. Best for badminton enthusiasts tracking Paris medalists through round-robin positioning; casual fans should wait for evening or knockout sessions."
+      "aggregate": 4.7,
+      "overall": "The 2028 badminton competition opens with group play across all five events, featuring Paris medalists if they qualify. Early-morning timing and preliminary stakes make this an accessible entry point rather than a must-see session."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
+    "generatedAt": "2026-04-17T11:41:44.527Z"
   },
   "BDM02": {
     "agg": 4.7,
     "rSig": 4,
     "rExp": 5,
-    "rStar": 7,
-    "rUniq": 4,
-    "rDem": 4,
-    "scorecard": {
-      "significance": {
-        "score": 4,
-        "explanation": "Preliminary group play without medal implications—athletes contest seeding and advancement only. Fewer total matches than morning blocks due to condensed afternoon window, but still zero podium pressure."
-      },
-      "experience": {
-        "score": 5,
-        "explanation": "Afternoon 2:00 PM start offers better energy than early morning but falls short of prime-time atmosphere. Galen Center's sightlines and climate control provide solid comfort; depth of matches is limited by shorter time window (2.5 hours) compared to longer sessions."
-      },
-      "starPower": {
-        "score": 7,
-        "explanation": "Focuses on women's events where China swept gold and silver in Paris—those medalists are expected entrants. Women's doubles carries genuine star appeal with established Paris podium finishers; mixed doubles and women's singles add additional name-value competitors."
-      },
-      "uniqueness": {
-        "score": 4,
-        "explanation": "Routine afternoon group-play block. Women's focus adds slight variety to earlier mixed-heavy sessions, but this remains a standard preliminary round indistinguishable from other early-week badminton sessions at the same venue."
-      },
-      "demand": {
-        "score": 4,
-        "explanation": "Modest price range ($28–$304) with afternoon timing less competitive than evening slots. Women's badminton draws dedicated followers and casual fans interested in China's dominant pairs; broader appeal lags behind night sessions."
-      },
-      "aggregate": 4.7,
-      "overall": "Women-focused group play in afternoon slot featuring China's Paris-dominant doubles pairs. Solid entry point for badminton fans interested in women's events; general audiences should prioritize knockout rounds."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
-  },
-  "BDM03": {
-    "agg": 5.5,
-    "rSig": 4,
-    "rExp": 7,
-    "rStar": 7,
-    "rUniq": 4,
-    "rDem": 6,
-    "scorecard": {
-      "significance": {
-        "score": 4,
-        "explanation": "Group play session with no medal stakes—athletes still fighting for knockout-round qualification only. Nearly five-hour window covers all five events, but stakes remain limited to seeding and bracket positioning."
-      },
-      "experience": {
-        "score": 7,
-        "explanation": "Prime-time evening slot (6:30 PM–11:05 PM) with extended viewing window and louder crowd energy. Basketball-venue acoustics amplify excitement; the venue's concert-level lighting and sound design create Games atmosphere beyond typical indoor badminton."
-      },
-      "starPower": {
-        "score": 7,
-        "explanation": "Malaysia's bronze men's doubles and Japan's bronze women's doubles from Paris are projected to compete. Mix of all five event types ensures diverse competitor pedigree; evening timing often draws top seeds playing competitively rather than managing group matches."
-      },
-      "uniqueness": {
-        "score": 4,
-        "explanation": "One of multiple evening group-play sessions across the tournament. While the five-hour window is longer than some blocks, this remains a standard preliminary round at a generic multipurpose venue—no medal drama or iconic pairing elevates it."
-      },
-      "demand": {
-        "score": 6,
-        "explanation": "Evening pricing and time slot drive higher demand than morning prelims. Prime-time Games badminton attracts broader crowds than early sessions; price ceiling ($28–$304) remains moderate, but scarcity of evening tickets in presale pushes this into solid demand territory."
-      },
-      "aggregate": 5.5,
-      "overall": "Evening group-play marathon across all five badminton events with prime-time crowd energy and extended viewing. Strong choice for Games-day atmosphere and Paris medalist sightings; still preliminary stakes, so medal rounds carry more significance."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
-  },
-  "BDM04": {
-    "agg": 4.6,
-    "rSig": 4,
-    "rExp": 5,
     "rStar": 6,
-    "rUniq": 4,
-    "rDem": 4,
-    "scorecard": {
-      "significance": {
-        "score": 4,
-        "explanation": "Midpoint group play session with all five events covering roughly 3.5 hours. Athletes compete for qualifying positions, not medals—this is advancement racing, not podium theater."
-      },
-      "experience": {
-        "score": 5,
-        "explanation": "Sunday morning (8:00 AM) slot lacks prime-time stadium buzz. Galen Center's climate control and accessibility appeal to families, but daytime timing and early start reduce the visceral Games energy of evening sessions."
-      },
-      "starPower": {
-        "score": 6,
-        "explanation": "China's Paris mixed-doubles gold medalists are likely participants if qualified. Host nation and continental universality places add unpredictable competitor mix; world-class athletes throughout the field even if not all Paris medalists appear."
-      },
-      "uniqueness": {
-        "score": 4,
-        "explanation": "Standard midpoint group-play block typical of tournament structure. Family-friendly morning timing and all-five-events format don't distinguish this from other early-week preliminary rounds at the same venue."
-      },
-      "demand": {
-        "score": 4,
-        "explanation": "Weekend morning timing might attract local families, but badminton's lower global profile and group-play preliminary stakes keep demand modest. Low price range ($28–$304) and fewer competitive tickets than evening sessions."
-      },
-      "aggregate": 4.6,
-      "overall": "Sunday morning group-play session with all five events and family-friendly timing. Easier ticket access than evening slots; primarily for badminton core fans and those building a complete Games experience rather than headline seekers."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
-  },
-  "BDM05": {
-    "agg": 4.7,
-    "rSig": 4,
-    "rExp": 5,
-    "rStar": 7,
-    "rUniq": 4,
-    "rDem": 4,
-    "scorecard": {
-      "significance": {
-        "score": 4,
-        "explanation": "Final positioning group play with compressed 2.5-hour window across all five events. Athletes secure knockout-round seeding without medal implications—pure advancement stakes."
-      },
-      "experience": {
-        "score": 5,
-        "explanation": "Sunday afternoon (2:00 PM) slot sits between early morning and prime time. Galen Center's venue quality remains consistent, but afternoon light and smaller crowd than evening sessions create muted atmosphere despite solid sightlines from all tiers."
-      },
-      "starPower": {
-        "score": 7,
-        "explanation": "Chinese Taipei's Paris gold men's doubles pair are projected entrants along with China's medalists across multiple events. Strong roster of Paris podium finishers, though afternoon group play sometimes sees seeded athletes managing rather than dominating."
-      },
-      "uniqueness": {
-        "score": 4,
-        "explanation": "Routine afternoon group-play conclusion. While it marks group-stage wrap for many athletes, this is a standard preliminary session—no medal drama, iconic venue pairing, or historically significant moment differentiates it."
-      },
-      "demand": {
-        "score": 4,
-        "explanation": "Mid-range pricing ($28–$304) with weekend afternoon timing appeals to leisure attendees and badminton enthusiasts. Still falls below evening demand; group-play preliminary nature and shorter window reduce urgency to book compared to knockout rounds."
-      },
-      "aggregate": 4.7,
-      "overall": "Compressed Sunday afternoon group-play wraparound featuring Paris medalists across all five disciplines. Solid for dedicated badminton fans tracking bracket seeding; general Games audiences should target evening or knockout sessions for higher energy."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
-  },
-  "BDM06": {
-    "agg": 5.5,
-    "rSig": 4,
-    "rExp": 7,
-    "rStar": 7,
-    "rUniq": 4,
-    "rDem": 6,
-    "scorecard": {
-      "significance": {
-        "score": 4,
-        "explanation": "Group-stage conclusions across five hours determine final knockout bracket positions. Athletes compete for seeding and qualification—real advancement stakes, but no medal matches occurring here."
-      },
-      "experience": {
-        "score": 7,
-        "explanation": "Sunday evening (6:00 PM–11:05 PM) five-hour marathon with peak crowd energy and venue production values. Concert-like lighting, amplified sound, and multiplied court action create Games spectacle; longer window allows deeper immersion than shorter blocks."
-      },
-      "starPower": {
-        "score": 7,
-        "explanation": "Japan's Paris bronze mixed-doubles pair are projected to secure knockout berths. Full field of Paris medalists across all events and disciplines; evening timing often brings top seeds playing competitively as they finalize seeding positions."
-      },
-      "uniqueness": {
-        "score": 4,
-        "explanation": "One of multiple evening group-stage sessions. While five hours is longer than typical, this remains a preliminary round at a standard multipurpose venue—no medal stakes or iconic venue-sport pairing distinguishes it from earlier evening blocks."
-      },
-      "demand": {
-        "score": 6,
-        "explanation": "Evening slot and extended viewing window drive solid ticket competition despite group-play stakes. Price range ($28–$304) caps demand versus knockout rounds, but prime-time Games badminton on a Sunday night attracts broader audiences than morning prelims."
-      },
-      "aggregate": 5.5,
-      "overall": "Weekend-closing group-play finale with five hours of all-events competition and evening atmosphere. Delivers Games energy and Paris medalist visibility without medal stakes; strong choice for evening Games experience, though semifinals and finals carry greater significance."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
-  },
-  "BDM07": {
-    "agg": 4.7,
-    "rSig": 4,
-    "rExp": 5,
-    "rStar": 7,
-    "rUniq": 4,
-    "rDem": 4,
-    "scorecard": {
-      "significance": {
-        "score": 4,
-        "explanation": "Second-week group-play matches as tournament approaches knockout rounds. Remaining matches cover bracket seeding and qualification—advancement stakes without podium implications yet."
-      },
-      "experience": {
-        "score": 5,
-        "explanation": "Monday morning (8:00 AM) start limits crowd energy and stadium atmosphere. Galen Center's venue amenities provide solid comfort, but early-week weekday timing and daytime slot lack the prime-time intensity games will build toward."
-      },
-      "starPower": {
-        "score": 7,
-        "explanation": "China's second women's doubles entry (Paris silver medalists) are expected to compete if qualified. Strong Paris medalist contingent across all events; morning sessions sometimes feature top seeds controlling matches, so star visibility varies by matchup intensity."
-      },
-      "uniqueness": {
-        "score": 4,
-        "explanation": "Standard Monday morning group-play block. Location in Exposition Park near SC and LA Memorial Coliseum adds walkable context, but the session itself is a routine preliminary—not medal-deciding and one of many identical early-week prelims."
-      },
-      "demand": {
-        "score": 4,
-        "explanation": "Weekday morning slot with modest pricing ($28–$304) attracts primarily dedicated badminton fans and local visitors. Less competitive than weekend or evening sessions; group-play preliminary nature and early timing reduce ticket urgency versus later knockout rounds."
-      },
-      "aggregate": 4.7,
-      "overall": "Second-week Monday morning group play with Paris medalists and walkable Exposition Park access. Best for completing badminton tournament arc and accessing quieter sessions; stronger demand and energy build as knockout rounds approach."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
-  },
-  "BDM08": {
-    "agg": 4.7,
-    "rSig": 4,
-    "rExp": 5,
-    "rStar": 7,
-    "rUniq": 4,
-    "rDem": 4,
-    "scorecard": {
-      "significance": {
-        "score": 4,
-        "explanation": "Group-play conclusions with all five events finalizing bracket seeding. Final positioning round carries advancement stakes for bubble athletes, but no medals are decided here."
-      },
-      "experience": {
-        "score": 5,
-        "explanation": "Monday afternoon (2:00 PM) offers lukewarm Games energy—better than morning but weaker than evening. Galen Center maintains solid sightlines and climate control; shorter 2.5-hour window and weekday afternoon timing limit crowd atmosphere."
-      },
-      "starPower": {
-        "score": 7,
-        "explanation": "Korea's Paris mixed-doubles silver medalists are projected to advance through this session. Paris medalists across singles and all three doubles disciplines; afternoon group play sometimes finds top seeds executing strategically rather than showcasing dominance."
-      },
-      "uniqueness": {
-        "score": 4,
-        "explanation": "Routine afternoon group-play conclusion on a weekday. This is one of many preliminary sessions at a multipurpose venue—no medal drama, historic significance, or distinctive venue pairing lifts it beyond standard tournament structure."
-      },
-      "demand": {
-        "score": 4,
-        "explanation": "Weekday afternoon slot with modest pricing ($28–$304) targets local fans and badminton specialists. Lower demand than weekend or evening sessions; group-play stakes and daytime timing reduce ticket urgency compared to knockout rounds beginning later in the week."
-      },
-      "aggregate": 4.7,
-      "overall": "Midweek afternoon group-play finale with Korea's medal contenders highlighted. Solid for tournament completionists and badminton enthusiasts; general audiences should prioritize evening sessions and knockout rounds for heightened significance and energy."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
-  },
-  "BDM09": {
-    "agg": 6.1,
-    "rSig": 5,
-    "rExp": 7,
-    "rStar": 8,
-    "rUniq": 5,
-    "rDem": 6,
-    "scorecard": {
-      "significance": {
-        "score": 5,
-        "explanation": "Group-play drama locking knockout brackets with playoff atmosphere as teams celebrate or exit early. Final group matches carry tangible advancement consequences and bracket-shaping drama, though still preliminary rather than medal-deciding."
-      },
-      "experience": {
-        "score": 7,
-        "explanation": "Monday evening (7:00 PM–11:05 PM) four-hour session with peak venue production and crowd energy. Concert-ready sound system and LED displays amplify badminton drama; international fan sections trading chants create Games spectacle."
-      },
-      "starPower": {
-        "score": 8,
-        "explanation": "Paris medalists from China, Malaysia, Japan, and Korea are projected across multiple events. Evening group-play drama often energizes top seeds to decisive matches; likelihood of marquee Paris medalist sightings increases with playoff atmosphere and extended window."
-      },
-      "uniqueness": {
-        "score": 5,
-        "explanation": "Final group-play session marking transition to knockout format. While it represents a turning point in tournament rhythm, this is still a preliminary round at a standard multipurpose venue—multiple such 'final group' moments occur across the badminton schedule."
-      },
-      "demand": {
-        "score": 6,
-        "explanation": "Evening slot and bracket-locking stakes drive solid ticket demand despite group-play format. Price ceiling ($28–$304) moderate compared to knockout rounds, but weeknight prime-time Games badminton and transition-to-medals momentum attracts broader audiences."
-      },
-      "aggregate": 6.1,
-      "overall": "Monday evening group-play conclusion with playoff atmosphere as knockout brackets lock. Strong games energy and Paris medalist competition; marks tournament inflection point from seeding to medal rounds without carrying podium stakes itself."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
-  },
-  "BDM10": {
-    "agg": 4.6,
-    "rSig": 4,
-    "rExp": 5,
-    "rStar": 6,
-    "rUniq": 4,
-    "rDem": 4,
-    "scorecard": {
-      "significance": {
-        "score": 4,
-        "explanation": "Group-play wrap for singles and some doubles without mixed doubles. Remaining athletes finalize quarterfinal seeding—advancement stakes only, no medals at stake in this preliminary round."
-      },
-      "experience": {
-        "score": 5,
-        "explanation": "Tuesday morning (8:00 AM) early start limits crowd atmosphere despite solid venue amenities. Climate control offers family-friendly comfort, but daytime slot and midweek timing reduce the stadium energy of evening rounds."
-      },
-      "starPower": {
-        "score": 6,
-        "explanation": "Top world-ranked singles players and doubles pairs expected to emerge from group play unscathed. Morning sessions sometimes see seeded athletes managing matches rather than dominating; Paris medalist visibility depends on competitive intensity of group outcomes."
-      },
-      "uniqueness": {
-        "score": 4,
-        "explanation": "Standard Tuesday morning group-play conclusion. Mixed doubles absence distinguishes it slightly from all-five-events sessions, but this remains a routine preliminary round at the same venue—no medal drama or iconic pairing elevates it."
-      },
-      "demand": {
-        "score": 4,
-        "explanation": "Weekday morning with modest pricing ($28–$304) attracts dedicated fans and completionists. Early-week early-morning timing reduces ticket urgency versus knockout rounds; group-play preliminary format lacks the scarcity and prestige driving demand for medal matches."
-      },
-      "aggregate": 4.6,
-      "overall": "Midweek Tuesday morning singles and doubles group-play conclusion setting knockout brackets. Accessible for families avoiding heat; primarily for badminton core fans tracking seeding positions rather than headline-chasing audiences."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
-  },
-  "BDM11": {
-    "agg": 5,
-    "rSig": 4,
-    "rExp": 5,
-    "rStar": 8,
     "rUniq": 4,
     "rDem": 5,
     "scorecard": {
       "significance": {
         "score": 4,
-        "explanation": "Group-play conclusion across women's singles and both doubles disciplines. Final positioning determines knockout seeding and quarterfinal matchups—advancement stakes, not medal-deciding moments."
+        "explanation": "Saturday afternoon group play with no medal advancement on the line. Athletes compete for bracket position only; this round determines seeding, not medals."
       },
       "experience": {
         "score": 5,
-        "explanation": "Tuesday afternoon (2:00 PM) slot sits between morning and evening energy levels. Galen Center's 22 private suites offer premium views; shorter 2.5-hour window and midweek afternoon timing create quieter atmosphere than evening sessions."
+        "explanation": "Afternoon session (2:00 PM–4:35 PM) at a climate-controlled arena with strong sightlines. Smaller, quieter crowd than evening slots offers technical appreciation, but less overall energy and atmosphere."
       },
       "starPower": {
-        "score": 8,
-        "explanation": "Chinese Taipei's men's doubles Paris gold medalists and China's women's doubles gold medalists are projected to secure top seeds. Strong lineup of Paris champions across both events; afternoon group play can showcase established elite pairs executing dominantly."
+        "score": 6,
+        "explanation": "China's women's doubles depth—including Paris gold and silver medalists—is projected to feature prominently. Men's and mixed doubles also include past medalists, but group-stage context limits headline appeal."
       },
       "uniqueness": {
         "score": 4,
-        "explanation": "Women's singles and doubles focus differs slightly from all-five-events blocks, but this is still a standard afternoon group-play session. No medal stakes, iconic venue pairing, or historically significant moment distinguishes it from other preliminary rounds."
+        "explanation": "Standard group play session at an indoor multipurpose venue on opening weekend. The afternoon time slot and preliminary format offer no distinctive Games-specific character beyond the venue itself."
       },
       "demand": {
         "score": 5,
-        "explanation": "Women's focus and premium suite availability appeal to dedicated badminton audiences and corporate entertaiement buyers. Afternoon pricing ($28–$304) and group-play format keep demand moderate; not as sought-after as knockout rounds but higher than morning prelims."
+        "explanation": "Affordable price range ($28–$303) and afternoon timing attract casual fans and families seeking relaxed access. Preliminary round and softer crowd expectations make tickets easier to secure than evening finals-adjacent sessions."
       },
-      "aggregate": 5,
-      "overall": "Women-focused group-play conclusion featuring Paris gold medalists in both doubles events. Solid for badminton enthusiasts tracking women's bracket seeding and premium experience seekers; medal rounds carry greater significance."
+      "aggregate": 4.7,
+      "overall": "Afternoon group play continues across doubles and women's singles with Paris medalists projected to compete. Smaller crowds and relaxed timing suit casual spectators or badminton enthusiasts seeking affordable access to world-class athletes."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
+    "generatedAt": "2026-04-17T11:41:44.527Z"
   },
-  "BDM12": {
+  "BDM03": {
+    "agg": 5.6,
+    "rSig": 4,
+    "rExp": 8,
+    "rStar": 6,
+    "rUniq": 4,
+    "rDem": 6,
+    "scorecard": {
+      "significance": {
+        "score": 4,
+        "explanation": "Evening group play session determining seeding and advancement, not medals. High-energy time of day, but stakes remain preliminary—athletes compete for bracket position only."
+      },
+      "experience": {
+        "score": 8,
+        "explanation": "Evening prime-time slot (6:30 PM–11:05 PM) at a climate-controlled arena with multiple courts. Largest crowds of opening day, amplified acoustics, and passionate fans create the strongest live atmosphere of the session batch."
+      },
+      "starPower": {
+        "score": 6,
+        "explanation": "Malaysia's Paris bronze-medal men's doubles pair and Japan's women's doubles bronze medalists are projected to compete. Paris medalists across all events, but group-stage context and mixed matchups dilute individual star focus."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Evening group play at a generic indoor multipurpose venue. Prime-time energy provides some distinction from morning/afternoon sessions, but it's still a routine preliminary round without medal stakes or iconic pairing."
+      },
+      "demand": {
+        "score": 6,
+        "explanation": "Evening time slot and opening-day energy drive higher ticket interest than daytime sessions, though price ceiling remains modest ($28–$303). Group play status and lack of medal stakes limit demand relative to knockout rounds."
+      },
+      "aggregate": 5.6,
+      "overall": "Evening group play wraps opening day with all five events in action and the largest crowd of the early sessions. The venue's acoustics and energized fans elevate the live experience, though preliminary round status keeps stakes soft."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:44.527Z"
+  },
+  "BDM04": {
+    "agg": 4.7,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 6,
+    "rUniq": 4,
+    "rDem": 5,
+    "scorecard": {
+      "significance": {
+        "score": 4,
+        "explanation": "Sunday morning group play across all five events with no medal determination. Athletes compete for advancement and seeding only; stakes remain preliminary despite world-class competition."
+      },
+      "experience": {
+        "score": 5,
+        "explanation": "Morning session (8:00 AM–11:25 AM) at a solid indoor venue with clear sightlines. Relaxed family-friendly atmosphere and climate control, but daytime timing lacks the energy and crowd size of evening slots."
+      },
+      "starPower": {
+        "score": 6,
+        "explanation": "China's Paris mixed doubles gold medalists Zheng Siwei and Huang Yaqiong are projected to compete if they qualify. Multiple Paris medalists across events present, but group play format spreads focus across varied matchups."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Sunday morning group play at a climate-controlled multipurpose arena—routine early-round badminton with no distinctive Games pairing or ceremonial element. Venue is adequate but not iconic."
+      },
+      "demand": {
+        "score": 5,
+        "explanation": "Morning slot and affordable pricing ($28–$303) attract families and badminton enthusiasts seeking accessible entry. Preliminary round and daytime timing make this easier to book than evening sessions or knockout rounds."
+      },
+      "aggregate": 4.7,
+      "overall": "Sunday morning group play continues across all five events with Paris medalists projected to compete. Family-friendly daytime atmosphere and low ticket prices suit casual spectators seeking world-class badminton without premium demand."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:44.527Z"
+  },
+  "BDM05": {
+    "agg": 4.9,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 4,
+    "rDem": 5,
+    "scorecard": {
+      "significance": {
+        "score": 4,
+        "explanation": "Afternoon group play with no medal stakes—advancement and seeding determine outcome only. World-class athletes competing, but round type carries no gold-deciding pressure."
+      },
+      "experience": {
+        "score": 5,
+        "explanation": "Afternoon session (2:00 PM–4:35 PM) in a climate-controlled arena with comfortable viewing. Multiple courts run simultaneously, but daytime timing and preliminary format deliver softer energy than evening finals-adjacent sessions."
+      },
+      "starPower": {
+        "score": 7,
+        "explanation": "Chinese Taipei's men's doubles pair—Lee Yang and Wang Chi-lin, defending Tokyo title with Paris gold—are favorites to qualify. Multiple Paris medalists projected across events; group play context prevents higher star-power scoring despite elite field."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Afternoon group play at an indoor multipurpose venue—standard preliminary badminton without distinctive Games elements or iconic venue pairing. Climate-controlled comfort offers no unique Games character."
+      },
+      "demand": {
+        "score": 5,
+        "explanation": "Afternoon time and modest price ceiling ($28–$303) make tickets more accessible than evening sessions. Preliminary round and relaxed scheduling lower urgency compared to knockout play; comfortable but not competitive to book."
+      },
+      "aggregate": 4.9,
+      "overall": "Afternoon group play features Chinese Taipei's Paris men's doubles champions and multiple medal contenders across events. Climate-controlled comfort and affordable pricing suit badminton specialists seeking world-class action without premium demand pressures."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:44.527Z"
+  },
+  "BDM06": {
+    "agg": 5.6,
+    "rSig": 4,
+    "rExp": 8,
+    "rStar": 6,
+    "rUniq": 4,
+    "rDem": 6,
+    "scorecard": {
+      "significance": {
+        "score": 4,
+        "explanation": "Sunday evening group play with no medal determination—athletes compete for seeding and advancement only. Preliminary round across all five events carries no gold-medal stakes."
+      },
+      "experience": {
+        "score": 8,
+        "explanation": "Evening prime-time slot (6:00 PM–11:05 PM) at a climate-controlled arena with multiple courts and strong sightlines. Largest crowd of the early sessions, amplified acoustics, and passionate fans create energetic live atmosphere."
+      },
+      "starPower": {
+        "score": 6,
+        "explanation": "Japan's mixed doubles bronze medalists and multiple Paris medalists across events projected to compete. Top-tier field present, but group play format dilutes individual star appeal compared to finals-adjacent rounds."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Evening group play at a multipurpose arena—prime-time energy distinguishes it from daytime sessions, but it's still routine preliminary badminton without medal stakes or iconic venue pairing."
+      },
+      "demand": {
+        "score": 6,
+        "explanation": "Evening time slot drives higher ticket interest than daytime sessions despite group play status. Price ceiling remains modest ($28–$303), but prime-time scheduling and opening-weekend energy increase demand relative to morning/afternoon preliminaries."
+      },
+      "aggregate": 5.6,
+      "overall": "Evening group play closes the second day with all five events and the loudest crowd of the early sessions. Energized fans and acoustics elevate the live experience, though preliminary round status and modest price point keep demand moderate."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:44.527Z"
+  },
+  "BDM07": {
+    "agg": 4.3,
+    "rSig": 4,
+    "rExp": 4,
+    "rStar": 6,
+    "rUniq": 4,
+    "rDem": 4,
+    "scorecard": {
+      "significance": {
+        "score": 4,
+        "explanation": "Monday morning group play with no medal advancement—purely seeding and preliminary qualification. Athletes compete at world-class level, but round carries no gold-deciding stakes."
+      },
+      "experience": {
+        "score": 4,
+        "explanation": "Early morning session (8:00 AM–11:25 AM) at a climate-controlled indoor venue. Relaxed and accessible to families and enthusiasts, but daytime timing and smaller crowds lack the energy and atmosphere of evening slots."
+      },
+      "starPower": {
+        "score": 6,
+        "explanation": "China's Paris silver-medal women's doubles pair and multiple past medalists across events are projected to compete. Elite field present, but group play context and early-morning timing limit headline appeal."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Monday morning group play at a generic indoor multipurpose venue—routine preliminary badminton with no distinctive Games character or medal stakes. Climate-controlled comfort does not elevate Games uniqueness."
+      },
+      "demand": {
+        "score": 4,
+        "explanation": "Early-morning weekday slot and affordable pricing ($28–$303) make tickets readily accessible. Preliminary round and daytime timing attract badminton insiders and international travelers rather than casual fans; lowest demand of the group play sessions."
+      },
+      "aggregate": 4.3,
+      "overall": "Monday morning concludes early group play with China's Paris medalists and elite competitors. Small but engaged crowds and low ticket pressure suit badminton specialists seeking world-class action; casual spectators gravitate to evening slots."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:44.527Z"
+  },
+  "BDM08": {
+    "agg": 4.9,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 7,
+    "rUniq": 4,
+    "rDem": 5,
+    "scorecard": {
+      "significance": {
+        "score": 4,
+        "explanation": "Monday afternoon group play determining seeding and advancement only. No medal stakes; athletes compete for bracket position within preliminary round."
+      },
+      "experience": {
+        "score": 5,
+        "explanation": "Afternoon session (2:00 PM–4:35 PM) at a compact climate-controlled arena with close courtside sightlines. Comfortable viewing but smaller crowd and daytime energy deliver softer atmosphere than evening sessions."
+      },
+      "starPower": {
+        "score": 7,
+        "explanation": "South Korea's Paris silver-medal mixed doubles pair is projected to compete and seek an upgrade. Multiple Paris medalists across events; mixed doubles focus on a high-profile returner raises star appeal within group play context."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Afternoon group play at an indoor multipurpose venue—standard preliminary badminton without distinctive Games pairing or medal stakes. The compact venue's close sightlines offer no unique Games character."
+      },
+      "demand": {
+        "score": 5,
+        "explanation": "Afternoon timing and modest price ceiling ($28–$303) keep tickets accessible. South Korea's projected return to mixed doubles and Paris medal contenders add slight pull, but group play status and daytime slot limit urgency."
+      },
+      "aggregate": 4.9,
+      "overall": "Monday afternoon group play features South Korea's Paris silver medalists in mixed doubles and elite competitors across events. Compact courtside seating offers intimate viewing; preliminary stakes and afternoon timing make this an easier ticket than evening sessions."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:44.527Z"
+  },
+  "BDM09": {
     "agg": 5.8,
     "rSig": 4,
-    "rExp": 7,
+    "rExp": 8,
+    "rStar": 7,
+    "rUniq": 4,
+    "rDem": 6,
+    "scorecard": {
+      "significance": {
+        "score": 4,
+        "explanation": "Monday evening group play—final matches before knockout rounds begin. Athletes compete for advancement and seeding; no medal determination despite world-class competition and increased intensity."
+      },
+      "experience": {
+        "score": 8,
+        "explanation": "Evening prime-time slot (7:00 PM–11:05 PM) at a climate-controlled arena with amplified acoustics and the largest crowd of the group play sessions. Energized fans and venue atmosphere peak as knockout rounds approach."
+      },
+      "starPower": {
+        "score": 7,
+        "explanation": "Paris medalists from China, Chinese Taipei, Malaysia, Japan, and South Korea are projected to compete across all events. Concentrated elite field visible in the final group matches as athletes intensify preparation for knockout play."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Final evening group play at a multipurpose arena—notable as the last preliminary session before knockout rounds, but still routine preliminary badminton without medal stakes or iconic venue pairing."
+      },
+      "demand": {
+        "score": 6,
+        "explanation": "Evening prime-time slot and transition to knockout-adjacent stakes drive higher demand than earlier group play sessions. Price ceiling remains modest ($28–$303), but timing and competitive momentum increase ticket interest."
+      },
+      "aggregate": 5.8,
+      "overall": "Monday evening wraps group play with energized crowds, amplified acoustics, and Paris medalists intensifying for knockout rounds. Prime-time atmosphere elevates the live experience despite preliminary format; tickets more sought-after than daytime sessions."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:44.527Z"
+  },
+  "BDM10": {
+    "agg": 4.9,
+    "rSig": 4,
+    "rExp": 5,
+    "rStar": 6,
+    "rUniq": 5,
+    "rDem": 5,
+    "scorecard": {
+      "significance": {
+        "score": 4,
+        "explanation": "Final group play session in men's and women's doubles and singles, with no medal determination. Seeding brackets finalized; athletes compete for advancement only."
+      },
+      "experience": {
+        "score": 5,
+        "explanation": "Morning session (8:00 AM–11:25 AM) at a climate-controlled indoor venue. Relaxed family-friendly atmosphere and affordable access, but daytime timing and smaller crowds lack energy of evening sessions."
+      },
+      "starPower": {
+        "score": 6,
+        "explanation": "Paris medalists across men's and women's doubles and singles are projected to compete if they qualify. Elite field present, but group play context and early-morning timing dilute star appeal."
+      },
+      "uniqueness": {
+        "score": 5,
+        "explanation": "Final group play session before knockout rounds begin—modest distinction as a transition point, but it's still preliminary badminton at a multipurpose venue with no medal stakes or iconic Games pairing."
+      },
+      "demand": {
+        "score": 5,
+        "explanation": "Morning weekday slot and affordable pricing ($28–$303) make tickets readily accessible. Last chance to watch group play before premium knockout prices; moderate pull for enthusiasts, soft demand for casual fans."
+      },
+      "aggregate": 4.9,
+      "overall": "Tuesday morning concludes group play in four events, determining final knockout brackets. Affordable morning session suits badminton specialists seeking world-class action before ticket prices rise for knockout rounds; casual fans gravitate to evening slots."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:44.527Z"
+  },
+  "BDM11": {
+    "agg": 5.3,
+    "rSig": 4,
+    "rExp": 5,
     "rStar": 8,
     "rUniq": 5,
     "rDem": 6,
     "scorecard": {
       "significance": {
         "score": 4,
-        "explanation": "Final group-play session across singles and doubles with knockout brackets locking into place. Bubble teams fight for last quarterfinal spots—real advancement drama, but no medals decided here."
+        "explanation": "Final group play in men's and women's doubles plus women's singles with no medal stakes. Seeding determined; athletes compete for advancement only before knockout rounds begin."
       },
       "experience": {
-        "score": 7,
-        "explanation": "Tuesday evening (7:00 PM–11:05 PM) four-hour block with peak venue production and amplified crowd energy. Enhanced lighting, LED displays, and concert-level acoustics create Games spectacle as group play transitions to medal rounds."
+        "score": 5,
+        "explanation": "Afternoon session (2:00 PM–4:35 PM) at a climate-controlled arena with comfortable sightlines. Relaxed atmosphere suited to families and casual fans, but daytime timing and smaller crowd deliver softer energy than evening slots."
       },
       "starPower": {
         "score": 8,
-        "explanation": "Malaysia's men's doubles bronze medalists from Paris are projected to secure elimination-round berths. Paris medalists across all singles and doubles disciplines; evening group-play drama often brings top seeds playing competitively with full intensity."
+        "explanation": "South Korea's An Se-Yeong, Paris women's singles champion, is projected to compete if she qualifies. China's He Bingjiao (Paris silver) and Indonesia's Gregoria Mariska Tunjung (Paris bronze) also projected; women's singles headliners elevate star appeal within group play."
       },
       "uniqueness": {
         "score": 5,
-        "explanation": "Final group-play session marking tournament inflection to medal rounds. While it represents a turning point, this is still one of multiple group-play blocks at the same venue—no medal stakes or iconic venue-sport pairing raises it to special-occasion status."
+        "explanation": "Final group play session featuring women's singles headliners—slight distinction as a last preliminary chance to watch Paris champions, but it's standard group play at a multipurpose venue without medal stakes or iconic pairing."
       },
       "demand": {
         "score": 6,
-        "explanation": "Evening slot and bracket-locking drama drive solid ticket demand despite group-play format. Price ceiling ($28–$304) moderate versus knockout rounds, but prime-time Games badminton on a weeknight and transition-to-medals momentum attracts broader audiences than morning prelims."
+        "explanation": "Women's singles star appeal (An Se-Yeong) and final group play pricing ($28–$303) create modest pull. Last affordable chance to watch female singles champions before knockout premiums; enthusiasts seeking emerging stars increase interest."
       },
-      "aggregate": 5.8,
-      "overall": "Midweek evening group-play finale with all events finalizing knockout brackets and Paris medalists competing under lights. Delivers Games atmosphere and advancement drama; stronger significance builds as knockout rounds begin."
+      "aggregate": 5.3,
+      "overall": "Tuesday afternoon closes group play featuring Paris women's singles champion An Se-Yeong and multiple medalists. Emerging female singles talent and relaxed afternoon atmosphere attract casual spectators; final low-price entry to top players before knockout rounds."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
+    "generatedAt": "2026-04-17T11:41:44.527Z"
+  },
+  "BDM12": {
+    "agg": 6.2,
+    "rSig": 4,
+    "rExp": 8,
+    "rStar": 8,
+    "rUniq": 5,
+    "rDem": 7,
+    "scorecard": {
+      "significance": {
+        "score": 4,
+        "explanation": "Final evening group play in men's and women's doubles and singles with no medal determination. Seeding brackets set; athletes compete for advancement only as group stage concludes."
+      },
+      "experience": {
+        "score": 8,
+        "explanation": "Evening prime-time slot (7:00 PM–11:05 PM) at a climate-controlled arena with amplified acoustics and energized crowds. Private suites and courtside seating options enhance premium viewing; peak atmosphere as group play transitions to knockout tension."
+      },
+      "starPower": {
+        "score": 8,
+        "explanation": "Paris women's singles champion An Se-Yeong, Paris silver medalist Kunlavut Vitidsarn, Paris bronze medalists Lee Zii Jia and Gregoria Mariska Tunjung are projected to compete. Concentrated singles star power and established medalists elevate appeal within group play."
+      },
+      "uniqueness": {
+        "score": 5,
+        "explanation": "Final group play session at evening prime time—modest distinction as the last preliminary round before knockout intensity, but it's standard badminton at a multipurpose arena without medal stakes or iconic venue pairing."
+      },
+      "demand": {
+        "score": 7,
+        "explanation": "Evening prime-time slot with concentrated singles star power (An Se-Yeong, Vitidsarn) and final group play pricing ($28–$303) create strong pull. Last affordable chance to watch Paris champions before knockout premiums; larger crowd expected."
+      },
+      "aggregate": 6.2,
+      "overall": "Tuesday evening concludes group play with Paris singles champions and medalists, energized crowds, and amplified acoustics. Stars and final low-price access drive demand; private suites and courtside seating offer premium options as tournament transitions to knockout rounds."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:44.527Z"
   },
   "BDM13": {
-    "agg": 7.3,
+    "agg": 7.2,
     "rSig": 7,
     "rExp": 7,
-    "rStar": 9,
+    "rStar": 8,
     "rUniq": 7,
     "rDem": 7,
     "scorecard": {
       "significance": {
         "score": 7,
-        "explanation": "Mixed doubles quarterfinals launch knockout rounds with medal implications—eight pairs competing for semifinal berths and podium contention. Single-elimination best-of-three format raises stakes dramatically from group play."
+        "explanation": "Mixed doubles quarterfinals represent the first medal-adjacent round—losing eliminates teams from medal contention. Four pairs advance to semifinals; stakes are serious but not gold-medal final."
       },
       "experience": {
         "score": 7,
-        "explanation": "Wednesday morning (8:00 AM) quarterfinal delivery without prime-time atmosphere, but Galen Center's basketball-venue design creates intimate stadium where every shuttlecock smash resonates. First medal-track session despite early timing builds championship atmosphere."
+        "explanation": "Morning quarterfinal (8:00 AM–11:45 AM) at a climate-controlled arena with clear sightlines and consistent conditions. Early-round knockout energy emerges, though daytime timing and smaller crowds lack evening prime-time intensity."
       },
       "starPower": {
-        "score": 9,
-        "explanation": "China's Paris mixed-doubles gold medalists, Korea's silver pair, and Japan's bronze duo are projected to appear—genuinely marquee athletes competing for podium positions. Quarterfinal format guarantees top-seeded players engaged with full intensity."
+        "score": 8,
+        "explanation": "China's Paris gold medalists Zheng Siwei and Huang Yaqiong are favorites to qualify. South Korea's Paris silver medalists and Japan's bronze medalists are also projected; concentrated medal-contender density in a single event."
       },
       "uniqueness": {
         "score": 7,
-        "explanation": "Mixed doubles quarterfinal marks tournament's first knockout round and medal-track beginning. While badminton quarterfinals are standard tournament structure, this is the inaugural medal-determining session across all disciplines—genuinely inaugural Games moment for badminton knockout drama."
+        "explanation": "First knockout round of badminton at a multipurpose venue—transition from group play to medal-deciding competition provides modest Games distinction. Mixed doubles quarterfinal format carries more competitive weight than preliminaries."
       },
       "demand": {
         "score": 7,
-        "explanation": "First medal-track session with higher price floor ($68–$316) and genuine medal implications drives solid ticket demand. Quarterfinal format and Paris medalist visibility attract badminton enthusiasts and casual Games followers; significantly more sought-after than group-play prelimins."
+        "explanation": "First knockout session with moderate price uptick ($68–$316) and medal stakes. Quarterfinals eliminate teams from podium contention; harder to book than group play but softer demand than semifinals and finals."
       },
-      "aggregate": 7.3,
-      "overall": "Badminton tournament's first medal-track session delivering mixed doubles quarterfinals with Paris gold, silver, and bronze medalists competing for podium berths. Strong for Games significance and star-power despite morning timing; semifinals carry even greater drama."
+      "aggregate": 7.2,
+      "overall": "Mixed doubles quarterfinals mark badminton's transition to medal-deciding knockout play with Paris champions Zheng Siwei and Huang Yaqiong favored. Morning timing limits crowd energy, but first knockout stakes and medal-contender density justify moderate demand."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
+    "generatedAt": "2026-04-17T11:41:44.527Z"
   },
   "BDM14": {
-    "agg": 5.1,
+    "agg": 5.3,
     "rSig": 4,
     "rExp": 5,
-    "rStar": 9,
-    "rUniq": 4,
-    "rDem": 5,
+    "rStar": 8,
+    "rUniq": 5,
+    "rDem": 6,
     "scorecard": {
       "significance": {
         "score": 4,
-        "explanation": "Men's and women's singles group-play conclusion finalizing quarterfinal seeding. Advancement stakes drive the competition, but no medals are decided—still preliminary round despite approaching elimination stage."
+        "explanation": "Men's and women's singles group play continues with no medal stakes. Seeding and advancement determine outcome; concurrent quarterfinals in mixed doubles mean singles hasn't yet reached knockout rounds."
       },
       "experience": {
         "score": 5,
-        "explanation": "Wednesday afternoon (2:00 PM) slot lacks evening energy despite solid Galen Center amenities. Midweek afternoon timing and shorter 2.5-hour window create quieter atmosphere than night sessions; flexible court configuration allows simultaneous play but reduced spectacle."
+        "explanation": "Afternoon session (2:00 PM–4:35 PM) at a climate-controlled arena with comfortable sightlines. Relaxed daytime atmosphere as other events move to knockout rounds; softer energy than evening or knockout sessions."
       },
       "starPower": {
-        "score": 9,
-        "explanation": "Denmark's Viktor Axelsen, men's Paris gold medalist, and Korea's An Se-Yeong, women's champion, are likely participants if qualified. Additional medalists like China's He Bingjiao add significant star power; singles events feature globally-recognized names with substantial following."
+        "score": 8,
+        "explanation": "Paris singles champions and medalists An Se-Yeong, He Bingjiao, Kunlavut Vitidsarn, Lee Zii Jia, and Gregoria Mariska Tunjung are projected to compete. Concentrated star power in singles finals attracts casual fans despite group play format."
       },
       "uniqueness": {
-        "score": 4,
-        "explanation": "Standard afternoon group-play wraparound for singles disciplines. While it features Paris gold medalists in singles, this is still a preliminary round—no medal stakes and one of several similar sessions at the same venue."
+        "score": 5,
+        "explanation": "Late group play in men's and women's singles at a multipurpose venue—modest distinction as one of the final preliminary sessions, but group play format carries no medal stakes or distinctive Games character."
       },
       "demand": {
-        "score": 5,
-        "explanation": "Paris gold medalist presence drives stronger appeal than earlier group-play sessions. Afternoon pricing ($28–$304) and group-play format keep demand moderate; singles focus brings casual Games fans but less urgency than knockout rounds."
+        "score": 6,
+        "explanation": "Afternoon timing and group play pricing ($28–$303) make tickets accessible, but concentrated singles star power (champions, medalists) drives moderate pull. Last chance to watch Paris singles champions at low prices before knockout rounds."
       },
-      "aggregate": 5.1,
-      "overall": "Midweek afternoon singles group-play conclusion featuring Denmark's Axelsen and Korea's An Se-Yeong among top contenders. Star names boost appeal; primarily for badminton core fans finalizing seeding rather than championship-round seekers."
+      "aggregate": 5.3,
+      "overall": "Wednesday afternoon features final men's and women's singles group play with Paris champions and medalists, offering last affordable access before knockout premiums. Star power elevates interest, but preliminary format and afternoon timing limit urgency compared to evening slots."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
+    "generatedAt": "2026-04-17T11:41:44.527Z"
   },
   "BDM15": {
     "agg": 6.2,
     "rSig": 4,
     "rExp": 8,
-    "rStar": 9,
+    "rStar": 8,
     "rUniq": 5,
-    "rDem": 6,
+    "rDem": 7,
     "scorecard": {
       "significance": {
         "score": 4,
-        "explanation": "Singles group-play finale with athletes securing knockout positions in evening setting. Must-win scenarios and bracket drama drive the stakes, but no medals are on the line—still a preliminary advancement round."
+        "explanation": "Final men's and women's singles group play with no medal stakes. Seeding brackets determined; athletes compete for advancement only as group stage concludes."
       },
       "experience": {
         "score": 8,
-        "explanation": "Wednesday evening (7:00 PM–11:05 PM) four-hour session under lights with enhanced production values and peak crowd energy. Concert-level sound system tracks every point; night atmosphere at multipurpose arena elevates badminton spectacle beyond typical preliminary venue."
+        "explanation": "Evening prime-time slot (7:00 PM–11:05 PM) with amplified acoustics and energized crowds. Peak atmosphere as group play concludes and knockout transition nears; private suites available at premium rates."
       },
       "starPower": {
-        "score": 9,
-        "explanation": "Paris gold medalists Viktor Axelsen (Denmark) and An Se-Yeong (Korea) are expected participants, along with bronze medalist Gregoria Mariska Tunjung of Indonesia. Evening group-play drama often brings marquee singles players executing at full intensity to secure strong quarterfinal seeding."
+        "score": 8,
+        "explanation": "Paris women's singles champion An Se-Yeong, Paris silver medalist He Bingjiao, and Paris bronze medalist Gregoria Mariska Tunjung of Indonesia are projected to compete. Concentrated female singles star power with multiple marquee contenders."
       },
       "uniqueness": {
         "score": 5,
-        "explanation": "Final singles group-play session marking transition to elimination rounds. While it features Paris medalists and represents a tournament inflection point, this is still a preliminary round at the standard venue—no medal stakes or iconic pairing raises it to special-occasion status."
+        "explanation": "Final group play session at evening prime time—modest distinction as the concluding preliminary round, but it's standard badminton at a multipurpose arena without medal stakes or iconic venue pairing."
       },
       "demand": {
-        "score": 6,
-        "explanation": "Evening slot with Paris gold and bronze medalists in singles drives solid ticket demand. Price range ($28–$304) keeps ceiling moderate, but prime-time Games badminton and global star names (Axelsen, An Se-Yeong, Tunjung) attract broader audiences than earlier group-play blocks."
+        "score": 7,
+        "explanation": "Evening prime-time slot with concentrated singles star power (An Se-Yeong, He Bingjiao, Tunjung) and final group play pricing ($28–$303) create strong pull. Last affordable chance to watch Paris champions; larger crowds and moderate ticket pressure expected."
       },
       "aggregate": 6.2,
-      "overall": "Evening singles group-play finale with Paris gold medalists Axelsen and An Se-Yeong competing for knockout seeding. Strong star power and night atmosphere; still preliminary stakes, so quarterfinal and medal rounds carry greater championship significance."
+      "overall": "Wednesday evening concludes group play with Paris women's singles champions and medalists, energized crowds, and amplified venue acoustics. Star power and final low-price access drive demand; private suites offer premium viewing as tournament transitions to knockout rounds."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.184Z"
+    "generatedAt": "2026-04-17T11:41:44.527Z"
   },
   "BDM16": {
-    "agg": 5.6,
+    "agg": 5.8,
     "rSig": 7,
     "rExp": 5,
-    "rStar": 6,
+    "rStar": 7,
     "rUniq": 4,
     "rDem": 5,
     "scorecard": {
       "significance": {
         "score": 7,
-        "explanation": "Mixed doubles semifinals carry direct medal stakes; women's doubles quarters and singles R16 are consequential advancement rounds but lower-stakes than medal rounds. Three events in one session elevates overall significance."
+        "explanation": "Mixed doubles semifinal carries medal-deciding stakes, while women's doubles quarterfinal and women's singles round of 16 are advancement rounds. One event determining finalists, two filtering the draw."
       },
       "experience": {
         "score": 5,
-        "explanation": "Morning timing (8:00 AM–12:25 PM) dampens live energy typical of prime-time badminton. Galen Center's indoor setting and close-court configuration are solid, but early-hour crowds and daylight disadvantage the spectator experience."
+        "explanation": "Morning session at an indoor arena with solid sightlines, but three events compressed into four hours means quick turnarounds and no single match gets extended focus. Early timing softens the energy."
       },
       "starPower": {
-        "score": 6,
-        "explanation": "Paris 2024 gold medalists (China's women's doubles and mixed doubles pairs) likely compete; Korean and Japanese medal contenders also probable. World-level players are present but not guaranteed household-name visibility at R16 stage."
+        "score": 7,
+        "explanation": "Paris gold and silver medalists from China and South Korea likely competing in mixed doubles; An Se-Yeong (women's singles gold) probable. Strong medalist representation, though round of 16 includes many non-household names."
       },
       "uniqueness": {
         "score": 4,
-        "explanation": "Multi-event session adds interest, but mixed doubles semis and women's doubles quarters are standard medal-path rounds happening at a generic venue. This is routine Games-schedule badminton, not a once-in-a-lifetime pairing."
+        "explanation": "Standard preliminary round format across three events at a generic venue. Multiple identical sessions occur throughout the Games; this one follows routine badminton structure without distinctive circumstances."
       },
       "demand": {
         "score": 5,
-        "explanation": "Accessible price ceiling ($378) and morning timing reduce competitiveness relative to evening/medal sessions. Still Games-level scarcity, but easier ticket than prime-time rounds."
+        "explanation": "Morning timing and preliminary rounds push this toward easier access, though semifinal action in mixed doubles and the Paris defending champion draw some interest. Price ceiling under $400 reflects softer demand."
       },
-      "aggregate": 5.6,
-      "overall": "Three events collide in a morning session with semifinal drama for mixed doubles but softer stakes elsewhere. Solid tournament progression, limited by early-hour timing and lack of true finals leverage."
+      "aggregate": 5.8,
+      "overall": "Three events stacked into a morning session featuring mixed doubles semifinal urgency alongside two advancement rounds. Early timing and split focus limit the live atmosphere despite strong medalist presence."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.198Z"
+    "generatedAt": "2026-04-17T11:41:40.663Z"
   },
   "BDM17": {
-    "agg": 5,
+    "agg": 5.1,
     "rSig": 5,
     "rExp": 5,
     "rStar": 7,
     "rUniq": 4,
-    "rDem": 4,
+    "rDem": 5,
     "scorecard": {
       "significance": {
         "score": 5,
-        "explanation": "Round of 16 eliminates half the field but carries no medal stakes—advancement only. Both men's and women's events add scope, yet the round itself is pure qualification drama, not medal-deciding."
+        "explanation": "Round of 16 in both men's and women's singles is advancement-stage competition with real stakes for athletes but no medals being decided. World-class competitors fighting for quarterfinal spots, not podium positions."
       },
       "experience": {
         "score": 5,
-        "explanation": "Afternoon session (2:00 PM–5:25 PM) in a multipurpose arena captures some daylight disadvantage but avoids early-morning flatness. Climate-controlled Galen Center mitigates weather, yet afternoon timing lacks evening energy for fast-paced rallies."
+        "explanation": "Afternoon session provides cooler indoor atmosphere and accessible pricing, but daytime timing lacks evening energy and spectacle. Multiple back-to-back matches mean individual contests get abbreviated attention."
       },
       "starPower": {
         "score": 7,
-        "explanation": "Paris 2024 gold medalists An Se-Yeong (Korea) and Viktor Axelsen (Denmark) are tournament fixtures likely competing in R16 play. Top national champions throughout the field guarantee world-class athletes even if not all household names."
+        "explanation": "Paris finalists and medalists prominently featured: Kunlavut Vitidsarn (men's silver), Lee Zii Jia (men's bronze), An Se-Yeong (women's gold), He Bingjiao (women's silver). Strong roster of recognized names at the round of 16 stage."
       },
       "uniqueness": {
         "score": 4,
-        "explanation": "Double-event round-of-16 session is a standard bracket checkpoint. No iconic venue pull, no medal stakes, no cultural hook—this is routine tournament progression at a multipurpose arena."
+        "explanation": "Routine preliminary rounds in established sport format. Round of 16 sessions occur multiple times throughout the Games with identical structure; this session offers no distinctive pairing or circumstance."
       },
       "demand": {
-        "score": 4,
-        "explanation": "Low price ceiling ($303.87) and preliminary-round status signal easier ticket access. Games scarcity provides floor, but this is the most accessible badminton session due to qualification-only stakes and daytime pricing."
+        "score": 5,
+        "explanation": "Afternoon preliminary rounds with price ceiling around $300 appeal to enthusiasts and budget-conscious fans but lack scarcity premium. Games presale floor applies, but this ranks among easier sessions to secure."
       },
-      "aggregate": 5,
-      "overall": "Affordable entry point to watch Paris gold medalists Axelsen and An Se-Yeong advance through R16. Routine progression round, not medal drama, ideal for completists rather than casual fans."
+      "aggregate": 5.1,
+      "overall": "Two singles round-of-16 matches showcasing Paris medalists in advancement rounds. Afternoon timing and preliminary stakes make this accessible entry-point badminton without the medal drama or evening atmosphere of later sessions."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.198Z"
+    "generatedAt": "2026-04-17T11:41:40.663Z"
   },
   "BDM18": {
-    "agg": 6.2,
+    "agg": 6.7,
     "rSig": 6,
     "rExp": 8,
-    "rStar": 6,
+    "rStar": 8,
     "rUniq": 4,
-    "rDem": 6,
+    "rDem": 7,
     "scorecard": {
       "significance": {
         "score": 6,
-        "explanation": "Men's doubles quarterfinals narrow eight pairs to four with direct semifinal stakes; men's singles R16 eliminates but does not medal-decide. Quarterfinals carry more weight than round-of-16, yet still pre-medal."
+        "explanation": "Men's doubles quarterfinal narrows to four pairs competing for semifinals, while men's singles round of 16 advances the draw. Quarterfinal carries more decisive stakes than preliminary stage, though neither awards medals."
       },
       "experience": {
         "score": 8,
-        "explanation": "Prime evening slot (8:00 PM–11:25 PM) brings peak arena energy and full crowd. Galen Center's steep sightlines and basketball-venue acoustics amplify fast-paced doubles rallies; night badminton delivers premium spectator intensity."
+        "explanation": "Prime-time evening session at a 10,000-seat arena with intimate sightlines and crowd energy. Back-to-back matches under arena lighting create excitement; doubles' fast net play suits the energized venue setting."
       },
       "starPower": {
-        "score": 6,
-        "explanation": "Chinese Taipei (Paris 2024 gold) and China (silver) men's doubles pairs likely headline; Denmark's Axelsen and other R16 singles contenders present. Strong medal-pedigree representation without guaranteed superstar draw in preliminary round."
+        "score": 8,
+        "explanation": "Paris defending champions (Chinese Taipei), silver medalists (China), and bronze medalists (Malaysia) likely present in men's doubles. Men's singles features Paris medalists Vitidsarn, Lee Zii Jia, and rising contenders. Marquee names throughout."
       },
       "uniqueness": {
         "score": 4,
-        "explanation": "Quarterfinal + round-of-16 pairing is standard tournament structure at Galen Center. Prime evening timing adds energy, but the session format and venue are routine within the Games badminton schedule."
+        "explanation": "Men's doubles quarterfinal follows standard single-elimination structure; men's singles round of 16 repeats preliminary format. Multiple identical sessions occur during Games; no distinctive pairing elevates this beyond routine format."
       },
       "demand": {
-        "score": 6,
-        "explanation": "Evening timing and quarterfinal stakes (medal-track advancement) boost demand over morning prelims. Mid-range pricing ($316 ceiling) and meaningful advancement round drive moderate-to-strong ticket interest."
+        "score": 7,
+        "explanation": "Friday night prime-time positioning with quarterfinal stakes and Paris medalist matchups drives appeal. Price ceiling near $320 and medal-adjacent round create meaningful demand; crowds pack evening sessions for energy."
       },
-      "aggregate": 6.2,
-      "overall": "Quarterfinal night pairing Chinese Taipei and China with evening energy and steep sightlines. Prime-time badminton energy with medal-race stakes, though not medal-deciding matches themselves."
+      "aggregate": 6.7,
+      "overall": "Friday night doubles quarterfinals and men's singles round of 16 combine semifinal urgency with evening LA atmosphere. Marquee defending champions and medalists compete, though stakes are advancement rather than medals."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.198Z"
+    "generatedAt": "2026-04-17T11:41:40.663Z"
   },
   "BDM19": {
-    "agg": 7.2,
-    "rSig": 8,
-    "rExp": 6,
-    "rStar": 8,
-    "rUniq": 7,
-    "rDem": 7,
-    "scorecard": {
-      "significance": {
-        "score": 8,
-        "explanation": "Two mixed doubles medal matches (gold and bronze) decide the podium outright; women's doubles semifinals set up the final. Mixed doubles crowns its champions; women's doubles advances toward gold—both events on medal-path cusp."
-      },
-      "experience": {
-        "score": 6,
-        "explanation": "Morning timing (8:00 AM–1:05 PM) mutes live arena energy despite five hours of continuous action. Medal sessions draw committed fans, yet early-hour badminton lacks the ambient electricity of evening finals."
-      },
-      "starPower": {
-        "score": 8,
-        "explanation": "China's mixed doubles gold-medal pair from Paris 2024 competes for gold; Korea's Paris silver pair chases medals; Japan's bronze pair seeks podium return. Women's doubles features Paris gold pair (China 1) in semis. Paris medalists throughout."
-      },
-      "uniqueness": {
-        "score": 7,
-        "explanation": "Mixed doubles crowns its champion in a morning medal session—a rare pairing of finals-level stakes with day-hours timing. Women's doubles semis add non-medal intrigue to a medal-deciding session. Blend of closure and progression creates distinct identity."
-      },
-      "demand": {
-        "score": 7,
-        "explanation": "Medal matches drive strong demand despite morning slot. Price ceiling ($570.54) reflects medal-match premium. Early-hour timing softens demand versus evening finals, but podium-deciding status commands significant ticket competition."
-      },
-      "aggregate": 7.2,
-      "overall": "Mixed doubles medals are decided in a morning marathon alongside women's doubles semifinals. Medal-match pedigree attracts committed fans, though early timing constrains casual demand and arena energy."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.198Z"
-  },
-  "BDM20": {
-    "agg": 6.6,
-    "rSig": 7,
-    "rExp": 7,
-    "rStar": 7,
-    "rUniq": 5,
-    "rDem": 6,
-    "scorecard": {
-      "significance": {
-        "score": 7,
-        "explanation": "Men's singles quarterfinals narrow eight to four advancing toward semis/gold; men's doubles semifinals deliver four pairs toward medal matches. Both rounds sit on the medal-track cusp—consequential advancement without medal-deciding stakes."
-      },
-      "experience": {
-        "score": 7,
-        "explanation": "Extended evening session (4:00 PM–11:05 PM) across seven hours delivers sustained energy and multiple dramatic arcs. Late prime-time window maximizes crowd intensity for shuttle speed; back-to-back semifinals and QFs sustain tension."
-      },
-      "starPower": {
-        "score": 7,
-        "explanation": "Denmark's Viktor Axelsen (Paris 2024 men's singles gold) navigates quarterfinals; Chinese Taipei and China men's doubles pairs (Paris 1-2 finishers) likely compete in semis. Strong Paris medalist roster in medal-proximal rounds."
-      },
-      "uniqueness": {
-        "score": 5,
-        "explanation": "Quarterfinals and semifinals are mid-bracket rounds; pairing them in a seven-hour session is ambitious but not exceptional. No iconic venue or once-in-a-lifetime moment—solid tournament structure at a multipurpose arena."
-      },
-      "demand": {
-        "score": 6,
-        "explanation": "Evening timing and medal-track stakes (semifinal advancement) justify moderate-to-strong demand. Mid-range pricing ($378 ceiling) and extended session length encourage multi-hour attendance, driving competitive ticket interest below finals but above prelims."
-      },
-      "aggregate": 6.6,
-      "overall": "Extended evening doubles down on semifinal drama and quarterfinal progression across two events. Late prime-time slot energizes the crowd; multiple matches reward long-haul attendance without reaching medal-match intensity."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.198Z"
-  },
-  "BDM21": {
-    "agg": 7.8,
+    "agg": 8,
     "rSig": 9,
     "rExp": 6,
-    "rStar": 8,
-    "rUniq": 8,
-    "rDem": 8,
-    "scorecard": {
-      "significance": {
-        "score": 9,
-        "explanation": "Women's doubles gold and bronze medal matches crown the event champions and decide the full podium. Two finals-level matches directly awarding medals—peak stakes within badminton's five-event structure."
-      },
-      "experience": {
-        "score": 6,
-        "explanation": "Saturday morning (8:00 AM–10:45 AM) and compact three-hour window sacrifice ambient energy for focus. Galen Center's wraparound seating ensures unobstructed views, yet early-hour timing and quick session pace limit sustained excitement buildup."
-      },
-      "starPower": {
-        "score": 8,
-        "explanation": "Paris 2024 gold pair (China 1) defends; silver pair (China 2) seeks upset; bronze pair (Japan 1) battles for podium return. Every finalist carries prior medal pedigree; household-name recognition probable in strong women's doubles field."
-      },
-      "uniqueness": {
-        "score": 8,
-        "explanation": "Women's doubles gold-medal finale at Galen Center pairs medal-deciding stakes with a dedicated venue session. Two matches closing out one of five badminton events in prime Saturday-morning real estate—distinct tournament milestone."
-      },
-      "demand": {
-        "score": 8,
-        "explanation": "Medal-match premium pricing ($570.54 ceiling) and gold-deciding status drive strong demand. Morning timing softens versus evening finals, yet podium-awarding gravitas and three-hour focused window attract serious badminton fans."
-      },
-      "aggregate": 7.8,
-      "overall": "Women's doubles medals are decided Saturday morning in a compact, high-stakes finale. Gold and bronze matches guarantee podium drama; early timing limits casual demand but concentrates committed fans seeking medals."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.198Z"
-  },
-  "BDM22": {
-    "agg": 6.8,
-    "rSig": 6,
-    "rExp": 8,
-    "rStar": 8,
-    "rUniq": 5,
-    "rDem": 7,
-    "scorecard": {
-      "significance": {
-        "score": 6,
-        "explanation": "Women's singles quarterfinals narrow eight to four, advancing semifinal-bound players toward medals. Advancement-only stakes without medal-deciding matches, yet closer to gold than earlier rounds."
-      },
-      "experience": {
-        "score": 8,
-        "explanation": "Saturday evening (6:30 PM–11:15 PM) delivers prime-time badminton energy with full-house potential. Four potentially dramatic best-of-three matches under arena lights sustain crowd engagement; evening timing maximizes fast-paced rally appeal."
-      },
-      "starPower": {
-        "score": 8,
-        "explanation": "Korea's An Se-Yeong (Paris 2024 women's singles gold) navigates quarterfinals; China's He Bingjiao (silver) and Indonesia's Gregoria Mariska Tunjung (bronze) likely compete. Tournament fixtures are prior medalists with global recognition."
-      },
-      "uniqueness": {
-        "score": 5,
-        "explanation": "Women's singles quarterfinals are a standard advancement round in the medal bracket. Evening timing adds spectacle, but the session format and round are routine within Games badminton structure—not a once-in-a-lifetime pairing."
-      },
-      "demand": {
-        "score": 7,
-        "explanation": "Evening prime-time slot and medal-track advancement (four of eight survive) boost demand versus morning/daytime. Mid-range pricing ($316 ceiling) and Saturday night convenience drive competitive ticket interest; not medal-final intensity but strong demand."
-      },
-      "aggregate": 6.8,
-      "overall": "Women's singles quarterfinals reach medal territory on a Saturday night stage. Paris 2024 medalists An Se-Yeong and He Bingjiao likely on court; evening energy rewards spectators with potential three-game thrillers."
-    },
-    "model": "claude-haiku-4-5-20251001",
-    "promptVersion": 5,
-    "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.198Z"
-  },
-  "BDM23": {
-    "agg": 8.2,
-    "rSig": 9,
-    "rExp": 7,
     "rStar": 9,
     "rUniq": 8,
     "rDem": 8,
     "scorecard": {
       "significance": {
         "score": 9,
-        "explanation": "Men's doubles gold medal match crowns the event champion; men's singles semifinals send two to gold and two to bronze. Two medals awarded (doubles gold) plus semifinal stakes pushing singles toward podium—high-stakes medal-adjacent session."
+        "explanation": "Mixed doubles awards its gold and bronze medals—completing two of five event medals at the 2028 Games. Women's doubles semifinal determines finalists. Three medal-critical matches in one session make this pivotal in badminton's schedule."
       },
       "experience": {
-        "score": 7,
-        "explanation": "Sunday morning (8:00 AM–11:35 AM) and 3.5-hour window compress three medal-track matches into tight timeframe. Galen Center's sightlines excellent, yet early-hour timing softens crowd energy versus evening equivalents despite compelling matchups."
+        "score": 6,
+        "explanation": "Extended five-hour morning session delivers sustained intensity but daytime timing lacks evening electricity. Three major matches spread across climate-controlled arena keep spectators engaged; medal ceremonies add pageantry but early hour tempers atmospheric punch."
       },
       "starPower": {
         "score": 9,
-        "explanation": "Chinese Taipei's men's doubles gold pair from Paris 2024 competes for gold; Denmark's Viktor Axelsen (Paris men's singles gold) navigates semifinals. Dominant prior medalists and likely tournament favorites headline the session."
+        "explanation": "Paris gold, silver, and bronze medalists from China, South Korea, and Japan nearly certain to compete. Defending champions Zheng Siwei and Huang Yaqiong (mixed gold) and China's dominant women's doubles program ensure household names throughout."
       },
       "uniqueness": {
         "score": 8,
-        "explanation": "Men's doubles gold-medal match paired with men's singles semifinals creates dual medal-path momentum on Sunday morning. This combination of finals-level stakes and semifinal progression at a central venue marks a significant tournament milestone."
+        "explanation": "First badminton gold medals awarded at 2028 Games—a once-in-Games milestone combined with mixed doubles ceremony and women's doubles semifinal. The pairing of debut medals with advancing rounds creates a distinctive historical moment."
       },
       "demand": {
         "score": 8,
-        "explanation": "Gold-medal match premium pricing ($570.54 ceiling) and doubles-gold + singles-semifinal stakes drive strong demand. Morning timing reduces casual appeal versus evening finals, yet medal-awarding status and Axelsen's likely presence justify competitive ticket interest."
+        "explanation": "Mixed doubles medal matches are first badminton golds of Games; women's doubles semifinal determines finalists. Price ceiling over $570 and medal-award status drive strong demand despite morning timing. History and medals trump time-of-day premium."
       },
-      "aggregate": 8.2,
-      "overall": "Men's doubles crowns its champion while men's singles semifinals send Paris gold medalist Axelsen toward his final. Medal-match prestige balances early-hour timing; three high-stakes matches in rapid succession reward committed fans."
+      "aggregate": 8,
+      "overall": "First badminton gold medals of the 2028 Games awarded in mixed doubles while women's doubles semifinals determine finalists. Paris defending champions and medalists compete; extended morning window delivers multiple medal ceremonies and high stakes."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.198Z"
+    "generatedAt": "2026-04-17T11:41:40.663Z"
   },
-  "BDM24": {
+  "BDM20": {
     "agg": 7,
     "rSig": 7,
-    "rExp": 7,
+    "rExp": 8,
     "rStar": 8,
-    "rUniq": 6,
+    "rUniq": 4,
     "rDem": 7,
     "scorecard": {
       "significance": {
         "score": 7,
-        "explanation": "Women's singles semifinals send two to gold and two to bronze match; men's doubles bronze medal match awards the third-place podium. One medal awarded (doubles bronze) plus women's singles advancement to finals—solid medal-proximal stakes."
+        "explanation": "Men's singles quarterfinals advance the draw to semifinals; men's doubles semifinals set up the gold medal match. One event determining finalists, one determining which pairs reach the championship. Medal-adjacent stakes without medals being decided."
       },
       "experience": {
-        "score": 7,
-        "explanation": "Sunday evening (7:30 PM–11:25 PM) brings sustained late-night energy and engaged crowd. Back-to-back women's singles matches followed by medals-deciding doubles bronze create dramatic narrative arc under arena lights."
+        "score": 8,
+        "explanation": "Seven-hour Friday night marathon creates electric arena energy across multiple medal-contending matches. Prime-time session, sustained intensity, and back-to-back high-level doubles and singles rallies produce excellent live atmosphere despite fatigue factor."
       },
       "starPower": {
         "score": 8,
-        "explanation": "Korea's An Se-Yeong (Paris 2024 women's singles gold) and China's He Bingjiao (silver) likely compete in semifinals; Malaysia's men's doubles pair (Paris bronze) defends third-place status. Paris medalists throughout both events."
+        "explanation": "Paris medalists (Vitidsarn, Lee Zii Jia in singles; Chinese Taipei, China, Malaysia in doubles) heavily represented. Defending men's doubles champions Lee Yang and Wang Chi-lin likely competing; multiple household names across both events."
       },
       "uniqueness": {
-        "score": 6,
-        "explanation": "Women's singles semifinals + men's doubles bronze pairing is an unconventional session structure. Bronze medal match adds medal-deciding stakes rarely paired with advancement rounds, creating distinct tournament moment."
+        "score": 4,
+        "explanation": "Quarterfinals and semifinals follow standard bracket progression; this pairing of advancement rounds reflects routine Games structure. Multiple similar sessions occur; no distinctive circumstance elevates this beyond typical badminton scheduling."
       },
       "demand": {
         "score": 7,
-        "explanation": "Evening timing and bronze-medal-match status (medal awarded) drive strong demand. Mid-range pricing ($403.10 ceiling) reflects medal-session weight without gold-match premium. Sunday night convenience and Axelsen-neighbor implications boost interest."
+        "explanation": "Friday night prime-time badminton with semifinal stakes and Paris medalists competing attracts strong interest. Price ceiling around $380 and medal-proximity action create meaningful demand, though lack of medal matches themselves moderates scarcity premium."
       },
       "aggregate": 7,
-      "overall": "Women's singles semifinals share Sunday night with men's doubles bronze-medal match. Paris gold medalist An Se-Yeong navigates toward the final; Malaysia defends bronze status. Blended stakes of advancement and medal-deciding drama."
+      "overall": "Friday night extended session features men's singles quarterfinals and men's doubles semifinals with Paris defending champions and medalists. Prime-time energy and medal-adjacent stakes drive appeal, though advancement rather than medal-deciding rounds."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.198Z"
+    "generatedAt": "2026-04-17T11:41:40.663Z"
   },
-  "BDM25": {
-    "agg": 8.5,
+  "BDM21": {
+    "agg": 8.8,
     "rSig": 10,
-    "rExp": 6,
+    "rExp": 7,
     "rStar": 9,
     "rUniq": 9,
     "rDem": 9,
     "scorecard": {
       "significance": {
         "score": 10,
-        "explanation": "Men's singles gold and bronze medal matches award the podium and crown the event champion. Two finals-level matches directly deciding medals—absolute peak stakes within badminton."
+        "explanation": "Women's doubles awards gold and bronze medals, completing another of five events at 2028 Games. Both medal matches determine podium places; this session concludes women's doubles competition entirely."
       },
       "experience": {
-        "score": 6,
-        "explanation": "Monday morning (8:00 AM–10:45 AM) and compact three-hour window sacrifice ambient energy for tight focus. Medal ceremonies elevate gravitas, yet early-hour timing and quick session pace limit sustained crowd crescendo."
+        "score": 7,
+        "explanation": "Compact three-hour Saturday morning session featuring two consecutive medal matches creates ceremony pageantry and focused intensity. Morning timing softens atmospheric electricity, but medal matches and rapid bronze-to-gold succession provide climactic badminton theater."
       },
       "starPower": {
         "score": 9,
-        "explanation": "Denmark's Viktor Axelsen (Paris 2024 men's singles gold) competes for gold; Thailand's Kunlavut Vitidsarn (silver) and Malaysia's Lee Zii Jia (bronze) likely contend. Marquee medalists with global recognition throughout."
+        "explanation": "Paris gold and silver medalists from China's dominant program nearly certain to compete; bronze medalists from Japan likely present. China swept first two places in Paris; medal matches feature the sport's most elite female pairs."
       },
       "uniqueness": {
         "score": 9,
-        "explanation": "Men's singles gold-medal finale at Galen Center—the last Games badminton event to crown its champion. Monday morning timing and closing-tournament-chapter status make this a distinct milestone, though not at Opening-Ceremony rarity tier."
+        "explanation": "Women's doubles medal finals at the 2028 Games are once-every-four-years crowning of the women's doubles champion. The specific pairing of female-only medal matches in rapid succession creates distinctive sports theater without equivalent elsewhere in the Games."
       },
       "demand": {
         "score": 9,
-        "explanation": "Gold-medal-match premium pricing ($570.54 ceiling) and Axelsen-lead story (defending champion chasing repeat) drive exceptional demand. Morning timing softens casual appeal, yet podium-awarding, tournament-closing status and marquee-name star power justify near-top-tier competition."
+        "explanation": "Women's doubles gold and bronze medal matches carry premium appeal; Paris defending champions compete. Price ceiling over $570 reflects strong scarcity premium. Medal-award status and dominant China program drive high demand despite morning timing."
       },
-      "aggregate": 8.5,
-      "overall": "Men's singles medals decided Monday morning with Paris gold medalist Axelsen chasing repeat. Final badminton event to crown a champion; compact window concentrates medal drama and ceremony into morning milestone."
+      "aggregate": 8.8,
+      "overall": "Women's doubles medals awarded in a compact Saturday morning session featuring Paris gold and silver medalists from China's dominant program. Medal matches create high demand despite daytime timing; focused three-hour window delivers clean badminton closure."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.198Z"
+    "generatedAt": "2026-04-17T11:41:40.663Z"
+  },
+  "BDM22": {
+    "agg": 6.3,
+    "rSig": 6,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 4,
+    "rDem": 6,
+    "scorecard": {
+      "significance": {
+        "score": 6,
+        "explanation": "Women's singles quarterfinals determine the final four competitors advancing to semifinals. Advancement round filters the field; no medals decided but semifinal-track stakes carry real competitive weight."
+      },
+      "experience": {
+        "score": 7,
+        "explanation": "Saturday evening extended five-hour session showcases women's singles with multiple quarterfinal matches. Prime-time atmosphere and longest single-event session generate sustained energy; excellent sightlines in intimate 10,000-seat venue highlight the sport's explosive footwork."
+      },
+      "starPower": {
+        "score": 8,
+        "explanation": "Paris gold medalist An Se-Yeong (South Korea) and silver medalist He Bingjiao (China) almost certain to compete; Paris bronze medalist Gregoria Mariska Tunjung (Indonesia) likely present. World's elite women's singles players featured throughout quarterfinals."
+      },
+      "uniqueness": {
+        "score": 4,
+        "explanation": "Women's singles quarterfinal follows standard single-elimination bracket. Multiple identical preliminary-to-quarterfinal sessions occur; this represents routine badminton scheduling without distinctive circumstances or exclusive pairings."
+      },
+      "demand": {
+        "score": 6,
+        "explanation": "Saturday evening quarterfinals with Paris medalists attract solid interest and create premium pricing near $320. Medal-adjacent round without decided medals moderates demand versus finals; extended five-hour window appeals to enthusiasts but not casual fans."
+      },
+      "aggregate": 6.3,
+      "overall": "Saturday evening women's singles quarterfinals showcase Paris gold and silver medalists advancing toward semifinals. Prime-time venue energy and elite player roster drive appeal, though quarterfinal stakes lack medal-deciding urgency."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:40.663Z"
+  },
+  "BDM23": {
+    "agg": 8.6,
+    "rSig": 9,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 8,
+    "rDem": 9,
+    "scorecard": {
+      "significance": {
+        "score": 9,
+        "explanation": "Men's doubles gold medal determines champion; men's singles semifinals set up the final. One complete event medal awarded, one event determining the championship finalists. Two of five events' medal outcomes determined or advanced in single session."
+      },
+      "experience": {
+        "score": 8,
+        "explanation": "Sunday morning session combines medal ceremony pageantry with competitive intensity across three-and-a-half hours. Indoor climate control, intimate 10,000-seat venue, and back-to-back high-level doubles and singles create strong live atmosphere despite morning timing."
+      },
+      "starPower": {
+        "score": 9,
+        "explanation": "Chinese Taipei's defending back-to-back men's doubles champions Lee Yang and Wang Chi-lin chase third consecutive title if they qualify; China and Malaysia's Paris medalists also probable. Men's singles features Paris medalists Vitidsarn and Lee Zii Jia. Marquee names competing for gold and finalists spots."
+      },
+      "uniqueness": {
+        "score": 8,
+        "explanation": "Men's doubles gold medal match is a once-every-four-years crowning of champion, combined with men's singles semifinals determining finalists. The pairing of medal-deciding doubles with semifinal-stage singles creates a distinctive midpoint moment in badminton's schedule."
+      },
+      "demand": {
+        "score": 9,
+        "explanation": "Men's doubles gold medal match drives premium demand; men's singles semifinals offer medal-path stakes. Price ceiling over $570 reflects strong scarcity. Defending champions and Paris medalists competing for golds and final spots create significant presale pressure."
+      },
+      "aggregate": 8.6,
+      "overall": "Sunday morning awards men's doubles gold while men's singles semifinals determine finalists. Defending champions and Paris medalists compete; medal match and semifinal stakes create strong demand, though morning timing and split-event focus moderate ultimate appeal."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:40.663Z"
+  },
+  "BDM24": {
+    "agg": 7.2,
+    "rSig": 8,
+    "rExp": 7,
+    "rStar": 8,
+    "rUniq": 5,
+    "rDem": 7,
+    "scorecard": {
+      "significance": {
+        "score": 8,
+        "explanation": "Women's singles semifinals determine finalists for the gold medal match; men's doubles bronze medal match completes men's doubles competition. One event determining championship finalists, one awarding third-place medal. Two events' medal paths significantly advanced or completed."
+      },
+      "experience": {
+        "score": 7,
+        "explanation": "Sunday evening four-hour session delivers sustained prime-time badminton energy with medal-deciding and semifinal matches. Arena lighting showcases shuttlecock trajectories; back-to-back women's singles and men's doubles bronze create rhythm of competition and ceremony."
+      },
+      "starPower": {
+        "score": 8,
+        "explanation": "Paris gold medalist An Se-Yeong (South Korea) competing in women's singles semifinals; silver medalist He Bingjiao (China) and bronze medalist Gregoria Mariska Tunjung (Indonesia) likely present. Men's doubles bronze features Paris medalists from Malaysia, China, or Chinese Taipei."
+      },
+      "uniqueness": {
+        "score": 5,
+        "explanation": "Women's singles semifinal represents standard bracket progression; men's doubles bronze medal match follows typical double-elimination format. While medal-adjacent, this combines routine advancement and bronze-medal structure without distinctive circumstance."
+      },
+      "demand": {
+        "score": 7,
+        "explanation": "Women's singles semifinals determine gold medal finalists; men's doubles bronze carries medal stakes. Price ceiling near $410 and prime-time timing create meaningful demand. Medal-path action without decided finals moderates scarcity versus championship matches."
+      },
+      "aggregate": 7.2,
+      "overall": "Sunday evening women's singles semifinals (gold finalists determined) and men's doubles bronze medal match. Paris medalists compete; prime-time energy and medal-adjacent stakes drive appeal, though semifinals and bronze don't carry the urgency of finals."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:40.663Z"
+  },
+  "BDM25": {
+    "agg": 9.4,
+    "rSig": 10,
+    "rExp": 8,
+    "rStar": 9,
+    "rUniq": 10,
+    "rDem": 10,
+    "scorecard": {
+      "significance": {
+        "score": 10,
+        "explanation": "Men's singles awards gold and bronze medals, completing another of five events at the 2028 Games. Both medal matches determine podium places; this session concludes men's singles competition. One of the sport's two major individual events crowned."
+      },
+      "experience": {
+        "score": 8,
+        "explanation": "Monday morning compact three-hour session features consecutive medal matches under arena lighting. Intimate 10,000-seat venue with close sightlines amplifies crowd reaction to 200+ mph smashes and dramatic rallies; medal ceremonies punctuate both matches with formal pageantry."
+      },
+      "starPower": {
+        "score": 9,
+        "explanation": "Paris silver medalist Kunlavut Vitidsarn (Thailand) and bronze medalist Lee Zii Jia (Malaysia) likely competing for medals. With Viktor Axelsen retired, these Paris medalists are frontrunners for the new men's singles champion. Elite athletes competing for the sport's marquee individual title."
+      },
+      "uniqueness": {
+        "score": 10,
+        "explanation": "Men's singles gold and bronze medals are once-every-four-years crowning of badminton's premier individual event in an iconic Games setting. The specific combination of new champion determination (Axelsen retired), medal finals in morning session, and closure of men's singles creates unrepeatable historical moment."
+      },
+      "demand": {
+        "score": 10,
+        "explanation": "Men's singles gold medal is badminton's marquee individual title; both medal matches determine podium finishes. Price ceiling over $570 reflects maximum scarcity. New champion storyline (Axelsen's retirement) and Paris medalists competing drive premium presale demand."
+      },
+      "aggregate": 9.4,
+      "overall": "Men's singles gold and bronze medals awarded Monday morning, crowning the sport's premier individual champion with new blood after Axelsen's retirement. Paris medalists compete; compact three-hour session delivers medal matches and closure with maximum demand."
+    },
+    "model": "claude-haiku-4-5-20251001",
+    "promptVersion": 5,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:41:40.663Z"
   },
   "BDM26": {
     "agg": 9.6,
@@ -2241,31 +2241,31 @@
     "scorecard": {
       "significance": {
         "score": 10,
-        "explanation": "Women's singles gold and bronze medal matches crown the final badminton event and complete all five medal events. Two finals-level matches awarding the podium—absolute peak stakes and tournament finale."
+        "explanation": "Women's singles awards gold and bronze medals, completing the final of five events at the 2028 Games. Both medal matches determine podium places; this session concludes badminton competition and the sport's second major individual championship."
       },
       "experience": {
         "score": 9,
-        "explanation": "Monday evening prime-time (8:30 PM–11:15 PM) delivers maximum arena energy for badminton's closing ceremony. Final event status and evening timing combine to create theatrical crescendo—fast rallies under lights with full crowd and medal gravitas."
+        "explanation": "Monday evening closes badminton competition with back-to-back medal matches in prime-time atmosphere. Arena lighting highlights explosive footwork and court coverage; crescendo of energy as final event medal matches conclude the entire badminton program under evening conditions."
       },
       "starPower": {
         "score": 9,
-        "explanation": "Korea's An Se-Yeong (Paris 2024 women's singles gold) defends her title; China's He Bingjiao (silver) seeks upset; Indonesia's Gregoria Mariska Tunjung (bronze) chases podium return. Elite medalists closing badminton program."
+        "explanation": "Paris gold medalist An Se-Yeong (South Korea) likely competing for title defense; silver medalist He Bingjiao (China) and bronze medalist Gregoria Mariska Tunjung (Indonesia) probable medal-match competitors. World's elite women's singles players determining the final champion."
       },
       "uniqueness": {
         "score": 10,
-        "explanation": "Women's singles gold-medal finale is the last Games badminton match ever at Galen Center and closes the entire five-event program. Monday evening prime-time real estate paired with tournament-concluding status and medal-awarding stakes—once-in-a-lifetime moment."
+        "explanation": "Women's singles gold and bronze medals crown the final event of badminton competition at the 2028 Games—a once-every-four-years conclusion to the entire sport's schedule. The specific pairing of closing-session status, female individual championship, and medal-deciding matches creates unrepeatable historical closure."
       },
       "demand": {
         "score": 10,
-        "explanation": "Gold-medal-match premium pricing ($570.54 ceiling), closing-ceremony gravitas, Paris gold medalist An Se-Yeong in potential title defense, and finale status drive peak demand. Evening timing maximizes casual and committed fan overlap; hottest ticket of badminton program."
+        "explanation": "Women's singles gold medal is badminton's final medal awarded and concludes the entire sport's competition. Price ceiling over $570 reflects maximum scarcity. Closing-night status, Paris medalists, and historic conclusion drive premium presale demand near capacity."
       },
       "aggregate": 9.6,
-      "overall": "Badminton concludes with women's singles gold and bronze medals on Monday night. An Se-Yeong defends her title under lights; final event status and evening prime-time create the program's highest-energy, most-sought session."
+      "overall": "Women's singles gold and bronze medals conclude all badminton competition Monday evening. Paris gold medalist An Se-Yeong and medalists compete; prime-time closing-session energy and maximum historical significance create the Games' premier badminton conclusion."
     },
     "model": "claude-haiku-4-5-20251001",
     "promptVersion": 5,
     "batchId": null,
-    "generatedAt": "2026-04-17T10:44:51.198Z"
+    "generatedAt": "2026-04-17T11:41:40.663Z"
   },
   "BK301": {
     "agg": 4.8,

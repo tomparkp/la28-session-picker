@@ -947,449 +947,464 @@
     "generatedAt": "2026-04-17T05:47:07.260Z"
   },
   "BDM01": {
-    "blurb": "The 2028 Games badminton tournament opens with morning group play across all five disciplines. Athletes from 172-strong field take first swings at seeding into knockout rounds, with Paris 2024 medalists from China, Chinese Taipei, Malaysia, Japan, and Korea projected to enter as favorites.\n\nGroup stage follows round-robin format with 16 pairs per doubles event and top singles players vying for quarterfinal berths. Expect rapid-fire rallies and tactical positioning as contenders test form after a yearlong qualifying window.\n\nGalen Center's climate-controlled arena seats over 10,000 with sightlines designed for fast-paced indoor sports. Morning sessions offer accessible pricing and a chance to watch emerging stars alongside established champions.",
-    "potentialContendersIntro": "Paris 2024 medalists are projected to lead the field if they qualify, with China's doubles dominance and Chinese Taipei's men's pairs setting the standard.",
+    "blurb": "The 2028 Games badminton competition opens with group play across all five medal events—men's and women's singles, men's and women's doubles, and mixed doubles. Nearly every athlete in the draw will see action on opening morning, making this the most accessible entry point to watch the global field.\n\nPairs that claimed Paris 2024 gold—Chinese Taipei's duo in men's doubles, China's tandems in women's doubles and mixed doubles—could return to defend their titles if they qualify. The group stage sorts 172 athletes into knockout brackets over the first week.\n\nThe climate-controlled Galen Center in Exposition Park seats over 10,000 and offers clear sightlines to multiple courts running simultaneously. Arrive early to catch shuttlecock speeds exceeding 200 mph and the rhythmic thwack of rallies echoing through the arena.",
+    "potentialContendersIntro": "Paris 2024 medalists from China, Chinese Taipei, Malaysia, Japan, and South Korea are projected to qualify for the 2028 Games if form holds through the ranking period ending April 2028.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM02": {
-    "blurb": "Afternoon group play continues with women's singles, doubles events from all three disciplines, and high-stakes positioning for knockout seeding. China's women's doubles pairs, who swept gold and silver in Paris, are expected to dominate if they return.\n\nThis session features fewer matches than morning blocks, allowing deeper three-game battles and tactical chess between pairs. Watch for upset-minded qualifiers seeking early statement wins against ranked opponents.\n\nThe venue's 22 private suites and flexible seating offer premium views of rapid shuttlecock exchanges. Afternoon light filters through the arena's modern architecture, creating an intimate indoor atmosphere.",
-    "potentialContendersIntro": "China's women's doubles pairs lead the projected field, with Chinese Taipei men's and Korean mixed contenders also likely to appear.",
+    "blurb": "Saturday afternoon group play continues with men's and women's doubles alongside women's singles. China's depth in women's doubles—they swept gold and silver in Paris—should be on display again if their top pairs qualify for 2028.\n\nEach doubles category fields 16 pairs total, so every group match carries elimination stakes. The format rewards consistency: lose your group and the knockout rounds start without you.\n\nThe afternoon session offers a quieter atmosphere than the evening primetime slots, with smaller but knowledgeable crowds who appreciate the technical nuance of doubles positioning and deceptive net play.",
+    "potentialContendersIntro": "Paris 2024 women's doubles podium finishers from China and Japan are likely to send strong pairs if current rankings hold through the April 2028 cutoff.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM03": {
-    "blurb": "Prime-time badminton brings singles and doubles group play under the lights with a nearly five-hour marathon session. Malaysia's men's pairs and Japan's women's duos, both Paris bronze medalists, could face off against rising challengers.\n\nLate group matches carry extra weight as athletes aim to avoid tougher knockout brackets. Singles players begin establishing tournament rhythm with best-of-three scoring creating potential for dramatic comebacks.\n\nEvening crowds at Galen Center bring louder energy than morning sessions. The arena's basketball-venue acoustics amplify every shuttlecock smash and crowd reaction, creating Games atmosphere in downtown LA.",
-    "potentialContendersIntro": "Paris 2024 bronze medalists from Malaysia and Japan are projected to headline this evening session alongside other top-ranked pairs.",
+    "blurb": "The evening session wraps opening day with men's and women's doubles and singles group matches. Malaysia's bronze-medal men's doubles pair from Paris could return, while Japan's women's doubles duo will aim to improve on their third-place finish.\n\nGroup play runs until Tuesday, so patience is required—these are the opening volleys of a two-week campaign. But the best rallies emerge when players are fresh and the pressure is still building.\n\nEvening sessions draw the largest and loudest crowds at the Galen Center, with hometown fans filling the 10,000-seat arena. The venue's acoustics amplify every smash and every roar when a rally stretches past 30 shots.",
+    "potentialContendersIntro": "Malaysia and Japan medaled in doubles events at Paris 2024 and are projected to field competitive pairs again if they secure qualification.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM04": {
-    "blurb": "Sunday morning features all five events in compact three-and-a-half-hour window as group play reaches critical midpoint. China's mixed doubles pair, who captured Paris gold, are likely to compete if qualified, facing teams chasing upset victories.\n\nGroup standings begin to crystallize with stronger athletes separating from the field. Host nation universality entries and continental representation places add wild-card intrigue to established rankings.\n\nThe USC arena transforms into international badminton hub with flags and fan sections creating festival atmosphere. Morning sessions offer family-friendly timing and lower price points for Games newcomers.",
-    "potentialContendersIntro": "China's multi-event medalists are projected to appear across disciplines, with host nation entries potentially adding American representation.",
+    "blurb": "Sunday morning continues group play across all five events. China's Zheng Siwei and Huang Yaqiong, who claimed mixed doubles gold in Paris, could return to chase a repeat if they qualify through the world rankings.\n\nWith 172 athletes competing and only 86 quota spots per gender, the field represents the global elite. Even group matches feature world-class shotmaking and tactical chess matches between coaches.\n\nThe Sunday morning slot draws families and local badminton clubs who appreciate the relaxed schedule and affordable tickets. It's a rare chance to watch future medalists before the knockout rounds raise the stakes.",
+    "potentialContendersIntro": "China's mixed doubles Paris 2024 champions are projected to seek qualification, while singles and doubles fields remain wide open pending the April 2028 ranking deadline.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM05": {
-    "blurb": "Sunday afternoon group play wraps critical positioning for all five events with just two-and-a-half hours of competition. Chinese Taipei's men's doubles gold medalists from Paris could face elimination-avoidance scenarios depending on earlier results.\n\nWith 48 doubles pairs total and 86 athletes per gender competing, afternoon sessions feature the deepest fields. Expect tactical serving, net play, and stamina management as athletes balance tournament energy across multiple days.\n\nGalen Center's climate control and indoor sightlines provide relief from Southern California summer heat. Afternoon crowds tend toward badminton enthusiasts who track group standings and potential bracket matchups.",
-    "potentialContendersIntro": "Chinese Taipei men's pairs and top-ranked singles players from the qualification period are projected to compete.",
+    "blurb": "Sunday afternoon features another round of group play across all events. Chinese Taipei's men's doubles pair—Lee Yang and Wang Chi-lin, defending their Tokyo title with Paris gold—are favorites to qualify again if they stay healthy.\n\nThe doubles ranking system rewards consistency over the year-long qualification window, so current form matters as much as past results. Expect established pairs to face rising challengers hungry to break through.\n\nAfternoon sessions at the Galen Center offer comfortable indoor viewing with climate control—a welcome respite from Los Angeles summer heat. Multiple courts run simultaneously, so position yourself to watch your favorite discipline.",
+    "potentialContendersIntro": "Chinese Taipei's back-to-back gold medalists in men's doubles are projected to compete again if they qualify, while China and Malaysia remain strong in multiple categories.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM06": {
-    "blurb": "The weekend's final session delivers five hours of group-stage conclusions across all disciplines. Japan's mixed doubles bronze medalists from Paris are projected to secure knockout berths if they return to Games competition.\n\nLate Sunday evening carries urgency as bubble teams fight for the final quarterfinal spots in each event. Singles and doubles brackets finalize with seeding implications rippling through the draw.\n\nNight sessions at the venue bring concert-like lighting and amplified sound. The arena's multipurpose design adapts to badminton's fast-paced rallies, with LED scoreboards tracking every point across multiple courts.",
-    "potentialContendersIntro": "Japan's mixed and women's doubles squads, both Paris medalists, are likely to appear alongside other group-stage qualifiers.",
+    "blurb": "Sunday evening closes the second day of group play with all five events in action. Japan's mixed doubles bronze medalists from Paris could return, while the women's doubles draw may again feature multiple Chinese pairs.\n\nGroup standings begin to crystallize by the third day—some athletes are already playing for knockout seeding while others face elimination. The pace accelerates as players adapt to venue conditions and scout opponents.\n\nEvening badminton at the Galen Center draws passionate fans who understand the sport's intricacies. The crowd erupts for diving saves and cross-court smashes that barely clip the line.",
+    "potentialContendersIntro": "Japan's Paris 2024 bronze medalists in mixed doubles and women's doubles are projected to field strong pairs if they secure qualification through world rankings.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM07": {
-    "blurb": "Monday morning opens the tournament's second week with remaining group matches before knockouts begin. China's second women's doubles entry, which took Paris silver, could appear as group play concludes.\n\nEach nation can enter maximum 16 athletes total, creating strategic roster decisions for powerhouse countries. Morning sessions feature final jockeying for bracket positioning and potential rivalry rematches from Paris.\n\nThe Exposition Park venue sits near USC's campus with walkable access to museums and LA Memorial Coliseum. Early sessions attract local fans and international supporters camping for knockout-round tickets.",
-    "potentialContendersIntro": "China's depth across multiple events and other top-eight ranked pairs from the May 2028 rankings are projected to compete.",
+    "blurb": "Monday morning's group play begins the final push before knockout rounds start later in the week. China's second women's doubles pair, silver medalists in Paris, could return alongside their gold-winning teammates.\n\nWith a maximum of 16 athletes per country across all events, national federations make strategic choices about which specialists to send. Depth matters—some countries field multiple medal contenders while others concentrate talent in one or two categories.\n\nThe Monday morning crowd skews toward badminton insiders and international fans who've traveled specifically for the sport. Expect small but engaged audiences who appreciate subtle tactical adjustments.",
+    "potentialContendersIntro": "China's depth in women's doubles—gold and silver in Paris—positions them to potentially field two competitive pairs again if both qualify for the 2028 Games.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM08": {
-    "blurb": "Afternoon group play concludes with singles and all three doubles disciplines wrapping round-robin competition. Korea's mixed doubles pair, Paris silver medalists, are projected to advance into knockout rounds if qualified.\n\nThis session marks the final opportunity for lower-seeded athletes to force tiebreakers or upset higher-ranked opponents before elimination brackets begin. Qualification period from May 2027 to April 2028 determines who reached LA.\n\nGalen Center's 10,258-seat capacity creates intimate badminton atmosphere compared to larger arenas. Afternoon sessions balance tourist crowds with dedicated fans tracking bracket implications.",
-    "potentialContendersIntro": "Korea's mixed doubles medalists and other Paris 2024 podium finishers are projected to headline the final group matches.",
+    "blurb": "Monday afternoon features more group matches across all categories. South Korea's mixed doubles pair, silver medalists in Paris behind China's dominant duo, are projected to qualify again and seek an upgrade.\n\nEach match uses a best-of-three games format with rally scoring to 21 points, so comebacks are always possible. Watch for momentum swings when a trailing pair adjusts their court positioning or switches up serving patterns.\n\nThe Galen Center's compact footprint puts even upper-deck seats close to the action compared to larger arenas. Shuttlecocks move so fast that close viewing makes a difference in appreciating the athletes' reaction time.",
+    "potentialContendersIntro": "South Korea's Paris 2024 mixed doubles silver medalists are likely to return if they maintain their world ranking through the April 2028 qualification cutoff.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM09": {
-    "blurb": "Monday's final session delivers four hours of group-stage drama as knockout brackets lock into place across all five events. Paris medalists from China, Malaysia, Japan, and Korea are projected to populate the top seeds based on recent form.\n\nGroup play format ensures every athlete competes multiple times before elimination, rewarding consistency over single-match variance. Late matches carry playoff atmosphere as teams celebrate or face early exits.\n\nEvening crowds bring peak energy to the venue's flexible arena space. The USC facility's Grammy Awards history and concert acoustics translate to electric badminton atmosphere with international fan sections trading chants.",
-    "potentialContendersIntro": "The projected field includes multiple Paris 2024 medalists across doubles events, with seeding finalized after this session.",
+    "blurb": "Monday evening's session marks the final group matches before knockout play begins. Paris 2024 medalists from China, Chinese Taipei, Malaysia, Japan, and South Korea are all projected to field athletes if they secure quota spots.\n\nBy now, group winners are determined and seeding is finalized. But elimination-round intensity still emerges in matches between teams fighting for the last knockout berths or jockeying for favorable bracket positions.\n\nEvening crowds at the Galen Center bring energy—drums, cheers for spectacular shots, and collective gasps when a rally reaches 50 strokes. The venue's acoustics make it feel louder than its 10,000 capacity suggests.",
+    "potentialContendersIntro": "Multiple Paris 2024 medal-winning nations are projected to qualify athletes across the five events, though exact rosters depend on world rankings through April 2028.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM10": {
-    "blurb": "Tuesday morning shifts to knockout intensity with group play wrapping for men's and women's singles alongside remaining doubles matches. No mixed doubles are scheduled, focusing attention on individual and same-gender pair competitions.\n\nSingles group conclusions set up quarterfinal matchups later in the week, with top world-ranked players expected to emerge from round-robin unscathed. Doubles pairs finalize seeding for medal-round brackets.\n\nThe venue's indoor climate control and early start time make this session accessible for families and fans avoiding midday LA heat. Galen Center's basketball-venue layout provides clear sightlines from all seating tiers.",
-    "potentialContendersIntro": "Top singles players from the LA28 ranking period and Paris 2024 doubles medalists are projected to compete.",
+    "blurb": "Tuesday morning concludes group play in men's and women's doubles plus singles. No mixed doubles matches are scheduled—that category advances to quarterfinals next.\n\nThe session determines final knockout brackets for the other four events. Expect tight matches between teams needing wins to advance, while some already-qualified pairs may rest key players.\n\nThe Tuesday morning slot offers one last chance to watch group-stage badminton at affordable prices before quarterfinals and beyond carry premium ticket costs. The atmosphere is workmanlike as athletes focus on securing their knockout spots.",
+    "potentialContendersIntro": "Paris 2024 medalists in men's doubles, women's doubles, and singles events are projected to appear if they qualify, with the Tuesday session finalizing brackets for those categories.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM11": {
-    "blurb": "Afternoon competition features women's singles and both men's and women's doubles as group stage reaches its conclusion. Chinese Taipei's men's pair and China's women's duo, all Paris gold medalists, are projected to secure top knockout seeds if they return.\n\nWith 172 total athletes competing and 86 quota spots per gender, this session represents the final group positioning before medal rounds begin. Singles players face must-win scenarios while doubles pairs lock in bracket matchups.\n\nGalen Center's 22 private suites offer premium views of court action. Mid-afternoon sessions draw dedicated badminton fans who appreciate the sport's tactical complexity and rapid-fire exchanges.",
-    "potentialContendersIntro": "Paris 2024 gold medalists in men's and women's doubles are projected to headline this session's featured matches.",
+    "blurb": "Tuesday afternoon features the final group matches in men's and women's doubles plus women's singles. An Se-Yeong of South Korea, Paris 2024 women's singles champion, is projected to compete again if she maintains top form through qualification.\n\nThe women's singles field could also include China's He Bingjiao, Paris silver medalist, and Indonesia's Gregoria Mariska Tunjung, who claimed bronze. Rankings through April 2028 will determine the full draw.\n\nAfternoon sessions offer a relaxed atmosphere as group play winds down. Fans can watch emerging singles stars who may dominate the sport for the next Games cycle.",
+    "potentialContendersIntro": "Women's singles Paris 2024 medalists An Se-Yeong (South Korea), He Bingjiao (China), and Gregoria Mariska Tunjung (Indonesia) are projected to qualify if current form holds.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM12": {
-    "blurb": "Tuesday's closing session delivers group-play finals across singles and doubles with four hours of competition determining knockout brackets. Malaysia's men's doubles bronze medalists from Paris are projected to secure elimination-round berths.\n\nEach country's maximum eight athletes per gender creates strategic roster construction, with powerhouse nations like China potentially fielding multiple pairs in each discipline. Final group results shape the path to podiums.\n\nNight sessions at the multipurpose arena feature enhanced lighting and amplified crowd energy. The venue's concert-ready sound system and LED displays create Games spectacle as group play transitions to medal rounds.",
-    "potentialContendersIntro": "Paris 2024 medalists across doubles events are projected to advance, with Malaysia's men's pairs joining Chinese and Japanese squads.",
+    "blurb": "Tuesday evening closes group play in men's and women's doubles and singles. With Viktor Axelsen retired due to chronic back problems, the men's singles field is wide open—Paris silver medalist Kunlavut Vitidsarn of Thailand and bronze winner Lee Zii Jia of Malaysia could contend if they qualify.\n\nThe men's singles draw will feature a new champion for the first time since Tokyo 2020. Expect tactical adjustments as players adapt to the vacuum left by Axelsen's dominance.\n\nEvening crowds bring energy for the final group matches before knockout intensity takes over. The Galen Center's indoor setting amplifies the shuttlecock's distinctive sound as it rockets off rackets at speeds faster than some tennis serves.",
+    "potentialContendersIntro": "Men's singles Paris 2024 silver medalist Kunlavut Vitidsarn (Thailand) and bronze winner Lee Zii Jia (Malaysia) are projected to qualify, with the gold-medal vacancy creating an open field.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM13": {
-    "blurb": "Knockout rounds begin with mixed doubles quarterfinals as eight pairs battle for semifinal berths and medal contention. China's Paris gold medalists, Korea's silver pair, and Japan's bronze duo are projected to meet if all qualify through group play.\n\nQuarterfinal format is single-elimination best-of-three, raising stakes dramatically from round-robin. Singles group matches run concurrently, but mixed doubles takes center stage with podium implications on the line.\n\nGalen Center's 10,000-seat capacity fills for the tournament's first medal-track session. The venue's basketball-arena design creates intimate atmosphere where every shuttlecock smash and tactical rally resonates through the crowd.",
-    "potentialContendersIntro": "Paris 2024 mixed doubles medalists from China, Korea, and Japan are projected to contend for semifinal spots.",
+    "blurb": "Mixed doubles quarterfinals arrive on Wednesday morning, determining which four pairs advance to medal rounds. China's Zheng Siwei and Huang Yaqiong, Paris gold medalists, are favorites to qualify and defend their title.\n\nSouth Korea's Paris silver medalists could return for another run, while Japan's bronze-winning pair may also compete if they secure a quota spot. The knockout format means every point matters—lose and you're eliminated.\n\nMorning quarterfinals offer an intimate atmosphere as the field narrows to elite contenders. The Galen Center's climate-controlled setting keeps conditions consistent, eliminating wind as a variable and rewarding pure skill.",
+    "potentialContendersIntro": "Mixed doubles quarterfinals will likely feature Paris 2024 medalists from China (gold), South Korea (silver), and Japan (bronze) if they qualify through world rankings.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM14": {
-    "blurb": "Singles competition wraps group play as men's and women's athletes finalize knockout seeding. Viktor Axelsen of Denmark, Paris men's gold medalist, and An Se-Yeong of Korea, women's champion, are likely to appear if they qualified through 2027-28 rankings.\n\nFinal group matches determine quarterfinal brackets with top seeds avoiding dangerous early matchups. Singles format rewards consistency across multiple group games before single-elimination pressure begins.\n\nAfternoon sessions at the USC arena offer accessible ticket pricing and clear sightlines from all seating tiers. The venue's flexible configuration adapts to badminton's fast-paced action with multiple courts running simultaneously.",
-    "potentialContendersIntro": "Paris 2024 singles champions from Denmark and Korea are projected to lead the field if they return, along with China's women's medalists.",
+    "blurb": "Wednesday afternoon features the last men's and women's singles group matches. With Axelsen retired, the men's field is unexpectedly open—Paris runner-up Kunlavut Vitidsarn and bronze medalist Lee Zii Jia are projected to qualify and contend for gold.\n\nWomen's singles should again showcase An Se-Yeong's precision and court coverage that dominated Paris, while China's He Bingjiao could return to challenge for gold after settling for silver in 2024.\n\nThe afternoon session offers a final chance to watch singles at group-stage prices before knockout rounds begin. Position yourself near center court to catch the headliners' matches.",
+    "potentialContendersIntro": "Singles group play will likely feature Paris 2024 medalists including An Se-Yeong (KOR women's gold), Kunlavut Vitidsarn (THA men's silver), and He Bingjiao (CHN women's silver) if they qualify.",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM15": {
-    "blurb": "Wednesday's closing session concludes singles group play under the lights with men's and women's athletes securing final knockout positions. Indonesia's Gregoria Mariska Tunjung, Paris women's bronze medalist, could face must-win scenarios depending on group results.\n\nWith maximum 16 athletes per country across all events, strategic roster decisions by badminton powerhouses shape the bracket. Singles quarterfinals loom later in the tournament as group stage gives way to elimination drama.\n\nNight atmosphere at Galen Center features concert-level production values with LED scoreboards tracking every point. The arena's 2006 construction and modern amenities create climate-controlled comfort as LA summer evenings cool outside.",
-    "potentialContendersIntro": "Paris 2024 singles medalists from Denmark, Korea, China, and Indonesia are projected to compete in the final group matches.",
+    "blurb": "Wednesday evening wraps men's and women's singles group play. Indonesia's Gregoria Mariska Tunjung, Paris bronze medalist, could return to the women's field if she qualifies through the year-long ranking period.\n\nThe session determines final singles knockout brackets. Seeding matters—a favorable draw can mean avoiding the top contenders until later rounds, while a tough bracket forces early showdowns.\n\nEvening crowds fill the Galen Center for the final group matches, bringing drums and national flags. The venue's 22 private suites offer premium sightlines for fans willing to splurge, while general seating puts you close to courtside intensity.",
+    "potentialContendersIntro": "Singles group play concludes with projected appearances by Paris 2024 medalists including Gregoria Mariska Tunjung (INA women's bronze), Kunlavut Vitidsarn (THA men's silver), and An Se-Yeong (KOR women's gold).",
     "potentialContenders": [],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.721Z"
+    "generatedAt": "2026-04-17T11:32:19.971Z"
   },
   "BDM16": {
-    "blurb": "Three events converge in one high-stakes morning: mixed doubles semifinals, women's doubles quarterfinals, and the Round of 16 for women's singles. The mixed doubles pairs surviving this session will battle for medals the next day, while the women's doubles field narrows to four.\n\nThe Galen Center configuration brings spectators close to the court, where the best-of-three format can turn in an instant. China dominated both events in Paris 2024, sweeping gold and silver in women's doubles and taking mixed doubles gold.\n\nMorning sessions offer climate-controlled comfort in the reconfigured USC arena, where the shuttlecock's 200-mph smashes echo off the basketball venue's acoustics.",
-    "potentialContendersIntro": "China's Paris 2024 sweep in both doubles events makes their pairs favorites if they qualify, while Korea and Japan could field strong medal contenders based on recent form.",
+    "blurb": "Three major events converge in this morning session at Galen Center, with mixed doubles semifinal action determining the gold medal finalists. The Paris 2024 champions from China and silver medalists from South Korea could return to defend their positions if they qualify, alongside emerging pairs from Japan and Indonesia.\n\nWomen's doubles quarterfinals narrow the field to four pairs, with China's dominant program likely fielding multiple teams after sweeping gold and silver in Paris. Women's singles round of 16 features the sport's fastest and most athletic rallies, with An Se-Yeong of South Korea potentially defending her Paris gold.\n\nThe climate-controlled arena seats over 10,000 and offers close sightlines to see the shuttlecock's 200+ mph smashes. Morning sessions provide an accessible entry point to experience elite badminton before the evening crowds arrive.",
+    "potentialContendersIntro": "Paris 2024 medalists could dominate if they qualify, with China's mixed doubles champions and Korea's women's singles gold medalist An Se-Yeong likely to compete.",
     "potentialContenders": [
       {
-        "name": "People's Republic of China 1",
+        "name": "Zheng Siwei / Huang Yaqiong",
         "country": "CHN",
-        "note": "Gold medalists in both women's doubles and mixed doubles at Paris 2024"
-      },
-      {
-        "name": "Republic of Korea 1",
-        "country": "KOR",
-        "note": "Silver medalists in mixed doubles at Paris 2024"
-      },
-      {
-        "name": "Japan 1",
-        "country": "JPN",
-        "note": "Bronze medalists in women's doubles at Paris 2024"
+        "note": "Paris 2024 mixed doubles gold medalists"
       },
       {
         "name": "An Se-Yeong",
         "country": "KOR",
-        "note": "Paris 2024 women's singles gold medalist, likely top seed if she competes"
+        "note": "Paris 2024 women's singles champion"
+      },
+      {
+        "name": "He Bingjiao",
+        "country": "CHN",
+        "note": "Paris 2024 women's singles silver medalist"
+      },
+      {
+        "name": "Chen Qingchen / Jia Yifan",
+        "country": "CHN",
+        "note": "Paris 2024 women's doubles gold medalists"
       }
     ],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.734Z"
+    "generatedAt": "2026-04-17T11:32:19.987Z"
   },
   "BDM17": {
-    "blurb": "The Round of 16 in both men's and women's singles fills an afternoon session where half the field goes home. Sixteen men and sixteen women enter; eight of each advance to the quarterfinals.\n\nViktor Axelsen of Denmark claimed men's singles gold in Paris 2024, while Korea's An Se-Yeong took the women's title. The best-of-three format to 21 points rewards both power and precision.\n\nAfternoon timing and accessible pricing make this an entry point to watch future finalists emerge, before the later rounds move to prime slots.",
-    "potentialContendersIntro": "The Paris 2024 medalists could return as top contenders if they maintain form and qualify for the 2028 Games.",
+    "blurb": "The round of 16 showcases badminton's explosive athleticism across both singles draws. With Viktor Axelsen retired from competition, the men's field opens up for a new generation of champions including Paris silver medalist Kunlavut Vitidsarn of Thailand and bronze medalist Lee Zii Jia of Malaysia.\n\nWomen's singles continues with An Se-Yeong of South Korea projected to defend her Paris title against challengers from China, Indonesia, and Japan. Each best-of-three match features rapid-fire exchanges and diving saves across the full court.\n\nAfternoon sessions at Galen Center offer cooler pricing and multiple matches back-to-back. The compact arena configuration brings you close enough to hear the shuttlecock's distinctive snap off the racquet strings.",
+    "potentialContendersIntro": "Paris 2024 medalists Kunlavut Vitidsarn and Lee Zii Jia could lead the men's field, while An Se-Yeong likely defends her women's title if she qualifies.",
     "potentialContenders": [
-      {
-        "name": "Viktor Axelsen",
-        "country": "DEN",
-        "note": "Gold medalist in men's singles at Paris 2024"
-      },
       {
         "name": "Kunlavut Vitidsarn",
         "country": "THA",
-        "note": "Silver medalist in men's singles at Paris 2024"
+        "note": "Paris 2024 men's singles silver medalist"
       },
       {
         "name": "Lee Zii Jia",
         "country": "MAS",
-        "note": "Bronze medalist in men's singles at Paris 2024"
+        "note": "Paris 2024 men's singles bronze medalist"
       },
       {
         "name": "An Se-Yeong",
         "country": "KOR",
-        "note": "Gold medalist in women's singles at Paris 2024"
+        "note": "Paris 2024 women's singles gold medalist"
+      },
+      {
+        "name": "He Bingjiao",
+        "country": "CHN",
+        "note": "Paris 2024 women's singles silver medalist"
       }
     ],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.734Z"
+    "generatedAt": "2026-04-17T11:32:19.987Z"
   },
   "BDM18": {
-    "blurb": "Men's doubles reaches the quarterfinal stage in prime evening hours, while men's singles continues its Round of 16. Chinese Taipei won men's doubles gold in Paris 2024, edging China and Malaysia.\n\nEight pairs battle for four semifinal spots, each match deciding who stays in medal contention. The nighttime slot brings the arena's energy to peak levels.\n\nGalen Center's basketball-venue architecture creates steep sightlines, letting the crowd track every rally from the baseline to the net tape under the indoor lights.",
-    "potentialContendersIntro": "The Paris 2024 men's doubles podium featured Chinese Taipei, China, and Malaysia — all likely to field strong pairs if they qualify for 2028.",
+    "blurb": "Prime-time badminton brings men's doubles quarterfinals to center stage, where defending champions from Chinese Taipei could face renewed challenges from China and Malaysia's Paris bronze medalists. The doubles format emphasizes teamwork and court coverage, with pairs executing rapid exchanges at the net.\n\nMen's singles round of 16 continues sorting the draw after Viktor Axelsen's retirement opened new pathways to gold. Thailand's Kunlavut Vitidsarn and Malaysia's Lee Zii Jia are projected contenders if they qualify, alongside rising stars from Indonesia, Japan, and China.\n\nEvening sessions pack the arena with energy as Los Angeles crowds discover badminton's blend of finesse and power. The 10,000-seat configuration creates an intimate atmosphere where every shuttle trajectory is visible from anywhere in the venue.",
+    "potentialContendersIntro": "Chinese Taipei's Paris 2024 gold medalists Lee Yang and Wang Chi-lin could return to defend, while Paris medalists in men's singles advance through the round of 16.",
     "potentialContenders": [
       {
-        "name": "Chinese Taipei",
+        "name": "Lee Yang / Wang Chi-lin",
         "country": "TPE",
-        "note": "Gold medalists in men's doubles at Paris 2024"
+        "note": "Paris 2024 and Tokyo 2020 men's doubles champions"
       },
       {
-        "name": "People's Republic of China 1",
+        "name": "Liang Weikeng / Wang Chang",
         "country": "CHN",
-        "note": "Silver medalists in men's doubles at Paris 2024"
-      },
-      {
-        "name": "Malaysia",
-        "country": "MAS",
-        "note": "Bronze medalists in men's doubles at Paris 2024"
-      },
-      {
-        "name": "Viktor Axelsen",
-        "country": "DEN",
-        "note": "Paris 2024 men's singles gold medalist, progressing through Round of 16"
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 3,
-    "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.734Z"
-  },
-  "BDM19": {
-    "blurb": "Mixed doubles crowns its champions in a double-medal morning, with gold and bronze matches back-to-back. China won gold in Paris 2024, Korea took silver, and Japan claimed bronze.\n\nBetween the medal matches, women's doubles semifinals unfold — four pairs fighting for two spots in their own final. Five hours of nonstop action across two events.\n\nMedal sessions draw the sport's most invested fans, who arrive early to claim seats and watch the ceremony rituals that follow each final.",
-    "potentialContendersIntro": "China's Paris 2024 sweep in mixed doubles and women's doubles positions them as favorites in both events if their top pairs return.",
-    "potentialContenders": [
-      {
-        "name": "People's Republic of China 1",
-        "country": "CHN",
-        "note": "Gold medalists in mixed doubles and women's doubles at Paris 2024"
-      },
-      {
-        "name": "Republic of Korea 1",
-        "country": "KOR",
-        "note": "Silver medalists in mixed doubles at Paris 2024"
-      },
-      {
-        "name": "Japan",
-        "country": "JPN",
-        "note": "Bronze medalists in mixed doubles at Paris 2024"
-      },
-      {
-        "name": "People's Republic of China 2",
-        "country": "CHN",
-        "note": "Silver medalists in women's doubles at Paris 2024"
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 3,
-    "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.734Z"
-  },
-  "BDM20": {
-    "blurb": "An extended evening session stretches across seven hours, pairing men's singles quarterfinals with men's doubles semifinals. Viktor Axelsen defended his men's singles title in Paris 2024; if he competes in 2028, this round could showcase his quarterfinal run.\n\nFour men's singles players advance to semis, while four men's doubles pairs secure medal-match berths. Chinese Taipei's gold and China's silver in Paris 2024 men's doubles suggest both nations could field strong semifinal contenders.\n\nThe long session rewards attendees with multiple matches, each best-of-three format capable of running past its scheduled time when players trade momentum.",
-    "potentialContendersIntro": "The Paris 2024 men's singles and doubles podiums featured Denmark, Thailand, Malaysia, Chinese Taipei, and China — likely sources for 2028 contenders.",
-    "potentialContenders": [
-      {
-        "name": "Viktor Axelsen",
-        "country": "DEN",
-        "note": "Gold medalist in men's singles at Paris 2024"
+        "note": "Paris 2024 men's doubles silver medalists"
       },
       {
         "name": "Kunlavut Vitidsarn",
         "country": "THA",
-        "note": "Silver medalist in men's singles at Paris 2024"
-      },
-      {
-        "name": "Chinese Taipei",
-        "country": "TPE",
-        "note": "Gold medalists in men's doubles at Paris 2024"
-      },
-      {
-        "name": "People's Republic of China 1",
-        "country": "CHN",
-        "note": "Silver medalists in men's doubles at Paris 2024"
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 3,
-    "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.734Z"
-  },
-  "BDM21": {
-    "blurb": "Women's doubles settles its medals in a Saturday morning session, gold and bronze matches deciding the podium. China swept gold and silver in Paris 2024, while Japan took bronze.\n\nTwo matches, each best-of-three, with ceremonies to follow. The compact three-hour window makes this a targeted visit for fans focused on one event's resolution.\n\nGalen Center's arena seating wraps around the court, offering unobstructed views as the final points are won and the medals are decided.",
-    "potentialContendersIntro": "China's 1-2 finish in Paris 2024 women's doubles and Japan's bronze position them as leading nations if their pairs qualify for 2028.",
-    "potentialContenders": [
-      {
-        "name": "People's Republic of China 1",
-        "country": "CHN",
-        "note": "Gold medalists in women's doubles at Paris 2024"
-      },
-      {
-        "name": "People's Republic of China 2",
-        "country": "CHN",
-        "note": "Silver medalists in women's doubles at Paris 2024"
-      },
-      {
-        "name": "Japan 1",
-        "country": "JPN",
-        "note": "Bronze medalists in women's doubles at Paris 2024"
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 3,
-    "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.734Z"
-  },
-  "BDM22": {
-    "blurb": "Women's singles quarterfinals command a Saturday night slot, eight players competing for four semifinal spots. An Se-Yeong of Korea won gold in Paris 2024, He Bingjiao of China took silver, and Indonesia's Gregoria Mariska Tunjung claimed bronze.\n\nThe best-of-three format allows for dramatic comebacks and extended rallies under the arena lights. Four matches, each a potential three-game thriller.\n\nEvening sessions bring a full house and heightened energy, as the field narrows and medal hopes become tangible for the survivors.",
-    "potentialContendersIntro": "Korea, China, and Indonesia medaled in Paris 2024 women's singles and could field top contenders if their leading players return in 2028.",
-    "potentialContenders": [
-      {
-        "name": "An Se-Yeong",
-        "country": "KOR",
-        "note": "Gold medalist in women's singles at Paris 2024"
-      },
-      {
-        "name": "He Bingjiao",
-        "country": "CHN",
-        "note": "Silver medalist in women's singles at Paris 2024"
-      },
-      {
-        "name": "Gregoria Mariska Tunjung",
-        "country": "INA",
-        "note": "Bronze medalist in women's singles at Paris 2024"
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 3,
-    "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.734Z"
-  },
-  "BDM23": {
-    "blurb": "Sunday morning delivers men's doubles gold plus both men's singles semifinals — three matches that could decide four medalists. Chinese Taipei won men's doubles gold in Paris 2024, while Denmark's Viktor Axelsen took men's singles.\n\nThe gold-medal match opens the session, followed by back-to-back singles semifinals that send two players to the final and two to the bronze match. High stakes across both events.\n\nMedal ceremonies punctuate the session, offering moments of national pride amid the competitive intensity of the semifinal rounds.",
-    "potentialContendersIntro": "Chinese Taipei, China, and Malaysia reached the Paris 2024 men's doubles podium, while Denmark, Thailand, and Malaysia medaled in men's singles — all potential sources for 2028 contenders.",
-    "potentialContenders": [
-      {
-        "name": "Chinese Taipei",
-        "country": "TPE",
-        "note": "Gold medalists in men's doubles at Paris 2024"
-      },
-      {
-        "name": "People's Republic of China 1",
-        "country": "CHN",
-        "note": "Silver medalists in men's doubles at Paris 2024"
-      },
-      {
-        "name": "Viktor Axelsen",
-        "country": "DEN",
-        "note": "Gold medalist in men's singles at Paris 2024"
-      },
-      {
-        "name": "Kunlavut Vitidsarn",
-        "country": "THA",
-        "note": "Silver medalist in men's singles at Paris 2024"
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 3,
-    "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.734Z"
-  },
-  "BDM24": {
-    "blurb": "Women's singles semifinals and the men's doubles bronze medal match fill a Sunday evening session. Two women advance to Monday's final, while two men's doubles pairs settle who takes third.\n\nKorea's An Se-Yeong and China's He Bingjiao contested the Paris 2024 women's singles final; if both return and reach this round, their semifinal could preview the gold match. Malaysia claimed men's doubles bronze in Paris 2024.\n\nThe bronze match offers its own drama — a final chance at the podium for pairs who fell short of the gold contest but still have hardware within reach.",
-    "potentialContendersIntro": "The Paris 2024 women's singles medalists and men's doubles bronze team could all return as contenders in their respective 2028 events.",
-    "potentialContenders": [
-      {
-        "name": "An Se-Yeong",
-        "country": "KOR",
-        "note": "Gold medalist in women's singles at Paris 2024"
-      },
-      {
-        "name": "He Bingjiao",
-        "country": "CHN",
-        "note": "Silver medalist in women's singles at Paris 2024"
-      },
-      {
-        "name": "Gregoria Mariska Tunjung",
-        "country": "INA",
-        "note": "Bronze medalist in women's singles at Paris 2024"
-      },
-      {
-        "name": "Malaysia",
-        "country": "MAS",
-        "note": "Bronze medalists in men's doubles at Paris 2024"
-      }
-    ],
-    "model": "claude-sonnet-4-5-20250929",
-    "promptVersion": 3,
-    "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.734Z"
-  },
-  "BDM25": {
-    "blurb": "Men's singles crowns its champion Monday morning with gold and bronze medal matches. Viktor Axelsen won in Paris 2024, Thailand's Kunlavut Vitidsarn took silver, and Malaysia's Lee Zii Jia claimed bronze.\n\nTwo matches decide the podium in a compact three-hour window. The gold match determines the men's singles title; the bronze match offers redemption for a semifinal loser.\n\nMedal ceremonies follow immediately, closing out the men's singles tournament as Galen Center prepares for the final women's event that evening.",
-    "potentialContendersIntro": "Denmark, Thailand, and Malaysia swept the Paris 2024 men's singles medals and could field the top contenders if their stars remain competitive through 2028.",
-    "potentialContenders": [
-      {
-        "name": "Viktor Axelsen",
-        "country": "DEN",
-        "note": "Gold medalist in men's singles at Paris 2024"
-      },
-      {
-        "name": "Kunlavut Vitidsarn",
-        "country": "THA",
-        "note": "Silver medalist in men's singles at Paris 2024"
+        "note": "Paris 2024 men's singles silver medalist"
       },
       {
         "name": "Lee Zii Jia",
         "country": "MAS",
-        "note": "Bronze medalist in men's singles at Paris 2024"
+        "note": "Paris 2024 men's singles bronze medalist"
       }
     ],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.734Z"
+    "generatedAt": "2026-04-17T11:32:19.987Z"
   },
-  "BDM26": {
-    "blurb": "Badminton concludes with women's singles gold and bronze medal matches on Monday night. Korea's An Se-Yeong won Paris 2024, China's He Bingjiao took silver, and Indonesia's Gregoria Mariska Tunjung claimed bronze.\n\nThe final session of the tournament features two matches — one for gold, one for bronze — and the ceremonies that follow. Five events will have crowned their champions; this is the last.\n\nGalen Center's evening atmosphere peaks as the women's singles podium is decided, closing the badminton program with the sport's signature speed and precision on full display.",
-    "potentialContendersIntro": "Korea, China, and Indonesia medaled in Paris 2024 women's singles and are likely to field top contenders if their leading players qualify for 2028.",
+  "BDM19": {
+    "blurb": "Mixed doubles crowns its champion in this extended morning session featuring both medal matches. China's Zheng Siwei and Huang Yaqiong won Paris gold and could defend if they qualify, facing potential rematches against South Korea's silver medalists or Japan's bronze pair.\n\nWomen's doubles semifinals run between the medal matches, with China's deep program likely placing multiple pairs in contention after their Paris gold-silver sweep. Japan and South Korea bring strong challengers in a discipline that rewards precision and tactical variety.\n\nThis five-hour session delivers three high-stakes matches including the first badminton gold awarded at the 2028 Games. Galen Center's climate control ensures athlete performance peaks regardless of LA's summer heat outside.",
+    "potentialContendersIntro": "Paris 2024 mixed doubles medalists Zheng Siwei/Huang Yaqiong (gold) and Korea's Kim Won-ho/Jeong Na-eun (silver) could return, while China likely fields multiple women's doubles pairs.",
+    "potentialContenders": [
+      {
+        "name": "Zheng Siwei / Huang Yaqiong",
+        "country": "CHN",
+        "note": "Paris 2024 mixed doubles gold medalists"
+      },
+      {
+        "name": "Kim Won-ho / Jeong Na-eun",
+        "country": "KOR",
+        "note": "Paris 2024 mixed doubles silver medalists"
+      },
+      {
+        "name": "Chen Qingchen / Jia Yifan",
+        "country": "CHN",
+        "note": "Paris 2024 women's doubles gold medalists"
+      },
+      {
+        "name": "Liu Shengshu / Tan Ning",
+        "country": "CHN",
+        "note": "Paris 2024 women's doubles silver medalists"
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:32:19.987Z"
+  },
+  "BDM20": {
+    "blurb": "An evening marathon session spans seven hours with men's singles quarterfinals determining semifinalists and men's doubles semis setting up the gold medal match. Thailand's Kunlavut Vitidsarn and Malaysia's Lee Zii Jia are projected to compete if they qualify, with Viktor Axelsen's retirement reshaping title contention.\n\nMen's doubles features Chinese Taipei defending their back-to-back titles against China's program and Malaysia's Aaron Chia/Soh Wooi Yik if they qualify. The doubles format showcases lightning reflexes at the net and strategic shot placement across the full 44-foot court.\n\nFriday night badminton at Galen Center offers exceptional value with multiple medal-contending matches. The arena's 22 private suites provide premium viewing, while general seating keeps you close to shuttlecocks traveling faster than highway speeds.",
+    "potentialContendersIntro": "Paris 2024 medalists across both events could dominate, with Kunlavut Vitidsarn and Lee Zii Jia projected in men's singles, and Chinese Taipei's doubles champions defending their title.",
+    "potentialContenders": [
+      {
+        "name": "Kunlavut Vitidsarn",
+        "country": "THA",
+        "note": "Paris 2024 men's singles silver medalist"
+      },
+      {
+        "name": "Lee Zii Jia",
+        "country": "MAS",
+        "note": "Paris 2024 men's singles bronze medalist"
+      },
+      {
+        "name": "Lee Yang / Wang Chi-lin",
+        "country": "TPE",
+        "note": "Paris 2024 men's doubles gold, defending back-to-back titles"
+      },
+      {
+        "name": "Liang Weikeng / Wang Chang",
+        "country": "CHN",
+        "note": "Paris 2024 men's doubles silver medalists"
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:32:19.987Z"
+  },
+  "BDM21": {
+    "blurb": "Women's doubles awards its medals in a focused Saturday morning session. China swept gold and silver in Paris with two dominant pairs and could repeat the feat if they qualify, while Japan's bronze medalists and emerging South Korean teams challenge for the podium.\n\nBoth medal matches play in rapid succession, with the bronze match warming up the crowd before the gold final. The women's doubles game emphasizes tactical shot variety and court positioning, with pairs mixing aggressive smashes and delicate net play.\n\nA compact three-hour session makes this accessible for families and casual fans. Galen Center's downtown-adjacent location in Exposition Park allows easy pre-match exploration of LA's museums and gardens before the morning competition begins.",
+    "potentialContendersIntro": "China's Chen Qingchen/Jia Yifan (Paris gold) and Liu Shengshu/Tan Ning (Paris silver) could return if they qualify, facing Japan's bronze medalists and other contenders.",
+    "potentialContenders": [
+      {
+        "name": "Chen Qingchen / Jia Yifan",
+        "country": "CHN",
+        "note": "Paris 2024 women's doubles gold medalists"
+      },
+      {
+        "name": "Liu Shengshu / Tan Ning",
+        "country": "CHN",
+        "note": "Paris 2024 women's doubles silver medalists"
+      },
+      {
+        "name": "Nami Matsuyama / Chiharu Shida",
+        "country": "JPN",
+        "note": "Paris 2024 women's doubles bronze medalists"
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:32:19.987Z"
+  },
+  "BDM22": {
+    "blurb": "Women's singles quarterfinals determine the final four in a nearly five-hour evening showcase. An Se-Yeong of South Korea dominated Paris 2024 and could defend her title if she qualifies, while China's He Bingjiao (silver) and Indonesia's Gregoria Mariska Tunjung (bronze) likely return as challengers.\n\nEach best-of-three quarterfinal tests endurance and tactical adaptability over potential 60-minute battles. The women's game combines explosive power with exceptional court coverage, requiring athletes to defend the full 17-by-44-foot singles court.\n\nSaturday night badminton draws energized LA crowds to Galen Center's intimate indoor setting. The venue's flexible seating configuration brings spectators close enough to hear players' shoes squeak and racquets whistle through air.",
+    "potentialContendersIntro": "Paris 2024 medalists An Se-Yeong (gold), He Bingjiao (silver), and Gregoria Mariska Tunjung (bronze) are projected to compete if they qualify through rankings.",
     "potentialContenders": [
       {
         "name": "An Se-Yeong",
         "country": "KOR",
-        "note": "Gold medalist in women's singles at Paris 2024"
+        "note": "Paris 2024 women's singles gold medalist"
       },
       {
         "name": "He Bingjiao",
         "country": "CHN",
-        "note": "Silver medalist in women's singles at Paris 2024"
+        "note": "Paris 2024 women's singles silver medalist"
       },
       {
         "name": "Gregoria Mariska Tunjung",
         "country": "INA",
-        "note": "Bronze medalist in women's singles at Paris 2024"
+        "note": "Paris 2024 women's singles bronze medalist"
+      },
+      {
+        "name": "Carolina Marín",
+        "country": "ESP",
+        "note": "Rio 2016 champion, projected contender if healthy and qualified"
       }
     ],
     "model": "claude-sonnet-4-5-20250929",
     "promptVersion": 3,
     "batchId": null,
-    "generatedAt": "2026-04-17T05:50:19.734Z"
+    "generatedAt": "2026-04-17T11:32:19.987Z"
+  },
+  "BDM23": {
+    "blurb": "Men's doubles awards its gold medal while men's singles semifinals set up the championship match. Chinese Taipei's Lee Yang and Wang Chi-lin chase a historic third consecutive title if they qualify, facing China's powerful program and Malaysia's Paris bronze pair.\n\nMen's singles features emerging stars competing for spots in Monday's final, with Viktor Axelsen's retirement opening the door for a new champion. Thailand's Kunlavut Vitidsarn and Malaysia's Lee Zii Jia could meet in a potential semifinal rematch of their Paris 2024 final if both qualify.\n\nSunday morning at Galen Center delivers badminton's fastest action with 200+ mph smashes echoing through the arena. The session combines medal ceremony pageantry with high-stakes semifinal drama across a compact three-and-a-half-hour window.",
+    "potentialContendersIntro": "Chinese Taipei's Lee Yang/Wang Chi-lin seek a third straight gold if they qualify, while Paris 2024 singles medalists Kunlavut Vitidsarn and Lee Zii Jia could reach the semifinals.",
+    "potentialContenders": [
+      {
+        "name": "Lee Yang / Wang Chi-lin",
+        "country": "TPE",
+        "note": "Paris 2024 and Tokyo 2020 men's doubles champions"
+      },
+      {
+        "name": "Liang Weikeng / Wang Chang",
+        "country": "CHN",
+        "note": "Paris 2024 men's doubles silver medalists"
+      },
+      {
+        "name": "Kunlavut Vitidsarn",
+        "country": "THA",
+        "note": "Paris 2024 men's singles silver medalist"
+      },
+      {
+        "name": "Lee Zii Jia",
+        "country": "MAS",
+        "note": "Paris 2024 men's singles bronze medalist"
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:32:19.987Z"
+  },
+  "BDM24": {
+    "blurb": "Women's singles semifinals determine the gold medal finalists in this Sunday evening doubleheader. An Se-Yeong of South Korea could defend her Paris title if she qualifies, facing challenges from China's He Bingjiao and Indonesia's Gregoria Mariska Tunjung among others projected to compete.\n\nThe men's doubles bronze medal match opens the session, with Malaysia's Paris bronze pair potentially returning alongside Chinese and Japanese teams. Doubles bronze matches carry their own intensity as teams battle for podium recognition after falling short of the final.\n\nEvening sessions at Galen Center showcase badminton under arena lighting that highlights shuttlecock trajectories. The nearly four-hour window includes medal ceremony traditions for men's doubles alongside the high-stakes women's singles semifinals.",
+    "potentialContendersIntro": "Paris 2024 women's singles medalists An Se-Yeong, He Bingjiao, and Gregoria Mariska Tunjung could reach the semifinals if they qualify, while Malaysia's doubles pair seeks bronze again.",
+    "potentialContenders": [
+      {
+        "name": "An Se-Yeong",
+        "country": "KOR",
+        "note": "Paris 2024 women's singles champion"
+      },
+      {
+        "name": "He Bingjiao",
+        "country": "CHN",
+        "note": "Paris 2024 women's singles silver medalist"
+      },
+      {
+        "name": "Gregoria Mariska Tunjung",
+        "country": "INA",
+        "note": "Paris 2024 women's singles bronze medalist"
+      },
+      {
+        "name": "Aaron Chia / Soh Wooi Yik",
+        "country": "MAS",
+        "note": "Paris 2024 men's doubles bronze medalists"
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:32:19.987Z"
+  },
+  "BDM25": {
+    "blurb": "Men's singles crowns its champion in back-to-back medal matches to conclude Monday morning. With Viktor Axelsen retired due to chronic back problems, the field opens for a new generation including Paris silver medalist Kunlavut Vitidsarn of Thailand and bronze medalist Lee Zii Jia of Malaysia if they qualify.\n\nThe bronze match tests resilience after semifinal heartbreak, followed by the gold final determining badminton's premier individual title. Best-of-three format means matches can swing on single points, with players executing deceptive drops, thunderous smashes, and court-spanning retrieves.\n\nGalen Center's morning atmosphere crackles with tension as shuttlecocks fly at highway speeds. The venue's acoustic design amplifies the crowd's energy, creating an intimate championship setting for fewer than 11,000 witnesses to history.",
+    "potentialContendersIntro": "Paris 2024 medalists Kunlavut Vitidsarn (silver) and Lee Zii Jia (bronze) are projected contenders if they qualify, with Axelsen's retirement opening the championship race.",
+    "potentialContenders": [
+      {
+        "name": "Kunlavut Vitidsarn",
+        "country": "THA",
+        "note": "Paris 2024 men's singles silver medalist"
+      },
+      {
+        "name": "Lee Zii Jia",
+        "country": "MAS",
+        "note": "Paris 2024 men's singles bronze medalist"
+      },
+      {
+        "name": "Shi Yuqi",
+        "country": "CHN",
+        "note": "Two-time world champion, projected contender if he qualifies"
+      },
+      {
+        "name": "Anthony Sinisuka Ginting",
+        "country": "INA",
+        "note": "Paris 2024 quarterfinalist, projected contender if he qualifies"
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:32:19.987Z"
+  },
+  "BDM26": {
+    "blurb": "Women's singles concludes badminton competition with its final medal matches on Monday evening. An Se-Yeong of South Korea seeks to defend her Paris gold if she qualifies, potentially facing China's He Bingjiao or Indonesia's Gregoria Mariska Tunjung in a rematch of recent championships.\n\nThe bronze match delivers immediate drama, followed by the gold final determining the women's singles champion. These athletes cover the full court with explosive footwork and tactical shot placement, mixing power and finesse across matches that can exceed an hour.\n\nThe closing night of badminton at Galen Center caps five days of competition. Evening sessions draw passionate crowds who've discovered the sport's intensity, creating a charged atmosphere as the 2028 Games' badminton program crowns its final champion.",
+    "potentialContendersIntro": "Paris 2024 medalists An Se-Yeong (gold), He Bingjiao (silver), and Gregoria Mariska Tunjung (bronze) are projected to compete if they qualify through 2028 rankings.",
+    "potentialContenders": [
+      {
+        "name": "An Se-Yeong",
+        "country": "KOR",
+        "note": "Paris 2024 women's singles gold medalist"
+      },
+      {
+        "name": "He Bingjiao",
+        "country": "CHN",
+        "note": "Paris 2024 women's singles silver medalist"
+      },
+      {
+        "name": "Gregoria Mariska Tunjung",
+        "country": "INA",
+        "note": "Paris 2024 women's singles bronze medalist"
+      },
+      {
+        "name": "Akane Yamaguchi",
+        "country": "JPN",
+        "note": "Two-time world champion, projected contender if she qualifies"
+      }
+    ],
+    "model": "claude-sonnet-4-5-20250929",
+    "promptVersion": 3,
+    "batchId": null,
+    "generatedAt": "2026-04-17T11:32:19.987Z"
   },
   "BK301": {
     "blurb": "The 2028 Games tip off with the first pool round session of 3x3 basketball, featuring two men's and two women's games. With the tournament expanding to 12 teams per gender, these opening matchups set the tone for a week of fast-paced half-court action.\n\nTeams play to 21 points or a 10-minute clock on an 11x15-meter court, with a 12-second shot clock creating constant pressure. Pool results determine playoff seeding, making every basket critical from the start.\n\nValley Complex 3's open-air octagonal design lets you watch from all angles as teams battle in the Sepulveda Basin. The temporary venue captures the sport's street-ball energy under the San Fernando Valley sky.",
