@@ -48,6 +48,7 @@ export const SCORING_VERSION = 3
 export const MAX_RETRIES = 3
 export const RETRY_DELAY_MS = 5000
 export const MAX_NEWS_ITEMS = 10
+export const GROUNDING_BATCH_SIZE = 10
 export const WRITING_BATCH_SIZE = 15
 export const SCORING_BATCH_SIZE = 15
 
@@ -108,7 +109,7 @@ interface PerplexityResponse {
   search_results?: PerplexitySearchResult[] | null
 }
 
-const PERPLEXITY_GROUNDING_SCHEMA = {
+const GROUNDING_SESSION_SCHEMA = {
   type: 'object',
   additionalProperties: false,
   required: ['id', 'groundingFacts', 'relatedNews'],
@@ -134,6 +135,20 @@ const PERPLEXITY_GROUNDING_SCHEMA = {
           tags: { type: 'array', items: { type: 'string' } },
         },
       },
+    },
+  },
+}
+
+const PERPLEXITY_GROUNDING_SCHEMA = GROUNDING_SESSION_SCHEMA
+
+const PERPLEXITY_BATCH_GROUNDING_SCHEMA = {
+  type: 'object',
+  additionalProperties: false,
+  required: ['sessions'],
+  properties: {
+    sessions: {
+      type: 'array',
+      items: GROUNDING_SESSION_SCHEMA,
     },
   },
 }
@@ -314,6 +329,30 @@ export function buildGroundingPrompt(
   return prompt
 }
 
+export function buildBatchGroundingPrompt(
+  sessions: SessionSource[],
+  sport: string,
+  extraInstructions?: string,
+): string {
+  let prompt = buildSportContext(sport)
+  prompt += `### Sessions (${sessions.length}) — ground each\n\n`
+  for (const s of sessions) {
+    prompt += `#### ${s.id}: ${s.name}\n`
+    prompt += `- Description: ${s.desc}\n`
+    prompt += `- Round: ${s.rt}\n`
+    prompt += `- Venue: ${s.venue}\n`
+    prompt += `- Date/Time: ${s.date}, ${s.time}\n`
+    const paris = buildParisMedalsBlock(s)
+    if (paris) prompt += paris
+    prompt += '\n'
+  }
+  prompt += `Use current web search to find facts relevant to EACH session's event, round, venue, and likely contenders. Prioritize 2028 Games-specific news, then 2024-2026 performance and status updates for probable contenders. Prefer official games organizing body, international federation, team, and reputable sports-news sources.\n\n`
+  prompt += `Return per-session groundingFacts and relatedNews — each session should have its own facts and news specific to its event and round type. Finals need different facts than prelims.\n\n`
+  prompt += augmentationBlock(extraInstructions)
+  prompt += `Return a JSON object with a "sessions" array containing ${sessions.length} objects (one per session id above), each with id, groundingFacts, relatedNews. No markdown fences.`
+  return prompt
+}
+
 export function buildWritingPrompt(
   sessions: SessionSource[],
   sport: string,
@@ -472,15 +511,88 @@ export async function fetchGrounding(
         sources: normalizePerplexitySources(body.search_results),
       }
     } catch (err) {
+      const cause = err instanceof Error && err.cause ? ` [cause: ${err.cause}]` : ''
       const msg = err instanceof Error ? err.message : String(err)
       console.error(
-        `    Grounding attempt ${attempt}/${MAX_RETRIES} failed for ${session.id}: ${msg}`,
+        `    Grounding attempt ${attempt}/${MAX_RETRIES} failed for ${session.id}: ${msg}${cause}`,
       )
       if (attempt < MAX_RETRIES) await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * attempt))
     }
   }
   console.error(`    Grounding FAILED after ${MAX_RETRIES} attempts for ${session.id}`)
   return null
+}
+
+export async function fetchGroundingBatch(
+  apiKey: string,
+  sessions: SessionSource[],
+  sport: string,
+  model: string,
+  extraInstructions?: string,
+): Promise<GroundingData[]> {
+  if (sessions.length === 0) return []
+  const prompt = buildBatchGroundingPrompt(sessions, sport, extraInstructions)
+  const sessionIds = new Set(sessions.map((s) => s.id))
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const response = await fetch('https://api.perplexity.ai/v1/sonar', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model,
+          messages: [
+            { role: 'system', content: GROUNDING_SYSTEM_PROMPT },
+            { role: 'user', content: prompt },
+          ],
+          max_tokens: 8192,
+          temperature: 0.1,
+          response_format: {
+            type: 'json_schema',
+            json_schema: { schema: PERPLEXITY_BATCH_GROUNDING_SCHEMA },
+          },
+          web_search_options: { search_mode: 'web' },
+        }),
+      })
+      if (!response.ok) {
+        const text = await response.text()
+        throw new Error(`Perplexity API ${response.status}: ${text.slice(0, 500)}`)
+      }
+      const body = (await response.json()) as PerplexityResponse
+      const text = body.choices?.[0]?.message?.content
+      if (!text) throw new Error('No Perplexity message content')
+      const parsed = JSON.parse(text) as { sessions?: unknown[] }
+      const items = Array.isArray(parsed.sessions) ? parsed.sessions : []
+      const sources = normalizePerplexitySources(body.search_results)
+      const results: GroundingData[] = []
+      for (const raw of items) {
+        const item = raw as { id?: string; groundingFacts?: unknown; relatedNews?: unknown }
+        if (!item.id || !sessionIds.has(item.id)) continue
+        const facts = Array.isArray(item.groundingFacts)
+          ? item.groundingFacts.filter(
+              (f): f is string => typeof f === 'string' && f.trim().length > 0,
+            )
+          : []
+        results.push({
+          id: item.id,
+          groundingFacts: facts,
+          relatedNews: normalizeRelatedNews(item.relatedNews, item.id),
+          sources,
+        })
+      }
+      return results
+    } catch (err) {
+      const cause = err instanceof Error && err.cause ? ` [cause: ${err.cause}]` : ''
+      const msg = err instanceof Error ? err.message : String(err)
+      const ids = sessions.map((s) => s.id).join(',')
+      console.error(
+        `    Grounding batch attempt ${attempt}/${MAX_RETRIES} failed for [${ids}]: ${msg}${cause}`,
+      )
+      if (attempt < MAX_RETRIES) await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * attempt))
+    }
+  }
+  const ids = sessions.map((s) => s.id).join(',')
+  console.error(`    Grounding batch FAILED after ${MAX_RETRIES} attempts for [${ids}]`)
+  return []
 }
 
 // Source of truth for the writing request shape. Sync (`messages.create`) and

@@ -17,6 +17,7 @@ import {
 import {
   ANTHROPIC_SCORING_DEFAULT_MODEL,
   ANTHROPIC_WRITING_DEFAULT_MODEL,
+  GROUNDING_BATCH_SIZE,
   GROUNDING_VERSION,
   type GroundingData,
   PERPLEXITY_DEFAULT_MODEL,
@@ -26,7 +27,7 @@ import {
   WRITING_VERSION,
   type WritingData,
   type WritingJob,
-  fetchGrounding,
+  fetchGroundingBatch,
   generateScoring,
   generateWriting,
   generateWritingViaBatches,
@@ -166,35 +167,50 @@ async function main() {
     if (dryRun) {
       for (const s of groundingTargets) console.log(`  [dry-run] ${s.id} (${s.sport})`)
     } else if (groundingTargets.length > 0) {
+      const bySport = groupBySport(groundingTargets)
+      const sports = [...bySport.keys()].sort()
+      type GroundingJob = { sport: string; batch: SessionSource[] }
+      const jobs: GroundingJob[] = []
+      for (const sport of sports) {
+        const list = bySport.get(sport)!
+        for (const batch of chunkList(list, GROUNDING_BATCH_SIZE)) {
+          jobs.push({ sport, batch })
+        }
+      }
+      console.log(`${jobs.length} batch(es) across ${sports.length} sport(s)`)
+
       const limit = pLimit(groundingConcurrency)
       let done = 0
       await Promise.all(
-        groundingTargets.map((session) =>
+        jobs.map((job) =>
           limit(async () => {
-            const g = await fetchGrounding(perplexityKey!, session, session.sport, perplexityModel)
-            done += 1
-            if (!g) {
-              console.log(`  [${done}/${groundingTargets.length}] ${session.id} ✗ failed`)
-              return
-            }
-            groundingThisRun.set(session.id, g)
-            await upsertGrounding(
-              [
-                {
-                  sessionId: session.id,
-                  facts: g.groundingFacts,
-                  relatedNews: g.relatedNews,
-                  sources: g.sources,
-                },
-              ],
-              {
+            const results = await fetchGroundingBatch(
+              perplexityKey!,
+              job.batch,
+              job.sport,
+              perplexityModel,
+            )
+            const got = new Set(results.map((r) => r.id))
+            const upserts = results.map((g) => ({
+              sessionId: g.id,
+              facts: g.groundingFacts,
+              relatedNews: g.relatedNews,
+              sources: g.sources,
+            }))
+            if (upserts.length > 0) {
+              await upsertGrounding(upserts, {
                 model: perplexityModel,
                 promptVersion: GROUNDING_VERSION,
                 generatedAt: new Date().toISOString(),
-              },
-            )
+              })
+            }
+            for (const g of results) groundingThisRun.set(g.id, g)
+            done += 1
+            const missing = job.batch.filter((s) => !got.has(s.id))
+            const tail =
+              missing.length > 0 ? ` ✗ missing ${missing.map((s) => s.id).join(',')}` : ''
             console.log(
-              `  [${done}/${groundingTargets.length}] ${session.id} ✓ facts:${g.groundingFacts.length} news:${g.relatedNews.length}`,
+              `  [${done}/${jobs.length}] ${job.sport} (${job.batch.length}) ✓ ${results.length} grounded${tail}`,
             )
           }),
         ),
