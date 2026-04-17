@@ -10,7 +10,7 @@ import type {
 } from '@anthropic-ai/sdk/resources/messages'
 import pLimit from 'p-limit'
 
-import type { SportKnowledge } from '../../src/data/sport-knowledge.js'
+import type { SportFacts } from '../../src/data/sport-facts.js'
 import type {
   Contender,
   ContentSource,
@@ -29,11 +29,9 @@ import {
 const __dirname = dirname(fileURLToPath(import.meta.url))
 export const ROOT = resolve(__dirname, '..', '..')
 
-const rawKnowledge = JSON.parse(
-  readFileSync(resolve(ROOT, 'src/data/sport-knowledge.json'), 'utf8'),
-)
-const { _meta: _, ...sportEntries } = rawKnowledge
-const SPORT_KNOWLEDGE = sportEntries as Record<string, SportKnowledge>
+const rawSportFacts = JSON.parse(readFileSync(resolve(ROOT, 'src/data/sport-facts.json'), 'utf8'))
+const { _meta: _, ...sportFactEntries } = rawSportFacts
+const SPORT_FACTS = sportFactEntries as Record<string, SportFacts>
 
 const PARIS_MEDALS = JSON.parse(
   readFileSync(resolve(ROOT, 'src/data/paris-2024-medals.json'), 'utf8'),
@@ -286,26 +284,24 @@ export function buildParisMedalsBlock(session: SessionSource): string {
 }
 
 export function buildSportContext(sport: string): string {
-  const knowledge = SPORT_KNOWLEDGE[sport]
+  const facts = SPORT_FACTS[sport]
   let out = `## Sport: ${sport}\n\n`
-  if (!knowledge) return out
-  out += `### Background\n${knowledge.gamesContext}\n\n`
-  const venueEntries = Object.entries(knowledge.venueNotes)
+  if (!facts) return out
+  if (facts.gamesContext) out += `### Background\n${facts.gamesContext}\n\n`
+  const venueEntries = Object.entries(facts.venueNotes ?? {})
   if (venueEntries.length > 0) {
     out += `### Venues\n`
     for (const [venue, note] of venueEntries) out += `- ${venue}: ${note}\n`
     out += '\n'
   }
-  const eventEntries = Object.entries(knowledge.eventHighlights)
+  const eventEntries = Object.entries(facts.eventHighlights ?? {})
   if (eventEntries.length > 0) {
     out += `### Notable Events\n`
     for (const [event, note] of eventEntries) out += `- ${event}: ${note}\n`
     out += '\n'
   }
-  if (knowledge.potentialContenders.length > 0) {
-    out += `### Known Athletes/Teams\n`
-    for (const c of knowledge.potentialContenders) out += `- ${c.name} (${c.country}): ${c.note}\n`
-    out += '\n'
+  if (facts.parisRecap) {
+    out += `### Paris 2024 Recap\n${facts.parisRecap}\n\n`
   }
   return out
 }
@@ -840,7 +836,7 @@ async function runMessageBatchesBySport<TJob extends { sport: string }, TResult>
   const allOutcomes: (BatchOutcome<TJob, TResult> | undefined)[] = Array.from({
     length: jobs.length,
   })
-  const pollIntervalMs = options.pollIntervalMs ?? 20_000
+  const pollIntervalMs = options.pollIntervalMs ?? 60_000
 
   while (pending.size > 0) {
     await new Promise((r) => setTimeout(r, pollIntervalMs))
@@ -856,16 +852,6 @@ async function runMessageBatchesBySport<TJob extends { sport: string }, TResult>
           return { pending: p, batch }
         }),
       ),
-    )
-
-    const total = sports.length
-    const endedSoFar = total - pending.size
-    const pendingEnded = statuses.filter((s) => s.batch.processing_status === 'ended').length
-    const processing = statuses.reduce((acc, s) => acc + s.batch.request_counts.processing, 0)
-    const succeeded = statuses.reduce((acc, s) => acc + s.batch.request_counts.succeeded, 0)
-    const errored = statuses.reduce((acc, s) => acc + s.batch.request_counts.errored, 0)
-    console.log(
-      `    sports: ${endedSoFar + pendingEnded}/${total} ended; in-flight requests: processing=${processing} succeeded=${succeeded} errored=${errored}`,
     )
 
     for (const { pending: p, batch } of statuses) {

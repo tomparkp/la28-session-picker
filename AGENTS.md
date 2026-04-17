@@ -14,6 +14,15 @@ This file provides guidance to AI coding agents working with code in this reposi
 - `pnpm lint` — Lint with oxlint
 - `pnpm typecheck` — Type-check with `tsc --noEmit`
 
+### Content pipeline commands
+
+- `pnpm generate-content` — Three-stage AI pipeline: grounding (Perplexity) → writing (Claude Sonnet, batches API) → scoring (Claude Haiku, batches API). Scoped via `--sport=<name>`, `--force`, `--dry-run`. Escape hatches: `--writing-no-batch`, `--scoring-no-batch`, `--skip-grounding|writing|scoring`.
+- `pnpm generate-sport-facts` — Regenerate `src/data/sport-facts.json` per sport via Perplexity, anchored on `paris-2024-medals.json`. Flags: `--sport=<name>`, `--force` (regen even when `parisRecap` already populated), `--dry-run`.
+- `pnpm refresh <sessionId>` — Refresh one session with an optional `--prompt "..."` correction; same skip/stage flags as `generate-content`.
+- `pnpm fetch:paris-medals` — Rescrape Olympedia into `paris-2024-medals.json`. One-off; run only when medal data needs refreshing.
+
+All paid API calls require `PERPLEXITY_API_KEY` and/or `ANTHROPIC_API_KEY` in `.env`. Every stage uses Anthropic prompt caching and, where possible, Messages Batches (50% discount) — see `scripts/lib/session-content.ts` for the batching helpers.
+
 ### Pre-PR checks
 
 Before opening a pull request, run the CI-equivalent checks locally and fix any failures first: `pnpm format:check`, `pnpm lint`, `pnpm typecheck`, and `pnpm test`. Run them in parallel when possible. This avoids pushing commits that fail CI.
@@ -32,14 +41,16 @@ This is a **TanStack Start** (React 19) full-stack app with SSR, file-based rout
 
 ### Data
 
-Session data lives in four JSON files under `src/data/`, committed to the repo and bundled into the worker at build time:
+Session data lives in JSON files under `src/data/`, committed to the repo and bundled into the worker at build time:
 
 - `sessions.json` — hand-validated source data (id, sport, venue, date, price, etc.); no generated content
-- `grounding.json` — raw Perplexity output (facts, related news, sources), keyed by session id
+- `paris-2024-medals.json` — Olympedia-scraped medal results; authoritative history, used as grounding anchor
+- `sport-facts.json` — per-sport Perplexity output (gamesContext, venueNotes, eventHighlights, parisRecap), keyed by sport
+- `session-facts.json` — per-session Perplexity output (facts, related news, sources), keyed by session id
 - `writing.json` — Anthropic prose (blurb, contenders), keyed by session id
 - `scoring.json` — ratings + optional Scorecard (dimension scores with explanations), keyed by session id
 
-Runtime reads happen in `src/data/sessions.data.server.ts`, which merges the four files on module load. Writer scripts (`generate-content`, `refresh`) use `scripts/lib/content-store.ts` to upsert the three generated files; each stage can be regenerated independently (e.g. refresh news without rewriting descriptions). Regenerated files are committed to the repo — there's no separate deploy step for data.
+Runtime reads happen in `src/data/sessions.data.server.ts`, which merges sessions + session-facts + writing + scoring on module load. Writer scripts use `scripts/lib/content-store.ts` to upsert the generated files; each stage can be regenerated independently (e.g. refresh news without rewriting descriptions). Regenerated files are committed to the repo — there's no separate deploy step for data.
 
 ### Routing
 

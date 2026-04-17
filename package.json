@@ -13,6 +13,7 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "generate-content": "tsx scripts/generate-session-content.ts",
+    "generate-sport-facts": "tsx scripts/generate-sport-facts.ts",
     "fetch:paris-medals": "tsx scripts/fetch-paris-2024-medals.ts",
     "refresh": "tsx scripts/refresh-session.ts",
     "lint": "oxlint",

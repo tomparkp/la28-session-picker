@@ -16,7 +16,7 @@ import type {
 const DATA_DIR = resolve(process.cwd(), 'src/data')
 
 const SESSIONS_PATH = resolve(DATA_DIR, 'sessions.json')
-const GROUNDING_PATH = resolve(DATA_DIR, 'grounding.json')
+const SESSION_FACTS_PATH = resolve(DATA_DIR, 'session-facts.json')
 const WRITING_PATH = resolve(DATA_DIR, 'writing.json')
 const SCORING_PATH = resolve(DATA_DIR, 'scoring.json')
 
@@ -118,7 +118,7 @@ function loadSessions(): SessionSource[] {
 
 function loadGrounding(): Record<string, GroundingEntry> {
   if (groundingCache) return groundingCache
-  groundingCache = readJsonFile<Record<string, GroundingEntry>>(GROUNDING_PATH, {})
+  groundingCache = readJsonFile<Record<string, GroundingEntry>>(SESSION_FACTS_PATH, {})
   return groundingCache
 }
 
@@ -201,7 +201,7 @@ export function upsertGrounding(rows: GroundingUpsert[], meta: StageMetadata): P
       }
     }
     groundingCache = sortedKeys(cache)
-    writeJsonAtomic(GROUNDING_PATH, groundingCache)
+    writeJsonAtomic(SESSION_FACTS_PATH, groundingCache)
   })
 }
 

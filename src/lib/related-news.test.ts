@@ -42,14 +42,8 @@ function makeNews(overrides: Partial<RelatedNews> = {}): RelatedNews {
 }
 
 describe('related news matching', () => {
-  it('shows curated sport news only for the owning sport', () => {
-    const basketballNews = getRelatedNewsForSession(makeSession())
-    const swimmingNews = getRelatedNewsForSession(
-      makeSession({ id: 'SWM01', sport: 'Swimming', name: 'SWM01 Swimming' }),
-    )
-
-    expect(basketballNews.map((item) => item.id)).toContain('basketball-lebron-james-2028-games-2025-11-18')
-    expect(swimmingNews).toEqual([])
+  it('returns empty list when the session has no generated news', () => {
+    expect(getRelatedNewsForSession(makeSession())).toEqual([])
   })
 
   it('matches event keywords without treating women as men', () => {
@@ -83,33 +77,39 @@ describe('related news matching', () => {
     ])
   })
 
-  it('merges generated session news with curated sport news, newest first', () => {
+  it('returns generated session news sorted newest first', () => {
     const generated: RelatedNews[] = [
       makeNews({
-        id: 'gen-1',
-        title: 'Recent generated news',
-        sourceUrl: 'https://example.com/gen-1',
+        id: 'older',
+        sourceUrl: 'https://example.com/older',
+        publishedDate: '2025-12-01',
+      }),
+      makeNews({
+        id: 'newer',
+        sourceUrl: 'https://example.com/newer',
         publishedDate: '2026-02-01',
       }),
     ]
     const merged = getRelatedNewsForSession(makeSession({ relatedNews: generated }))
 
-    expect(merged[0]?.id).toBe('gen-1')
-    expect(merged.map((item) => item.id)).toContain('basketball-lebron-james-2028-games-2025-11-18')
+    expect(merged.map((item) => item.id)).toEqual(['newer', 'older'])
   })
 
-  it('dedupes curated and generated items that share a source URL', () => {
+  it('dedupes items that share a source URL', () => {
     const duplicate: RelatedNews[] = [
       makeNews({
-        id: 'gen-duplicate',
-        sourceUrl:
-          'https://www.sportsnet.ca/nba/article/lebron-wont-play-for-team-usa-in-2028-olympics-curry-unlikley-to-participate/',
+        id: 'first',
+        sourceUrl: 'https://example.com/shared',
         publishedDate: '2026-01-01',
+      }),
+      makeNews({
+        id: 'second',
+        sourceUrl: 'https://example.com/shared',
+        publishedDate: '2026-02-01',
       }),
     ]
     const merged = getRelatedNewsForSession(makeSession({ relatedNews: duplicate }))
-    const matches = merged.filter((item) => item.sourceUrl.includes('lebron-wont-play-for-team-usa'))
 
-    expect(matches).toHaveLength(1)
+    expect(merged).toHaveLength(1)
   })
 })

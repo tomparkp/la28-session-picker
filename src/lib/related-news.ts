@@ -1,4 +1,3 @@
-import { SPORT_KNOWLEDGE } from '@/data/sport-knowledge'
 import type { RelatedNews, Session, SessionWithContent } from '@/types/session'
 
 export const RELATED_NEWS_LIMIT = 10
@@ -62,14 +61,8 @@ function dedupeByUrl(items: RelatedNews[]): RelatedNews[] {
 }
 
 export function getRelatedNewsForSession(session: SessionWithContent): RelatedNews[] {
-  const curated = resolveRelatedNewsForSession(
-    session,
-    SPORT_KNOWLEDGE[session.sport]?.relatedNews ?? [],
-    RELATED_NEWS_LIMIT,
-  )
   const generated = session.relatedNews ?? []
-
-  return dedupeByUrl([...curated, ...generated])
+  return dedupeByUrl(generated)
     .sort((a, b) => Date.parse(b.publishedDate) - Date.parse(a.publishedDate))
     .slice(0, RELATED_NEWS_LIMIT)
 }

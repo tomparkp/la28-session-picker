@@ -2746,7 +2746,7 @@
   },
   {
     "id": "CER01A",
-    "sport": "",
+    "sport": "Ceremony",
     "name": "CER01A Ceremony",
     "desc": "Opening Ceremony",
     "venue": "2028 Stadium",
@@ -2761,7 +2761,7 @@
   },
   {
     "id": "CER02",
-    "sport": "",
+    "sport": "Ceremony",
     "name": "CER02 Ceremony",
     "desc": "Closing Ceremony",
     "venue": "LA Memorial Coliseum",

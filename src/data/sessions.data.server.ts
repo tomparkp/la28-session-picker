@@ -1,5 +1,5 @@
-import groundingData from '@/data/grounding.json'
 import scoringData from '@/data/scoring.json'
+import sessionFactsData from '@/data/session-facts.json'
 import sessionsData from '@/data/sessions.json'
 import writingData from '@/data/writing.json'
 import { getSessionInsights, type SessionInsights } from '@/lib/ai-scorecard'
@@ -65,7 +65,7 @@ interface ScoringEntry {
 }
 
 const sessionSources = sessionsData as SessionSource[]
-const grounding = groundingData as Record<string, GroundingEntry>
+const sessionFacts = sessionFactsData as Record<string, GroundingEntry>
 const writing = writingData as Record<string, WritingEntry>
 const scoring = scoringData as Record<string, ScoringEntry>
 
@@ -122,7 +122,7 @@ export async function getSessionDetailData(
   if (!session) return null
 
   const w = writing[sessionId]
-  const g = grounding[sessionId]
+  const g = sessionFacts[sessionId]
   const s = scoring[sessionId]
 
   const content: SessionContent = {

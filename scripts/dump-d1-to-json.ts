@@ -238,14 +238,14 @@ async function main() {
   }
 
   writeJson(resolve(DATA_DIR, 'sessions.json'), sessionsOut)
-  writeJson(resolve(DATA_DIR, 'grounding.json'), groundingOut)
+  writeJson(resolve(DATA_DIR, 'session-facts.json'), groundingOut)
   writeJson(resolve(DATA_DIR, 'writing.json'), writingOut)
   writeJson(resolve(DATA_DIR, 'scoring.json'), scoringOut)
 
   const modernCount = Object.values(scoringOut).filter((v) => v.scorecard !== null).length
   const legacyCount = Object.keys(scoringOut).length - modernCount
-  console.log(`  sessions.json    ${sessionsOut.length} sessions`)
-  console.log(`  grounding.json   ${Object.keys(groundingOut).length} entries`)
+  console.log(`  sessions.json     ${sessionsOut.length} sessions`)
+  console.log(`  session-facts.json ${Object.keys(groundingOut).length} entries`)
   console.log(`  writing.json     ${Object.keys(writingOut).length} entries`)
   console.log(
     `  scoring.json     ${Object.keys(scoringOut).length} entries (${modernCount} modern, ${legacyCount} legacy)`,
