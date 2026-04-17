@@ -1,0 +1,5 @@
+{
+  "_meta": {
+    "notes": "Per-sport corrections, keyed by sport name (matches sessions.json sport field). Each value is an array of authoritative correction strings. Injected into generate:sport-facts and into per-sport prompts in generate:session-content / generate:session-scores. Edit by hand, then re-run the relevant generate command with --force on that sport."
+  }
+}

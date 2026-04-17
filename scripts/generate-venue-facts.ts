@@ -8,6 +8,8 @@ import type { SessionSource } from '../src/types/session.js'
 import {
   PERPLEXITY_DEFAULT_MODEL,
   ROOT,
+  augmentationBlock,
+  buildCorrectionContext,
   stripCitationMarkers,
   writeJson,
 } from './lib/session-content.js'
@@ -84,10 +86,11 @@ Rules:
 - Do not use trademarked terms "Olympic", "Olympics", "Olympian", "LA28", "Paralympic", "Paralympics". Use "the 2028 Games", "the 2028 Summer Games", "Paris 2024", "medalist", "Games history". This applies even when source material uses them — rephrase.
 - No markdown, no code fences. Return valid JSON matching the schema.`
 
-function buildPrompt(venue: string, sports: string[]): string {
+function buildPrompt(venue: string, sports: string[], extraInstructions?: string): string {
   let prompt = `## Venue: ${venue}\n\n`
   prompt += `### Sports held here at 2028\n`
   for (const s of sports) prompt += `- ${s}\n`
+  prompt += augmentationBlock(extraInstructions)
   prompt += `\nResearch this venue's capacity, year built, location, iconic historical moments, spectator experience, and any 2028-specific changes. Treat the sport list as context for which configuration of the venue is relevant. Return a single JSON object matching the schema — no markdown fences.`
   return prompt
 }
@@ -101,8 +104,9 @@ async function fetchVenueFacts(
   venue: string,
   sports: string[],
   model: string,
+  extraInstructions?: string,
 ): Promise<VenueFacts | null> {
-  const prompt = buildPrompt(venue, sports)
+  const prompt = buildPrompt(venue, sports, extraInstructions)
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
       const response = await fetch('https://api.perplexity.ai/v1/sonar', {
@@ -226,7 +230,8 @@ async function main() {
     targets.map((venue) =>
       limit(async () => {
         const sports = [...byVenue.get(venue)!].sort()
-        const facts = await fetchVenueFacts(apiKey!, venue, sports, model)
+        const extraInstructions = buildCorrectionContext({ venue })
+        const facts = await fetchVenueFacts(apiKey!, venue, sports, model, extraInstructions)
         done += 1
         if (!facts) {
           console.log(`  [${done}/${targets.length}] ${venue} ✗ failed`)

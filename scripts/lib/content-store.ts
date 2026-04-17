@@ -19,6 +19,9 @@ const SESSIONS_PATH = resolve(DATA_DIR, 'sessions.json')
 const SESSION_FACTS_PATH = resolve(DATA_DIR, 'session-facts.json')
 const SESSION_CONTENT_PATH = resolve(DATA_DIR, 'session-content.json')
 const SESSION_SCORES_PATH = resolve(DATA_DIR, 'session-scores.json')
+const SESSION_CORRECTIONS_PATH = resolve(DATA_DIR, 'session-corrections.json')
+const SPORT_CORRECTIONS_PATH = resolve(DATA_DIR, 'sport-corrections.json')
+const VENUE_CORRECTIONS_PATH = resolve(DATA_DIR, 'venue-corrections.json')
 
 export interface StageMetadata {
   model: string
@@ -109,6 +112,21 @@ let sessionsCache: SessionSource[] | null = null
 let groundingCache: Record<string, GroundingEntry> | null = null
 let writingCache: Record<string, WritingEntry> | null = null
 let scoringCache: Record<string, ScoringEntry> | null = null
+let sessionCorrectionsCache: Record<string, string[]> | null = null
+let sportCorrectionsCache: Record<string, string[]> | null = null
+let venueCorrectionsCache: Record<string, string[]> | null = null
+
+type CorrectionsFile = Record<string, string[] | { notes?: string } | undefined>
+
+function loadCorrections(path: string): Record<string, string[]> {
+  const raw = readJsonFile<CorrectionsFile>(path, {})
+  const out: Record<string, string[]> = {}
+  for (const [key, val] of Object.entries(raw)) {
+    if (key === '_meta') continue
+    if (Array.isArray(val)) out[key] = val.filter((v): v is string => typeof v === 'string')
+  }
+  return out
+}
 
 function loadSessions(): SessionSource[] {
   if (sessionsCache) return sessionsCache
@@ -170,6 +188,21 @@ export function readWritingForSession(sessionId: string): WritingEntry | null {
 
 export function readScoringForSession(sessionId: string): ScoringEntry | null {
   return loadScoring()[sessionId] ?? null
+}
+
+export function readSessionCorrections(sessionId: string): string[] {
+  if (!sessionCorrectionsCache) sessionCorrectionsCache = loadCorrections(SESSION_CORRECTIONS_PATH)
+  return sessionCorrectionsCache[sessionId] ?? []
+}
+
+export function readSportCorrections(sport: string): string[] {
+  if (!sportCorrectionsCache) sportCorrectionsCache = loadCorrections(SPORT_CORRECTIONS_PATH)
+  return sportCorrectionsCache[sport] ?? []
+}
+
+export function readVenueCorrections(venue: string): string[] {
+  if (!venueCorrectionsCache) venueCorrectionsCache = loadCorrections(VENUE_CORRECTIONS_PATH)
+  return venueCorrectionsCache[venue] ?? []
 }
 
 // Serialize writes: each upsert reads-modify-writes the whole JSON file.

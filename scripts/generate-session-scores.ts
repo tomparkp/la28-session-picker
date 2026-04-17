@@ -19,6 +19,7 @@ import {
   type ScoringJob,
   WRITING_VERSION,
   type WritingData,
+  buildCorrectionContext,
   generateScoring,
   generateScoringViaBatches,
 } from './lib/session-content.js'
@@ -129,7 +130,11 @@ async function main() {
           })
         }
       }
-      jobs.push({ sport, batch, grounding, writing })
+      const extraInstructions = buildCorrectionContext({
+        sessionIds: batch.map((s) => s.id),
+        sport,
+      })
+      jobs.push({ sport, batch, grounding, writing, extraInstructions })
     }
   }
   console.log(`${jobs.length} batch(es) across ${sports.length} sport(s)`)
@@ -149,6 +154,7 @@ async function main() {
             job.grounding,
             job.writing,
             scoringModel,
+            job.extraInstructions,
           )
           const toUpsert = results
             .filter((r) => sessionMap.has(r.id))

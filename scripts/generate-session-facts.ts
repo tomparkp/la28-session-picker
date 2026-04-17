@@ -13,6 +13,7 @@ import {
   GROUNDING_BATCH_SIZE,
   GROUNDING_VERSION,
   PERPLEXITY_DEFAULT_MODEL,
+  buildCorrectionContext,
   fetchGroundingBatch,
 } from './lib/session-content.js'
 
@@ -97,11 +98,16 @@ async function main() {
   await Promise.all(
     jobs.map((job) =>
       limit(async () => {
+        const extraInstructions = buildCorrectionContext({
+          sessionIds: job.batch.map((s) => s.id),
+          sport: job.sport,
+        })
         const results = await fetchGroundingBatch(
           perplexityKey!,
           job.batch,
           job.sport,
           perplexityModel,
+          extraInstructions,
         )
         const got = new Set(results.map((r) => r.id))
         const upserts = results.map((g) => ({

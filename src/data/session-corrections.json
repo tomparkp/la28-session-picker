@@ -1,0 +1,5 @@
+{
+  "_meta": {
+    "notes": "Per-session corrections, keyed by session id. Each value is an array of authoritative correction strings stacked in order. Injected into grounding/writing/scoring prompts as 'User correction / additional context'. Edit by hand, then re-run pnpm refresh <id> or the relevant generate:session-* command."
+  }
+}

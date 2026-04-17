@@ -28,6 +28,18 @@ Six independent scripts; each reads JSON output of upstream stages and writes on
 
 All paid API calls require `PERPLEXITY_API_KEY` and/or `ANTHROPIC_API_KEY` in `.env`. Writing and scoring stages use Anthropic prompt caching and Messages Batches (50% discount) by default — see `scripts/lib/session-content.ts` for the batching helpers.
 
+#### Persistent corrections
+
+Hand-edited correction files override AI output across regenerations. Three files mirror the three correction scopes:
+
+- `src/data/session-corrections.json` — keyed by session id; injected into `generate:session-facts`, `generate:session-content`, `generate:session-scores`, and `refresh`.
+- `src/data/sport-corrections.json` — keyed by sport name; injected into `generate:sport-facts`, plus per-sport prompts in writing/scoring.
+- `src/data/venue-corrections.json` — keyed by venue name; injected into `generate:venue-facts`.
+
+Shape: `{ "<key>": ["correction text", ...] }`. Each value is an array so corrections stack. Edit the file, then re-run the relevant generate command (or `pnpm refresh <id>`) — corrections are feed-forward, no version bump.
+
+For globally-wrong Paris 2024 medal data, fix `src/data/paris-2024-medals.json` directly and rerun `generate:session-facts` for affected sessions. The medal block is already authoritative in every prompt that references it.
+
 ### Pre-PR checks
 
 Before opening a pull request, run the CI-equivalent checks locally and fix any failures first: `pnpm format:check`, `pnpm lint`, `pnpm typecheck`, and `pnpm test`. Run them in parallel when possible. This avoids pushing commits that fail CI.
@@ -55,6 +67,7 @@ Session data lives in JSON files under `src/data/`, committed to the repo and bu
 - `session-facts.json` — per-session Perplexity output (facts, related news, sources), keyed by session id
 - `session-content.json` — Anthropic prose (blurb, contenders), keyed by session id
 - `session-scores.json` — ratings + optional Scorecard (dimension scores with explanations), keyed by session id
+- `session-corrections.json` / `sport-corrections.json` / `venue-corrections.json` — hand-edited authoritative overrides injected into prompts at generation time (see Persistent corrections above)
 
 Runtime reads happen in `src/data/sessions.data.server.ts`, which merges sessions + session-facts + session-content + session-scores on module load. Writer scripts use `scripts/lib/content-store.ts` to upsert the generated files; each stage can be regenerated independently (e.g. refresh news without rewriting descriptions). Regenerated files are committed to the repo — there's no separate deploy step for data.
 

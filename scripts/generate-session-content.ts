@@ -17,6 +17,7 @@ import {
   WRITING_BATCH_SIZE,
   WRITING_VERSION,
   type WritingJob,
+  buildCorrectionContext,
   generateWriting,
   generateWritingViaBatches,
 } from './lib/session-content.js'
@@ -125,7 +126,11 @@ async function main() {
         const g = groundingByid.get(s.id)
         if (g) grounding.set(s.id, g)
       }
-      jobs.push({ sport, batch, grounding })
+      const extraInstructions = buildCorrectionContext({
+        sessionIds: batch.map((s) => s.id),
+        sport,
+      })
+      jobs.push({ sport, batch, grounding, extraInstructions })
     }
   }
   console.log(`${jobs.length} batch(es) across ${sports.length} sport(s)`)
@@ -144,6 +149,7 @@ async function main() {
             job.sport,
             job.grounding,
             writingModel,
+            job.extraInstructions,
           )
           const toUpsert = results
             .filter((r) => sessionMap.has(r.id))

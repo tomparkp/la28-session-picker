@@ -18,6 +18,7 @@ import {
   SCORING_VERSION,
   WRITING_VERSION,
   type WritingData,
+  buildCorrectionContext,
   buildGroundingPrompt,
   buildScoringPrompt,
   buildWritingPrompt,
@@ -143,21 +144,35 @@ async function main() {
   const existingGrounding = readGroundingForSession(session.id)
   const existingWriting = readWritingForSession(session.id)
 
+  // Merge stored corrections (session + sport) with any --prompt CLI arg into a
+  // single string fed into every stage as authoritative context.
+  const extraInstructions = buildCorrectionContext({
+    sessionIds: [session.id],
+    sport: session.sport,
+    cliPrompt: args.prompt,
+  })
+
   console.log(`Session:       ${session.id} — ${session.name}`)
   console.log(`Sport/Venue:   ${session.sport} @ ${session.venue}`)
   console.log(`Date/Time:     ${session.date}, ${session.time}`)
-  if (args.prompt) console.log(`Augmentation:  ${args.prompt}`)
+  if (extraInstructions) {
+    console.log(
+      `\n--- Corrections + augmentation ---\n${extraInstructions}\n----------------------------------`,
+    )
+  }
   if (existingWriting?.blurb) {
     console.log(`\n--- Existing blurb ---\n${existingWriting.blurb}\n----------------------`)
   }
 
   if (args.dryRun) {
     console.log('\n[dry-run] Grounding prompt:')
-    console.log(buildGroundingPrompt(session, session.sport, args.prompt))
+    console.log(buildGroundingPrompt(session, session.sport, extraInstructions))
     console.log('\n[dry-run] Writing prompt:')
-    console.log(buildWritingPrompt([session], session.sport, new Map(), args.prompt))
+    console.log(buildWritingPrompt([session], session.sport, new Map(), extraInstructions))
     console.log('\n[dry-run] Scoring prompt:')
-    console.log(buildScoringPrompt([session], session.sport, new Map(), new Map(), args.prompt))
+    console.log(
+      buildScoringPrompt([session], session.sport, new Map(), new Map(), extraInstructions),
+    )
     return
   }
 
@@ -170,7 +185,7 @@ async function main() {
       session,
       session.sport,
       args.perplexityModel,
-      args.prompt,
+      extraInstructions,
     )
     if (!grounding) {
       console.error('Grounding failed; aborting.')
@@ -221,7 +236,7 @@ async function main() {
       session.sport,
       groundingMap,
       args.writingModel,
-      args.prompt,
+      extraInstructions,
     )
     writing = results.find((r) => r.id === session.id) ?? null
     if (!writing) {
@@ -276,7 +291,7 @@ async function main() {
       groundingMap,
       writingMap,
       args.scoringModel,
-      args.prompt,
+      extraInstructions,
     )
     const scoring = results.find((r) => r.id === session.id) ?? null
     if (!scoring) {

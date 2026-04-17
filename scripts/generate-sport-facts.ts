@@ -9,6 +9,8 @@ import { getSportMedals, type ParisMedalsData } from './lib/paris-medals.js'
 import {
   PERPLEXITY_DEFAULT_MODEL,
   ROOT,
+  augmentationBlock,
+  buildCorrectionContext,
   stripCitationMarkers,
   writeJson,
 } from './lib/session-content.js'
@@ -91,11 +93,17 @@ function buildParisBlock(sport: string, medals: ParisMedalsData): string {
   return out
 }
 
-function buildPrompt(sport: string, events: string[], medals: ParisMedalsData): string {
+function buildPrompt(
+  sport: string,
+  events: string[],
+  medals: ParisMedalsData,
+  extraInstructions?: string,
+): string {
   let prompt = `## Sport: ${sport}\n\n`
   prompt += `### Events (sampled from 2028 session schedule)\n`
   for (const e of events) prompt += `- ${e}\n`
   prompt += `\n${buildParisBlock(sport, medals)}\n`
+  prompt += augmentationBlock(extraInstructions)
   prompt += `Use current web search (sport governing body, team/federation sources, reputable outlets) to produce gamesContext and parisRecap. Treat the Paris medal block as authoritative for historical results. Return a single JSON object matching the schema — no markdown fences.`
   return prompt
 }
@@ -110,8 +118,9 @@ async function fetchSportFacts(
   events: string[],
   medals: ParisMedalsData,
   model: string,
+  extraInstructions?: string,
 ): Promise<SportFacts | null> {
-  const prompt = buildPrompt(sport, events, medals)
+  const prompt = buildPrompt(sport, events, medals, extraInstructions)
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
       const response = await fetch('https://api.perplexity.ai/v1/sonar', {
@@ -228,7 +237,15 @@ async function main() {
       limit(async () => {
         const entry = bySport.get(sport)!
         const events = [...entry.events].sort()
-        const facts = await fetchSportFacts(apiKey!, sport, events, medals, model)
+        const extraInstructions = buildCorrectionContext({ sport })
+        const facts = await fetchSportFacts(
+          apiKey!,
+          sport,
+          events,
+          medals,
+          model,
+          extraInstructions,
+        )
         done += 1
         if (!facts) {
           console.log(`  [${done}/${targets.length}] ${sport} ✗ failed`)

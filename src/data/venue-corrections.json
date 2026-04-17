@@ -1,0 +1,5 @@
+{
+  "_meta": {
+    "notes": "Per-venue corrections, keyed by venue name (matches sessions.json venue field). Each value is an array of authoritative correction strings. Injected into generate:venue-facts. Edit by hand, then re-run pnpm generate:venue-facts --venue=\"<name>\" --force."
+  }
+}

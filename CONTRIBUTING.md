@@ -34,8 +34,9 @@ Session data lives in JSON files under `src/data/`, committed to the repo and bu
 - `session-facts.json` — per-session Perplexity output (facts, related news, sources), keyed by session id.
 - `session-content.json` — Anthropic-authored prose (blurb, contenders), keyed by session id.
 - `session-scores.json` — ratings + optional full Scorecard (dimension scores with explanations), keyed by session id.
+- `session-corrections.json` / `sport-corrections.json` / `venue-corrections.json` — hand-edited authoritative overrides injected into the relevant prompt at generation time. See [Corrections](#corrections) below.
 
-Runtime reads happen in `src/data/sessions.data.server.ts`, which merges sessions + session-facts + session-content + session-scores at module load.
+Runtime reads happen in `src/data/sessions.data.server.ts`, which merges sessions + session-facts + session-content + session-scores at module load. Correction files are read at generation time only — they shape future prompt input but never appear at runtime.
 
 ### Regenerating session content and ratings
 
@@ -100,6 +101,37 @@ pnpm generate:venue-facts
 ```
 
 Without `--force`, the script only regenerates venues whose `iconicMoments` field is empty. The runtime is tolerant of missing venue data — the venue-facts block is only added to the prompt when at least one venue has populated entries, so the pipeline keeps working while `venue-facts.json` is partially filled.
+
+### Corrections
+
+When the AI gets a fact wrong, write a correction once and have it persist across every future regeneration. Three files, each keyed to its scope:
+
+| File                                | Keyed by   | Used when running                                                                                          |
+| ----------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------- |
+| `src/data/session-corrections.json` | session id | `generate:session-facts`, `generate:session-content`, `generate:session-scores`, `refresh`                 |
+| `src/data/sport-corrections.json`   | sport name | `generate:sport-facts`, plus per-sport prompts in `generate:session-content` and `generate:session-scores` |
+| `src/data/venue-corrections.json`   | venue name | `generate:venue-facts`                                                                                     |
+
+Shape (all three):
+
+```json
+{
+  "_meta": { "notes": "..." },
+  "ATH04": [
+    "Julien Alfred of Saint Lucia won Paris 2024 women's 100m gold (not Sha'Carri Richardson)."
+  ]
+}
+```
+
+Each value is an array — multiple corrections stack. To apply: edit the file, then re-run the relevant generate command (or `pnpm refresh <id>`). Corrections are injected as the "User correction / additional context (authoritative — supersedes conflicting information)" block in every relevant prompt. No `promptVersion` bump — corrections take effect on the next generation pass.
+
+**Fix-at-source for global facts.** Some facts apply to many sessions and have an authoritative source file:
+
+- Wrong Paris 2024 medalist → edit `src/data/paris-2024-medals.json`, then rerun `pnpm generate:session-facts --sport="<sport>" --force` for affected sessions. The medal block is already labeled "authoritative — do not contradict" in every prompt that uses it.
+- Sport gamesContext / parisRecap consistently wrong across many sessions → consider editing `src/data/sport-facts.json` directly, or use `sport-corrections.json` plus regen.
+- Venue capacity / location wrong → edit `src/data/venue-facts.json` directly or use `venue-corrections.json` plus regen.
+
+The correction files are best for narrow, session-specific corrections; the source files are best for facts that should propagate everywhere.
 
 ## Routing
 
